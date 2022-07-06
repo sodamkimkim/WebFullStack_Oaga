@@ -28,6 +28,7 @@ flush privileges;
 create user 'oagaadmin'@'localhost' identified by 'asd123';
 grant all privileges on *.* to 'oagaadmin'@'localhost';
 flush privileges;
+
 use mysql;
 select user, host from user;
 
