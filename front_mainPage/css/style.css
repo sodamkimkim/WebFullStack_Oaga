@@ -130,6 +130,7 @@ h2{
     margin-right: auto;
     margin-left: auto;
     padding: 20px 20px;
+    padding-bottom: 0px;
     border-radius: 5px;
     
 }
@@ -485,7 +486,7 @@ border-radius: 5px;
 
 }
 .sec4 h4{
-    padding-top: 70px;
+    padding-top: 10px;
     margin-bottom: 30px;
     font-size: 26px;
     color: #333;
