@@ -14,7 +14,7 @@
     <header>
       <div class="hWrap">
         <h1>
-          <a href="#">OaGa</a>
+          <a href="/oaga">OaGa</a>
         </h1>
         <ul class="gnb">
           <li><a href="#">여행지정보보기</a></li>

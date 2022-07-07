@@ -12,7 +12,7 @@
   <body>
     <div class="main">
       <div class="wrap mWrap">
-        <h1><a href="#">OaGa</a></h1>
+        <h1><a href="/oaga">OaGa</a></h1>
         <div class="con">
           <form action="" method="post">
             <div class="formRow1">
