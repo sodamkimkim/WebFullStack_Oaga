@@ -934,5 +934,61 @@ header.masthead {
 	margin-left:11px;
 	margin-right:11px;
 	margin-top:13px;
-} 
+}
+
+.best_reviewer_box {
+	padding-right: 0px;
+    padding-left: 0px;
+    width: 136.667px;
+    align-items: stretch;
+    display: flex;
+}
+
+.best_reviewer_title {
+	color: #f9bb57;
+	font-size: 26px; 
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.best_reviewer_a {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-right: 0px;
+    margin-left: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: inline-block;
+}
+
+.best_reviewer_profile {
+	border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    vertical-align: middle;
+    height: 124px;
+    width: 124px;
+}
+.best_reviewer_name {
+	font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    max-height: 34px;
+    overflow: hidden;
+    padding-top: 12px;
+    text-align: center;
+    position: relative;
+}
+
+.best_reviewer_count {
+	font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    font-weight: 400;
+    position: relative;
+    color: rgb(115, 115, 115);
+}
 
