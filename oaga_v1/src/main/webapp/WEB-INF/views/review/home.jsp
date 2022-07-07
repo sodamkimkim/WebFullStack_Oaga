@@ -1,6 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
     <div class="page silver logged_box">
 		<div class="wrap logged">
@@ -37,8 +48,15 @@
 	
 	<div class="review_search">
 		<div class="wrap">
-			<h5><span>리뷰 검색하기</span></h5>
-			
+			<h5 class="review_search_title">리뷰 검색하기</h5>
+			<p class="review_search_coment">지역명을 검색하여 가고싶은 지역의 리뷰를 찾아보세요</p>
+      			<select class="form-control" id="sel1" name="sellist1">
+        			<option>지역명</option>
+        			<option>사용자</option>
+      			</select>
+			<div class="review_search_area">
+				<input class="review_search_input" id="" placeholder="지역명으로 검색">
+			</div>
 		</div>
 	</div>
 	
