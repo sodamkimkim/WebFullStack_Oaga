@@ -49,10 +49,10 @@ h1 {
 }
 .formRow2 {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
 }
-.formRow2 .btn_login {
+.formRow2 .btn_join {
   width: 280px;
   height: 30px;
   border-radius: 5px;
@@ -63,25 +63,11 @@ h1 {
   /* background-color: #f5a119;
   opacity: 0.9; */
   background-color: rgba(245, 161, 25, 0.9);
-
-  margin-bottom: 24px;
 }
-.formRow2 .btn_login:hover {
+.formRow2 .btn_join:hover {
   cursor: pointer;
 }
-.formRow2 a {
-  width: 280px;
-  display: block;
-  line-height: 25px;
-  border: 1px solid rgba(3, 3, 3, 0.2);
-  background-color: transparent;
-  text-align: center;
-  border-radius: 5px;
-  height: 25px;
-  font-weight: bold;
-  font-size: 11px;
-  color: rgba(3, 3, 3, 0.6);
-}
+
 footer {
 }
 .fWrap {

@@ -18,7 +18,7 @@
         </h1>
         <ul class="gnb">
           <li><a href="#">여행지정보보기</a></li>
-          <li><a href="#">리뷰보기</a></li>
+          <li><a href="/oaga/review">리뷰보기</a></li>
           <li><a href="#">커뮤니티</a></li>
         </ul>
         <!--gnb-->
@@ -31,11 +31,11 @@
           <!--srch-->
 
           <button class="login">
-            <a href="/login_form">로그인</a></button
+            <a href="/oaga/login_form">로그인</a></button
           ><!--login-->
 
           <button class="join">
-            <a href="#">회원가입</a></button
+            <a href="/oaga/join_form">회원가입</a></button
           ><!--join-->
         </div>
         <!--util-->
