@@ -114,8 +114,11 @@ h2 {
   font-size: 40px;
   font-weight: bold;
 }
+
 .bnWrap h2 span {
-  color: #333;
+
+  color: rgba(245, 161, 25, 0.9);
+
 }
 
 .tit {
