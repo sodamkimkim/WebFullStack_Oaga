@@ -31,7 +31,7 @@
           <!--srch-->
 
           <button class="login">
-            <a href="#">로그인</a></button
+            <a href="/login_form">로그인</a></button
           ><!--login-->
 
           <button class="join">

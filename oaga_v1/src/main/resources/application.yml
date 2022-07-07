@@ -1,7 +1,7 @@
 server:
   port: 9090
   servlet:
-    context-path: /
+    context-path: /oaga
     encoding:
       charset: UTF-8
       enabled: true
