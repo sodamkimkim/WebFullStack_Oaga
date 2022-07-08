@@ -271,7 +271,58 @@
     </section>
     <!--sec2-->
 	<!-- ==================================================================================== -->
-	
+	<!-- 베스트 리뷰어 section 시작 -->
+	<section class="sec_reviewer">
+		<div class="div_reviewer">
+			<h3 class="best_reviewer_title">이번 달 베스트 리뷰어</h3>
+			<p style="font-size: 16px; text-align: center; color: #666; margin-bottom: 30px; line-height: 1;">좋아요를 가장 많이 받은 베스트 리뷰어들</p>
+			<div class="best_reviewer_box" >
+			<div style="display: flex; margin: 0 auto;">
+				<div style="display: flex;">
+				<a class="best_reviewer_a" href="#">
+					<img src="images/reviewPage/reviewer_1.jpg" class="best_reviewer_profile">
+					<p class="best_reviewer_name">사용자이름</p>
+					<p class="best_reviewer_count">리뷰수</p>
+				</a>
+			</div>
+			
+			<div style="display: flex;">
+				<a class="best_reviewer_a" href="#">
+					<img src="images/reviewPage/reviewer_1.jpg" class="best_reviewer_profile">
+					<p class="best_reviewer_name">사용자이름</p>
+					<p class="best_reviewer_count">리뷰수</p>
+				</a>
+			</div>
+			
+			<div style="display: flex;">
+				<a class="best_reviewer_a" href="#">
+					<img src="images/reviewPage/reviewer_1.jpg" class="best_reviewer_profile">
+					<p class="best_reviewer_name">사용자이름</p>
+					<p class="best_reviewer_count">리뷰수</p>
+				</a>
+			</div>
+			
+			<div style="display: flex;">
+				<a class="best_reviewer_a" href="#">
+					<img src="images/reviewPage/reviewer_1.jpg" class="best_reviewer_profile">
+					<p class="best_reviewer_name">사용자이름</p>
+					<p class="best_reviewer_count">리뷰수</p>
+				</a>
+			</div>
+			
+			<div style="display: flex;">
+				<a class="best_reviewer_a" href="#">
+					<img src="images/reviewPage/reviewer_1.jpg" class="best_reviewer_profile">
+					<p class="best_reviewer_name">사용자이름</p>
+					<p class="best_reviewer_count">리뷰수</p>
+				</a>
+			</div>
+			</div>
+			
+				
+			</div>
+		</div>
+	</section>
 	
 	
 	
