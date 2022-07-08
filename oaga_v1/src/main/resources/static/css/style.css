@@ -951,18 +951,30 @@ header.masthead {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
-
+.best_reviewer_box{
+	margin-left: auto;
+	margin-right: auto;
+	width:1000px;
+}
 .best_reviewer_a {
     text-decoration: none;
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
-    margin-right: 0px;
-    margin-left: 16px;
+
     padding-top: 16px;
     padding-bottom: 16px;
     display: inline-block;
+    
 }
+.best_reviewer_a:hover img{
+  transform: scale(1.1);
+  transition: all 2s;
+ box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  transition: all 1s;
+  
+}
+
 
 .best_reviewer_profile {
 	border-radius: 50%;
@@ -991,4 +1003,17 @@ header.masthead {
     position: relative;
     color: rgb(115, 115, 115);
 }
+.sec_reviewer .box{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 15px;
+}
+.sec2review{
+	background-color: #fff;
+}
+.sec_reviewer{
+	background-color:rgba(240,240,240,0.8);
+	padding-top: 15px;
+	padding-bottom:15px;
 
+}
