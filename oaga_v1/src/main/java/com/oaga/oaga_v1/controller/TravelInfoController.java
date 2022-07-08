@@ -18,11 +18,11 @@ public class TravelInfoController {
 			@Autowired
 			TravelInfoService travelInfoService;
 			// 메인 화면
-			@GetMapping("/travel_info_form")
+			@GetMapping("/travel_info")
 			public String index(@PageableDefault (size =4, sort ="id", direction = Direction.DESC)Pageable pageable, Model model) {
 				Page<TravelInfo> imagePage = travelInfoService.getImageList(pageable);
 				model.addAttribute("imagePageList",imagePage);
-				return "/travelInfo/travel_info_form";
+				return "/travelInfo/home";
 			}
 			// 랜드마크
 			@GetMapping("/area_randMark")
@@ -30,7 +30,7 @@ public class TravelInfoController {
 				return "/travelInfo/randmark_form";
 			}
 			// 지역 맛집
-			@GetMapping("/area_detail")
+			@GetMapping("/area_info_detail")
 			public String vestRestaurant() {
 				return "/travelInfo/detail_form";
 			}

@@ -6,20 +6,17 @@ server:
       charset: UTF-8
       enabled: true
       force: true
-
 spring:
   mvc:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
-
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/project?serverTime=Asia/Seoul
+    url: jdbc:mysql://localhost:3306/oaga?serverTime=Asia/Seoul
     username: root
     password: asd123
 
-      
   jpa:
     open-in-view: true
     hibernate:
@@ -30,11 +27,9 @@ spring:
     show-sql: true
     properties:
       hibernate.format_sql: true
-
   jackson:
     serialization:
       fail-on-empty-beans: false
-      
 
   file: 
     path: C:/springproject/travelinfoimage/

@@ -3,12 +3,47 @@
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../layout/header.jsp" %>
 
+<style>
+	.areaList_li li a{
+		background-color: #F0F0F0;
+		padding: 7px;
+		border-radius: 40%;
+		
+	}
+	
+</style>
 	
 	
-	
-	<div class="main-container" style="width: 1200px; margin-left: 365px; margin-top: 70px;">		
-		<div class="article mWide type1">		
-			<div class="mdu_img1type" >	
+	<div class="main-container" style="width: 1200px; margin-left: 365px; margin-top: 70px;">
+			<div style="font-size: 30px; display:flex; justify-content: center; font-weight: bold;"><span>어디 놀러 가고싶나요?</span></div>	
+			<br/>
+			<div class="areaList" style="font-size:15px;  green; width: 600px; height: 50px;margin-left: 300px; ">
+				<ul class = "areaList_li" style="display: flex; flex-direction:row ;justify-content: space-around; padding-top: 12px;">
+					<li><a>서울</a></li>
+					<li><a>인천</a></li>
+					<li><a>대전</a></li>
+					<li><a>대구</a></li>
+					<li><a>광주</a></li>
+					<li><a>부산</a></li>
+					<li><a>울산</a></li>
+					<li><a>세종</a></li>
+					<li><a>경기</a></li>
+					<li><a>강원</a></li>
+				</ul>
+			</div>
+				<div class="areaList" style="font-size:15px;  green; width: 600px; height: 50px;margin-left: 300px; ">
+				<ul class = "areaList_li" style="display: flex; flex-direction:row ;justify-content: space-around; padding-top: 12px;">
+					<li><a>충북</a></li>
+					<li><a>충남</a></li>
+					<li><a>경북</a></li>
+					<li><a>경남</a></li>
+					<li><a>전북</a></li>
+					<li><a>전남</a></li>
+					<li><a>제주도</a></li>
+					
+				</ul>
+			</div>
+			<div class="mdu_img1type">	
 				<div style="font-size: 25px;font-style: oblique; margin-left: 50px; font-weight: bold;" >서울</div>
 				
 				<div class="img" style="display: flex; justify-content:space-around;" >
@@ -17,7 +52,7 @@
 					<div style="display: flex; justify-content:space-around;" id = "slideShow">
 					<c:forEach var="imagePageList" items="${imagePageList.content}">
 					<div>			
-					<a href="/area_randMark">					
+					<a href="/oaga/area_randMark">					
 						<img class="imageList" style="width: 250px;border-radius: 1ex; margin: 15px;"  src="${imagePageList.imageUrl }" alt=""> 	
 						<h3 style="margin-left: 13px;">${imagePageList.areaGu}</h3>
 					</div> 	
@@ -112,7 +147,7 @@
 				<br/>
 				<br/>
 			</div>
-		</div>
+	
 	</div>
 	<br/>
 	<br/>

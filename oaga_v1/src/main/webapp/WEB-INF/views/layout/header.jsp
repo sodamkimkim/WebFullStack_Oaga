@@ -17,7 +17,7 @@
                 <a href="/oaga">OaGa</a>
             </h1>
             <ul class="gnb">
-                <li><a href="#">여행지정보보기</a></li>
+                <li><a href="/oaga/travel_info">여행지정보보기</a></li>
                 <li><a href="/oaga/review">리뷰보기</a></li>
                 <li><a href="#">커뮤니티</a></li>
             </ul>
