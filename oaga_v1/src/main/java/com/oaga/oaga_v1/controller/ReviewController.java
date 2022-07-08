@@ -10,4 +10,9 @@ public class ReviewController {
 	public String reviewHome() {
 		return"/review/home";
 	}
+	
+	@GetMapping("/write")
+	public String reviewWrite() {
+		return "/review/write";
+	}
 }
