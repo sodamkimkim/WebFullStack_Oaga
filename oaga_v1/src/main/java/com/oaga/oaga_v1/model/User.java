@@ -12,6 +12,8 @@ import javax.persistence.Id;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+//localhost:9090/oaga/review
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
