@@ -1,5 +1,21 @@
 @import url(../style.css);
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.write_btn {
+	margin-bottom: 20px;
+	position: relative;
+	border: none;
+	width: 80px;
+	display: inline-block;
+	padding: 15px 10px;
+	border-radius: 15px;
+	font-weight: 600;
+}
+
 .t_box {
 	width: 1500px;
 	margin-left: auto;
@@ -15,12 +31,29 @@
 	color: rgba(245, 161, 25, 0.9);
 }
 
+.t_box .t_btn {
+	width: 800px;
+}
+
 .c_box {
 	width: 1500px;
 	height: 700px;
 }
 
+.t_box .place {
+	font-size: 20px;
+	font-weight: 500px;
+}
+
+.t_box .i_place {
+	height: 35px;
+	margin-left: 25px;
+	margin-bottom: 30px;
+	width: 500px;
+}
+
 
 #summernote {
 	position: center;
+	height: 400px;
 }
