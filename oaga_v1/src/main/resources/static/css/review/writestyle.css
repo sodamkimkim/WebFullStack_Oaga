@@ -4,6 +4,13 @@
 	margin: 0;
 	padding: 0;
 }
+body {
+	background-color: rgba(240,240,240,0.8);
+}
+
+header {
+	background-color: white;
+}
 
 .write_btn {
 	margin-bottom: 20px;
@@ -16,36 +23,44 @@
 	font-weight: 600;
 }
 
-.t_box {
+.r_sec {
 	width: 1500px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 100px;
+	margin-top: 50px;
 	margin-bottom: 20px;
 }
 
-.t_box .title {
+.r_sec .r_box {
+	padding: 20px;
+	border: 5px solid;
+	border-color: rgba(245, 161, 25, 0.9);
+	border-radius: 2%;
+	background-color: white;
+}
+
+.r_sec .title {
 	margin-top: 20px;
 	margin-bottom: 20px;
 	font-size: 25px;
 	color: rgba(245, 161, 25, 0.9);
 }
 
-.t_box .t_btn {
+.r_sec .t_btn {
 	width: 800px;
 }
 
 .c_box {
-	width: 1500px;
-	height: 700px;
+	width: 100%;
+	height: 100%;
 }
 
-.t_box .place {
+.r_sec .place {
 	font-size: 20px;
 	font-weight: 500px;
 }
 
-.t_box .i_place {
+.r_sec .i_place {
 	height: 35px;
 	margin-left: 25px;
 	margin-bottom: 30px;
@@ -55,5 +70,20 @@
 
 #summernote {
 	position: center;
-	height: 400px;
+	height: 100%;
+}
+
+.t_check {
+	display: flex;
+}
+
+.t_check .t_title {
+	margin-bottom: 20px;
+	font-size: 20px;
+	font-weight: 500px;
+	margin-right: 10px;
+}
+
+.t_radio {
+	margin-right:10px; 
 }

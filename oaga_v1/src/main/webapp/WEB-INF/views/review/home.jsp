@@ -41,7 +41,7 @@
 			</a>
 			<div class="clear"></div>
 		</div>
-		<a href="#">
+		<a href="/oaga/write">
 			<div class="logged_btn">
 				<div class="logged_btn_ico">
 					<img src="images/reviewPage/ico_review.png" />
