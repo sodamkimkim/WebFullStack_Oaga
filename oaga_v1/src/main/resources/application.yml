@@ -17,7 +17,7 @@ spring:
     url: jdbc:mysql://localhost:3306/oaga?serverTime=Asia/Seoul
     username: oagaadmin
     password: asd123
-      
+
   jpa:
     open-in-view: true
     hibernate:
@@ -30,5 +30,7 @@ spring:
       hibernate.format_sql: true
   jackson:
     serialization:
+
       fail-on-empty-beans: false
       
+

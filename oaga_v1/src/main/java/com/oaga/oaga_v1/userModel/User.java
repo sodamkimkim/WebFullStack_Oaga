@@ -1,16 +1,23 @@
-package com.oaga.oaga_v1.model;
+package com.oaga.oaga_v1.userModel;
 
 import java.sql.Timestamp;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
+
+import com.oaga.oaga_v1.reviewModel.Review;
 
 //localhost:9090/oaga/review
 
@@ -44,7 +51,16 @@ public class User {
 	//소셜 로그인 가입자 구분
 	private String oauth;
 	
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+	private List<Review> reviews;
+	
 	@CreationTimestamp // 시간 자동입력
 	private Timestamp createDate;
+	
+	@ColumnDefault("0")
+	private int likes;
+	
+	@ColumnDefault("0")
+	private int qna;
 
 }
