@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.oaga.oaga_v1.model.TravelInfo;
+import com.oaga.oaga_v1.placeModel.Place;
 import com.oaga.oaga_v1.service.TravelInfoService;
 
 @Controller
@@ -20,7 +20,7 @@ public class TravelInfoController {
 			// 메인 화면
 			@GetMapping("/travel_info_form")
 			public String index(@PageableDefault (size =4, sort ="id", direction = Direction.DESC)Pageable pageable, Model model) {
-				Page<TravelInfo> imagePage = travelInfoService.getImageList(pageable);
+				Page<Place> imagePage = travelInfoService.getImageList(pageable);
 				model.addAttribute("imagePageList",imagePage);
 				return "/travelInfo/travel_info_form";
 			}

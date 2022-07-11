@@ -26,13 +26,13 @@
 	<section class="review_list_container">
 		<header class="li_header">
 			<div>
-				<h3 class="li_title">여행 리뷰 목록</h3>
+				<h3 class="li_title">ooo님이 작성한 리뷰</h3>
 			</div>
 		</header>
 		<ul>
 			<li class="li_item">
 				<a class="li_item_a" href="#" >
-					<p style="margin-right: 20px; font-size: 30px;">ㆍ</p>
+					<p style="margin-left: 1rem; margin-right: 20px; font-size: 30px;">ㆍ</p>
 					<img class="li_item_img" src="images/reviewPage/reviewer.jpg">
 					<div class="li_t_wrap">
 						<h3 class="li_item_t">리뷰 제목</h3>
@@ -43,7 +43,7 @@
 			</li>
 			<li class="li_item">
 				<a class="li_item_a" href="#" >
-					<p style="margin-right: 20px; font-size: 30px;">ㆍ</p>
+					<p style="margin-left: 1rem; margin-right: 20px; font-size: 30px;">ㆍ</p>
 					<img class="li_item_img" src="images/reviewPage/reviewer.jpg">
 					<div class="li_t_wrap">
 						<h3 class="li_item_t">리뷰 제목</h3>
@@ -54,7 +54,7 @@
 			</li>
 			<li class="li_item">
 				<a class="li_item_a" href="#" >
-					<p style="margin-right: 20px; font-size: 30px;">ㆍ</p>
+					<p style="margin-left: 1rem; margin-right: 20px; font-size: 30px;">ㆍ</p>
 					<img class="li_item_img" src="images/reviewPage/reviewer.jpg">
 					<div class="li_t_wrap">
 						<h3 class="li_item_t">리뷰 제목</h3>
