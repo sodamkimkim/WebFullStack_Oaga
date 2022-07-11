@@ -19,10 +19,6 @@ spring:
     username: root
     password: asd123
 
-
-  
-      
-
   jpa:
     open-in-view: true
     hibernate:
@@ -35,5 +31,6 @@ spring:
       hibernate.format_sql: true
   jackson:
     serialization:
+
       fail-on-empty-beans: false
 

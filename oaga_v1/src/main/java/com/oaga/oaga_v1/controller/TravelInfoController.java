@@ -9,12 +9,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.oaga.oaga_v1.model.TravelInfo;
+import com.oaga.oaga_v1.placeModel.Place;
 import com.oaga.oaga_v1.service.TravelInfoService;
 
 @Controller
 public class TravelInfoController {
-	
+
 			@Autowired
 			TravelInfoService travelInfoService;
 			// 메인 화면
@@ -40,5 +40,6 @@ public class TravelInfoController {
 //				travelInfoService.getInfoImage(fileDto);
 //				return "upload Test";
 //			}
+
 			
 }
