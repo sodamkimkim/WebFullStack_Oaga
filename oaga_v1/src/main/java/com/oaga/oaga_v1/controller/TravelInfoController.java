@@ -15,13 +15,13 @@ import com.oaga.oaga_v1.service.TravelInfoService;
 @Controller
 public class TravelInfoController {
 	
-			@Autowired
-			TravelInfoService travelInfoService;
+//			@Autowired
+//			TravelInfoService travelInfoService;
 			// 메인 화면
 			@GetMapping("/travel_info_form")
 			public String index(@PageableDefault (size =4, sort ="id", direction = Direction.DESC)Pageable pageable, Model model) {
-				Page<Place> imagePage = travelInfoService.getImageList(pageable);
-				model.addAttribute("imagePageList",imagePage);
+//				Page<Place> imagePage = travelInfoService.getImageList(pageable);
+//				model.addAttribute("imagePageList",imagePage);
 				return "/travelInfo/travel_info_form";
 			}
 			// 랜드마크

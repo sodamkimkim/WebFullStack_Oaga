@@ -25,11 +25,11 @@ public class Reply {
 	@Column(nullable = false, length = 200)
 	private String content;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "userId")
 	private User user;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "reviewId")
 	private Review review;
 	

@@ -12,7 +12,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.ColumnDefault;
@@ -46,18 +45,20 @@ public class User {
 	@Column(nullable = false, length = 100)
 	private String email;
 	
-	
 	@Enumerated(EnumType.STRING)//enum을 db에서는 스트링으로 알아먹어라!
 	private RoleType role; //admin이냐 user이냐 구분
 	
 	//소셜 로그인 가입자 구분
 	private String oauth;
 	
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+	private List<Review> reviews;
+	
 	@CreationTimestamp // 시간 자동입력
 	private Timestamp createDate;
 	
 	@ColumnDefault("0")
-	private int like;
+	private int likes;
 	
 	@ColumnDefault("0")
 	private int qna;
