@@ -1,3 +1,4 @@
+
 server:
   port: 9090
   servlet:
@@ -14,13 +15,18 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/oaga?serverTime=Asia/Seoul
+
     username: root
     password: asd123
+
+
+  
+      
 
   jpa:
     open-in-view: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       use-new-id-generator-mappings: false
@@ -31,5 +37,3 @@ spring:
     serialization:
       fail-on-empty-beans: false
 
-  file: 
-    path: C:/springproject/travelinfoimage/
