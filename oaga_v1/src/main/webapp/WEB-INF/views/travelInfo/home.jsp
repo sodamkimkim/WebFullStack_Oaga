@@ -52,9 +52,9 @@
 					<div style="display: flex; justify-content:space-around;" id = "slideShow">
 					<c:forEach var="imagePageList" items="${imagePageList.content}">
 					<div>			
-					<a href="/oaga/area_randMark">					
-						<img class="imageList" style="width: 250px;border-radius: 1ex; margin: 15px;"  src="${imagePageList.imageUrl }" alt=""> 	
-						<h3 style="margin-left: 13px;">${imagePageList.areaGu}</h3>
+					<a href="/oaga/travel_randmark">					
+						<img class="imageList" style="width: 250px;border-radius: 1ex; margin: 15px;"  src="${imagePageList.imageUrl}" alt=""> 	
+						<h3 style="margin-left: 13px;">${imagePageList.guname}</h3>
 					</div> 	
 					</a>
 					</c:forEach>
@@ -67,10 +67,10 @@
 				<div class="img" style="display: flex; justify-content:space-around;" >			
 				<a class="prev" style="display: flex; align-items: center;" onclick="plusSlides(-1)">&#10094;</a>
 					<c:forEach var="imagePageList" items="${imagePageList.content}">
-					<a href="#">
+					<a href="/oaga/travel_randmark">
 						
 						<img class="imageList" style="width: 250px;border-radius: 1ex; "  src="${imagePageList.imageUrl }" alt="...">
-						<h3 >${imagePageList.areaGu }</h3> 	
+						<h3 >${imagePageList.guname }</h3> 	
 					</a>
 					</c:forEach>
 					<a class="next" style="display: flex; align-items: center; onclick="plusSlides(1)">&#10095;</a>			
@@ -81,9 +81,9 @@
 				<div class="img" style="display: flex; justify-content:space-around;" >		
 				<a class="prev" style="display: flex; align-items: center;" onclick="plusSlides(-1)">&#10094;</a>		
 					<c:forEach var="imagePageList" items="${imagePageList.content}">
-					<a href="#">						
+					<a href="/oaga/travel_randmark">						
 						<img class="imageList" style="width: 250px;border-radius: 1ex; "  src="${imagePageList.imageUrl }" alt="..."> 
-						<h3>${imagePageList.areaGu }</h3>						
+						<h3>${imagePageList.guname }</h3>						
 					</a>
 					</c:forEach>		
 					<a class="next" style="display: flex; align-items: center; onclick="plusSlides(1)">&#10095;</a>	
@@ -94,10 +94,10 @@
 				<div class="img" style="display: flex; justify-content:space-around;" >			
 				<a class="prev" style="display: flex; align-items: center;" onclick="plusSlides(-1)">&#10094;</a>
 					<c:forEach var="imagePageList" items="${imagePageList.content}">
-					<a href="#">
+					<a href="/oaga/travel_randmark">
 						
 						<img class="imageList" style="width: 250px;border-radius: 1ex; "  src="${imagePageList.imageUrl }" alt="...">
-						<h3 >${imagePageList.areaGu }</h3> 	
+						<h3 >${imagePageList.guname }</h3> 	
 					</a>
 					</c:forEach>
 					<a class="next" style="display: flex; align-items: center; onclick="plusSlides(1)">&#10095;</a>			
@@ -111,7 +111,7 @@
 					<a href="#">
 						
 						<img class="imageList" style="width: 250px;border-radius: 1ex; "  src="${imagePageList.imageUrl }" alt="...">
-						<h3 >${imagePageList.areaGu }</h3> 	
+						<h3 >${imagePageList.guname }</h3> 	
 					</a>
 					</c:forEach>
 					<a class="next" style="display: flex; align-items: center; onclick="plusSlides(1)">&#10095;</a>			
@@ -125,7 +125,7 @@
 					<a href="#">
 						
 						<img class="imageList" style="width: 250px;border-radius: 1ex; "  src="${imagePageList.imageUrl }" alt="...">
-						<h3 >${imagePageList.areaGu }</h3> 	
+						<h3 >${imagePageList.guname }</h3> 	
 					</a>
 					</c:forEach>
 					<a class="next" style="display: flex; align-items: center; onclick="plusSlides(1)">&#10095;</a>			
@@ -139,7 +139,7 @@
 					<a href="#">
 						
 						<img class="imageList" style="width: 250px;border-radius: 1ex; "  src="${imagePageList.imageUrl }" alt="...">
-						<h3 >${imagePageList.areaGu }</h3> 	
+						<h3 >${imagePageList.guname }</h3> 	
 					</a>
 					</c:forEach>
 					<a class="next" style="display: flex; align-items: center; onclick="plusSlides(1)">&#10095;</a>			

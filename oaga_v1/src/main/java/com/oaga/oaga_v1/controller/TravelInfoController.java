@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.oaga.oaga_v1.placeModel.Area;
+import com.oaga.oaga_v1.placeModel.AreaGu;
 import com.oaga.oaga_v1.service.TravelInfoService;
 @Controller
 public class TravelInfoController {
@@ -18,12 +19,22 @@ public class TravelInfoController {
 			@Autowired
 			TravelInfoService travelInfoService;
 			// 메인 화면
-			@GetMapping("/travel_info_form")
+			@GetMapping("/travel_info")
 			public String index(@PageableDefault (size =4, sort ="id", direction = Direction.DESC)Pageable pageable, Model model) {
-				Page<Area> imagePage = travelInfoService.getImageList(pageable);
+				Page<AreaGu> imagePage = travelInfoService.getImageList(pageable);
 				model.addAttribute("imagePageList",imagePage);
-				return "/travelInfo/travel_info_form";
+				return "/travelInfo/home";
 
 			}
+			
+			@GetMapping("/travel_randmark")
+			public String travelinfo() {
+				return "/travelInfo/randmark_form";
+			}
+			@GetMapping("/travel_datail")
+			public String detail() {
+				return "/travelInfo/detail_form";
+			}
+			
 }
 			
