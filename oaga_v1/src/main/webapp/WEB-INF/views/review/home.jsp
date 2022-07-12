@@ -281,7 +281,7 @@
 		<div class="best_reviewer_box">
 			<div style="display: flex; margin: 0 auto;">
 				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="#"> <img
+					<a class="best_reviewer_a" href="/oaga/list"> <img
 						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
 						<p class="best_reviewer_name">사용자이름</p>
 						<p class="best_reviewer_count">리뷰수</p>
@@ -289,7 +289,7 @@
 				</div>
 
 				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="#"> <img
+					<a class="best_reviewer_a" href="/oaga/list"> <img
 						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
 						<p class="best_reviewer_name">사용자이름</p>
 						<p class="best_reviewer_count">리뷰수</p>
@@ -297,7 +297,7 @@
 				</div>
 
 				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="#"> <img
+					<a class="best_reviewer_a" href="/oaga/list"> <img
 						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
 						<p class="best_reviewer_name">사용자이름</p>
 						<p class="best_reviewer_count">리뷰수</p>
@@ -305,7 +305,7 @@
 				</div>
 
 				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="#"> <img
+					<a class="best_reviewer_a" href="/oaga/list"> <img
 						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
 						<p class="best_reviewer_name">사용자이름</p>
 						<p class="best_reviewer_count">리뷰수</p>
@@ -313,7 +313,7 @@
 				</div>
 
 				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="#"> <img
+					<a class="best_reviewer_a" href="/oaga/list"> <img
 						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
 						<p class="best_reviewer_name">사용자이름</p>
 						<p class="best_reviewer_count">리뷰수</p>

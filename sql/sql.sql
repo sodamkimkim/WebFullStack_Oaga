@@ -34,3 +34,6 @@ select user, host from user;
 
 create database oaga;
 use oaga;
+
+select * from review;
+select * from reply;
