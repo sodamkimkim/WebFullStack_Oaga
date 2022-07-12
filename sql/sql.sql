@@ -34,3 +34,5 @@ select user, host from user;
 
 create database oaga;
 use oaga;
+desc user;
+select * from user;

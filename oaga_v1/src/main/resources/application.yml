@@ -12,12 +12,18 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
+      
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/oaga?serverTime=Asia/Seoul
-
     username: root
     password: asd123
+    hikari:
+      connectionTimeout: 30000
+      maximumPoolSize: 10
+      maxLifetime: 1800000
+      poolName: HikariCP
+      readOnly: false
 
   jpa:
     open-in-view: true
@@ -29,8 +35,10 @@ spring:
     show-sql: true
     properties:
       hibernate.format_sql: true
+      
   jackson:
     serialization:
 
       fail-on-empty-beans: false
-
+oaga:
+  key: 25c18c1ed58157a457c41fbbcfd4a2b554648395f99c3fe5dc043c03ff6fec54ebe2adfa517897ad4b1c38d9234571c335afe244d8d686f0f9b69e22bb6b6b30

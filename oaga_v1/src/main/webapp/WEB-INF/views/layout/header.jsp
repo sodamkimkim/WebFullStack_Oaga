@@ -34,12 +34,12 @@
                 <!--srch-->
 
                 <button class="login">
-                    <a href="/oaga/login_form">로그인</a>
+                    <a href="/oaga/auth/login_form">로그인</a>
                 </button>
                 <!--login-->
 
                 <button class="join">
-                    <a href="/oaga/join_form">회원가입</a>
+                    <a href="/oaga/auth/join_form">회원가입</a>
                 </button>
                 <!--join-->
             </div>

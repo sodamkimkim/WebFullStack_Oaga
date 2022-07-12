@@ -1,5 +1,6 @@
 package com.oaga.oaga_v1.auth;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -25,14 +26,17 @@ public class PrincipalDetail implements UserDetails{
 	
 	@Override
 	public String getPassword() {
-		return null;
+		return user.getPassword();
 	}
 
 	@Override
 	public String getUsername() {
-		return null;
+		return user.getUsername();
 	}
 
+	public String getUserInputId() {
+		return user.getUserInputID();
+	}
 	@Override
 	public boolean isAccountNonExpired() {
 		return true;
@@ -57,8 +61,20 @@ public class PrincipalDetail implements UserDetails{
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		
-		Collefction<GrantedAuthority>
-		return null;
+		Collection<GrantedAuthority> collectors = new ArrayList<GrantedAuthority>(); // 이 collection에 사용자의 계정을 넣어 리턴
+		
+//		collectors.add(new GrantedAuthority() {
+//			@Override
+//			public String getAuthority() {
+//				//"ROLE_USER", "ROLE_ADMIN"
+//				return "ROLE_" + user.getRole();
+//			}
+//		});
+		
+		collectors.add(() -> {
+			return "ROLE_"+user.getRole();
+		});
+		return collectors;
 	}
 
 }
