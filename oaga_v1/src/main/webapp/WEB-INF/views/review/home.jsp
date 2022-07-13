@@ -67,200 +67,80 @@
 			<div class="sort" data-id="regdate">신규</div>
 		</div>
 
+
+
 		<div class="row1">
-			<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="images/mainpage/plan01.jpg" alt="" />
-						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
+			<!--  row1 박스 태그 시작 -->
+			<c:forEach var="reviews" items="${reviews.content}" begin="0" end="2">
+				<div class="box">
+					<a href="#">
+						<div class="ImgBox">
+							<img src="images/mainpage/plan01.jpg" alt="" />
+							<div class="txt">
+								<h4>
+									2018-09-13 <span> 7DAYS</span>
+								</h4>
+								<p>${reviews.title}</p>
+							</div>
+							<!--txt-->
+						</div> <!--ImgBox-->
 
-					<div class="data">
-						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
-						</ul>
-						<!--info-->
+						<div class="data">
+							<ul class="info">
+								<li class="withFriend">${reviews.theme}</li>
+								<li class="placeName">${reviews.areaName}</li>
+								<li class="userName">작성자</li>
+							</ul>
+							<!--info-->
 
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">300</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
+							<ul class="count">
+								<li class="location">25</li>
+								<li class="view">${reviews.count}</li>
+								<li class="copy">27</li>
+							</ul>
+							<!--view-->
+						</div> <!--data-->
+					</a>
+				</div>
+			</c:forEach>
 			<!--box-->
 
-			<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="images/mainpage/plan02.jpg" alt="" />
-						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
-
-					<div class="data">
-						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
-						</ul>
-						<!--info-->
-
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">300</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
-			<!--box-->
-
-			<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="images/mainpage/plan03.jpg" alt="" />
-						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
-
-					<div class="data">
-						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
-						</ul>
-						<!--info-->
-
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">300</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
-			<!--box-->
 		</div>
 		<!--row1-->
 
 		<div class="row2">
-			<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="images/mainpage/plan04.jpg" alt="" />
-						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
+			<c:forEach var="reviews" items="${reviews.content}" begin="3" end="5">
+				<div class="box">
+					<a href="#">
+						<div class="ImgBox">
+							<img src="images/mainpage/plan01.jpg" alt="" />
+							<div class="txt">
+								<h4>
+									2018-09-13 <span> 7DAYS</span>
+								</h4>
+								<p>${reviews.title}</p>
+							</div>
+							<!--txt-->
+						</div> <!--ImgBox-->
 
-					<div class="data">
-						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
-						</ul>
-						<!--info-->
+						<div class="data">
+							<ul class="info">
+								<li class="withFriend">${reviews.theme}</li>
+								<li class="placeName">${reviews.areaName}</li>
+								<li class="userName">작성자</li>
+							</ul>
+							<!--info-->
 
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">300</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
-			<!--box-->
-
-			<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="images/mainpage/plan05.jpg" alt="" />
-						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
-
-					<div class="data">
-						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
-						</ul>
-						<!--info-->
-
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">300</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
-			<!--box-->
-
-			<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="images/mainpage/plan06.jpg" alt="" />
-						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
-
-					<div class="data">
-						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
-						</ul>
-						<!--info-->
-
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">300</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
+							<ul class="count">
+								<li class="location">25</li>
+								<li class="view">${reviews.count}</li>
+								<li class="copy">27</li>
+							</ul>
+							<!--view-->
+						</div> <!--data-->
+					</a>
+				</div>
+			</c:forEach>
 			<!--box-->
 		</div>
 		<!--row2-->
@@ -281,7 +161,7 @@
 		<div class="best_reviewer_box">
 			<div style="display: flex; margin: 0 auto;">
 				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="#"> <img
+					<a class="best_reviewer_a" href="/oaga/list"> <img
 						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
 						<p class="best_reviewer_name">사용자이름</p>
 						<p class="best_reviewer_count">리뷰수</p>
@@ -289,7 +169,7 @@
 				</div>
 
 				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="#"> <img
+					<a class="best_reviewer_a" href="/oaga/list"> <img
 						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
 						<p class="best_reviewer_name">사용자이름</p>
 						<p class="best_reviewer_count">리뷰수</p>
@@ -297,7 +177,7 @@
 				</div>
 
 				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="#"> <img
+					<a class="best_reviewer_a" href="/oaga/list"> <img
 						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
 						<p class="best_reviewer_name">사용자이름</p>
 						<p class="best_reviewer_count">리뷰수</p>
@@ -305,7 +185,7 @@
 				</div>
 
 				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="#"> <img
+					<a class="best_reviewer_a" href="/oaga/list"> <img
 						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
 						<p class="best_reviewer_name">사용자이름</p>
 						<p class="best_reviewer_count">리뷰수</p>
@@ -313,7 +193,7 @@
 				</div>
 
 				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="#"> <img
+					<a class="best_reviewer_a" href="/oaga/list"> <img
 						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
 						<p class="best_reviewer_name">사용자이름</p>
 						<p class="best_reviewer_count">리뷰수</p>
