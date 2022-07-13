@@ -1,5 +1,6 @@
 package com.oaga.oaga_v1.reviewModel;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -17,6 +18,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.CreationTimestamp;
 
 import com.oaga.oaga_v1.userModel.User;
 
@@ -53,6 +55,9 @@ public class Review {
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	private ThemeType theme;
+	
+	@CreationTimestamp
+	private Timestamp createDate;
 	
 	@ColumnDefault("0")
 	private int count;

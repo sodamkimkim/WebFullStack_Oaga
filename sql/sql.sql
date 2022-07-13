@@ -37,3 +37,10 @@ use oaga;
 
 select * from review;
 select * from reply;
+
+
+
+-- 베스트 리뷰 출력createDate
+select * from review order by count desc limit 6;
+-- 베스트 리뷰어 출력
+select * from user order by likes desc limit 5;
