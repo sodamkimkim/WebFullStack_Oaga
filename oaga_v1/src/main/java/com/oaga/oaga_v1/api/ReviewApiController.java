@@ -20,7 +20,7 @@ public class ReviewApiController {
 	@PostMapping("/api/review")
 	private ResponseDto<Integer> saveReview(@RequestBody Review review) {
 		reviewService.saveReview(review);
-		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+		return new ResponseDto<Integer>(HttpStatus.OK, 1);
 	}
 		
 	
