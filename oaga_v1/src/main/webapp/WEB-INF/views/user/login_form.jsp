@@ -159,7 +159,7 @@ footer {
 
 					<div class="formRow2">
 						<button type="submit" id="btn_login" class="btn btn_login">로그인</button>
-						<a class="btn btn_kakao" href="#">카카오아이디로 로그인</a>
+						<a class="btn btn_kakao" href="https://kauth.kakao.com/oauth/authorize?client_id=31c71a748886ababf2df137e8f33a1a4&redirect_uri=http://localhost:9090/oaga/auth/kakao/callback&response_type=code">카카오아이디로 로그인</a>
 					</div>
 					<!--formRow2-->
 				</form>
