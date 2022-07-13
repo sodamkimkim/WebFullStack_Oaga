@@ -26,7 +26,7 @@ public class UserApiController {
 	public ResponseDto<Integer> update(@RequestBody User user){
 		userService.updateUser(user);
 		Authentication authentication = authenticationManager.authenticate(
-				new UsernamePasswordAuthenticationToken(user.getUserInputID(), user.getPassword())
+				new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword())
 				);
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		return new ResponseDto<Integer>(HttpStatus.OK,1);

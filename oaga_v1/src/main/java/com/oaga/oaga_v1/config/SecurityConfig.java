@@ -11,7 +11,6 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.firewall.DefaultHttpFirewall;
 import org.springframework.security.web.firewall.HttpFirewall;
 
@@ -32,9 +31,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Bean
 	@Override
-	protected AuthenticationManager authenticationManager() throws Exception {
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		// TODO Auto-generated method stub
 		return super.authenticationManagerBean();
 	}
+//	@Bean
+//	@Override
+//	protected authenticationManager authenticationManager() throws Exception {
+//		return super.authenticationManagerBean();
+//	}
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
@@ -47,13 +52,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-		.and()
+		http.csrf().disable()
 			.authorizeRequests()
 			.antMatchers("/auth/**", "/**", "/js/**", "/css/**", "/images/**")
 			.permitAll().anyRequest().authenticated()
 		.and()
-			.formLogin().loginPage("/auth/login_form")
+			.formLogin().loginPage("/auth/login_form").loginProcessingUrl("/auth/loginProc")
 			.defaultSuccessUrl("/");
 	}
 	

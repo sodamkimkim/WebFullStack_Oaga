@@ -148,11 +148,11 @@ footer {
 				<a href="/oaga">OaGa</a>
 			</h1>
 			<div class="con">
-				<form action="" method="post">
+				<form action="/oaga/auth/loginProc" method="post">
 					<div class="formRow1">
-						<input type="text" class="form-input" placeholder="Enter ID"
-							id="userInputID" name="userInputID" /> <input type="password"
-							class="form-input" placeholder="Enter password" id="password"
+						<input type="text" class="form-control" placeholder="Enter ID"
+							id="username" name="username" /> <input type="password"
+							class="form-control" placeholder="Enter password" id="password"
 							name="password" />
 					</div>
 					<!--formRow1-->
@@ -164,7 +164,7 @@ footer {
 					<!--formRow2-->
 				</form>
 				<p>
-					혹시, OaGa가 처음이신가요? <a href="#">회원가입</a>
+					혹시, OaGa가 처음이신가요? <a href="/oaga/auth/join_form">회원가입</a>
 				</p>
 			</div>
 			<!--con-->

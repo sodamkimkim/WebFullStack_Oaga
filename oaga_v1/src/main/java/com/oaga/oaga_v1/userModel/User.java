@@ -36,11 +36,12 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //프로젝트에 연결된 db넘버링전략 따라가기(mysql auto-increment)
 	private int id;
 	
-	@Column(nullable = false, length = 20)
-	private String userInputID;
-	
+
 	@Column(nullable = false, length = 100)
 	private String username;
+	
+	@Column(nullable = true, length = 20)
+	private String userNickName;
 	
 	@Column(nullable = false, length = 100)
 	private String password;

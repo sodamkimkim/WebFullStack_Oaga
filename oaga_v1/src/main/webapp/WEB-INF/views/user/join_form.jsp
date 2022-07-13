@@ -134,18 +134,18 @@ footer {
 			</h1>
 			<div class="con">
 				<form action="/oaga/auth/joinProc" method="post">
-				<!-- csrf???? xss -->
+					<!-- csrf???? xss -->
 					<div class="formRow1">
 						<input type="text" class="form-input" placeholder="Enter ID"
-							id="userInputID" name="userInputID" /> <input type="password"
+							id="username" name="username" /> <input type="password"
 							class="form-input" placeholder="Enter password" id="password"
 							name="password" /> <input type="email" class="form-input"
 							placeholder="Enter email" id="email" name="email" />
 					</div>
 					<!--formRow1-->
-<!-- 					<div class="formRow2"> -->
+					<div class="formRow2">
 						<button type="submit" id="btn_join" class="btn btn_join">회원가입</button>
-					<!-- </div>-->
+					</div>
 				</form>
 			</div>
 			<!--con-->

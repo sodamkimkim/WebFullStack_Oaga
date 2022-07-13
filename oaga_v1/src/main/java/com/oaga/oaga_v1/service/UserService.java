@@ -36,7 +36,7 @@ public class UserService {
 	public void updateUser(User user) {
 		// 소셜유저 수정들어오면 무시
 		// 기존회원 수정들어오면 처리
-		User userEntity = userRepository.findById(user.getId()) // ajax할 때 id보내서 쓸 수 있음
+		User userEntity = userRepository.findById(user.getId())
 				.orElseThrow(() -> {
 					return new IllegalArgumentException("회원정보가 없습니다.");
 				});
@@ -49,10 +49,13 @@ public class UserService {
 		}
 	}
 	@Transactional(readOnly = true)
-	public User searchUser(String userInputID) {
-		User userEntity = userRepository.findByuserInputID(userInputID).orElseGet(()->{
+	public User searchUser(String username) {
+		User userEntity = userRepository.findByUsername(username).orElseGet(()->{
+			System.out.println("유저 못찾음 여긴userservice");
 			return new User();
 		});
+		System.out.println("여긴 userservice");
+
 		return userEntity;
 	}
 }
