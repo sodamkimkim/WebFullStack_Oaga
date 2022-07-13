@@ -16,7 +16,7 @@
 	<a class="prev" style="display: flex; align-items: center; " id="prev_slide">&#10094;</a>
 		<div style="width: 1200px; height: 260px; display: flex; justify-content: center; align-items: center;">
 			<div style=" background-color:green; ; width: 250px; height: 250px; border-radius: 1ex;">
-			<a href="/oaga/travel_datail" style="background-color:navy; width: auto; height: auto;">das;lmdsapdmaspdmasp
+			<a href="/oaga/area_info_detail" style="background-color:navy; width: auto; height: auto;">das;lmdsapdmaspdmasp
 				<img alt="" src="" style="background-color:navy;">
 			</a>
 			</div>
