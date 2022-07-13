@@ -25,6 +25,14 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.qlrm/qlrm -->
+		<dependency>
+			<groupId>org.qlrm</groupId>
+			<artifactId>qlrm</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
