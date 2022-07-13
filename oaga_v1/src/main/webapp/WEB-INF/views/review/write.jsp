@@ -53,8 +53,15 @@
 				<input type="radio" name="r_theme" value="BUSINESS" id="ex_rd5"> 
 				<label class="t_radio" for="ex_rd5">비즈니스 여행</label>
 			</div>
-
 		</div>
+		<form method="POST" enctype="multipart/form-data">
+			<div style="display: flex; margin-bottom: 20px">
+				<div class="r_image_button">대표 이미지 :</div>
+				<input class="upload_name" value="첨부파일" readonly="readonly" placeholder="첨부파일">
+				<label class="r_image_label" for="r_image">파일 선택</label>
+				<input type="file" class="r_image_input" id="r_image" name="r_image" accept="image/*" onchange="">
+				</div>
+		</form>
 		<div class=""></div>
 		<div class="c_box">
 			<div id="">
