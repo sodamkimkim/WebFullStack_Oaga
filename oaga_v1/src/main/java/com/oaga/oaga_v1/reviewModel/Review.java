@@ -56,6 +56,11 @@ public class Review {
 	@Enumerated(EnumType.STRING)
 	private ThemeType theme;
 	
+	@Column(nullable = false)
+	private String reviewImageUrl;
+	
+	private String originImageUrl;
+	
 	@CreationTimestamp
 	private Timestamp createDate;
 	

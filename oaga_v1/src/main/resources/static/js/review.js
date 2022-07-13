@@ -16,7 +16,8 @@ let index = {
 			areaName: $("#r_place").val(),
 			theme: $("input[type=radio][name=r_theme]:checked").val(),
 			content: $("#content").val(),
-			isWriting: $("#btn-save").val()
+			isWriting: $("#btn-save").val(),
+			originImageUrl: $("#r_imageUrl").val()
 		}
 		
 		console.log("데이터 확인")
