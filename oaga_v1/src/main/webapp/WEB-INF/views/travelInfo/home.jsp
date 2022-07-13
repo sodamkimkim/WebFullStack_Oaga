@@ -8,9 +8,9 @@
 		background-color: #F0F0F0;
 		padding: 7px;
 		border-radius: 40%;
-		
+
 	}
-	
+
 </style>
 	
 	
@@ -20,8 +20,8 @@
 			<br/>
 			<div class="areaList" style="font-size:15px;  green; width: 600px; height: 50px;margin-left: 300px; ">
 				<ul class = "areaList_li" style="display: flex; flex-direction:row ;justify-content: space-around; padding-top: 12px;">
-					<li class="area_list"><a href="/oaga/area_list">서울</a></li>
-					<li><a>인천</a></li>
+					<li class="area_list"><a href="/oaga/travel_randmark" >서울</a></li>
+					<li class="area_list"><a href="/oaga/travel_randmark" >인천</a></li>
 					<li><a>대전</a></li>
 					<li><a>대구</a></li>
 					<li><a>광주</a></li>
@@ -47,117 +47,99 @@
 			<div class="mdu_img1type">	
 				<div style="font-size: 25px;font-style: oblique; margin-left: 50px; font-weight: bold;" >서울</div>
 				
-				<div class="img" style="display: flex; justify-content:space-around;" >
+				<div class="img" style="display: flex; justify-content:space-around;">
 				<!--  슬라이드 처리@@@@ -->
 				<a class="prev" style="display: flex; align-items: center; " id="prev_slide">&#10094;</a>
-				
-				
 					<div style="display: flex; justify-content:space-around;" id = "slideShow">
-					<c:forEach var="areaId" items="">
+					<c:forEach var="seoulList" items="${seoulList}" >
 					<div>			
-
 					<a href="/oaga/area_randMark">					
-						<img class="imageList" style="width: 250px;border-radius: 1ex; margin: 15px;"  src="${imagePageList.imageUrl }" alt=""> 	
-						<h3 style="margin-left: 13px;">${imagePageList.areaGu}</h3>
+						<img class="imageList" style="width: 250px;border-radius: 1ex; margin: 15px;"  src="${seoulList.imageUrl}" alt=""  > 	
+						<h3 style="margin-left: 13px;" >${seoulList.guname}</h3>	
 					</div> 	
 					</a>
 					</c:forEach>
 					</div>	
-					
-					
 					<a class="next" style="display: flex; align-items: center;" id="next_slide">&#10095;</a>	
 				</div>
 				<br/>
 				<br/>
-				<!-- 
-				<div style="font-size: 25px; background-color: white; font-style: oblique;  margin-left: 50px; font-weight: bold;"  >부산</div>
-				<div class="img" style="display: flex; justify-content:space-around;" >			
-				<a class="prev" style="display: flex; align-items: center;" onclick="plusSlides(-1)">&#10094;</a>
-					<c:forEach var="imagePageList" items="${imagePageList.content}">
-<<<<<<< HEAD
-					<a href="/oaga/travel_randmark">		
-						<img class="imagePageList" style="width: 250px;border-radius: 1ex; "  src="${imagePageList.imageUrl }" alt="...">
-						<h3 >${imagePageList.guname }</h3> 	
-=======
-					<a href="#">
-						
-						<img class="imageList" style="width: 250px;border-radius: 1ex; "  src="${imagePageList.imageUrl }" alt="...">
-						<h3 >${imagePageList.areaGu }</h3> 	
+					<div style="font-size: 25px;font-style: oblique; margin-left: 50px; font-weight: bold;" >부산</div>
+				
+				<div class="img" style="display: flex; justify-content:space-around;">
+				<!--  슬라이드 처리@@@@ -->
+				<a class="prev" style="display: flex; align-items: center; " id="prev_slide">&#10094;</a>
+					<div style="display: flex; justify-content:space-around;" id = "slideShow">
+					<c:forEach var="busanList" items="${busanList}" >
+					<div>			
+					<a href="/oaga/area_randMark">					
+						<img class="imageList" style="width: 250px;border-radius: 1ex; margin: 15px;"  src="${busanList.imageUrl }" alt="" > 	
+						<h3 style="margin-left: 13px;">${busanList.guname}</h3>	
+					</div> 	
 					</a>
 					</c:forEach>
-					<a class="next" style="display: flex; align-items: center; onclick="plusSlides(1)">&#10095;</a>			
+					</div>	
+					<a class="next" style="display: flex; align-items: center;" id="next_slide">&#10095;</a>	
 				</div>
 				<br/>
 				<br/>
-				<div style="font-size: 25px; background-color: white; font-style: oblique;  margin-left: 50px; font-weight: bold;" >제주도</div>
-				<div class="img" style="display: flex; justify-content:space-around;" >		
-				<a class="prev" style="display: flex; align-items: center;" onclick="plusSlides(-1)">&#10094;</a>		
-					<c:forEach var="imagePageList" items="${imagePageList.content}">
-					<a href="#">						
-						<img class="imageList" style="width: 250px;border-radius: 1ex; "  src="${imagePageList.imageUrl }" alt="..."> 
-						<h3>${imagePageList.areaGu }</h3>						
-					</a>
-					</c:forEach>		
-					<a class="next" style="display: flex; align-items: center; onclick="plusSlides(1)">&#10095;</a>	
-				</div>
-				<br/>
-				<br/>
-					<div style="font-size: 25px; background-color: white; font-style: oblique;  margin-left: 50px; font-weight: bold;"  >부산</div>
-				<div class="img" style="display: flex; justify-content:space-around;" >			
-				<a class="prev" style="display: flex; align-items: center;" onclick="plusSlides(-1)">&#10094;</a>
-					<c:forEach var="imagePageList" items="${imagePageList.content}">
-					<a href="#">
-						
-						<img class="imageList" style="width: 250px;border-radius: 1ex; "  src="${imagePageList.imageUrl }" alt="...">
-						<h3 >${imagePageList.areaGu }</h3> 	
+				<div style="font-size: 25px;font-style: oblique; margin-left: 50px; font-weight: bold;" >제주</div>
+				
+				<div class="img" style="display: flex; justify-content:space-around;">
+				<!--  슬라이드 처리@@@@ -->
+				<a class="prev" style="display: flex; align-items: center; " id="prev_slide">&#10094;</a>
+					<div style="display: flex; justify-content:space-around;" id = "slideShow">
+					<c:forEach var="jejuList" items="${jejuList}" >
+					<div>			
+					<a href="/oaga/area_randMark">					
+						<img class="imageList" style="width: 250px;border-radius: 1ex; margin: 15px;"  src="${jejuList.imageUrl}" alt="" > 	
+						<h3 style="margin-left: 13px;">${jejuList.guname}</h3>	
+					</div> 	
 					</a>
 					</c:forEach>
-					<a class="next" style="display: flex; align-items: center; onclick="plusSlides(1)">&#10095;</a>			
+					</div>	
+					<a class="next" style="display: flex; align-items: center;" id="next_slide">&#10095;</a>	
 				</div>
 				<br/>
 				<br/>
-					<div style="font-size: 25px; background-color: white; font-style: oblique;  margin-left: 50px; font-weight: bold;"  >부산</div>
-				<div class="img" style="display: flex; justify-content:space-around;" >			
-				<a class="prev" style="display: flex; align-items: center;" onclick="plusSlides(-1)">&#10094;</a>
-					<c:forEach var="imagePageList" items="${imagePageList.content}">
-					<a href="#">
-						
-						<img class="imageList" style="width: 250px;border-radius: 1ex; "  src="${imagePageList.imageUrl }" alt="...">
-						<h3 >${imagePageList.areaGu }</h3> 	
+				
+				<div style="font-size: 25px;font-style: oblique; margin-left: 50px; font-weight: bold;" >대구</div>
+				
+				<div class="img" style="display: flex; justify-content:space-around;">
+				<!--  슬라이드 처리@@@@ -->
+				<a class="prev" style="display: flex; align-items: center; " id="prev_slide">&#10094;</a>
+					<div style="display: flex; justify-content:space-around;" id = "slideShow">
+					<c:forEach var="deaguList" items="${deaguList}" >
+					<div>			
+					<a href="/oaga/area_randMark">					
+						<img class="imageList" style="width: 250px;border-radius: 1ex; margin: 15px;"  src="${deaguList.imageUrl }" alt="" > 	
+						<h3 style="margin-left: 13px;">${deaguList.guname}</h3>	
+					</div> 	
 					</a>
 					</c:forEach>
-					<a class="next" style="display: flex; align-items: center; onclick="plusSlides(1)">&#10095;</a>			
+					</div>	
+					<a class="next" style="display: flex; align-items: center;" id="next_slide">&#10095;</a>	
 				</div>
 				<br/>
 				<br/>
-					<div style="font-size: 25px; background-color: white; font-style: oblique;  margin-left: 50px; font-weight: bold;"  >부산</div>
-				<div class="img" style="display: flex; justify-content:space-around;" >			
-				<a class="prev" style="display: flex; align-items: center;" onclick="plusSlides(-1)">&#10094;</a>
-					<c:forEach var="imagePageList" items="${imagePageList.content}">
-					<a href="#">
-						
-						<img class="imageList" style="width: 250px;border-radius: 1ex; "  src="${imagePageList.imageUrl }" alt="...">
-						<h3 >${imagePageList.areaGu }</h3> 	
+				
+				<div style="font-size: 25px;font-style: oblique; margin-left: 50px; font-weight: bold;" >인천</div>
+				
+				<div class="img" style="display: flex; justify-content:space-around;">
+				<!--  슬라이드 처리@@@@ -->
+				<a class="prev" style="display: flex; align-items: center; " id="prev_slide">&#10094;</a>
+					<div style="display: flex; justify-content:space-around;" id = "slideShow">
+					<c:forEach var="inchunList" items="${inchunList}" >
+					<div>			
+					<a href="/oaga/area_randMark">					
+						<img class="imageList" style="width: 250px;border-radius: 1ex; margin: 15px;"  src="${inchunList.imageUrl }" alt="" > 	
+						<h3 style="margin-left: 13px;">${inchunList.guname}</h3>	
+					</div> 	
 					</a>
 					</c:forEach>
-					<a class="next" style="display: flex; align-items: center; onclick="plusSlides(1)">&#10095;</a>			
+					</div>	
+					<a class="next" style="display: flex; align-items: center;" id="next_slide">&#10095;</a>	
 				</div>
-				<br/>
-				<br/>
-					<div style="font-size: 25px; background-color: white; font-style: oblique;  margin-left: 50px; font-weight: bold;"  >부산</div>
-				<div class="img" style="display: flex; justify-content:space-around;" >			
-				<a class="prev" style="display: flex; align-items: center;" onclick="plusSlides(-1)">&#10094;</a>
-					<c:forEach var="imagePageList" items="${imagePageList.content}">
-					<a href="#">
-						
-						<img class="imageList" style="width: 250px;border-radius: 1ex; "  src="${imagePageList.imageUrl }" alt="...">
-						<h3 >${imagePageList.areaGu }</h3> 	
->>>>>>> parent of a52b229 (여행지 페이지GetMapping)
-					</a>
-					</c:forEach>
-					<a class="next" style="display: flex; align-items: center; onclick="plusSlides(1)">&#10095;</a>			
-				</div>
-				 -->
 				<br/>
 				<br/>
 				
@@ -168,7 +150,8 @@
 	<br/>
 	
 	<br/>
-
+<!-- 
 <script src="../js/travelInfo.js"></script>
+ -->
 <%@ include file="../layout/footer.jsp" %>
 

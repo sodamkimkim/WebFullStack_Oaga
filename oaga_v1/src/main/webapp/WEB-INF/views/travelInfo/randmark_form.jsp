@@ -3,6 +3,9 @@
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../layout/header.jsp" %>
 	<br/>
+	
+	<input type="hidden" var="">
+	
 	<div style="width: 100%;display: flex; justify-content: center;">
 		<div style="background-color: navy; width: 1200px; height: 500px;">
 			 <img alt="" src="">

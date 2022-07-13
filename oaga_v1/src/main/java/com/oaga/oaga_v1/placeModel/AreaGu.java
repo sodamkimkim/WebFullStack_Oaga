@@ -1,3 +1,4 @@
+
 package com.oaga.oaga_v1.placeModel;
 
 import java.util.List;
@@ -41,5 +42,10 @@ public class AreaGu {
     @OneToMany(mappedBy = "areaGu", fetch =  FetchType.EAGER, cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties({"areaGu"})
     private List<Randmark> randmark;
+    
+    @Column(nullable = false)
+    private String imageUrl;
+    
+    private String originFileName;
 
 }
