@@ -26,27 +26,28 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @Entity
-public class Randmark {
+public class GuInfo {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(nullable = false, length = 30)
-    private String name;
-    @Lob
-    private String content;
-    @Column(nullable = false, length = 100)
-    private String address;
-    @Column(nullable = false)
-    private String imageUrl;
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private int id;
+	    @Column(nullable = false, length = 30)
+	    private String name;
+	    @Lob
+	    private String content;
+	    @Column(nullable = false, length = 100)
+	    private String address;
+	    @Column(nullable = false)
+	    private String imageUrl;
 
-    @ManyToOne
-    @JoinColumn(name = "areaGu")
-    private AreaGu areaGu;
-    
-    @OneToMany(mappedBy = "randmark", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-    private List<Restaurant> restaurant;
+	    @ManyToOne
+	    @JoinColumn(name = "areaGu")
+	    private AreaGu areaGu;
+	    
+	    @OneToMany(mappedBy = "guInfo", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+	    private List<Restaurant> restaurant;
 
-    @CreationTimestamp
-    private Timestamp createDate;
+	    @CreationTimestamp
+	    private Timestamp createDate;
+	
 }

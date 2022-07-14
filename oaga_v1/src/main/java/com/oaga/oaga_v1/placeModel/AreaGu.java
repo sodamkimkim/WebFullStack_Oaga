@@ -41,7 +41,7 @@ public class AreaGu {
 
     @OneToMany(mappedBy = "areaGu", fetch =  FetchType.EAGER, cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties({"areaGu"})
-    private List<Randmark> randmark;
+    private List<GuInfo> guInfo;
     
     @Column(nullable = false)
     private String imageUrl;

@@ -2,31 +2,31 @@ package com.oaga.oaga_v1.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.oaga.oaga_v1.placeModel.AreaGu;
+import com.oaga.oaga_v1.placeModel.GuInfo;
+import com.oaga.oaga_v1.repository.RandMarkRepository;
 import com.oaga.oaga_v1.repository.TravelInfoRepository;
 
 @Service
 public class TravelInfoService {
 	@Autowired
 	private TravelInfoRepository travelInfoRepository;
-	
-	@Transactional
-	public Page<AreaGu> imageList(Pageable pageable){
-		System.out.println("레파지토리에있는 리스트 라이즈 : " + travelInfoRepository.findAll().size());
-		return travelInfoRepository.findAll(pageable);
-
-	}
+//	@Autowired
+//	private RandMarkRepository markRepository;
 	
 //	@Transactional
-//	public Page<AreaGu> areaImage(Pageable pageable, int areaid){
-//		return travelInfoRepository.findByAreaId(areaid, pageable);
+//	public List<GuInfo> guInfo(int areaGu){
 //		
+//		return markRepository.mFindByAreaGu(areaGu);
+
 //	}
+	
+
+	
 	@Transactional
 	public List<AreaGu> seoul(){
 		return travelInfoRepository.seoul();

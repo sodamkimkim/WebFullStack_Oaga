@@ -12,15 +12,15 @@ import com.oaga.oaga_v1.repository.TravelInfoRepository;
 
 public class TravelDummyTest {
 
-	@Autowired
-	private TravelInfoRepository infoRepository;
+//	@Autowired
+//	private TravelInfoRepository infoRepository;
 	
 	
-	
-	@GetMapping("/dummy/travel/{areaid}")
-	@ResponseBody
-	public Page<AreaGu> dummy(@PathVariable int areaid,Pageable pageable) {
-		return infoRepository.findByAreaId(areaid, pageable);
-		}
-	
+//	
+//	@GetMapping("/dummy/travel/{areaid}")
+//	@ResponseBody
+//	public Page<AreaGu> dummy(@PathVariable int areaid,Pageable pageable) {
+//		return infoRepository.findByAreaId(areaid, pageable);
+//		}
+//	
 }

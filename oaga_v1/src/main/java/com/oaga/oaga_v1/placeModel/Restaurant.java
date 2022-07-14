@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 public class Restaurant {
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(nullable = false,length = 30)
@@ -34,9 +34,12 @@ public class Restaurant {
     private String address;
 
     @ManyToOne
-    @JoinColumn(name = "randmark")
-    private Randmark randmark;
+    @JoinColumn(name = "guInfo")
+    private GuInfo guInfo;
 
+    @Column(nullable = false)
+    private String imageUrl;
+    
     @CreationTimestamp
     private Timestamp createDate;
 
