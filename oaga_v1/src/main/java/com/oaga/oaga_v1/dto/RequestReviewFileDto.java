@@ -21,16 +21,18 @@ public class RequestReviewFileDto {
 	private String uuid;
 	private String title;
 	private String content;
+	private User user;
 	private IsWritingType isWriting;
 	private String areaName;
 	private ThemeType theme;
 	private int count;
 	
-	public Review toEntity(String reviewImageUrl) {
+	public Review toEntity(String reviewImageUrl, User user) {
 		return Review.builder()
 				.title(title)
 				.content(content)
 				.isWriting(isWriting)
+				.user(user)
 				.areaName(areaName)
 				.theme(theme)
 				.count(count)

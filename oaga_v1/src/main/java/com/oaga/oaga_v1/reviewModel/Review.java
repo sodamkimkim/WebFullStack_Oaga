@@ -20,6 +20,7 @@ import javax.persistence.OneToMany;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.oaga.oaga_v1.userModel.User;
 
 import lombok.AllArgsConstructor;
@@ -68,8 +69,9 @@ public class Review {
 	private int count;
 	
 	// 유저 정보
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	@JoinColumn(name = "userId")
+	@JsonIgnoreProperties({"password", "role", "email", "username", "oauth"})
 	private User user;
 	
 	// 댓글 정보

@@ -17,6 +17,7 @@ import javax.persistence.OneToMany;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.oaga.oaga_v1.reviewModel.Review;
 
 //localhost:9090/oaga/review
@@ -56,6 +57,7 @@ public class User {
 	private String oauth;
 	
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"user"})
 	private List<Review> reviews;
 	
 	@CreationTimestamp // 시간 자동입력

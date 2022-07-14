@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import com.oaga.oaga_v1.dto.RequestReviewFileDto;
 import com.oaga.oaga_v1.repository.ReviewRepository;
 import com.oaga.oaga_v1.reviewModel.Review;
+import com.oaga.oaga_v1.userModel.User;
 
 @Service
 public class ReviewService {
@@ -32,7 +33,7 @@ public class ReviewService {
 	}
 	
 	// 리뷰 등록
-	public void saveReview(RequestReviewFileDto dto) {
+	public void saveReview(RequestReviewFileDto dto, User user) {
 		UUID uuid = UUID.randomUUID();
 		String imageFileName = uuid.toString() + "." + extracktExt(dto.getFile().getOriginalFilename());
 		String newFileName = (imageFileName.trim()).replaceAll("\\s", "");
@@ -40,7 +41,7 @@ public class ReviewService {
 		
 		try {
 			Files.write(imageFilePath, dto.getFile().getBytes());
-			reviewRepository.save(dto.toEntity(newFileName));
+			reviewRepository.save(dto.toEntity(newFileName, user));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

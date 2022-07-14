@@ -20,38 +20,49 @@
 	</div>
 </div>
 
-<div class="page silver logged_box">
-	<div class="wrap logged">
-		<img class="logged_user_img" src="images/reviewPage/profile_basic.png"
-			onerror="this.src='images/reviewPage/profile_basic.png';">
-		<div class="logged_left">
-			<div class="logged_name">임희진</div>
-			<div class="clear"></div>
-			<a
-				href="/ko/mypage/et_2207050522410907249001657009361?type=clipboard"
-				class="logged_cnt_box logged_clip"> <b>작성한 리뷰</b> <span>0</span>
-			</a>
-			<div class="logged_line">&nbsp;</div>
-			<a href="/ko/mypage/et_2207050522410907249001657009361?type=plan"
-				class="logged_cnt_box logged_plan"> <b>좋아요</b> <span>0</span>
-			</a>
-			<div class="logged_line">&nbsp;</div>
-			<a href="/ko/mypage/et_2207050522410907249001657009361?type=my_qa"
-				class="logged_cnt_box logged_qa"> <b>Q&amp;A</b> <span>0</span>
-			</a>
-			<div class="clear"></div>
-		</div>
-		<a href="/oaga/write">
-			<div class="logged_btn">
-				<div class="logged_btn_ico">
-					<img src="images/reviewPage/ico_review.png" />
+<c:choose>
+	<c:when test="${empty principal}">
+	</c:when>
+	<c:otherwise>
+		<input type="hidden" id="principal--user" value="${principal.user.reviews}">
+		<div class="page silver logged_box">
+			<div class="wrap logged">
+				<img class="logged_user_img"
+					src="images/reviewPage/profile_basic.png"
+					onerror="this.src='images/reviewPage/profile_basic.png';">
+				<div class="logged_left">
+					<div class="logged_name">${principal.user.userNickName}</div>
+					<div class="clear"></div>
+					<a
+						href="/ko/mypage/et_2207050522410907249001657009361?type=clipboard"
+						class="logged_cnt_box logged_clip"> <b>작성한 리뷰</b> <span>0</span>
+					</a>
+					<div class="logged_line">&nbsp;</div>
+					<a href="/ko/mypage/et_2207050522410907249001657009361?type=plan"
+						class="logged_cnt_box logged_plan"> <b>좋아요</b> <span>0</span>
+					</a>
+					<div class="logged_line">&nbsp;</div>
+					<a href="/ko/mypage/et_2207050522410907249001657009361?type=my_qa"
+						class="logged_cnt_box logged_qa"> <b>Q&amp;A</b> <span>0</span>
+					</a>
+					<div class="clear"></div>
 				</div>
-				리뷰 작성
+				<a href="/oaga/write">
+					<div class="logged_btn">
+						<div class="logged_btn_ico">
+							<img src="images/reviewPage/ico_review.png" />
+						</div>
+						리뷰 작성
+					</div>
+				</a>
+				<div class="clear"></div>
 			</div>
-		</a>
-		<div class="clear"></div>
-	</div>
-</div>
+		</div>
+	</c:otherwise>
+</c:choose>
+
+
+
 
 <!-- 베스트 리뷰 리스트 ================================================ -->
 
@@ -75,7 +86,9 @@
 				<div class="box">
 					<a href="/oaga/detail">
 						<div class="ImgBox">
-							<img src="http://localhost:9090/oaga/upload/${reviews.reviewImageUrl}" alt="" />
+							<img
+								src="http://localhost:9090/oaga/upload/${reviews.reviewImageUrl}"
+								alt="" />
 							<div class="txt">
 								<h4>
 									2018-09-13 <span> 7DAYS</span>
@@ -206,6 +219,9 @@
 	</div>
 </section>
 
+<script type="text/javascript">
+	console.log($("#principal--user"));
+</script>
 
 
 
