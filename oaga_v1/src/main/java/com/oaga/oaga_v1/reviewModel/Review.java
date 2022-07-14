@@ -63,9 +63,9 @@ public class Review {
 	private int count;
 	
 	// 유저 정보
-//	@ManyToOne(fetch = FetchType.EAGER)
-//	@JoinColumn(name = "userId")
-//	private User user;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "userId")
+	private User user;
 	
 	// 댓글 정보
 //	@OneToMany(mappedBy = "review", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)

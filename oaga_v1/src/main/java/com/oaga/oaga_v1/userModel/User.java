@@ -55,8 +55,8 @@ public class User {
 	//소셜 로그인 가입자 구분
 	private String oauth;
 	
-//	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-//	private List<Review> reviews;
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+	private List<Review> reviews;
 	
 	@CreationTimestamp // 시간 자동입력
 	private Timestamp createDate;

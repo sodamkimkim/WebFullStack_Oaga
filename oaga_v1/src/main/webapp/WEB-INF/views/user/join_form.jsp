@@ -31,7 +31,6 @@ a {
 
 .mWrap {
 	width: 500px;
-	height: 330px;
 	padding-top: 100px;
 	margin-left: auto;
 	margin-right: auto;
@@ -65,9 +64,7 @@ h1 {
 }
 
 .formRow2 {
-	display: flex;
-	justify-content: center;
-	margin-top: 15px;
+	text-align: center;
 }
 
 .formRow2 .btn_join {
@@ -88,7 +85,7 @@ h1 {
 }
 
 footer {
-	
+	margin-top: 20px;
 }
 
 .fWrap {
@@ -109,21 +106,6 @@ footer {
 	margin-left: auto;
 	margin-right: auto;
 }
-
-.con p {
-	text-align: center;
-	font-size: 11px;
-	color: rgba(3, 3, 3, 0.6);
-	padding-top: 30px;
-}
-
-.con p a {
-	color: rgba(245, 161, 25, 0.9);
-}
-
-.con p a:hover {
-	text-decoration: underline;
-}
 </style>
 </head>
 <body>
@@ -137,10 +119,13 @@ footer {
 					<!-- csrf???? xss -->
 					<div class="formRow1">
 						<input type="text" class="form-input" placeholder="Enter ID"
-							id="username" name="username" /> <input type="password"
+							id="username" name="username" />
+						<input type="password"
 							class="form-input" placeholder="Enter password" id="password"
-							name="password" /> <input type="email" class="form-input"
-							placeholder="Enter email" id="email" name="email" />
+							name="password" /> 
+							<br /> 
+						<input type="text" class="form-input" placeholder="Enter name" id="userNickName" name="userNickName" />
+						<input type="email" class="form-input" placeholder="Enter email" id="email" name="email" />
 					</div>
 					<!--formRow1-->
 					<div class="formRow2">
@@ -161,5 +146,4 @@ footer {
 	</div>
 	<!--main-->
 </body>
-
 </html>

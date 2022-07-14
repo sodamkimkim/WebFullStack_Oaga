@@ -51,10 +51,8 @@ public class UserService {
 	@Transactional(readOnly = true)
 	public User searchUser(String username) {
 		User userEntity = userRepository.findByUsername(username).orElseGet(()->{
-			System.out.println("유저 못찾음 여긴userservice");
 			return new User();
 		});
-		System.out.println("여긴 userservice");
 
 		return userEntity;
 	}
