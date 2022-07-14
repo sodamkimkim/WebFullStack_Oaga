@@ -73,9 +73,9 @@
 			<!--  row1 박스 태그 시작 -->
 			<c:forEach var="reviews" items="${reviews.content}" begin="0" end="2">
 				<div class="box">
-					<a href="#">
+					<a href="/oaga/detail">
 						<div class="ImgBox">
-							<img src="images/mainpage/plan01.jpg" alt="" />
+							<img src="http://localhost:9090/oaga/upload/${reviews.reviewImageUrl}" alt="" />
 							<div class="txt">
 								<h4>
 									2018-09-13 <span> 7DAYS</span>
@@ -87,8 +87,8 @@
 
 						<div class="data">
 							<ul class="info">
-								<li class="withFriend">${reviews.theme}</li>
 								<li class="placeName">${reviews.areaName}</li>
+								<li class="withFriend">${reviews.theme}</li>
 								<li class="userName">작성자</li>
 							</ul>
 							<!--info-->
@@ -125,8 +125,8 @@
 
 						<div class="data">
 							<ul class="info">
-								<li class="withFriend">${reviews.theme}</li>
 								<li class="placeName">${reviews.areaName}</li>
+								<li class="withFriend">${reviews.theme}</li>
 								<li class="userName">작성자</li>
 							</ul>
 							<!--info-->
