@@ -60,19 +60,22 @@ public class UserController {
 	@GetMapping("/auth/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		if(authentication != null) {
+		if (authentication != null) {
 			new SecurityContextLogoutHandler().logout(request, response, authentication);
 		}
 		return "redirect:/";
 	}
 
-
+	@GetMapping("/auth/myPage")
+	public String myPage() {
+		return "user/update_form";
+	}
 	
-	// TODO update_form 만들어줄 것
-	@GetMapping("/user/update_form")
+	@GetMapping("/auth/user/update_form")
 	public String updateForm() {
 		return "user/update_form";
 	}
+	
 
 	@PostMapping("/auth/joinProc")
 	public String save(User user) {
