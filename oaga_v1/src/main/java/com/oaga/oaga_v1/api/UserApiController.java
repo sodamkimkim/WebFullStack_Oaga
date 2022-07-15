@@ -22,7 +22,7 @@ public class UserApiController {
 	@Autowired
 	private AuthenticationManager authenticationManager;
 	
-	@PutMapping("/user")
+	@PutMapping("/auth/user")
 	public ResponseDto<Integer> update(@RequestBody User user){
 		userService.updateUser(user);
 		Authentication authentication = authenticationManager.authenticate(

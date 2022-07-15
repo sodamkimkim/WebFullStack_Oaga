@@ -46,6 +46,7 @@ public class UserService {
 			String hashPassword = encoder.encode(rawPassword);
 			userEntity.setPassword(hashPassword);
 			userEntity.setEmail(user.getEmail());
+			userEntity.setUserNickName(user.getUserNickName());
 		}
 	}
 	@Transactional(readOnly = true)
