@@ -71,7 +71,6 @@ public class Review {
 	// 유저 정보
 	@ManyToOne
 	@JoinColumn(name = "userId")
-	@JsonIgnoreProperties({"password", "role", "email", "username", "oauth"})
 	private User user;
 	
 	// 댓글 정보

@@ -48,6 +48,11 @@ public class ReviewService {
 		
 //		reviewRepository.save(review);
 	}
+	
+	public int reviewCount(int userId) {
+		return reviewRepository.reviewCount(userId);
+	}
+	
 	// 조회순으로 출력
 	public Page<Review> getBestReviewList(Pageable pageable) {
 		return reviewRepository.findAll(pageable);

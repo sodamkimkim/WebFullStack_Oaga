@@ -1,5 +1,7 @@
 package com.oaga.oaga_v1.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,22 +15,34 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.oaga.oaga_v1.auth.PrincipalDetail;
 import com.oaga.oaga_v1.dto.RequestReviewFileDto;
+import com.oaga.oaga_v1.repository.UserRepository;
 import com.oaga.oaga_v1.reviewModel.IsWritingType;
 import com.oaga.oaga_v1.reviewModel.Review;
 import com.oaga.oaga_v1.service.ReviewService;
+import com.oaga.oaga_v1.service.UserService;
+import com.oaga.oaga_v1.userModel.User;
 
 @Controller
 public class ReviewController {
 
 	@Autowired
 	private ReviewService reviewService;
+	
+	@Autowired
+	private UserService userService;
 
 	// 베스트 순으로 6개, 베스트 리뷰어 5개
 	@GetMapping("/review")
 	public String reviewHome(@PageableDefault(size = 6, sort = "count", direction = Direction.DESC) Pageable pageable,
-			Model model) {
+			Model model, @AuthenticationPrincipal PrincipalDetail detail) {
 		Page<Review> reviews = reviewService.getBestReviewList(pageable);
+		int reviewCount = reviewService.reviewCount(detail.getUser().getId());
+		List<User> bestUser = userService.bestUser();
+		System.out.println(bestUser);
+		
 		model.addAttribute("reviews", reviews);
+		model.addAttribute("reviewCount", reviewCount);
+		model.addAttribute("bestUser", bestUser);
 		return "/review/home";
 	}
 

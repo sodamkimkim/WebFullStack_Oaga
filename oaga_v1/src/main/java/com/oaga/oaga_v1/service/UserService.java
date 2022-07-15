@@ -1,5 +1,7 @@
 package com.oaga.oaga_v1.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -56,5 +58,10 @@ public class UserService {
 		});
 
 		return userEntity;
+	}
+	
+	// 베스트 리뷰어
+	public List<User> bestUser() {
+		return userRepository.bestUser();
 	}
 }
