@@ -1,111 +1,111 @@
 @import url(../style.css);
 
 .reviewDetailWrap {
-    width: 1082px;
-    padding: 30px;
-    margin-right: auto;
-    margin-left: auto;
-    color: #333;
+	width: 1082px;
+	padding: 30px;
+	margin-right: auto;
+	margin-left: auto;
+	color: #333;
 }
 
 .reviewDetailForm h3 {
-    font-size: 20px;
-    line-height: 4;
+	font-size: 20px;
+	line-height: 4;
 }
 
 .reviewDetailHeader {
-    padding-bottom: 10px;
+	padding-bottom: 10px;
 }
 
 .reviewDetailBody {
-    padding-top: 20px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+	padding-top: 20px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid rgba(51, 51, 51, 0.3);
 }
 
 .reviewDetailFooter {
-    padding-top: 10px;
+	padding-top: 10px;
 }
 
-.contentMeta .contentMeta_left,
-.contentMeta .contentMeta_right {
-    width: 45%;
-    height: 20px;
-    font-size: 12px;
-    margin-top: 5px;
-    margin-bottom: 2px;
+.contentMeta .contentMeta_left, .contentMeta .contentMeta_right {
+	width: 45%;
+	height: 20px;
+	font-size: 12px;
+	margin-top: 5px;
+	margin-bottom: 2px;
 }
 
 .contentMeta_left {
 	padding-left: 10px;
 }
 
-.contentMeta_right {}
+.contentMeta_right {
+	
+}
 
 .contentMeta {
-    display: flex;
-    justify-content: space-between;
-    /* border-bottom: 1px solid rgba(51, 51, 51, 0.3); */
+	display: flex;
+	justify-content: space-between;
+	/* border-bottom: 1px solid rgba(51, 51, 51, 0.3); */
 }
 
 .contentBody {
-    padding: 70px;
+	padding: 70px;
 }
 
 .contentBody_row1 {
-    margin-bottom: 50px;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
+	margin-bottom: 50px;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .contentBody .OagaPlace {
-    margin-bottom: 10px;
-    border-top: 3px solid rgba(51, 51, 51, 0.1);
-    border-bottom: 3px solid rgba(51, 51, 51, 0.1);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    height: 100px;
+	margin-bottom: 10px;
+	border-top: 3px solid rgba(51, 51, 51, 0.1);
+	border-bottom: 3px solid rgba(51, 51, 51, 0.1);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height: 100px;
 }
 
 .contentBody span {
-    border-bottom: 3px solid rgba(51, 51, 51, 0.1);
-    display: block;
-    width: 200px;
-    margin-top: 70px;
-    margin-left: auto;
-    margin-right: auto;
-
+	border-bottom: 3px solid rgba(51, 51, 51, 0.1);
+	display: block;
+	width: 200px;
+	margin-top: 70px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .contentBody_row2 {
-    padding-bottom: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
+	padding-bottom: 20px;
+	padding-left: 50px;
+	padding-right: 50px;
 }
 
 .contentBody_row2 p {
-    word-break: break-all;
-    line-height: 2;
-    font-size: 18px;
-    font-weight: lighter;
+	word-break: break-all;
+	line-height: 2;
+	font-size: 18px;
+	font-weight: lighter;
 }
 
 .reviewDetailFooter {
-    padding-top: 30px;
-    padding-bottom: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
+	padding-top: 30px;
+	padding-bottom: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
 }
 
 .reviewDetailFooter_btn {
-    width: 64px;
-    height: 28px;
-    border: transparent;
-    color: #fff;
-    border-radius: 5px;
-    background-color: #f9bb57;
-    float: right;
+	width: 64px;
+	height: 28px;
+	border: transparent;
+	color: #fff;
+	border-radius: 5px;
+	background-color: #f9bb57;
+	float: right;
 }
 
 .contentThemeBox {
@@ -142,11 +142,17 @@
 	margin-left: 20px;
 	margin-top: auto;
 	margin-bottom: auto;
+	margin-top: auto;
 }
+
 .profile_name {
 	text-align: center;
 	font-size: 16px;
 	font-weight: 700px;
+}
+
+.replyBox {
+	display: flex;
 }
 
 .profile_likes {
@@ -154,4 +160,48 @@
 	margin-top: auto;
 	margin-bottom: auto;
 	font-size: 12px;
+}
+
+.reply_image {
+	margin: 10px;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	width: 60px;
+}
+
+.reply_i {
+	margin: 10px;
+	width: 80%;
+	height: 60px;
+	width: 80%;
+}
+
+.reply_u {
+	margin-left: 10px;
+	margin-top: 1%;
+	font-size: 18px;
+}
+
+.reply_t {
+	margin-left: 10px;
+	margin-top: 5px;
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+.reply_d {
+	width: 50px;
+	height: 20px;
+	float: right;
+}
+
+.reply_c {
+	margin-left: 100px;
+	width: 80%;
+	word-wrap: break-word;
+}
+
+.reply_wBox {
+	display: flex;
 }
