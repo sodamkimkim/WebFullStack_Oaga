@@ -66,12 +66,13 @@ public class UserController {
 		return "redirect:/";
 	}
 
-	@GetMapping("/auth/myPage")
+	@GetMapping("/myPage_form")
 	public String myPage() {
-		return "user/update_form";
+		return "user/mypage_form";
 	}
 	
-//	@GetMapping("/auth/user/update_form")
+	//TODO 마이페이지 안에서 유저인포업데이트 폼 달아주기
+//	@GetMapping("/auth/user/updateUserInfo_form")
 //	public String updateForm() {
 //		return "user/update_form";
 //	}
