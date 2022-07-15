@@ -51,9 +51,9 @@ public class ReviewController {
 		return "/review/write";
 	}
 
-	@GetMapping("/list")
+	@GetMapping("/userPage")
 	public String reviewList() {
-		return "/review/list";
+		return "/review/userPage";
 	}
 	
 	@GetMapping("/detail")

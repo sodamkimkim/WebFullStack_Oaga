@@ -38,8 +38,13 @@ spring:
       
   jackson:
     serialization:
-
       fail-on-empty-beans: false
+      
+  servlet:
+    multipart:
+      max-file-size: 20MB #파일 하나의 최대 용량
+      max-request-size: 200MB #한 번에 동시에 보낼 수 있는 파일 용량
+
 oaga:
   key: 25c18c1ed58157a457c41fbbcfd4a2b554648395f99c3fe5dc043c03ff6fec54ebe2adfa517897ad4b1c38d9234571c335afe244d8d686f0f9b69e22bb6b6b30
 
