@@ -12,6 +12,9 @@ uri="http://www.springframework.org/security/tags"%>
     <title>사용자 정보 수정</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--  <link rel="stylesheet" href="css/user/joinstyle.css" /> -->
+    <!-- jQuery library -->
+	<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style type="text/css">
       * {
         margin: 0;
@@ -82,7 +85,7 @@ uri="http://www.springframework.org/security/tags"%>
         text-align: center;
       }
 
-      .formRow2 .btn_userInfoUpdate {
+      .formRow2 .btn_update {
         margin-top: 15px;
         width: 280px;
         height: 30px;
@@ -96,7 +99,7 @@ uri="http://www.springframework.org/security/tags"%>
         background-color: rgba(245, 161, 25, 0.9);
       }
 
-      .formRow2 .btn_userInfoUpdate:hover {
+      .formRow2 .btn_update:hover {
         cursor: pointer;
       }
     </style>
@@ -109,7 +112,7 @@ uri="http://www.springframework.org/security/tags"%>
         </h1>
         <div class="con">
           <form action="" method="post">
-            <!-- csrf???? xss -->
+			<input type="hidden" id="id" value="${principal.user.id}">
             <div class="formRow1">
               <div class="update_lbl_Input">
                 <label class="update_lbl" for="username"> ID: </label>
@@ -131,17 +134,17 @@ uri="http://www.springframework.org/security/tags"%>
                 </div>
               </c:if>
             </div>
+            <div class="formRow2">
+              <button type="button" id="btn-update" class="btn btn_update">정보 수정 완료</button>
+            </div>
             <!--formRow1-->
           </form>
-            <div class="formRow2">
-              <button type="button" id="btn_userInfoUpdate" class="btn btn_userInfoUpdate">정보 수정 완료</button>
-            </div>
         </div>
         <!--con-->
       </div>
       <!--mWrap-->
     </div>
     <!--main-->
-  <script src="/js/user.js"></script>
+  <script src="/oaga/js/user.js"></script>
   </body>
 </html>

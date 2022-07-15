@@ -71,10 +71,10 @@ public class UserController {
 		return "user/update_form";
 	}
 	
-	@GetMapping("/auth/user/update_form")
-	public String updateForm() {
-		return "user/update_form";
-	}
+//	@GetMapping("/auth/user/update_form")
+//	public String updateForm() {
+//		return "user/update_form";
+//	}
 	
 
 	@PostMapping("/auth/joinProc")
