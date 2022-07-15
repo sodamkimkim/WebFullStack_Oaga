@@ -3,11 +3,15 @@
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../layout/header.jsp" %>
 	<br/>
-	
+	<!-- 
+	 <c:foreach var="abc" items="${aa}">
+	 ifs --- 2 
 	 
-	
+	 else 1   	
+	 </c:foreach>
+	 -->
 	<div style="width: 100%;display: flex; justify-content: center;">
-		<div style="width: 1200px; height: 500px;">
+		<div style="width: 1200px; height: 500px;" >
 			 <img alt="" src="" style="width: 170px; height:170px; border-radius: 1ex; margin: 15px;">
 		</div>
 	</div>

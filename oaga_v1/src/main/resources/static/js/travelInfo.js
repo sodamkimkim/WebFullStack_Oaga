@@ -4,3 +4,22 @@ var swiperContainer = new Swiper('.swiper-container', {
    
 });
  
+ 
+ 
+function getAreaId(){
+	let data = {
+		id: $(".id").val(),
+	}
+	console.log(data);
+	$.ajax({
+		type: "POST",
+		url: "/api/getAreaId/" + id,
+		data: JSON.stringify(data),
+		contentType: "application/json; charset=utf-8",
+		dataType: "json"
+	}).done(function(){
+		alert("ddd");
+	}).fail(function(){
+		
+	});
+}

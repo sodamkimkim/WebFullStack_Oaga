@@ -34,7 +34,9 @@ public class Area {
     @Column(nullable = false, length = 200)
     private String content;
    
-
+    @Column(nullable = false)
+    private String mainImageUrl;
+    
     @OneToMany(mappedBy = "area", fetch =  FetchType.EAGER, cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties({"area"})
     private List<AreaGu> areaGus; 
