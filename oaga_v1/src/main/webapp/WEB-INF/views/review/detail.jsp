@@ -95,7 +95,9 @@
 				<!--contentBody-->
 			</div>
 			<!--reviewDetailBody-->
-
+			
+			<!--댓글 작성/ 목록-->
+			
 			<div class="reviewDetailFooter">
 				<button class="reviewDetailFooter_btn">
 					<a href="#">목록</a>
