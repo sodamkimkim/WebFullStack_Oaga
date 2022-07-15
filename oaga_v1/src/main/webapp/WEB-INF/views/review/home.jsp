@@ -8,7 +8,6 @@
 	<div class="wrap">
 		<h5 class="review_search_title">보고싶은 리뷰를 검색하여 가고싶은 지역의 후기를 찾아보세요</h5>
 
-
 		<!-- 사진이나 화면 추가 -->
 		<p class="review_search_coment">리뷰 검색하기</p>
 		<div class="review_search_area">
@@ -24,7 +23,6 @@
 	<c:when test="${empty principal}">
 	</c:when>
 	<c:otherwise>
-		<input type="hidden" id="principal--user" value="${principal.user.reviews}">
 		<div class="page silver logged_box">
 			<div class="wrap logged">
 				<img class="logged_user_img"
@@ -35,7 +33,7 @@
 					<div class="clear"></div>
 					<a
 						href="/ko/mypage/et_2207050522410907249001657009361?type=clipboard"
-						class="logged_cnt_box logged_clip"> <b>작성한 리뷰</b> <span>0</span>
+						class="logged_cnt_box logged_clip"> <b>작성한 리뷰</b> <span>${reviewCount}</span>
 					</a>
 					<div class="logged_line">&nbsp;</div>
 					<a href="/ko/mypage/et_2207050522410907249001657009361?type=plan"
@@ -126,7 +124,7 @@
 				<div class="box">
 					<a href="#">
 						<div class="ImgBox">
-							<img src="images/mainpage/plan01.jpg" alt="" />
+							<img src="http://localhost:9090/oaga/upload/${reviews.reviewImageUrl}" alt="" />
 							<div class="txt">
 								<h4>
 									2018-09-13 <span> 7DAYS</span>
@@ -173,45 +171,18 @@
 			가장 많이 받은 베스트 리뷰어들</p>
 		<div class="best_reviewer_box">
 			<div style="display: flex; margin: 0 auto;">
+			
+			<c:forEach var="bestuser" items="${bestUser}">
 				<div class="box" style="display: flex;">
 					<a class="best_reviewer_a" href="/oaga/list"> <img
-						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
-						<p class="best_reviewer_name">사용자이름</p>
-						<p class="best_reviewer_count">리뷰수</p>
+						src="images/reviewPage/profile_basic.png" class="best_reviewer_profile">
+						<p class="best_reviewer_name">${bestuser.userNickName}</p>
+						<p class="best_reviewer_count">${bestuser.likes}</p>
 					</a>
 				</div>
+			</c:forEach>
+				
 
-				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="/oaga/list"> <img
-						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
-						<p class="best_reviewer_name">사용자이름</p>
-						<p class="best_reviewer_count">리뷰수</p>
-					</a>
-				</div>
-
-				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="/oaga/list"> <img
-						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
-						<p class="best_reviewer_name">사용자이름</p>
-						<p class="best_reviewer_count">리뷰수</p>
-					</a>
-				</div>
-
-				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="/oaga/list"> <img
-						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
-						<p class="best_reviewer_name">사용자이름</p>
-						<p class="best_reviewer_count">리뷰수</p>
-					</a>
-				</div>
-
-				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="/oaga/list"> <img
-						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
-						<p class="best_reviewer_name">사용자이름</p>
-						<p class="best_reviewer_count">리뷰수</p>
-					</a>
-				</div>
 			</div>
 
 
@@ -219,9 +190,6 @@
 	</div>
 </section>
 
-<script type="text/javascript">
-	console.log($("#principal--user"));
-</script>
 
 
 
