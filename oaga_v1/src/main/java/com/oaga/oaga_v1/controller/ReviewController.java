@@ -31,8 +31,20 @@ public class ReviewController {
 	@Autowired
 	private UserService userService;
 
-	// 베스트 순으로 6개, 베스트 리뷰어 5개
+	// 로그인 되어있지 않은 경우
 	@GetMapping("/review")
+	public String reviewHome(@PageableDefault(size = 6, sort = "count", direction = Direction.DESC) Pageable pageable,
+			Model model) {
+		Page<Review> reviews = reviewService.getBestReviewList(pageable);
+		List<User> bestUser = userService.bestUser();
+		System.out.println(bestUser);
+		
+		model.addAttribute("reviews", reviews);
+		model.addAttribute("bestUser", bestUser);
+		return "/review/home";
+	}
+	// 로그인 한 경우
+	@GetMapping("/mreview")
 	public String reviewHome(@PageableDefault(size = 6, sort = "count", direction = Direction.DESC) Pageable pageable,
 			Model model, @AuthenticationPrincipal PrincipalDetail detail) {
 		Page<Review> reviews = reviewService.getBestReviewList(pageable);
@@ -45,6 +57,8 @@ public class ReviewController {
 		model.addAttribute("bestUser", bestUser);
 		return "/review/home";
 	}
+	
+	
 
 	@GetMapping("/write")
 	public String reviewWrite() {

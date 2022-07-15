@@ -97,7 +97,27 @@
 			<!--reviewDetailBody-->
 			
 			<!--댓글 작성/ 목록-->
-			
+			<div class="replysec">
+				<div class="reply_wBox">
+					<a>
+						<img alt="" src="images/mainpage/icon_search2.png">
+					</a>
+					<input class="reply_wc">
+				</div>
+				<div class="replyBox">
+					<img class="reply_image" alt=""
+						src="images/reviewPage/profile_basic.png">
+					<div class="reply_i">
+						<h4 class="reply_u">작성자</h4>
+						<h6 class="reply_t">작성시간</h6>
+					</div>
+					<button class="reply_d">삭제</button>
+				</div>
+				<!-- replyBox -->
+				<div class="reply_c">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</div>
+			</div>
+			<!-- replysec -->
+
 			<div class="reviewDetailFooter">
 				<button class="reviewDetailFooter_btn">
 					<a href="#">목록</a>
