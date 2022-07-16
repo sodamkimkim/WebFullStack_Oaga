@@ -18,7 +18,7 @@
 		<div style="width: 1200px; height: 260px; display: flex; justify-content: center; align-items: center;">
 			<div style = "display: flex; justify-content: center; align-content: center; font-weight: bold; font-size: 20px;">
 			<c:forEach var="guInfoList" items="${guInfoList}">
-			<a href="/oaga/travel_datail/{id}" style="width: auto; height: auto; margin-left: 15px; ">
+			<a href="/oaga/travel_datail/${guInfoList.id}" style="width: auto; height: auto; margin-left: 15px; ">
 				<img alt="" src="${guInfoList.imageUrl}"style="width: 170px; height:170px; border-radius: 1ex; margin-top: 30px;" >
 				<h5 style="margin-top: -2px;">${guInfoList.name}</h5>
 			</a>

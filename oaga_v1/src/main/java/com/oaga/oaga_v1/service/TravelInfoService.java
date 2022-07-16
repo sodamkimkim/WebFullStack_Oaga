@@ -9,8 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.oaga.oaga_v1.placeModel.AreaGu;
 import com.oaga.oaga_v1.placeModel.GuInfo;
+import com.oaga.oaga_v1.placeModel.Restaurant;
 import com.oaga.oaga_v1.repository.AreaRepository;
 import com.oaga.oaga_v1.repository.GuInfoRepository;
+import com.oaga.oaga_v1.repository.RestaurantRepositoryt;
 import com.oaga.oaga_v1.repository.TravelInfoRepository;
 
 @Service
@@ -24,6 +26,8 @@ public class TravelInfoService {
 	private GuInfoRepository randmarkRepository;
 	@Autowired
 	private AreaRepository areaRepository;
+	@Autowired
+	private RestaurantRepositoryt restaurantRepositoryt;
 	
 	
 	
@@ -44,35 +48,15 @@ public class TravelInfoService {
 	}
 	
 	
+//	// 찾은 식당 제외한 나머지 찾기
 //	@Transactional
-//	public List<AreaGu> arealist(){
-//		return travelInfoRepository.areaList();
+//	public List<Restaurant> remainderList(int guinfoId, int id){
+//		return restaurantRepositoryt.mRemainderRestaurant(guinfoId, id);
 //	}
-	
-
-	
-	
-//	@Transactional
-//	public List<AreaGu> seoul(){
-//		return travelInfoRepository.seoul();
-//	}
-//	@Transactional
-//	public List<AreaGu> busan(){
-//		return travelInfoRepository.busan();
-//	}
-//	@Transactional
-//	public List<AreaGu> jeju(){
-//		return travelInfoRepository.jeju();
-//	}
-//	@Transactional
-//	public List<AreaGu> deagu(){
-//		return travelInfoRepository.deagu();
-//	}
-//	@Transactional
-//	public List<AreaGu> inchun(){
-//		return travelInfoRepository.inchun();
-//	}
-//	
-	
+	// 찾은 식당 정보
+	@Transactional
+	public List<Restaurant> findByIdRestaurant(int id){
+		return restaurantRepositoryt.mFindByRestaurant(id);
+	}
 	
 }

@@ -34,7 +34,7 @@ public class Restaurant {
     private String address;
 
     @ManyToOne
-    @JoinColumn(name = "guInfo")
+    @JoinColumn(name = "guInfoId")
     private GuInfo guInfo;
 
     @Column(nullable = false)

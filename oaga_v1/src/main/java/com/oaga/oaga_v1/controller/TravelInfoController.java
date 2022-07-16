@@ -13,10 +13,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.placeModel.AreaGu;
 import com.oaga.oaga_v1.placeModel.GuInfo;
+import com.oaga.oaga_v1.placeModel.Restaurant;
 import com.oaga.oaga_v1.service.TravelInfoService;
 @Controller
 public class TravelInfoController {
@@ -40,17 +42,30 @@ public class TravelInfoController {
 			
 		
 			@GetMapping({"/travel_guinfo/{areaGu}"})
-			public String guInfoList(@PageableDefault (size =4, sort ="areaId", direction = Direction.DESC) 
-									Model model,Pageable pageable,@PathVariable int areaGu) {	
-				List<GuInfo> guInfoList = travelInfoService.guInfo(areaGu);
-				
+			public String guInfoList(Model model,@PathVariable int areaGu){	
+				List<GuInfo> guInfoList = travelInfoService.guInfo(areaGu);			
 				model.addAttribute("guInfoList",guInfoList);
-				
 				return "/travelInfo/goinfo_form";
+			}
+			
+			@GetMapping("/travel_datail/{id}")
+			@ResponseBody
+			public String detail(Model model, @PathVariable int id) {
+				int guinfoId = 0;
+//				List<Restaurant> restaurantList = travelInfoService.remainderList(guinfoId, id);
+//				model.addAttribute("restaurantList",restaurantList);
+				
+				List<Restaurant> findById = travelInfoService.findByIdRestaurant(id);
+				model.addAttribute("findById", findById);
+//				System.out.println(findById.get(0).getId() + "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+//				return "/travelInfo/detail_form";
+				return "" + findById;
 			}
 
 			
+
 			
+}		
 				
 				// stream 
 				// List 데이터를 변경할 때 map 함수 , 필터 - filter , sort()
@@ -120,26 +135,22 @@ public class TravelInfoController {
 //					model.addAttribute("inchunList", inchunList);	
 //				
 				
-			
+
+//					private Stream<AreaGu> map(Area area) {
+//						// TODO Auto-generated method stub
+//						return null;
+//					}
 				
 			
 			
 			
-			private Stream<AreaGu> map(Area area) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
 
 		
 			
 			
 
 			
-			@GetMapping("/travel_datail")
-			public String detail() {
-				return "/travelInfo/detail_form";
-			}
+		
 			
-}
+
 			

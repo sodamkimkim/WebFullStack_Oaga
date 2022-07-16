@@ -12,6 +12,12 @@
       <link rel="stylesheet"href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 	 
 	 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	 
+	 <!-- 
+	 	이너 타입으로 관리자,유저 를 나눌때 
+	 	쿼리문에 not in 을 사용하면 됌
+	  -->
+	 
 
 <style>
 	.areaList_li li a{
