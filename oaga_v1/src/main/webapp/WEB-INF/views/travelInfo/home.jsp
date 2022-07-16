@@ -56,83 +56,68 @@
 			</div>
 			<div class="mdu_img1type">	
 			<div style="font-size: 25px;font-style: oblique; margin-left: 50px; font-weight: bold;" >서울</div>
-				
 				<div class="img" style="display: flex; justify-content:space-around; width: 1200px;">
 				<li class="prev" style="display: flex; align-items: center; " >&#10094;</li>
-				<!--  Swiper 보류 -->
-					<div class="swiper-container">
-						<div class="swiper-wrapper"  style="display: flex; justify-content:space-around;">
-							
+				<c:forEach var="area" items="${lists[0]}">
+					<div class="">
+						<div class=""  style="display: flex; justify-content:space-around;">
+							<div  class="swiper-slide"> 		
+								<a href="/oaga/travel_guinfo/${area.id}">			
+								<img class="imageList" style="width: 200px;border-radius: 1ex; margin: 15px;"  src="${area.imageUrl}" alt=""> 
+								<h3 style="margin-left: 13px;">${area.guname}</h3>	
+								</a>
+							</div>
 						</div>
 					</div>	
+					</c:forEach>
 					<a class="next" style="display: flex; align-items: center;" id="next_slide">&#10095;</a>	
 				</div>
 				<br/>
 				<br/>
+				<div style="font-size: 25px;font-style: oblique; margin-left: 50px; font-weight: bold;" >부산</div>
+				<div class="img" style="display: flex; justify-content:space-around; width: 1200px;">
+				<li class="prev" style="display: flex; align-items: center; " >&#10094;</li>
+				<c:forEach var="area" items="${lists[1]}">
+					<div class="">
+						<div class=""  style="display: flex; justify-content:space-around;">
+							<div  class="swiper-slide"> 		
+								<a href="/oaga/travel_guinfo/${area.id}">			
+								<img class="imageList" style="width: 200px;border-radius: 1ex; margin: 15px;"  src="${area.imageUrl}" alt=""> 
+								<h3 style="margin-left: 13px;">${area.guname}</h3>	
+								</a>
+							</div>
+						</div>
+					</div>	
+					</c:forEach>
+					<a class="next" style="display: flex; align-items: center;" id="next_slide">&#10095;</a>	
+				</div>
+				<br/>
+				<br/>	
+				<div style="font-size: 25px;font-style: oblique; margin-left: 50px; font-weight: bold;" >제주도</div>
+				<div class="img" style="display: flex; justify-content:space-around; width: 1200px;">
+				<li class="prev" style="display: flex; align-items: center; " >&#10094;</li>
+				<c:forEach var="area" items="${lists[3]}">
+					<div class="">
+						<div class=""  style="display: flex; justify-content:space-around;">
+							<div  class="swiper-slide"> 		
+								<a href="/oaga/travel_guinfo/${area.id}">			
+								<img class="imageList" style="width: 200px;border-radius: 1ex; margin: 15px;"  src="${area.imageUrl}" alt=""> 
+								<h3 style="margin-left: 13px;">${area.guname}</h3>	
+								</a>
+							</div>
+						</div>
+					</div>	
+					</c:forEach>
+					<a class="next" style="display: flex; align-items: center;" id="next_slide">&#10095;</a>	
+				</div>
+				<br/>
+				<br/>	
 				
 				 
 			</div>
-	
-	</div>
-	<br/>
-	<br/>
-	
-	<br/> --%>
-	<p>서울</p>
-			<c:forEach var="area" items="${lists[0]}">
-				<div  class="swiper-slide"> 		
-					<a href="/oaga/travel_guinfo/">			
-					<img class="imageList" style="width: 200px;border-radius: 1ex; margin: 15px;"  src="${area.imageUrl}" alt=""> 
-					<h3 style="margin-left: 13px;">${area.guname}</h3>	
-					</a>
-				</div>
-			</c:forEach>
-	<p>부산</p>
-		<c:forEach var="area" items="${lists[1]}">
-				<div  class="swiper-slide"> 		
-					<a href="/oaga/travel_guinfo/">			
-					<img class="imageList" style="width: 200px;border-radius: 1ex; margin: 15px;"  src="${area.imageUrl}" alt=""> 
-					<h3 style="margin-left: 13px;">${area.guname}</h3>	
-					</a>
-				</div>
-		</c:forEach>
-		<p>부산</p>
-		<c:forEach var="area" items="${lists[2]}">
-				<div  class="swiper-slide"> 		
-					<a href="/oaga/travel_guinfo/">			
-					<img class="imageList" style="width: 200px;border-radius: 1ex; margin: 15px;"  src="${area.imageUrl}" alt=""> 
-					<h3 style="margin-left: 13px;">${area.guname}</h3>	
-					</a>
-				</div>
-		</c:forEach>	
-		<p>부산</p>
-		<c:forEach var="area" items="${lists[3]}">
-				<div  class="swiper-slide"> 		
-					<a href="/oaga/travel_guinfo/">			
-					<img class="imageList" style="width: 200px;border-radius: 1ex; margin: 15px;"  src="${area.imageUrl}" alt=""> 
-					<h3 style="margin-left: 13px;">${area.guname}</h3>	
-					</a>
-				</div>
-		</c:forEach>	
-		<p>부산</p>
-		<c:forEach var="area" items="${lists[4]}">
-				<div  class="swiper-slide"> 		
-					<a href="/oaga/travel_guinfo/">			
-					<img class="imageList" style="width: 200px;border-radius: 1ex; margin: 15px;"  src="${area.imageUrl}" alt=""> 
-					<h3 style="margin-left: 13px;">${area.guname}</h3>	
-					</a>
-				</div>
-		</c:forEach>	
-		<p>부산</p>
-		<c:forEach var="area" items="${lists[5]}">
-				<div  class="swiper-slide"> 		
-					<a href="/oaga/travel_guinfo/">			
-					<img class="imageList" style="width: 200px;border-radius: 1ex; margin: 15px;"  src="${area.imageUrl}" alt=""> 
-					<h3 style="margin-left: 13px;">${area.guname}</h3>	
-					</a>
-				</div>
-		</c:forEach>				
-
+			</div>
+			<br/>
+			<br/>
 
 <script src="js/travelInfo.js"></script>
 

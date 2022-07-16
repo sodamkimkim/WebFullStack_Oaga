@@ -37,10 +37,19 @@ public class TravelInfoController {
 				
 				return "/travelInfo/home";
 			}
-
-//			public String index() {
+			
 		
-				 
+			@GetMapping({"/travel_guinfo/{areaGu}"})
+			public String guInfoList(@PageableDefault (size =4, sort ="areaId", direction = Direction.DESC) 
+									Model model,Pageable pageable,@PathVariable int areaGu) {	
+				List<GuInfo> guInfoList = travelInfoService.guInfo(areaGu);
+				
+				model.addAttribute("guInfoList",guInfoList);
+				
+				return "/travelInfo/goinfo_form";
+			}
+
+			
 			
 				
 				// stream 
@@ -122,17 +131,7 @@ public class TravelInfoController {
 			}
 
 
-			@GetMapping({"/travel_guinfo/{areaGu}"})
-			public String guInfoList(@PageableDefault (size =4, sort ="areaId", direction = Direction.DESC) 
-									Model model,Pageable pageable,@PathVariable int areaGu) {	
-				List<GuInfo> guInfoList = travelInfoService.guInfo(areaGu);
-				
-				model.addAttribute("guInfoList",guInfoList);
-				
-				return "/travelInfo/goinfo_form";
-			}
-
-			
+		
 			
 			
 
