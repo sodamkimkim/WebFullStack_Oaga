@@ -48,6 +48,7 @@ public class ReviewController {
 	public String reviewHome(@PageableDefault(size = 6, sort = "count", direction = Direction.DESC) Pageable pageable,
 			Model model, @AuthenticationPrincipal PrincipalDetail detail) {
 		Page<Review> reviews = reviewService.getBestReviewList(pageable);
+		
 		int reviewCount = reviewService.reviewCount(detail.getUser().getId());
 		List<User> bestUser = userService.bestUser();
 		System.out.println(bestUser);

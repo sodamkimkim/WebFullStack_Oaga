@@ -4,12 +4,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
 
 import com.oaga.oaga_v1.dto.RequestReviewFileDto;
@@ -50,7 +52,7 @@ public class ReviewService {
 	}
 	
 	public int reviewCount(int userId) {
-		return reviewRepository.reviewCount(userId);
+		return reviewRepository.reviewCount(userId).orElse(0);
 	}
 	
 	// 조회순으로 출력

@@ -97,13 +97,15 @@
 			<!--reviewDetailBody-->
 			
 			<!--댓글 작성/ 목록-->
-			<div class="replysec">
-				<div class="reply_wBox">
-					<a>
-						<img alt="" src="images/mainpage/icon_search2.png">
+			<div class="reply_wBox">
+					<h4 class="r_nickname">닉네임</h4>
+					<a class="r_picture">
+						<img class="r_picture_img" alt="" src="images/reviewPage/ico_camera.png">
 					</a>
-					<input class="reply_wc">
+					<textarea class="r_textArea" rows="1" placeholder="댓글을 입력하세요" ></textarea>
+					<button class="r_savebtn">등록</button>
 				</div>
+			<div class="replysec">
 				<div class="replyBox">
 					<img class="reply_image" alt=""
 						src="images/reviewPage/profile_basic.png">

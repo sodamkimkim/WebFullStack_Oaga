@@ -1,7 +1,10 @@
 package com.oaga.oaga_v1.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.lang.Nullable;
 
 import com.oaga.oaga_v1.reviewModel.Review;
 
@@ -11,7 +14,7 @@ public interface ReviewRepository extends JpaRepository<Review, Integer>{
 //	List<Review> findByCountMax();
 
 	@Query(value = "select count(*) from review group by userId having userId = ?;", nativeQuery = true)
-	int reviewCount(int userId);
+	Optional<Integer> reviewCount(int userId);
 	
 
 
