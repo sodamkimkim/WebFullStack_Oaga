@@ -34,10 +34,10 @@
 	<a class="prev" style="display: flex; align-items: center; " id="prev_slide">&#10094;</a>
 		<div style="width: 1200px; height: 260px; display: flex; justify-content: center; align-items: center;">
 			<div style="width: 250px; height: 250px; border-radius: 1ex; display: flex; justify-content: center; align-items: center;">
-				<c:forEach var="guInfoList" items="${guInfoList}">
+				<c:forEach var="restaurantList" items="${restaurantList}">
 					<a href="/oaga/travel_datail/{id}" style="width: auto; height: auto; margin-left: 15px; ">
-						<img alt="" src="${guInfoList.imageUrl}"style="width: 170px; height:170px; border-radius: 1ex; margin-top: 30px;" >
-						<h5 style="margin-top: -2px;">${guInfoList.name}</h5>
+						<img alt="" src="${restaurantList.imageUrl}"style="width: 170px; height:170px; border-radius: 1ex; margin-top: 30px;" >
+						<h5 style="margin-top: -2px;">${restaurantList.name}</h5>
 					</a>
 				</c:forEach>
 			</div>

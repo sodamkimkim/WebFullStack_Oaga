@@ -16,6 +16,8 @@ import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -45,7 +47,11 @@ public class GuInfo {
 	    private AreaGu areaGu;
 	    
 	    @OneToMany(mappedBy = "guInfo", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+	    @JsonIgnoreProperties({"guInfo"})
 	    private List<Restaurant> restaurant;
+	    
+	    @Column(nullable = false, length = 30)
+	    private String RecommendedTravelTime;
 
 	    @CreationTimestamp
 	    private Timestamp createDate;

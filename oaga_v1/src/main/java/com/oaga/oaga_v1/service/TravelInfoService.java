@@ -15,26 +15,19 @@ import com.oaga.oaga_v1.repository.GuInfoRepository;
 import com.oaga.oaga_v1.repository.RestaurantRepositoryt;
 import com.oaga.oaga_v1.repository.TravelInfoRepository;
 
+
 @Service
 public class TravelInfoService {
-	
+	// 서비스 딴에서 레파지토리의 사이즈를 측정 할수 없다!!!!
 	static final int  guCount = 13;
+	static final int  restaurantCount = 7;
 	
 	@Autowired
 	private TravelInfoRepository travelInfoRepository;
 	@Autowired
 	private GuInfoRepository randmarkRepository;
 	@Autowired
-	private AreaRepository areaRepository;
-	@Autowired
 	private RestaurantRepositoryt restaurantRepositoryt;
-	
-	
-	
-	@Transactional
-	public List<GuInfo> guInfo(int id){	
-		return randmarkRepository.mFindByAreaGu(id);
-	}
 	
 	
 	@Transactional
@@ -46,13 +39,24 @@ public class TravelInfoService {
 		}
 		return map;
 	}
+// ===================================================================================================	
+	@Transactional
+	public List<GuInfo> guInfo(int id){	
+		return randmarkRepository.mFindByAreaGu(id);
+	}
 	
+	@Transactional
+	public List<Restaurant> guInfoRestaurant(int guInfoId){
+		return restaurantRepositoryt.mFindByGuInfoId(guInfoId);
+	}
+
+// ===================================================================================================	
 	
 //	// 찾은 식당 제외한 나머지 찾기
-//	@Transactional
-//	public List<Restaurant> remainderList(int guinfoId, int id){
-//		return restaurantRepositoryt.mRemainderRestaurant(guinfoId, id);
-//	}
+	@Transactional
+	public List<Restaurant> remainderList(){
+		return restaurantRepositoryt.mRemainderRestaurant();
+	}
 	// 찾은 식당 정보
 	@Transactional
 	public List<Restaurant> findByIdRestaurant(int id){

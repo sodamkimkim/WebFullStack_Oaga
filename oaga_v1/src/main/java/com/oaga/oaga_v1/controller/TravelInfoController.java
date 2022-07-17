@@ -3,19 +3,14 @@ package com.oaga.oaga_v1.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort.Direction;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.placeModel.AreaGu;
 import com.oaga.oaga_v1.placeModel.GuInfo;
 import com.oaga.oaga_v1.placeModel.Restaurant;
@@ -26,8 +21,8 @@ public class TravelInfoController {
 	
 			@Autowired
 			TravelInfoService travelInfoService;
-			// 메인 화면
-
+			
+			// 여행지 정보 보기 페이지
 			@GetMapping({"/travel_info"})
 			public String index( Model model) {
 				Map<Integer, List<AreaGu>> map = travelInfoService.areaIdList();
@@ -39,34 +34,39 @@ public class TravelInfoController {
 				
 				return "/travelInfo/home";
 			}
+// ===================================================================================================
 			
-		
+			// gu에 대한 정보 페이지 
 			@GetMapping({"/travel_guinfo/{areaGu}"})
-			public String guInfoList(Model model,@PathVariable int areaGu){	
-				List<GuInfo> guInfoList = travelInfoService.guInfo(areaGu);			
+			public String guInfoList(Model model,@PathVariable int areaGu){
+				List<GuInfo> guInfoList = travelInfoService.guInfo(areaGu);
+				List<Restaurant> restaurantList = travelInfoService.guInfoRestaurant(areaGu);
+				
 				model.addAttribute("guInfoList",guInfoList);
+				model.addAttribute("restaurantList",restaurantList);
 				return "/travelInfo/goinfo_form";
 			}
 			
-			@GetMapping("/travel_datail/{id}")
-			@ResponseBody
-			public String detail(Model model, @PathVariable int id) {
-				int guinfoId = 0;
+// ===================================================================================================
+			
+			// gu에 대한 정보 디테일 페이지
+			@GetMapping("/travel_datail")
+			public String detail(Model model) {
+				
 //				List<Restaurant> restaurantList = travelInfoService.remainderList(guinfoId, id);
 //				model.addAttribute("restaurantList",restaurantList);
 				
-				List<Restaurant> findById = travelInfoService.findByIdRestaurant(id);
-				model.addAttribute("findById", findById);
-//				System.out.println(findById.get(0).getId() + "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+//				List<Restaurant> findById = travelInfoService.findByIdRestaurant(id);
+//				model.addAttribute("findByRestaurantId", findById);
 //				return "/travelInfo/detail_form";
-				return "" + findById;
+				return "/travelInfo/detail_form";
 			}
-
-			
-
-			
+	
 }		
 				
+
+
+//===================================================================================================
 				// stream 
 				// List 데이터를 변경할 때 map 함수 , 필터 - filter , sort()
 				
