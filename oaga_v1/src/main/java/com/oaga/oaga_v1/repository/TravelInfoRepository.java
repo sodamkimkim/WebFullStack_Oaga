@@ -17,7 +17,7 @@ public interface TravelInfoRepository extends JpaRepository<AreaGu, Integer>{
 //	List<AreaGu> areaList();
 	
 	@Query(value =  "SELECT * FROM areagu WHERE areaId =?", nativeQuery = true)
-	List<AreaGu> areaIdList(int areaid);
+	List<AreaGu> mAreaIdList(int areaid);
 	
 	
 	

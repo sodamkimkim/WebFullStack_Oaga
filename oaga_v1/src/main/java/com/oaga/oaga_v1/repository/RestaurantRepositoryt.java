@@ -25,4 +25,8 @@ public interface RestaurantRepositoryt extends JpaRepository<Restaurant, Integer
 	@Query(value = "SELECT * FROM restaurant WHERE guInfoId = 1 and not id = 1", nativeQuery = true)
 	List<Restaurant> mRemainderRestaurant();
 	
+	
+	@Query(value = "SELECT * FROM restaurant WHERE guInfoId = ?", nativeQuery = true)
+	List<Restaurant> mRestaurantGroupByGuInfoId(int guInfoId);
+	
 }

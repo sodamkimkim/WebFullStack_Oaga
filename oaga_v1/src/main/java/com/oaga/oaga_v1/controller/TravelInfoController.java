@@ -34,24 +34,22 @@ public class TravelInfoController {
 				for(int i = 0; i < 13 ; i++) {
 					list.add(i, map.get(i+1));
 				}
-				System.out.println(list.get(1).get(0).getId() + "@@@@@@@@@@@");
 				model.addAttribute("lists", list);
 				
 				return "/travelInfo/home";
 			}
 // ===================================================================================================
 			
+			
+			
 			// gu에 대한 정보 페이지 
 			@GetMapping({"/travel_guinfo/{areaGu}"})
 			public String guInfoList(Model model,@PathVariable int areaGu){
-				System.out.println(areaGu);
-				
 				int areaId = travelInfoService.guInfo(areaGu).get(0).getAreaGu().getArea().getId();
 				
 				List<GuInfo> guInfoList = travelInfoService.guInfo(areaGu);
 				List<Restaurant> restaurantList = travelInfoService.guInfoRestaurant(areaGu);
 				List<Area> areaImageList = travelInfoService.areaImage(areaId);
-				
 				
 				model.addAttribute("guInfoList",guInfoList);
 				model.addAttribute("restaurantList",restaurantList);
@@ -86,10 +84,27 @@ public class TravelInfoController {
 				return "/travelInfo/detail_gu_form";
 			}
 	
-}		
+	
 				
 
 
+//===================================================================================================
+
+		@GetMapping("/travel/areainfo/{id}")
+		public String areaInfo(Model model,@PathVariable int id) {
+			List<Area> areaImageList = travelInfoService.areaImage(id);
+			
+			
+			List<AreaGu> areaGuAllList = travelInfoService.areaGu(id);
+			List<GuInfo>guinfoAllList = travelInfoService.guInfo(id);
+			List<Restaurant> restaurantAllList = travelInfoService.guInfoRestaurant(id);
+			model.addAttribute("areaImage" ,areaImageList);
+			model.addAttribute("areaGu" ,areaGuAllList);
+			model.addAttribute("guinfo" ,guinfoAllList);
+			model.addAttribute("restaurant" ,restaurantAllList);
+			return "/travelInfo/area_info_form";
+		}
+}	
 //===================================================================================================
 				// stream 
 				// List 데이터를 변경할 때 map 함수 , 필터 - filter , sort()

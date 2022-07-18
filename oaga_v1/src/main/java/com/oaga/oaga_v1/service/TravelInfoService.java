@@ -38,11 +38,13 @@ public class TravelInfoService {
 	public Map<Integer, List<AreaGu>> areaIdList(){
 		Map<Integer, List<AreaGu>> map = new HashMap<Integer, List<AreaGu>>();
 		for(int i = 1; i <= guCount; i++) {
-			List<AreaGu> index = travelInfoRepository.areaIdList(i);
+			List<AreaGu> index = travelInfoRepository.mAreaIdList(i);
 			map.put(i, index);
 		}
 		return map;
 	}
+
+	
 // ===================================================================================================	
 	@Transactional
 	public List<Area> areaImage(int id){
@@ -55,8 +57,13 @@ public class TravelInfoService {
 	}
 	
 	@Transactional
+	public List<AreaGu> areaGu(int id){	
+		return travelInfoRepository.mAreaIdList(id);
+	}
+	
+	@Transactional
 	public List<Restaurant> guInfoRestaurant(int guInfoId){
-		return restaurantRepositoryt.mFindByGuInfoId(guInfoId);
+		return restaurantRepositoryt.mRestaurantGroupByGuInfoId(guInfoId);
 	}
 	
 // ===================================================================================================	

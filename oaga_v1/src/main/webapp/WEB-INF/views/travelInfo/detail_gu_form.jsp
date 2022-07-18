@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
 <%@ include file="../layout/header.jsp"%>
+<link rel="stylesheet" href="/oaga/css/style.css" />
+
 <br />
 <br />
 <div class="imgcontainer"
@@ -20,12 +21,12 @@
 
 			<c:forEach var="gu" items="${gu}">
 				<div
-					style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 15px; ">
-					<h5 style="margin-top: -10px; margin-left: -10px;">이름:
+					style="font-size: 25px; font-style: oblique; font-weight: bold;">
+					<h5 style="">이름:
 						${gu.name}</h5>
-					<p style="font-size: 20px; margin-top: -25px; margin-left: -10px;">주소:
+					<p style="font-size: 20px;">주소:
 						${gu.address}</p>
-					<span style="font-size: 15px; margin-left: -10px;">${gu.content}</span>
+					<span style="font-size: 15px;">${gu.content}</span>
 				</div>
 			</c:forEach>
 		</div>
@@ -47,6 +48,5 @@
 </div>
 <br />
 <br />
-
 
 <%@ include file="../layout/footer.jsp"%>
