@@ -3,6 +3,7 @@ package com.oaga.oaga_v1.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,7 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.placeModel.AreaGu;
+import com.oaga.oaga_v1.placeModel.CategoryType;
 import com.oaga.oaga_v1.placeModel.GuInfo;
 import com.oaga.oaga_v1.placeModel.Restaurant;
 import com.oaga.oaga_v1.service.TravelInfoService;
@@ -30,6 +33,7 @@ public class TravelInfoController {
 				for(int i = 0; i < 13 ; i++) {
 					list.add(i, map.get(i+1));
 				}
+				System.out.println(list.get(1).get(0).getId() + "@@@@@@@@@@@");
 				model.addAttribute("lists", list);
 				
 				return "/travelInfo/home";
@@ -39,27 +43,45 @@ public class TravelInfoController {
 			// gu에 대한 정보 페이지 
 			@GetMapping({"/travel_guinfo/{areaGu}"})
 			public String guInfoList(Model model,@PathVariable int areaGu){
+				
+				int areaId = travelInfoService.guInfo(areaGu).get(areaGu).getAreaGu().getArea().getId();
+				System.out.println(travelInfoService.guInfo(areaGu).get(areaGu).getAreaGu().getArea().getId()+ "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 				List<GuInfo> guInfoList = travelInfoService.guInfo(areaGu);
 				List<Restaurant> restaurantList = travelInfoService.guInfoRestaurant(areaGu);
+				List<Area> areaImageList = travelInfoService.areaImage(areaId);
+				
 				
 				model.addAttribute("guInfoList",guInfoList);
 				model.addAttribute("restaurantList",restaurantList);
+				model.addAttribute("areaImageList",areaImageList);
 				return "/travelInfo/goinfo_form";
 			}
 			
 // ===================================================================================================
 			
-			// gu에 대한 정보 디테일 페이지
-			@GetMapping("/travel_datail")
-			public String detail(Model model) {
+			// 만약 여기서 swich를  쓰면? 
+			// 
+			
+			
+			
+			// 식당 상세정보
+			@GetMapping("/travel_detail/{id}")
+			public String getDetailRestaurant(Model model, @PathVariable int id) {
+					List<Restaurant> restaurantList = travelInfoService.findByIdRestaurant(id);
+					
+					model.addAttribute("restaurant",restaurantList);
+				return "/travelInfo/detail_restaurant_form";
+			}
+			
+			// 구 상세정보
+			@GetMapping("/travel_detail/gu/{id}")
+			public String getDetailGu(Model model, @PathVariable int id) {
+					List<GuInfo> guInfoFindById = travelInfoService.findByGuinfoId(id);
+					List<Restaurant> restaurantList = travelInfoService.findByIdRestaurant(id);
+					model.addAttribute("gu",guInfoFindById);
+					model.addAttribute("restaurant",restaurantList);
 				
-//				List<Restaurant> restaurantList = travelInfoService.remainderList(guinfoId, id);
-//				model.addAttribute("restaurantList",restaurantList);
-				
-//				List<Restaurant> findById = travelInfoService.findByIdRestaurant(id);
-//				model.addAttribute("findByRestaurantId", findById);
-//				return "/travelInfo/detail_form";
-				return "/travelInfo/detail_form";
+				return "/travelInfo/detail_gu_form";
 			}
 	
 }		

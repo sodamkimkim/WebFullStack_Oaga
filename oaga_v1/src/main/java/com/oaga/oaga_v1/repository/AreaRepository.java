@@ -10,7 +10,7 @@ import com.oaga.oaga_v1.placeModel.Area;
 public interface AreaRepository extends JpaRepository<Area, Integer>{
 		
 	// 보류
-	@Query(value = "select mainImageUrl from area where id = ?", nativeQuery = true)
-	List<Area> areaMainImage(int id);
+	@Query(value = "select * from area where id = ?", nativeQuery = true)
+	List<Area> mAreaMainImage(int id);
 
 }

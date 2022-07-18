@@ -2,11 +2,13 @@ package com.oaga.oaga_v1.service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.placeModel.AreaGu;
 import com.oaga.oaga_v1.placeModel.GuInfo;
 import com.oaga.oaga_v1.placeModel.Restaurant;
@@ -28,6 +30,8 @@ public class TravelInfoService {
 	private GuInfoRepository randmarkRepository;
 	@Autowired
 	private RestaurantRepositoryt restaurantRepositoryt;
+	@Autowired
+	private AreaRepository areaRepository;
 	
 	
 	@Transactional
@@ -41,6 +45,11 @@ public class TravelInfoService {
 	}
 // ===================================================================================================	
 	@Transactional
+	public List<Area> areaImage(int id){
+		return areaRepository.mAreaMainImage(id);
+	}
+	
+	@Transactional
 	public List<GuInfo> guInfo(int id){	
 		return randmarkRepository.mFindByAreaGu(id);
 	}
@@ -49,7 +58,7 @@ public class TravelInfoService {
 	public List<Restaurant> guInfoRestaurant(int guInfoId){
 		return restaurantRepositoryt.mFindByGuInfoId(guInfoId);
 	}
-
+	
 // ===================================================================================================	
 	
 //	// 찾은 식당 제외한 나머지 찾기
@@ -62,5 +71,35 @@ public class TravelInfoService {
 	public List<Restaurant> findByIdRestaurant(int id){
 		return restaurantRepositoryt.mFindByRestaurant(id);
 	}
+	
+// ===================================================================================================
+	
+	@Transactional
+	public List<GuInfo> findByGuinfoId(int id){
+		return randmarkRepository.mFindByid(id);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

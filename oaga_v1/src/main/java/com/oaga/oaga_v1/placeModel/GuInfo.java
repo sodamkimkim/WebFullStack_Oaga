@@ -5,6 +5,8 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -50,8 +52,8 @@ public class GuInfo {
 	    @JsonIgnoreProperties({"guInfo"})
 	    private List<Restaurant> restaurant;
 	    
-	    @Column(nullable = false, length = 30)
-	    private String RecommendedTravelTime;
+	    @Enumerated(EnumType.STRING)
+	    private CategoryType category;
 
 	    @CreationTimestamp
 	    private Timestamp createDate;
