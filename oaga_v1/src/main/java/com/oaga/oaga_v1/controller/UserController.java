@@ -71,11 +71,12 @@ public class UserController {
 		return "user/mypage_form";
 	}
 	
-	//TODO 마이페이지 안에서 유저인포업데이트 폼 달아주기
-//	@GetMapping("/auth/user/updateUserInfo_form")
-//	public String updateForm() {
-//		return "user/update_form";
-//	}
+
+	@GetMapping("/user/updateUserInfo_form")
+	public String updateForm() {
+		System.out.println("userupdateform들어옴");
+		return "user/update_form";
+	}
 	
 
 	@PostMapping("/auth/joinProc")

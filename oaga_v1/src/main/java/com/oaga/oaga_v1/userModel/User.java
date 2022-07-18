@@ -68,5 +68,12 @@ public class User {
 	
 	@ColumnDefault("0")
 	private int qna;
+	
+	@Column(nullable = true)
+	private String profileImageUrl;
+	
+	private String originImageUrl;
+	
+	
 
 }

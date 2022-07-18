@@ -8,7 +8,11 @@
 			<img class="img-fluid rounded-circle mb-4 myPageProfile"
 				src="https://dummyimage.com/150x150/6c757d/dee2e6.jpg" alt="...">
 			<div class="myPageEditBtns">
-				<button class="editUserInfoBtn btn">회원정보 수정하기</button>
+			
+			<!-- "javascript: form.action='/oaga/api/review/upload';" -->
+				<button class="editUserInfoBtn btn" ><a href="/oaga/user/updateUserInfo_form">회원정보 수정하기
+				</a></button>
+				
 				<button class="editUserProfile btn">회원 프로필 수정하기</button>
 			</div>
 		</div>

@@ -24,7 +24,7 @@ let index = {
 		}).done(function(data) {
 			if (data.status) {
 				alert("회원정보 수정이 완료되었습니다.")
-				location.href = "/oaga";
+				location.href = "/oaga/myPage_form";
 			}
 
 		}).fail(function(error) {
