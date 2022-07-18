@@ -46,16 +46,28 @@ h4 {
 	margin-bottom: 1rem !important;
 }
 
-.img-fluid {
-	border-radius: 50% !important;
+.myPageImg {
+	width: 200px;
+	height: 100%;
+
 }
 
-.info_box {
+.myPageImgBox {
+	border-radius: 50%;
+	overflow: hidden;
+	width: 200px;
+	height: 200px;
+	background-color: aqua;
+	margin-bottom: 20px;
+
+}
+
+.myPage_infoBox {
 	display: flex;
 	justify-content: center;
 }
 
-.info {
+.myPage_infoBox .info {
 	display: flex;
 	background-color: white;
 	width: 500px;
@@ -223,7 +235,7 @@ h4 {
 }
 
 .myPageEditWrap .myPageEditBtns {
-	margin-top:40px;
+	margin-top: 40px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;

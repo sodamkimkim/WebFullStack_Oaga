@@ -5,8 +5,11 @@
 <div class="re_list_box">
 	<div class="profile_b">
 		<div class="text-center my-5 myPageEditWrap">
-			<img class="img-fluid rounded-circle mb-4 myPageProfile"
+		<div class = "myPageImgBox">
+			<img class="myPageImg"
 				src="http://localhost:9090/oaga/upload/${myinfo.userProfileImgUrl}" alt="...">
+		
+		</div><!-- myPageImgBox -->
 			<div class="myPageEditBtns">
 
 			<!-- "javascript: form.action='/oaga/api/review/upload';" -->
@@ -14,9 +17,9 @@
 				</a></button>
 				
 				<button class="editUserProfile btn"><a href="#">회원 프로필 수정하기</a></button>
-			</div>
-		</div>
-		<div class="info_box">
+			</div><!-- myPageEditBtns -->
+		</div><!-- myPageEditWrap -->
+		<div class="myPage_infoBox">
 			<div class="info">
 				<p class="logged_cnt_box logged_clip">
 					<b>작성한 리뷰</b> <span></span>
