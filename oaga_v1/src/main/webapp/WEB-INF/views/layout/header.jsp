@@ -29,7 +29,15 @@
 			</h1>
 			<ul class="gnb">
 				<li><a href="/oaga/travel_info">여행지정보보기</a></li>
-				<li><a href="/oaga/review">리뷰보기</a></li>
+				<c:choose>
+					<c:when test="${empty principal}">
+						<li><a href="/oaga/review">리뷰보기</a></li>
+					</c:when>
+					<c:otherwise>
+						<li><a href="/oaga/mreview">리뷰보기</a></li>
+					</c:otherwise>
+				</c:choose>
+				
 				<li><a href="#">커뮤니티</a></li>
 			</ul>
 			<!--gnb-->
