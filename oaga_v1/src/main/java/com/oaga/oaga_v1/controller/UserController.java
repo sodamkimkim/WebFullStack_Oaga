@@ -148,7 +148,7 @@ public class UserController {
 	//로그인한 자기 정보 가져오기
 	@GetMapping("/myPage_form")
 	public String userInfo(Model model, @AuthenticationPrincipal PrincipalDetail detail) {
-		Optional<User> myInfo = userRepository.findByUsername(detail.getUsername());
+		User myInfo = userService.searchUser(detail.getUsername());
 		System.out.println("session의 myInfo찍어봄. 여긴 UserController: "+myInfo.toString());
 		model.addAttribute("myinfo", myInfo);
 		return "user/mypage_form";
