@@ -208,3 +208,32 @@ h4 {
 	fill: currentColor;
 	fill-rule: evenodd;
 }
+
+.myPageEditWrap .myPageProfile {
+	margin-left: 150px;
+}
+
+.myPageEditWrap {
+	display: flex;
+	justify-content: center;
+}
+
+.myPageEditWrap {
+	
+}
+
+.myPageEditWrap .myPageEditBtns {
+	margin-top:40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.myPageEditBtns button {
+	width: 150px;
+	margin-left: 20px;
+	line-height: 2;
+	border-bottom: 2px solid #333;
+	background-color: transparent;
+	cursor: pointer;
+}

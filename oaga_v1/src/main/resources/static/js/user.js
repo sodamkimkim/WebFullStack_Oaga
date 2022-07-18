@@ -4,6 +4,7 @@ let index = {
 		$("#btn-update").bind("click", () => {
 			this.update();
 		});
+
 	},
 
 	update: function() {
