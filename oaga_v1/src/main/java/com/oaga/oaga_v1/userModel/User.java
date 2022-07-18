@@ -63,7 +63,7 @@ public class User {
 	@ColumnDefault("0")
 	private int qna;
 	
-	@Column(nullable = true)
+	@Column(nullable = false)
 	private String userProfileImgUrl;
 	
 	private String profileOriginImgUrl;

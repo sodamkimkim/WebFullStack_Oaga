@@ -4,6 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -103,7 +104,7 @@ public class UserService {
 	}
 	@Transactional(readOnly = true)
 	public User searchUser(String username) {
-		User userEntity = userRepository.findByUsername(username).orElseGet(()->{
+		User userEntity =  userRepository.findByUsername(username).orElseGet(() -> {
 			return new User();
 		});
 

@@ -16,7 +16,7 @@ public class WebConfig implements WebMvcConfigurer{
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		WebMvcConfigurer.super.addResourceHandlers(registry);
 		
-		registry.addResourceHandler("/upload/**")
+		registry.addResourceHandler("/oaga/upload/**")
 		.addResourceLocations("file:///" + uploadFolder)
 		.setCachePeriod(60 * 10 * 6)
 		.resourceChain(true)

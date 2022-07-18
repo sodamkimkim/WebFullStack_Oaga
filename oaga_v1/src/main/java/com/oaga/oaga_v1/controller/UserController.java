@@ -150,8 +150,8 @@ public class UserController {
 	public String userInfo(Model model, @AuthenticationPrincipal PrincipalDetail detail) {
 		Optional<User> myInfo = userRepository.findByUsername(detail.getUsername());
 		System.out.println("session의 myInfo찍어봄. 여긴 UserController: "+myInfo.toString());
-		model.addAttribute("myInfo",myInfo);
-		return "/user/mypage_form";
+		model.addAttribute("myinfo", myInfo);
+		return "user/mypage_form";
 	}
 
 	

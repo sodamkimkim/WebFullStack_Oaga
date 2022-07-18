@@ -6,7 +6,7 @@
 	<div class="profile_b">
 		<div class="text-center my-5 myPageEditWrap">
 			<img class="img-fluid rounded-circle mb-4 myPageProfile"
-				src="http://localhost:9090/oaga/upload/${myInfo.userProfileImgUrl}" alt="...">
+				src="http://localhost:9090/oaga/upload/${myinfo.userProfileImgUrl}" alt="...">
 			<div class="myPageEditBtns">
 
 			<!-- "javascript: form.action='/oaga/api/review/upload';" -->
