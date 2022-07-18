@@ -1,5 +1,7 @@
 package com.oaga.oaga_v1.controller;
 
+import java.util.Optional;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -13,9 +15,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,11 +30,14 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.oaga.oaga_v1.auth.PrincipalDetail;
 import com.oaga.oaga_v1.dto.KakaoProfile;
 import com.oaga.oaga_v1.dto.KakaoProfile.KakaoAccount;
 import com.oaga.oaga_v1.dto.OAuthToken;
 import com.oaga.oaga_v1.dto.RequestUserProfileDto;
+import com.oaga.oaga_v1.repository.UserRepository;
 import com.oaga.oaga_v1.service.UserService;
+import com.oaga.oaga_v1.userModel.RoleType;
 import com.oaga.oaga_v1.userModel.User;
 
 @Controller
@@ -50,6 +57,9 @@ public class UserController {
 
 	@Autowired
 	private RequestUserProfileDto userProfileDto;
+
+	@Autowired
+	UserRepository userRepository;
 	
 	@GetMapping("/auth/login_form")
 	public String loginForm() {
@@ -70,26 +80,98 @@ public class UserController {
 		return "redirect:/";
 	}
 
-	@GetMapping("/myPage_form")
-	public String myPage() {
-		return "user/mypage_form";
-	}
+
 	
 
 	@GetMapping("/user/updateUserInfo_form")
 	public String updateForm() {
-		System.out.println("userupdateform들어옴");
 		return "user/update_form";
 	}
 	
 
 	@PostMapping("/auth/joinProc")
 	public String save(RequestUserProfileDto dto) {
-			
+			dto.setRole(RoleType.USER);
+	
 		int result = userService.saveUser(dto);
 		return "redirect:/";
 	}
 
+//<그냥 참고>	
+//	// 로그인 되어있지 않은 경우
+//	@GetMapping("/review")
+//	public String reviewHome(@PageableDefault(size = 6, sort = "count", direction = Direction.DESC) Pageable pageable,
+//			Model model) {
+//		Page<Review> reviews = reviewService.getBestReviewList(pageable);
+//		List<User> bestUser = userService.bestUser();
+//		System.out.println(bestUser);
+//		
+//		model.addAttribute("reviews", reviews);
+//		model.addAttribute("bestUser", bestUser);
+//		return "/review/home";
+//	}
+//	// 로그인 한 경우
+//	@GetMapping("/mreview")
+//	public String reviewHome(@PageableDefault(size = 6, sort = "count", direction = Direction.DESC) Pageable pageable,
+//			Model model, @AuthenticationPrincipal PrincipalDetail detail) {
+//		Page<Review> reviews = reviewService.getBestReviewList(pageable);
+//		int reviewCount = reviewService.reviewCount(detail.getUser().getId());
+//		List<User> bestUser = userService.bestUser();
+//		System.out.println(bestUser);
+//		
+//		model.addAttribute("reviews", reviews);
+//		model.addAttribute("reviewCount", reviewCount);
+//		model.addAttribute("bestUser", bestUser);
+//		return "/review/home";
+//	}
+//	
+//	// a태그는 항상 get으로 mapping한다.
+//	@GetMapping("/board/{id}")
+//	public String findById(@PathVariable int id, Model model) {
+//		model.addAttribute("board", boardService.boardDetail(id));
+//		return "/board/detail";
+//	}
+//
+//	@GetMapping("/board/{id}/update_form")
+//	public String updateForm(@PathVariable int id, Model model) {
+//		model.addAttribute("board", boardService.boardDetail(id));
+//		return "/board/update_form";
+//	}
+//	///////////////////////////////////////////////////////////////////
+
+//	@GetMapping("/myPage_form")
+//	public String myPage(Model model) {
+//		
+//		System.out.println("");
+//		return "user/mypage_form";
+//	}
+	//로그인한 자기 정보 가져오기
+	@GetMapping("/myPage_form")
+	public String userInfo(Model model, @AuthenticationPrincipal PrincipalDetail detail) {
+		Optional<User> myInfo = userRepository.findByUsername(detail.getUsername());
+		System.out.println("session의 myInfo찍어봄. 여긴 UserController: "+myInfo.toString());
+		return "user/mypage_form";
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	// 소셜로그인
 	@GetMapping("/auth/kakao/callback")
 	public String kakaoCallback(@RequestParam String code) {
