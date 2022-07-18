@@ -29,6 +29,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oaga.oaga_v1.dto.KakaoProfile;
 import com.oaga.oaga_v1.dto.KakaoProfile.KakaoAccount;
 import com.oaga.oaga_v1.dto.OAuthToken;
+import com.oaga.oaga_v1.dto.RequestUserProfileDto;
 import com.oaga.oaga_v1.service.UserService;
 import com.oaga.oaga_v1.userModel.User;
 
@@ -47,6 +48,9 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
+	@Autowired
+	private RequestUserProfileDto userProfileDto;
+	
 	@GetMapping("/auth/login_form")
 	public String loginForm() {
 		return "user/login_form";
@@ -80,9 +84,9 @@ public class UserController {
 	
 
 	@PostMapping("/auth/joinProc")
-	public String save(User user) {
-		System.out.println("save 들어옴");
-		int result = userService.saveUser(user);
+	public String save(RequestUserProfileDto dto) {
+			
+		int result = userService.saveUser(dto);
 		return "redirect:/";
 	}
 
@@ -140,6 +144,7 @@ public class UserController {
 		System.out.println("카카오 이메일: " + account.getEmail());
 		System.out.println("블로그에서 사용될 유저네임 : " + account.getEmail() + "_" + kakaoProfileResponse.getBody().getId());
 
+				
 		User kakaoUser = User.builder().username(account.getEmail() + "_" + kakaoProfileResponse.getBody().getId())
 				.password(oagaKey).email(account.getEmail()).oauth("kakao").build();
 		System.out.println("카카오유저 :" + kakaoUser);

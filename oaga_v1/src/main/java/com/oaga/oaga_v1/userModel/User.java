@@ -1,24 +1,18 @@
 package com.oaga.oaga_v1.userModel;
 
 import java.sql.Timestamp;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.oaga.oaga_v1.reviewModel.Review;
+import org.springframework.web.multipart.MultipartFile;
 
 //localhost:9090/oaga/review
 
@@ -70,9 +64,9 @@ public class User {
 	private int qna;
 	
 	@Column(nullable = true)
-	private String profileImageUrl;
+	private String userProfileImgUrl;
 	
-	private String originImageUrl;
+	private String profileOriginImgUrl;
 	
 	
 

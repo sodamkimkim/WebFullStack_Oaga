@@ -127,7 +127,7 @@ footer {
 				<a href="/oaga">OaGa</a>
 			</h1>
 			<div class="con">
-				<form action="/oaga/auth/joinProc" method="post">
+				<form action="/oaga/auth/joinProc" method="post" enctype="multipart/form-data">
 					<!-- csrf???? xss -->
 					<div class="formRow1">
 						<input type="text" class="form-input" placeholder="Enter ID"
@@ -140,7 +140,7 @@ footer {
 						<div class="userProfileWrap">
 							<label class="lblUserProfileFile" for="userProfileFile">사용자 프로필 등록: </label> 
 							<input type="file"
-								name="userProfileFile" placeholder="upload user-Profile"
+								name="file" placeholder="upload user-Profile"
 								class="form-input" id="userProfileFile" >
 						</div>
 
