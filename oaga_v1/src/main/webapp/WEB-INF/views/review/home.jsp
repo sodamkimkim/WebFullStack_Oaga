@@ -82,15 +82,12 @@
 			<!--  row1 박스 태그 시작 -->
 			<c:forEach var="reviews" items="${reviews.content}" begin="0" end="2">
 				<div class="box">
-					<a href="/oaga/detail">
+					<a href="/oaga/detail/${reviews.id}">
 						<div class="ImgBox">
 							<img
 								src="http://localhost:9090/oaga/upload/${reviews.reviewImageUrl}"
 								alt="" />
 							<div class="txt">
-								<h4>
-									2018-09-13 <span> 7DAYS</span>
-								</h4>
 								<p>${reviews.title}</p>
 							</div>
 							<!--txt-->
@@ -100,7 +97,7 @@
 							<ul class="info">
 								<li class="placeName">${reviews.areaName}</li>
 								<li class="withFriend">${reviews.theme}</li>
-								<li class="userName">작성자</li>
+								<li class="userName">${reviews.user.userNickName}</li>
 							</ul>
 							<!--info-->
 
@@ -122,13 +119,10 @@
 		<div class="row2">
 			<c:forEach var="reviews" items="${reviews.content}" begin="3" end="5">
 				<div class="box">
-					<a href="#">
+					<a href="/oaga/detail/${reviews.id}">
 						<div class="ImgBox">
 							<img src="http://localhost:9090/oaga/upload/${reviews.reviewImageUrl}" alt="" />
 							<div class="txt">
-								<h4>
-									2018-09-13 <span> 7DAYS</span>
-								</h4>
 								<p>${reviews.title}</p>
 							</div>
 							<!--txt-->
@@ -138,7 +132,7 @@
 							<ul class="info">
 								<li class="placeName">${reviews.areaName}</li>
 								<li class="withFriend">${reviews.theme}</li>
-								<li class="userName">작성자</li>
+								<li class="userName">${reviews.user.userNickName}</li>
 							</ul>
 							<!--info-->
 
@@ -189,9 +183,6 @@
 		</div>
 	</div>
 </section>
-
-
-
 
 
 <%@ include file="../layout/footer.jsp"%>

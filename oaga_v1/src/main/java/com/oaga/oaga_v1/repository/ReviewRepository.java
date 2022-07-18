@@ -16,6 +16,6 @@ public interface ReviewRepository extends JpaRepository<Review, Integer>{
 	@Query(value = "select count(*) from review group by userId having userId = ?;", nativeQuery = true)
 	Optional<Integer> reviewCount(int userId);
 	
-
+	
 
 }

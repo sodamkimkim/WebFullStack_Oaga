@@ -74,7 +74,7 @@ public class Review {
 	private User user;
 	
 	// 댓글 정보
-//	@OneToMany(mappedBy = "review", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-//	private List<Reply> replies;
+	@OneToMany(mappedBy = "review", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+	private List<Reply> replies;
 	
 }

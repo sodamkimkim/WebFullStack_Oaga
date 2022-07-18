@@ -68,7 +68,7 @@ header {
 }
 
 
-#summernote {
+.summernote {
 	position: center;
 	height: 100%;
 }

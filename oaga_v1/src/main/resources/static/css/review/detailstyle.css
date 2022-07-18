@@ -196,6 +196,7 @@
 }
 
 .reply_d {
+	cursor: pointer;
 	width: 64px;
 	height: 28px;
 	border: transparent;
@@ -244,6 +245,7 @@
 	height: 30px;
 }
  .r_savebtn {
+ 	cursor: pointer;
  	margin-left: 20px;
  	width: 64px;
 	height: 28px;
@@ -252,4 +254,23 @@
 	border-radius: 5px;
 	background-color: #f9bb57;
 	float: right;
+ }
+ 
+ .reply_tbox {
+ 	padding: 10px;
+ }
+ 
+ .reply_title {
+ 	font-size: 23px;
+ 	color: #f9bb57;
+ }
+ 
+ .reply_sug {
+ 	display: flex;
+ 	justify-content: center;	
+ }
+ 
+ .reply_sug_t {
+ 	font-size: 18px;
+ 	font-weight: bold;
  }
