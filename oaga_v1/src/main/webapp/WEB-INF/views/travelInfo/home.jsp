@@ -67,7 +67,7 @@
 				<c:forEach var="area" items="${lists[0]}">
 					<div class="">
 						<div class=""  style="display: flex; justify-content:space-around;">
-							<div  class="swiper-slide"> 		
+							<div  class="swiper-slide">		
 								<a href="/oaga/travel_guinfo/${area.id}">			
 								<img class="imageList" style="width: 200px;border-radius: 1ex; margin: 15px;"  src="${area.imageUrl}" alt=""> 
 								<h3 style="margin-left: 13px;">${area.guname}</h3>	

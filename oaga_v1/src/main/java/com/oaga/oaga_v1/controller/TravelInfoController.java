@@ -1,6 +1,7 @@
 package com.oaga.oaga_v1.controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -43,9 +44,10 @@ public class TravelInfoController {
 			// gu에 대한 정보 페이지 
 			@GetMapping({"/travel_guinfo/{areaGu}"})
 			public String guInfoList(Model model,@PathVariable int areaGu){
+				System.out.println(areaGu);
 				
-				int areaId = travelInfoService.guInfo(areaGu).get(areaGu).getAreaGu().getArea().getId();
-				System.out.println(travelInfoService.guInfo(areaGu).get(areaGu).getAreaGu().getArea().getId()+ "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+				int areaId = travelInfoService.guInfo(areaGu).get(0).getAreaGu().getArea().getId();
+				
 				List<GuInfo> guInfoList = travelInfoService.guInfo(areaGu);
 				List<Restaurant> restaurantList = travelInfoService.guInfoRestaurant(areaGu);
 				List<Area> areaImageList = travelInfoService.areaImage(areaId);
