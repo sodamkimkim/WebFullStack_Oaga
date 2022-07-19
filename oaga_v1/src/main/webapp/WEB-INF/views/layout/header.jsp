@@ -70,7 +70,7 @@
 					<c:otherwise>
 						<!-- 로그인된 상태 -->
 						<button class="btn myPageBtn">
-							<a href="/oaga/auth/myPage">MyPage</a>
+							<a href="/oaga/myPage_form">MyPage</a>
 						</button>
 						<!--login-->
 
@@ -90,3 +90,4 @@
 		</div>
 		<!--hWrap-->
 	</header>
+	

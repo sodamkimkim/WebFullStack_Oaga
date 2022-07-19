@@ -26,7 +26,6 @@ public class RequestReviewFileDto {
 	private String areaName;
 	private ThemeType theme;
 	private int count;
-	
 	public Review toEntity(String reviewImageUrl, User user) {
 		return Review.builder()
 				.title(title)

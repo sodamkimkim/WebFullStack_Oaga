@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Optional;
 import java.util.UUID;
 
 import javax.transaction.Transactional;
@@ -13,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
 
 import com.oaga.oaga_v1.dto.RequestReviewFileDto;
@@ -85,6 +83,7 @@ public class ReviewService {
 	
 	// 최신순으로 출력
 	
+	
 	// 리뷰 삭제
 	@Transactional
 	public void deleteReviewById(int id) {
@@ -109,5 +108,10 @@ public class ReviewService {
 	public void deleteReply(int replyId) {
 		replyRepository.deleteById(replyId);
 	}
+
+	// myPage에서 내 리뷰목록 조회
+	public Page<Review> getMyReviews(Pageable pageable, int userId){
+		return reviewRepository.findByUserId(pageable, userId);
+	} 
 	
 }

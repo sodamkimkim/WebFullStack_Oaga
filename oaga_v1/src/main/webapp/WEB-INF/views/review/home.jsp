@@ -110,8 +110,8 @@
 						</div> <!--data-->
 					</a>
 				</div>
-			</c:forEach>
 			<!--box-->
+			</c:forEach>
 
 		</div>
 		<!--row1-->
@@ -167,8 +167,9 @@
 			<div style="display: flex; margin: 0 auto;">
 			
 			<c:forEach var="bestuser" items="${bestUser}">
+<a>bestUser id: ${bestuser.id}</a>
 				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="/oaga/userPage"> <img
+					<a class="best_reviewer_a" href="/oaga/userPage_form/${bestuser.id}"> <img
 						src="images/reviewPage/profile_basic.png" class="best_reviewer_profile">
 						<p class="best_reviewer_name">${bestuser.userNickName}</p>
 						<p class="best_reviewer_count">${bestuser.likes}</p>
