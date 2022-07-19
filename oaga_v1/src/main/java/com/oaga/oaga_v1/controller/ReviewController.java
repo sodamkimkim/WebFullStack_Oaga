@@ -20,6 +20,7 @@ import com.oaga.oaga_v1.auth.PrincipalDetail;
 import com.oaga.oaga_v1.dto.RequestReviewFileDto;
 import com.oaga.oaga_v1.reviewModel.IsWritingType;
 import com.oaga.oaga_v1.reviewModel.Review;
+import com.oaga.oaga_v1.service.FollowService;
 import com.oaga.oaga_v1.service.ReviewService;
 import com.oaga.oaga_v1.service.UserService;
 import com.oaga.oaga_v1.userModel.User;
@@ -32,6 +33,9 @@ public class ReviewController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private FollowService followService;
 
 	// 로그인 되어있지 않은 경우 - 리뷰 홈
 	@GetMapping("/review")
@@ -79,8 +83,10 @@ public class ReviewController {
 	}
 
 	// 사용자의 리뷰 리스트 보는 화면
-	@GetMapping("/userPage")
-	public String reviewList() {
+	@GetMapping("/userPage/{userId}")
+	public String reviewList(@PathVariable int userId, @AuthenticationPrincipal PrincipalDetail detail, Model model) {
+		int result = followService.checkFollowInfo(detail.getUser().getId(), userId);
+		model.addAttribute("result", result);
 		return "/review/userPage";
 	}
 	
@@ -119,6 +125,10 @@ public class ReviewController {
 		return "redirect:/review";
 	}
 	
-
+	// 리뷰 전체 보기/ 검색 결과 페이지
+	@GetMapping("/list")
+	private String reviewList() {
+		return "/review/list";
+	}
 
 }

@@ -46,7 +46,7 @@ public class FollowService {
 		Follow follow = followRepository.findByFollowedUserIdAndFollowingUserId(followedUser, followingUser);
 		
 		if(follow != null) {
-			return follow.getId();
+			return 1;
 		} else {
 			return -1;
 		}

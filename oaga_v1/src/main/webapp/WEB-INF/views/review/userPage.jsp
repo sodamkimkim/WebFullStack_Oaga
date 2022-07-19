@@ -8,6 +8,14 @@
 		<div class="text-center my-5">
 			<img class="img-fluid rounded-circle mb-4"
 				src="https://dummyimage.com/150x150/6c757d/dee2e6.jpg" alt="...">
+			<c:choose>
+				<c:when test="${result eq 1}">
+					<button>a</button>	
+				</c:when>
+				<c:otherwise>
+					<button>b</button>	
+				</c:otherwise>
+			</c:choose>
 		</div>
 		<div class="info_box">
 			<div class="info">

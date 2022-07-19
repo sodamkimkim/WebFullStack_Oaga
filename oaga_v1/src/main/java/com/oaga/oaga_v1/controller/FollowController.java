@@ -2,7 +2,9 @@ package com.oaga.oaga_v1.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,8 +20,8 @@ public class FollowController {
 	@Autowired
 	private FollowService followService;
 	
-	@Autowired
-	private FollowRepository followRepository;
+	
+	
 	
 	// 팔로우 정보를 저장
 	@PostMapping("/api/follow/{followedUserId}")
@@ -29,11 +31,10 @@ public class FollowController {
 	
 	
 	// 팔로우 취소
-	@DeleteMapping("/api/follow/{followedUserId}")
-	private void unFollowUser(@PathVariable int followedUserId, @AuthenticationPrincipal PrincipalDetail detail) {
-		int id = followService.checkFollowInfo(detail.getUser().getId(), followedUserId);
-		followRepository.deleteById(id);
-	}
+//	@DeleteMapping("/api/follow/{followedUserId}")
+//	private void unFollowUser(@PathVariable int followedUserId, @AuthenticationPrincipal PrincipalDetail detail) {
+//		followRepository.deleteById();
+//	}
 	
 
 }
