@@ -50,7 +50,7 @@ public class TravelInfoController {
 				List<GuInfo> guInfoList = travelInfoService.guInfo(areaGu);
 				List<Restaurant> restaurantList = travelInfoService.guInfoRestaurant(areaGu);
 				List<Area> areaImageList = travelInfoService.areaImage(areaId);
-				
+				System.out.println(restaurantList.size() + " @@@@@@@");
 				model.addAttribute("guInfoList",guInfoList);
 				model.addAttribute("restaurantList",restaurantList);
 				model.addAttribute("areaImageList",areaImageList);

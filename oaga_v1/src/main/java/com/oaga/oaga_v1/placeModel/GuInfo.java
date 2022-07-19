@@ -48,9 +48,7 @@ public class GuInfo {
 	    @JoinColumn(name = "areaGu")
 	    private AreaGu areaGu;
 	    
-	    @OneToMany(mappedBy = "guInfo", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-	    @JsonIgnoreProperties({"guInfo"})
-	    private List<Restaurant> restaurant;
+	   
 	    
 	    @Enumerated(EnumType.STRING)
 	    private CategoryType category;

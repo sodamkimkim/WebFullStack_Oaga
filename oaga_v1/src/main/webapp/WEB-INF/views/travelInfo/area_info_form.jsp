@@ -17,7 +17,7 @@
 <br />
 <br />
 
-<h3 style="margin-left: 409px; margin-bottom: 13px;">서울 도시</h3>
+<h3 style="margin-left: 409px; margin-bottom: 13px;">${area} 도시</h3>
 <div class="" style="display: flex; justify-content: center;">
 	<div style="width: 1100px; height: 170px; overflow: hidden;">
 		<c:forEach var="areaGu" items="${areaGu}">

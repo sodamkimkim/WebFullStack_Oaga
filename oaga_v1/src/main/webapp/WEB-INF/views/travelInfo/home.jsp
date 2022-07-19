@@ -42,15 +42,15 @@
 			<ul class="areaList_li"
 				style="display: flex; flex-direction: row; justify-content: space-around; padding-top: 12px;">
 				<li class="area_list"><a href="travel/areainfo/1">서울</a></li>
-				<li class="area_list"><a href="travel/areainfo/2">인천</a></li>
-				<li><a>대전</a></li>
-				<li><a>대구</a></li>
-				<li><a>광주</a></li>
-				<li><a>부산</a></li>
-				<li><a>울산</a></li>
-				<li><a>세종</a></li>
-				<li><a>경기</a></li>
-				<li><a>강원</a></li>
+				<li class="area_list"><a href="travel/areainfo/5">인천</a></li>
+				<li class="area_list"><a>대전</a></li>
+				<li class="area_list"><a href="travel/areainfo/3">대구</a></li>
+				<li class="area_list"><a href="">광주</a></li>
+				<li class="area_list"><a href="travel/areainfo/2">부산</a></li>
+				<li class="area_list"><a href="">울산</a></li>
+				<li class="area_list"><a href="">세종</a></li>
+				<li class="area_list"><a href="">경기</a></li>
+				<li class="area_list"><a href="">강원</a></li>
 			</ul>
 		</div>
 		<div class="areaList"
@@ -63,7 +63,7 @@
 				<li><a>경남</a></li>
 				<li><a>전북</a></li>
 				<li><a>전남</a></li>
-				<li><a>제주도</a></li>
+				<li class="area_list"><a href="travel/areainfo/4">제주도</a></li>
 
 			</ul>
 		</div>

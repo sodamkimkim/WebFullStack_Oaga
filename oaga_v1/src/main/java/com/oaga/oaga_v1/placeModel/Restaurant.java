@@ -36,8 +36,8 @@ public class Restaurant {
     private String address;
 
     @ManyToOne
-    @JoinColumn(name = "guInfoId")
-    private GuInfo guInfo;
+    @JoinColumn(name = "areaGu")
+    private AreaGu areaGu;
     
     @Enumerated(EnumType.STRING)
     private CategoryType category;

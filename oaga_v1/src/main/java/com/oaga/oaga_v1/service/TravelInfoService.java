@@ -69,10 +69,10 @@ public class TravelInfoService {
 // ===================================================================================================	
 	
 //	// 찾은 식당 제외한 나머지 찾기
-	@Transactional
-	public List<Restaurant> remainderList(){
-		return restaurantRepositoryt.mRemainderRestaurant();
-	}
+//	@Transactional
+//	public List<Restaurant> remainderList(){
+//		return restaurantRepositoryt.mRemainderRestaurant();
+//	}
 	// 찾은 식당 정보
 	@Transactional
 	public List<Restaurant> findByIdRestaurant(int id){
