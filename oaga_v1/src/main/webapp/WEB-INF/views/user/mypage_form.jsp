@@ -7,7 +7,7 @@
 		<div class="text-center my-5 myPageEditWrap">
 			<div class="myPageImgBox">
 				<img class="myPageImg"
-					src="http://localhost:9090/oaga/upload/${myinfo.userProfileImgUrl}"
+					src="http://localhost:9090/oaga/upload/${principal.user.userProfileImgUrl}"
 					alt="...">
 
 			</div>
@@ -33,11 +33,11 @@
 				</p>
 				<div class="logged_line">&nbsp;</div>
 				<p class="logged_cnt_box logged_plan">
-					<b>좋아요</b> <span>${userInfo.likes}</span>
+					<b>좋아요</b> <span>${principal.user.likes}</span>
 				</p>
 				<div class="logged_line">&nbsp;</div>
 				<p class="logged_cnt_box logged_qa">
-					<b>Q&amp;A</b> <span>${userInfo.qna}</span>
+					<b>Q&amp;A</b> <span>${principal.user.qna}</span>
 				</p>
 			</div>
 		</div>
@@ -51,16 +51,15 @@
 		</header>
 		<ul>
 			<c:forEach var="myReview" items="${myReviews.content}">
-				<li class="li_item">
-				<a class="li_item_a" href="/oaga/detail/${myReview.id}">
+				<li class="li_item"><a class="li_item_a"
+					href="/oaga/detail/${myReview.id}">
 						<p style="margin-left: 1rem; margin-right: 20px; font-size: 30px;">ㆍ</p>
 						<div class="li_item_imgBox">
 
 							<img class="li_item_img"
 								src="http://localhost:9090/oaga/upload/${myReview.reviewImageUrl}">
 
-						</div>
-						<!-- li_item_imgBox -->
+						</div> <!-- li_item_imgBox -->
 
 						<div class="li_t_wrap">
 							<h3 class="li_item_t">${myReview.title}</h3>
@@ -72,9 +71,28 @@
 							<path
 									d="M6.49 20.13L8.26 21.9 18.16 12 8.26 2.1 6.49 3.87 14.62 12 6.49 20.13z"></path></svg></span>
 				</a></li>
+				<li>${myReviews.first}</li>
 			</c:forEach>
 
 		</ul>
+		<ul class="pagination">
+			<c:set var="isDisabled" value="disabled"></c:set>
+			<c:set var="isNotDisabled" value=""></c:set>
+			<c:set var="isNowPage" value="active"></c:set>
+			<li class="page-item"><a href="#"></a></li>
+			<!-- page-item -->
+			<li class="page-item"><a href="#"></a></li>
+			<!-- page-item -->
+			<li class="page-item"><a href="#"></a></li>
+			<!-- page-item -->
+			<li class="page-item"><a href="#"></a></li>
+			<!-- page-item -->
+		</ul>
+
+
+
+
+
 	</section>
 
 </div>

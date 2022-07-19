@@ -19,8 +19,10 @@ public interface ReviewRepository extends JpaRepository<Review, Integer>{
 	
 
 	// mypage에서 userId로 자기가 작성한 리뷰조회하기
-	@Query(value = "select * from review where userId = 1 ", nativeQuery = true)
-	Page<Review> findAllByUserId(Pageable pageable, int userId);
+//	@Query(value = "select * from review where userId = ?;", nativeQuery = true)
+//	Page<Review> findAllByUserId(Pageable pageable, int userId);
+	
+	Page<Review> findByUserId(Pageable pageable, int userId);
 
 
 }

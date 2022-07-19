@@ -111,6 +111,15 @@ public class UserService {
 		return userEntity;
 	}
 	
+	@Transactional
+	public User searchUserById(int userId) {
+		User userEntity = userRepository.findById(userId).orElseGet(() -> {
+			return new User();
+		});
+		System.out.println("in UserService, userEntity: "+userEntity);
+		return userEntity;
+	}
+	
 	// 베스트 리뷰어
 	public List<User> bestUser() {
 		return userRepository.bestUser();

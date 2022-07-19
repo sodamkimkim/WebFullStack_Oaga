@@ -10,6 +10,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.oaga.oaga_v1.auth.PrincipalDetail;
@@ -45,5 +46,23 @@ public class UserControllerTest {
 		model.addAttribute("pageNumbers",pageNumbers);
 		return myReviews;
 	}
+	
+
+	@GetMapping("/test/userPage_form/{userId}")
+	public Page<Review> getUserPage(@PathVariable int userId, @PageableDefault(size=6,sort="createDate", direction=Direction.DESC)Pageable pageable, Model model) {
+		User user = userService.searchUserById(userId);
+		Page<Review> userReviews = reviewService.getMyReviews(pageable, userId);
+		model.addAttribute("user",user);
+		model.addAttribute("userReviews",userReviews);
+		return userReviews;
+	}
+	@GetMapping("/test/user/{userId}")
+	public User getUserInfo(@PathVariable int userId, @PageableDefault(size=6,sort="createDate", direction=Direction.DESC)Pageable pageable, Model model) {
+		User user = userService.searchUserById(userId);
+		model.addAttribute("user",user);
+
+		return user;
+	}
+	
 
 }

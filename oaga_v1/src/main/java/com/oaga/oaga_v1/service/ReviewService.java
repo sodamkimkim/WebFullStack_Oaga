@@ -111,7 +111,7 @@ public class ReviewService {
 
 	// myPage에서 내 리뷰목록 조회
 	public Page<Review> getMyReviews(Pageable pageable, int userId){
-		return reviewRepository.findAllByUserId(pageable, userId);
+		return reviewRepository.findByUserId(pageable, userId);
 	} 
 	
 }

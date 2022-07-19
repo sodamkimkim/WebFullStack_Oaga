@@ -27,6 +27,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
@@ -152,9 +153,7 @@ public class UserController {
 	//프로필사진, 여행리뷰 작성한거
 	@GetMapping("/myPage_form")
 	public String userInfo(@PageableDefault(size = 6, sort = "createDate", direction=Direction.DESC) Pageable pageable ,Model model, @AuthenticationPrincipal PrincipalDetail detail) {
-		User myInfo = userService.searchUser(detail.getUsername());
 		Page<Review> myReviews = reviewService.getMyReviews(pageable, detail.getUser().getId());
-		System.out.println("in UserController, session의 myInfo찍어봄."+myInfo.toString());
 		System.out.println("in UserController, myReviews: " + myReviews.toString());
 		int nowPage = myReviews.getPageable().getPageNumber() +1;
 		int startPage = Math.max(nowPage-2, 1);
@@ -163,13 +162,21 @@ public class UserController {
 		for(int i = startPage; i <=endPage;i++) {
 			pageNumbers.add(i);
 		}
-		model.addAttribute("myinfo", myInfo);
 		model.addAttribute("myReviews", myReviews);
 		model.addAttribute("startPage", startPage);
 		model.addAttribute("pageNumbers",pageNumbers);
 		return "user/mypage_form";
 	}
 
+
+	@GetMapping("/userPage_form/{userId}")
+	public String getUserPage(@PathVariable int userId, @PageableDefault(size=6,sort="createDate", direction=Direction.DESC)Pageable pageable, Model model) {
+		User user = userService.searchUserById(userId);
+		Page<Review> userReviews = reviewService.getMyReviews(pageable, userId);
+		model.addAttribute("user",user);
+		model.addAttribute("userReviews",userReviews);
+		return "/user/userPage_form";
+	}
 	
 	
 	
@@ -178,11 +185,7 @@ public class UserController {
 	
 	
 	
-	
-	
-	
-	
-	
+	 
 	
 	
 	
@@ -251,7 +254,7 @@ public class UserController {
 		if (originUser.getUsername() == null) {
 			System.out.println("카카오유전데 신규라서 회원가입할거임");
 			userService.saveUser(kakaoUser);
-		}
+		} 
 		Authentication authentication = authenticationManager
 				.authenticate(new UsernamePasswordAuthenticationToken(kakaoUser.getUsername(), oagaKey));
 		SecurityContextHolder.getContext().setAuthentication(authentication);

@@ -82,10 +82,7 @@ public class ReviewController {
 	}
 
 
-	@GetMapping("/list")
-	public String reviewList() {
-		return "/review/list";
-	}
+
 
 	// 리뷰 상세보기
 	@GetMapping("/detail/{id}")
@@ -112,8 +109,7 @@ public class ReviewController {
 		dto.setIsWriting(IsWritingType.DONE);
 		reviewService.saveReview(dto, detail.getUser());
 		return "redirect:/review";
-	}
-	
+	} 
 	// 리뷰 임시 저장
 	@PostMapping("/api/review/upload/t")
 	private String saveReviewtem(RequestReviewFileDto dto, @AuthenticationPrincipal PrincipalDetail detail) {
