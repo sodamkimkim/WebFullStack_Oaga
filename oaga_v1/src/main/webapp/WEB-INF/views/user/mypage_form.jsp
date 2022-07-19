@@ -29,7 +29,7 @@
 		<div class="myPage_infoBox">
 			<div class="info">
 				<p class="logged_cnt_box logged_clip">
-					<b>작성한 리뷰</b> <span></span>
+					<b>작성한 리뷰</b> <span>${myReviews.totalElements}</span>
 				</p>
 				<div class="logged_line">&nbsp;</div>
 				<p class="logged_cnt_box logged_plan">
