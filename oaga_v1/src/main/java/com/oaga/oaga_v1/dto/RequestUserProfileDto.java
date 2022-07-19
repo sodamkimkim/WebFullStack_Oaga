@@ -35,7 +35,7 @@ public class RequestUserProfileDto {
 				.userNickName(userNickName)
 				.password(password)
 				.email(email)
-				.role(getRole())
+				.role(role)
 				.userProfileImgUrl(userImgUrl)
 				.profileOriginImgUrl(file.getOriginalFilename())
 				.build();

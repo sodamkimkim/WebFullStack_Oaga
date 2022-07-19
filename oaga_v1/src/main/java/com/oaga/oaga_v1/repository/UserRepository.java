@@ -10,6 +10,7 @@ import com.oaga.oaga_v1.dto.RequestUserProfileDto;
 import com.oaga.oaga_v1.userModel.User;
 
 public interface UserRepository extends JpaRepository<User, Integer>{
+	
 	Optional<User> findByUsername(String username);
 	
 	@Query(value = "SELECT * FROM user ORDER BY likes DESC LIMIT 5;", nativeQuery = true)

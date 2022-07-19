@@ -3,9 +3,7 @@ package com.oaga.oaga_v1.service;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.oaga.oaga_v1.dto.RequestReviewFileDto;
 import com.oaga.oaga_v1.dto.RequestUserProfileDto;
 import com.oaga.oaga_v1.repository.UserRepository;
 import com.oaga.oaga_v1.userModel.RoleType;
@@ -43,6 +40,7 @@ public class UserService {
 		try {
 
 			String rawPassword = dto.getPassword();
+			System.out.println(rawPassword);
 			String encPassword = encoder.encode(rawPassword);
 			dto.setPassword(encPassword);
 			dto.setRole(RoleType.USER);
@@ -118,13 +116,14 @@ public class UserService {
 	public List<User> bestUser() {
 		return userRepository.bestUser();
 	}
-	
+	@Transactional
 	public int adminJoin(RequestUserProfileDto dto){
+		System.out.println("여기는??");
 		try {
-
-			String rawPassword = dto.getPassword();
-			String encPassword = encoder.encode(rawPassword);
-			dto.setPassword(encPassword);
+			String rawPassword1 = dto.getPassword();
+			System.out.println(rawPassword1);
+			String encPassword1 = encoder.encode(rawPassword1);
+			dto.setPassword(encPassword1);
 			dto.setRole(RoleType.ADMIN);
 			System.out.println(dto.getRole() + "@@@@@SERVEICE@@@ROLE@@@@");
 			System.out.println("여기를 안들어오나????@@@@@?");

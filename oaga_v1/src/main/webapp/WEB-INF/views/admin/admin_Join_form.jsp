@@ -127,7 +127,7 @@ footer {
 				<a href="/oaga">OaGa</a>
 			</h1>
 			<div class="con">
-				<form action="/oaga/auth/joinProc" method="post"
+				<form action="/oaga/auth/adminJoin" method="post"
 					enctype="multipart/form-data">
 					<!-- csrf???? xss -->
 					<div class="formRow1">
@@ -139,7 +139,8 @@ footer {
 						<input type="email" class="form-input" placeholder="Enter email"
 							id="email" name="email" />
 						<div class="userProfileWrap">
-							<label class="lblUserProfileFile" for="userProfileFile">관리자								프로필 등록: </label> <input type="file" name="file"
+							<label class="lblUserProfileFile" for="userProfileFile">관리자
+								프로필 등록: </label> <input type="file" name="file"
 								placeholder="upload user-Profile" class="form-input"
 								id="userProfileFile">
 						</div>
@@ -148,7 +149,8 @@ footer {
 					</div>
 					<!--formRow1-->
 					<div class="formRow2">
-						<button type="submit" id="btn_join" class="btn btn_join">관리자 회원가입</button>
+						<button type="submit" id="btn_join" class="btn btn_join">관리자
+							회원가입</button>
 					</div>
 				</form>
 			</div>
