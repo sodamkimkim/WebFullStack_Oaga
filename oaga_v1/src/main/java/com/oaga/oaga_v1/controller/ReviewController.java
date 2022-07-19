@@ -85,13 +85,6 @@ public class ReviewController {
 		return "/review/update";
 	}
 
-	// 사용자의 리뷰 리스트 보는 화면
-	@GetMapping("/userPage/{userId}")
-	public String reviewList(@PathVariable int userId, @AuthenticationPrincipal PrincipalDetail detail, Model model) {
-		int result = followService.checkFollowInfo(detail.getUser().getId(), userId);
-		model.addAttribute("result", result);
-		return "/review/userPage";
-	}
 	
 
 	// 리뷰 상세보기

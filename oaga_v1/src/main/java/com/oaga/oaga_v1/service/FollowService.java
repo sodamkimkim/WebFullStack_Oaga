@@ -43,7 +43,9 @@ public class FollowService {
 			return new IllegalArgumentException("해당 사용자는 찾을 수 없습니다.");
 		});
 		
-		Follow follow = followRepository.findByFollowedUserIdAndFollowingUserId(followedUser, followingUser);
+		Follow follow = followRepository.findByFollowedUserIdAndFollowingUserId(followedUser, followingUser).orElseThrow(() -> {
+			return null;
+		});
 		
 		if(follow != null) {
 			return 1;

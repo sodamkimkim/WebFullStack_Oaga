@@ -41,6 +41,7 @@ import com.oaga.oaga_v1.dto.KakaoProfile.KakaoAccount;
 import com.oaga.oaga_v1.dto.OAuthToken;
 import com.oaga.oaga_v1.dto.RequestUserProfileDto;
 import com.oaga.oaga_v1.reviewModel.Review;
+import com.oaga.oaga_v1.service.FollowService;
 import com.oaga.oaga_v1.service.ReviewService;
 import com.oaga.oaga_v1.service.UserService;
 import com.oaga.oaga_v1.userModel.RoleType;
@@ -66,6 +67,9 @@ public class UserController {
 
 	@Autowired
 	ReviewService reviewService;
+	
+	@Autowired
+	private FollowService followService;
 	
 	@GetMapping("/auth/login_form")
 	public String loginForm() {
@@ -170,18 +174,21 @@ public class UserController {
 
 
 	@GetMapping("/userPage_form/{userId}")
-	public String getUserPage(@PathVariable int userId, @PageableDefault(size=6,sort="createDate", direction=Direction.DESC)Pageable pageable, Model model) {
+	public String getUserPage(@PathVariable int userId, @PageableDefault(size=6,sort="createDate", direction=Direction.DESC)Pageable pageable, Model model, @AuthenticationPrincipal PrincipalDetail detail) {
 		User user = userService.searchUserById(userId);
 		Page<Review> userReviews = reviewService.getMyReviews(pageable, userId);
+		
+		int result = followService.checkFollowInfo(detail.getUser().getId(), userId);
+		model.addAttribute("result", result);
+		System.out.println(result);
 		model.addAttribute("user",user);
 		model.addAttribute("userReviews",userReviews);
+		
 		return "/user/userPage_form";
 	}
 	
 	
-	
-	
-	
+
 	
 	
 	
