@@ -11,13 +11,13 @@ public interface RestaurantRepositoryt extends JpaRepository<Restaurant, Integer
 	
 	
 	
-	// guInfo 페이지에 필요한 레스토랑 리스트(controller / guInfoList)
-//	@Query(value = "SELECT * FROM restaurant AS r INNER JOIN guInfo AS g ON r.guInfoId = g.id WHERE r.guInfoId = ?", nativeQuery = true)
-//	List<Restaurant> mFindByGuInfoId(int guInfoId);
+	// area에 속해있는 모든 식당/카페
+	@Query(value = "SELECT * FROM restaurant AS r INNER JOIN areaGu AS a ON r.areaGu = a.id WHERE a.areaId = ?", nativeQuery = true)
+	List<Restaurant> mFindByGuInfoId(int areaGu_areaId);
 	
 	
 	
-	// 식당 정보 보여주기
+	// 선택한 식당 정보 보여주기
 	@Query(value = "SELECT * FROM restaurant WHERE id = ?", nativeQuery = true)
 	List<Restaurant> mFindByRestaurant(int id);
 
@@ -25,8 +25,9 @@ public interface RestaurantRepositoryt extends JpaRepository<Restaurant, Integer
 //	@Query(value = "SELECT * FROM restaurant WHERE guInfoId = 1 and not id = 1", nativeQuery = true)
 //	List<Restaurant> mRemainderRestaurant();
 	
-	
+	// areaGu에 속해있는 식당/카페
 	@Query(value = "SELECT * FROM restaurant WHERE areaGu = ?", nativeQuery = true)
 	List<Restaurant> mRestaurantGroupByGuInfoId(int areaGuId);
+	
 	
 }
