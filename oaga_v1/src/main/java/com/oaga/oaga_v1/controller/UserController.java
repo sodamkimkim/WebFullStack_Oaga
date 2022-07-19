@@ -77,7 +77,7 @@ public class UserController {
 //	}
 	
 
-	@PostMapping("/auth/joinProc")
+	@PostMapping("/auth/joinProc") // 회원가입
 	public String save(User user) {
 		System.out.println("save 들어옴");
 		int result = userService.saveUser(user);

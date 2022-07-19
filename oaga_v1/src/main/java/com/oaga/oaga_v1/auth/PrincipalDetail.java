@@ -61,13 +61,13 @@ public class PrincipalDetail implements UserDetails{
 		
 		Collection<GrantedAuthority> collectors = new ArrayList<GrantedAuthority>(); // 이 collection에 사용자의 계정을 넣어 리턴
 		
-//		collectors.add(new GrantedAuthority() {
-//			@Override
-//			public String getAuthority() {
-//				//"ROLE_USER", "ROLE_ADMIN"
-//				return "ROLE_" + user.getRole();
-//			}
-//		});
+		collectors.add(new GrantedAuthority() {
+			@Override
+			public String getAuthority() {
+				//"ROLE_USER", "ROLE_ADMIN"
+				return "ROLE_" + user.getRole();
+			}
+		});
 		
 		collectors.add(() -> {
 			return "ROLE_"+user.getRole();
