@@ -10,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
 
+import com.oaga.oaga_v1.auth.PrincipalDetail;
 import com.oaga.oaga_v1.dto.RequestReviewFileDto;
 import com.oaga.oaga_v1.repository.ReviewRepository;
 import com.oaga.oaga_v1.reviewModel.Review;
@@ -64,4 +66,8 @@ public class ReviewService {
 		
 	// 최신순으로 출력
 	
+	// myPage에서 내 리뷰목록 조회
+	public Page<Review> getMyReviews(Pageable pageable, int userId){
+		return reviewRepository.findAllByUserId(pageable, userId);
+	}
 }

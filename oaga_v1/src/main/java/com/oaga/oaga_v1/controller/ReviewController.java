@@ -11,6 +11,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.oaga.oaga_v1.auth.PrincipalDetail;
@@ -41,8 +42,9 @@ public class ReviewController {
 		
 		model.addAttribute("reviews", reviews);
 		model.addAttribute("bestUser", bestUser);
+		System.out.println("in ReviewController, pageable: "+ pageable.toString());
 		return "/review/home";
-	}
+	} 
 	// 로그인 한 경우
 	@GetMapping("/mreview")
 	public String reviewHome(@PageableDefault(size = 6, sort = "count", direction = Direction.DESC) Pageable pageable,
@@ -70,10 +72,7 @@ public class ReviewController {
 		return "/review/list";
 	}
 	
-	@GetMapping("/detail")
-	public String reviewDetail() {
-		return "/review/detail";
-	}
+
 
 	// 리뷰 등록
 	@PostMapping("/api/review/upload")
@@ -91,5 +90,6 @@ public class ReviewController {
 		reviewService.saveReview(dto, detail.getUser());
 		return "redirect:/review";
 	}
+
 
 }
