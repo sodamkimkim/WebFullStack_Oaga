@@ -106,6 +106,18 @@ footer {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.userProfileWrap {
+	display: flex;
+	flex-direction: column;
+}
+
+.userProfileWrap label {
+	margin-top:10px;
+	margin-bottom: 15px;
+	font-size: 16px;
+	color: #333;
+}
 </style>
 </head>
 <body>
@@ -115,17 +127,24 @@ footer {
 				<a href="/oaga">OaGa</a>
 			</h1>
 			<div class="con">
-				<form action="/oaga/auth/joinProc" method="post">
+				<form action="/oaga/auth/joinProc" method="post" enctype="multipart/form-data">
 					<!-- csrf???? xss -->
 					<div class="formRow1">
 						<input type="text" class="form-input" placeholder="Enter ID"
-							id="username" name="username" />
-						<input type="password"
+							id="username" name="username" /> <input type="password"
 							class="form-input" placeholder="Enter password" id="password"
-							name="password" /> 
-							<br /> 
-						<input type="text" class="form-input" placeholder="Enter name" id="userNickName" name="userNickName" />
-						<input type="email" class="form-input" placeholder="Enter email" id="email" name="email" />
+							name="password" /> <br /> <input type="text" class="form-input"
+							placeholder="Enter name" id="userNickName" name="userNickName" />
+						<input type="email" class="form-input" placeholder="Enter email"
+							id="email" name="email" />
+						<div class="userProfileWrap">
+							<label class="lblUserProfileFile" for="userProfileFile">사용자 프로필 등록: </label> 
+							<input type="file"
+								name="file" placeholder="upload user-Profile"
+								class="form-input" id="userProfileFile" >
+						</div>
+
+
 					</div>
 					<!--formRow1-->
 					<div class="formRow2">

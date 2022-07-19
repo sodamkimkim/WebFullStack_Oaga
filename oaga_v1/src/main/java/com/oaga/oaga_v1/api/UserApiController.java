@@ -31,4 +31,9 @@ public class UserApiController {
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		return new ResponseDto<Integer>(HttpStatus.OK,1);
 	}
+	
+	
+
+
+
 }

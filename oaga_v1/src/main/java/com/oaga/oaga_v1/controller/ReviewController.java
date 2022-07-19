@@ -43,9 +43,12 @@ public class ReviewController {
 		
 		model.addAttribute("reviews", reviews);
 		model.addAttribute("bestUser", bestUser);
+		System.out.println("in ReviewController, pageable: "+ pageable.toString());
 		return "/review/home";
-	}
-	// 로그인 한 경우 - 리뷰 홈
+
+	} 
+	// 로그인 한 경우
+
 	@GetMapping("/mreview")
 	public String reviewHome(@PageableDefault(size = 6, sort = "count", direction = Direction.DESC) Pageable pageable,
 			Model model, @AuthenticationPrincipal PrincipalDetail detail) {
@@ -78,12 +81,12 @@ public class ReviewController {
 		return "/review/update";
 	}
 
-	// 사용자의 리뷰 리스트 보는 화면
-	@GetMapping("/userPage")
+
+	@GetMapping("/list")
 	public String reviewList() {
-		return "/review/userPage";
+		return "/review/list";
 	}
-	
+
 	// 리뷰 상세보기
 	@GetMapping("/detail/{id}")
 	public String reviewDetail(@PathVariable int id, Model model) {
@@ -91,6 +94,7 @@ public class ReviewController {
 		model.addAttribute("review", review);
 		return "/review/detail";
 	}
+
 
 	// 리뷰 등록
 	@PostMapping("/api/review/upload")
@@ -119,6 +123,7 @@ public class ReviewController {
 		return "redirect:/review";
 	}
 	
+
 
 
 }
