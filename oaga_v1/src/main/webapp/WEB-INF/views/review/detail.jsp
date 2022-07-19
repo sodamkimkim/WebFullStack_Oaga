@@ -20,8 +20,8 @@
 						<img class="dropImage" src="../images/reviewPage/icon-addview.png">
 					</button>
 					<div id="myDropdown" class="dropdown-content">
-						<a href="#" >수정</a> 
-						<a href="#" style="color: red;">삭제</a>
+						<a href="/oaga/review/update/${review.id}" >수정</a> 
+						<a href="javascript:void(0);" id="btn-delete" style="color: red;">삭제</a>
 					</div>
 				</div>
 			</div>

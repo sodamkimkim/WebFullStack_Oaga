@@ -16,7 +16,7 @@
 <script
 	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
-<link rel="stylesheet" href="css/review/writestyle.css" />
+<link rel="stylesheet" href="/oaga/css/review/writestyle.css" />
 <!-- 리뷰 작성 타이틀 -->
 <div style="background-color: rgba(240, 240, 240, 0.8);">
 	<div class="r_sec">
@@ -27,11 +27,8 @@
 					<h3 class="title">MY여행리뷰 작성</h3>
 				</div>
 				<div class="t_btn">
-					<button type="submit" class="write_btn" id="btn-t-save" value="ING"
-						onclick="javascript: form.action='/oaga/api/review/upload/t';">임시
-						저장</button>
 					<button type="submit" class="write_btn" id="btn-save" value="DONE"
-						onclick="javascript: form.action='/oaga/api/review/upload';">등록</button>
+						onclick="javascript: form.action='/oaga/api/review/${review.id}/update';">수정 완료</button>
 				</div>
 				<div style="display: flex">
 					<div class="place">여행지 :</div>
@@ -59,7 +56,7 @@
 				<div style="display: flex">
 					<div class="place">제목&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</div>
 					<input class="i_place" id="r_title" name="title"
-						placeholder="제목을 입력하세요">
+						placeholder="제목을 입력하세요" value="${review.title}">
 				</div>
 
 				<div class="t_check">
@@ -90,7 +87,7 @@
 				<div class=""></div>
 				<div class="c_box">
 					<div>
-						<textarea class="summernote" id="content" name="content">
+						<textarea class="summernote" id="content" name="content">${review.content}
 			</textarea>
 					</div>
 
