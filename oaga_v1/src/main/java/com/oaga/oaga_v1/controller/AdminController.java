@@ -21,7 +21,10 @@ public class AdminController {
 		return "admin/admin_Join_form";
 	}
 	
-	
+	@GetMapping("/admin/page")
+	public String adminPage() {
+		return "admin/admin_index";
+	}
 	
 	@PostMapping("/auth/adminJoin")
 	public String adminJoin(RequestUserProfileDto dto) {

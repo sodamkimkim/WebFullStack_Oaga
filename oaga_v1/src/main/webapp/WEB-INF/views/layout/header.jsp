@@ -39,7 +39,7 @@
 				</c:choose>
 				
 				<li><a href="#">커뮤니티</a></li>
-				<li><a href="/oaga/admin/index">홈페이지 관리하기</a></li>
+				<li><a href="/oaga/admin/page">홈페이지 관리하기</a></li>
 			</ul>
 			<!--gnb-->
 

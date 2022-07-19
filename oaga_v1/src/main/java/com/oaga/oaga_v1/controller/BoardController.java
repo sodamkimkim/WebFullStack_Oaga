@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 @Controller // 페이지 리턴
 public class BoardController {
 
-	@GetMapping({"","/", "/oaga"})
+	@GetMapping({"/oaga/index"})
 	public String index() {
 		return "index";
 	}
