@@ -12,7 +12,7 @@ public interface RestaurantRepositoryt extends JpaRepository<Restaurant, Integer
 	
 	
 	// area에 속해있는 모든 식당/카페
-	@Query(value = "SELECT * FROM restaurant AS r INNER JOIN areaGu AS a ON r.areaGu = a.id WHERE a.areaId = ?", nativeQuery = true)
+	@Query(value = "SELECT * FROM restaurant AS r INNER JOIN areaGu AS a ON r.areaGu = a.id WHERE a.area = ?", nativeQuery = true)
 	List<Restaurant> mFindByGuInfoId(int areaGu_areaId);
 	
 	

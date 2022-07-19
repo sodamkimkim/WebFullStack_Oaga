@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import com.oaga.oaga_v1.dto.RequestUserProfileDto;
 import com.oaga.oaga_v1.userModel.User;
 
 public interface UserRepository extends JpaRepository<User, Integer>{
@@ -13,5 +14,8 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	
 	@Query(value = "SELECT * FROM user ORDER BY likes DESC LIMIT 5;", nativeQuery = true)
 	List<User> bestUser();
+	
+	
+	
 	
 }
