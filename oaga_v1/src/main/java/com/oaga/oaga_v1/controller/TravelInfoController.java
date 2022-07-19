@@ -50,7 +50,6 @@ public class TravelInfoController {
 				List<GuInfo> guInfoList = travelInfoService.guInfo(areaGu);
 				List<Restaurant> restaurantList = travelInfoService.guInfoRestaurant(areaGu);
 				List<Area> areaImageList = travelInfoService.areaImage(areaId);
-				System.out.println(restaurantList.size() + " @@@@@@@");
 				model.addAttribute("guInfoList",guInfoList);
 				model.addAttribute("restaurantList",restaurantList);
 				model.addAttribute("areaImageList",areaImageList);
@@ -93,14 +92,19 @@ public class TravelInfoController {
 		@GetMapping("/travel/areainfo/{id}")
 		public String areaInfo(Model model,@PathVariable int id) {
 			List<Area> areaImageList = travelInfoService.areaImage(id);
-			
-			
+
 			List<AreaGu> areaGuAllList = travelInfoService.areaGu(id);
-			List<GuInfo>guinfoAllList = travelInfoService.guInfo(id);
-			List<Restaurant> restaurantAllList = travelInfoService.guInfoRestaurant(id);
+			
+			int areaGuId = travelInfoService.areaGu(id).get(0).getId();
+			System.out.println(areaGuId + "areaGuId@@@@@@@@@@@@@@@@");
+			List<GuInfo>guinfoAllList = travelInfoService.guInfo(areaGuId);
+			List<Restaurant> restaurantAllList = travelInfoService.guInfoRestaurant(areaGuId);
+			
 			model.addAttribute("areaImage" ,areaImageList);
 			model.addAttribute("areaGu" ,areaGuAllList);
 			model.addAttribute("guinfo" ,guinfoAllList);
+			
+			
 			model.addAttribute("restaurant" ,restaurantAllList);
 			return "/travelInfo/area_info_form";
 		}

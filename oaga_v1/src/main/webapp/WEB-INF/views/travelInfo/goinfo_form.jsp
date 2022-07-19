@@ -17,18 +17,18 @@
 <br/>
 
 <div
-	style="font-size: 25px; font-style: oblique; padding-top: 10px; margin-left: 355px; font-weight: bold;">HOT플레이스</div>
+	style=" font-size: 25px; font-style: oblique; padding-top: 10px; margin-left: 366px; font-weight: bold;">HOT플레이스</div>
 
 <div class="content-randmark"
 	style="display: flex; justify-content: center;">
 
 	<div
-		style="width: 1200px; height: 260px; display: flex; justify-content: center; align-items: center;">
+		style="width: 1200px; height: 200px; display: flex; justify-content: flex-start; align-items: center;margin-left: 30px; ">
 		<div
-			style="display: flex; justify-content: center; align-content: center; font-weight: bold; font-size: 20px;">
+			style="display: flex; justify-content: center; align-content: center; font-weight: bold; font-size: 20px; ">
 			<c:forEach var="guInfoList" items="${guInfoList}">
 				<a href="/oaga/travel_detail/gu/${guInfoList.id}"
-					style="width: auto; height: auto; margin-left: 15px;"> <img
+					style="width: auto; height: auto; margin-right: 15px;"> <img
 					alt="" src="${guInfoList.imageUrl}"
 					style="width: 170px; height: 170px; border-radius: 1ex; margin-top: 30px;">
 					<h5 style="margin-top: -2px;">${guInfoList.name}</h5>
@@ -38,21 +38,21 @@
 	</div>
 
 </div>
-
-
+<br/>
+<br/>
 <div
-	style="font-size: 25px; font-style: oblique; padding-top: 10px; margin-left: 355px; font-weight: bold;">맛집/카페</div>
+	style="font-size: 25px; font-style: oblique; padding-top: 10px; margin-left: 366px; font-weight: bold;">맛집/카페</div>
 <div class="content-randmark"
 	style="display: flex; justify-content: center;">
 	<a class="prev" style="display: flex; align-items: center;"
 		id="prev_slide">&#10094;</a>
 	<div
-		style="width: 1200px; height: 260px; display: flex; justify-content: center; align-items: center;">
+		style="width: 1200px; height: 200px; display: flex; justify-content: flex-start; align-items: center; margin-left: 30px;">
 		<div
-			style="width: 250px; height: 250px; border-radius: 1ex; display: flex; justify-content: center; align-items: center;">
+			style=" display: flex; justify-content: flex-start; align-items: center;font-weight: bold; font-size: 20px; ">
 			<c:forEach var="restaurantList" items="${restaurantList}">
 				<a href="/oaga/travel_detail/${restaurantList.id}"
-					style="width: auto; height: auto; margin-left: 15px;"> <img
+					style="width: auto; height: auto; margin-right: 15px;"> <img
 					alt="" src="${restaurantList.imageUrl}"
 					style="width: 170px; height: 170px; border-radius: 1ex; margin-top: 30px;">
 					<h5 style="margin-top: -2px;">${restaurantList.name}</h5>
