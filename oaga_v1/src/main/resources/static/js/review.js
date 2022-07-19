@@ -4,6 +4,10 @@ let index = {
 			this.replySave();
 		});
 		
+		$("#btn-delete").bind("click", () => {
+			this.reviewDelete();
+		});
+		
 	},
 	
 	replySave: function() {
@@ -42,6 +46,24 @@ let index = {
 		}).fail(function(error) {
 			console.log(error);
 			alert("댓글 삭제 실패");
+		});
+		
+	},
+	
+	reviewDelete: function() {
+		
+		let reviewId = $("#reviewId").val();
+		
+		$.ajax({
+			type: "DELETE",
+			url: `/oaga/api/review/${reviewId}/delete`,
+			dataType: "json"
+		}).done(function(response) {
+			alert("리뷰가 삭제되었습니다.");
+			location.href = "/oaga/review";	
+		}).fail(function(error) {
+			console.log(error);
+			alert("리뷰 삭제 실패")
 		});
 		
 	}

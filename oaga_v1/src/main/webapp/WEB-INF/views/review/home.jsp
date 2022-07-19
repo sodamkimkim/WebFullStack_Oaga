@@ -110,8 +110,8 @@
 						</div> <!--data-->
 					</a>
 				</div>
-			</c:forEach>
 			<!--box-->
+			</c:forEach>
 
 		</div>
 		<!--row1-->

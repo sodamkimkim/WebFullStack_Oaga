@@ -1,0 +1,256 @@
+@import url(../style.css);
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: rgba(240, 240, 240, 0.8);
+}
+
+h3 {
+	display: block;
+	font-size: 1.17em;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
+}
+
+h4 {
+	display: block;
+	margin-block-start: 1.33em;
+	margin-block-end: 1.33em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
+}
+
+.profile_b {
+	background-image:
+		url('https://source.unsplash.com/wfh8dDlNFOk/1600x900');
+	background-position: center;
+	background-size: cover;
+	padding-top: 3rem !important;
+	padding-bottom: 3rem !important;
+}
+
+.text-center {
+	text-align: center !important;
+}
+
+.my-5 {
+	margin-top: 3rem !important;
+	margin-bottom: 1rem !important;
+}
+
+.myPageImg {
+	width: 200px;
+	height: 100%;
+}
+
+.myPageImgBox {
+	border-radius: 50%;
+	overflow: hidden;
+	width: 200px;
+	height: 200px;
+	background-color: aqua;
+	margin-bottom: 20px;
+}
+
+.myPage_infoBox {
+	display: flex;
+	justify-content: center;
+}
+
+.myPage_infoBox .info {
+	display: flex;
+	background-color: white;
+	width: 500px;
+	height: 100px;
+	border-radius: 15px;
+}
+
+.review_list_container {
+	background-color: #fff;
+	font-size: 1.1rem;
+	font-weight: 700;
+	border-radius: 15px;
+	margin: 35px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.li_header {
+	padding: 1.5rem 0 1.4rem;
+	height: 4.8rem;
+}
+
+.li_title {
+	padding-left: 10px;
+	font-size: 1.4rem;
+	font-weight: 700;
+	line-height: 1.9rem;
+	color: #1a1a1a;
+}
+
+.li_item {
+	border-bottom: 0.1rem solid #f2f2f2;
+	list-style: none;
+	display: list-item;
+	text-align: -webkit-match-parent;
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+.li_item_a {
+	display: flex;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	align-items: center;
+	text-decoration: none;
+	border: 1px solid #ccc;
+	border-radius: 20px;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+	margin-bottom: 15px;
+}
+
+.li_item_img {
+	border-radius: 50%;
+	width: 5.4rem;
+	height: 5.4rem;
+	margin-right: 1rem;
+}
+
+.li_item_imgBox {
+	border-radius: 50%;
+	width: 5.4rem;
+	height: 5.4rem;
+	margin-right: 1rem;
+}
+
+.li_t_wrap {
+	flex: 1 1;
+	overflow: hidden;
+}
+
+.li_item_t {
+	font-size: 1rem;
+	font-weight: 700;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	line-height: 1.6rem;
+}
+
+.li_item_d {
+	font-size: 0.8rem;
+	font-weight: 400;
+	color: #616161;
+	margin-top: 0.2rem;
+	max-height: 2.4rem;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+.logged_cnt_box {
+	display: block;
+	float: left;
+	text-align: center;
+	min-width: 150px;
+	padding-top: 20px;
+}
+
+.logged_line {
+	margin-top: 20px;
+	float: left;
+	width: 1px;
+	height: 50px;
+	background: #dbdbdb;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.logged_cnt_box b {
+	font-size: 13px;
+	color: #555555;
+	display: block;
+	padding-bottom: 10px;
+}
+
+.logged_cnt_box span {
+	color: #49b2e9;
+	font-size: 13px;
+}
+
+.logged_btn {
+	text-align: center;
+	display: inline-block;
+	color: #808080;
+	font-size: 13px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.logged_btn_ico {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: #f49600;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+.page.logged_box {
+	border-top: 1px solid #e4e4e4;
+	border-bottom: 1px solid #e4e4e4;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.TabOverview_icon__3umjF {
+	display: inline-block;
+	width: 1.4rem;
+	height: 1.4rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
+	color: #919191;
+}
+
+.Icon_icon__2BP_o>svg {
+	display: block;
+	fill: currentColor;
+	fill-rule: evenodd;
+}
+
+.myPageEditWrap .myPageProfile {
+	margin-left: 150px;
+}
+
+.myPageEditWrap {
+	display: flex;
+	justify-content: center;
+}
+
+.myPageEditWrap {
+	
+}
+
+.myPageEditWrap .myPageEditBtns {
+	margin-top: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.myPageEditBtns button {
+	width: 150px;
+	margin-left: 20px;
+	line-height: 2;
+	border-bottom: 2px solid #333;
+	background-color: transparent;
+	cursor: pointer;
+}

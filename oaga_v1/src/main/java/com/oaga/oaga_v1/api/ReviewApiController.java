@@ -37,5 +37,12 @@ public class ReviewApiController {
 		return new ResponseDto<>(HttpStatus.OK, 1);
 	}
 	
+	// 리뷰 삭제
+	@DeleteMapping("/api/review/{reviewId}/delete")
+	private ResponseDto<Integer> deleteReview(@PathVariable int reviewId) {
+		reviewService.deleteReviewById(reviewId);
+		return new ResponseDto<>(HttpStatus.OK, 1);
+	}
+
 
 }
