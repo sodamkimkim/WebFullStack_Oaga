@@ -1,5 +1,6 @@
 package com.oaga.oaga_v1.reviewModel;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -17,9 +18,20 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.oaga.oaga_v1.userModel.User;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
 public class Review {
 	
@@ -34,18 +46,35 @@ public class Review {
 	@Column(nullable = false)
 	private String content;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "userId")
-	private User user;
+	@Column(nullable = false)
+	@Enumerated(EnumType.STRING)
+	private IsWritingType isWriting;
 	
-	@OneToMany(mappedBy = "review", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-	private List<Reply> replies;
+	@Column(nullable = false, length = 10)
+	private String areaName;
 	
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	private ThemeType theme;
 	
+	@Column(nullable = false)
+	private String reviewImageUrl;
+	
+	private String originImageUrl;
+	
+	@CreationTimestamp
+	private Timestamp createDate;
+	
 	@ColumnDefault("0")
 	private int count;
+	
+	// 유저 정보
+	@ManyToOne
+	@JoinColumn(name = "userId")
+	private User user;
+	
+	// 댓글 정보
+	@OneToMany(mappedBy = "review", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+	private List<Reply> replies;
 	
 }

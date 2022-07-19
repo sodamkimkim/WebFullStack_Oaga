@@ -68,7 +68,7 @@ header {
 }
 
 
-#summernote {
+.summernote {
 	position: center;
 	height: 100%;
 }
@@ -86,4 +86,34 @@ header {
 
 .t_radio {
 	margin-right:10px; 
+}
+
+.r_image_button {
+	font-size: 20px;
+	font-weight: 500px;
+}
+
+.upload_name {
+	margin-left: 10px;
+	height: 35px;
+	padding: 0 10px;
+	vertical-align: middle;
+	border: 1pz #dddddd;
+	width: 25%;
+	color: #999999;
+}
+
+.r_image_label {
+	border-radius: 6%;
+	cursor: pointer;
+	padding: 10px 20px;
+	color: #fff;
+	vertical-align: middle;
+	background-color: rgba(245, 161, 25, 0.9);
+	height: 35px;
+	margin-left: 10px;
+}
+
+.r_image_input {
+	visibility: hidden;
 }

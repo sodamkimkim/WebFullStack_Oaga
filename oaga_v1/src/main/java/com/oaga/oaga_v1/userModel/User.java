@@ -17,6 +17,7 @@ import javax.persistence.OneToMany;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.oaga.oaga_v1.reviewModel.Review;
 
 //localhost:9090/oaga/review
@@ -36,8 +37,12 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //프로젝트에 연결된 db넘버링전략 따라가기(mysql auto-increment)
 	private int id;
 	
+
 	@Column(nullable = false, length = 100)
 	private String username;
+	
+	@Column(nullable = true, length = 20)
+	private String userNickName;
 	
 	@Column(nullable = false, length = 100)
 	private String password;
@@ -51,8 +56,9 @@ public class User {
 	//소셜 로그인 가입자 구분
 	private String oauth;
 	
-	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-	private List<Review> reviews;
+//	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+//	@JsonIgnoreProperties({"user","userId"})
+//	private List<Review> reviews;
 	
 	@CreationTimestamp // 시간 자동입력
 	private Timestamp createDate;

@@ -46,7 +46,9 @@
           </div>
           <!--box-->
           <div class="box">
-            <img src="images/mainpage/intro02.jpg" alt="" />
+          	<a href="/oaga/review">
+          		<img src="images/mainpage/intro02.jpg" alt="" />
+          	</a>
             <h4>리뷰보기</h4>
             <p>
               100만 여행자들의 리뷰를 확인하고,<br />

@@ -19,10 +19,10 @@ import com.oaga.oaga_v1.placeModel.CategoryType;
 import com.oaga.oaga_v1.placeModel.GuInfo;
 import com.oaga.oaga_v1.placeModel.Restaurant;
 import com.oaga.oaga_v1.service.TravelInfoService;
+
 @Controller
 public class TravelInfoController {
 
-	
 			@Autowired
 			TravelInfoService travelInfoService;
 			
@@ -197,3 +197,7 @@ public class TravelInfoController {
 			
 
 			
+
+
+
+

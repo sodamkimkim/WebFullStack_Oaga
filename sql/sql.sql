@@ -34,3 +34,28 @@ select user, host from user;
 
 create database oaga;
 use oaga;
+
+desc user;
+select * from user;
+desc review;
+select * from review;
+desc reply;
+select * from reply;
+
+select count(*) from review group by userId having userId = 2;
+
+-- 좋아요 수 변경 쿼리
+update user set likes = '23' where id = 1;
+update user set likes = '37' where id = 2;
+
+
+-- 좋아요가 많은 순서대로 user 정보 가져오는 쿼리문
+select * from user order by likes desc limit 4;
+
+
+
+
+-- 베스트 리뷰 출력createDate
+select * from review order by count desc limit 6;
+-- 베스트 리뷰어 출력
+select * from user order by likes desc limit 5;

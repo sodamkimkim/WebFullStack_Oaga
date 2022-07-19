@@ -15,6 +15,13 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import com.oaga.oaga_v1.userModel.User;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Reply {
 

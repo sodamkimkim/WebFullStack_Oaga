@@ -8,7 +8,6 @@
 	<div class="wrap">
 		<h5 class="review_search_title">보고싶은 리뷰를 검색하여 가고싶은 지역의 후기를 찾아보세요</h5>
 
-
 		<!-- 사진이나 화면 추가 -->
 		<p class="review_search_coment">리뷰 검색하기</p>
 		<div class="review_search_area">
@@ -20,38 +19,48 @@
 	</div>
 </div>
 
-<div class="page silver logged_box">
-	<div class="wrap logged">
-		<img class="logged_user_img" src="images/reviewPage/profile_basic.png"
-			onerror="this.src='images/reviewPage/profile_basic.png';">
-		<div class="logged_left">
-			<div class="logged_name">임희진</div>
-			<div class="clear"></div>
-			<a
-				href="/ko/mypage/et_2207050522410907249001657009361?type=clipboard"
-				class="logged_cnt_box logged_clip"> <b>작성한 리뷰</b> <span>0</span>
-			</a>
-			<div class="logged_line">&nbsp;</div>
-			<a href="/ko/mypage/et_2207050522410907249001657009361?type=plan"
-				class="logged_cnt_box logged_plan"> <b>좋아요</b> <span>0</span>
-			</a>
-			<div class="logged_line">&nbsp;</div>
-			<a href="/ko/mypage/et_2207050522410907249001657009361?type=my_qa"
-				class="logged_cnt_box logged_qa"> <b>Q&amp;A</b> <span>0</span>
-			</a>
-			<div class="clear"></div>
-		</div>
-		<a href="/oaga/write">
-			<div class="logged_btn">
-				<div class="logged_btn_ico">
-					<img src="images/reviewPage/ico_review.png" />
+<c:choose>
+	<c:when test="${empty principal}">
+	</c:when>
+	<c:otherwise>
+		<div class="page silver logged_box">
+			<div class="wrap logged">
+				<img class="logged_user_img"
+					src="images/reviewPage/profile_basic.png"
+					onerror="this.src='images/reviewPage/profile_basic.png';">
+				<div class="logged_left">
+					<div class="logged_name">${principal.user.userNickName}</div>
+					<div class="clear"></div>
+					<a
+						href="/ko/mypage/et_2207050522410907249001657009361?type=clipboard"
+						class="logged_cnt_box logged_clip"> <b>작성한 리뷰</b> <span>${reviewCount}</span>
+					</a>
+					<div class="logged_line">&nbsp;</div>
+					<a href="/ko/mypage/et_2207050522410907249001657009361?type=plan"
+						class="logged_cnt_box logged_plan"> <b>좋아요</b> <span>0</span>
+					</a>
+					<div class="logged_line">&nbsp;</div>
+					<a href="/ko/mypage/et_2207050522410907249001657009361?type=my_qa"
+						class="logged_cnt_box logged_qa"> <b>Q&amp;A</b> <span>0</span>
+					</a>
+					<div class="clear"></div>
 				</div>
-				리뷰 작성
+				<a href="/oaga/write">
+					<div class="logged_btn">
+						<div class="logged_btn_ico">
+							<img src="images/reviewPage/ico_review.png" />
+						</div>
+						리뷰 작성
+					</div>
+				</a>
+				<div class="clear"></div>
 			</div>
-		</a>
-		<div class="clear"></div>
-	</div>
-</div>
+		</div>
+	</c:otherwise>
+</c:choose>
+
+
+
 
 <!-- 베스트 리뷰 리스트 ================================================ -->
 
@@ -67,200 +76,76 @@
 			<div class="sort" data-id="regdate">신규</div>
 		</div>
 
+
+
 		<div class="row1">
-			<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="images/mainpage/plan01.jpg" alt="" />
-						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
+			<!--  row1 박스 태그 시작 -->
+			<c:forEach var="reviews" items="${reviews.content}" begin="0" end="2">
+				<div class="box">
+					<a href="/oaga/detail/${reviews.id}">
+						<div class="ImgBox">
+							<img
+								src="http://localhost:9090/oaga/upload/${reviews.reviewImageUrl}"
+								alt="" />
+							<div class="txt">
+								<p>${reviews.title}</p>
+							</div>
+							<!--txt-->
+						</div> <!--ImgBox-->
 
-					<div class="data">
-						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
-						</ul>
-						<!--info-->
+						<div class="data">
+							<ul class="info">
+								<li class="placeName">${reviews.areaName}</li>
+								<li class="withFriend">${reviews.theme}</li>
+								<li class="userName">${reviews.user.userNickName}</li>
+							</ul>
+							<!--info-->
 
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">300</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
+							<ul class="count">
+								<li class="location">25</li>
+								<li class="view">${reviews.count}</li>
+								<li class="copy">27</li>
+							</ul>
+							<!--view-->
+						</div> <!--data-->
+					</a>
+				</div>
+			</c:forEach>
 			<!--box-->
 
-			<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="images/mainpage/plan02.jpg" alt="" />
-						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
-
-					<div class="data">
-						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
-						</ul>
-						<!--info-->
-
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">300</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
-			<!--box-->
-
-			<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="images/mainpage/plan03.jpg" alt="" />
-						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
-
-					<div class="data">
-						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
-						</ul>
-						<!--info-->
-
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">300</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
-			<!--box-->
 		</div>
 		<!--row1-->
 
 		<div class="row2">
-			<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="images/mainpage/plan04.jpg" alt="" />
-						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
+			<c:forEach var="reviews" items="${reviews.content}" begin="3" end="5">
+				<div class="box">
+					<a href="/oaga/detail/${reviews.id}">
+						<div class="ImgBox">
+							<img src="http://localhost:9090/oaga/upload/${reviews.reviewImageUrl}" alt="" />
+							<div class="txt">
+								<p>${reviews.title}</p>
+							</div>
+							<!--txt-->
+						</div> <!--ImgBox-->
 
-					<div class="data">
-						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
-						</ul>
-						<!--info-->
+						<div class="data">
+							<ul class="info">
+								<li class="placeName">${reviews.areaName}</li>
+								<li class="withFriend">${reviews.theme}</li>
+								<li class="userName">${reviews.user.userNickName}</li>
+							</ul>
+							<!--info-->
 
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">300</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
-			<!--box-->
-
-			<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="images/mainpage/plan05.jpg" alt="" />
-						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
-
-					<div class="data">
-						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
-						</ul>
-						<!--info-->
-
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">300</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
-			<!--box-->
-
-			<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="images/mainpage/plan06.jpg" alt="" />
-						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
-
-					<div class="data">
-						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
-						</ul>
-						<!--info-->
-
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">300</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
+							<ul class="count">
+								<li class="location">25</li>
+								<li class="view">${reviews.count}</li>
+								<li class="copy">27</li>
+							</ul>
+							<!--view-->
+						</div> <!--data-->
+					</a>
+				</div>
+			</c:forEach>
 			<!--box-->
 		</div>
 		<!--row2-->
@@ -280,54 +165,24 @@
 			가장 많이 받은 베스트 리뷰어들</p>
 		<div class="best_reviewer_box">
 			<div style="display: flex; margin: 0 auto;">
+			
+			<c:forEach var="bestuser" items="${bestUser}">
 				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="#"> <img
-						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
-						<p class="best_reviewer_name">사용자이름</p>
-						<p class="best_reviewer_count">리뷰수</p>
+					<a class="best_reviewer_a" href="/oaga/userPage"> <img
+						src="images/reviewPage/profile_basic.png" class="best_reviewer_profile">
+						<p class="best_reviewer_name">${bestuser.userNickName}</p>
+						<p class="best_reviewer_count">${bestuser.likes}</p>
 					</a>
 				</div>
+			</c:forEach>
+				
 
-				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="#"> <img
-						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
-						<p class="best_reviewer_name">사용자이름</p>
-						<p class="best_reviewer_count">리뷰수</p>
-					</a>
-				</div>
-
-				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="#"> <img
-						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
-						<p class="best_reviewer_name">사용자이름</p>
-						<p class="best_reviewer_count">리뷰수</p>
-					</a>
-				</div>
-
-				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="#"> <img
-						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
-						<p class="best_reviewer_name">사용자이름</p>
-						<p class="best_reviewer_count">리뷰수</p>
-					</a>
-				</div>
-
-				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="#"> <img
-						src="images/reviewPage/reviewer.jpg" class="best_reviewer_profile">
-						<p class="best_reviewer_name">사용자이름</p>
-						<p class="best_reviewer_count">리뷰수</p>
-					</a>
-				</div>
 			</div>
 
 
 		</div>
 	</div>
 </section>
-
-
-
 
 
 <%@ include file="../layout/footer.jsp"%>
