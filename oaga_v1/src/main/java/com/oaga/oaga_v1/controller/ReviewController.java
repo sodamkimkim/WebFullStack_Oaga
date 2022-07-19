@@ -10,9 +10,11 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.oaga.oaga_v1.auth.PrincipalDetail;
 import com.oaga.oaga_v1.dto.RequestReviewFileDto;
@@ -65,6 +67,16 @@ public class ReviewController {
 	public String reviewWrite() {
 		return "/review/write";
 	}
+	
+	//리뷰 수정 페이지
+	@GetMapping("/review/update/{reviewId}")
+	private String updateReview(@PathVariable int reviewId, Model model) {
+		Review review = reviewService.findReviewById(reviewId);
+		//TODO
+		review.setCount(review.getCount() -1);
+		model.addAttribute("review", review);
+		return "/review/update";
+	}
 
 	// 사용자의 리뷰 리스트 보는 화면
 	@GetMapping("/userPage")
@@ -83,6 +95,16 @@ public class ReviewController {
 	// 리뷰 등록
 	@PostMapping("/api/review/upload")
 	private String saveReview(RequestReviewFileDto dto, @AuthenticationPrincipal PrincipalDetail detail) {
+		dto.setIsWriting(IsWritingType.DONE);
+		reviewService.saveReview(dto, detail.getUser());
+		return "redirect:/review";
+	}
+	
+	// 리뷰 수정
+	@PostMapping("/api/review/{reviewId}/update")
+	private String updateReview(@PathVariable int reviewId, RequestReviewFileDto dto, @AuthenticationPrincipal PrincipalDetail detail) {
+		// 서비스에 review 데이터 삭제 요청
+		reviewService.deleteReviewById(reviewId);
 		dto.setIsWriting(IsWritingType.DONE);
 		reviewService.saveReview(dto, detail.getUser());
 		return "redirect:/review";

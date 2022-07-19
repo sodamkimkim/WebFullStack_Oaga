@@ -85,6 +85,12 @@ public class ReviewService {
 	
 	// 최신순으로 출력
 	
+	// 리뷰 삭제
+	@Transactional
+	public void deleteReviewById(int id) {
+		reviewRepository.deleteById(id);
+	}
+	
 
 	// 댓글 저장
 	@Transactional

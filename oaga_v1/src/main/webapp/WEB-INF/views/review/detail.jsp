@@ -13,7 +13,18 @@
 		<!--reviewDetailHeader-->
 		<div class="reviewDetailBody">
 			<input type="hidden" id="reviewId" value="${review.id}">
-			<h3 class="contentTitle">${review.title}</h3>
+			<div class="d_title_box">
+				<h3 class="contentTitle">${review.title}</h3>
+				<div class="dropdown-box">
+					<button onclick="myFunction()" class="dropbtn">
+						<img class="dropImage" src="../images/reviewPage/icon-addview.png">
+					</button>
+					<div id="myDropdown" class="dropdown-content">
+						<a href="/oaga/review/update/${review.id}" >수정</a> 
+						<a href="javascript:void(0);" id="btn-delete" style="color: red;">삭제</a>
+					</div>
+				</div>
+			</div>
 			<div class="contentThemeBox">${review.theme}</div>
 			<!--contentTitle-->
 			<div class="contentMeta">
@@ -43,7 +54,9 @@
 		</div>
 		<c:choose>
 			<c:when test="${empty principal}">
-				<div class="reply_sug"><p class="reply_sug_t">로그인 후 댓글을 작성해보세요!</p></div>
+				<div class="reply_sug">
+					<p class="reply_sug_t">로그인 후 댓글을 작성해보세요!</p>
+				</div>
 			</c:when>
 			<c:otherwise>
 				<div class="reply_wBox">
@@ -90,5 +103,25 @@
 <%@ include file="../layout/footer.jsp"%>
 
 <script src="../js/review.js"></script>
+<script type="text/javascript">
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
 
 </html>

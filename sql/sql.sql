@@ -41,6 +41,8 @@ desc review;
 select * from review;
 desc reply;
 select * from reply;
+desc follow;
+select * from follow;
 
 select count(*) from review group by userId having userId = 2;
 
