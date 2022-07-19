@@ -13,6 +13,14 @@
 					src="http://localhost:9090/oaga/upload/${user.userProfileImgUrl}"
 					alt="...">
 			</div>
+			<c:choose>
+				<c:when test="${result == 1}">
+					<button type="button" id="btn-UnFollow">언팔로우</button>
+				</c:when>
+				<c:otherwise>
+					<button type="button" id="btn-Follow">팔로우</button>
+				</c:otherwise>
+			</c:choose>
 			<!-- myPageImgBox -->
 			<div class="info_box">
 				<div class="info">
@@ -40,7 +48,8 @@
 		</header>
 		<ul>
 			<c:forEach var="userReview" items="${userReviews.content}">
-				<li class="li_item"><a class="li_item_a" href="/oaga/detail/${userReview.id}">
+				<li class="li_item"><a class="li_item_a"
+					href="/oaga/detail/${userReview.id}">
 						<p style="margin-left: 1rem; margin-right: 20px; font-size: 30px;">ㆍ</p>
 						<img class="li_item_img"
 						src="http://localhost:9090/oaga/upload/${userReview.reviewImageUrl}">

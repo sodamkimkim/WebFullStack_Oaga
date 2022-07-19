@@ -180,7 +180,6 @@ public class UserController {
 		
 		int result = followService.checkFollowInfo(detail.getUser().getId(), userId);
 		model.addAttribute("result", result);
-		System.out.println(result);
 		model.addAttribute("user",user);
 		model.addAttribute("userReviews",userReviews);
 		

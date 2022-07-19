@@ -9,6 +9,6 @@ import com.oaga.oaga_v1.userModel.User;
 
 public interface FollowRepository extends JpaRepository<Follow, Integer>{
 	
-	Optional<Follow> findByFollowedUserIdAndFollowingUserId(User FollowedUserId, User FollowingUserId);
+	Optional<Follow> findByFollowedUserAndFollowingUser(User FollowedUser, User FollowingUser);
 	
 }
