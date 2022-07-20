@@ -30,11 +30,16 @@ h4 {
 
 .profile_b {
 	background-image:
-		url('https://source.unsplash.com/wfh8dDlNFOk/1600x900');
+		url('/oaga/images/userPage/background.jpg');
 	background-position: center;
 	background-size: cover;
 	padding-top: 3rem ;
 	padding-bottom: 3rem ;
+	background-color: rgba(0, 0, 0, 0.4);
+	
+}
+.profile_b::before{
+	content:"";
 	
 }
 .userProfile-wrap{
@@ -64,7 +69,7 @@ h4 {
 	height: 200px;
 	background-color: aqua;
 	margin-bottom: 20px;
-	
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -286,4 +291,19 @@ h4 {
 .list-body-sec {
 	margin-top: 2rem;
 	margin-bottom: 4rem;
+}
+
+.userPageProfileBox {
+	display: flex;
+}
+.likebutton {
+	padding-top: 130px;
+	background: none;
+	border: none;
+}
+
+.likebutton-img {
+	cursor: pointer;
+	width: 40px;
+	height: 40px;	
 }

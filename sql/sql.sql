@@ -45,6 +45,7 @@ select * from reply;
 desc follow;
 select * from follow;
 
+
 DESC user;
 SELECT * FROM user;
 DESC review;

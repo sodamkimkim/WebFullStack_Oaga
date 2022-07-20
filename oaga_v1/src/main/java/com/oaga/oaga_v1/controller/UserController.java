@@ -179,6 +179,7 @@ public class UserController {
 		Page<Review> userReviews = reviewService.getMyReviews(pageable, userId);
 		
 		int result = followService.checkFollowInfo(detail.getUser().getId(), userId);
+		System.out.println(result);
 		model.addAttribute("result", result);
 		model.addAttribute("user",user);
 		model.addAttribute("userReviews",userReviews);
