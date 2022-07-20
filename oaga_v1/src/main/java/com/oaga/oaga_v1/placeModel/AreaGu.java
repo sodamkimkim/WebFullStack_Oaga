@@ -35,7 +35,7 @@ public class AreaGu {
     
     
     @Column(nullable = false)
-    private String imageUrl;
+    private String image;
     
     private String originFileName;
 

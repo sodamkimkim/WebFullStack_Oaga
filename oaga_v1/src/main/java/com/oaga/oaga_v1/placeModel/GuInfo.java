@@ -42,16 +42,12 @@ public class GuInfo {
 	    @Column(nullable = false, length = 100)
 	    private String address;
 	    @Column(nullable = false)
-	    private String imageUrl;
+	    private String image;
 
 	    @ManyToOne
 	    @JoinColumn(name = "areaGu")
 	    private AreaGu areaGu;
 	    
-	   
-	    
-	    @Enumerated(EnumType.STRING)
-	    private CategoryType category;
 
 	    @CreationTimestamp
 	    private Timestamp createDate;
