@@ -12,13 +12,12 @@ let index = {
 	},
 	
 	selectList : function(){
-		for(let i =1; i<=5; i++){
-			let data = {
-			
-			id : $("#areaId" + i).val(),
+		
+		var data = {
+			id : document.getElementById('areaId').value ,
 		}
 		let datanum = $("#areaId").val()
-			console.log(datanum);
+		console.log(datanum + "@!@");
 		console.log(data.id + "@@");
 		$.ajax({
 			type: "POST",
@@ -32,7 +31,7 @@ let index = {
 		}).fail(function(){
 			
 		});
-		}
+	
 		
 		
 	}

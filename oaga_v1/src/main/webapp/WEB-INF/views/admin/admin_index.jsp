@@ -27,14 +27,13 @@
 			style="width: 1200px; height: 800px; margin-top: 30px; display: flex; justify-content: center; align-items: center;">
 
 			<div style="width: 1000px; height: 700px; background-color:silver; display: flex;">
-				<div style="height: 100%; width: 33%;  border: 1px solid;">
+				<div style="height: 100%; width: 33%;  border: 1px solid;" id="test">
 					<div style="width: 100%; height: 30px; text-align: center; border-bottom: 1px solid;">도시</div>	
 
 						<c:forEach var="areaList" items="${areaList}">
 							<div class ="areaList" style="width: 100%; height: 30px; margin-bottom: 10px; background-color: fuchsia;">
-							<input type="hidden" value ="${areaList.id}" id = "areaId${areaList.id}">${areaList.area}</div>
+							<input type="text" value ="${areaList.id}" id = "areaId">${areaList.area}</div>
 						</c:forEach>
- 			
 				</div>
 			<div
 					style="height: 100%; width: 33%; border: 1px solid;">

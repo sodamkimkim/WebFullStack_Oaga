@@ -127,7 +127,7 @@ footer {
 				<a href="/oaga">OaGa</a>
 			</h1>
 			<div class="con">
-				<form action="/oaga/auth/adminJoin" method="post"
+				<form action="/oaga/auth/admin_join" method="post"
 					enctype="multipart/form-data">
 					<!-- csrf???? xss -->
 					<div class="formRow1">

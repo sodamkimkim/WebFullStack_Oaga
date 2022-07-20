@@ -32,7 +32,7 @@ public class AdminController {
 		
 		List<Area> area = adminService.areaAll();
 		model.addAttribute("areaList",area);
-		System.out.println(area + "@@@@@@@@@@@@@");
+		System.out.println(area.get(1).getId() + "@@@@@@@@@@@@@12");
 		
 		
 		return "admin/admin_index";
@@ -58,6 +58,7 @@ public class AdminController {
 	@PostMapping("/api/admin/areaId/{id}")
 	public String areaListAll(Model model,  @PathVariable int id) {
 		List<AreaGu> areaGu = adminService.areaGuAll(id);
+		System.out.println(id + "$$$$@@@@");
 		model.addAttribute("areaGuList",areaGu);
 			
 		return "";
