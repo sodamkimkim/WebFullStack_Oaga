@@ -16,11 +16,11 @@
 
 				<!-- "javascript: form.action='/oaga/api/review/upload';" -->
 				<button class="editUserInfoBtn btn">
-					<a href="/oaga/user/updateUserInfo_form">회원정보 수정하기 </a>
+					<a href="/oaga/user/updateuserinfo_form">회원정보 수정하기 </a>
 				</button>
 
 				<button class="editUserProfile btn">
-					<a href="#">회원 프로필 수정하기</a>
+					<a href="/oaga/user/updatemyprofile_form">회원 프로필 수정하기</a>
 				</button>
 			</div>
 			<!-- myPageEditBtns -->
@@ -71,28 +71,30 @@
 							<path
 									d="M6.49 20.13L8.26 21.9 18.16 12 8.26 2.1 6.49 3.87 14.62 12 6.49 20.13z"></path></svg></span>
 				</a></li>
-				<li>${myReviews.first}</li>
+
 			</c:forEach>
 
 		</ul>
 		<ul class="pagination">
-			<c:set var="isDisabled" value="disabled"></c:set>
-			<c:set var="isNotDisabled" value=""></c:set>
-			<c:set var="isNowPage" value="active"></c:set>
-			<li class="page-item"><a href="#"></a></li>
+			<li class="page-item btnPrv ${myReviews.first ? passive : Page-item-active}"><a class = "page-link" href="/oaga/mypage_form?page=${number-1}">Prv</a></li>
 			<!-- page-item -->
-			<li class="page-item"><a href="#"></a></li>
-			<!-- page-item -->
-			<li class="page-item"><a href="#"></a></li>
-			<!-- page-item -->
-			<li class="page-item"><a href="#"></a></li>
+			
+			
+			<c:forEach var = "num" items = "${pageNumbers}">
+				<c:choose>
+					<c:when test = "${myReviews.number+1 eq num}">
+						<li class="page-item Page-item-active"><a class = "page-link" href="/oaga/mypage_form?page=${num-1}">${num}</a></li>
+						<!-- page-item -->
+					</c:when>
+					<c:otherwise>
+						<li class="page-item"><a class = "page-link" href="/oaga/mypage_form?page=${num-1}">${num}</a></li>
+					</c:otherwise>
+				</c:choose>
+			</c:forEach>
+					
+			<li class="page-item btnNxt ${myReviews.last ? passive : Page-item-active}"><a class = "page-link" href="/oaga/mypage_form?page=${pageable.number+1}">Nxt</a></li>
 			<!-- page-item -->
 		</ul>
-
-
-
-
-
 	</section>
 
 </div>
