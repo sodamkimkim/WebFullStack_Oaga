@@ -40,7 +40,8 @@
 		</header>
 		<ul>
 			<c:forEach var="userReview" items="${userReviews.content}">
-				<li class="li_item"><a class="li_item_a" href="/oaga/detail/${userReview.id}">
+				<li class="li_item"><a class="li_item_a"
+					href="/oaga/detail/${userReview.id}">
 						<p style="margin-left: 1rem; margin-right: 20px; font-size: 30px;">ㆍ</p>
 						<img class="li_item_img"
 						src="http://localhost:9090/oaga/upload/${userReview.reviewImageUrl}">
@@ -54,9 +55,40 @@
 									d="M6.49 20.13L8.26 21.9 18.16 12 8.26 2.1 6.49 3.87 14.62 12 6.49 20.13z"></path></svg></span>
 				</a></li>
 			</c:forEach>
-
-
 		</ul>
+		<ul class="pagination">
+				<li
+					class="page-item btnPrv ${userReviews.first ? passive : Page-item-active}"><a
+					class="page-link" href="/oaga/userpage_form/${user.id}?page=${pageable.number-1}">Prv</a></li>
+				<!-- page-item -->
+
+
+				<c:forEach var="num" items="${pageNumbers}">
+					<c:choose>
+						<c:when test="${userReviews.number+1 eq num}">
+							<li class="page-item Page-item-active"><a class="page-link"
+								href="/oaga/userpage_form/1?page=${num-1}">${num}</a></li>
+							<!-- page-item -->
+						</c:when>
+						<c:otherwise>
+							<li class="page-item"><a class="page-link"
+								href="/oaga/userpage_form/1?page=${num-1}">${num}</a></li>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+
+				<li
+					class="page-item btnNxt ${userReviews.last ? passive : Page-item-active}"><a
+					class="page-link"
+					href="/oaga/userpage_form/${user.id}?page=${pageable.number+1}">Nxt</a></li>
+					
+					
+				<!--
+				/oaga/userpage_form/1?page=1
+				 page-item -->
+			</ul>
+
+	
 	</section>
 
 </div>
