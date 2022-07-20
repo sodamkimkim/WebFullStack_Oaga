@@ -55,7 +55,7 @@ public class UserControllerTest {
 		return myReviews;
 	}
 
-	@GetMapping("/test/userPage_form/{userId}")
+	@GetMapping("/test/userpage_form/{userId}")
 	public Page<Review> getUserPage(@PathVariable int userId,
 			@PageableDefault(size = 6, sort = "createDate", direction = Direction.DESC) Pageable pageable,
 			Model model) {
