@@ -87,7 +87,7 @@ public class UserController {
 	}
 
 
-	@GetMapping("/user/updateUserInfo_form")
+	@GetMapping("/user/updateuserinfo_form")
 	public String updateForm() {
 		return "user/update_form";
 	}
@@ -101,57 +101,9 @@ public class UserController {
 		return "redirect:/";
 	}
 
-//<그냥 참고>	
-//	// 로그인 되어있지 않은 경우
-//	@GetMapping("/review")
-//	public String reviewHome(@PageableDefault(size = 6, sort = "count", direction = Direction.DESC) Pageable pageable,
-//			Model model) {
-//		Page<Review> reviews = reviewService.getBestReviewList(pageable);
-//		List<User> bestUser = userService.bestUser();
-//		System.out.println(bestUser);
-//		
-//		model.addAttribute("reviews", reviews);
-//		model.addAttribute("bestUser", bestUser);
-//		return "/review/home";
-//	}
-//	// 로그인 한 경우
-//	@GetMapping("/mreview")
-//	public String reviewHome(@PageableDefault(size = 6, sort = "count", direction = Direction.DESC) Pageable pageable,
-//			Model model, @AuthenticationPrincipal PrincipalDetail detail) {
-//		Page<Review> reviews = reviewService.getBestReviewList(pageable);
-//		int reviewCount = reviewService.reviewCount(detail.getUser().getId());
-//		List<User> bestUser = userService.bestUser();
-//		System.out.println(bestUser);
-//		
-//		model.addAttribute("reviews", reviews);
-//		model.addAttribute("reviewCount", reviewCount);
-//		model.addAttribute("bestUser", bestUser);
-//		return "/review/home";
-//	}
-//	
-//	// a태그는 항상 get으로 mapping한다.
-//	@GetMapping("/board/{id}")
-//	public String findById(@PathVariable int id, Model model) {
-//		model.addAttribute("board", boardService.boardDetail(id));
-//		return "/board/detail";
-//	}
-//
-//	@GetMapping("/board/{id}/update_form")
-//	public String updateForm(@PathVariable int id, Model model) {
-//		model.addAttribute("board", boardService.boardDetail(id));
-//		return "/board/update_form";
-//	}
-//	///////////////////////////////////////////////////////////////////
-
-//	@GetMapping("/myPage_form")
-//	public String myPage(Model model) {
-//		
-//		System.out.println("");
-//		return "user/mypage_form";
-//	}
 	//로그인한 자기 정보 가져오기
 	//프로필사진, 여행리뷰 작성한거
-	@GetMapping("/myPage_form")
+	@GetMapping("/mypage_form")
 	public String userInfo(@PageableDefault(size = 6, sort = "createDate", direction=Direction.DESC) Pageable pageable ,Model model, @AuthenticationPrincipal PrincipalDetail detail) {
 		Page<Review> myReviews = reviewService.getMyReviews(pageable, detail.getUser().getId());
 		System.out.println("in UserController, myReviews: " + myReviews.toString());
@@ -169,16 +121,28 @@ public class UserController {
 	}
 
 
-	@GetMapping("/userPage_form/{userId}")
+	@GetMapping("/userpage_form/{userId}")
 	public String getUserPage(@PathVariable int userId, @PageableDefault(size=6,sort="createDate", direction=Direction.DESC)Pageable pageable, Model model) {
 		User user = userService.searchUserById(userId);
 		Page<Review> userReviews = reviewService.getMyReviews(pageable, userId);
+		
+		int nowPage = userReviews.getPageable().getPageNumber() +1;
+		int startPage = Math.max(nowPage-2, 1);
+		int endPage = Math.min(nowPage+2, userReviews.getTotalPages());
+		ArrayList<Integer> pageNumbers = new ArrayList<>();
+		for(int i = startPage; i<=endPage; i++) {
+			pageNumbers.add(i);
+		}
 		model.addAttribute("user",user);
 		model.addAttribute("userReviews",userReviews);
-		return "/user/userPage_form";
+		model.addAttribute("pageNumbers", pageNumbers);
+		return "/user/userpage_form";
 	}
 	
-	
+	@GetMapping("/user/updatemyprofile_form")
+	public String updateMyProfileForm() {
+		return "user/updatemyprofile_form";
+	}
 	
 	
 	
@@ -260,4 +224,4 @@ public class UserController {
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		return "redirect:/";
 	}
-}
+} 
