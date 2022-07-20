@@ -33,11 +33,11 @@ h4 {
 		url('https://source.unsplash.com/wfh8dDlNFOk/1600x900');
 	background-position: center;
 	background-size: cover;
-	padding-top: 3rem ;
-	padding-bottom: 3rem ;
-	
+	padding-top: 3rem;
+	padding-bottom: 3rem;
 }
-.userProfile-wrap{
+
+.userProfile-wrap {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -64,9 +64,7 @@ h4 {
 	height: 200px;
 	background-color: aqua;
 	margin-bottom: 20px;
-	
 }
-
 
 .info_box {
 	display: flex;
@@ -89,6 +87,7 @@ h4 {
 	margin: 35px;
 	padding-left: 30px;
 	padding-right: 30px;
+	padding-bottom: 30px;
 }
 
 .li_header {
@@ -200,7 +199,7 @@ h4 {
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
-	background: #f49600;
+	background: rgba(51, 51, 51, 0.9);
 	margin: 0 auto;
 	margin-bottom: 10px;
 }
@@ -225,4 +224,42 @@ h4 {
 	display: block;
 	fill: currentColor;
 	fill-rule: evenodd;
+}
+
+.pagination {
+	margin-top: 40px;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.pagination li {
+	margin: 0px 10px;
+	line-height: 40px;
+	display: inline-block;
+	height: 40px;
+	width: 50px;
+	text-align: center;
+	border-radius: 5px;
+	color: rgba(51, 51, 51, 1);
+	border: 2px solid transparent;
+	background-color: rgba(51, 51, 51, 0.3);
+}
+
+.pagination .Page-item-active {
+	background-color: rgba(51, 51, 51, 1);
+	color: #fff;
+}
+
+.pagination .btnPrv {
+	margin-right: 20px;
+}
+
+.pagination .btnNxt {
+	margin-left: 20px;
+}
+
+.pagination li:hover {
+	background-color: rgba(51, 51, 51, 1);
+	color: #fff;
 }

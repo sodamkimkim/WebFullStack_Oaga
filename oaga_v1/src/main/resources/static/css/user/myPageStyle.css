@@ -81,6 +81,7 @@ h4 {
 	margin: 35px;
 	padding-left: 30px;
 	padding-right: 30px;
+	padding-bottom: 30px;
 }
 
 .li_header {
@@ -253,4 +254,40 @@ h4 {
 	border-bottom: 2px solid #333;
 	background-color: transparent;
 	cursor: pointer;
+}
+
+.pagination {
+	margin-top: 40px;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.pagination li {
+	margin: 0px 10px;
+	line-height: 40px;
+	display: inline-block;
+	height: 40px;
+	width: 50px;
+	text-align: center;
+	border-radius: 5px;
+	color:  rgba(51, 51, 51, 1);
+	border: 2px solid transparent;
+	background-color:  rgba(51, 51, 51, 0.3);
+}
+.pagination li:hover {
+	background-color: rgba(51, 51, 51, 1);
+	color: #fff;
+}
+.pagination .Page-item-active{
+		background-color:  rgba(51, 51, 51,1);
+		color:  #fff;
+	
+}
+
+.pagination .btnPrv{
+	margin-right: 20px;
+}
+.pagination .btnNxt{
+	margin-left: 20px;
 }
