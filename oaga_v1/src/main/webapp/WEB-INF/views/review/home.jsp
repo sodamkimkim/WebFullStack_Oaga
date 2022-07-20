@@ -169,7 +169,7 @@
 			<c:forEach var="bestuser" items="${bestUser}">
 <a>bestUser id: ${bestuser.id}</a>
 				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="/oaga/userPage_form/${bestuser.id}"> <img
+					<a class="best_reviewer_a" href="/oaga/userpage_form/${bestuser.id}"> <img
 						src="images/reviewPage/profile_basic.png" class="best_reviewer_profile">
 						<p class="best_reviewer_name">${bestuser.userNickName}</p>
 						<p class="best_reviewer_count">${bestuser.likes}</p>
