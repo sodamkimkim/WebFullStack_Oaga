@@ -8,6 +8,8 @@
 <title>update_myprofile_form</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <!--  <link rel="stylesheet" href="css/user/joinstyle.css" /> -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style type="text/css">
 * {
 	margin: 0;
@@ -57,25 +59,26 @@ input {
 	color: #fff;
 	text-align: center;
 	line-height: 30px;
-	background-color: rgba(245, 161, 25, 0.9);
-	border-radius: 4px;
+	background-color: transparent;
 	position: absolute;
-	top: 130px;
+	top: 127px;
 	left: 30px;
+	text-align: center;
+	border: 1px solid rgba(51, 51, 51, 0.7);
+	cursor: pointer;
 }
 
 .input-file-button2 {
 	border-bottom: 1px solid rgba(51, 51, 51, 0.7);
-	color: rgba(51, 51, 51, 0.7); width : 300px;
-	text-indent: 40px; text-align : left;
+	color: rgba(51, 51, 51, 0.7);
+	width: 300px;
+	text-indent: 40px;
+	text-align: left;
 	background-color: transparent;
 	cursor: pointer;
 	position: absolute;
-	width: 300px; text-indent : 40px; text-align : left; background-color :
-	transparent; cursor : pointer; position : absolute;
 	top: 147px;
 	left: 149px;
-	text-align: left;
 }
 
 .lblUserProfileFile {
@@ -113,6 +116,21 @@ h1 {
 	font-size: 16px;
 	color: #333;
 }
+
+.btn_myProfileUpdate {
+	position: absolute;
+	top: 250px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 140px;
+	height: 35px;
+	border-radius: 4px;
+	background-color: rgba(245, 161, 25, 0.9);
+	border: 0px solid transparent;
+	color: rgba(51, 51, 51, 0.9);
+	cursor: pointer;
+	font-size: 18px;
+}
 </style>
 </head>
 <body>
@@ -124,19 +142,22 @@ h1 {
 
 
 		<div class="userProfileWrap">
-			<div class="inputWrap">
-				<label class="lblUserProfileFile" for="userProfileFile">사용자
-					프로필 수정: </label> <label class="input-file-button input-file-button1"
-					for="input-file"> 파일 선택2 </label> <label
-					class="input-file-button input-file-button2" for="input-file">
-					프로필을 선택하세요.</label> <input type="file" name="file"
-					placeholder="upload user-Profile" class="form-input"
-					id="input-file">
-			</div>
-		</div>
+			<form id="updateMyProfileForm" action="">
+				<input type="hidden" id="userId" value="${principal.user.id}">
+				<div class="inputWrap">
+					<label class="lblUserProfileFile" for="input-file">사용자 프로필
+						수정: </label>
+						 <label class="input-file-button input-file-button1" for="input-file"> 파일 선택 </label>
+						 <label class="input-file-button input-file-button2" for="input-file"> 프로필을 선택하세요.</label> 
+						 <input type="file" name="file" placeholder="upload user-Profile" class="form-input" id="input-file">
+					<button type="button" id="btn_myProfileUpdate" class="btn btn_myProfileUpdate" ">프로필 수정 완료</button>
+					<!-- onClick = "index.myProfileUpdate(); -->
+				</div>
 
+			</form>
+		</div>
 	</div>
 	<!--mWrap-->
-
+	<script src="/oaga/js/user.js"></script>
 </body>
 </html>

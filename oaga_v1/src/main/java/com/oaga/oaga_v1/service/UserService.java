@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.oaga.oaga_v1.dto.RequestReviewFileDto;
 import com.oaga.oaga_v1.dto.RequestUserProfileDto;
@@ -37,38 +38,7 @@ public class UserService {
 	}
 	
 	
-	@Transactional
-	public int saveUser(RequestUserProfileDto dto) {
-		try {
 
-			String rawPassword = dto.getPassword();
-			String encPassword = encoder.encode(rawPassword);
-			dto.setPassword(encPassword);
-			dto.setRole(RoleType.USER);
-			UUID uuid = UUID.randomUUID();
-			String imageFileName = uuid.toString() + "." +extracktExt(dto.getFile().getOriginalFilename());
-			String newFileName = (imageFileName.trim()).replaceAll("\\s", "");//공백(\\s)없애기.
-			System.out.println("파일 명: " + newFileName);
-			
-			//서버컴퓨터 path가져오기
-			Path userProfileFilePath = Paths.get(uploadFolder + newFileName);
-			System.out.println("전체 파일 경로 + 파일 명 : " + userProfileFilePath);
-			
-			try {
-				Files.write(userProfileFilePath, dto.getFile().getBytes());
-				userRepository.save(dto.toEntity(newFileName));
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-			return -1;
-		}
-		return 1;
-	}
 
 	@Transactional
 	public int saveUser(User user) {
@@ -86,7 +56,7 @@ public class UserService {
 	}
 	
 	@Transactional
-	public void updateUser(User user) {
+	public void updateUserInfo(User user) {
 		// 소셜유저 수정들어오면 무시
 		// 기존회원 수정들어오면 처리
 		User userEntity = userRepository.findById(user.getId())
@@ -123,6 +93,69 @@ public class UserService {
 	// 베스트 리뷰어
 	public List<User> bestUser() {
 		return userRepository.bestUser();
+	}
+	
+	
+	@Transactional
+	public int saveUser(RequestUserProfileDto dto) {
+		try {
+
+			String rawPassword = dto.getPassword();
+			String encPassword = encoder.encode(rawPassword);
+			dto.setPassword(encPassword);
+			dto.setRole(RoleType.USER);
+			UUID uuid = UUID.randomUUID();
+			String imageFileName = uuid.toString() + "." +extracktExt(dto.getFile().getOriginalFilename());
+			String newFileName = (imageFileName.trim()).replaceAll("\\s", "");//공백(\\s)없애기.
+			System.out.println("파일 명: " + newFileName);
+			
+			//서버컴퓨터 path가져오기
+			Path userProfileFilePath = Paths.get(uploadFolder + newFileName);
+			System.out.println("전체 파일 경로 + 파일 명 : " + userProfileFilePath);
+			
+			try {
+				Files.write(userProfileFilePath, dto.getFile().getBytes());
+				userRepository.save(dto.toEntity(newFileName));
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
+		return 1;
+	}
+	
+	
+	@Transactional
+	public int updateUserProfile(int userid, MultipartFile file) {
+		User userEntity = userRepository.findById(userid).orElseThrow(() -> {
+			return new IllegalArgumentException("회원정보가 없습니다.");
+		});
+		UUID uuid = UUID.randomUUID();
+		String imageFileName = uuid.toString() + "." +extracktExt(file.getOriginalFilename());
+		System.out.println("imageFileName: "+imageFileName);
+		String newFileName = (imageFileName.trim()).replaceAll("\\s", "");//공백(\\s)없애기.
+		System.out.println("파일 명: " + newFileName);
+		
+		//서버컴퓨터 path가져오기
+		Path userProfileFilePath = Paths.get(uploadFolder + newFileName);
+		System.out.println("전체 파일 경로 + 파일 명 : " + userProfileFilePath);
+		
+		try {
+			Files.write(userProfileFilePath, file.getBytes());
+			userEntity.setProfileOriginImgUrl(file.getOriginalFilename());
+			userEntity.setUserProfileImgUrl(newFileName);
+			System.out.println("new file name : "+newFileName);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
+	return 1;
 	}
 	
 	//

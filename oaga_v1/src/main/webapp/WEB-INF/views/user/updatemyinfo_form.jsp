@@ -111,7 +111,7 @@ uri="http://www.springframework.org/security/tags"%>
           <a href="/oaga">OaGa</a>
         </h1>
         <div class="con">
-          <form action="" method="post">
+          <form action="" >
 			<input type="hidden" id="id" value="${principal.user.id}">
             <div class="formRow1">
               <div class="update_lbl_Input">
@@ -135,7 +135,7 @@ uri="http://www.springframework.org/security/tags"%>
               </c:if>
             </div>
             <div class="formRow2">
-              <button type="button" id="btn-update" class="btn btn_update">정보 수정 완료</button>
+              <button type="button" id="btn-myInfoUpdate" class="btn btn_update">정보 수정 완료</button>
             </div>
             <!--formRow1-->
           </form>
