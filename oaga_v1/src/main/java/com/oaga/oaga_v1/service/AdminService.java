@@ -22,7 +22,7 @@ public class AdminService {
 	public List<Area> areaAll(){
 		return areaRepository.findAll();
 	}
-	
+	@Transactional
 	public List<AreaGu> areaGuAll(int area){
 		return travelInfoRepository.mAreaIdList(area);
 	}

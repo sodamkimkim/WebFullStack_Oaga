@@ -31,17 +31,19 @@
 					<div style="width: 100%; height: 30px; text-align: center; border-bottom: 1px solid;">도시</div>	
 
 						<c:forEach var="areaList" items="${areaList}">
-							<div class ="areaList" style="width: 100%; height: 30px; margin-bottom: 10px; background-color: fuchsia;">
-							<input type="text" value ="${areaList.id}" id = "areaId">${areaList.area}</div>
+							<div class ="areaList" style="width: 100%; height: 30px; margin-bottom: 10px; background-color:gray; "
+							 onclick="selectList('${areaList.id}')" >
+							 
+							<input  type="hidden" value ="${areaList}" id = "areaId">${areaList.area}</div>
 						</c:forEach>
 				</div>
-			<div
+			<div 
 					style="height: 100%; width: 33%; border: 1px solid;">
-					<div
+					<div 
 						style="width: 100%; height: 30px; text-align: center;  border-bottom: 1px solid;">구</div>
-						<c:forEach var="areaGuList" items="${areaGuList}">
-							<div class ="areaGuList" style="width: 100%; height: 30px;" id ="areaGuList">
-							<input type="hidden" value ="${areaGuList.id}" id = "guname">${areaGuList.guname}</div>
+
+						<c:forEach var="areaGuList" items="${areaGuList}" id = "areaGu">
+							<input type="hidden" value ="${areaGuList.id}"  id = "guname"/>
 						</c:forEach>
 						
 				</div>
@@ -58,11 +60,24 @@
 
 </div>
 
- <!-- 
-<select id="dropdown" name="dropdown">
-				
-			</select>
-			 -->
+
+<script>
+		
+		// 메서드 매개변수를 사용하는 이유
+		//function selectList(selectedId){
+			// id -> 유일성을 보장하는 식별자 
+			// selectedId
+		//	var a = document.getElementById('areaId');
+		//	console.log(a);
+		//	console.log(selectedId);
+	//	}
+
+		
+
+</script>
+
+<!-- document.getElementById('areaList1').onclick = function() {
+					alert(document.getElementById('areaId').val); -->
 
 <script src="../js/admin.js"></script>	
 <%@ include file="../layout/footer.jsp"%>

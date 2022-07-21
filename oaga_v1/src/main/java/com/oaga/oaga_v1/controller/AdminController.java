@@ -3,13 +3,16 @@ package com.oaga.oaga_v1.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.oaga.oaga_v1.dto.RequestUserProfileDto;
+import com.oaga.oaga_v1.dto.ResponseDto;
 import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.placeModel.AreaGu;
 import com.oaga.oaga_v1.service.AdminService;
@@ -32,7 +35,7 @@ public class AdminController {
 		
 		List<Area> area = adminService.areaAll();
 		model.addAttribute("areaList",area);
-		System.out.println(area.get(1).getId() + "@@@@@@@@@@@@@12");
+		
 		
 		
 		return "admin/admin_index";
@@ -55,14 +58,7 @@ public class AdminController {
 	
 	
 	
-	@PostMapping("/api/admin/areaId/{id}")
-	public String areaListAll(Model model,  @PathVariable int id) {
-		List<AreaGu> areaGu = adminService.areaGuAll(id);
-		System.out.println(id + "$$$$@@@@");
-		model.addAttribute("areaGuList",areaGu);
-			
-		return "";
-	}
+	
 	
 	
 	
