@@ -43,7 +43,13 @@ public class GuInfo {
 	    private String address;
 	    @Column(nullable = false)
 	    private String image;
-
+	    
+	    @Column(nullable = false)
+		@Enumerated(EnumType.STRING)
+	    private CategoryType categoryType;
+	    
+	    private String originImageUrl;
+	    
 	    @ManyToOne
 	    @JoinColumn(name = "areaGu")
 	    private AreaGu areaGu;
