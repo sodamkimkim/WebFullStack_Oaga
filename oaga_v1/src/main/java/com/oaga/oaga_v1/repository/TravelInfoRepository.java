@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.placeModel.AreaGu;
 
 
@@ -18,7 +19,6 @@ public interface TravelInfoRepository extends JpaRepository<AreaGu, Integer>{
 	
 	@Query(value =  "SELECT * FROM areagu WHERE areaId =?", nativeQuery = true)
 	List<AreaGu> mAreaIdList(int areaid);
-	
 	
 	
 //	@Query(value = "SELECT * FROM areagu WHERE areaid = 1", nativeQuery = true)

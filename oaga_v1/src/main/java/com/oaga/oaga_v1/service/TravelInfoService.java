@@ -86,6 +86,11 @@ public class TravelInfoService {
 		return randmarkRepository.mFindByid(id);
 	}
 	
+	@Transactional
+	public List<Area> findAreaByTitle(String area) {
+		return areaRepository.findByAreaContaining(area);
+	}
+	
 	
 	
 	

@@ -8,18 +8,6 @@ let index = {
 			this.reviewDelete();
 		});
 
-		$("#search-review").autocomplete({
-			source: function(request, response) {
-				$.ajax({
-					type: "GET",
-					url: ""
-				}).done(function(){
-					
-				}).fail(function() {
-					
-				});
-			}
-		});
 
 	},
 

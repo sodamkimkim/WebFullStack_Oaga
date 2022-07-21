@@ -53,7 +53,7 @@ SELECT * FROM review;
 DESC reply;
 SELECT * FROM reply;
 
-
+drop database oaga;
 
 SELECT COUNT(*) FROM review GROUP BY userId HAVING userId = 2;
 
@@ -79,7 +79,7 @@ SELECT * FROM review ORDER BY count DESC LIMIT 6;
 -- 베스트 리뷰어 출력
 SELECT * FROM user ORDER BY likes DESC LIMIT 5;
 
-
+desc area;
 INSERT INTO area values(1,'서울',"아무거나",'https://picsum.photos/id/237/200/300');
 INSERT INTO area values(2,'부산',"아무거나",'https://picsum.photos/id/237/200/300');
 INSERT INTO area values(3,'대구',"아무거나",'https://picsum.photos/id/237/200/300');
