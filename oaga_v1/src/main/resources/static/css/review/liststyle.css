@@ -176,6 +176,15 @@ body {
 	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
+.active {
+	pointer-events: none;
+	background-color: orange;
+}
+
+.disabled {
+	pointer-events: none;
+}
+
 @keyframes box-ani {
 	from {
 		transform: translate(0, 0);

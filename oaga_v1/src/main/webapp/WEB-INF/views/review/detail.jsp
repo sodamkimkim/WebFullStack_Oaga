@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
-<link rel="stylesheet" href="../css/review/detailstyle.css" />
+<link rel="stylesheet" href="/oaga/css/review/detailstyle.css" />
 <!--header----------------------------->
 
 <div class="reviewDetailForm">

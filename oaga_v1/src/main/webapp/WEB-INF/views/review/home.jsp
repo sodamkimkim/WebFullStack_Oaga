@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <%@ include file="../layout/header.jsp"%>
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <!-- background: url("/images/reviewPage/review_bg.jpg")  -->
 <div class="review_search">
@@ -14,7 +18,11 @@
 			<select class="review_search_select" id="" name="">
 				<option>지역명</option>
 				<option>사용자</option>
-			</select> <input class="review_search_input" id="" placeholder="지역명으로 검색">
+			</select>
+			<form action="/oaga/list/search" method="get">
+				<input type="text" class="review_search_input" name="searchTitle" id="search-review" placeholder="지역명으로 검색">
+				<button type="submit">검색</button>
+			</form> 
 		</div>
 	</div>
 </div>

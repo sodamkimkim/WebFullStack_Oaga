@@ -1,5 +1,6 @@
 package com.oaga.oaga_v1.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.oaga.oaga_v1.auth.PrincipalDetail;
 import com.oaga.oaga_v1.dto.RequestReviewFileDto;
+import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.reviewModel.IsWritingType;
 import com.oaga.oaga_v1.reviewModel.Review;
 import com.oaga.oaga_v1.service.FollowService;
@@ -123,10 +125,37 @@ public class ReviewController {
 	}
 	
 	// 리뷰 전체 보기/ 검색 결과 페이지
-	@GetMapping("/list")
-	private String reviewList() {
+	@GetMapping({"/list", "/list/search"})
+	private String reviewList(String searchTitle, @PageableDefault(size = 9, sort = "id", direction = Direction.DESC) Pageable pageable, Model model) {
+		
+		String title = searchTitle == null ? "" : searchTitle;
+		Page<Review> reviewList = reviewService.searchReviewByTitle(pageable, title); 
+//		Page<Review> reviewList = reviewService.getAllReviews(pageable);
+		
+		// 페이징 처리
+		int nowPage = reviewList.getPageable().getPageNumber() + 1;
+		int startPage = Math.max(nowPage -2, 1);
+		int endPage = Math.min(nowPage +2, reviewList.getTotalPages());
+		System.out.println("nowPage: " + nowPage);
+		System.out.println("startPage: " + startPage);
+		System.out.println("endPage: " + endPage);
+		
+		ArrayList<Integer> pageNumbers = new ArrayList<>();
+		for(int i = startPage; i <= endPage; i ++) {
+			pageNumbers.add(i);
+		}
+		System.out.println(pageNumbers);
+		model.addAttribute("reviews", reviewList);
+		model.addAttribute("pageNumbers", pageNumbers);
+		
 		return "/review/list";
 	}
+	
+	// 자동완성 데이터 가져오기 ()
+	// 입력한 값이 포함되는 글자들을 가져오기
+//	private List<Area> searchArea() {
+//		
+//	}
 
 
 }

@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
+
 <link rel="canonical"
 	href="https://startbootstrap.com/previews/sb-ui-kit-pro-angular">
-<link rel="stylesheet" href="css/review/liststyle.css" />
+	
+<link rel="stylesheet" href="/oaga/css/review/liststyle.css" />
+
 <header class="list-header">
 	<div class="list-header-content">
 		<div class="container-box">
@@ -15,7 +18,7 @@
 					<button>나도 리뷰 작성하러 가기</button>
 				</div>
 				<div class="list-header-img-box">
-					<img class="list-header-img" src="images/reviewPage/list.png">
+					<img class="list-header-img" src="/oaga/images/reviewPage/list.png">
 				</div>
 
 			</div>
@@ -34,84 +37,44 @@
 </header>
 <section class="list-body-sec">
 	<div class="list-body-box">
-		<!-- 리뷰 하나 -->
-		<div class="list-body-container">
-			<div>
-				<h6 class="list-body-title">리뷰 제목</h6>
-				<a class="list-body-a"><img class="list-body-img"
-					src="images/reviewPage/list.png"></a>
+		<c:forEach var="review" items="${reviews.content}">
+			<!-- 리뷰 하나 -->
+			<div class="list-body-container">
+				<div>
+					<h6 class="list-body-title">${review.title}</h6>
+					<a class="list-body-a"><img class="list-body-img"
+						src="http://localhost:9090/oaga/upload/${review.reviewImageUrl}"></a>
+				</div>
 			</div>
-		</div>
-		<!-- 리뷰 하나 -->
-		<div class="list-body-container">
-			<div>
-				<h6 class="list-body-title">리뷰 제목</h6>
-				<a class="list-body-a"><img class="list-body-img"
-					src="images/reviewPage/list.png"></a>
-			</div>
-		</div>
-		<div class="list-body-container">
-			<div>
-				<h6 class="list-body-title">리뷰 제목</h6>
-				<a class="list-body-a"><img class="list-body-img"
-					src="images/reviewPage/list.png"></a>
-			</div>
-		</div>
-		<div class="list-body-container">
-			<div>
-				<h6 class="list-body-title">리뷰 제목</h6>
-				<a class="list-body-a"><img class="list-body-img"
-					src="images/reviewPage/list.png"></a>
-			</div>
-		</div>
-		<div class="list-body-container">
-			<div>
-				<h6 class="list-body-title">리뷰 제목</h6>
-				<a class="list-body-a"><img class="list-body-img"
-					src="images/reviewPage/list.png"></a>
-			</div>
-		</div>
-		<div class="list-body-container">
-			<div>
-				<h6 class="list-body-title">리뷰 제목</h6>
-				<a class="list-body-a"><img class="list-body-img"
-					src="images/reviewPage/list.png"></a>
-			</div>
-		</div>
-		<div class="list-body-container">
-			<div>
-				<h6 class="list-body-title">리뷰 제목</h6>
-				<a class="list-body-a"><img class="list-body-img"
-					src="images/reviewPage/list.png"></a>
-			</div>
-		</div>
-		<div class="list-body-container">
-			<div>
-				<h6 class="list-body-title">리뷰 제목</h6>
-				<a class="list-body-a"><img class="list-body-img"
-					src="images/reviewPage/list.png"></a>
-			</div>
-		</div>
-		<div class="list-body-container">
-			<div>
-				<h6 class="list-body-title">리뷰 제목</h6>
-				<a class="list-body-a"><img class="list-body-img"
-					src="images/reviewPage/list.png"></a>
-			</div>
-		</div>
+			<!-- 리뷰 하나 -->
+		</c:forEach>
+
+
 	</div>
 
 </section>
 
 <div class="pasination-box">
 	<ul class="pagination">
-		<li class="page-item"><a class="page-link" href="#">Pre</a></li>
-		<li class="page-item"><a class="page-link" href="#">1</a></li>
-		<li class="page-item"><a class="page-link" href="#">2</a></li>
-		<li class="page-item"><a class="page-link" href="#">1</a></li>
-		<li class="page-item"><a class="page-link" href="#">2</a></li>
-		<li class="page-item"><a class="page-link" href="#">3</a></li>
-		<li class="page-item"><a class="page-link" href="#">Next</a></li>
+		<c:set var="isDisabled" value="disabled"></c:set>
+		<c:set var="isNotdisabled" value=""></c:set>
+		<c:set var="isNowPage" value="active"></c:set>
+
+		<li class="page-item ${reviews.first ? isDisabled : isNotdisabled}"><a
+			class="page-link" href="/oaga/list?page=${reviews.number - 1}">Pre</a></li>
+		<c:forEach var="pageNumber" items="${pageNumbers}">
+			<c:choose>
+				<c:when test="${reviews.number + 1 eq pageNumber}">
+					<li class="page-item active"><a class="page-link" href="/oaga/list?page=${pageNumber -1}">${pageNumber}</a></li>
+				</c:when>
+				<c:otherwise>
+					<li class="page-item"><a class="page-link" href="/oaga/list?page=${pageNumber -1}">${pageNumber}</a></li>
+				</c:otherwise>
+			</c:choose>
+
+		</c:forEach>
+		<li class="page-item ${reviews.last ? isDisabled : isNotdisabled}"><a
+			class="page-link" href="/oaga/list?page=${reviews.number + 1}">Next</a></li>
 	</ul>
 
 </div>
