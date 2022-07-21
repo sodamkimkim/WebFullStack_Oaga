@@ -8,17 +8,12 @@
 	function selectList(selectedId){
 		
 		let data = selectedId;
-		
-		
-		
-		console.log(data + "@@");
-		
+
 		$.ajax({
 			type: "GET",
 			url: `/oaga/api/admin/areaId/${data}`
-		}).done(function(){
-			addSelectedOption();
-			
+		}).done(function(response){
+			addSelectedOption(response);
 		}).fail(function(error){
 			console.log(error);
 		});
@@ -43,14 +38,26 @@ function areaguListView(){
 
 
 
-function addSelectedOption() {
-	console.log("들어온다아아아");
-	let test = "가나다";
+function addSelectedOption(response) {
+	$('#areaGu').empty();
+	var test = response.data; 
+	var a = test.length ; 
+	var select = new Array();
 	
-	let select = `<div class ="areaGuList" style="width: 100%; height: 30px;" id ="areaGuList"
-							onclick ="">${areaList.guname}</div>`;
-	console.log(select);
+	for(let i = 0; i <= a-1; i++){
+		select[i] = `
+					 <div  style="height: 100%; width: 100%; border: 1px solid; margin-bottom:5px; ">
+						<c:forEach var="areaGuList" items="${test}" id ="areaGuList">
+								<div class ="areaGuList" style="width: 100%; height: 30px;" id ="areaGuList"
+								onclick ="">${test[i].guname}</div>
+						</c:forEach>				
+					</div>`;
+
+	}
+	$('#areaGu').append(select);	
+
+	 
 	
-	$('#areaGu').append(select);
+	
 }
 

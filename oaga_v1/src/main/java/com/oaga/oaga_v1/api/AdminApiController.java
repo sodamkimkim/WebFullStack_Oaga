@@ -21,13 +21,14 @@ public class AdminApiController {
 	
 	
 	@GetMapping("/api/admin/areaId/{id}")
-	public ResponseDto<Integer> areaListAll(Model model,  @PathVariable int id) {
+	public ResponseDto<List<AreaGu>> areaListAll(Model model,  @PathVariable int id) {
 		List<AreaGu> areaGu = adminService.areaGuAll(id);
 		System.out.println(areaGu.get(0).getGuname()+ "!!!");
 		System.out.println(id + "$$$$@@@@");
 		model.addAttribute("areaGuList",areaGu);
 			
-		return new ResponseDto<>(HttpStatus.OK,1);
+		
+		return new ResponseDto<>(HttpStatus.OK, areaGu);
 	}
 	
 	
