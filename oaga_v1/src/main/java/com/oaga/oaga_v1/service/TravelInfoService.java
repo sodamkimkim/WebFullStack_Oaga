@@ -43,6 +43,8 @@ public class TravelInfoService {
 		}
 		return map;
 	}
+	
+
 
 	
 // ===================================================================================================	
@@ -90,6 +92,7 @@ public class TravelInfoService {
 	public List<Area> findAreaByTitle(String area) {
 		return areaRepository.findByAreaContaining(area);
 	}
+	
 	
 	
 	
