@@ -29,6 +29,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
@@ -93,6 +94,17 @@ public class UserController {
 	}
 	
 
+	// REST - GET, ... .. 
+	// GET --> 
+	// 패스베리어블/ -- http://localhost:8080/auth/{id}
+	// http://localhost:8080/auth?userId=100&pw="asd123"
+	// DTO 설계
+	
+	//POST , PUT 
+	// HTTP 메세지
+	// body 데이터를 던지기 
+	
+	// 자바스크립트에서 보낼 데이터를 object로 변환 --> JSON  형식 
 	@PostMapping("/auth/joinProc")
 	public String save(RequestUserProfileDto dto) {
 			dto.setRole(RoleType.USER);
