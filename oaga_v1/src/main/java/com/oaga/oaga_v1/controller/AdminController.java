@@ -56,16 +56,15 @@ public class AdminController {
     }
 	
 	// 수정 페이지
-	@GetMapping("/admin/updatePage") 
+	@GetMapping("/admin/updatepage") 
 	private String adminUpdateForm() {
 		return "/admin/update";
 	}
 	
-	@GetMapping("/admin/deletePage") 
-	private String adminDeleteForm() {
-		return "/admin/delete";
+	@GetMapping("/admin/deletepage")
+	public String adminDeletepage() {
+		return "admin/admin_delete_form";
 	}
-	
 	
 	
 	
