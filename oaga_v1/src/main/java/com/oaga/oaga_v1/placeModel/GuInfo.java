@@ -45,8 +45,8 @@ public class GuInfo {
 	    private String image;
 	    
 	    @Column(nullable = false)
-//		@Enumerated(EnumType.STRING)
-	    private String categoryType;
+		@Enumerated(EnumType.STRING)
+	    private CategoryType categoryType;
 	    
 	    private String originImageUrl;
 	    
