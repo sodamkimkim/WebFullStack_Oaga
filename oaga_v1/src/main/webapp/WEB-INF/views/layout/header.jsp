@@ -38,8 +38,16 @@
 					</c:otherwise>
 				</c:choose>
 				
-				<li><a href="/oaga/admin/deletepage">커뮤니티</a></li>
-				<li><a href="/oaga/admin/page">홈페이지 관리하기</a></li>
+
+				<li><a href="#">커뮤니티</a></li>
+				<li class="admin_mainmenu"><a href="/oaga/admin/page">홈페이지 관리하기</a>
+					<ul class="admin_submenu">
+						<li><a href="/oaga/admin/page">추가하기</a></li>
+						<li><a href="/oaga/admin/updatePage">수정하기</a></li>
+						<li><a href="/oaga/admin/deletePage">삭제하기</a></li>
+					</ul>
+				</li>
+
 			</ul>
 			<!--gnb-->
 

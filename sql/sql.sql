@@ -84,6 +84,7 @@ SELECT * FROM user ORDER BY likes DESC LIMIT 5;
 select * from area;
 
 desc area;
+
 INSERT INTO area values(1,'서울',"아무거나",'https://picsum.photos/id/237/200/300');
 INSERT INTO area values(2,'부산',"아무거나",'https://picsum.photos/id/237/200/300');
 INSERT INTO area values(3,'대구',"아무거나",'https://picsum.photos/id/237/200/300');
@@ -97,14 +98,28 @@ INSERT INTO areagu values(2,'아무거나',"서구",'https://picsum.photos/seed/
 INSERT INTO areagu values(7,'아무거나',"해운대구",'https://picsum.photos/200/300?grayscale',"ㅇㅁㄴ",2);
 INSERT INTO areagu values(11,'아무거나',"광안리",'https://picsum.photos/200/300?grayscale',"ㅇㅁㄴ",2);
 INSERT INTO areagu values(12,'아무거나',"기장",'https://picsum.photos/200/300?grayscale',"ㅇㅁㄴ",2);
+INSERT INTO areagu values(13,'아무거나',"동구",'https://picsum.photos/200/300?grayscale',"ㅇㅁㄴ",2);
+INSERT INTO areagu values(3,'아무거나',"서귀포",'https://picsum.photos/200/300/?blur',"ㅇㅁㄴ",4);
+INSERT INTO areagu values(8,'아무거나',"애월",'https://picsum.photos/200/300/?blur=2',"ㅇㅁㄴ",4);
+INSERT INTO areagu values(4,'아무거나',"동구",'https://picsum.photos/200/300/?blur=2',"ㅇㅁㄴ",3);
+INSERT INTO areagu values(9,'아무거나',"달서구",'https://picsum.photos/seed/picsum/200/300',"ㅇㅁㄴ",3);
+INSERT INTO areagu values(5,'아무거나',"가평",'https://picsum.photos/id/237/200/300',"ㅇㅁㄴ",5);
+INSERT INTO areagu values(10,'아무거나',"파주",'https://picsum.photos/200/300/?blur',"ㅇㅁㄴ",5);
 
 
-INSERT INTO guinfo values(1,'강남',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"강남대로","1");
-INSERT INTO guinfo values(2,'강남',"GUINFO","딜리셔스딜리셔스딜리셔스딜리셔스딜리셔스딜리셔스딜리셔스딜리셔스딜리셔스",now(),'https://picsum.photos/200/300/?blur',"강남대로 2","1");
-INSERT INTO guinfo values(9,'마포',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"강남대로","6");
-INSERT INTO guinfo values(10,'강남',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"강남대로10","1");
-INSERT INTO guinfo values(3,'해운대',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"좌1","7");
-INSERT INTO guinfo values(4,'해운대',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"우1","7");
+INSERT INTO guinfo values(1,'강남',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"강남대로","dsa",1);
+INSERT INTO guinfo values(2,'강남',"GUINFO","딜리셔스딜리셔스딜리셔스딜리셔스딜리셔스딜리셔스딜리셔스딜리셔스딜리셔스",now(),'https://picsum.photos/200/300/?blur',"강남대로 2","dsa","1");
+INSERT INTO guinfo values(9,'마포',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"강남대로","dsa","6");
+INSERT INTO guinfo values(10,'강남',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"강남대로10","dsa","1");
+INSERT INTO guinfo values(3,'해운대',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"좌1","dsa","7");
+INSERT INTO guinfo values(4,'해운대',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"우1","dsa","7");
+INSERT INTO guinfo values(5,'서귀포',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"중앙동","dsa","3");
+INSERT INTO guinfo values(6,'서귀포',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"정방동","dsa","3");
+INSERT INTO guinfo values(7,'가평',"GUINFO","어서오에요",now(),'https://picsum.photos/200/300/?blur',"선촌리","dsa","5");
+INSERT INTO guinfo values(8,'가평',"GUINFO","빠지빠지빠지빠지",now(),'https://picsum.photos/200/300/?blur',"사룡리","dsa","5");
+INSERT INTO guinfo values(11,'광안리',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"우12","dsa","11");
+INSERT INTO guinfo values(12,'광안리',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"우13","dsa","11");
+INSERT INTO guinfo values(13,'판교',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"강남대로","dsa","1");
 
 
 
