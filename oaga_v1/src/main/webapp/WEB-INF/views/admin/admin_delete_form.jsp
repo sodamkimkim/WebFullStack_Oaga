@@ -35,35 +35,35 @@
 			<div class="cN1">장소이름</div>
 			<div class="cN2">주소</div>
 		</div>
-		<div class="adD_srcList">
+		<div class="adD_srcList_item">
 			<div class="adD_listColumn adD_listColumn1">이름이름이름이름이름이름이름이름이름</div>
 			<div class="adD_listColumn adD_listColumn2">주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소</div>
 		</div>
-		<div class="adD_srcList">
+		<div class="adD_srcList_item">
 			<div class="adD_listColumn adD_listColumn1">이름이름이름이름이름이름이름이름이름</div>
 			<div class="adD_listColumn adD_listColumn2">주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소</div>
 		</div>
-		<div class="adD_srcList">
+		<div class="adD_srcList_item">
 			<div class="adD_listColumn adD_listColumn1">이름이름이름이름이름이름이름이름이름</div>
 			<div class="adD_listColumn adD_listColumn2">주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소</div>
 		</div>
-				<div class="adD_srcList">
+				<div class="adD_srcList_item">
 			<div class="adD_listColumn adD_listColumn1">이름이름이름이름이름이름이름이름이름</div>
 			<div class="adD_listColumn adD_listColumn2">주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소</div>
 		</div>
-				<div class="adD_srcList">
+				<div class="adD_srcList_item">
 			<div class="adD_listColumn adD_listColumn1">이름이름이름이름이름이름이름이름이름</div>
 			<div class="adD_listColumn adD_listColumn2">주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소</div>
 		</div>
-				<div class="adD_srcList">
+				<div class="adD_srcList_item">
 			<div class="adD_listColumn adD_listColumn1">이름이름이름이름이름이름이름이름이름</div>
 			<div class="adD_listColumn adD_listColumn2">주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소</div>
 		</div>
-				<div class="adD_srcList">
+				<div class="adD_srcList_item">
 			<div class="adD_listColumn adD_listColumn1">이름이름이름이름이름이름이름이름이름</div>
 			<div class="adD_listColumn adD_listColumn2">주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소</div>
 		</div>
-				<div class="adD_srcList">
+				<div class="adD_srcList_item">
 			<div class="adD_listColumn adD_listColumn1">이름이름이름이름이름이름이름이름이름</div>
 			<div class="adD_listColumn adD_listColumn2">주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소</div>
 		</div>

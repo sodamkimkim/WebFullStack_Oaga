@@ -42,6 +42,8 @@ a {
 }
 
 .adD_mWrap .Q2 {
+		cursor: pointer;
+	
 	position: absolute;
 	right: 10px;
 	top: 5px;
@@ -84,8 +86,8 @@ a {
 	text-align: center;
 	font-weight: bold;
 	font-size: 20px;
-		letter-spacing: 5px;
-		margin-bottom: 5px;
+	letter-spacing: 5px;
+	margin-bottom: 5px;
 }
 
 .adD_coloumnName .cN1 {
@@ -98,7 +100,8 @@ a {
 	width: 75%;
 }
 
-.adD_srcList {
+.adD_srcList_item {
+	cursor: pointer;
 	margin: 2px;
 	border: 2px solid rgba(255, 255, 255, 0.7);
 	border-radius: 5px;
@@ -126,11 +129,12 @@ a {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
-.adD_btnSubmit{
+
+.adD_btnSubmit {
 	
 }
-.adD_bottomWrap{
-	
+
+.adD_bottomWrap {
 	width: 800px;
 	height: 100px;
 	margin-left: auto;
@@ -140,10 +144,12 @@ a {
 	padding-top: 30px;
 	box-sizing: border-box;
 }
-.adD_bottomWrap .adD_btnSubmit{
-	font-size:18px;
+
+.adD_bottomWrap .adD_btnSubmit {
+	font-size: 18px;
 	width: 300px;
 	height: 40px;
 	letter-spacing: 5px;
-		background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(0, 0, 0, 0.7);
+	cursor: pointer;
 }

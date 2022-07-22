@@ -163,7 +163,7 @@ h2 {
 
 .keyword {
 	display: flex;
-	justify-content: space-between; /*여백 글자사이에 몰빵*/
+	justify-content: space-between; /*�뿬諛� 湲��옄�궗�씠�뿉 紐곕뭇*/
 	font-size: 14px;
 	color: #fff;
 	margin-top: 8px;
@@ -205,7 +205,7 @@ h2 {
 	font-size: 18px;
 	margin-top: 15px;
 	margin-bottom: 15px;
-	line-height: 1; /*글자에 딱 맞게 라인하이트.*/
+	line-height: 1; /*湲��옄�뿉 �뵳 留욊쾶 �씪�씤�븯�씠�듃.*/
 }
 
 .sec1 p {
@@ -238,7 +238,7 @@ h2 {
 	transition: all 1s;
 }
 
-/*-------------------------------------------------sec2시작-----------------------------------------------------------------------*/
+/*-------------------------------------------------sec2�떆�옉-----------------------------------------------------------------------*/
 .sec2 {
 	background-color: #f0f0f0;
 	padding-bottom: 70px;
@@ -308,9 +308,9 @@ h2 {
 	width: 100%;
 	background-image: linear-gradient(transparent, black);
 	/*
-    @ background그라데이션 넣기
+    @ background洹몃씪�뜲�씠�뀡 �꽔湲�
     - background-image
-    - 속성값이
+    - �냽�꽦媛믪씠
      @ linear-gradient()
      @ radial-gradient()
 
@@ -318,10 +318,10 @@ h2 {
      to right, to left, to top, to bottom
 
      @ linear-gradient(45deg, red, green
-     -> 45도로 넣기
+     -> 45�룄濡� �꽔湲�
     */
 	box-sizing: border-box;
-	/*패딩과 보더가 박스 안에서 생겨남.*/
+	/*�뙣�뵫怨� 蹂대뜑媛� 諛뺤뒪 �븞�뿉�꽌 �깮寃⑤궓.*/
 }
 
 .sec2 .box .txt h4 {
@@ -407,7 +407,7 @@ h2 {
 	color: #666;
 	border-radius: 5px;
 }
-/*-------------------------------sec3시작-----------------------------------------------------------------------------------------*/
+/*-------------------------------sec3�떆�옉-----------------------------------------------------------------------------------------*/
 .sec3 h4 {
 	padding-top: 70px;
 	margin-bottom: 10px;
@@ -475,7 +475,7 @@ h2 {
 	background-repeat: no-repeat;
 	background-position: 0 center;
 	background-size: contain;
-	/*padding-bottom 줘도 백그라운드 이미지 올라감 */
+	/*padding-bottom 以섎룄 諛깃렇�씪�슫�뱶 �씠誘몄� �삱�씪媛� */
 	padding-left: 15px;
 	margin-left: 10px;
 	margin-top: 10px;
@@ -541,7 +541,7 @@ h2 {
 	color: white;
 	/*padding-top: 120px;*/
 	height: 100%;
-	line-height: 260px; /*글자 y축 가운데정렬*/
+	line-height: 260px; /*湲��옄 y異� 媛��슫�뜲�젙�젹*/
 	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
@@ -659,7 +659,8 @@ h2 {
 
 /*--------------------------------------footer------------------------------------------------*/
 footer {
-	background-color: #363c48;
+/*	background-color: #363c48;*/
+	background-color: rgba(0, 0, 0, 0.7);
 }
 
 .fWrap {
@@ -684,7 +685,8 @@ footer {
 .fWrap h4 {
 	font-size: 16px;
 	color: #ccc;
-	border-bottom: 1px solid #424753;
+	
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	line-height: 2;
 	margin-bottom: 17px;
 }
@@ -710,11 +712,11 @@ footer {
 }
 
 .footerbottom {
-	border-top: 1px solid #424753;
-	background-color: rgba(0, 0, 0, 0.2);
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	background-color: transparent;
 }
 
-/* select 쓰지마
+/* select �벐吏�留�
 
 .opt select{
 width: 113px;
@@ -771,7 +773,7 @@ footer .box .lang, .currency {
 	left: 0;
 	width: 100%;
 	background-color: #363c48;
-	display: none; /*숨김처리*/
+	display: none; /*�닲源�泥섎━*/
 }
 
 langPop li {
@@ -813,7 +815,7 @@ footer .box .lang, .currency {
 	left: 0;
 	width: 100%;
 	background-color: #363c48;
-	display: none; /*숨김처리*/
+	display: none; /*�닲源�泥섎━*/
 }
 
 langPop li {
