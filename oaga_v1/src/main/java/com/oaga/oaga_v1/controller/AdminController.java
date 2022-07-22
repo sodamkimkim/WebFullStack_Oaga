@@ -52,10 +52,6 @@ public class AdminController {
 	return "redirect:/";
     }
 	
-	@GetMapping("/admin/deletepage")
-	public String adminDeletePage() {
-		return "admin/admin_delete_form";
-	}
 
 	// 수정 페이지
 	@GetMapping("/admin/updatepage") 

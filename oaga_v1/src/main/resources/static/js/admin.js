@@ -18,37 +18,6 @@ function test(){
 			
 		});
 		
-/*
-function infoSave() {
-		let data = {
-			areaGuId : $("#areaGuId").val(),
-			name: $("#name").val(),
-			address: $("#address").val(),
-			content: $("#content").val(),
-			image: $("#image").val(),
-			
-		}
-		
-		console.log(data);
-		
-		$.ajax({
-			type: "POST",
-			url: "/oaga/api/damin/guinfo/infoSave",
-			data: JSON.stringify(data),
-			contentType: "application/json; charset=utf-8",
-			dataType: "json"
-		}).done(function(data) {
-			alert("여행지 정보 생성 성공");
-		}).fail(function(error) {
-			
-			alert("생성 실패");
-		});
-		
-	}
-*/
-
-
-		
 
 
 
@@ -66,7 +35,7 @@ function selectList(selectedId){ // area 선택 시
 
 		});
 		
-
+}
 function areaGuClick(guname, id) {
 
 	console.log(guname);
@@ -85,22 +54,7 @@ function areaGuClick(guname, id) {
 }
 
 
-function selectList(selectedId) {
 
-	let data = selectedId;
-
-	$.ajax({
-		type: "GET",
-		url: `/oaga/api/admin/areaId/${data}`
-	}).done(function(response) {
-		addSelectedGuList(response);
-	}).fail(function(error) {
-		console.log(error);
-	});
-
-
-
-}
 
 function infoSave12() {
 	let data = {
