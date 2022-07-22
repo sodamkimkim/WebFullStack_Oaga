@@ -6,7 +6,19 @@
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+<style>
+	#ui-id-1 {
+		width: 560px;
+	}
+	.ui-menu-item-wrapper {
+		width: 560px;
+	}
+	
+	.ui-helper-hidden-accessible > div {
+		
+		width: 560px;
+	}
+</style>
 <!-------------------------mainBn------------------------------------------------------------------------------------------>
 <div class="mainBn">
 	<div class="bnWrap">
@@ -51,7 +63,9 @@
 
 		<div class="con">
 			<div class="box">
-				<img src="images/mainpage/intro01.jpg" alt="" />
+				<a href="/oaga/travel_info"> <img src="images/mainpage/intro01.jpg"
+					alt="" />
+				</a>
 				<h4>여행지정보</h4>
 				<p>
 					우리나라의 도시, 관광명소,<br /> 맛집 정보를 확인하세요.
@@ -90,30 +104,28 @@
 		<p class="tit">다른 여행자들의 리뷰를 참고해 나만의 여행을 계획해보세요!</p>
 
 		<div class="row1">
-			<div class="box">
+			<c:forEach var="reviews" items="${reviews.content}" begin="3" end="6">
+				<div class="box">
 				<a href="#">
 					<div class="ImgBox">
-						<img src="images/mainpage/plan01.jpg" alt="" />
+						<img src="http://localhost:9090/oaga/upload/${reviews.reviewImageUrl}" />
 						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
+							<p>${reviews.title}</p>
 						</div>
 						<!--txt-->
 					</div> <!--ImgBox-->
 
 					<div class="data">
 						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
+							<li class="placeName">${reviews.areaName}</li>
+							<li class="withFriend">${reviews.theme}</li>
+							<li class="userName">${reviews.user.userNickName}</li>
 						</ul>
 						<!--info-->
 
 						<ul class="count">
 							<li class="location">25</li>
-							<li class="view">300</li>
+							<li class="view">${reviews.count}</li>
 							<li class="copy">27</li>
 						</ul>
 						<!--view-->
@@ -121,98 +133,33 @@
 				</a>
 			</div>
 			<!--box-->
-
-			<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="images/mainpage/plan02.jpg" alt="" />
-						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
-
-					<div class="data">
-						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
-						</ul>
-						<!--info-->
-
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">300</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
-			<!--box-->
-
-			<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="images/mainpage/plan03.jpg" alt="" />
-						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
-
-					<div class="data">
-						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
-						</ul>
-						<!--info-->
-
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">300</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
-			<!--box-->
+			</c:forEach>
 		</div>
 		<!--row1-->
 
 		<div class="row2">
-			<div class="box">
+			<c:forEach var="reviews" items="${reviews.content}" begin="0" end="2">
+				<div class="box">
 				<a href="#">
 					<div class="ImgBox">
-						<img src="images/mainpage/plan04.jpg" alt="" />
+						<img src="http://localhost:9090/oaga/upload/${reviews.reviewImageUrl}" />
 						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
+							<p>${reviews.title}</p>
 						</div>
 						<!--txt-->
 					</div> <!--ImgBox-->
 
 					<div class="data">
 						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
+							<li class="placeName">${reviews.areaName}</li>
+							<li class="withFriend">${reviews.theme}</li>
+							<li class="userName">${reviews.user.userNickName}</li>
 						</ul>
 						<!--info-->
 
 						<ul class="count">
 							<li class="location">25</li>
-							<li class="view">300</li>
+							<li class="view">${reviews.count}</li>
 							<li class="copy">27</li>
 						</ul>
 						<!--view-->
@@ -220,74 +167,11 @@
 				</a>
 			</div>
 			<!--box-->
-
-			<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="images/mainpage/plan05.jpg" alt="" />
-						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
-
-					<div class="data">
-						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
-						</ul>
-						<!--info-->
-
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">300</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
-			<!--box-->
-
-			<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="images/mainpage/plan06.jpg" alt="" />
-						<div class="txt">
-							<h4>
-								2018-09-13 <span> 7DAYS</span>
-							</h4>
-							<p>여행제목 작성하기</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
-
-					<div class="data">
-						<ul class="info">
-							<li class="withFriend">친구와 함께</li>
-							<li class="placeName">장소 이름</li>
-							<li class="userName">작성자</li>
-						</ul>
-						<!--info-->
-
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">300</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
-			<!--box-->
+			</c:forEach>
 		</div>
 		<!--row2-->
 
-		<div class="more">56,065개의 여행리뷰 모두보기</div>
+		<a href="/oaga/list"><div class="more">56,065개의 여행리뷰 모두보기</div></a>
 	</div>
 	<!--secWrap-->
 </section>
