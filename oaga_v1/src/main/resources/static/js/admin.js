@@ -5,19 +5,20 @@
 		});
 
 		
-	function areaGuClick(areaId){
+	function areaGuClick(guname,id){
 		
-		let data = areaId;
-		
-			console.log(data);
+
+			console.log(guname);	
+			console.log(id);
 		$.ajax({
 			type: "GET",
-			url: `/oaga/api/admin/areaIdGu/${data}`
+			url: `/oaga/api/admin/areaIdGu/${id}`
 		}).done(function(response){
+			console.log(response);
 			addSelectedGuName(response);
 			
 		}).fail(function(error){
-			console.log(error);
+			
 		});
 		
 	}
@@ -94,7 +95,7 @@ function addSelectedGuList(response) {
 					 <div  style="height: 100%; width: 100%; border: 1px solid; margin-bottom:5px; ">
 						<c:forEach var="areaGuList" items="${test}" id ="areaGuList">
 								<div class ="areaGuList" style="width: 100%; height: 30px;" id ="getAreaGuList"
-								onclick ="areaGuClick(${test[i].id})">${test[i].guname}</div>
+								onclick ="areaGuClick(${test[i].guname},${test[i].id})">${test[i].guname}</div>
 						</c:forEach>				
 					</div>`;
 		
