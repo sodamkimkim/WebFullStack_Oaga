@@ -7,8 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title>login_form</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<!--      <link rel="stylesheet" href="css/user/loginstyle.css" /> -->
-
+<!--  <link rel="stylesheet" href="css/user/joinstyle.css" /> -->
 <style type="text/css">
 * {
 	margin: 0;
@@ -32,7 +31,6 @@ a {
 
 .mWrap {
 	width: 500px;
-	height: 330px;
 	padding-top: 100px;
 	margin-left: auto;
 	margin-right: auto;
@@ -66,12 +64,10 @@ h1 {
 }
 
 .formRow2 {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	text-align: center;
 }
 
-.formRow2 .btn_login {
+.formRow2 .btn_join {
 	width: 280px;
 	height: 30px;
 	border-radius: 5px;
@@ -82,29 +78,14 @@ h1 {
 	/* background-color: #f5a119;
   opacity: 0.9; */
 	background-color: rgba(245, 161, 25, 0.9);
-	margin-bottom: 24px;
 }
 
-.formRow2 .btn_login:hover {
+.formRow2 .btn_join:hover {
 	cursor: pointer;
 }
 
-.formRow2 a {
-	width: 280px;
-	display: block;
-	line-height: 25px;
-	border: 1px solid rgba(3, 3, 3, 0.2);
-	background-color: transparent;
-	text-align: center;
-	border-radius: 5px;
-	height: 25px;
-	font-weight: bold;
-	font-size: 11px;
-	color: rgba(3, 3, 3, 0.6);
-}
-
 footer {
-	
+	margin-top: 20px;
 }
 
 .fWrap {
@@ -126,19 +107,16 @@ footer {
 	margin-right: auto;
 }
 
-.con p {
-	text-align: center;
-	font-size: 11px;
-	color: rgba(3, 3, 3, 0.6);
-	padding-top: 30px;
+.userProfileWrap {
+	display: flex;
+	flex-direction: column;
 }
 
-.con p a {
-	color: rgba(245, 161, 25, 0.9);
-}
-
-.con p a:hover {
-	text-decoration: underline;
+.userProfileWrap label {
+	margin-top: 10px;
+	margin-bottom: 15px;
+	font-size: 16px;
+	color: #333;
 }
 </style>
 </head>
@@ -149,26 +127,32 @@ footer {
 				<a href="/oaga">OaGa</a>
 			</h1>
 			<div class="con">
-				<form action="/oaga/auth/loginProc" method="post">
+				<form action="/oaga/auth/admin_join" method="post"
+					enctype="multipart/form-data">
+					<!-- csrf???? xss -->
 					<div class="formRow1">
-						<input type="text" class="form-control" placeholder="Enter ID"
-							id="username" name="username" value="2" /> <input
-							type="password" class="form-control" placeholder="Enter password"
-							id="password" name="password" value="2" />
+						<input type="text" class="form-input" placeholder="Enter ID"
+							id="username" name="username" /> <input type="password"
+							class="form-input" placeholder="Enter password" id="password"
+							name="password" /> <br /> <input type="text" class="form-input"
+							placeholder="Enter name" id="userNickName" name="userNickName" />
+						<input type="email" class="form-input" placeholder="Enter email"
+							id="email" name="email" />
+						<div class="userProfileWrap">
+							<label class="lblUserProfileFile" for="userProfileFile">관리자
+								프로필 등록: </label> <input type="file" name="file"
+								placeholder="upload user-Profile" class="form-input"
+								id="userProfileFile">
+						</div>
+
+
 					</div>
 					<!--formRow1-->
-
 					<div class="formRow2">
-						<button type="submit" id="btn_login" class="btn btn_login">로그인</button>
-						<a class="btn btn_kakao"
-							href="https://kauth.kakao.com/oauth/authorize?client_id=31c71a748886ababf2df137e8f33a1a4&redirect_uri=http://localhost:9090/oaga/auth/kakao/callback&response_type=code">카카오아이디로
-							로그인</a>
+						<button type="submit" id="btn_join" class="btn btn_join">관리자
+							회원가입</button>
 					</div>
-					<!--formRow2-->
 				</form>
-				<p>
-					혹시, OaGa가 처음이신가요? <a href="/oaga/auth/join_form">회원가입</a>
-				</p>
 			</div>
 			<!--con-->
 		</div>
@@ -184,4 +168,3 @@ footer {
 	<!--main-->
 </body>
 </html>
-

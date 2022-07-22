@@ -17,5 +17,6 @@ public interface GuInfoRepository extends JpaRepository<GuInfo, Integer>{
 	@Query(value = "SELECT * FROM guinfo WHERE id =?", nativeQuery = true)
 	List<GuInfo> mFindByid(int id);
 	
-	
+	@Query(value = "SELECT * FROM guinfo AS g inner join areaGu AS a ON g.areaGu = a.id WHERE a.area =?", nativeQuery = true)
+	List<GuInfo> mFindByAreaGuId(int areaGu_areaId);
 }

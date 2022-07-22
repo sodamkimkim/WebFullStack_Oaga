@@ -58,14 +58,16 @@ public class TravelInfoService {
 		return randmarkRepository.mFindByAreaGu(id);
 	}
 	
+	
+	
 	@Transactional
 	public List<AreaGu> areaGu(int id){	
 		return travelInfoRepository.mAreaIdList(id);
 	}
 	
 	@Transactional
-	public List<Restaurant> guInfoRestaurant(int guInfoId){
-		return restaurantRepositoryt.mRestaurantGroupByGuInfoId(guInfoId);
+	public List<Restaurant> guInfoRestaurant(int areaGu){
+		return restaurantRepositoryt.mRestaurantGroupByGuInfoId(areaGu);
 	}
 	
 // ===================================================================================================	
@@ -81,6 +83,11 @@ public class TravelInfoService {
 		return restaurantRepositoryt.mFindByRestaurant(id);
 	}
 	
+	@Transactional
+	public List<Restaurant> findByGuInfoId(int areaGu_areaId){
+		return restaurantRepositoryt.mFindByGuInfoId(areaGu_areaId);
+	}
+	
 // ===================================================================================================
 	
 	@Transactional
@@ -94,7 +101,9 @@ public class TravelInfoService {
 	}
 	
 	
-	
+	public List<GuInfo> findByAreaGuId(int areaGu_areaId){
+		return randmarkRepository.mFindByAreaGuId(areaGu_areaId);
+	}
 	
 	
 	
