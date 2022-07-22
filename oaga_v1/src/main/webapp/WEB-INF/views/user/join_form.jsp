@@ -127,7 +127,7 @@ footer {
 				<a href="/oaga">OaGa</a>
 			</h1>
 			<div class="con">
-				<form action="/oaga/auth/joinProc" method="post" enctype="multipart/form-data">
+				<form action="/oaga/auth/joinproc" method="post" enctype="multipart/form-data">
 					<!-- csrf???? xss -->
 					<div class="formRow1">
 						<input type="text" class="form-input" placeholder="Enter ID"
