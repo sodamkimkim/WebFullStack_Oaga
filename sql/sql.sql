@@ -45,6 +45,8 @@ select * from reply;
 desc follow;
 select * from follow;
 
+SELECT * FROM area WHERE area LIKE "%부%";
+
 
 DESC user;
 SELECT * FROM user;
@@ -78,6 +80,8 @@ SELECT * FROM user ORDER BY likes DESC LIMIT 4;
 SELECT * FROM review ORDER BY count DESC LIMIT 6;
 -- 베스트 리뷰어 출력
 SELECT * FROM user ORDER BY likes DESC LIMIT 5;
+
+select * from area;
 
 desc area;
 INSERT INTO area values(1,'서울',"아무거나",'https://picsum.photos/id/237/200/300');

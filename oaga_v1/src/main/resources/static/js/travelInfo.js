@@ -29,11 +29,15 @@ let index = {
 			minLength: 1,// 최소 글자수
 			delay: 100	//autocomplete 딜레이 시간(ms),
 			, select: function(evt, ui) {
-				// 아이템 선택시 실행 ui.item 이 선택된 항목을 나타내는 객체, lavel/value/idx를 가짐
 				console.log(ui.item.label);
 				console.log(ui.item.idx);
+				location.href = `/oaga/travel/areainfo/${ui.item.idx}`;
 			}
-		});
+		}).autocomplete('instance')._renderItem = function(ul, item) {
+			console.log(item);
+			return $('<li>').append('<a class="area_search_item"><span class="search_name">' + item.label + '</span></a>')
+			.appendTo(ul);
+		};
 
 	}
 }
