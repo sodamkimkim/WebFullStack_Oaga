@@ -23,6 +23,8 @@ public interface ReviewRepository extends JpaRepository<Review, Integer>{
 //	Page<Review> findAllByUserId(Pageable pageable, int userId);
 	
 	Page<Review> findByUserId(Pageable pageable, int userId);
+	
+	Page<Review> findByTitleContaining(Pageable pageable, String title);
 
 
 }

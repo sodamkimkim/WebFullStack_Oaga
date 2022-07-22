@@ -39,11 +39,10 @@ public class Restaurant {
     @JoinColumn(name = "areaGu")
     private AreaGu areaGu;
     
-    @Enumerated(EnumType.STRING)
-    private CategoryType category;
+
 
     @Column(nullable = false)
-    private String imageUrl;
+    private String image;
     
     @CreationTimestamp
     private Timestamp createDate;

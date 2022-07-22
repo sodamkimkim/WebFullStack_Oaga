@@ -31,8 +31,8 @@ public class FollowController {
 	// 팔로우 취소
 	@DeleteMapping("/api/follow/{followedUserId}")
 	private void unFollowUser(@PathVariable int followedUserId, @AuthenticationPrincipal PrincipalDetail detail) {
-		int id = followService.checkFollowInfo(detail.getUser().getId(), followedUserId);
-		followRepository.deleteById(id);
+		int result = followService.checkFollowInfo(detail.getUser().getId(), followedUserId);
+		followRepository.deleteById(result);
 	}
 	
 

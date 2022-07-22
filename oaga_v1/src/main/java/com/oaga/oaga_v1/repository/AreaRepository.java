@@ -12,5 +12,11 @@ public interface AreaRepository extends JpaRepository<Area, Integer>{
 	// 보류
 	@Query(value = "SELECT * FROM area WHERE id = ?", nativeQuery = true)
 	List<Area> mAreaMainImage(int id);
+	
+	// 여행지 정보 검색
+	List<Area> findByAreaContaining(String area);
+	
+	@Query(value = "SELECT * FROM area WHERE area LIKE \"%?%\"; ", nativeQuery = true)
+	List<Area> searchArea(String content);
 
 }

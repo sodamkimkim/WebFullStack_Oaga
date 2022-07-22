@@ -114,4 +114,15 @@ public class ReviewService {
 		return reviewRepository.findByUserId(pageable, userId);
 	} 
 	
+	//리뷰 전체 조회
+	@Transactional
+	public Page<Review> getAllReviews(Pageable pageable) {
+		return reviewRepository.findAll(pageable);
+	}
+	
+	//리뷰 검색 
+	public Page<Review> searchReviewByTitle(Pageable pageable, String title) {
+		return reviewRepository.findByTitleContaining(pageable, title);
+	}
+	
 }

@@ -1010,3 +1010,46 @@ header.masthead {
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
+.searchArea {
+	width: 560px;
+    height: 100px;
+    border-radius: 3px;
+    margin: 0 auto;
+    position: relative;
+    font: inherit;
+}
+
+.area_autocomplete {
+	width: 560px;
+	background: #fff;
+    position: absolute;
+    
+}
+
+.area_search_item {
+	background: url(/oaga/images/mainPage/city.png) no-repeat;
+	background-size: 20px;
+    background-origin: content-box;
+    background-position: 0px;
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    height: 45px;
+    border: 1px solid rgb(178,178,178);
+    border-bottom: 1px;
+    text-align: left;
+}
+
+.search_name {
+	color: black;
+    float: left;
+    font-size: 15px;
+    height: 16px;
+    line-height: 16px;
+    font-family: 'nanum';
+    margin-left: 30px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}

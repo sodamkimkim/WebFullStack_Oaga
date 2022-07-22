@@ -28,7 +28,7 @@ public class Area {
     private String content;
    
     @Column(nullable = false)
-    private String mainImageUrl;
+    private String mainImage;
     
     
    

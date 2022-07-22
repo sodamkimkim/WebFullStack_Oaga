@@ -30,12 +30,12 @@ public class AreaGu {
     private String content;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "areaId")
+    @JoinColumn(name = "area")
     private Area area;
     
     
     @Column(nullable = false)
-    private String imageUrl;
+    private String image;
     
     private String originFileName;
 

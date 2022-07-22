@@ -41,6 +41,7 @@ import com.oaga.oaga_v1.dto.KakaoProfile.KakaoAccount;
 import com.oaga.oaga_v1.dto.OAuthToken;
 import com.oaga.oaga_v1.dto.RequestUserProfileDto;
 import com.oaga.oaga_v1.reviewModel.Review;
+import com.oaga.oaga_v1.service.FollowService;
 import com.oaga.oaga_v1.service.ReviewService;
 import com.oaga.oaga_v1.service.UserService;
 import com.oaga.oaga_v1.userModel.RoleType;
@@ -66,6 +67,9 @@ public class UserController {
 
 	@Autowired
 	ReviewService reviewService;
+	
+	@Autowired
+	private FollowService followService;
 	
 	@GetMapping("/auth/login_form")
 	public String loginForm() {
@@ -104,11 +108,14 @@ public class UserController {
 	// body 데이터를 던지기 
 	
 	// 자바스크립트에서 보낼 데이터를 object로 변환 --> JSON  형식 
+
+
 	@PostMapping("/auth/joinProc")
 	public String save(RequestUserProfileDto dto) {
 			dto.setRole(RoleType.USER);
-	
-		userService.saveUser(dto);
+			System.out.println(dto.getRole() + "@@@@@SERVEICE@@@ROLE@@@@");
+		int result = userService.saveUser(dto);
+
 		return "redirect:/";
 	}
 
@@ -132,6 +139,7 @@ public class UserController {
 	}
 
 
+//<<<<<<< HEAD
 	@GetMapping("/userpage_form/{userId}")
 	public String getUserPage(@PathVariable int userId, @PageableDefault(size=6,sort="createDate", direction=Direction.DESC)Pageable pageable, Model model) {
 		User user = userService.searchUserById(userId);
@@ -157,6 +165,24 @@ public class UserController {
 	
 	
 	
+//=======
+//	@GetMapping("/userPage_form/{userId}")
+//	public String getUserPage(@PathVariable int userId, @PageableDefault(size=6,sort="createDate", direction=Direction.DESC)Pageable pageable, Model model, @AuthenticationPrincipal PrincipalDetail detail) {
+//		User user = userService.searchUserById(userId);
+//		Page<Review> userReviews = reviewService.getMyReviews(pageable, userId);
+//		
+//		int result = followService.checkFollowInfo(detail.getUser().getId(), userId);
+//		System.out.println(result);
+//		model.addAttribute("result", result);
+//		model.addAttribute("user",user);
+//		model.addAttribute("userReviews",userReviews);
+//		
+//		return "/user/userPage_form";
+//	}
+//	
+//	
+//
+//>>>>>>> developer
 	
 	
 	
@@ -234,5 +260,8 @@ public class UserController {
 				.authenticate(new UsernamePasswordAuthenticationToken(kakaoUser.getUsername(), oagaKey));
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		return "redirect:/";
-	}
-} 
+
+	}	
+	
+	
+}

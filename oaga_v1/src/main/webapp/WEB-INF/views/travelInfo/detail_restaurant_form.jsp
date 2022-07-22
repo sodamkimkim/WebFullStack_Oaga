@@ -38,13 +38,13 @@
 	style="width: 100%; height: 200px; display: flex; justify-content: center; margin-top: 45px;">
 	<div class="container"
 		style="width: 57%; display: flex; justify-content: flex-start; align-items: center;">
-		<c:forEach var="restaurant" items="${restaurant}">
+		<c:forEach var="guRestaurantListAll" items="${guRestaurantListAll}">
 			<div>
-				<a href="/oaga/travel_detail/gu/${restaurant.id}">
-				<img alt="" src="${restaurant.imageUrl}"
-					style="width: 180px; height: 180px; border-radius: 10px;">
+				<a href="/oaga/travel_detail/${guRestaurantListAll.id}">
+				<img alt="" src="${guRestaurantListAll.imageUrl}"
+					style="width: 180px; height: 180px; border-radius: 10px; margin-right: 15px;">
 					</a>
-				<h4>${restaurant.name}</h4>
+				<h4>${guRestaurantListAll.name}</h4>
 			</div>
 		</c:forEach>
 	</div>

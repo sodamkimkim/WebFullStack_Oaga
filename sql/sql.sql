@@ -45,6 +45,9 @@ select * from reply;
 desc follow;
 select * from follow;
 
+SELECT * FROM area WHERE area LIKE "%부%";
+
+
 DESC user;
 SELECT * FROM user;
 DESC review;
@@ -52,6 +55,7 @@ SELECT * FROM review;
 DESC reply;
 SELECT * FROM reply;
 
+drop database oaga;
 
 SELECT COUNT(*) FROM review GROUP BY userId HAVING userId = 2;
 
@@ -76,3 +80,37 @@ SELECT * FROM user ORDER BY likes DESC LIMIT 4;
 SELECT * FROM review ORDER BY count DESC LIMIT 6;
 -- 베스트 리뷰어 출력
 SELECT * FROM user ORDER BY likes DESC LIMIT 5;
+
+select * from area;
+
+desc area;
+INSERT INTO area values(1,'서울',"아무거나",'https://picsum.photos/id/237/200/300');
+INSERT INTO area values(2,'부산',"아무거나",'https://picsum.photos/id/237/200/300');
+INSERT INTO area values(3,'대구',"아무거나",'https://picsum.photos/id/237/200/300');
+INSERT INTO area values(4,'제주도',"아무거나",'https://picsum.photos/id/237/200/300');
+INSERT INTO area values(5,'인천',"아무거나",'https://picsum.photos/id/237/200/300');
+
+
+INSERT INTO areagu values(1,'아무거나',"강남구",'https://picsum.photos/id/237/200/300',"ㅇㅁㄴ",1);
+INSERT INTO areagu values(6,'아무거나',"마포구",'https://picsum.photos/seed/picsum/200/300',"ㅇㅁㄴ",1);
+INSERT INTO areagu values(2,'아무거나',"서구",'https://picsum.photos/seed/picsum/200/300',"ㅇㅁㄴ",2);
+INSERT INTO areagu values(7,'아무거나',"해운대구",'https://picsum.photos/200/300?grayscale',"ㅇㅁㄴ",2);
+INSERT INTO areagu values(11,'아무거나',"광안리",'https://picsum.photos/200/300?grayscale',"ㅇㅁㄴ",2);
+INSERT INTO areagu values(12,'아무거나',"기장",'https://picsum.photos/200/300?grayscale',"ㅇㅁㄴ",2);
+
+
+INSERT INTO guinfo values(1,'강남',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"강남대로","1");
+INSERT INTO guinfo values(2,'강남',"GUINFO","딜리셔스딜리셔스딜리셔스딜리셔스딜리셔스딜리셔스딜리셔스딜리셔스딜리셔스",now(),'https://picsum.photos/200/300/?blur',"강남대로 2","1");
+INSERT INTO guinfo values(9,'마포',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"강남대로","6");
+INSERT INTO guinfo values(10,'강남',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"강남대로10","1");
+INSERT INTO guinfo values(3,'해운대',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"좌1","7");
+INSERT INTO guinfo values(4,'해운대',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"우1","7");
+
+
+
+INSERT INTO restaurant values(1,'강남대로2',"RESTAURANT","전통뭐시뭐시기",now(),'https://picsum.photos/200/300/?blur',"딜리셔스1",1);
+INSERT INTO restaurant values(2,'강남대로2',"RESTAURANT","전통뭐시뭐시기",now(),'https://picsum.photos/200/300/?blur',"딜리셔스2",1);
+INSERT INTO restaurant values(3,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",now(),'https://picsum.photos/200/300/?blur',"딜리셔스2",7);
+INSERT INTO restaurant values(7,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",now(),'https://picsum.photos/200/300/?blur',"딜리셔스7",7);
+INSERT INTO restaurant values(8,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",now(),'https://picsum.photos/200/300/?blur',"딜리셔스8",7);
+INSERT INTO restaurant values(9,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",now(),'https://picsum.photos/200/300/?blur',"딜리셔스9",7);

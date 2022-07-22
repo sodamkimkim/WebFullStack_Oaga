@@ -7,12 +7,29 @@
 
 <div class="re_list_box">
 	<div class="profile_b">
+		<input type="hidden" value="${user.id}" id="userId">
 		<div class="userProfile-wrap">
-			<div class="userPageImgBox">
-				<img class="userPageImg"
-					src="http://localhost:9090/oaga/upload/${user.userProfileImgUrl}"
-					alt="...">
+			<div class="userPageProfileBox">
+				<div class="userPageImgBox">
+					<img class="userPageImg"
+						src="http://localhost:9090/oaga/upload/${user.userProfileImgUrl}"
+						alt="...">
+				</div>
+				<c:choose>
+					<c:when test="${result == -1}">
+						<button class="likebutton" type="button" id="btn-Follow">
+							<img class="likebutton-img"
+								src="../images/userPage/heart-outline.png">
+						</button>
+					</c:when>
+					<c:otherwise>
+						<button class="likebutton" type="button" id="btn-UnFollow">
+							<img class="likebutton-img" src="../images/userPage/heart.png">
+						</button>
+					</c:otherwise>
+				</c:choose>
 			</div>
+
 			<!-- myPageImgBox -->
 			<div class="info_box">
 				<div class="info">
@@ -93,5 +110,6 @@
 
 </div>
 
+<script src="../js/user.js"></script>
 
 <%@ include file="../layout/footer.jsp"%>

@@ -7,6 +7,14 @@ let index = {
 		$("#btn_myProfileUpdate").bind("click", () => {
 			this.myProfileUpdate();
 		});
+		
+		$("#btn-Follow").bind("click", () => {
+			this.follow();
+		});
+		
+		$("#btn-UnFollow").bind("click", () => {
+			this.unFollow();
+		});
 
 	},
 
@@ -36,6 +44,7 @@ let index = {
 		});
 	}, // end of update
 
+
 	myProfileUpdate: function() {
 		var form = $("#updateMyProfileForm")[0];
 		var data = new FormData(form);
@@ -56,7 +65,34 @@ let index = {
 				alert("fail");
 			}
 		});
+},
 
+	
+	follow: function() {
+		
+		let userId = $("#userId").val();
+		
+		$.ajax({
+			type: "POST",
+			url: `/oaga/api/follow/${userId}`,
+		}).done(function() {
+			alert("팔로우 정보 저장 완료!");
+		}).fail(function() {
+			alert("팔로우 정보 저장 실패!");
+		});
+	},
+	
+	unFollow: function() {
+		let userId = $("#userId").val();
+		
+		$.ajax({
+			type: "DELETE",
+			url: `/oaga/api/follow/${userId}`
+		}).done(function() {
+			alert("언팔 성공");
+		}).fail(function() {
+			alert("언팔 실패");
+		});
 
 	}
 }

@@ -30,11 +30,19 @@ h4 {
 
 .profile_b {
 	background-image:
-		url('https://source.unsplash.com/wfh8dDlNFOk/1600x900');
+		url('/oaga/images/userPage/background.jpg');
 	background-position: center;
 	background-size: cover;
-	padding-top: 3rem;
-	padding-bottom: 3rem;
+
+	padding-top: 3rem ;
+	padding-bottom: 3rem ;
+	background-color: rgba(0, 0, 0, 0.4);
+	
+}
+.profile_b::before{
+	content:"";
+	
+
 }
 
 .userProfile-wrap {
@@ -64,6 +72,9 @@ h4 {
 	height: 200px;
 	background-color: aqua;
 	margin-bottom: 20px;
+
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+
 }
 
 .info_box {
@@ -226,12 +237,38 @@ h4 {
 	fill-rule: evenodd;
 }
 
+
 .pagination {
 	margin-top: 40px;
 	margin-bottom: 10px;
+}
+.list-header {
+	background-color: white; display : block;
+	position: relative;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	position: relative;
+	display: block;
+}
+
+.list-header-content {
+	padding-top: 2.5rem;
+	padding-right: 2.5rem !important;
+	padding-left: 2.5rem !important;
+}
+
+.container-box {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.row-center {
+
 	display: flex;
 	justify-content: center;
 }
+
 
 .pagination li {
 	margin: 0px 10px;
@@ -262,4 +299,54 @@ h4 {
 .pagination li:hover {
 	background-color: rgba(51, 51, 51, 1);
 	color: #fff;
+}
+.list-header-title {
+	position: static;
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+.list-header-text {
+	min-width: 300px;
+	font-size: 1.15rem;
+	color: #69707a;
+	margin-bottom: 2.5rem;
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+}
+
+.list-header-img-box {
+	width: 300px;
+	height: 300px;
+}
+
+.list-header-img {
+	width: 300px;
+	height: 300px;
+}
+
+.list-body-sec {
+	margin-top: 2rem;
+	margin-bottom: 4rem;
+}
+
+.userPageProfileBox {
+	display: flex;
+}
+.likebutton {
+	padding-top: 130px;
+	background: none;
+	border: none;
+}
+
+.likebutton-img {
+	cursor: pointer;
+	width: 40px;
+	height: 40px;	
+
 }

@@ -24,12 +24,12 @@ public class Follow {
 	private int id;
 	
 	// 팔로우를 한 유저
-	@JoinColumn(name = "followingUserId")
+	@JoinColumn(name = "followingUser")
 	@ManyToOne
 	private User followingUser;
 	
 	// 팔로우를 받은 유저
-	@JoinColumn(name = "followedUserId")
+	@JoinColumn(name = "followedUser")
 	@ManyToOne
 	private User followedUser;
 

@@ -54,27 +54,30 @@ public class TravelInfoController {
 			
 // ===================================================================================================
 			
-			// 만약 여기서 swich를  쓰면? 
-			// 
 			
 			
 			
 			// 식당 상세정보
 			@GetMapping("/travel_detail/{id}")
 			public String getDetailRestaurant(Model model, @PathVariable int id) {
+					int areaGu = travelInfoService.findByIdRestaurant(id).get(0).getAreaGu().getId();
 					List<Restaurant> restaurantList = travelInfoService.findByIdRestaurant(id);
-					
+					List<Restaurant> guRestaurantListAll = travelInfoService.guInfoRestaurant(id);
 					model.addAttribute("restaurant",restaurantList);
+					model.addAttribute("guRestaurantListAll",guRestaurantListAll);
 				return "/travelInfo/detail_restaurant_form";
 			}
 			
 			// 구 상세정보
 			@GetMapping("/travel_detail/gu/{id}")
 			public String getDetailGu(Model model, @PathVariable int id) {
+					
+					int areaGu = travelInfoService.findByGuinfoId(id).get(0).getAreaGu().getId();
+					System.out.println(areaGu + " areaGu@@@@");
 					List<GuInfo> guInfoFindById = travelInfoService.findByGuinfoId(id);
-					List<Restaurant> restaurantList = travelInfoService.findByIdRestaurant(id);
+					List<Restaurant> guRestaurantListAll = travelInfoService.guInfoRestaurant(areaGu);
 					model.addAttribute("gu",guInfoFindById);
-					model.addAttribute("restaurant",restaurantList);
+					model.addAttribute("guRestaurantListAll",guRestaurantListAll);
 				
 				return "/travelInfo/detail_gu_form";
 			}
@@ -84,17 +87,19 @@ public class TravelInfoController {
 
 
 //===================================================================================================
-
+			
+		// Area에 모든 정보
+			
 		@GetMapping("/travel/areainfo/{id}")
 		public String areaInfo(Model model,@PathVariable int id) {
 			List<Area> areaImageList = travelInfoService.areaImage(id);
 
 			List<AreaGu> areaGuAllList = travelInfoService.areaGu(id);
 			
-			int areaGuId = travelInfoService.areaGu(id).get(0).getId();
+			int areaGuId = travelInfoService.areaImage(id).get(0).getId();
 			System.out.println(areaGuId + "areaGuId@@@@@@@@@@@@@@@@");
-			List<GuInfo>guinfoAllList = travelInfoService.guInfo(areaGuId);
-			List<Restaurant> restaurantAllList = travelInfoService.guInfoRestaurant(areaGuId);
+			List<GuInfo>guinfoAllList = travelInfoService.findByAreaGuId(areaGuId);
+			List<Restaurant> restaurantAllList = travelInfoService.findByGuInfoId(areaGuId);
 			
 			model.addAttribute("areaImage" ,areaImageList);
 			model.addAttribute("areaGu" ,areaGuAllList);
