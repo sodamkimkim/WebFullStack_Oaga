@@ -129,3 +129,6 @@ INSERT INTO restaurant values(3,'해운대 좌1',"RESTAURANT","전통뭐시뭐�
 INSERT INTO restaurant values(7,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",now(),'https://picsum.photos/200/300/?blur',"딜리셔스7",7);
 INSERT INTO restaurant values(8,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",now(),'https://picsum.photos/200/300/?blur',"딜리셔스8",7);
 INSERT INTO restaurant values(9,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",now(),'https://picsum.photos/200/300/?blur',"딜리셔스9",7);
+select * from restaurant;
+
+select * from restaurant where name like '%강%';

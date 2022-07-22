@@ -139,12 +139,29 @@ public class UserController {
 	}
 
 
-//<<<<<<< HEAD
+	@GetMapping("/userpage_form_l/{userId}")
+	public String getUserPageL(@PathVariable int userId, @PageableDefault(size=6,sort="createDate", direction=Direction.DESC)Pageable pageable, Model model, @AuthenticationPrincipal PrincipalDetail detail) {
+		User user = userService.searchUserById(userId);
+		Page<Review> userReviews = reviewService.getMyReviews(pageable, userId);
+		int result = followService.checkFollowInfo(detail.getUser().getId(), userId);
+		int nowPage = userReviews.getPageable().getPageNumber() +1;
+		int startPage = Math.max(nowPage-2, 1);
+		int endPage = Math.min(nowPage+2, userReviews.getTotalPages());
+		ArrayList<Integer> pageNumbers = new ArrayList<>();
+		for(int i = startPage; i<=endPage; i++) {
+			pageNumbers.add(i);
+		}
+		model.addAttribute("user",user);
+		model.addAttribute("result", result);
+		model.addAttribute("userReviews",userReviews);
+		model.addAttribute("pageNumbers", pageNumbers);
+		return "/user/userpage_form";
+	}
+	
 	@GetMapping("/userpage_form/{userId}")
 	public String getUserPage(@PathVariable int userId, @PageableDefault(size=6,sort="createDate", direction=Direction.DESC)Pageable pageable, Model model) {
 		User user = userService.searchUserById(userId);
 		Page<Review> userReviews = reviewService.getMyReviews(pageable, userId);
-		
 		int nowPage = userReviews.getPageable().getPageNumber() +1;
 		int startPage = Math.max(nowPage-2, 1);
 		int endPage = Math.min(nowPage+2, userReviews.getTotalPages());
