@@ -1,21 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
+<style>
+.review_search_input {
+	text-indent: 10px;
+}
 
+.review_search_area {
+	margin-top: 20px;
+	height: 70px;
+}
+</style>
 <!-- background: url("/images/reviewPage/review_bg.jpg")  -->
 <div class="review_search">
-	<div class="wrap">
-		<h5 class="review_search_title">보고싶은 리뷰를 검색하여 가고싶은 지역의 후기를 찾아보세요</h5>
-		<div class="img_box">
+	<div class="review_wrap">
+		<h5 class="review_search_title">
+			보고싶은 리뷰를 검색하여 가고싶은 지역의 <span>후기</span>를 찾아보세요
+		</h5>
+		<div class="review_img_box">
 			<img class="review_search_img"
-				src="/oaga/images/reviewPage/review_home.png">
+				src="/oaga/images/reviewPage/review_home.jpg">
 		</div>
 		<!-- 사진이나 화면 추가 -->
-		<p class="review_search_coment">리뷰 검색하기</p>
+		<p class="review_search_coment">
+			여행자들의 리뷰를 <span>검색</span>해보세요.
+		</p>
 		<div class="review_search_area">
 			<form action="/oaga/list/search" method="get">
 				<input type="text" class="review_search_input" name="searchTitle"
 					id="search-review" placeholder="제목으로 검색">
+				<button class="review_btn_search">
+					<img src="images/mainpage/icon_search2.png" alt="">
+				</button>
 			</form>
 		</div>
 	</div>
@@ -37,7 +53,8 @@
 						<b>작성한 리뷰</b> <span>${reviewCount}</span>
 					</a>
 					<div class="logged_line">&nbsp;</div>
-					<a id="likes_btn" class="logged_cnt_box logged_plan"> <b>좋아요</b> <span>${principal.user.likes}</span>
+					<a id="likes_btn" class="logged_cnt_box logged_plan"> <b>좋아요</b>
+						<span>${principal.user.likes}</span>
 					</a>
 					<!-- 모달 띄우기 -->
 					<div class="logged_line">&nbsp;</div>
@@ -156,7 +173,7 @@
 		</div>
 		<!--row2-->
 
-		<a href="/oaga/list"><div class="more">56,065개의 여행리뷰 모두보기</div></a>
+		<div class="review_more more"><a href="/oaga/list">여행리뷰 모두보기</a></div>
 	</div>
 	<!--secWrap-->
 </section>
