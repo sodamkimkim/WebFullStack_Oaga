@@ -56,5 +56,4 @@
 
 
 
-<script src="../js/adminDelete.js"></script>
 <%@ include file="../layout/footer.jsp"%>

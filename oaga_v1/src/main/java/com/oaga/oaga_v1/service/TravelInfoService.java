@@ -103,9 +103,9 @@ public class TravelInfoService {
 		return randmarkRepository.mFindByAreaGuId(areaGu_areaId);
 	}
 
-	@Transactional
-	public Page<Restaurant> findRestaurantByName(String partOfRName, Pageable pageable) {
-		return restaurantRepositoryt.findByNameContaining(partOfRName, pageable);
-	}
+//	@Transactional
+//	public Page<Restaurant> findRestaurantByName(String partOfRName, Pageable pageable) {
+//		return restaurantRepositoryt.findByNameContaining(partOfRName, pageable);
+//	}
 
 }

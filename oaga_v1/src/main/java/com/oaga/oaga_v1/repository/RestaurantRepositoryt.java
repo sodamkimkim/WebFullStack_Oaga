@@ -32,7 +32,7 @@ public interface RestaurantRepositoryt extends JpaRepository<Restaurant, Integer
 	List<Restaurant> mRestaurantGroupByGuInfoId(int areaGuId);
 	
 	//restaurant name 검색하기
-	@Query(value = "select * from restaurant where name like '%?%' ", nativeQuery = true)
-	Page<Restaurant> findByNameContaining(String partOfRName, Pageable pageable);
+//	@Query(value = "select * from restaurant where name like '%?%' ", nativeQuery = true)
+//	Page<Restaurant> findByNameContaining(String partOfRName, Pageable pageable);
 
 }
