@@ -19,123 +19,111 @@ import com.oaga.oaga_v1.service.TravelInfoService;
 @Controller
 public class TravelInfoController {
 
-			@Autowired
-			TravelInfoService travelInfoService;
-			
-			// 여행지 정보 보기 페이지
-			@GetMapping({"/travel_info"})
-			public String index( Model model) {
-				Map<Integer, List<AreaGu>> map = travelInfoService.areaIdList();
-				ArrayList<List<AreaGu>> list = new ArrayList<>();
-				for(int i = 0; i < 13 ; i++) {
-					list.add(i, map.get(i+1));
-				}
-				model.addAttribute("lists", list);
-				
-				return "/travelInfo/home";
-			}
-// ===================================================================================================
-			
-			
-			
-			// gu에 대한 정보 페이지 
-			@GetMapping({"/travel_guinfo/{areaGu}"})
-			public String guInfoList(Model model,@PathVariable int areaGu){
-				int areaId = travelInfoService.guInfo(areaGu).get(0).getAreaGu().getArea().getId();
-				
-				List<GuInfo> guInfoList = travelInfoService.guInfo(areaGu);
-				List<Restaurant> restaurantList = travelInfoService.guInfoRestaurant(areaGu);
-				List<Area> areaImageList = travelInfoService.areaImage(areaId);
-				model.addAttribute("guInfoList",guInfoList);
-				model.addAttribute("restaurantList",restaurantList);
-				model.addAttribute("areaImageList",areaImageList);
-				return "/travelInfo/guinfo_form";
-			}
-			
-// ===================================================================================================
-			
-			
-			
-			
-			// 식당 상세정보
-			@GetMapping("/travel_detail/{id}")
-			public String getDetailRestaurant(Model model, @PathVariable int id) {
-					int areaGu = travelInfoService.findByIdRestaurant(id).get(0).getAreaGu().getId();
-					List<Restaurant> restaurantList = travelInfoService.findByIdRestaurant(id);
-					List<Restaurant> guRestaurantListAll = travelInfoService.remainderRestaurant(areaGu, id);
-					model.addAttribute("restaurant",restaurantList);
-					model.addAttribute("guRestaurantListAll",guRestaurantListAll);
-					
-				return "/travelInfo/detail_restaurant_form";
-			}
-			
-			// 구 상세정보
-			@GetMapping("/travel_detail/gu/{id}")
-			public String getDetailGu(Model model, @PathVariable int id) {
-					
-					int areaGu = travelInfoService.findByGuinfoId(id).get(0).getAreaGu().getId();
-					System.out.println(areaGu + " areaGu@@@@");
-					List<GuInfo> guInfoFindById = travelInfoService.findByGuinfoId(id);
-					List<Restaurant> guRestaurantListAll = travelInfoService.guInfoRestaurant(areaGu);
-					model.addAttribute("gu",guInfoFindById);
-					model.addAttribute("guRestaurantListAll",guRestaurantListAll);
-				
-				return "/travelInfo/detail_gu_form";
-			}
-	
-	
-				
+	@Autowired
+	TravelInfoService travelInfoService;
 
-
-//===================================================================================================
-			
-		// Area에 모든 정보
-			
-		@GetMapping("/travel/areainfo/{id}")
-		public String areaInfo(Model model,@PathVariable int id) {
-			List<Area> areaImageList = travelInfoService.areaImage(id);
-
-			List<AreaGu> areaGuAllList = travelInfoService.areaGu(id);
-			
-			int areaGuId = travelInfoService.areaImage(id).get(0).getId();
-			System.out.println(areaGuId + "areaGuId@@@@@@@@@@@@@@@@");
-			List<GuInfo>guinfoAllList = travelInfoService.findByAreaGuId(areaGuId);
-			List<Restaurant> restaurantAllList = travelInfoService.findByGuInfoId(areaGuId);
-			
-			model.addAttribute("areaImage" ,areaImageList);
-			model.addAttribute("areaGu" ,areaGuAllList);
-			model.addAttribute("guinfo" ,guinfoAllList);
-			
-			
-			model.addAttribute("restaurant" ,restaurantAllList);
-			return "/travelInfo/area_info_form";
+	// 여행지 정보 보기 페이지
+	@GetMapping({ "/travel_info" })
+	public String index(Model model) {
+		Map<Integer, List<AreaGu>> map = travelInfoService.areaIdList();
+		ArrayList<List<AreaGu>> list = new ArrayList<>();
+		for (int i = 0; i < 13; i++) {
+			list.add(i, map.get(i + 1));
 		}
-}	
+		model.addAttribute("lists", list);
+
+		return "/travelInfo/home";
+	}
+// ===================================================================================================
+
+	// gu에 대한 정보 페이지
+	@GetMapping({ "/travel_guinfo/{areaGu}" })
+	public String guInfoList(Model model, @PathVariable int areaGu) {
+		int areaId = travelInfoService.guInfo(areaGu).get(0).getAreaGu().getArea().getId();
+
+		List<GuInfo> guInfoList = travelInfoService.guInfo(areaGu);
+		List<Restaurant> restaurantList = travelInfoService.guInfoRestaurant(areaGu);
+		List<Area> areaImageList = travelInfoService.areaImage(areaId);
+		model.addAttribute("guInfoList", guInfoList);
+		model.addAttribute("restaurantList", restaurantList);
+		model.addAttribute("areaImageList", areaImageList);
+		return "/travelInfo/guinfo_form";
+	}
+
+// ===================================================================================================
+
+	// 식당 상세정보
+	@GetMapping("/travel_detail/{id}")
+	public String getDetailRestaurant(Model model, @PathVariable int id) {
+		int areaGu = travelInfoService.findByIdRestaurant(id).get(0).getAreaGu().getId();
+		List<Restaurant> restaurantList = travelInfoService.findByIdRestaurant(id);
+		List<Restaurant> guRestaurantListAll = travelInfoService.remainderRestaurant(areaGu, id);
+		model.addAttribute("restaurant", restaurantList);
+		model.addAttribute("guRestaurantListAll", guRestaurantListAll);
+
+		return "/travelInfo/detail_restaurant_form";
+	}
+
+	// 구 상세정보
+	@GetMapping("/travel_detail/gu/{id}")
+	public String getDetailGu(Model model, @PathVariable int id) {
+
+		int areaGu = travelInfoService.findByGuinfoId(id).get(0).getAreaGu().getId();
+		System.out.println(areaGu + " areaGu@@@@");
+		List<GuInfo> guInfoFindById = travelInfoService.findByGuinfoId(id);
+		List<Restaurant> guRestaurantListAll = travelInfoService.guInfoRestaurant(areaGu);
+		model.addAttribute("gu", guInfoFindById);
+		model.addAttribute("guRestaurantListAll", guRestaurantListAll);
+
+		return "/travelInfo/detail_gu_form";
+	}
+
 //===================================================================================================
-				// stream 
-				// List 데이터를 변경할 때 map 함수 , 필터 - filter , sort()
-				
-				
-				//List<AreaGu> arealist = travelInfoService.areaIdList(areaid, pageable);
-				//model.addAttribute("arealist",arealist);
+
+	// Area에 모든 정보
+
+	@GetMapping("/travel/areainfo/{id}")
+	public String areaInfo(Model model, @PathVariable int id) {
+		List<Area> areaImageList = travelInfoService.areaImage(id);
+
+		List<AreaGu> areaGuAllList = travelInfoService.areaGu(id);
+
+		int areaGuId = travelInfoService.areaImage(id).get(0).getId();
+		System.out.println(areaGuId + "areaGuId@@@@@@@@@@@@@@@@");
+		List<GuInfo> guinfoAllList = travelInfoService.findByAreaGuId(areaGuId);
+		List<Restaurant> restaurantAllList = travelInfoService.findByGuInfoId(areaGuId);
+
+		model.addAttribute("areaImage", areaImageList);
+		model.addAttribute("areaGu", areaGuAllList);
+		model.addAttribute("guinfo", guinfoAllList);
+
+		model.addAttribute("restaurant", restaurantAllList);
+		return "/travelInfo/area_info_form";
+	}
+}
+//===================================================================================================
+// stream
+// List 데이터를 변경할 때 map 함수 , 필터 - filter , sort()
+
+// List<AreaGu> arealist = travelInfoService.areaIdList(areaid, pageable);
+// model.addAttribute("arealist",arealist);
 //				arealist.stream().sorted(Comparator.comparing(AreaGu::getId).reversed());
-				
+
 //				model.addAttribute(arealist);
-				
-				
+
 //				List<Integer> stream = arealist.stream().map(t -> t.getArea().getId()).collect(Collectors.toList());
 //				stream.forEach(t ->{
 //				});
-				
+
 //				map<String, ArrayList> {				
 //					"서울" : [0, 1]
 // 				}		
-				
+
 //				List<AreaGu> test = arealist.stream().filter(t -> t.getArea().getId() == 1).collect(Collectors.toList());
 //				for(AreaGu areaGu : arealist) {
 //					System.out.println(areaGu.getArea().getId() == 2);
 //				}
-				
+
 //				    List<Human> tmpHumans = humans.stream()
 //				            .filter(h -> h.getMoney() > 2000)
 //				            .collect(Collectors.toList());
@@ -143,10 +131,10 @@ public class TravelInfoController {
 //				    for (Human human : tmpHumans) {
 //				        System.out.println(human.getIdx());
 //				}
-				
-				// stream . map 
-				// stream . filter 							
-				
+
+// stream . map
+// stream . filter
+
 //				if(id == 1) {
 //					AreaGu[] seoulList = {arealist.get(0), arealist.get(1)};
 //					model.addAttribute("seoulList", seoulList);
@@ -160,10 +148,9 @@ public class TravelInfoController {
 //					AreaGu[] jejuList = {arealist.get(10), arealist.get(11)};
 //					model.addAttribute("inchunList", jejuList);
 //				}else {
-	
+
 //				}
-				
-				
+
 //					List<AreaGu> seoulList = travelInfoService.seoul();
 //					model.addAttribute("seoulList");
 //					
@@ -179,27 +166,8 @@ public class TravelInfoController {
 //					List<AreaGu> inchunList = travelInfoService.inchun();
 //					model.addAttribute("inchunList", inchunList);	
 //				
-				
 
 //					private Stream<AreaGu> map(Area area) {
 //						// TODO Auto-generated method stub
 //						return null;
 //					}
-				
-			
-			
-			
-
-		
-			
-			
-
-			
-		
-			
-
-			
-
-
-
-
