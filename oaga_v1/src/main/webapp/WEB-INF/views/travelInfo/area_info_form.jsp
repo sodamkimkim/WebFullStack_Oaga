@@ -11,9 +11,9 @@
 <div class="container" style="display: flex; justify-content: center;">
 	<c:forEach var="areaImage" items="${areaImage}">
 
-		<img alt="" src="http://localhost:9090/oaga/upload/${areaImage.mainImage}"
-
-			style="width: 1100px; height: 450px; background-color: blue;">
+					${areaImage.mainImage}
+		
+		
 		<p>${areaImage.area}</p>
 	</c:forEach>
 
@@ -29,9 +29,7 @@
 		style="width: 1100px; height: 190px; display: flex;">
 		<c:forEach var="areaGu" items="${areaGu}">
 			<div style="margin-right: 20px;">
-				<a href="/oaga/travel_guinfo/${areaGu.id}"> <img class="swiper-slide" alt=""
-
-					src="http://localhost:9090/oaga/upload/${areaGu.image}"
+				<a href="/oaga/travel_guinfo/${areaGu.id}"> ${areaGu.image}"
 
 					style="width: 170px; height: 170px; border-radius: 15px;">
 				</a>

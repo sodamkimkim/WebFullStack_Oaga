@@ -19,10 +19,7 @@
 
 			<button type="button" class="btn btn-primary" id="select"
 				style="width: 120px; height: 35px; font-size: 20px; cursor: pointer;">추가하기</button>
-			<button type="button" class="btn btn-primary" id="update"
-				style="width: 120px; height: 35px; font-size: 20px; cursor: pointer;">수정하기</button>
-			<button type="button" class="btn btn-primary" id="delete"
-				style="width: 120px; height: 35px; font-size: 20px; cursor: pointer;">삭제하기</button>
+			<div style="width: 300px; height: 500px; background-color: blue; position: absolute; margin-right: 670px; margin-top: 200px;"></div>
 
 		</div>
 
