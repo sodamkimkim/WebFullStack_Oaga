@@ -22,8 +22,8 @@ public interface RestaurantRepositoryt extends JpaRepository<Restaurant, Integer
 	List<Restaurant> mFindByRestaurant(int id);
 
 	// 선택한 id를 제외하고 나머지 
-//	@Query(value = "SELECT * FROM restaurant WHERE guInfoId = 1 and not id = 1", nativeQuery = true)
-//	List<Restaurant> mRemainderRestaurant();
+	@Query(value = "SELECT * FROM restaurant WHERE areaGu = ? and not id = ?", nativeQuery = true)
+	List<Restaurant> mRemainderRestaurant(int areaGu, int id );
 	
 	// areaGu에 속해있는 식당/카페
 	@Query(value = "SELECT * FROM restaurant WHERE areaGu = ?", nativeQuery = true)

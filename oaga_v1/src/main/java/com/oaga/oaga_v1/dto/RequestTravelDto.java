@@ -21,17 +21,18 @@ public class RequestTravelDto {
 	private String address;
 	private String content;
 	private CategoryType categoryType;
-	private AreaGu areaGu;
+	private AreaGu areaGuId;
 	private MultipartFile file;
+	private String image;
 	
-	public GuInfo toEntity(String imageUrl) {
+	public GuInfo toEntity(String image) {
 		return GuInfo.builder()
 				.name(name)
 				.address(address)
 				.content(content)
-				.areaGu(areaGu)
+				.areaGu(areaGuId)
 				.categoryType(categoryType)
-				.image(imageUrl)
+				.image(image)
 				.originImageUrl(file.getOriginalFilename())
 				.build();
 	}

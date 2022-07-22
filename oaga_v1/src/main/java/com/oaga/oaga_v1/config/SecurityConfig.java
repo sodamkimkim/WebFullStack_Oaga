@@ -55,7 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         http.csrf().disable()
             .authorizeRequests()
             .antMatchers("/auth/**", "/**", "/", "/travel/**", "/travel_info/**", "/travel_detail/**", "/travel_guinfo/**", "/review", "/js/**", "/css/**", "/css/review/**", "/images/**")
-            .permitAll() // 난중에 "/" 뺼것!
+            .permitAll()
             .antMatchers("/admin/").hasRole("ADMIN")
             .anyRequest().authenticated()
 

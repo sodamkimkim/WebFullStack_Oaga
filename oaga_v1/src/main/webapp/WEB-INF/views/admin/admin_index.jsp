@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="/oaga/css/style.css" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="../layout/header.jsp"%>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <style>
 .label-container {
@@ -17,10 +18,6 @@
 			style="display: flex; justify-content: space-around; margin-top: 50px;">
 			<button class="btn btn-primary" id="select"
 				style="width: 120px; height: 35px; font-size: 20px;">추가하기</button>
-			<button class="btn btn-primary" id="update"
-				style="width: 120px; height: 35px; font-size: 20px;">수정하기</button>
-			<button class="btn btn-primary" id="delete"
-				style="width: 120px; height: 35px; font-size: 20px;">삭제하기</button>
 		</div>
 
 		<div
@@ -40,66 +37,82 @@
 							<input type="hidden" value="${areaList}" id="areaId">${areaList.area}</div>
 					</c:forEach>
 				</div>
-				
-				<div  style="width: 330px; height: 30px; text-align: center; border-bottom: 1px solid; ">
-					<input type="hidden" itemid="${areaGuList}" value="${areaGuList.content}"id="guname" />
-					<div style="height:30px; border-top: 1px solid">구</div>
-						<div id="areaGu" >
-						
-						</div>
-					
-				</div>		
-				
+
+				<div
+					style="width: 330px; height: 30px; text-align: center; border-bottom: 1px solid;">
+					<input type="hidden" itemid="${areaGuList}"
+						value="${areaGuList.content}" id="guname" />
+					<div style="height: 30px; border-top: 1px solid">구</div>
+					<div id="areaGu"></div>
+
+				</div>
+
 				<div style="height: 100%; width: 34%; border: 1px solid;">
-				
-						<input type="hidden" itemid="${areaGuList}" value="${areaGuList.content }" id="" />
-					<div style="height:30px; border-top: 1px solid; text-align: center; border-bottom: 1px solid;">추가할 항목</div>
-					<div style="width: 100%; height: 60px;display: flex; justify-content: space-around; margin-top: 20px;">
-						<div id="restaurant" >
-								<p>카페/식당</p>
-								<input type="checkbox">
-						</div>
-						<div id="hot_place" >
-								<p>놀거리</p>
-								<input type="checkbox">
-						</div>
-					</div>
+
+					<input type="hidden" itemid="${areaGuName}"
+						value="${areaGuName.guname }" id="" />
+					<div
+						style="height: 30px; border-top: 1px solid; text-align: center; border-bottom: 1px solid;">추가할
+						항목</div>
+					<div
+						style="width: 100%; height: 60px; display: flex; justify-content: space-around; margin-top: 20px;"
+						id="test">
 					
+						<div>
+							<p>카페/식당</p>
+							<input type="checkbox" id="restaurant" value="RESTAURANT" onclick="test()">
+						</div>
+						<div id="hot_place">
+							<p>놀거리</p>
+							<input type="checkbox" id="hotPlace" value="GUINFO" onclick="test()">
+						</div>
+
+					</div>
+
 					<div style="width: 100%; height: 568px;">
-						<div style="width: 100%;  text-align: center;" id = "areaGuName">
+					<form method="post" action="/oaga/api/damin/guinfo/infoSave" name="t_form" enctype="multipart/form-data">
+						<div style="width: 100%; text-align: center;" id="areaGuName">
+
+						</div>
+
+						<div style="width: 100%; height: 100px; text-align: center;">
+							<h3 style="margin-top: 10px; margin-bottom: 10px;">이름 :</h3>
+							<input style="height: 35px;" name="name" id="name">
+						</div>
+						<div style="width: 100%; height: 100px; text-align: center;">
+							<h3 style="margin-bottom: 10px;">주소 :</h3>
+							<input style="height: 35px;" name="address" id="address">
+						</div>
+						<div style="width: 100%; height: 100px; text-align: center;">
+							<h3 style="margin-bottom: 10px;">소개 :</h3>
+							<input style="height: 35px;" name = "content" id="content">
+						</div>
+
+						<div style="width: 100%; height: 100px; text-align: center;">
+							<input class="upload_name" id="r_imageUrl" readonly="readonly"
+								placeholder="첨부파일"> 
+								
+								<label class="r_image_label" for="r_image" >파일 선택</label> 
+								
+								<input type="file"class="r_image_input" id="image" name="file" accept="image/*"
+								required="required"
+								onchange="javascript:document.getElementById('r_imageUrl').value = this.value">
+						</div>
+
+						<button class="btn btn-primary" id="btn-save" type="submit"
+							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">추가하기</button>
 							
-						</div>
-					
-						<div style="width: 100%; height: 100px;text-align: center;">
-							<h3 style="margin-top: 10px; margin-bottom: 10px;">이름 : </h3>
-							<input style="height: 35px;" id="name">
-						</div>
-						<div style="width: 100%; height: 100px;text-align: center;">
-							<h3 style="margin-bottom: 10px;">주소 : </h3>
-							<input style="height: 35px;" id="address">
-						</div>
-						<div style="width: 100%; height: 100px;text-align: center;">
-							<h3 style="margin-bottom: 10px;">소개 : </h3>
-							<input style="height: 35px;" id="content">
-						</div>
-						<div style="width: 100%; height: 100px;text-align: center;">
-							<h3 style="margin-bottom: 10px;">이미지 : </h3>
-							<input style="height: 35px;" id="imgUrl">
-						</div>
-						
-						<button class="btn btn-primary" id="btn-save" type="submit" style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">추가하기</button>
-						
-					
+						</form>
 					</div>
-					
-					</div>		
+
 				</div>
 			</div>
-
 		</div>
-	</div>
 
+	</div>
 </div>
+
+
 
 
 <!-- 

@@ -53,7 +53,7 @@ public class TravelInfoController {
 				model.addAttribute("guInfoList",guInfoList);
 				model.addAttribute("restaurantList",restaurantList);
 				model.addAttribute("areaImageList",areaImageList);
-				return "/travelInfo/goinfo_form";
+				return "/travelInfo/guinfo_form";
 			}
 			
 // ===================================================================================================
@@ -66,9 +66,10 @@ public class TravelInfoController {
 			public String getDetailRestaurant(Model model, @PathVariable int id) {
 					int areaGu = travelInfoService.findByIdRestaurant(id).get(0).getAreaGu().getId();
 					List<Restaurant> restaurantList = travelInfoService.findByIdRestaurant(id);
-					List<Restaurant> guRestaurantListAll = travelInfoService.guInfoRestaurant(id);
+					List<Restaurant> guRestaurantListAll = travelInfoService.remainderRestaurant(areaGu, id);
 					model.addAttribute("restaurant",restaurantList);
 					model.addAttribute("guRestaurantListAll",guRestaurantListAll);
+					
 				return "/travelInfo/detail_restaurant_form";
 			}
 			

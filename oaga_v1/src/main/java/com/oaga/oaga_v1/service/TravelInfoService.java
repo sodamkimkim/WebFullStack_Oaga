@@ -70,6 +70,10 @@ public class TravelInfoService {
 		return restaurantRepositoryt.mRestaurantGroupByGuInfoId(areaGu);
 	}
 	
+	@Transactional
+	public List<Restaurant> remainderRestaurant(int areaGu, int id){
+		return restaurantRepositoryt.mRemainderRestaurant(areaGu, id);
+	}
 // ===================================================================================================	
 	
 //	// 찾은 식당 제외한 나머지 찾기

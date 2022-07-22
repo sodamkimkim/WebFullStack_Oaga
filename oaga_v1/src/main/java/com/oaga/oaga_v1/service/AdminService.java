@@ -17,6 +17,7 @@ import com.oaga.oaga_v1.dto.RequestTravelDto;
 import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.placeModel.AreaGu;
 import com.oaga.oaga_v1.placeModel.GuInfo;
+import com.oaga.oaga_v1.placeModel.Restaurant;
 import com.oaga.oaga_v1.repository.AreaRepository;
 import com.oaga.oaga_v1.repository.GuInfoRepository;
 import com.oaga.oaga_v1.repository.TravelInfoRepository;
@@ -45,25 +46,35 @@ public class AdminService {
 		return travelInfoRepository.mAreaIdList(area);
 	}
 	
+	
+	public List<AreaGu> areaGuNmae(int id){
+		return travelInfoRepository.mAreaGuId(id);
+	}
+	
+	
+	
+	
+	
+	
+	
 	private String extracktExt(String originalFileName) {
 		int pos = originalFileName.lastIndexOf(".");
 		return originalFileName.substring(pos + 1);
 	}
 	
 	@Transactional
-	public void saveTravelInfo(RequestTravelDto dto) {
+	public void saveGuInfo(RequestTravelDto dto) {
 		UUID uuid = UUID.randomUUID();
 		String imageFileName = uuid.toString() + "." + extracktExt(dto.getFile().getOriginalFilename());
 		String newFileName = (imageFileName.trim()).replaceAll("\\s", "");
 		Path imageFilePath = Paths.get(uploadFolder +  newFileName);
-		
+		System.out.println("dmsapdmpasmdpasdmaps");
 		try {
 			Files.write(imageFilePath, dto.getFile().getBytes());
 			guInfoRepository.save(dto.toEntity(newFileName));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-//		reviewRepository.save(review);
+
 	}
 }

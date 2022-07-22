@@ -39,7 +39,9 @@ public class Restaurant {
     @JoinColumn(name = "areaGu")
     private AreaGu areaGu;
     
-
+    @Column(nullable = false)
+	@Enumerated(EnumType.STRING)
+	private CategoryType categoryType;
 
     @Column(nullable = false)
     private String image;

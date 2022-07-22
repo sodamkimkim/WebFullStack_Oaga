@@ -51,7 +51,7 @@ public class GuInfo {
 	    private String originImageUrl;
 	    
 	    @ManyToOne
-	    @JoinColumn(name = "areaGu")
+	    @JoinColumn(name = "areaGuId")
 	    private AreaGu areaGu;
 	    
 
