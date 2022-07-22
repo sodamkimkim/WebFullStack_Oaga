@@ -55,6 +55,17 @@ public class AdminController {
 	return "redirect:/";
     }
 	
+	// 수정 페이지
+	@GetMapping("/admin/updatePage") 
+	private String adminUpdateForm() {
+		return "/admin/update";
+	}
+	
+	@GetMapping("/admin/deletePage") 
+	private String adminDeleteForm() {
+		return "/admin/delete";
+	}
+	
 	
 	
 	

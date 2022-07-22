@@ -12,7 +12,7 @@
 		style="width: 57%; display: flex; justify-content: flex-start;">
 		<div class="imgcontainer" style="width: 600px; height: 400px">
 			<c:forEach var="gu" items="${gu}">
-				<img alt="" src="${gu.imageUrl}"
+				<img alt="" src="${gu.image}"
 					style="width: 100%; height: 100%; border-top-left-radius: 10px; border-bottom-left-radius: 10px;">
 			</c:forEach>
 		</div>
@@ -42,7 +42,7 @@
 		<c:forEach var="guRestaurantListAll" items="${guRestaurantListAll}">
 			<div>
 				<a href="/oaga/travel_detail/${guRestaurantListAll.id}">
-				<img alt="" src="${guRestaurantListAll.imageUrl}"
+				<img alt="" src="${guRestaurantListAll.image}"
 					style="width: 180px; height: 180px; border-radius: 10px; margin-right: 15px;">
 					</a>
 				<h4>${guRestaurantListAll.name}</h4>
