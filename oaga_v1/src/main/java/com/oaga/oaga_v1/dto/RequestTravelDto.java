@@ -20,7 +20,7 @@ public class RequestTravelDto {
 	private String name;
 	private String address;
 	private String content;
-	private CategoryType categoryType;
+	private String categoryType;
 	private AreaGu areaGu;
 	private MultipartFile file;
 	
