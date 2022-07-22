@@ -6,9 +6,9 @@
 
 <div class="adD_mWrap">
 	<div class="srchBox">
-		<div class="searchArea">
+		<div class="searchInfo">
 			<form class="srch2">
-				<input type="text" id="searchArea" name="searchArea"
+				<input type="text" id="searchInfo" name="searchInfo"
 					placeholder="삭제할 정보 검색" />
 				<button class="Q2">
 					<img src="/oaga/images/mainpage/icon_search1.gif" alt="" />
@@ -30,55 +30,31 @@
 		<!--words-->
 	</div>
 	<!--srchBox-->
-	<div class="adD_listWrap">
+	<div class="adD_listWrap" >
+
 		<div class="adD_coloumnName">
 			<div class="cN1">장소이름</div>
 			<div class="cN2">주소</div>
 		</div>
+
 		<div class="adD_srcList_item">
 			<div class="adD_listColumn adD_listColumn1">이름이름이름이름이름이름이름이름이름</div>
 			<div class="adD_listColumn adD_listColumn2">주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소</div>
 		</div>
-		<div class="adD_srcList_item">
-			<div class="adD_listColumn adD_listColumn1">이름이름이름이름이름이름이름이름이름</div>
-			<div class="adD_listColumn adD_listColumn2">주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소</div>
-		</div>
-		<div class="adD_srcList_item">
-			<div class="adD_listColumn adD_listColumn1">이름이름이름이름이름이름이름이름이름</div>
-			<div class="adD_listColumn adD_listColumn2">주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소</div>
-		</div>
-				<div class="adD_srcList_item">
-			<div class="adD_listColumn adD_listColumn1">이름이름이름이름이름이름이름이름이름</div>
-			<div class="adD_listColumn adD_listColumn2">주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소</div>
-		</div>
-				<div class="adD_srcList_item">
-			<div class="adD_listColumn adD_listColumn1">이름이름이름이름이름이름이름이름이름</div>
-			<div class="adD_listColumn adD_listColumn2">주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소</div>
-		</div>
-				<div class="adD_srcList_item">
-			<div class="adD_listColumn adD_listColumn1">이름이름이름이름이름이름이름이름이름</div>
-			<div class="adD_listColumn adD_listColumn2">주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소</div>
-		</div>
-				<div class="adD_srcList_item">
-			<div class="adD_listColumn adD_listColumn1">이름이름이름이름이름이름이름이름이름</div>
-			<div class="adD_listColumn adD_listColumn2">주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소</div>
-		</div>
-				<div class="adD_srcList_item">
-			<div class="adD_listColumn adD_listColumn1">이름이름이름이름이름이름이름이름이름</div>
-			<div class="adD_listColumn adD_listColumn2">주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소주소</div>
-		</div>
-		
+
+
+
 		<!-- adD_srcList -->
 	</div>
 	<!--adminDelete_listWrap  -->
-	
-	<div class = adD_bottomWrap>
-	<button class="btn adD_btnSubmit">삭제완료</button>
+
+	<div class=adD_bottomWrap>
+		<button class="btn adD_btnSubmit">삭제완료</button>
 	</div>
 </div>
 <!--adminDelete_mWrap  -->
 
 
 
-<script src="../js/admin.js"></script>
+<script src="../js/adminDelete.js"></script>
 <%@ include file="../layout/footer.jsp"%>
