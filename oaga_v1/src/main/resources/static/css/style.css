@@ -6,51 +6,56 @@
 ul {
   list-style: none;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 header {
 }
+
 .hWrap {
   width: 1092px;
   height: 57px;
-
   margin-left: auto;
   margin-right: auto;
-
   position: relative;
 }
+
 h1 {
   color: rgba(245, 161, 25, 0.9);
   position: absolute;
   padding-top: 0px;
 }
+
 .gnb {
   display: flex;
   justify-content: center;
   align-items: center;
-
   position: absolute;
   padding-top: 15px;
   margin-left: 200px;
 }
+
 .gnb li {
   margin-left: 25px;
   margin-right: 25px;
   font-weight: bold;
   color: #363636;
 }
+
 .util {
   display: flex;
   position: absolute;
-
   right: 0;
   margin-top: 15px;
 }
+
 .util form {
   position: relative;
 }
+
 .util form input {
   width: 143px;
   height: 26px;
@@ -58,19 +63,19 @@ h1 {
   padding-left: 5px;
   padding-right: 26px;
 }
+
 .util form button {
   /*transform: scale(0.6);*/
-
   border-radius: 5px;
   border: 0;
   background-color: transparent;
   width: 10px;
   height: 10px;
-
   position: absolute;
-  top:3px;
+  top: 3px;
   right: 13px;
 }
+
 .loginBtn,
 .joinBtn,
 .btn {
@@ -82,6 +87,7 @@ h1 {
   border-radius: 5px;
   background-color: #f9bb57;
 }
+
 .util .loginBtn,
 .myPageBtn {
   margin-left: 10px;
@@ -102,12 +108,14 @@ h1 {
   margin-left: auto;
   text-align: center;
 }
+
 .bnWrap h2,
 .tit,
 .city,
 .map {
   color: white;
 }
+
 h2 {
   padding-top: 80px;
   font-size: 40px;
@@ -122,6 +130,7 @@ h2 {
   font-size: 24px;
   margin-top: 20px;
 }
+
 .srchBox {
   width: 560px;
   height: 100px;
@@ -133,14 +142,17 @@ h2 {
   padding-bottom: 0px;
   border-radius: 5px;
 }
+
 .srchBox .srch2 {
   position: relative;
 }
+
 .srchBox .srch2 input {
   width: 560px;
   height: 50px;
   text-indent: 10px;
 }
+
 .Q2 {
   position: absolute;
   right: 10px;
@@ -148,13 +160,15 @@ h2 {
   border: 0;
   background-color: transparent;
 }
-.Q2 img{
-	width: 40px;
-	height: 40px;
+
+.Q2 img {
+  width: 40px;
+  height: 40px;
 }
+
 .keyword {
   display: flex;
-  justify-content: space-between; /*여백 글자사이에 몰빵*/
+  justify-content: space-between; /*�뿬諛� 湲��옄�궗�씠�뿉 紐곕뭇*/
   font-size: 14px;
   color: #fff;
   margin-top: 8px;
@@ -163,50 +177,57 @@ h2 {
 .keyword a:hover {
   text-decoration: underline;
 }
+
 .map a:after {
   content: ">";
 }
 /*----------------------------------sec1-------------------------------------------------------------------------------*/
 .secWrap {
   width: 1092px;
-
   margin-right: auto;
   margin-left: auto;
   text-align: center;
 }
+
 .sec1 h3 {
   margin-top: 80px;
   margin-bottom: 30px;
   font-size: 26px;
   color: #333;
 }
+
 .sec1 h3 span {
   color: rgba(245, 161, 25, 0.9);
 }
+
 .sec1 .con {
   display: flex;
   justify-content: space-evenly;
 }
+
 .sec1 h4 {
   color: #333;
   font-size: 18px;
-
   margin-top: 15px;
   margin-bottom: 15px;
-  line-height: 1; /*글자에 딱 맞게 라인하이트.*/
+  line-height: 1; /*湲��옄�뿉 �뵳 留욊쾶 �씪�씤�븯�씠�듃.*/
 }
+
 .sec1 p {
   text-align: left;
 }
+
 .sec1 h5 {
   font-size: 14px;
   color: rgba(245, 161, 25, 0.9);
   margin-top: 25px;
   margin-bottom: 70px;
 }
+
 .sec1 h5:hover {
   text-decoration: underline;
 }
+
 .sec1 .box p {
   text-align: center;
   line-height: 1.5;
@@ -222,11 +243,12 @@ h2 {
   transition: all 1s;
 }
 
-/*-------------------------------------------------sec2시작-----------------------------------------------------------------------*/
+/*-------------------------------------------------sec2�떆�옉-----------------------------------------------------------------------*/
 .sec2 {
   background-color: #f0f0f0;
   padding-bottom: 70px;
 }
+
 .sec2 h3 {
   line-height: 1;
   padding-top: 70px;
@@ -234,6 +256,7 @@ h2 {
   font-size: 26px;
   color: #333;
 }
+
 .sec2 .tit {
   font-size: 16px;
   color: #666;
@@ -246,11 +269,13 @@ h2 {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .sec2 .row2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .sec2 .box {
   background-color: silver;
   margin-bottom: 24px;
@@ -258,16 +283,19 @@ h2 {
   overflow: hidden;
   border: 2px solid #f0f0f0;
 }
+
 .sec2 .box .ImgBox {
   width: 346px;
   height: 200px;
   position: relative;
   overflow: hidden;
 }
+
 .sec2 .box .ImgBox img {
   width: 346px;
   height: 200px;
 }
+
 .sec2 .box .ImgBox:hover img {
   transform: scale(1.5);
   transition: all 2s;
@@ -275,7 +303,6 @@ h2 {
 
 .sec2 .txt {
   height: 48px;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -286,30 +313,32 @@ h2 {
   width: 100%;
   background-image: linear-gradient(transparent, black);
   /*
-    @ background그라데이션 넣기
+    @ background洹몃씪�뜲�씠�뀡 �꽔湲�
     - background-image
-    - 속성값이
+    - �냽�꽦媛믪씠
      @ linear-gradient()
      @ radial-gradient()
-
      @ linear-gradient(to right, red, green)
      to right, to left, to top, to bottom
-
      @ linear-gradient(45deg, red, green
-     -> 45도로 넣기
+     -> 45�룄濡� �꽔湲�
     */
   box-sizing: border-box;
-  /*패딩과 보더가 박스 안에서 생겨남.*/
+  /*�뙣�뵫怨� 蹂대뜑媛� 諛뺤뒪 �븞�뿉�꽌 �깮寃⑤궓.*/
 }
+
 .sec2 .box .txt h4 {
   color: rgba(245, 161, 25, 0.9);
 }
+
 .sec2 .box .txt h4 span {
   color: #999;
 }
+
 .sec2 .box .txt p {
   color: white;
 }
+
 .sec2 .data {
   background-color: #fff;
   display: flex;
@@ -317,12 +346,15 @@ h2 {
   padding: 15px;
   text-align: left;
 }
+
 .sec2 .data .info {
 }
+
 .sec2 .data .info .placeName {
   margin-top: 6px;
   margin-bottom: 6px;
 }
+
 .userName {
   background-image: url(../images/mainpage/icon_user.png);
   background-repeat: no-repeat;
@@ -331,13 +363,16 @@ h2 {
   padding-left: 25px;
   line-height: 1;
 }
+
 .count {
   display: flex;
   justify-content: center;
 }
+
 .count .view {
   margin: 0 10px;
 }
+
 .count .location {
   background-image: url(../images/mainpage/icon_spot.png);
   background-repeat: no-repeat;
@@ -345,14 +380,15 @@ h2 {
   padding-left: 20px;
   line-height: 1;
 }
+
 .count .view {
   background-image: url(../images/mainpage/icon_view.png);
   background-repeat: no-repeat;
   background-position: 0 3px;
-
   padding-left: 20px;
   line-height: 1;
 }
+
 .count .copy {
   background-image: url(../images/mainpage/icon_copy.png);
   background-repeat: no-repeat;
@@ -360,6 +396,7 @@ h2 {
   padding-left: 20px;
   line-height: 1;
 }
+
 .sec2 .more {
   padding-top: 12px;
   padding-bottom: 12px;
@@ -372,29 +409,33 @@ h2 {
   color: #666;
   border-radius: 5px;
 }
-/*-------------------------------sec3시작-----------------------------------------------------------------------------------------*/
+/*-------------------------------sec3�떆�옉-----------------------------------------------------------------------------------------*/
 .sec3 h4 {
   padding-top: 70px;
   margin-bottom: 10px;
   font-size: 26px;
   color: #333;
 }
+
 .sec3 .tit {
   font-size: 16px;
   color: #666;
   margin-bottom: 30px;
 }
+
 .sec3 .row1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 24px;
 }
+
 .sec3 .row2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .sec3 .box {
   height: 310px;
   width: 261px;
@@ -405,10 +446,12 @@ h2 {
   box-sizing: border-box;
   overflow: hidden;
 }
+
 .sec3 .box:hover img {
   transform: scale(1.2);
   transition: all 3s;
 }
+
 .sec3 .tipImg {
   width: 100%;
   height: 160px;
@@ -420,9 +463,11 @@ h2 {
   width: 100%;
   height: 160px;
 }
+
 .sec3 .big {
   width: 538px;
 }
+
 .sec3 .box .tipImg .spot_cnt {
   position: absolute;
   left: 0;
@@ -432,7 +477,7 @@ h2 {
   background-repeat: no-repeat;
   background-position: 0 center;
   background-size: contain;
-  /*padding-bottom 줘도 백그라운드 이미지 올라감 */
+  /*padding-bottom 以섎룄 諛깃렇�씪�슫�뱶 �씠誘몄� �삱�씪媛� */
   padding-left: 15px;
   margin-left: 10px;
   margin-top: 10px;
@@ -443,11 +488,13 @@ h2 {
   margin-top: 25px;
   margin-bottom: 25px;
 }
+
 .sec3 .txt p {
   font-size: 14px;
   color: #666;
   padding: 0 20px;
 }
+
 .sec3 .more {
   border: 1px solid #ccc;
   width: 346px;
@@ -462,17 +509,21 @@ h2 {
   margin-left: auto;
   background-color: #fff;
 }
+
 .sec4 {
   margin-bottom: 70px;
 }
+
 .sec4 .secWrap {
 }
+
 .sec4 h4 {
   padding-top: 10px;
   margin-bottom: 30px;
   font-size: 26px;
   color: #333;
 }
+
 .sec4 .row1,
 .row2 {
   display: flex;
@@ -487,14 +538,15 @@ h2 {
   border-radius: 5px;
   overflow: hidden;
 }
+
 .sec4 .cityName {
   color: white;
   /*padding-top: 120px;*/
   height: 100%;
-  line-height: 260px; /*글자 y축 가운데정렬*/
-
+  line-height: 260px; /*湲��옄 y異� 媛��슫�뜲�젙�젹*/
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
 }
+
 .sec4 .high .cityName {
   line-height: 538px;
 }
@@ -504,43 +556,55 @@ h2 {
   width: 260px;
   height: 260px;
 }
+
 .sec4 .row1 .box1 a {
   width: 538px;
 }
+
 .sec4 .row2 .box a {
   display: block;
   width: 260px;
   height: 260px;
 }
+
 .sec4 .row2 .col4 a {
   height: 538px;
 }
+
 .sec4 .row1 {
   margin-bottom: 17px;
 }
+
 .sec4 .row2 .col .box1_2,
 .box2_2,
 .box3_2 {
   margin-top: 17px;
 }
+
 .sec4 .box1 {
   background-image: url(../images/mainpage/city01.jpg);
 }
+
 .sec4 .box2 {
   background-image: url(../images/mainpage/city02.jpg);
 }
+
 .sec4 .box3 {
   background-image: url(../images/mainpage/city03.jpg);
 }
+
 .sec4 .box1_1 {
   background-image: url(../images/mainpage/city04.jpg);
 }
+
 .sec4 .box2_1 {
   background-image: url(../images/mainpage/city05.jpg);
 }
+
 .sec4 .box3_1 {
   background-image: url(../images/mainpage/city06.jpg);
 }
+
 .sec4 .high {
   background-image: url(../images/mainpage/city07.jpg);
 }
@@ -548,9 +612,11 @@ h2 {
 .sec4 .box1_2 {
   background-image: url(../images/mainpage/city08.jpg);
 }
+
 .sec4 .box2_2 {
   background-image: url(../images/mainpage/city09.jpg);
 }
+
 .sec4 .box3_2 {
   background-image: url(../images/mainpage/city10.jpg);
 }
@@ -561,61 +627,74 @@ h2 {
   background-size: cover;
   background-position: center center;
 }
+
 .sec5Wrap {
   display: flex;
   justify-content: space-between;
 }
+
 .sec5 .box {
   padding-top: 70px;
 }
+
 .sec5 p {
   text-align: left;
 }
+
 .blue {
   color: #179dff;
   font-size: 20px;
   margin-bottom: 15px;
 }
+
 .sec5txt {
   color: #363c48;
   margin-bottom: 40px;
 }
+
 .mbstr {
   display: flex;
   justify-content: start;
 }
+
 .mbstr img {
   margin-right: 10px;
 }
 
 /*--------------------------------------footer------------------------------------------------*/
 footer {
-  background-color: #363c48;
+  /*	background-color: #363c48;*/
+  background-color: rgba(0, 0, 0, 0.7);
 }
+
 .fWrap {
   width: 1092px;
   margin-right: auto;
   margin-left: auto;
 }
+
 .ftrow1 {
   display: flex;
   justify-content: space-between;
 }
+
 .ftrow1 .box {
   width: 260px;
-
   color: white;
   padding-top: 17px;
   padding-bottom: 17px;
   box-sizing: border-box;
 }
+
 .fWrap h4 {
   font-size: 16px;
   color: #ccc;
-  border-bottom: 1px solid #424753;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   line-height: 2;
   margin-bottom: 17px;
 }
+
 .fWrap li {
   line-height: 1.5;
 }
@@ -624,27 +703,27 @@ footer {
   display: flex;
   margin-top: 50px;
 }
+
 .ico1 {
   margin-right: 10px;
 }
+
 .ftrow2 {
   display: flex;
   justify-content: space-between;
-
   color: white;
   line-height: 2;
 }
 
 .footerbottom {
-  border-top: 1px solid #424753;
-  background-color: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
 }
 
-/* select 쓰지마
+/* select �벐吏�留�
 
 .opt select{
 width: 113px;
-
 margin-top: 30px;
 background-color: transparent;
 border-radius: 0;
@@ -676,7 +755,6 @@ footer .box .lang,
   padding-left: 10px;
   background-image: url(../images/mainpage/arr_sel.png);
   background-repeat: no-repeat;
-
   background-position: center;
   box-sizing: border-box;
   background-position-x: 90px;
@@ -686,9 +764,11 @@ footer .box .lang,
 .lang {
   position: relative;
 }
+
 .con_lang .lang {
   margin-right: 10px;
 }
+
 .langPop {
   list-style: none;
   border: 1px solid #424753;
@@ -697,7 +777,7 @@ footer .box .lang,
   left: 0;
   width: 100%;
   background-color: #363c48;
-  display: none; /*숨김처리*/
+  display: none; /*�닲源�泥섎━*/
 }
 
 langPop li {
@@ -718,7 +798,6 @@ footer .box .lang,
   padding-left: 10px;
   background-image: url(../images/mainpage/arr_sel.png);
   background-repeat: no-repeat;
-
   background-position: center;
   box-sizing: border-box;
   background-position-x: 90px;
@@ -728,9 +807,11 @@ footer .box .lang,
 .lang {
   position: relative;
 }
+
 .con_lang .lang {
   margin-right: 10px;
 }
+
 .langPop {
   list-style: none;
   border: 1px solid #424753;
@@ -739,7 +820,7 @@ footer .box .lang,
   left: 0;
   width: 100%;
   background-color: #363c48;
-  display: none; /*숨김처리*/
+  display: none; /*�닲源�泥섎━*/
 }
 
 langPop li {
@@ -751,11 +832,13 @@ langPop li {
   margin: 0 auto;
   position: relative;
 }
+
 .wrap.logged {
   background: white;
   border: 1px solid #e4e4e4;
   padding: 15px 20px 15px 20px;
 }
+
 .logged_user_img {
   float: left;
   width: 70px;
@@ -850,6 +933,7 @@ header.masthead {
   padding-top: 12rem;
   padding-bottom: 12rem;
 }
+
 .review_search {
   width: 100%;
   height: 200px;
@@ -877,6 +961,7 @@ header.masthead {
   font-size: 20px;
   font-weight: bold;
 }
+
 .review_search_area {
   flex-direction: row;
   width: 650px;
@@ -887,6 +972,7 @@ header.masthead {
   padding: 20px;
   position: relative;
 }
+
 .review_search_select {
   width: 100px;
   height: 30px;
@@ -894,6 +980,7 @@ header.masthead {
   font-size: 14px;
   margin-bottom: 10px;
 }
+
 .review_search_input {
   height: 30px;
   width: 500px;
@@ -948,21 +1035,23 @@ header.masthead {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 .best_reviewer_box {
   margin-left: auto;
   margin-right: auto;
   width: 1000px;
 }
+
 .best_reviewer_a {
   text-decoration: none;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
-
   padding-top: 16px;
   padding-bottom: 16px;
   display: inline-block;
 }
+
 .best_reviewer_a:hover img {
   transform: scale(1.1);
   transition: all 2s;
@@ -978,6 +1067,7 @@ header.masthead {
   height: 124px;
   width: 124px;
 }
+
 .best_reviewer_name {
   font-size: 16px;
   font-weight: 700;
@@ -997,14 +1087,17 @@ header.masthead {
   position: relative;
   color: rgb(115, 115, 115);
 }
+
 .sec_reviewer .box {
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 15px;
 }
+
 .sec2review {
   background-color: #fff;
 }
+
 .sec_reviewer {
   background-color: rgba(240, 240, 240, 0.8);
   padding-top: 15px;
@@ -1012,44 +1105,72 @@ header.masthead {
 }
 
 .searchArea {
-	width: 560px;
-    height: 100px;
-    border-radius: 3px;
-    margin: 0 auto;
-    position: relative;
-    font: inherit;
+  width: 560px;
+  height: 100px;
+  border-radius: 3px;
+  margin: 0 auto;
+  position: relative;
+  font: inherit;
 }
 
 .area_autocomplete {
-	width: 560px;
-	background: #fff;
-    position: absolute;
-    
+  width: 560px;
+  background: #fff;
+  position: absolute;
 }
 
 .area_search_item {
-	background: url(/oaga/images/mainPage/city.png) no-repeat;
-	background-size: 20px;
-    background-origin: content-box;
-    background-position: 0px;
-    cursor: pointer;
-    width: 100%;
-    display: block;
-    height: 45px;
-    border: 1px solid rgb(178,178,178);
-    border-bottom: 1px;
-    text-align: left;
+  background: url(/oaga/images/mainPage/city.png) no-repeat;
+  background-size: 20px;
+  background-origin: content-box;
+  background-position: 0px;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  height: 45px;
+  border: 1px solid rgb(178, 178, 178);
+  border-bottom: 1px;
+  text-align: left;
 }
 
 .search_name {
-	color: black;
-    float: left;
-    font-size: 15px;
-    height: 16px;
-    line-height: 16px;
-    font-family: 'nanum';
-    margin-left: 30px;
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 2px;
+  color: black;
+  float: left;
+  font-size: 15px;
+  height: 16px;
+  line-height: 16px;
+  font-family: "nanum";
+  margin-left: 30px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+.admin_mainmenu {
+  text-align: center;
+  display: block;
+  width: 150px;
+}
+
+.admin_submenu {
+  border-radius: 5px;
+  width: inherit;
+  text-align: center;
+  position: absolute;
+  background-color: #f9bb57;
+  visibility: hidden;
+  width: inherit;
+}
+
+.admin_submenu > li {
+  padding: 2px;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  height: 30px;
+  font-size: 17px;
+}
+
+.admin_mainmenu:hover .admin_submenu {
+  visibility: visible;
 }

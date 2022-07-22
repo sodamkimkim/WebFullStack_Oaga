@@ -42,16 +42,7 @@
 
           <div class="box">
             <div class="con_lang">
-              <div class="lang">
-                <a href="#" class="default">한국어</a>
-                <ol class="langPop">
-                  <!--order list-->
-                  <li><a href="#">English</a></li>
-                  <li><a href="#">日本語</a></li>
-                  <li><a href="#">中文</a></li>
-                </ol>
-              </div>
-              <!--lang-->
+             
             </div>
             <!--con_lang-->
 

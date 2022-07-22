@@ -3,19 +3,14 @@ package com.oaga.oaga_v1.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.oaga.oaga_v1.dto.RequestTravelDto;
 import com.oaga.oaga_v1.dto.RequestUserProfileDto;
-import com.oaga.oaga_v1.dto.ResponseDto;
 import com.oaga.oaga_v1.placeModel.Area;
-import com.oaga.oaga_v1.placeModel.AreaGu;
 import com.oaga.oaga_v1.placeModel.CategoryType;
 import com.oaga.oaga_v1.service.AdminService;
 import com.oaga.oaga_v1.service.UserService;
@@ -57,7 +52,18 @@ public class AdminController {
 	return "redirect:/";
     }
 	
+	@GetMapping("/admin/deletepage")
+	public String adminDeletePage() {
+		return "admin/admin_delete_form";
+	}
+
+	// 수정 페이지
+	@GetMapping("/admin/updatepage") 
+	private String adminUpdateForm() {
+		return "/admin/update";
+	}
 	
+
 	@PostMapping("/api/damin/guinfo/infoSave")
 	public String restaurantSave(RequestTravelDto dto){
 		dto.setCategoryType(CategoryType.GUINFO);
@@ -68,6 +74,15 @@ public class AdminController {
 	}
 	
 	
+
+
+	@GetMapping("/admin/deletepage")
+	public String adminDeletepage() {
+		return "admin/admin_delete_form";
+	}
+	
+
+
 	
 	
 	

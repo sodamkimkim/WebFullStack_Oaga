@@ -89,7 +89,10 @@
 							<img
 								class="imageList"
 								style="width: 200px; border-radius: 1ex; margin-bottom: 10px;"
+
 								src="http://localhost:9090/oaga/upload/${area.image}" alt="">
+
+
 								<h3 style="font-size: 16px;">${area.guname}</h3>
 							</a>
 						</div>
@@ -113,7 +116,10 @@
 							<a href="/oaga/travel_guinfo/${area.id}"> <img
 								class="imageList"
 								style="width: 200px; border-radius: 1ex; margin-bottom: 10px;"
+
 								src="http://localhost:9090/oaga/upload/${area.image}" alt="">
+
+
 								<h3 style="font-size: 16px;">${area.guname}</h3>
 							</a>
 						</div>
@@ -136,7 +142,10 @@
 							<a href="/oaga/travel_guinfo/${area.id}"> <img
 								class="imageList"
 								style="width: 200px; border-radius: 1ex; margin-bottom: 10px;"
+
 								src="http://localhost:9090/oaga/upload/${area.image}" alt="">
+
+
 								<h3 style="font-size: 16px;">${area.guname}</h3>
 							</a>
 						</div>
@@ -159,7 +168,9 @@
 							<a href="/oaga/travel_guinfo/${area.id}"> <img
 								class="imageList"
 								style="width: 200px; border-radius: 1ex; margin-bottom: 10px;"
+
 								src="http://localhost:9090/oaga/upload/${area.image}" alt="">
+
 								<h3 style="font-size: 16px;">${area.guname}</h3>
 							</a>
 						</div>
@@ -182,7 +193,9 @@
 							<a href="/oaga/travel_guinfo/${area.id}"> <img
 								class="imageList"
 								style="width: 200px; border-radius: 1ex; margin-bottom: 10px;"
+
 								src="http://localhost:9090/oaga/upload/${area.image}" alt="">
+
 								<h3 style="font-size: 16px;">${area.guname}</h3>
 							</a>
 						</div>

@@ -149,7 +149,7 @@ footer {
 				<a href="/oaga">OaGa</a>
 			</h1>
 			<div class="con">
-				<form action="/oaga/auth/loginProc" method="post">
+				<form action="/oaga/auth/loginproc" method="post">
 					<div class="formRow1">
 						<input type="text" class="form-control" placeholder="Enter ID"
 							id="username" name="username" value="2" /> <input

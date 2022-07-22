@@ -35,7 +35,9 @@ let index = {
 			}
 		}).autocomplete('instance')._renderItem = function(ul, item) {
 			console.log(item);
-			return $('<li>').append('<a class="area_search_item"><span class="search_name">' + item.label + '</span></a>')
+
+			return $('<li style="display: block; width: 96%;">').append('<a class="area_search_item"><span class="search_name">' + item.label + '</span></a>')
+
 			.appendTo(ul);
 		};
 

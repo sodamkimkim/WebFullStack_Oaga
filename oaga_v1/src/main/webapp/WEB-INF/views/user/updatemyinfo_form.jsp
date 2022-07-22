@@ -111,7 +111,7 @@ uri="http://www.springframework.org/security/tags"%>
           <a href="/oaga">OaGa</a>
         </h1>
         <div class="con">
-          <form action="" method="post">
+          <form action="" >
 			<input type="hidden" id="id" value="${principal.user.id}">
             <div class="formRow1">
               <div class="update_lbl_Input">
@@ -121,12 +121,12 @@ uri="http://www.springframework.org/security/tags"%>
               <c:if test="${empty principal.user.oauth}">
                 <div class="update_lbl_Input">
                   <label class="update_lbl" for="password"> Password: </label>
-                  <input type="text" class="form-control" value="" id="password" name="password" />
+                  <input type="password" class="form-control" value="" id="password" name="password" />
                 </div>
                 <br />
                 <div class="update_lbl_Input">
                   <label class="update_lbl" for="userNickName"> 이름: </label>
-                  <input type="text" class="form-input" value="${principal.user.userNickName}" id="userNickName" name="userNickName" />
+                  <input type="text" class="form-control" value="${principal.user.userNickName}" id="userNickName" name="userNickName" />
                 </div>
                 <div class="update_lbl_Input">
                   <label class="update_lbl" for="email"> E-mail: </label>
@@ -135,7 +135,7 @@ uri="http://www.springframework.org/security/tags"%>
               </c:if>
             </div>
             <div class="formRow2">
-              <button type="button" id="btn-update" class="btn btn_update">정보 수정 완료</button>
+              <button type="button" id="btn-myInfoUpdate" class="btn btn_update">정보 수정 완료</button>
             </div>
             <!--formRow1-->
           </form>

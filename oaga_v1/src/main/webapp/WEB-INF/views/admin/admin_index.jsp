@@ -16,8 +16,14 @@
 	<div style="width: 1200px;">
 		<div
 			style="display: flex; justify-content: space-around; margin-top: 50px;">
-			<button class="btn btn-primary" id="select"
-				style="width: 120px; height: 35px; font-size: 20px;">추가하기</button>
+
+			<button type="button" class="btn btn-primary" id="select"
+				style="width: 120px; height: 35px; font-size: 20px; cursor: pointer;">추가하기</button>
+			<button type="button" class="btn btn-primary" id="update"
+				style="width: 120px; height: 35px; font-size: 20px; cursor: pointer;">수정하기</button>
+			<button type="button" class="btn btn-primary" id="delete"
+				style="width: 120px; height: 35px; font-size: 20px; cursor: pointer;">삭제하기</button>
+
 		</div>
 
 		<div
@@ -31,7 +37,7 @@
 
 					<c:forEach var="areaList" items="${areaList}">
 						<div class="areaList"
-							style="width: 100%; height: 30px; margin-bottom: 10px; background-color: gray;"
+							style="width: 100%; height: 30px; margin-bottom: 10px; background-color: gray; cursor: pointer;"
 							onclick="selectList('${areaList.id}')">
 
 							<input type="hidden" value="${areaList}" id="areaId">${areaList.area}</div>

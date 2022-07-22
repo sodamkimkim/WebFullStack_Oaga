@@ -35,22 +35,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		// TODO Auto-generated method stub
 		return super.authenticationManagerBean();
 	}
-//	@Bean
-//	@Override
-//	protected authenticationManager authenticationManager() throws Exception {
-//		return super.authenticationManagerBean();
-//	}
+
 	
 	@Override
-	public void configure(WebSecurity web) throws Exception {
-		web.httpFirewall(defaultHttpFirewall());
-	}
-	@Bean
-	public HttpFirewall defaultHttpFirewall() {
-		return new DefaultHttpFirewall();
-	};
-	
-	@Override
+
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
             .authorizeRequests()
@@ -62,12 +50,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         .and()
             .formLogin()
             .loginPage("/auth/login_form")
-            .loginProcessingUrl("/auth/loginProc")
+            .loginProcessingUrl("/auth/loginproc")
             .defaultSuccessUrl("/");
 
 
 
     }
+
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {

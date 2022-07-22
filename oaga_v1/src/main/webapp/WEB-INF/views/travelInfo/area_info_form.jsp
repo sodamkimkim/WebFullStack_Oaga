@@ -10,7 +10,9 @@
 
 <div class="container" style="display: flex; justify-content: center;">
 	<c:forEach var="areaImage" items="${areaImage}">
+
 		<img alt="" src="http://localhost:9090/oaga/upload/${areaImage.mainImage}"
+
 			style="width: 1100px; height: 450px; background-color: blue;">
 		<p>${areaImage.area}</p>
 	</c:forEach>
@@ -28,7 +30,9 @@
 		<c:forEach var="areaGu" items="${areaGu}">
 			<div style="margin-right: 20px;">
 				<a href="/oaga/travel_guinfo/${areaGu.id}"> <img class="swiper-slide" alt=""
+
 					src="http://localhost:9090/oaga/upload/${areaGu.image}"
+
 					style="width: 170px; height: 170px; border-radius: 15px;">
 				</a>
 				<h4 style="width: 170px; height: 20px;">${areaGu.guname}</h4>
@@ -46,7 +50,9 @@
 		<c:forEach var="guinfo" items="${guinfo}">
 			<div style="margin-right: 20px;">
 				<a href="/oaga/travel_detail/gu/${guinfo.id}">
+
 				<img alt="" src="http://localhost:9090/oaga/upload/${guinfo.image}"
+
 					style="width: 170px; height: 170px; border-radius: 15px;">
 				</a>
 				<p>${guinfo.name}</p>
@@ -65,7 +71,9 @@
 		<c:forEach var="restaurant" items="${restaurant}">
 			<div style="margin-right: 20px;">
 				<a href="/oaga/travel_detail/${restaurant.id}">
+
 				<img alt="" src="http://localhost:9090/oaga/upload/${restaurant.image}"
+
 					style="width: 170px; height: 170px; border-radius: 15px;">
 				</a>
 				<p>${restaurant.name}</p>

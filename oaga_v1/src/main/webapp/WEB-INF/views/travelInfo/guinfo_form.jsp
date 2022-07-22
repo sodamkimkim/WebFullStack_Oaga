@@ -8,7 +8,9 @@
 <div style="width: 100%; display: flex; justify-content: center;">
 	<div style="width: 1200px; height: 500px;">
 		<c:forEach var="areaImageList" items="${areaImageList }">
+
 			<img alt="" src="http://localhost:9090/oaga/upload/${areaImageList.mainImage}"
+
 				style="width: 100%; height: 100%; border-radius: 1ex; margin: 15px;">
 		</c:forEach>
 	</div>
@@ -28,8 +30,12 @@
 			style="display: flex; justify-content: center; align-content: center; font-weight: bold; font-size: 20px; ">
 			<c:forEach var="guInfoList" items="${guInfoList}">
 				<a href="/oaga/travel_detail/gu/${guInfoList.id}"
+				
+
 					style="width: auto; height: auto; margin-right: 15px;"> 
 					<img alt="" src="http://localhost:9090/oaga/upload/${guInfoList.image}"
+
+					
 					style="width: 170px; height: 170px; border-radius: 1ex; margin-top: 30px;">
 					<h5 style="margin-top: -2px;">${guInfoList.name}</h5>
 				</a>
@@ -53,6 +59,7 @@
 			<c:forEach var="restaurantList" items="${restaurantList}">
 				<a href="/oaga/travel_detail/${restaurantList.id}"
 					style="width: auto; height: auto; margin-right: 15px;"> <img
+
 					alt="" src="http://localhost:9090/oaga/upload/${restaurantList.image}"
 					style="width: 170px; height: 170px; border-radius: 1ex; margin-top: 30px;">
 					<h5 style="margin-top: -2px;">${restaurantList.name}</h5>

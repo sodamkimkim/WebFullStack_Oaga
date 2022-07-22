@@ -30,6 +30,9 @@ public class Restaurant {
     private int id;
     @Column(nullable = false,length = 30)
     private String name;
+    
+
+    
     @Column(nullable = false, length = 200)
     private String content;
     @Column(nullable = false, length = 100)
@@ -39,9 +42,13 @@ public class Restaurant {
     @JoinColumn(name = "areaGu")
     private AreaGu areaGu;
     
+
     @Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	private CategoryType categoryType;
+
+    
+
 
     @Column(nullable = false)
     private String image;
