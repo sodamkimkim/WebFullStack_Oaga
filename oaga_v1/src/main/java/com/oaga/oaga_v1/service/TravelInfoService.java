@@ -1,8 +1,8 @@
 package com.oaga.oaga_v1.service;
+import java.awt.print.Pageable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -105,9 +105,10 @@ public class TravelInfoService {
 		return randmarkRepository.mFindByAreaGuId(areaGu_areaId);
 	}
 	
-	
-	
-	
+	@Transactional
+	public List<Restaurant> findRestaurantByName(String partOfRName, Pageable pageable){
+		return restaurantRepositoryt.findByNameContaining(partOfRName, pageable);
+	}
 	
 	
 	

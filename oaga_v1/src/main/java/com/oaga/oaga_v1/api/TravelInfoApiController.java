@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.oaga.oaga_v1.dto.ResponseDto;
 import com.oaga.oaga_v1.placeModel.Area;
+import com.oaga.oaga_v1.placeModel.Restaurant;
 import com.oaga.oaga_v1.service.TravelInfoService;
 
 @RestController
@@ -44,5 +45,17 @@ public class TravelInfoApiController {
 		paramMap.put("resultList", resultList);
 		return paramMap;
 	}
+	
+//	@PostMapping("/ajax/admindelete_autocomplete.do")
+//	public Map<String, Object> adminDeleteAutoComplete(@RequestParam Map<String, Object> paramMap) throws Exception{
+//		System.out.println("@ adminDelete autocomplete in TInfoController");
+//		String restaurant = paramMap.get("value").toString();
+//		System.out.println("?????????????"+restaurant);
+////		select * from restaurant where name like '%?%' 
+//		List<Restaurant> restaurantList = infoService.findRestaurantByName(restaurant);
+//		System.out.println(restaurantList);
+//		paramMap.put("restaurantList", restaurantList);
+//		return paramMap;
+//	}
 
 }
