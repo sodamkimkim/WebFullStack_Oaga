@@ -4,7 +4,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.oaga.oaga_v1.dto.RequestReviewFileDto;
 import com.oaga.oaga_v1.dto.RequestUserProfileDto;
 import com.oaga.oaga_v1.repository.UserRepository;
 import com.oaga.oaga_v1.userModel.RoleType;
@@ -42,9 +40,11 @@ public class UserService {
 		try {
 
 			String rawPassword = dto.getPassword();
+			System.out.println(rawPassword);
 			String encPassword = encoder.encode(rawPassword);
 			dto.setPassword(encPassword);
 			dto.setRole(RoleType.USER);
+			System.out.println(dto.getRole() + "@@@@@SERVEICE@@@ROLE@@@@");
 			UUID uuid = UUID.randomUUID();
 			String imageFileName = uuid.toString() + "." +extracktExt(dto.getFile().getOriginalFilename());
 			String newFileName = (imageFileName.trim()).replaceAll("\\s", "");//공백(\\s)없애기.
@@ -57,6 +57,7 @@ public class UserService {
 			try {
 				Files.write(userProfileFilePath, dto.getFile().getBytes());
 				userRepository.save(dto.toEntity(newFileName));
+				
 				
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -123,6 +124,41 @@ public class UserService {
 	// 베스트 리뷰어
 	public List<User> bestUser() {
 		return userRepository.bestUser();
+	}
+	@Transactional
+	public int adminJoin(RequestUserProfileDto dto){
+		System.out.println("여기는??");
+		try {
+			String rawPassword1 = dto.getPassword();
+			System.out.println(rawPassword1);
+			String encPassword1 = encoder.encode(rawPassword1);
+			dto.setPassword(encPassword1);
+			dto.setRole(RoleType.ADMIN);
+			System.out.println(dto.getRole() + "@@@@@SERVEICE@@@ROLE@@@@");
+			System.out.println("여기를 안들어오나????@@@@@?");
+			UUID uuid = UUID.randomUUID();
+			String imageFileName = uuid.toString() + "." +extracktExt(dto.getFile().getOriginalFilename());
+			String newFileName = (imageFileName.trim()).replaceAll("\\s", "");//공백(\\s)없애기.
+			System.out.println("파일 명: " + newFileName);
+			
+			//서버컴퓨터 path가져오기
+			Path userProfileFilePath = Paths.get(uploadFolder + newFileName);
+			System.out.println("전체 파일 경로 + 파일 명 : " + userProfileFilePath);
+			
+			try {
+				Files.write(userProfileFilePath, dto.getFile().getBytes());
+				userRepository.save(dto.toEntity(newFileName));
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
+		return 1;
 	}
 	
 	//

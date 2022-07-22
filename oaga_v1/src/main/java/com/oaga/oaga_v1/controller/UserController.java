@@ -93,10 +93,11 @@ public class UserController {
 	}
 	
 
+
 	@PostMapping("/auth/joinProc")
 	public String save(RequestUserProfileDto dto) {
 			dto.setRole(RoleType.USER);
-	
+			System.out.println(dto.getRole() + "@@@@@SERVEICE@@@ROLE@@@@");
 		int result = userService.saveUser(dto);
 		return "redirect:/";
 	}
@@ -259,5 +260,7 @@ public class UserController {
 				.authenticate(new UsernamePasswordAuthenticationToken(kakaoUser.getUsername(), oagaKey));
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		return "redirect:/";
-	}
+	}	
+	
+	
 }
