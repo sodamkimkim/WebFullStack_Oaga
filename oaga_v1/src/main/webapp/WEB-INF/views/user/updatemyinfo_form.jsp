@@ -121,12 +121,12 @@ uri="http://www.springframework.org/security/tags"%>
               <c:if test="${empty principal.user.oauth}">
                 <div class="update_lbl_Input">
                   <label class="update_lbl" for="password"> Password: </label>
-                  <input type="text" class="form-control" value="" id="password" name="password" />
+                  <input type="password" class="form-control" value="" id="password" name="password" />
                 </div>
                 <br />
                 <div class="update_lbl_Input">
                   <label class="update_lbl" for="userNickName"> 이름: </label>
-                  <input type="text" class="form-input" value="${principal.user.userNickName}" id="userNickName" name="userNickName" />
+                  <input type="text" class="form-control" value="${principal.user.userNickName}" id="userNickName" name="userNickName" />
                 </div>
                 <div class="update_lbl_Input">
                   <label class="update_lbl" for="email"> E-mail: </label>

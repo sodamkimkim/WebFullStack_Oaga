@@ -66,6 +66,9 @@ input {
 	text-align: center;
 	border: 1px solid rgba(51, 51, 51, 0.7);
 	cursor: pointer;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	
 }
 
 .input-file-button2 {
@@ -77,8 +80,9 @@ input {
 	background-color: transparent;
 	cursor: pointer;
 	position: absolute;
-	top: 147px;
+top: 142px;
 	left: 149px;
+	padding-bottom: 5px;
 }
 
 .lblUserProfileFile {
@@ -122,7 +126,7 @@ h1 {
 	top: 250px;
 	left: 50%;
 	transform: translateX(-50%);
-	width: 140px;
+	width: 160px;
 	height: 35px;
 	border-radius: 4px;
 	background-color: rgba(245, 161, 25, 0.9);
@@ -150,8 +154,7 @@ h1 {
 						 <label class="input-file-button input-file-button1" for="input-file"> 파일 선택 </label>
 						 <label class="input-file-button input-file-button2" for="input-file"> 프로필을 선택하세요.</label> 
 						 <input type="file" name="file" placeholder="upload user-Profile" class="form-input" id="input-file">
-					<button type="button" id="btn_myProfileUpdate" class="btn btn_myProfileUpdate" ">프로필 수정 완료</button>
-					<!-- onClick = "index.myProfileUpdate(); -->
+<button type="button" id="btn_myProfileUpdate" class="btn btn_myProfileUpdate">프로필 수정 완료</button>					<!-- onClick = "index.myProfileUpdate(); -->
 				</div>
 
 			</form>

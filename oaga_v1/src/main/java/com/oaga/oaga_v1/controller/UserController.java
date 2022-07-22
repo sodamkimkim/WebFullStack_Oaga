@@ -108,7 +108,7 @@ public class UserController {
 	public String save(RequestUserProfileDto dto) {
 			dto.setRole(RoleType.USER);
 	
-		int result = userService.saveUser(dto);
+		userService.saveUser(dto);
 		return "redirect:/";
 	}
 
@@ -199,7 +199,7 @@ public class UserController {
 
 		OAuthToken authToken = null;
 		ObjectMapper objectMapper = new ObjectMapper();
-		try {
+		try { 
 			authToken = objectMapper.readValue(response.getBody(), OAuthToken.class);
 		} catch (JsonMappingException e) {
 			e.printStackTrace();

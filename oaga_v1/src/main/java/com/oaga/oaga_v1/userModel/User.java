@@ -34,13 +34,13 @@ public class User {
 	@Column(nullable = false, length = 100, unique = true)
 	private String username;
 
-	@Column(nullable = true, length = 20)
+	@Column(nullable = false, length = 20)
 	private String userNickName;
 
 	@Column(nullable = false, length = 100)
 	private String password;
 
-	@Column(nullable = false, length = 100)
+	@Column(nullable = true, length = 100)
 	private String email;
 
 	@Enumerated(EnumType.STRING) // enum을 db에서는 스트링으로 알아먹어라!
