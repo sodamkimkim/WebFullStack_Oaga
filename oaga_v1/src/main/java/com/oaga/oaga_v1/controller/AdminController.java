@@ -55,7 +55,10 @@ public class AdminController {
 	return "redirect:/";
     }
 	
-	
+	@GetMapping("/admin/deletepage")
+	public String adminDeletePage() {
+		return "admin/admin_delete_form";
+	}
 	
 	
 	
