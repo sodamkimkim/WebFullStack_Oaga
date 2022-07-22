@@ -96,7 +96,7 @@ public class TravelInfoController {
 			List<Area> areaImageList = travelInfoService.areaImage(id);
 
 			List<AreaGu> areaGuAllList = travelInfoService.areaGu(id);
-			
+			System.out.println(areaImageList);
 			int areaGuId = travelInfoService.areaImage(id).get(0).getId();
 			System.out.println(areaGuId + "areaGuId@@@@@@@@@@@@@@@@");
 			List<GuInfo>guinfoAllList = travelInfoService.findByAreaGuId(areaGuId);

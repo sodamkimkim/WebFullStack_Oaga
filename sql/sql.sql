@@ -85,26 +85,26 @@ select * from area;
 
 desc area;
 
-INSERT INTO area values(1,'서울',"아무거나",'https://picsum.photos/id/237/200/300');
-INSERT INTO area values(2,'부산',"아무거나",'https://picsum.photos/id/237/200/300');
-INSERT INTO area values(3,'대구',"아무거나",'https://picsum.photos/id/237/200/300');
-INSERT INTO area values(4,'제주도',"아무거나",'https://picsum.photos/id/237/200/300');
-INSERT INTO area values(5,'인천',"아무거나",'https://picsum.photos/id/237/200/300');
+INSERT INTO area values(1,'서울',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2016/11/02/14/32/lotte-world-tower-1791802_960_720.jpg">');
+INSERT INTO area values(2,'부산',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2021/02/07/18/38/bridge-5992305_960_720.jpg">');
+INSERT INTO area values(3,'대구',"아무거나",'<img class="area_img" src="">');
+INSERT INTO area values(4,'제주도',"아무거나",'<img class="area_img" src="">');
+INSERT INTO area values(5,'인천',"아무거나",'<img class="area_img" src="">');
 
 
-INSERT INTO areagu values(1,'아무거나',"강남구",'https://picsum.photos/id/237/200/300',"ㅇㅁㄴ",1);
-INSERT INTO areagu values(6,'아무거나',"마포구",'https://picsum.photos/seed/picsum/200/300',"ㅇㅁㄴ",1);
-INSERT INTO areagu values(2,'아무거나',"서구",'https://picsum.photos/seed/picsum/200/300',"ㅇㅁㄴ",2);
-INSERT INTO areagu values(7,'아무거나',"해운대구",'https://picsum.photos/200/300?grayscale',"ㅇㅁㄴ",2);
-INSERT INTO areagu values(11,'아무거나',"광안리",'https://picsum.photos/200/300?grayscale',"ㅇㅁㄴ",2);
-INSERT INTO areagu values(12,'아무거나',"기장",'https://picsum.photos/200/300?grayscale',"ㅇㅁㄴ",2);
-INSERT INTO areagu values(13,'아무거나',"동구",'https://picsum.photos/200/300?grayscale',"ㅇㅁㄴ",2);
-INSERT INTO areagu values(3,'아무거나',"서귀포",'https://picsum.photos/200/300/?blur',"ㅇㅁㄴ",4);
-INSERT INTO areagu values(8,'아무거나',"애월",'https://picsum.photos/200/300/?blur=2',"ㅇㅁㄴ",4);
-INSERT INTO areagu values(4,'아무거나',"동구",'https://picsum.photos/200/300/?blur=2',"ㅇㅁㄴ",3);
-INSERT INTO areagu values(9,'아무거나',"달서구",'https://picsum.photos/seed/picsum/200/300',"ㅇㅁㄴ",3);
-INSERT INTO areagu values(5,'아무거나',"가평",'https://picsum.photos/id/237/200/300',"ㅇㅁㄴ",5);
-INSERT INTO areagu values(10,'아무거나',"파주",'https://picsum.photos/200/300/?blur',"ㅇㅁㄴ",5);
+INSERT INTO areagu values(1,'아무거나',"강남구",'<img class="areagu_img" src="">',"ㅇㅁㄴ",1);
+INSERT INTO areagu values(6,'아무거나',"마포구",'<img class="areau_img" src="">',"ㅇㅁㄴ",1);
+INSERT INTO areagu values(2,'아무거나',"서구",'<img class="areagu_img" src="">',"ㅇㅁㄴ",2);
+INSERT INTO areagu values(7,'아무거나',"해운대구",'<img class="areagu_img" src="">',"ㅇㅁㄴ",2);
+INSERT INTO areagu values(11,'아무거나',"광안리",'<img class="areagu_img" src="">',"ㅇㅁㄴ",2);
+INSERT INTO areagu values(12,'아무거나',"기장",'<img class="areagu_img" src="">',"ㅇㅁㄴ",2);
+INSERT INTO areagu values(13,'아무거나',"동구",'<img class="areagu_img" src="">',"ㅇㅁㄴ",2);
+INSERT INTO areagu values(3,'아무거나',"서귀포",'<img class="areagu_img" src="">',"ㅇㅁㄴ",4);
+INSERT INTO areagu values(8,'아무거나',"애월",'<img class="areagu_img" src="">',"ㅇㅁㄴ",4);
+INSERT INTO areagu values(4,'아무거나',"동구",'<img class="areagu_img" src="">',"ㅇㅁㄴ",3);
+INSERT INTO areagu values(9,'아무거나',"달서구",'<img class="areagu_img" src="">',"ㅇㅁㄴ",3);
+INSERT INTO areagu values(5,'아무거나',"가평",'<img class="areagu_img" src="">',"ㅇㅁㄴ",5);
+INSERT INTO areagu values(10,'아무거나',"파주",'<img class="areagu_img" src="">',"ㅇㅁㄴ",5);
 
 
 INSERT INTO guinfo values(1,'강남',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"강남대로","dsa",1);

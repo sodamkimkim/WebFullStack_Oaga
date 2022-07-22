@@ -10,10 +10,7 @@
 
 <div class="container" style="display: flex; justify-content: center;">
 	<c:forEach var="areaImage" items="${areaImage}">
-
-		<img alt="" src="http://localhost:9090/oaga/upload/${areaImage.mainImage}"
-
-			style="width: 1100px; height: 450px; background-color: blue;">
+		${areaImage.mainImage}
 		<p>${areaImage.area}</p>
 	</c:forEach>
 
