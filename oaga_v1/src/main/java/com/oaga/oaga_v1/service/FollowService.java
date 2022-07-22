@@ -30,7 +30,7 @@ public class FollowService {
 		User fromUser = userRepository.findById(followedUserId).orElseThrow(() -> {
 			return new IllegalArgumentException("해당 사용자는 찾을 수 없습니다.");
 		}); 
-		
+		fromUser.setLikes(fromUser.getLikes() + 1);
 		Follow follow = followRepository.save(Follow.builder().followingUser(toUser).followedUser(fromUser).build());
 		return follow;
 	}

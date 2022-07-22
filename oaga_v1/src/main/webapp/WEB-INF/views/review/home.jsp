@@ -1,24 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <%@ include file="../layout/header.jsp"%>
 
 <!-- background: url("/images/reviewPage/review_bg.jpg")  -->
 <div class="review_search">
 	<div class="wrap">
 		<h5 class="review_search_title">보고싶은 리뷰를 검색하여 가고싶은 지역의 후기를 찾아보세요</h5>
-
+		<div class="img_box">
+			<img class="review_search_img"
+				src="/oaga/images/reviewPage/review_home.png">
+		</div>
 		<!-- 사진이나 화면 추가 -->
 		<p class="review_search_coment">리뷰 검색하기</p>
 		<div class="review_search_area">
-			<select class="review_search_select" id="" name="">
-				<option>지역명</option>
-				<option>사용자</option>
-			</select>
 			<form action="/oaga/list/search" method="get">
-				<input type="text" class="review_search_input" name="searchTitle" id="search-review" placeholder="지역명으로 검색">
-				<button type="submit">검색</button>
-			</form> 
+				<input type="text" class="review_search_input" name="searchTitle"
+					id="search-review" placeholder="제목으로 검색">
+			</form>
 		</div>
 	</div>
 </div>
@@ -30,22 +28,20 @@
 		<div class="page silver logged_box">
 			<div class="wrap logged">
 				<img class="logged_user_img"
-					src="images/reviewPage/profile_basic.png"
+					src="http://localhost:9090/oaga/upload/${principal.user.userProfileImgUrl}"
 					onerror="this.src='images/reviewPage/profile_basic.png';">
 				<div class="logged_left">
 					<div class="logged_name">${principal.user.userNickName}</div>
 					<div class="clear"></div>
-					<a
-						href="/ko/mypage/et_2207050522410907249001657009361?type=clipboard"
-						class="logged_cnt_box logged_clip"> <b>작성한 리뷰</b> <span>${reviewCount}</span>
+					<a href="/oaga/mypage_form" class="logged_cnt_box logged_clip">
+						<b>작성한 리뷰</b> <span>${reviewCount}</span>
 					</a>
 					<div class="logged_line">&nbsp;</div>
-					<a href="/ko/mypage/et_2207050522410907249001657009361?type=plan"
-						class="logged_cnt_box logged_plan"> <b>좋아요</b> <span>0</span>
+					<a id="likes_btn" class="logged_cnt_box logged_plan"> <b>좋아요</b> <span>${principal.user.likes}</span>
 					</a>
+					<!-- 모달 띄우기 -->
 					<div class="logged_line">&nbsp;</div>
-					<a href="/ko/mypage/et_2207050522410907249001657009361?type=my_qa"
-						class="logged_cnt_box logged_qa"> <b>Q&amp;A</b> <span>0</span>
+					<a class="logged_cnt_box logged_qa"> <b>Q&amp;A</b> <span>0</span>
 					</a>
 					<div class="clear"></div>
 				</div>
@@ -62,6 +58,10 @@
 		</div>
 	</c:otherwise>
 </c:choose>
+
+<!-- 모달창 생성 -->
+
+
 
 
 
@@ -114,7 +114,7 @@
 						</div> <!--data-->
 					</a>
 				</div>
-			<!--box-->
+				<!--box-->
 			</c:forEach>
 
 		</div>
@@ -125,7 +125,9 @@
 				<div class="box">
 					<a href="/oaga/detail/${reviews.id}">
 						<div class="ImgBox">
-							<img src="http://localhost:9090/oaga/upload/${reviews.reviewImageUrl}" alt="" />
+							<img
+								src="http://localhost:9090/oaga/upload/${reviews.reviewImageUrl}"
+								alt="" />
 							<div class="txt">
 								<p>${reviews.title}</p>
 							</div>
@@ -154,7 +156,7 @@
 		</div>
 		<!--row2-->
 
-		<div class="more">56,065개의 여행리뷰 모두보기</div>
+		<a href="/oaga/list"><div class="more">56,065개의 여행리뷰 모두보기</div></a>
 	</div>
 	<!--secWrap-->
 </section>
@@ -169,18 +171,32 @@
 			가장 많이 받은 베스트 리뷰어들</p>
 		<div class="best_reviewer_box">
 			<div style="display: flex; margin: 0 auto;">
-			
-			<c:forEach var="bestuser" items="${bestUser}">
-<a>bestUser id: ${bestuser.id}</a>
-				<div class="box" style="display: flex;">
-					<a class="best_reviewer_a" href="/oaga/userpage_form/${bestuser.id}"> <img
-						src="images/reviewPage/profile_basic.png" class="best_reviewer_profile">
+
+				<c:forEach var="bestuser" items="${bestUser}">
+					<div class="box" style="display: flex;">
+						<c:choose>
+							<c:when test="${empty principal}">
+								<a class="best_reviewer_a"
+									href="/oaga/userpage_form/${bestuser.id}">
+							</c:when>
+							<c:otherwise>
+								<a class="best_reviewer_a"
+									href="/oaga/userpage_form_l/${bestuser.id}">
+							</c:otherwise>
+						</c:choose>
+						<img
+							src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
+							class="best_reviewer_profile">
 						<p class="best_reviewer_name">${bestuser.userNickName}</p>
-						<p class="best_reviewer_count">${bestuser.likes}</p>
-					</a>
-				</div>
-			</c:forEach>
-				
+						<p class="best_reviewer_count">
+							<img class="best_reviewer_icon"
+								src="/oaga/images/userPage/heart.png">
+							<h7>&nbsp;${bestuser.likes}</h7>
+						</p>
+						</a>
+					</div>
+				</c:forEach>
+
 
 			</div>
 
@@ -189,5 +205,32 @@
 	</div>
 </section>
 
+<!-- 모달 창 생성 (자신을 좋아요한 사람을 볼 수 있음) -->
+<div id="modal" class="modal">
+	<div class="modal_group_box">
+		<div class="list-group">
+			<div>
+				<img src="" alt="">
+				<h5>좋아요</h5>
+				<img src="" alt="">
+			</div>
+			<div class="list-group-item">
+				<label><a href="#"></a>가나다</label>
+			</div>
+			<div class="list-group-item">
+				<label><a href="#"></a>라마바</label>
+			</div>
+			<div class="list-group-item">
+				<label><a href="#"></a>사아자</label>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$("#likes_btn").on("click", function() {
+		console.log("asdasd");
+	})
+</script>
 
 <%@ include file="../layout/footer.jsp"%>
