@@ -87,24 +87,62 @@ desc area;
 
 INSERT INTO area values(1,'서울',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2016/11/02/14/32/lotte-world-tower-1791802_960_720.jpg">');
 INSERT INTO area values(2,'부산',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2021/02/07/18/38/bridge-5992305_960_720.jpg">');
-INSERT INTO area values(3,'대구',"아무거나",'<img class="area_img" src="">');
-INSERT INTO area values(4,'제주도',"아무거나",'<img class="area_img" src="">');
-INSERT INTO area values(5,'인천',"아무거나",'<img class="area_img" src="">');
+INSERT INTO area values(3,'대구',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2018/11/26/01/59/korea-3838655_960_720.jpg">');
+INSERT INTO area values(4,'제주도',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2019/09/17/02/20/jeju-4482313_960_720.jpg">');
+INSERT INTO area values(5,'인천',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2017/10/01/09/41/temple-2804716_960_720.jpg">');
+INSERT INTO area values(6,'대전',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2017/08/22/13/44/city-2669015_960_720.jpg">');
+INSERT INTO area values(7,'광주',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2022/02/21/05/18/mountain-7025791_960_720.jpg">');
+INSERT INTO area values(8,'울산',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2019/05/16/09/47/homigot-4206783_960_720.jpg">');
+INSERT INTO area values(9,'세종',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2017/02/22/07/03/gwanghwamun-2088592_960_720.jpg">');
+INSERT INTO area values(10,'경기',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2017/10/09/02/45/korea-2832271_960_720.jpg">');
+INSERT INTO area values(11,'강원',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2019/10/30/07/41/mt-seoraksan-4588906_960_720.jpg">');
+INSERT INTO area values(12,'충북',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2018/02/17/13/08/the-body-of-water-3159920_960_720.jpg">');
+INSERT INTO area values(13,'충남',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2016/08/17/20/05/korea-1601370_960_720.jpg">');
+INSERT INTO area values(14,'경북',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2016/11/02/02/44/dokdo-1790322_960_720.jpg">');
+INSERT INTO area values(15,'경남',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2018/11/16/01/57/unmunsa-3818596_960_720.jpg">');
+INSERT INTO area values(16,'전북',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2018/05/20/13/48/daedunsan-3415802_960_720.jpg">');
+INSERT INTO area values(17,'전남',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2015/11/27/07/19/republic-of-korea-1065103_960_720.jpg">');
 
 
-INSERT INTO areagu values(1,'아무거나',"강남구",'<img class="areagu_img" src="">',"ㅇㅁㄴ",1);
-INSERT INTO areagu values(6,'아무거나',"마포구",'<img class="areau_img" src="">',"ㅇㅁㄴ",1);
-INSERT INTO areagu values(2,'아무거나',"서구",'<img class="areagu_img" src="">',"ㅇㅁㄴ",2);
-INSERT INTO areagu values(7,'아무거나',"해운대구",'<img class="areagu_img" src="">',"ㅇㅁㄴ",2);
-INSERT INTO areagu values(11,'아무거나',"광안리",'<img class="areagu_img" src="">',"ㅇㅁㄴ",2);
-INSERT INTO areagu values(12,'아무거나',"기장",'<img class="areagu_img" src="">',"ㅇㅁㄴ",2);
-INSERT INTO areagu values(13,'아무거나',"동구",'<img class="areagu_img" src="">',"ㅇㅁㄴ",2);
-INSERT INTO areagu values(3,'아무거나',"서귀포",'<img class="areagu_img" src="">',"ㅇㅁㄴ",4);
-INSERT INTO areagu values(8,'아무거나',"애월",'<img class="areagu_img" src="">',"ㅇㅁㄴ",4);
-INSERT INTO areagu values(4,'아무거나',"동구",'<img class="areagu_img" src="">',"ㅇㅁㄴ",3);
-INSERT INTO areagu values(9,'아무거나',"달서구",'<img class="areagu_img" src="">',"ㅇㅁㄴ",3);
-INSERT INTO areagu values(5,'아무거나',"가평",'<img class="areagu_img" src="">',"ㅇㅁㄴ",5);
-INSERT INTO areagu values(10,'아무거나',"파주",'<img class="areagu_img" src="">',"ㅇㅁㄴ",5);
+INSERT INTO areagu values(1,'아무거나',"강남구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2018/10/22/04/05/gangnam-3764454_960_720.jpg">',"ㅇㅁㄴ",1);
+INSERT INTO areagu values(2,'아무거나',"마포구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2018/10/07/10/06/sky-3729560_960_720.jpg">',"ㅇㅁㄴ",1);
+INSERT INTO areagu values(3,'아무거나',"서구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2021/09/10/16/00/gamcheon-cultural-village-6613543_960_720.jpg">',"ㅇㅁㄴ",2);
+INSERT INTO areagu values(4,'아무거나',"해운대구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2018/11/26/08/20/haeundae-beach-3838960_960_720.jpg">',"ㅇㅁㄴ",2);
+INSERT INTO areagu values(5,'아무거나',"광안리",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2014/09/14/17/49/bokeh-445213_960_720.jpg">',"ㅇㅁㄴ",2);
+INSERT INTO areagu values(6,'아무거나',"기장",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2020/04/15/10/54/busan-5046149_960_720.jpg">',"ㅇㅁㄴ",2);
+INSERT INTO areagu values(7,'아무거나',"동구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2020/04/15/10/58/busan-5046161_960_720.jpg">',"ㅇㅁㄴ",2);
+INSERT INTO areagu values(8,'아무거나',"서귀포",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2020/02/02/03/41/jeju-island-4811937_960_720.jpg">',"ㅇㅁㄴ",4);
+INSERT INTO areagu values(9,'아무거나',"애월",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2017/09/14/06/33/jeju-2748095_960_720.jpg">',"ㅇㅁㄴ",4);
+INSERT INTO areagu values(10,'아무거나',"동구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2019/12/17/01/37/korea-4700537_960_720.jpg">',"ㅇㅁㄴ",3);
+INSERT INTO areagu values(35,'아무거나',"달서구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2018/08/23/03/26/south-korea-3625168_960_720.jpg">',"ㅇㅁㄴ",3);
+INSERT INTO areagu values(36,'아무거나',"가평",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2018/10/03/02/07/autumn-3720332_960_720.jpg">',"ㅇㅁㄴ",5);
+INSERT INTO areagu values(37,'아무거나',"파주",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2022/04/17/00/00/tulips-7137147_960_720.jpg">',"ㅇㅁㄴ",5);
+
+INSERT INTO areagu values(11,'아무거나',"동구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2017/11/11/11/20/expo-2938862_960_720.jpg">',"ㅇㅁㄴ",6);
+INSERT INTO areagu values(12,'아무거나',"중구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2021/04/05/22/56/flowers-6154818_960_720.jpg">',"ㅇㅁㄴ",6);
+INSERT INTO areagu values(13,'아무거나',"동구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2021/11/26/10/09/puppy-6825548_960_720.jpg">',"ㅇㅁㄴ",7);
+INSERT INTO areagu values(14,'아무거나',"서구",'<img class="areagu_img" src="https://post-phinf.pstatic.net/MjAyMjA0MDRfMzgg/MDAxNjQ5MDQ4NDg3NDgw.6ONdJxsxZqZFMkFPQckXfep9rlTbqkOboCDUsSlOJHMg.fB6m17REVw1w-uRVG_UjFpLCYA9SSY6CxXt7LPB21z0g.JPEG/d_%ED%8F%AC%EC%B6%A9%EC%82%AC_1.jpg?type=w1200">',"ㅇㅁㄴ",7);
+INSERT INTO areagu values(15,'아무거나',"중구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2014/09/12/06/08/sea-442399_960_720.jpg">',"ㅇㅁㄴ",8);
+INSERT INTO areagu values(16,'아무거나',"남구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2019/09/29/12/49/nature-4513276_960_720.jpg">',"ㅇㅁㄴ",8);
+INSERT INTO areagu values(17,'아무거나',"반곡동",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2018/08/18/23/59/sejong-city-3615772_960_720.jpg">',"ㅇㅁㄴ",9);
+INSERT INTO areagu values(18,'아무거나',"소담동",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2019/07/12/05/39/sejong-city-4331956_960_720.jpg">',"ㅇㅁㄴ",9);
+INSERT INTO areagu values(19,'아무거나',"수원시",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2018/11/09/11/04/mars-3804300_960_720.jpg">',"ㅇㅁㄴ",10);
+INSERT INTO areagu values(20,'아무거나',"성남시",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2021/11/07/13/27/lake-6776331_960_720.jpg">',"ㅇㅁㄴ",10);
+INSERT INTO areagu values(21,'아무거나',"춘천",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2015/05/22/04/42/chuncheon-778289_960_720.jpg">',"ㅇㅁㄴ",11);
+INSERT INTO areagu values(22,'아무거나',"강릉",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2017/04/03/11/14/gangneung-2198026_960_720.jpg">',"ㅇㅁㄴ",11);
+INSERT INTO areagu values(23,'아무거나',"청주",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2018/05/26/12/25/sunset-north-hotel-saturn-cheongju-attractions-events-photo-3431254_960_720.jpg">',"ㅇㅁㄴ",12);
+INSERT INTO areagu values(24,'아무거나',"제천",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2021/04/28/09/25/waterfall-6213490_960_720.jpg">',"ㅇㅁㄴ",12);
+INSERT INTO areagu values(25,'아무거나',"서산",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2015/09/23/08/10/haemieupseong-953103_960_720.jpg">',"ㅇㅁㄴ",13);
+INSERT INTO areagu values(26,'아무거나',"보령",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2015/02/19/10/43/boryeong-641943_960_720.jpg">',"ㅇㅁㄴ",13);
+INSERT INTO areagu values(27,'아무거나',"포항",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2022/02/08/03/15/hand-7000662_960_720.jpg">',"ㅇㅁㄴ",14);
+INSERT INTO areagu values(28,'아무거나',"경주",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2015/01/08/14/11/night-view-593026_960_720.jpg">',"ㅇㅁㄴ",14);
+INSERT INTO areagu values(29,'아무거나',"통영",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2021/01/28/16/03/lighthouse-5958376_960_720.jpg">',"ㅇㅁㄴ",15);
+INSERT INTO areagu values(30,'아무거나',"김해",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2020/04/06/09/19/hanok-5008918_960_720.jpg">',"ㅇㅁㄴ",15);
+INSERT INTO areagu values(31,'아무거나',"전주",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2015/04/02/14/15/hanok-village-703824_960_720.jpg">',"ㅇㅁㄴ",16);
+INSERT INTO areagu values(32,'아무거나',"군산",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2018/05/27/21/02/beach-3434586_960_720.jpg">',"ㅇㅁㄴ",16);
+INSERT INTO areagu values(33,'아무거나',"목표",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2021/11/25/00/12/seagull-6822392_960_720.jpg">',"ㅇㅁㄴ",17);
+INSERT INTO areagu values(34,'아무거나',"여수",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2018/10/21/04/05/night-view-3762230_960_720.jpg">',"ㅇㅁㄴ",17);
+
 
 
 INSERT INTO guinfo values(1,'강남',"GUINFO","가나다라마바사아자차카타파하",now(),'https://picsum.photos/200/300/?blur',"강남대로","dsa",1);

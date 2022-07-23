@@ -21,6 +21,13 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <style>
+.areagu_img {
+	width: 200px;
+	border-radius: 1px;
+	margin-bottom: 10px;
+	height: inherit;
+}
+
 .areaList_li li a {
 	background-color: white;
 	padding: 7px;
@@ -34,7 +41,6 @@
 				 -->
 <input type="hidden" id="home">
 <div class="main-container"
-
 	style="width: 1290px; margin-left: 365px; margin-top: 70px;">
 	<div
 		style="width: 1190px; height: 200px; background-color: rgba(245, 161, 25, 0.9); border-radius: 20px;">
@@ -81,18 +87,12 @@
 		<div style="display: flex; width: 1190px;">
 
 			<c:forEach var="area" items="${lists[0]}">
-				<div class="" style="width: 200px; height: 330px; margin-right: 35px;" >
-				
+				<div class=""
+					style="width: 200px; height: 330px; margin-right: 35px;">
+
 					<div class="" style="display: flex;">
 						<div>
-							<a href="/oaga/travel_guinfo/${area.id}"> 
-							<img
-								class="imageList"
-								style="width: 200px; border-radius: 1ex; margin-bottom: 10px;"
-
-								src="http://localhost:9090/oaga/upload/${area.image}" alt="">
-
-
+							<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 								<h3 style="font-size: 16px;">${area.guname}</h3>
 							</a>
 						</div>
@@ -101,114 +101,91 @@
 			</c:forEach>
 
 		</div>
-		<br /> 
-		<br />
+		<br /> <br />
 
-	<div class="mdu_img1type">
-		<div
-			style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">부산</div>
-		<div style="display: flex; width: 1190px;">
+		<div class="mdu_img1type">
+			<div
+				style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">부산</div>
+			<div style="display: flex; width: 1190px;">
 
-			<c:forEach var="area" items="${lists[1]}">
-				<div class="" style="width: 200px; height: 330px; margin-right: 35px;">
-					<div class="" style="display: flex;">
-						<div class="swiper-slide">
-							<a href="/oaga/travel_guinfo/${area.id}"> <img
-								class="imageList"
-								style="width: 200px; border-radius: 1ex; margin-bottom: 10px;"
-
-								src="http://localhost:9090/oaga/upload/${area.image}" alt="">
-
-
-								<h3 style="font-size: 16px;">${area.guname}</h3>
-							</a>
+				<c:forEach var="area" items="${lists[1]}">
+					<div class=""
+						style="width: 200px; height: 330px; margin-right: 35px;">
+						<div class="" style="display: flex;">
+							<div class="swiper-slide">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
+									<h3 style="font-size: 16px;">${area.guname}</h3>
+								</a>
+							</div>
 						</div>
 					</div>
-				</div>
-			</c:forEach>
+				</c:forEach>
 
-		</div>
-		<br /> 
-		<br />
+			</div>
+			<br /> <br />
 			<div class="mdu_img1type">
-		<div
-			style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">대구</div>
-		<div style="display: flex; width: 1190px;">
+				<div
+					style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">대구</div>
+				<div style="display: flex; width: 1190px;">
 
-			<c:forEach var="area" items="${lists[2]}">
-				<div class="" style="width: 200px; height: 330px; margin-right: 35px;">
-					<div class="" style="display: flex;">
-						<div class="swiper-slide">
-							<a href="/oaga/travel_guinfo/${area.id}"> <img
-								class="imageList"
-								style="width: 200px; border-radius: 1ex; margin-bottom: 10px;"
-
-								src="http://localhost:9090/oaga/upload/${area.image}" alt="">
-
-
-								<h3 style="font-size: 16px;">${area.guname}</h3>
-							</a>
+					<c:forEach var="area" items="${lists[2]}">
+						<div class=""
+							style="width: 200px; height: 330px; margin-right: 35px;">
+							<div class="" style="display: flex;">
+								<div class="swiper-slide">
+									<a href="/oaga/travel_guinfo/${area.id}">
+									${area.image}
+										<h3 style="font-size: 16px;">${area.guname}</h3>
+									</a>
+								</div>
+							</div>
 						</div>
-					</div>
+					</c:forEach>
+
 				</div>
-			</c:forEach>
+				<br /> <br />
+				<div class="mdu_img1type">
+					<div
+						style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">제주도</div>
+					<div style="display: flex; width: 1190px;">
 
-		</div>
-		<br /> 
-		<br />
-			<div class="mdu_img1type">
-		<div
-			style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">제주도</div>
-		<div style="display: flex; width: 1190px;">
+						<c:forEach var="area" items="${lists[3]}">
+							<div class=""
+								style="width: 200px; height: 330px; margin-right: 35px;">
+								<div class="" style="display: flex;">
+									<div class="swiper-slide">
+										<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
+											<h3 style="font-size: 16px;">${area.guname}</h3>
+										</a>
+									</div>
+								</div>
+							</div>
+						</c:forEach>
 
-			<c:forEach var="area" items="${lists[3]}">
-				<div class="" style="width: 200px; height: 330px; margin-right: 35px;">
-					<div class="" style="display: flex;">
-						<div class="swiper-slide">
-							<a href="/oaga/travel_guinfo/${area.id}"> <img
-								class="imageList"
-								style="width: 200px; border-radius: 1ex; margin-bottom: 10px;"
+					</div>
+					<br /> <br />
+					<div class="mdu_img1type">
+						<div
+							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">인천</div>
+						<div style="display: flex; width: 1190px;">
 
-								src="http://localhost:9090/oaga/upload/${area.image}" alt="">
+							<c:forEach var="area" items="${lists[4]}">
+								<div class=""
+									style="width: 200px; height: 330px; margin-right: 35px;">
+									<div class="" style="display: flex;">
+										<div class="swiper-slide">
+											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
+												<h3 style="font-size: 16px;">${area.guname}</h3>
+											</a>
+										</div>
+									</div>
+								</div>
+							</c:forEach>
 
-								<h3 style="font-size: 16px;">${area.guname}</h3>
-							</a>
 						</div>
-					</div>
-				</div>
-			</c:forEach>
-
-		</div>
-		<br /> 
-		<br />
-			<div class="mdu_img1type">
-		<div
-			style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">인천</div>
-		<div style="display: flex; width: 1190px;">
-
-			<c:forEach var="area" items="${lists[4]}">
-				<div class="" style="width: 200px; height: 330px; margin-right: 35px;">
-					<div class="" style="display: flex;">
-						<div class="swiper-slide">
-							<a href="/oaga/travel_guinfo/${area.id}"> <img
-								class="imageList"
-								style="width: 200px; border-radius: 1ex; margin-bottom: 10px;"
-
-								src="http://localhost:9090/oaga/upload/${area.image}" alt="">
-
-								<h3 style="font-size: 16px;">${area.guname}</h3>
-							</a>
-						</div>
-					</div>
-				</div>
-			</c:forEach>
-
-		</div>
-		<br /> 
-		<br />
+						<br /> <br />
 
 
-<script src="js/travelInfo.js"></script>
+						<script src="js/travelInfo.js"></script>
 
-<%@ include file="../layout/footer.jsp"%>
-
+						<%@ include file="../layout/footer.jsp"%>
