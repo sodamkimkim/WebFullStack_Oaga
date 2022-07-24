@@ -27,11 +27,11 @@ public class TravelInfoController {
 	public String index(Model model) {
 		Map<Integer, List<AreaGu>> map = travelInfoService.areaIdList();
 		ArrayList<List<AreaGu>> list = new ArrayList<>();
-		for (int i = 0; i < 13; i++) {
+		for (int i = 0; i < 18; i++) {
 			list.add(i, map.get(i + 1));
 		}
 		model.addAttribute("lists", list);
-
+		
 		return "/travelInfo/home";
 	}
 // ===================================================================================================
@@ -39,14 +39,15 @@ public class TravelInfoController {
 	// gu에 대한 정보 페이지
 	@GetMapping({ "/travel_guinfo/{areaGu}" })
 	public String guInfoList(Model model, @PathVariable int areaGu) {
-		int areaId = travelInfoService.guInfo(areaGu).get(0).getAreaGu().getArea().getId();
-
+		
+		List<AreaGu> guInfoImage = travelInfoService.findByid_image(areaGu);
 		List<GuInfo> guInfoList = travelInfoService.guInfo(areaGu);
 		List<Restaurant> restaurantList = travelInfoService.guInfoRestaurant(areaGu);
-		List<Area> areaImageList = travelInfoService.areaImage(areaId);
+		
+		model.addAttribute("guInfoImage", guInfoImage);
 		model.addAttribute("guInfoList", guInfoList);
 		model.addAttribute("restaurantList", restaurantList);
-		model.addAttribute("areaImageList", areaImageList);
+		
 		return "/travelInfo/guinfo_form";
 	}
 
