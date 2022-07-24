@@ -11,12 +11,30 @@ public interface GuInfoRepository extends JpaRepository<GuInfo, Integer>{
 	
 	// gu에 대한 정보 페이지
 	@Query(value = "SELECT * FROM guinfo WHERE areaGuId =?", nativeQuery = true)
-	List<GuInfo> mFindByAreaGu(int id);
+	List<GuInfo> mFindByAreaGu(int areaGuId);
 	
 	// 하나의 guInfo
 	@Query(value = "SELECT * FROM guinfo WHERE id =?", nativeQuery = true)
 	List<GuInfo> mFindByid(int id);
 	
+	@Query(value = "SELECT * FROM guinfo WHERE id =?", nativeQuery = true)
+	GuInfo mFindByid2(int id);
+	
 	@Query(value = "SELECT * FROM guinfo AS g inner join areaGu AS a ON g.areaGuId = a.id WHERE a.area =?", nativeQuery = true)
 	List<GuInfo> mFindByAreaGuId(int areaGu_areaId);
+	
+	
+	
+	@Query(value = "UPDATE guinfo SET name = '?', address = '?',orginImageUrl = '?', content = '' WHERE id = ?", nativeQuery = true)
+	GuInfo mUpdate(Object setname, Object setAddress, Object orginImageUrl, Object setContent, int areaGu_areaId);
+
+	
+
+
+
+	
+
+	
+
+	
 }
