@@ -11,7 +11,6 @@
 	border-radius: 1px;
 	margin-bottom: 10px;
 	height: inherit;
-}
 </style>
 
 

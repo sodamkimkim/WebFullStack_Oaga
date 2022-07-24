@@ -42,7 +42,8 @@
 	</c:when>
 	<c:otherwise>
 		<div class="page silver logged_box">
-			<div class="wrap logged">
+			<div style="display: flex; justify-content: center;">
+				<div class="wrap logged">
 				<img class="logged_user_img"
 					src="http://localhost:9090/oaga/upload/${principal.user.userProfileImgUrl}"
 					onerror="this.src='images/reviewPage/profile_basic.png';">
@@ -72,6 +73,8 @@
 				</a>
 				<div class="clear"></div>
 			</div>
+			</div>
+			
 		</div>
 	</c:otherwise>
 </c:choose>

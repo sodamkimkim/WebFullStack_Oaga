@@ -15,7 +15,7 @@
 					<h1 class="list-header-title">Oaga 사용자들의 자세한 국내 여행지 리뷰</h1>
 					<p class="list-header-text">생생한 경험자들의 여행리뷰를 참고하여 성공적인 여행을 만들 수
 						있어요</p>
-					<button>나도 리뷰 작성하러 가기</button>
+					<a href="/oaga/write"><button class="list-write-btn">나도 리뷰 작성하러 가기</button></a>
 				</div>
 				<div class="list-header-img-box">
 					<img class="list-header-img" src="/oaga/images/reviewPage/list.png">
@@ -42,7 +42,7 @@
 			<div class="list-body-container">
 				<div>
 					<h6 class="list-body-title">${review.title}</h6>
-					<a class="list-body-a"><img class="list-body-img"
+					<a href="/oaga/detail/${review.id}" class="list-body-a"><img class="list-body-img"
 						src="http://localhost:9090/oaga/upload/${review.reviewImageUrl}"></a>
 				</div>
 			</div>

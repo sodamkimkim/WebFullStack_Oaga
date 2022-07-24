@@ -913,7 +913,8 @@ langPop li {
 }
 
 .page {
-	width: 100%;
+	width: inherit;
+	height: auto;
 	padding-top: 70px;
 	padding-bottom: 70px;
 }

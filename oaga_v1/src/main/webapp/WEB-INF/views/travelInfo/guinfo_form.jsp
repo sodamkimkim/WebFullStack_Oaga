@@ -4,14 +4,16 @@
 <%@ include file="../layout/header.jsp"%>
 <link rel="stylesheet" href="/oaga/css/style.css" />
 <br />
-
+<style>
+.area_img {
+	width: inherit;
+	height: inherit;
+}
+</style>
 <div style="width: 100%; display: flex; justify-content: center;">
 	<div style="width: 1200px; height: 500px;">
-		<c:forEach var="areaImageList" items="${areaImageList }">
-
-			<img alt="" src="http://localhost:9090/oaga/upload/${areaImageList.mainImage}"
-
-				style="width: 100%; height: 100%; border-radius: 1ex; margin: 15px;">
+		<c:forEach var="areaImageList" items="${areaImageList}">
+		${areaImageList.mainImage}
 		</c:forEach>
 	</div>
 </div>
