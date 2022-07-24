@@ -19,7 +19,7 @@
 		</h5>
 		<div class="review_img_box">
 			<img class="review_search_img"
-				src="/oaga/images/reviewPage/review_home.jpg">
+				src="/oaga/images/reviewPage/review_home.png">
 		</div>
 		<!-- 사진이나 화면 추가 -->
 		<p class="review_search_coment">
