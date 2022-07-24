@@ -82,6 +82,7 @@ SELECT * FROM review ORDER BY count DESC LIMIT 6;
 SELECT * FROM user ORDER BY likes DESC LIMIT 5;
 
 select * from area;
+select * from areagu;
 
 desc area;
 
