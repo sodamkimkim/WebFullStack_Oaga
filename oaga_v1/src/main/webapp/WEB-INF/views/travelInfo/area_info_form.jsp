@@ -10,7 +10,7 @@
 	width: 200px;
 	border-radius: 1px;
 	margin-bottom: 10px;
-	height: inherit;
+	height: 150px;
 </style>
 
 
