@@ -6,6 +6,7 @@
 <br />
 <style>
 .areagu_img {
+	
 	width: inherit;
 	height: inherit;
 }
@@ -38,7 +39,7 @@
 					<img alt="" src="http://localhost:9090/oaga/upload/${guInfoList.image}"
 
 					
-					style="width: 170px; height: 170px; border-radius: 1ex; margin-top: 30px;">
+					style="width: 200px; height: 150px; border-radius: 1ex; margin-top: 30px;">
 					<h5 style="margin-top: -2px;">${guInfoList.name}</h5>
 				</a>
 			</c:forEach>
@@ -63,7 +64,7 @@
 					style="width: auto; height: auto; margin-right: 15px;"> <img
 
 					alt="" src="http://localhost:9090/oaga/upload/${restaurantList.image}"
-					style="width: 170px; height: 170px; border-radius: 1ex; margin-top: 30px;">
+					style="width: 200px; height: 150px; border-radius: 1ex; margin-top: 30px;">
 					<h5 style="margin-top: -2px;">${restaurantList.name}</h5>
 				</a>
 			</c:forEach>

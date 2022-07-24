@@ -8,7 +8,7 @@
 <style>
 .areagu_img {
 	width: 200px;
-	border-radius: 1px;
+	border-radius: 10px;
 	margin-bottom: 10px;
 	height: 150px;
 </style>
@@ -37,7 +37,7 @@
 			<div style="margin-right: 20px;">
 				<a href="/oaga/travel_guinfo/${areaGu.id}"> ${areaGu.image}
 				</a>
-				<h4 style="width: 170px; height: 20px;">${areaGu.guname}</h4>
+				<h4>${areaGu.guname}</h4>
 			</div>
 		</c:forEach>
 	</div>
@@ -55,7 +55,7 @@
 
 				<img alt="" src="http://localhost:9090/oaga/upload/${guinfo.image}"
 
-					style="width: 170px; height: 170px; border-radius: 15px;">
+					style="width: 200px; height: 150px; border-radius: 15px;">
 				</a>
 				<p>${guinfo.name}</p>
 			</div>
@@ -76,7 +76,7 @@
 
 				<img alt="" src="http://localhost:9090/oaga/upload/${restaurant.image}"
 
-					style="width: 170px; height: 170px; border-radius: 15px;">
+					style="width: 200px; height: 150px; border-radius: 15px;">
 				</a>
 				<p>${restaurant.name}</p>
 			</div>

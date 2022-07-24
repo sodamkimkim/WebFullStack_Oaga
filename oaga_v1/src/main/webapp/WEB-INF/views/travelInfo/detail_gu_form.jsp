@@ -47,7 +47,7 @@
 
 				<img alt="" src="http://localhost:9090/oaga/upload/${guRestaurantListAll.image}"
 
-					style="width: 180px; height: 180px; border-radius: 10px; margin-right: 15px;">
+					style="width: 200px; height: 150px; border-radius: 10px; margin-right: 15px;">
 					</a>
 				<h4>${guRestaurantListAll.name}</h4>
 			</div>

@@ -1,3 +1,5 @@
+new Swiper('.swiper-container');
+
 let index = {
 	init: function() {
 		$("#searchArea").autocomplete({

@@ -15,15 +15,14 @@
 	integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
 	crossorigin="anonymous">
 
-<link rel="stylesheet"
-	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <style>
 .areagu_img {
 	width: 200px;
-	border-radius: 1px;
+	border-radius: 10px;
 	margin-bottom: 10px;
 	height: 150px;
 }
@@ -39,11 +38,7 @@
 	margin-right: auto;
 }
 </style>
-<!-- 
-			<li class="prev" style="display: flex; align-items: center;">&#10094;</li>
-			<a class="next" style="display: flex; align-items: center;"
-				id="next_slide">&#10095;</a>
-				 -->
+
 <input type="hidden" id="home">
 <div class="travelInfo-main-container"
 	style="width: 1290px; margin-top: 70px;">
@@ -89,14 +84,14 @@
 	<div class="mdu_img1type">
 		<div
 			style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">서울</div>
-		<div style="display: flex; width: 1190px;">
+		<div style="display: flex; width: 1190px;"  class="swiper-container">
 
 			<c:forEach var="area" items="${lists[0]}">
-				<div class=""
-					style="width: 200px; height: 330px; margin-right: 35px;">
+				<div class="swiper-wrapper"
+					style="width: 200px; height: 200px; margin-right: 35px;">
 
-					<div class="" style="display: flex;">
-						<div>
+					<div class="swiper-slide" style="display: flex;">
+						<div >
 							<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 								<h3 style="font-size: 16px;">${area.guname}</h3>
 							</a>
@@ -106,19 +101,21 @@
 			</c:forEach>
 
 		</div>
+		</div>
 		<br /> <br />
 
 		<div class="mdu_img1type">
-			<div
+			<div 
 				style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">부산</div>
-			<div style="display: flex; width: 1190px;">
+			<div style="display: flex; width: 1190px;" class="swiper-container">
+													
 
-
-				<c:forEach var="area" items="${lists[1]}">
-					<div class=""
-						style="width: 200px; height: 330px; margin-right: 35px;">
-						<div class="" style="display: flex;">
-							<div class="swiper-slide">
+				<c:forEach var="area" items="${lists[1]}" >
+				
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: flex;">
+							<div >
 								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 									<h3 style="font-size: 16px;">${area.guname}</h3>
 								</a>
@@ -128,17 +125,18 @@
 				</c:forEach>
 
 			</div>
+			</div>
 			<br /> <br />
 			<div class="mdu_img1type">
 				<div
 					style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">대구</div>
-				<div style="display: flex; width: 1190px;">
+				<div style="display: flex; width: 1190px;" class="swiper-container">
 
 					<c:forEach var="area" items="${lists[2]}">
-						<div class=""
-							style="width: 200px; height: 330px; margin-right: 35px;">
-							<div class="" style="display: flex;">
-								<div class="swiper-slide">
+						<div class="swiper-wrapper"
+							style="width: 200px; height: 200px; margin-right: 35px;">
+							<div class="swiper-slide" style="display: flex;">
+								<div >
 									<a href="/oaga/travel_guinfo/${area.id}">
 									${area.image}
 										<h3 style="font-size: 16px;">${area.guname}</h3>
@@ -149,17 +147,18 @@
 					</c:forEach>
 
 				</div>
+				</div>
 				<br /> <br />
 				<div class="mdu_img1type">
 					<div
 						style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">제주도</div>
-					<div style="display: flex; width: 1190px;">
+					<div style="display: flex; width: 1190px;" class="swiper-container">
 
 						<c:forEach var="area" items="${lists[3]}">
-							<div class=""
-								style="width: 200px; height: 330px; margin-right: 35px;">
-								<div class="" style="display: flex;">
-									<div class="swiper-slide">
+							<div class="swiper-wrapper"
+								style="width: 200px; height: 200px; margin-right: 35px;">
+								<div class="swiper-slide" style="display: flex;">
+									<div >
 										<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 											<h3 style="font-size: 16px;">${area.guname}</h3>
 										</a>
@@ -169,17 +168,18 @@
 						</c:forEach>
 
 					</div>
+					</div>
 					<br /> <br />
 					<div class="mdu_img1type">
 						<div
 							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">인천</div>
-						<div style="display: flex; width: 1190px;">
+						<div style="display: flex; width: 1190px;" class="swiper-container">
 
 							<c:forEach var="area" items="${lists[4]}">
-								<div class=""
-									style="width: 200px; height: 330px; margin-right: 35px;">
-									<div class="" style="display: flex;">
-										<div class="swiper-slide">
+								<div class="swiper-wrapper"
+									style="width: 200px; height: 200px; margin-right: 35px;">
+									<div class="swiper-slide" style="display: flex;">
+										<div >
 											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 												<h3 style="font-size: 16px;">${area.guname}</h3>
 											</a>
@@ -195,13 +195,13 @@
 					<div class="mdu_img1type">
 						<div
 							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">대전</div>
-						<div style="display: flex; width: 1190px;">
+						<div style="display: flex; width: 1190px;" class="swiper-container">
 
 							<c:forEach var="area" items="${lists[5]}">
-								<div class=""
-									style="width: 200px; height: 330px; margin-right: 35px;">
-									<div class="" style="display: flex;">
-										<div class="swiper-slide">
+								<div class="swiper-wrapper"
+									style="width: 200px; height: 200px; margin-right: 35px;">
+									<div class="swiper-slide" style="display: flex;">
+										<div >
 											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 												<h3 style="font-size: 16px;">${area.guname}</h3>
 											</a>
@@ -217,13 +217,13 @@
 					<div class="mdu_img1type">
 						<div
 							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">광주</div>
-						<div style="display: flex; width: 1190px;">
+						<div style="display: flex; width: 1190px;" class="swiper-container">
 
 							<c:forEach var="area" items="${lists[6]}">
-								<div class=""
-									style="width: 200px; height: 330px; margin-right: 35px;">
-									<div class="" style="display: flex;">
-										<div class="swiper-slide">
+								<div class="swiper-wrapper"
+									style="width: 200px; height: 200px; margin-right: 35px;">
+									<div class="swiper-slide" style="display: flex;">
+										<div >
 											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 												<h3 style="font-size: 16px;">${area.guname}</h3>
 											</a>
@@ -239,13 +239,13 @@
 					<div class="mdu_img1type">
 						<div
 							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">울산</div>
-						<div style="display: flex; width: 1190px;">
+						<div style="display: flex; width: 1190px;" class="swiper-container">
 
 							<c:forEach var="area" items="${lists[7]}">
-								<div class=""
-									style="width: 200px; height: 330px; margin-right: 35px;">
-									<div class="" style="display: flex;">
-										<div class="swiper-slide">
+								<div class="swiper-wrapper"
+									style="width: 200px; height: 200px; margin-right: 35px;">
+									<div class="swiper-slide" style="display: flex;">
+										<div >
 											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 												<h3 style="font-size: 16px;">${area.guname}</h3>
 											</a>
@@ -261,13 +261,13 @@
 					<div class="mdu_img1type">
 						<div
 							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">세종</div>
-						<div style="display: flex; width: 1190px;">
+						<div style="display: flex; width: 1190px;" class="swiper-container">
 
 							<c:forEach var="area" items="${lists[8]}">
-								<div class=""
-									style="width: 200px; height: 330px; margin-right: 35px;">
-									<div class="" style="display: flex;">
-										<div class="swiper-slide">
+								<div class="swiper-wrapper"
+									style="width: 200px; height: 200px; margin-right: 35px;">
+									<div class="swiper-slide" style="display: flex;">
+										<div >
 											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 												<h3 style="font-size: 16px;">${area.guname}</h3>
 											</a>
@@ -283,13 +283,13 @@
 					<div class="mdu_img1type">
 						<div
 							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">경기</div>
-						<div style="display: flex; width: 1190px;">
+						<div style="display: flex; width: 1190px;" class="swiper-container">
 
 							<c:forEach var="area" items="${lists[9]}">
-								<div class=""
-									style="width: 200px; height: 330px; margin-right: 35px;">
-									<div class="" style="display: flex;">
-										<div class="swiper-slide">
+								<div class="swiper-wrapper"
+									style="width: 200px; height: 200px; margin-right: 35px;">
+									<div class="swiper-slide" style="display: flex;">
+										<div >
 											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 												<h3 style="font-size: 16px;">${area.guname}</h3>
 											</a>
@@ -305,13 +305,13 @@
 					<div class="mdu_img1type">
 						<div
 							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">강원</div>
-						<div style="display: flex; width: 1190px;">
+						<div style="display: flex; width: 1190px;" class="swiper-container">
 
 							<c:forEach var="area" items="${lists[10]}">
-								<div class=""
-									style="width: 200px; height: 330px; margin-right: 35px;">
-									<div class="" style="display: flex;">
-										<div class="swiper-slide">
+								<div class="swiper-wrapper"
+									style="width: 200px; height: 200px; margin-right: 35px;">
+									<div class="swiper-slide"style="display: flex;">
+										<div >
 											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 												<h3 style="font-size: 16px;">${area.guname}</h3>
 											</a>
@@ -327,13 +327,13 @@
 					<div class="mdu_img1type">
 						<div
 							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">충북</div>
-						<div style="display: flex; width: 1190px;">
+						<div style="display: flex; width: 1190px;" class="swiper-container">
 
 							<c:forEach var="area" items="${lists[11]}">
-								<div class=""
-									style="width: 200px; height: 330px; margin-right: 35px;">
-									<div class="" style="display: flex;">
-										<div class="swiper-slide">
+								<div class="swiper-wrapper"
+									style="width: 200px; height: 200px; margin-right: 35px;">
+									<div class="swiper-slide" style="display: flex;">
+										<div >
 											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 												<h3 style="font-size: 16px;">${area.guname}</h3>
 											</a>
@@ -349,13 +349,13 @@
 					<div class="mdu_img1type">
 						<div
 							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">충남</div>
-						<div style="display: flex; width: 1190px;">
+						<div style="display: flex; width: 1190px;" class="swiper-container">
 
 							<c:forEach var="area" items="${lists[12]}">
-								<div class=""
-									style="width: 200px; height: 330px; margin-right: 35px;">
-									<div class="" style="display: flex;">
-										<div class="swiper-slide">
+								<div class="swiper-wrapper"
+									style="width: 200px; height: 200px; margin-right: 35px;">
+									<div class="swiper-slide" style="display: flex;">
+										<div >
 											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 												<h3 style="font-size: 16px;">${area.guname}</h3>
 											</a>
@@ -371,13 +371,13 @@
 					<div class="mdu_img1type">
 						<div
 							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">경북</div>
-						<div style="display: flex; width: 1190px;">
+						<div style="display: flex; width: 1190px;" class="swiper-container">
 
 							<c:forEach var="area" items="${lists[13]}">
-								<div class=""
-									style="width: 200px; height: 330px; margin-right: 35px;">
-									<div class="" style="display: flex;">
-										<div class="swiper-slide">
+								<div class="swiper-wrapper"
+									style="width: 200px; height: 200px; margin-right: 35px;">
+									<div class="swiper-slide" style="display: flex;">
+										<div >
 											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 												<h3 style="font-size: 16px;">${area.guname}</h3>
 											</a>
@@ -393,13 +393,13 @@
 					<div class="mdu_img1type">
 						<div
 							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">경남</div>
-						<div style="display: flex; width: 1190px;">
+						<div style="display: flex; width: 1190px;"class="swiper-container">
 
 							<c:forEach var="area" items="${lists[14]}">
-								<div class=""
-									style="width: 200px; height: 330px; margin-right: 35px;">
-									<div class="" style="display: flex;">
-										<div class="swiper-slide">
+								<div class="swiper-wrapper"
+									style="width: 200px; height: 200px; margin-right: 35px;">
+									<div class="swiper-slide" style="display: flex;">
+										<div >
 											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 												<h3 style="font-size: 16px;">${area.guname}</h3>
 											</a>
@@ -415,13 +415,13 @@
 					<div class="mdu_img1type">
 						<div
 							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">전북</div>
-						<div style="display: flex; width: 1190px;">
+						<div style="display: flex; width: 1190px;" class="swiper-container"> 
 
 							<c:forEach var="area" items="${lists[15]}">
-								<div class=""
-									style="width: 200px; height: 330px; margin-right: 35px;">
-									<div class="" style="display: flex;">
-										<div class="swiper-slide">
+								<div class="swiper-wrapper"
+									style="width: 200px; height: 200px; margin-right: 35px;">
+									<div class="swiper-slide" style="display: flex;">
+										<div >
 											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 												<h3 style="font-size: 16px;">${area.guname}</h3>
 											</a>
@@ -437,13 +437,13 @@
 					<div class="mdu_img1type">
 						<div
 							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">전남</div>
-						<div style="display: flex; width: 1190px;">
+						<div style="display: flex; width: 1190px;" class="swiper-container">
 
 							<c:forEach var="area" items="${lists[16]}">
-								<div class=""
-									style="width: 200px; height: 330px; margin-right: 35px;">
-									<div class="" style="display: flex;">
-										<div class="swiper-slide">
+								<div class="swiper-wrapper"
+									style="width: 200px; height: 200px; margin-right: 35px;">
+									<div class="swiper-slide" style="display: flex;">
+										<div >
 											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
 												<h3 style="font-size: 16px;">${area.guname}</h3>
 											</a>
@@ -456,6 +456,7 @@
 						<br /> <br />
 						<br /> <br />
 					</div>
+</div>
 
 	<script src="js/travelInfo.js"></script>
 
