@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/oaga/css/style.css" />
 <br />
 <style>
-.area_img {
+.areagu_img {
 	width: inherit;
 	height: inherit;
 }
