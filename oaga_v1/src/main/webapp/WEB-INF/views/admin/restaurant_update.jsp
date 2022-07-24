@@ -19,7 +19,7 @@
 
 			<a type="button" class="btn btn-primary" id="select" href="/oaga/admin/restaurant_updatepage"
 				style="width: 120px; height: 35px; font-size: 20px; text-align:center; cursor: pointer;">카페/식당</a>
-			<a type="button" class="btn btn-primary" id="select" href="/oaga/admin/updatepage" 
+			<a type="button" class="btn btn-primary" id="select" href="/oaga/admin/updatepage"
 				style="width: 120px; height: 35px; font-size: 20px; text-align:center; cursor: pointer;">놀거리</a>
 			
 
@@ -37,7 +37,7 @@
 					<c:forEach var="areaList" items="${areaList}">
 						<div class="areaList"
 							style="width: 100%; height: 30px; margin-bottom: 10px; background-color: gray; cursor: pointer;"
-							onclick="selectList2('${areaList.id}')">
+							onclick="selectrestaurantList('${areaList.id}')">
 
 							<input type="hidden" value="${areaList}" id="areaId">${areaList.area}</div>
 					</c:forEach>
@@ -56,8 +56,8 @@
 				<div style="width: 350px;  height: 100%;  text-align: center; border-bottom: 1px solid;">
 					<h4 style="height: 29px; border: 1px solid;">수정</h4>
 					<div style="height: 668px; border: 1px solid;"  >
-					<input type="hidden" value="${guinfoList}">
-						<div style="width: 100%; height: 668px; "id="guinfoList">
+					<input type="hidden" value="${restaurantList}">
+						<div style="width: 100%; height: 668px; "id="restaurantList">
 						
 						</div>
 					

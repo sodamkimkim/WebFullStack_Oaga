@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -30,28 +31,24 @@ public class Restaurant {
     private int id;
     @Column(nullable = false,length = 30)
     private String name;
-    
 
-    
-    @Column(nullable = false, length = 200)
+    @Lob
     private String content;
     @Column(nullable = false, length = 100)
     private String address;
-
+    @Column(nullable = false)
+    private String image;
+    
+    @Column(nullable = false)
+	@Enumerated(EnumType.STRING)
+	private CategoryType categoryType;
+    
+    private String originImageUrl;
+    
     @ManyToOne
     @JoinColumn(name = "areaGu")
     private AreaGu areaGu;
     
-
-    @Column(nullable = false)
-	@Enumerated(EnumType.STRING)
-	private CategoryType categoryType;
-
-    
-
-
-    @Column(nullable = false)
-    private String image;
     
     @CreationTimestamp
     private Timestamp createDate;

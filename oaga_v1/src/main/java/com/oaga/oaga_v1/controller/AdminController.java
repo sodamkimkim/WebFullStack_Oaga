@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.oaga.oaga_v1.dto.RequestRestaurantDto;
 import com.oaga.oaga_v1.dto.RequestTravelDto;
 import com.oaga.oaga_v1.dto.RequestUserProfileDto;
 import com.oaga.oaga_v1.placeModel.Area;
@@ -26,16 +27,19 @@ public class AdminController {
 	private AdminService adminService;
 	
 	
-	@GetMapping("/admin/page")
+	@GetMapping("/admin/guinfo_save_page")
 	public String adminPage(Model model) {
-		
-		
 		List<Area> area = adminService.areaAll();
 		model.addAttribute("areaList",area);
-		
-		
-		
-		return "admin/admin_index";
+		return "admin/admin_guinfo_index";
+	}
+	
+	@GetMapping("/admin/restaurant_save_page")
+	public String adminrestaurantPage(Model model) {
+
+		List<Area> area = adminService.areaAll();
+		model.addAttribute("areaList",area);
+		return "admin/admin_restaurant_index";
 	}
 	
 	@GetMapping("/auth/admin_join_page")
@@ -55,23 +59,41 @@ public class AdminController {
 
 	// 수정 페이지
 	@GetMapping("/admin/updatepage") 
-	private String adminUpdateForm() {
+	private String adminUpdateForm(Model model) {
+		List<Area> area = adminService.areaAll();
+		model.addAttribute("areaList",area);
 		return "/admin/update";
+	}
+	// 레드토랑 수정 페이지
+	@GetMapping("/admin/restaurant_updatepage") 
+	private String adminㄲestaurantUpdateForm(Model model) {
+		List<Area> area = adminService.areaAll();
+		model.addAttribute("areaList",area);
+		return "/admin/restaurant_update";
 	}
 	
 
-	@PostMapping("/api/damin/guinfo/infoSave")
-	public String restaurantSave(RequestTravelDto dto){
-		dto.setCategoryType(CategoryType.GUINFO);
-		System.out.println("가나다");
-		adminService.saveGuInfo(dto);
+	@PostMapping("/api/admin/guinfo/infoSave")
+	public String guinfoSave(RequestTravelDto dto){
+			dto.setCategoryType(CategoryType.GUINFO);
+			adminService.saveGuInfo(dto);
+
 		return "redirect:/";
 	
 	}
+	@PostMapping("/api/admin/restaurant/infoSave")
+	public String restaurantSave(RequestRestaurantDto dto){
+		System.out.println(dto.getName());
+		System.out.println(dto.getCategoryType() + " 카테고리 @@@@");
+		dto.setCategoryType(CategoryType.RESTAURANT);
+		System.out.println("가나다");
+		adminService.saveRestaurant(dto);
+		return "redirect:/";
+	}
 	
 	
-
-
+	
+	
 	@GetMapping("/admin/deletepage")
 	public String adminDeletepage() {
 		return "admin/admin_delete_form";

@@ -33,6 +33,11 @@
 	padding: 7px;
 	border-radius: 40%;
 }
+
+.travelInfo-main-container {
+	margin-left: auto;
+	margin-right: auto;
+}
 </style>
 <!-- 
 			<li class="prev" style="display: flex; align-items: center;">&#10094;</li>
@@ -40,8 +45,8 @@
 				id="next_slide">&#10095;</a>
 				 -->
 <input type="hidden" id="home">
-<div class="main-container"
-	style="width: 1290px; margin-left: 365px; margin-top: 70px;">
+<div class="travelInfo-main-container"
+	style="width: 1290px; margin-top: 70px;">
 	<div
 		style="width: 1190px; height: 200px; background-color: rgba(245, 161, 25, 0.9); border-radius: 20px;">
 		<div
@@ -107,6 +112,7 @@
 			<div
 				style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">부산</div>
 			<div style="display: flex; width: 1190px;">
+
 
 				<c:forEach var="area" items="${lists[1]}">
 					<div class=""
@@ -185,7 +191,10 @@
 						</div>
 						<br /> <br />
 
+	<br /> <br />
+</div>
 
-						<script src="js/travelInfo.js"></script>
+	<script src="js/travelInfo.js"></script>
 
-						<%@ include file="../layout/footer.jsp"%>
+	<%@ include file="../layout/footer.jsp"%>
+

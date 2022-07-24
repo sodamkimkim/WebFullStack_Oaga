@@ -163,7 +163,7 @@ h2 {
 
 .keyword {
 	display: flex;
-	justify-content: space-between; /*여백 글자사이에 몰빵*/
+	justify-content: space-between; /*�뿬諛� 湲��옄�궗�씠�뿉 紐곕뭇*/
 	font-size: 14px;
 	color: #fff;
 	margin-top: 8px;
@@ -205,7 +205,7 @@ h2 {
 	font-size: 18px;
 	margin-top: 15px;
 	margin-bottom: 15px;
-	line-height: 1; /*글자에 딱 맞게 라인하이트.*/
+	line-height: 1; /*湲��옄�뿉 �뵳 留욊쾶 �씪�씤�븯�씠�듃.*/
 }
 
 .sec1 p {
@@ -238,7 +238,7 @@ h2 {
 	transition: all 1s;
 }
 
-/*-------------------------------------------------sec2시작-----------------------------------------------------------------------*/
+/*-------------------------------------------------sec2�떆�옉-----------------------------------------------------------------------*/
 .sec2 {
 	background-color: #f0f0f0;
 	padding-bottom: 70px;
@@ -308,18 +308,18 @@ h2 {
 	width: 100%;
 	background-image: linear-gradient(transparent, black);
 	/*
-    @ background그라데이션 넣기
+    @ background洹몃씪�뜲�씠�뀡 �꽔湲�
     - background-image
-    - 속성값이
+    - �냽�꽦媛믪씠
      @ linear-gradient()
      @ radial-gradient()
      @ linear-gradient(to right, red, green)
      to right, to left, to top, to bottom
      @ linear-gradient(45deg, red, green
-     -> 45도로 넣기
+     -> 45�룄濡� �꽔湲�
     */
 	box-sizing: border-box;
-	/*패딩과 보더가 박스 안에서 생겨남.*/
+	/*�뙣�뵫怨� 蹂대뜑媛� 諛뺤뒪 �븞�뿉�꽌 �깮寃⑤궓.*/
 }
 
 .sec2 .box .txt h4 {
@@ -405,7 +405,7 @@ h2 {
 	color: #666;
 	border-radius: 5px;
 }
-/*-------------------------------sec3시작-----------------------------------------------------------------------------------------*/
+/*-------------------------------sec3�떆�옉-----------------------------------------------------------------------------------------*/
 .sec3 h4 {
 	padding-top: 70px;
 	margin-bottom: 10px;
@@ -473,7 +473,7 @@ h2 {
 	background-repeat: no-repeat;
 	background-position: 0 center;
 	background-size: contain;
-	/*padding-bottom 줘도 백그라운드 이미지 올라감 */
+	/*padding-bottom 以섎룄 諛깃렇�씪�슫�뱶 �씠誘몄� �삱�씪媛� */
 	padding-left: 15px;
 	margin-left: 10px;
 	margin-top: 10px;
@@ -539,7 +539,7 @@ h2 {
 	color: white;
 	/*padding-top: 120px;*/
 	height: 100%;
-	line-height: 260px; /*글자 y축 가운데정렬*/
+	line-height: 260px; /*湲��옄 y異� 媛��슫�뜲�젙�젹*/
 	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
@@ -657,99 +657,100 @@ h2 {
 
 /*--------------------------------------footer------------------------------------------------*/
 footer {
-  background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(0, 0, 0, 0.7);
 }
 
 .fWrap {
-  width: 1092px;
-  margin-right: auto;
-  margin-left: auto;
+	width: 1092px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .ftrow1 {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 .ftrow1 .box {
-  width: 260px;
-  color: white;
-  padding-top: 17px;
-  padding-bottom: 17px;
-  box-sizing: border-box;
+	width: 260px;
+	color: white;
+	padding-top: 17px;
+	padding-bottom: 17px;
+	box-sizing: border-box;
 }
 
 .fWrap h4 {
-  font-size: 16px;
-  color: #ccc;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  line-height: 2;
-  margin-bottom: 17px;
+	font-size: 16px;
+	color: #ccc;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	line-height: 2;
+	margin-bottom: 17px;
 }
 
 .fWrap li {
-  line-height: 1.5;
+	line-height: 1.5;
 }
 
 .icon {
-  display: flex;
-  margin-top: 50px;
+	display: flex;
+	margin-top: 50px;
 }
 
 .ico1 {
-  margin-right: 10px;
+	margin-right: 10px;
 }
 
 .ftrow2 {
-  display: flex;
-  justify-content: space-between;
-  color: white;
-  line-height: 2;
+	display: flex;
+	justify-content: space-between;
+	color: white;
+	line-height: 2;
 }
 
 .footerbottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: transparent;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	background-color: transparent;
 }
 
-.opt select{
-width: 113px;
-margin-top: 30px;
-background-color: transparent;
-border-radius: 0;
-border: 1px solid #424753;
-color: #ccc;
-font-size: 16px;
-padding-top: 5px;
-padding-bottom: 5px;
-padding-left: 10px;
+.opt select {
+	width: 113px;
+	margin-top: 30px;
+	background-color: transparent;
+	border-radius: 0;
+	border: 1px solid #424753;
+	color: #ccc;
+	font-size: 16px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
 }
-.opt .select1{
-   margin-right: 10px;
-}*/
+
+.opt .select1 {
+	margin-right: 10px;
+}
+
+* /
 footer .con_lang {
-  display: flex;
+	display: flex;
 }
 
-footer .box .lang,
-.currency {
-  width: 113px;
-  margin-top: 30px;
-  background-color: transparent;
-  border-radius: 0;
-  border: 1px solid #424753;
-  color: #ccc;
-  font-size: 16px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  background-image: url(../images/mainpage/arr_sel.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  box-sizing: border-box;
-  background-position-x: 90px;
-  line-height: 30px;
+footer .box .lang, .currency {
+	width: 113px;
+	margin-top: 30px;
+	background-color: transparent;
+	border-radius: 0;
+	border: 1px solid #424753;
+	color: #ccc;
+	font-size: 16px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	background-image: url(../images/mainpage/arr_sel.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	box-sizing: border-box;
+	background-position-x: 90px;
+	line-height: 30px;
 }
 
 .lang {
@@ -768,7 +769,7 @@ footer .box .lang,
 	left: 0;
 	width: 100%;
 	background-color: #363c48;
-	display: none; /*숨김처리*/
+	display: none; /*�닲源�泥섎━*/
 }
 
 langPop li {
@@ -810,20 +811,22 @@ footer .box .lang, .currency {
 	left: 0;
 	width: 100%;
 	background-color: #363c48;
-	display: none; /*숨김처리*/
+	display: none; /*�닲源�泥섎━*/
 }
 
 langPop li {
 	border-bottom: 1px solid #424753;
 }
 
-.wrap {
+.review_wrap {
 	width: 900px;
 	margin: 0 auto;
-	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-.wrap.logged {
+.review_wrap .logged {
 	background: white;
 	border: 1px solid #e4e4e4;
 	padding: 15px 20px 15px 20px;
@@ -926,44 +929,47 @@ header.masthead {
 
 .review_search {
 	width: 100%;
-	height: 200px;
-	background: #f6f6f6;
+	height:500px;
+	background: rgba(243,243,243,1);
 }
 
-.review_search {
-	background-color: #f9bb57;
-	background-size: cover;
-	background-position: center center;
-	height: auto;
+.review_search_title>span{
+	color: rgba(249,187,87,1);
+	
 }
 
 .review_search_title {
-	color: white;
+	color:rgba(51,51,51,0.7);
 	font-size: 20px;
 	font-weight: bold;
 	text-align: center;
 	padding-top: 40px;
 }
+.review_search_coment>span{
+		color: rgba(249,187,87,1);
+}
 
-.img_box {
-	width: 100%;
-	display: flex;
-	justify-content: center;
+.review_img_box {
+	border-radius: 50%;
+	width: 250px;
+	height: 250px;
+	overflow: hidden;
+	background-color: pink;
+	margin: 30px auto;
 }
 
 .review_search_img {
-	object-fit: cover;
-	margin-left: auto;
-	margin-right: auto;
 	width: 250px;
 	height: 250px;
 }
 
 .review_search_coment {
 	text-align: center;
-	padding-top: 20px;
 	font-size: 20px;
-	font-weight: bold;
+		color: rgba(51, 51, 51, 0.9);
+		margin-top: 20px;
+		
+	
 }
 
 .review_search_area {
@@ -974,7 +980,6 @@ header.masthead {
 	height: 100px;
 	border-radius: 3px;
 	margin: 0 auto;
-	padding: 20px;
 	position: relative;
 }
 
@@ -987,14 +992,24 @@ header.masthead {
 }
 
 .review_search_input {
-	border: 3px solid #AEA8A8;
+	border: 2px solid rgba(51, 51, 51, 0.7);
 	padding: 5px;
-	border-radius: 7px;
+
 	height: 40px;
 	width: 500px;
 	font-size: 16px;
 	color: #b3b3b3;
 	margin-bottom: 10px;
+}
+.review_search_area>form{
+	position: relative;
+}
+.review_search_area>form>button{
+	border: 0px solid transparent;
+	position: absolute;
+	top:10px;
+	right:10px;
+	cursor:pointer;
 }
 
 .sec2 .review_option {
@@ -1025,7 +1040,9 @@ header.masthead {
 	margin-right: 11px;
 	margin-top: 13px;
 }
-
+.review_more{
+	background-color: rgba(51,51,51,0.7);
+}
 .best_reviewer_box {
 	padding-right: 0px;
 	padding-left: 0px;

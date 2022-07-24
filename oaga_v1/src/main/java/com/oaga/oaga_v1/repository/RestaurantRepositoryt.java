@@ -1,10 +1,13 @@
 package com.oaga.oaga_v1.repository;
 
+import java.awt.print.Pageable;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import com.oaga.oaga_v1.placeModel.GuInfo;
 import com.oaga.oaga_v1.placeModel.Restaurant;
 
 public interface RestaurantRepositoryt extends JpaRepository<Restaurant, Integer>{
@@ -29,5 +32,14 @@ public interface RestaurantRepositoryt extends JpaRepository<Restaurant, Integer
 	@Query(value = "SELECT * FROM restaurant WHERE areaGu = ?", nativeQuery = true)
 	List<Restaurant> mRestaurantGroupByGuInfoId(int areaGuId);
 	
+
+	@Query(value = "SELECT * FROM restaurant WHERE id =?", nativeQuery = true)
+	Restaurant mFindByRestaurantId2(int id);
 	
+
+	//restaurant name 검색하기
+//	@Query(value = "select * from restaurant where name like '%?%' ", nativeQuery = true)
+//	Page<Restaurant> findByNameContaining(String partOfRName, Pageable pageable);
+
+
 }
