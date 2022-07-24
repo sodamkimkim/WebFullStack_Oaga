@@ -6,6 +6,7 @@
 
 <div class="reviewDetailForm">
 	<div class="reviewDetailWrap">
+	<input type="hidden" id="principal--id" value="${principal.user.id}">
 		<div class="reviewDetailHeader">
 			<h3 style="color: #f9bb57; font-size: 23px;">여행후기</h3>
 			<p>여행을 다녀온 OaGa유저들의 솔직한 여행이야기</p>
@@ -70,8 +71,8 @@
 				</div>
 			</c:otherwise>
 		</c:choose>
-		<c:forEach var="reply" items="${review.replies}">
-			<div class="replysec">
+			<div class="replysec" id="replysec">
+			<c:forEach var="reply" items="${review.replies}">
 				<div class="replyBox">
 					<img class="reply_image" alt=""
 						src="../images/reviewPage/profile_basic.png">
@@ -86,9 +87,9 @@
 				</div>
 				<!-- replyBox -->
 				<div class="reply_c">${reply.content}</div>
-			</div>
+			</c:forEach>
+		</div>
 			<!-- replysec -->
-		</c:forEach>
 
 		<div class="reviewDetailFooter">
 			<button class="reviewDetailFooter_btn">

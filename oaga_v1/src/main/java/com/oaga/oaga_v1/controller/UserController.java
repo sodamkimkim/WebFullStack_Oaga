@@ -1,6 +1,7 @@
 package com.oaga.oaga_v1.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -44,6 +45,7 @@ import com.oaga.oaga_v1.reviewModel.Review;
 import com.oaga.oaga_v1.service.FollowService;
 import com.oaga.oaga_v1.service.ReviewService;
 import com.oaga.oaga_v1.service.UserService;
+import com.oaga.oaga_v1.userModel.Follow;
 import com.oaga.oaga_v1.userModel.RoleType;
 import com.oaga.oaga_v1.userModel.User;
 
@@ -70,6 +72,7 @@ public class UserController {
 	
 	@Autowired
 	private FollowService followService;
+	
 	
 	@GetMapping("/auth/login_form")
 	public String loginForm() {
@@ -132,6 +135,9 @@ public class UserController {
 		for(int i = startPage; i <=endPage;i++) {
 			pageNumbers.add(i);
 		}
+		List<Follow> followList = followService.findByFollowedUser(detail.getUser());
+		System.out.println("followList = " + followList);
+		model.addAttribute("followList", followList);
 		model.addAttribute("myReviews", myReviews);
 		model.addAttribute("startPage", startPage);
 		model.addAttribute("pageNumbers",pageNumbers);

@@ -5,17 +5,24 @@
 <link rel="stylesheet" href="/oaga/css/style.css" />
 <br />
 <br />
-
+<style>
+.areagu_img {
+	width: 200px;
+	border-radius: 1px;
+	margin-bottom: 10px;
+	height: inherit;
+}
+</style>
 
 
 <div class="container" style="display: flex; justify-content: center;">
+<div style="text-align: center;">
 	<c:forEach var="areaImage" items="${areaImage}">
-
-					${areaImage.mainImage}
-		
-		
-		<p>${areaImage.area}</p>
+		<p style="font-size: 15px; font-weight: bold;">${areaImage.area}</p>
+		${areaImage.mainImage}
 	</c:forEach>
+</div>
+	
 
 </div>
 <br />
@@ -29,9 +36,7 @@
 		style="width: 1100px; height: 190px; display: flex;">
 		<c:forEach var="areaGu" items="${areaGu}">
 			<div style="margin-right: 20px;">
-				<a href="/oaga/travel_guinfo/${areaGu.id}"> ${areaGu.image}"
-
-					style="width: 170px; height: 170px; border-radius: 15px;">
+				<a href="/oaga/travel_guinfo/${areaGu.id}"> ${areaGu.image}
 				</a>
 				<h4 style="width: 170px; height: 20px;">${areaGu.guname}</h4>
 			</div>

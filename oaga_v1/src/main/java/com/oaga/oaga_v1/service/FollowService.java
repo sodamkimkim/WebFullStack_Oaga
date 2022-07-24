@@ -1,5 +1,7 @@
 package com.oaga.oaga_v1.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,9 +58,18 @@ public class FollowService {
 		}
 	}
 	
-	// 팔로우 취소 
-	public void unFollow() {
-		
+	// 팔로우 정보 삭제
+	public void deleteByFollowId(int followId, int followedUserId) {
+		User followedUser = userRepository.findById(followedUserId).orElseThrow(() -> {
+			return new IllegalArgumentException("해당 사용자는 찾을 수 없습니다.");
+		});
+		followedUser.setLikes(followedUser.getLikes() -1);
+		followRepository.deleteById(followId);
+	}
+	
+	// 자신을 팔로우한 유저 정보를 가져오기
+	public List<Follow> findByFollowedUser(User followedUser) {
+		return followRepository.findByFollowedUser(followedUser).orElse(null);
 	}
 	
 	
