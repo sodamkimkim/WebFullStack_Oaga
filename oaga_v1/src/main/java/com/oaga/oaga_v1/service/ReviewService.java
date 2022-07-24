@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.UUID;
 
 import javax.transaction.Transactional;
@@ -82,7 +83,10 @@ public class ReviewService {
 	}
 	
 	// 최신순으로 출력
-	
+	@Transactional
+	public List<Review> findReviewByData() {
+		return reviewRepository.findByRecentCreateDate();
+	}
 	
 	// 리뷰 삭제
 	@Transactional

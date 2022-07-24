@@ -53,6 +53,9 @@ public class ReviewController {
 		return "/review/home";
 
 	} 
+	
+	
+	
 	// 로그인 한 경우
 
 	@GetMapping("/mreview")
@@ -151,11 +154,7 @@ public class ReviewController {
 		return "/review/list";
 	}
 	
-	// 자동완성 데이터 가져오기 ()
-	// 입력한 값이 포함되는 글자들을 가져오기
-//	private List<Area> searchArea() {
-//		
-//	}
+
 
 
 }

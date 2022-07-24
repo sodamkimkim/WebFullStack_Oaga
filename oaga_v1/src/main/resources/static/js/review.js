@@ -7,6 +7,10 @@ let index = {
 		$("#btn-delete").bind("click", () => {
 			this.reviewDelete();
 		});
+		
+		$("#recent-btn").bind("click", () => {
+			this.recentReview();
+		});
 
 
 	},
@@ -66,6 +70,19 @@ let index = {
 
 	},
 
+	recentReview: function() {
+		
+		$.ajax({
+			type: "GET",
+			url: "/oaga/api/recentReview"
+		}).done(function(response) {
+			console.log(response.data)
+			addRecentReview(response.data);
+		}).fail(function(error) {
+			console.log(error)
+		});
+		
+	}
 	
 
 }
@@ -88,6 +105,83 @@ function addReply(reply) {
 				<div class="reply_c">${reply.content}</div>`;
 	$("#replysec").prepend(childElement);
 	$("#reply-content").val("");
+}
+
+function addRecentReview(reviewList) {
+	console.log(reviewList);
+	$(".box").remove();
+	var listLength = reviewList.length;
+	if(listLength != 0) {
+		var recentList1 = new Array();
+		var recentList2 = new Array();
+		for(let i = 0; i < 3; i++){
+			recentList1[i] = `<div class="box">
+					<a href="/oaga/detail/${reviewList[i].id}">
+						<div class="ImgBox">
+							<img
+								src="http://localhost:9090/oaga/upload/${reviewList[i].reviewImageUrl}"
+								alt="" />
+							<div class="txt">
+								<p>${reviewList[i].title}</p>
+							</div>
+							<!--txt-->
+						</div> <!--ImgBox-->
+
+						<div class="data">
+							<ul class="info">
+								<li class="placeName">${reviewList[i].areaName}</li>
+								<li class="withFriend">${reviewList[i].theme}</li>
+								<li class="userName">${reviewList[i].user.userNickName}</li>
+							</ul>
+							<!--info-->
+
+							<ul class="count">
+								<li class="location">25</li>
+								<li class="view">${reviewList[i].count}</li>
+								<li class="copy">27</li>
+							</ul>
+							<!--view-->
+						</div> <!--data-->
+					</a>
+				</div>`
+		}
+		for(let i = 3; i < 7; i++){
+			recentList2[i] = `<div class="box">
+					<a href="/oaga/detail/${reviewList[i].id}">
+						<div class="ImgBox">
+							<img
+								src="http://localhost:9090/oaga/upload/${reviewList[i].reviewImageUrl}"
+								alt="" />
+							<div class="txt">
+								<p>${reviewList[i].title}</p>
+							</div>
+							<!--txt-->
+						</div> <!--ImgBox-->
+
+						<div class="data">
+							<ul class="info">
+								<li class="placeName">${reviewList[i].areaName}</li>
+								<li class="withFriend">${reviewList[i].theme}</li>
+								<li class="userName">${reviewList[i].user.userNickName}</li>
+							</ul>
+							<!--info-->
+
+							<ul class="count">
+								<li class="location">25</li>
+								<li class="view">${reviewList[i].count}</li>
+								<li class="copy">27</li>
+							</ul>
+							<!--view-->
+						</div> <!--data-->
+					</a>
+				</div>`
+		}
+	}
+	
+
+	
+	$("#row1").prepend(recentList1);
+	$("#row2").prepend(recentList2);
 }
 
 index.init();

@@ -1,5 +1,6 @@
 package com.oaga.oaga_v1.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
@@ -25,6 +26,8 @@ public interface ReviewRepository extends JpaRepository<Review, Integer>{
 	Page<Review> findByUserId(Pageable pageable, int userId);
 	
 	Page<Review> findByTitleContaining(Pageable pageable, String title);
-
+	
+	@Query(value = "SELECT * FROM review ORDER BY createDate DESC LIMIT 6;", nativeQuery = true)
+	List<Review> findByRecentCreateDate();
 
 }
