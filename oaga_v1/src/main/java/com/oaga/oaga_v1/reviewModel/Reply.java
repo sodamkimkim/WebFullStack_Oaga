@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.oaga.oaga_v1.userModel.User;
 
 import lombok.AllArgsConstructor;
@@ -34,10 +35,12 @@ public class Reply {
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "userId")
+	@JsonIgnoreProperties({"password", "role", "email", "oauth"})
 	private User user;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "reviewId")
+	@JsonIgnoreProperties({"user", "replys", "userId", "content"})
 	private Review review;
 	
 	@CreationTimestamp

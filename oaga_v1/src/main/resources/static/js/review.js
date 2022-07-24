@@ -17,7 +17,6 @@ let index = {
 			content: $("#reply-content").val()
 		}
 
-		console.log(data);
 
 		$.ajax({
 			type: "POST",
@@ -26,11 +25,9 @@ let index = {
 			contentType: "application/json; charset=utf-8",
 			dataType: "json"
 		}).done(function(response) {
-			console.log(response);
-			alert("댓글 작성 성공");
+			addReply(response.data);
 		}).fail(function(error) {
 			console.log(error);
-			alert("댓글 작성 실패");
 		});
 
 	},
@@ -71,6 +68,26 @@ let index = {
 
 	
 
+}
+
+function addReply(reply) {
+	console.log(reply);
+	let principalId = $("#principal--id");
+	let childElement = `<div class="replyBox">
+					<img class="reply_image" alt=""
+						src="../images/reviewPage/profile_basic.png">
+					<div class="reply_i">
+						<h4 class="reply_u">${reply.user.userNickName}</h4>
+						<h6 class="reply_t">${reply.timestamp}</h6>
+					</div>
+					<c:if test="${reply.user.id} == principalId">
+						<button type="button" onclick="index.replyDelete(${reply.id});"
+							id="btn-reply-delete" class="reply_d">삭제</button>
+					</c:if>
+				</div>
+				<div class="reply_c">${reply.content}</div>`;
+	$("#replysec").prepend(childElement);
+	$("#reply-content").val("");
 }
 
 index.init();

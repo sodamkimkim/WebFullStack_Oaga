@@ -32,7 +32,7 @@ public class FollowController {
 	@DeleteMapping("/api/follow/{followedUserId}")
 	private void unFollowUser(@PathVariable int followedUserId, @AuthenticationPrincipal PrincipalDetail detail) {
 		int result = followService.checkFollowInfo(detail.getUser().getId(), followedUserId);
-		followRepository.deleteById(result);
+		followService.deleteByFollowId(result, followedUserId);
 	}
 	
 

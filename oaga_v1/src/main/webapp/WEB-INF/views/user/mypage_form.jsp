@@ -76,23 +76,29 @@
 
 		</ul>
 		<ul class="pagination">
-			<li class="page-item btnPrv ${myReviews.first ? passive : Page-item-active}"><a class = "page-link" href="/oaga/mypage_form?page=${number-1}">Prv</a></li>
+			<li
+				class="page-item btnPrv ${myReviews.first ? passive : Page-item-active}"><a
+				class="page-link" href="/oaga/mypage_form?page=${number-1}">Prv</a></li>
 			<!-- page-item -->
-			
-			
-			<c:forEach var = "num" items = "${pageNumbers}">
+
+
+			<c:forEach var="num" items="${pageNumbers}">
 				<c:choose>
-					<c:when test = "${myReviews.number+1 eq num}">
-						<li class="page-item Page-item-active"><a class = "page-link" href="/oaga/mypage_form?page=${num-1}">${num}</a></li>
+					<c:when test="${myReviews.number+1 eq num}">
+						<li class="page-item Page-item-active"><a class="page-link"
+							href="/oaga/mypage_form?page=${num-1}">${num}</a></li>
 						<!-- page-item -->
 					</c:when>
 					<c:otherwise>
-						<li class="page-item"><a class = "page-link" href="/oaga/mypage_form?page=${num-1}">${num}</a></li>
+						<li class="page-item"><a class="page-link"
+							href="/oaga/mypage_form?page=${num-1}">${num}</a></li>
 					</c:otherwise>
 				</c:choose>
 			</c:forEach>
-					
-			<li class="page-item btnNxt ${myReviews.last ? passive : Page-item-active}"><a class = "page-link" href="/oaga/mypage_form?page=${pageable.number+1}">Nxt</a></li>
+
+			<li
+				class="page-item btnNxt ${myReviews.last ? passive : Page-item-active}"><a
+				class="page-link" href="/oaga/mypage_form?page=${pageable.number+1}">Nxt</a></li>
 			<!-- page-item -->
 		</ul>
 	</section>
@@ -108,15 +114,14 @@
 				<h5>좋아요</h5>
 				<img src="" alt="">
 			</div>
-			<div class="list-group-item">
-				<label><a href="#"></a>가나다</label>
-			</div>
-			<div class="list-group-item">
-				<label><a href="#"></a>라마바</label>
-			</div>
-			<div class="list-group-item">
-				<label><a href="#"></a>사아자</label>
-			</div>
+			<c:forEach var="followedList" items="${followList}">
+				<div class="list-group-item">
+					<a class="list-group-a"
+						href="/oaga/userpage_form_l/${followedList.followingUser.id}">
+						<label>${followedList.followingUser.userNickName}</label>
+					</a>
+				</div>
+			</c:forEach>
 		</div>
 	</div>
 </div>
