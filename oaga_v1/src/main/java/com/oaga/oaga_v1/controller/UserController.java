@@ -179,29 +179,7 @@ public class UserController {
 	public String updateMyProfileForm() {
 		return "user/updatemyprofile_form";
 	}
-	
-	
-	
-//=======
-//	@GetMapping("/userPage_form/{userId}")
-//	public String getUserPage(@PathVariable int userId, @PageableDefault(size=6,sort="createDate", direction=Direction.DESC)Pageable pageable, Model model, @AuthenticationPrincipal PrincipalDetail detail) {
-//		User user = userService.searchUserById(userId);
-//		Page<Review> userReviews = reviewService.getMyReviews(pageable, userId);
-//		
-//		int result = followService.checkFollowInfo(detail.getUser().getId(), userId);
-//		System.out.println(result);
-//		model.addAttribute("result", result);
-//		model.addAttribute("user",user);
-//		model.addAttribute("userReviews",userReviews);
-//		
-//		return "/user/userPage_form";
-//	}
-//	
-//	
-//
-//>>>>>>> developer
-	
-	
+
 	
 	 
 	

@@ -17,8 +17,12 @@
 	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 <link rel="stylesheet" href="css/review/writestyle.css" />
+<style>
+.reviewBody{
+margin-top:80px;}
+</style>
 <!-- 리뷰 작성 타이틀 -->
-<div style="background-color: rgba(240, 240, 240, 0.8);">
+<div class="reviewBody" style="background-color: rgba(240, 240, 240, 0.8);">
 	<div class="r_sec">
 		<!-- form 태그 시작 -->
 		<form method="post" name="r_form" enctype="multipart/form-data">

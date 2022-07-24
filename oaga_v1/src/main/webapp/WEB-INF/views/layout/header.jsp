@@ -55,7 +55,7 @@
 				<form class="srch">
 					<input type="text" placeholder="여행지 검색" />
 					<button class="Q1">
-						<img src="images/mainpage/icon_search2.png" alt="" />
+						<img src="/oaga/images/mainpage/icon_search2.png" alt="" />
 					</button>
 				</form>
 				<!--srch-->
@@ -65,12 +65,12 @@
 				<c:choose>
 					<c:when test="${empty principal}">
 						<!-- 로그인 안된상태 -->
-						<button class="btn loginBtn">
+						<button class="headerBtn loginBtn">
 							<a href="/oaga/auth/login_form">로그인</a>
 						</button>
 						<!--login-->
 
-						<button class="btn joinBtn">
+						<button class="headerBtn joinBtn">
 							<a href="/oaga/auth/join_form">회원가입</a>
 						</button>
 						<!--join-->
@@ -78,12 +78,12 @@
 
 					<c:otherwise>
 						<!-- 로그인된 상태 -->
-						<button class="btn myPageBtn">
+						<button class="headerBtn myPageBtn">
 							<a href="/oaga/mypage_form">MyPage</a>
 						</button>
 						<!--login-->
 
-						<button class="btn logoutBtn">
+						<button class="headerBtn logoutBtn">
 							<a href="/oaga/auth/logout">로그아웃</a>
 						</button>
 					</c:otherwise>
