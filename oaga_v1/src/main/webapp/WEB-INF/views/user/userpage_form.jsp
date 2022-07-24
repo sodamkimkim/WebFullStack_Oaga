@@ -16,6 +16,10 @@
 						alt="...">
 				</div>
 				<c:choose>
+					<c:when test="${empty principal}">					
+					</c:when>
+					<c:otherwise>
+						<c:choose>
 					<c:when test="${result == -1}">
 						<button class="likebutton" type="button" id="btn-Follow">
 							<img class="likebutton-img"
@@ -26,6 +30,8 @@
 						<button class="likebutton" type="button" id="btn-UnFollow">
 							<img class="likebutton-img" src="../images/userPage/heart.png">
 						</button>
+					</c:otherwise>
+				</c:choose>
 					</c:otherwise>
 				</c:choose>
 			</div>
