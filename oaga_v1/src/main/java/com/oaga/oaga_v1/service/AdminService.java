@@ -65,6 +65,12 @@ public class AdminService {
 	}
 	
 	
+	public List<Restaurant> findAreaGuId2(int areaGuId){
+		return restaurantRepositoryt.mRestaurantGroupByGuInfoId(areaGuId);
+	}
+	public List<Restaurant> findRestaurant(int areaGuId){
+		return restaurantRepositoryt.mFindByRestaurant(areaGuId);
+	}
 	
 	
 	
@@ -130,11 +136,32 @@ public class AdminService {
 			e.printStackTrace();
 			
 		}
-		
-		
-		
-		
+	}
+	@Transactional
+	public void updateRestaurant(Restaurant restaurant, int id) {
 
+		Restaurant restaurantEntity = restaurantRepositoryt.mFindByRestaurantId2(id);
+		
+		
+		
+		System.out.println(restaurantEntity + "guinfoEntityguinfoEntity");
+	
+		try {
+			
+			restaurantEntity.getId();
+			restaurantEntity.setName(restaurant.getName());
+			restaurantEntity.setAddress(restaurant.getAddress());
+			restaurantEntity.setContent(restaurant.getContent());
+			restaurantEntity.getAreaGu();
+			restaurantEntity.getCategoryType();
+			restaurantEntity.getCreateDate();
+			restaurantEntity.setOriginImageUrl(restaurant.getOriginImageUrl());
+			restaurantEntity.setImage(restaurant.getImage());
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		}
 	}
 	
 	

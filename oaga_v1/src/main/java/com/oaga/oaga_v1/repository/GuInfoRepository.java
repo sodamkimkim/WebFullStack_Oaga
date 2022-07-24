@@ -25,8 +25,7 @@ public interface GuInfoRepository extends JpaRepository<GuInfo, Integer>{
 	
 	
 	
-	@Query(value = "UPDATE guinfo SET name = '?', address = '?',orginImageUrl = '?', content = '' WHERE id = ?", nativeQuery = true)
-	GuInfo mUpdate(Object setname, Object setAddress, Object orginImageUrl, Object setContent, int areaGu_areaId);
+	
 
 	
 

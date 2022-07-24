@@ -22,6 +22,7 @@ import com.oaga.oaga_v1.dto.ResponseDto;
 import com.oaga.oaga_v1.placeModel.AreaGu;
 import com.oaga.oaga_v1.placeModel.CategoryType;
 import com.oaga.oaga_v1.placeModel.GuInfo;
+import com.oaga.oaga_v1.placeModel.Restaurant;
 import com.oaga.oaga_v1.repository.GuInfoRepository;
 import com.oaga.oaga_v1.service.AdminService;
 import com.oaga.oaga_v1.userModel.RoleType;
@@ -69,6 +70,17 @@ public class AdminApiController {
 	}
 	
 	
+	@GetMapping("/api/admin/restaurantUpdate/{areaguid}")
+	public ResponseDto<List<Restaurant>> restaurantUpdateList(@PathVariable int areaguid, Model model){
+		System.out.println(areaguid + "@#@@@");
+		List<Restaurant> restaurantList = adminService.findAreaGuId2(areaguid);
+		System.out.println(restaurantList + "restaurantList");
+		model.addAttribute("restaurantList",restaurantList);
+		
+		return new ResponseDto<>(HttpStatus.OK, restaurantList);
+	}
+	
+	
 	@GetMapping("/api/admin/guinfo_info/{guinfo}") // 구인포리스트 클릭했을때 어펜드 하기 위해
 	public ResponseDto<List<GuInfo>> guinfoupdatefindid(@PathVariable int guinfo, Model model){
 		
@@ -79,13 +91,32 @@ public class AdminApiController {
 		return new ResponseDto<>(HttpStatus.OK, guinfo_info);
 	}
 	
+	@GetMapping("/api/admin/restaurant_info/{restaurant}") // 레스토랑 클릭했을때 어펜드 하기 위해
+	public ResponseDto<List<Restaurant>> restaurantupdatefindid(@PathVariable int restaurant, Model model){
+		
+		List<Restaurant> restaurant_info = adminService.findRestaurant(restaurant);
+		System.out.println(restaurant_info + " restaurant_info가나다ㅡ엠ㄴ으메");
+		model.addAttribute("restaurant_info",restaurant_info);
+		
+		return new ResponseDto<>(HttpStatus.OK, restaurant_info);
+	}
+	
 	
 	 
 	@PutMapping("/api/admin/guinfo/update/{id}")// 수정하기
-	public ResponseDto<Integer> updateUserInfo(@RequestBody GuInfo guInfo, @PathVariable int id) {
+	public ResponseDto<Integer> updateGuInfo(@RequestBody GuInfo guInfo, @PathVariable int id) {
 		
-		System.out.println(guInfo);
+		
 		adminService.updateGuInfo(guInfo, id);
+		
+		return new ResponseDto<Integer>(HttpStatus.OK, 1);
+	}
+	
+	@PutMapping("/api/admin/restaurant/update/{id}")// 수정하기
+	public ResponseDto<Integer> updateRestaurant(@RequestBody Restaurant restaurant, @PathVariable int id) {
+		
+		
+		adminService.updateRestaurant(restaurant, id);
 		
 		return new ResponseDto<Integer>(HttpStatus.OK, 1);
 	}

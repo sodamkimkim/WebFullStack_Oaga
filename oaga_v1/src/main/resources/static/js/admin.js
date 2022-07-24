@@ -1,4 +1,199 @@
-// =====================================update
+// =====================================restaurant update
+function selectrestaurantList(selectedId){ // area 선택 시
+		
+		let data = selectedId;
+		console.log(data.data);
+		$.ajax({
+			type: "GET",
+			url: `/oaga/api/admin/areaId/${data}`
+		}).done(function(response){
+			addSelectedGuList3(response); 
+		}).fail(function(error){
+
+		});
+		
+}
+
+function addSelectedGuList3(response) {//구칸에 구이름 뿌리기
+	$('#areaGu').empty();
+
+	var test = response.data; 
+	
+	var a = test.length ; 
+
+	var test = response.data;
+	console.log(test + " test");
+	var a = test.length;
+
+	var select = new Array();
+
+	for (let i = 0; i <= a - 1; i++) {
+		select[i] = `
+					 <div  style="height: 100%; width: 100%; border: 1px solid; margin-bottom:5px; ">
+						<c:forEach var="areaGuList" items="${test}" id ="areaGuList">
+
+
+								<div class ="areaGuList" style="width: 100%; height: 30px; cursor: pointer;" id ="getAreaGuList"
+								onclick ="areaGuClick3(${test[i].id})">${test[i].guname}</div>
+
+						</c:forEach>				
+					</div>`;
+
+
+	}
+	$('#areaGu').append(select);
+}
+function areaGuClick3(id) {
+
+	
+	
+	$.ajax({
+		type: "GET",
+		url: `/oaga/api/admin/restaurantUpdate/${id}`
+	}).done(function(response) {
+		addSelectedRestaurant(response);
+		console.log(response.data);
+	}).fail(function(error) {
+
+	});
+
+}
+function addSelectedRestaurant(response) { //guinfo 리스트 뿌리기 
+	
+		 $('#restaurantList').empty();
+	
+	var restaurantName = response.data;
+	var a = restaurantName.length ;
+	if(a != 0){
+		var restaurantNameList = new Array();
+	for(let i = 0; i < a; i++){
+		restaurantNameList[i] = `<c:forEach var="restaurant" items="${restaurantName}">
+								<div style="width: 100%; height: 30px;border: 1px solid; margin-bottom:5px; cursor: pointer;"
+								onclick ="restaurantclick(${restaurantName[i].id})">
+									${restaurantName[i].name}
+								</div>
+							</c:forEach>`
+	}
+	
+	  
+	$('#restaurantList').append(restaurantNameList);
+	}else if(a == 0){
+		var error = `<div>데이터가 없습니다.</div>`
+		$('#restaurantList').append(error);
+	}
+	
+	
+			
+	 
+	
+
+}
+
+function restaurantclick(updateId){ // guinfo 리스트 클릭했을때 어펜듬
+	
+	let data = updateId;
+	console.log(data);
+	$.ajax({
+		type: "GET",
+		url: `/oaga/api/admin/restaurant_info/${data}`
+	}).done(function(response){
+		console.log(response + "dsa,[pdasm,p]");
+		
+		setRestaurantData(response);
+	}).fail(function(){
+		
+	})
+}
+
+
+function setRestaurantData(estaurantData){
+	$('#restaurantList').empty();
+	
+	let setData = estaurantData.data;
+	console.log(setData[0].id);
+	var estaurantDataApend = `<br/>
+						<br/>
+						<input type="hidden" id = "getid" value="${setData[0].id}">
+						<input type="hidden" id = "image" value="${setData[0].image}">
+						<input type="hidden" id = "originImageUrl" value="${setData[0].originImageUrl}">
+						<input type="hidden" id = "createDate" value="${setData[0].createDate}">
+						
+
+						<label >이름 :</label>
+						<input style="margin-bottom: 20px; height: 35px;" name = "setname"id = "setname" value = ${setData[0].name}>
+						<br/>
+						<br/>
+						<label>주소 :</label>
+						<input style="margin-bottom: 20px; height: 35px;"name = "setaddress" id = "setaddress" value = ${setData[0].address}>
+						<br/>
+						<br/>
+						<label>내용 :</label>
+						<input style="margin-bottom: 20px; height: 35px;"name = "setcontent" id = "setcontent" value = ${setData[0].content}>
+						<br/>
+						<br/>
+						<label class="r_image_label" for="r_image" >파일 선택</label> 						
+						<input type="file"class="r_image_input" id="image" name="file" accept="image/*"
+						required="required"
+						onchange="javascript:document.getElementById('r_imageUrl').value = ${setData[0].image}">
+								
+						<input class="upload_name" id="setimage" name = "setimage" readonly="readonly"placeholder="${setData[0].image}"">
+						
+						<div>
+							<button class="btn btn-primary" id="btn-update" type="submit" onclick="restaurantupdate(${setData[0].id})"
+							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">수정</button>
+							
+							<a type="button" class="btn btn-primary" onclick="addSelectedRestaurant(${setData[0].areaGu.id})";
+							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">뒤로가기</a>
+						</div>
+						
+						`
+	
+	$('#restaurantList').append(estaurantDataApend);
+}
+
+
+
+function restaurantupdate(id){
+	console.log(id + " @@#@#!#!");
+	
+	let data = {
+			id: id,
+			name: $("#setname").val(),
+			address: $("#setaddress").val(),
+			content: $("#setcontent").val(),
+			image:$("#image").val(),
+			originImageUrl:$("#originImageUrl").val(),
+			createDate:$("#createDate").val(),
+			
+		}
+		console.log(data);
+	$.ajax({
+			type: "PUT",
+			url: `/oaga/api/admin/restaurant/update/${id}`,
+			data: JSON.stringify(data),
+			contentType: "application/json; charset=utf-8",
+			dataType: "json"
+		}).done(function(data) {
+			if (data.status) {
+				alert("카페/식당 수정이 완료되었습니다.")
+				
+			}
+
+		}).fail(function(error) {
+			
+
+		});
+}
+
+
+	 // end of update
+
+
+
+
+// =====================================end restaurant update
+
+// =====================================guinfo update
 function selectList2(selectedId){ // area 선택 시
 		
 		let data = selectedId;
@@ -174,7 +369,7 @@ function update(id){
 			dataType: "json"
 		}).done(function(data) {
 			if (data.status) {
-				alert("회원정보 수정이 완료되었습니다.")
+				alert("놀거리 수정이 완료되었습니다.")
 				
 			}
 

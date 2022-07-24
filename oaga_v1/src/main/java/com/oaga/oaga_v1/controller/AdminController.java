@@ -64,6 +64,13 @@ public class AdminController {
 		model.addAttribute("areaList",area);
 		return "/admin/update";
 	}
+	// 레드토랑 수정 페이지
+	@GetMapping("/admin/restaurant_updatepage") 
+	private String adminㄲestaurantUpdateForm(Model model) {
+		List<Area> area = adminService.areaAll();
+		model.addAttribute("areaList",area);
+		return "/admin/restaurant_update";
+	}
 	
 
 	@PostMapping("/api/admin/guinfo/infoSave")
