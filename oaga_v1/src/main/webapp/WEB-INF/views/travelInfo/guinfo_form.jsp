@@ -12,8 +12,8 @@
 </style>
 <div style="width: 100%; display: flex; justify-content: center;">
 	<div style="width: 1200px; height: 500px;">
-		<c:forEach var="areaImageList" items="${areaImageList}">
-		${areaImageList.mainImage}
+		<c:forEach var="guInfoImage" items="${guInfoImage}">
+		${guInfoImage.image}
 		</c:forEach>
 	</div>
 </div>

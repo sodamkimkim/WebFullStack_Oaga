@@ -18,7 +18,7 @@
 <div style="text-align: center;">
 	<c:forEach var="areaImage" items="${areaImage}">
 		<p style="font-size: 15px; font-weight: bold;">${areaImage.area}</p>
-		${areaImage.mainImage}
+			${areaImage.mainImage}
 	</c:forEach>
 </div>
 	
