@@ -15,9 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.oaga.oaga_v1.auth.PrincipalDetail;
 import com.oaga.oaga_v1.dto.RequestReviewFileDto;
@@ -113,7 +110,7 @@ public class ReviewController {
 	private String saveReview(RequestReviewFileDto dto, @AuthenticationPrincipal PrincipalDetail detail) {
 		dto.setIsWriting(IsWritingType.DONE);
 		reviewService.saveReview(dto, detail.getUser());
-		return "/review/home";
+		return "redirect:/review";
 	}
 	
 	// 리뷰 수정

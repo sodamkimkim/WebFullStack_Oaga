@@ -105,7 +105,7 @@
 		<p class="tit">다른 여행자들의 리뷰를 참고해 나만의 여행을 계획해보세요!</p>
 
 		<div class="row1">
-			<c:forEach var="reviews" items="${reviews.content}" begin="3" end="6">
+			<c:forEach var="reviews" items="${reviews.content}" begin="0" end="2">
 				<div class="box">
 				<a href="#">
 					<div class="ImgBox">
@@ -139,7 +139,7 @@
 		<!--row1-->
 
 		<div class="row2">
-			<c:forEach var="reviews" items="${reviews.content}" begin="0" end="2">
+			<c:forEach var="reviews" items="${reviews.content}" begin="3" end="6">
 				<div class="box">
 				<a href="#">
 					<div class="ImgBox">
