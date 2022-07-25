@@ -29,39 +29,42 @@
 			style="width: 1200px; height: 800px; margin-top: 30px; display: flex; justify-content: center; align-items: center;">
 
 			<div
-				style="width: 1000px; height: 700px; background-color: silver; display: flex;">
-				<div style="height: 100%; width: 33%; border: 1px solid;" id="test">
+				style="width: 1000px; height: 700px; background-color:rgba(245, 161, 25, 0.9); border-radius:5px; display: flex;">
+				<div style="height: 100%; width: 33%; border-right:1px solid white;" id="test">
 					<div
-						style="width: 100%; height: 30px; text-align: center; border-bottom: 1px solid;">도시</div>
+						style="width: 100%; height: 30px;border-bottom: 1px solid white; text-align: center; ">도시</div>
 
 					<c:forEach var="areaList" items="${areaList}">
+					
 						<div class="areaList"
-							style="width: 100%; height: 30px; margin-bottom: 10px; background-color: gray; cursor: pointer;"
+							style="width: 95%; margin-left:5px; height: 30px; text-align:center; margin-bottom: 10px; cursor: pointer;"
 							onclick="selectList('${areaList.id}')">
-
-							<input type="hidden" value="${areaList}" id="areaId">${areaList.area}</div>
+							${areaList.area}</div>
+							<!-- <input type="hidden" value="${areaList}" id="areaId"> -->
 					</c:forEach>
 				</div>
 
 				<div
-					style="width: 330px; height: 30px; text-align: center; border-bottom: 1px solid;">
+					style="width: 330px; height: 30px; text-align: center; ">
 					<input type="hidden" itemid="${areaGuList}"
 						value="${areaGuList.content}" id="guname" />
-					<div style="height: 30px; border-top: 1px solid">구</div>
-					<div id="areaGu"></div>
+					<div style="height: 30px;border-bottom: 1px solid white;">구</div>
+					<div id="areaGu">
+									
+					</div>
 
 				</div>
 			<form method="post" action="/oaga/api/admin/guinfo/infoSave" name="t_form" enctype="multipart/form-data">
-				<div style="height: 100%; width: 100%; border: 1px solid; " >
+				<div style="height: 100%; width: 100%; border-left: 1px solid white " >
 
 					<input type="hidden" itemid="${areaGuName}"
 						value="${areaGuName.guname }" id="" />
 					<div
-						style="height: 30px; border-top: 1px solid; text-align: center; border-bottom: 1px solid;">추가할
+						style="height: 30px; border-bottom: 1px solid white;text-align: center;">추가할
 						항목</div>
 						
 					<div
-						style="width: 100%; height: 60px; display: flex; justify-content: space-around; margin-top: 20px; align-items: center;"
+						style="width: 100%; height: 60px;  display: flex; justify-content: space-around; margin-top: 20px; align-items: center;"
 						id="test">
 						
 						<input type="hidden" name="categoryType" value="GUINFO">

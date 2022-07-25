@@ -431,7 +431,7 @@ function addSelectedGuList(response) {//구칸에 구이름 뿌리기
 
 	for (let i = 0; i <= a - 1; i++) {
 		select[i] = `
-					 <div  style="height: 100%; width: 100%; border: 1px solid; margin-bottom:5px; ">
+					 <div  style="height: 100%; width: 100%;  margin-bottom:5px;>
 						<c:forEach var="areaGuList" items="${test}" id ="areaGuList">
 
 

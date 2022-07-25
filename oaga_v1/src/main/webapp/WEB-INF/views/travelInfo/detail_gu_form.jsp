@@ -24,8 +24,9 @@
 			<c:forEach var="gu" items="${gu}">
 				<div
 					style="font-size: 25px; font-style: oblique; font-weight: bold;">
-					<h5 style="">이름: ${gu.name}</h5>
+					<h5 style="margin-bottom: 10px;">이름: ${gu.name}</h5>
 					<p style="font-size: 20px;">주소: ${gu.address}</p>
+					<br/>
 					<span style="font-size: 15px;">${gu.content}</span>
 				</div>
 			</c:forEach>

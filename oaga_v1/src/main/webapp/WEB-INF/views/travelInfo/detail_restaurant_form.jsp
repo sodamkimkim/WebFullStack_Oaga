@@ -24,9 +24,10 @@
 			<c:forEach var="restaurant" items="${restaurant}">
 				<div
 					style="font-size: 25px; font-style: oblique; font-weight: bold;">
-					<h5 style="">이름: ${restaurant.name}</h5>
+					<h5 style="margin-bottom: 10px;">이름: ${restaurant.name}</h5>
 					<p style="font-size: 20px; margin-bottom: 10px;">주소:
 						${restaurant.address}</p>
+						<br/>
 					<span style="font-size: 15px;">${restaurant.content}</span>
 				</div>
 			</c:forEach>

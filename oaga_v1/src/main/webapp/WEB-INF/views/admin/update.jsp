@@ -35,11 +35,13 @@
 						style="width: 100%; height: 30px; text-align: center; border-bottom: 1px solid;">도시</div>
 
 					<c:forEach var="areaList" items="${areaList}">
+					
 						<div class="areaList"
 							style="width: 100%; height: 30px; margin-bottom: 10px; background-color: gray; cursor: pointer;"
 							onclick="selectList2('${areaList.id}')">
 
-							<input type="hidden" value="${areaList}" id="areaId">${areaList.area}</div>
+							${areaList.area}</div>
+							<!-- <input type="hidden" value="${areaList}" id="areaId"> -->
 					</c:forEach>
 				</div>
 
