@@ -1,4 +1,4 @@
-package com.oaga.oaga_v1.placeModel;
+ package com.oaga.oaga_v1.placeModel;
 import java.sql.Timestamp;
 import java.util.List;
 

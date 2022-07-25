@@ -101,16 +101,13 @@ public class AdminController {
 		model.addAttribute("searchTitle", searchTitle);
 		Page<Restaurant> srchResult = adminService.searchRestaurantByTitle(searchTitle, pageable);
 		model.addAttribute("restaurants", srchResult);
-		System.out.println("srchResult in adminController : " + srchResult.toString());
+	
 		return "admin/admin_delete_form";
 	}
 
 	@PostMapping("/api/admin/restaurant/infoSave")
 	public String restaurantSave(RequestRestaurantDto dto) {
-		System.out.println(dto.getName());
-		System.out.println(dto.getCategoryType() + " 카테고리 @@@@");
 		dto.setCategoryType(CategoryType.RESTAURANT);
-		System.out.println("가나다");
 		adminService.saveRestaurant(dto);
 		return "redirect:/";
 	}

@@ -49,17 +49,26 @@
 	style="display: flex; justify-content: center;">
 	<div class="swiper-wrapper"
 		style="width: 1100px; height: 190px; display: flex;">
-		<c:forEach var="guinfo" items="${guinfo}">
-			<div style="margin-right: 20px;">
-				<a href="/oaga/travel_detail/gu/${guinfo.id}">
-
-				<img alt="" src="http://localhost:9090/oaga/upload/${guinfo.image}"
-
-					style="width: 200px; height: 150px; border-radius: 15px;">
-				</a>
-				<p>${guinfo.name}</p>
-			</div>
-		</c:forEach>
+		<c:choose>
+			<c:when test="${empty guinfo}">
+				<p style="font-size: 25px; display: flex; align-items: center; margin-left: 50px;">업데이트중 입니다!</p>
+			</c:when>
+			<c:otherwise>
+				<c:forEach var="guinfo" items="${guinfo}">
+				
+					<div style="margin-right: 20px;">
+						<a href="/oaga/travel_detail/gu/${guinfo.id}">
+		
+						<img alt="" src="http://localhost:9090/oaga/upload/${guinfo.image}"
+		
+							style="width: 200px; height: 150px; border-radius: 15px;">
+						</a>
+						<p>${guinfo.name}</p>
+					</div>
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>
+		
 
 	</div>
 </div>
@@ -70,17 +79,25 @@
 	style="display: flex; justify-content: center;">
 	<div class="swiper-wrapper"
 		style="width: 1100px; height: 190px; display: flex;">
-		<c:forEach var="restaurant" items="${restaurant}">
-			<div style="margin-right: 20px;">
-				<a href="/oaga/travel_detail/${restaurant.id}">
-
-				<img alt="" src="http://localhost:9090/oaga/upload/${restaurant.image}"
-
-					style="width: 200px; height: 150px; border-radius: 15px;">
-				</a>
-				<p>${restaurant.name}</p>
-			</div>
-		</c:forEach>
+		<c:choose>
+			<c:when test="${empty restaurant}">
+				<p style="font-size: 25px; display: flex; align-items: center; margin-left: 50px;">업데이트중 입니다!</p>
+			</c:when>
+			<c:otherwise>
+				<c:forEach var="restaurant" items="${restaurant}">
+					<div style="margin-right: 20px;">
+						<a href="/oaga/travel_detail/${restaurant.id}">
+		
+						<img alt="" src="http://localhost:9090/oaga/upload/${restaurant.image}"
+		
+							style="width: 200px; height: 150px; border-radius: 15px;">
+						</a>
+						<p>${restaurant.name}</p>
+					</div>
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>
+		
 	</div>
 </div>
 <br />

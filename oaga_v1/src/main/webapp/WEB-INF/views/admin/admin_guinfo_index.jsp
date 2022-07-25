@@ -65,12 +65,8 @@
 						
 					<div
 						style="width: 100%; height: 60px;  display: flex; justify-content: space-around; margin-top: 20px; align-items: center;"
-						id="test">
+						id="test">	
 						
-						<input type="hidden" name="categoryType" value="GUINFO">
-						
-						
-
 					</div>
 
 					<div style="width: 100%; height: 568px;">
@@ -103,8 +99,8 @@
 								onchange="javascript:document.getElementById('r_imageUrl').value = this.value">
 						</div>
 
-						
-							<button class="btn btn-primary" id="btn-save" type="submit"
+							
+							<button class="btn btn-primary"  type="submit"
 							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">놀거리 추가</button>
 							
 						

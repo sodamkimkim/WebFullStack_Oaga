@@ -209,6 +209,7 @@ function restaurantupdate(id) {
 	}).done(function(data) {
 		if (data.status) {
 			alert("카페/식당 수정이 완료되었습니다.")
+			location.href = "/oaga/";
 
 		}
 
@@ -250,7 +251,6 @@ function addSelectedGuList2(response) {//구칸에 구이름 뿌리기
 	var a = test.length;
 
 	var test = response.data;
-	console.log(test + " test");
 	var a = test.length;
 
 	var select = new Array();
@@ -273,7 +273,6 @@ function addSelectedGuList2(response) {//구칸에 구이름 뿌리기
 }
 function areaGuClick2(id) {
 
-	console.log(id + "맞나?");
 
 	$.ajax({
 		type: "GET",
@@ -403,7 +402,7 @@ function update(id) {
 	}).done(function(data) {
 		if (data.status) {
 			alert("놀거리 수정이 완료되었습니다.")
-
+			location.href = "/oaga/";
 		}
 
 	}).fail(function(error) {

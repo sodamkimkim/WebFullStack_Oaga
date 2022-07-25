@@ -52,6 +52,7 @@ public class TravelInfoService {
 
 	@Transactional
 	public List<GuInfo> guInfo(int id) {
+		
 		return randmarkRepository.mFindByAreaGu(id);
 	}
 
