@@ -53,9 +53,7 @@ public class ReviewController {
 	} 
 	
 	
-	
 	// 로그인 한 경우
-
 	@GetMapping("/mreview")
 	public String reviewHome(@PageableDefault(size = 6, sort = "count", direction = Direction.DESC) Pageable pageable,
 			Model model, @AuthenticationPrincipal PrincipalDetail detail) {

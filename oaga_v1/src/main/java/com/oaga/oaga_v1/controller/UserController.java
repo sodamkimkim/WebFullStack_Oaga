@@ -185,14 +185,6 @@ public class UserController {
 	public String updateMyProfileForm() {
 		return "user/updatemyprofile_form";
 	}
-
-	
-	 
-	
-	
-	
-	
-	
 	
 	// 소셜로그인
 	@GetMapping("/auth/kakao/callback")

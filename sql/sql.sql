@@ -90,6 +90,7 @@ SELECT * FROM user ORDER BY likes DESC LIMIT 5;
 SELECT * FROM area;
 SELECT * FROM areagu;
 
+SELECT * FROM guinfo;
 DESC area;
 
 INSERT INTO area VALUES(1,'서울',"아무거나",'<img class="area_img" src="https://cdn.pixabay.com/photo/2016/11/02/14/32/lotte-world-tower-1791802_960_720.jpg">');
@@ -168,7 +169,7 @@ INSERT INTO guinfo VALUES(13,'판교',"GUINFO","가나다라마바사아자차�
 
 
 
-INSERT INTO restaurant VALUES(1,'강남대로2',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스1",1);
+INSERT INTO restaurant VALUES(1,'강남대로2',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스1", 'https://picsum.photos/200/300/?blur' ,1);
 INSERT INTO restaurant VALUES(2,'강남대로2',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스2",1);
 INSERT INTO restaurant VALUES(3,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스2",7);
 INSERT INTO restaurant VALUES(7,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스7",7);

@@ -36,7 +36,7 @@
 	margin-left: 7px;
 	display: flex;
 	align-items: flex-end;
-	margin-bottom:7px;
+	margin-bottom: 7px;
 }
 
 .best_reviewer_a {
@@ -140,7 +140,9 @@
 		<div class="review_option">
 			<div class="sort on" data-id="po">인기</div>
 			<div class="sort_line"></div>
-			<button style="background: none; border: none;" id="recent-btn"><div class="sort" data-id="regdate">신규</div></button>
+			<button style="background: none; border: none;" id="recent-btn">
+				<div class="sort" data-id="regdate">신규</div>
+			</button>
 		</div>
 
 
@@ -252,15 +254,14 @@
 								</a>
 							</c:when>
 							<c:otherwise>
-								<a class="best_reviewer_a"
-									href="/oaga/userpage_form_l/${bestuser.id}"> <img
-									src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
+								<a class="best_reviewer_a" onclick="checkMyPage(${bestuser.id});">
+								<input type="hidden" value="${principal.user.id}" id="myId"> 
+								<img src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
 									class="best_reviewer_profile">
 									<div class="like-Box">
 										<img class="best_reviewer_icon"
 											src="/oaga/images/userPage/heart.png"> <span>&nbsp;${bestuser.likes}</span>
-									</div>
-								</a>
+									</div> </a>
 							</c:otherwise>
 						</c:choose>
 
@@ -277,5 +278,15 @@
 </section>
 
 <script src="/oaga/js/review.js"></script>
+<script type="text/javascript">
+let myId = $("#myId").val();
+function checkMyPage(userId) {
+	if(userId == myId) {
+		location.href = "/oaga/mypage_form";
+	} else {
+		location.href = "/oaga/userpage_form_l/"+userId;
+	}
+}
+</script>
 
 <%@ include file="../layout/footer.jsp"%>
