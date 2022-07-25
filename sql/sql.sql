@@ -47,14 +47,6 @@ SELECT * FROM follow;
 
 SELECT * FROM area WHERE area LIKE "%부%";
 
-
-DESC user;
-SELECT * FROM user;
-DESC review;
-SELECT * FROM review;
-DESC reply;
-SELECT * FROM reply;
-
 DROP DATABASE oaga;
 
 SELECT COUNT(*) FROM review GROUP BY userId HAVING userId = 2;

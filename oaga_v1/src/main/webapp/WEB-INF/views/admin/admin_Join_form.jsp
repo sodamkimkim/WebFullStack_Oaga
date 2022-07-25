@@ -39,7 +39,7 @@ a {
 h1 {
 	text-align: center;
 	margin-bottom: 30px;
-	color: rgba(245, 161, 25, 0.9);
+	color: #66B2FF;
 }
 
 .formRow1 {
@@ -77,7 +77,7 @@ h1 {
 	font-size: 14px;
 	/* background-color: #f5a119;
   opacity: 0.9; */
-	background-color: rgba(245, 161, 25, 0.9);
+	background-color: #66B2FF;
 }
 
 .formRow2 .btn_join:hover {

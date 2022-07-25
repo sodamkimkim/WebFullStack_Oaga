@@ -126,6 +126,7 @@ footer {
 }
 
 .btn_join_admin {
+	cursor: pointer;
 	width: 280px;
 	height: 30px;
 	border-radius: 5px;
@@ -171,8 +172,8 @@ footer {
 					<!--formRow1-->
 					<div class="formRow2">
 						<button type="submit" id="btn_join" class="btn btn_join">회원가입</button>
-						<button type="submit" id="btn_join_admin"
-							class="btn btn_join_admin">관리자 회원가입</button>
+						<button type="button" onclick="adminJoinPage();"
+							class="btn btn_join_admin">관리자 회원가입 페이지</button>
 					</div>
 				</form>
 			</div>
@@ -189,4 +190,10 @@ footer {
 	</div>
 	<!--main-->
 </body>
+<script type="text/javascript">
+function adminJoinPage() {
+	location.href = "/oaga/auth/admin_join_page";
+}
+</script>
 </html>
+

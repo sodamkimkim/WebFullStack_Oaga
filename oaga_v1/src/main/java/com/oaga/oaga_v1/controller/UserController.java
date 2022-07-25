@@ -73,6 +73,10 @@ public class UserController {
 	@Autowired
 	private FollowService followService;
 	
+	@GetMapping("/error")
+	public String errorPage() {
+		return "error";
+	}
 	
 	@GetMapping("/auth/login_form")
 	public String loginForm() {
