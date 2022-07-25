@@ -43,9 +43,15 @@ public class TravelInfoController {
 		List<AreaGu> guInfoImage = travelInfoService.findByid_image(areaGu);
 		List<GuInfo> guInfoList = travelInfoService.guInfo(areaGu);
 		List<Restaurant> restaurantList = travelInfoService.guInfoRestaurant(areaGu);
+			
+		System.out.println(guInfoList.isEmpty() + "dasldas");
+			
+			
+			model.addAttribute("guInfoList", guInfoList);
+		
+		
 		
 		model.addAttribute("guInfoImage", guInfoImage);
-		model.addAttribute("guInfoList", guInfoList);
 		model.addAttribute("restaurantList", restaurantList);
 		
 		return "/travelInfo/guinfo_form";

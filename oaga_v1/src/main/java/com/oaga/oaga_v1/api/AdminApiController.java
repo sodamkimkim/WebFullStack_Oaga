@@ -52,7 +52,7 @@ public class AdminApiController {
 	public ResponseDto<List<AreaGu>> restaurantSave(@PathVariable int id, Model model) {
 
 		List<AreaGu> areaGuList = adminService.areaGuNmae(id);
-		System.out.println(areaGuList + " areaGuListareaGuList");
+		
 		model.addAttribute("areaGuName",areaGuList);
 		
 		return new ResponseDto<>(HttpStatus.OK, areaGuList);
@@ -61,9 +61,9 @@ public class AdminApiController {
 	
 	@GetMapping("/api/admin/guinfoupdate/{areaguid}")
 	public ResponseDto<List<GuInfo>> guinfoUpdateList(@PathVariable int areaguid, Model model){
-		System.out.println(areaguid + "@#@@@");
+		
 		List<GuInfo> guinfoList = adminService.findAreaGuId(areaguid);
-		System.out.println(guinfoList + "guinfoListguinfoList");
+
 		model.addAttribute("guinfoList",guinfoList);
 		
 		return new ResponseDto<>(HttpStatus.OK, guinfoList);
@@ -74,7 +74,7 @@ public class AdminApiController {
 	public ResponseDto<List<Restaurant>> restaurantUpdateList(@PathVariable int areaguid, Model model){
 		System.out.println(areaguid + "@#@@@");
 		List<Restaurant> restaurantList = adminService.findAreaGuId2(areaguid);
-		System.out.println(restaurantList + "restaurantList");
+
 		model.addAttribute("restaurantList",restaurantList);
 		
 		return new ResponseDto<>(HttpStatus.OK, restaurantList);
@@ -85,7 +85,6 @@ public class AdminApiController {
 	public ResponseDto<List<GuInfo>> guinfoupdatefindid(@PathVariable int guinfo, Model model){
 		
 		List<GuInfo> guinfo_info = adminService.findGuinfoId(guinfo);
-		System.out.println(guinfo_info + " guinfo_infoguinfo_info");
 		model.addAttribute("guinfo_info",guinfo_info);
 		
 		return new ResponseDto<>(HttpStatus.OK, guinfo_info);
@@ -95,7 +94,6 @@ public class AdminApiController {
 	public ResponseDto<List<Restaurant>> restaurantupdatefindid(@PathVariable int restaurant, Model model){
 		
 		List<Restaurant> restaurant_info = adminService.findRestaurant(restaurant);
-		System.out.println(restaurant_info + " restaurant_info가나다ㅡ엠ㄴ으메");
 		model.addAttribute("restaurant_info",restaurant_info);
 		
 		return new ResponseDto<>(HttpStatus.OK, restaurant_info);

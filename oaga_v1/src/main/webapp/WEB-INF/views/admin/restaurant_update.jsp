@@ -55,7 +55,7 @@
 				</div>
 				
 				<div style="width: 350px;  height: 100%;  text-align: center; border-bottom: 1px solid;">
-					<h4 style="height: 29px; border: 1px solid;">수정</h4>
+					<h4 style="height: 29px; border: 1px solid;"><a href="/">수정</a></h4>
 					<div style="height: 668px; border: 1px solid;"  >
 					<input type="hidden" value="${restaurantList}">
 						<div style="width: 100%; height: 668px; "id="restaurantList">
