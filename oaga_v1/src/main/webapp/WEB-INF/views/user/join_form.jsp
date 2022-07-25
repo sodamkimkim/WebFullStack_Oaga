@@ -113,15 +113,28 @@ footer {
 }
 
 .userProfileWrap label {
-	margin-top:10px;
+	margin-top: 10px;
 	margin-bottom: 15px;
 	font-size: 16px;
 	color: #333;
 }
+
 .checkId-label {
 	font-size: 12px;
 	border-radius: 5px;
 	background-color: rgba(245, 161, 25, 0.9);
+}
+
+.btn_join_admin {
+	width: 280px;
+	height: 30px;
+	border-radius: 5px;
+	border: transparent;
+	font-weight: bold;
+	color: #fff;
+	font-size: 14px;
+	background-color: #66B2FF;
+	margin-top: 20px;
 }
 </style>
 </head>
@@ -132,24 +145,25 @@ footer {
 				<a href="/oaga">OaGa</a>
 			</h1>
 			<div class="con">
-				<form action="/oaga/auth/joinproc" method="post" enctype="multipart/form-data">
+				<form action="/oaga/auth/joinproc" method="post"
+					enctype="multipart/form-data">
 					<!-- csrf???? xss -->
 					<div class="formRow1">
 						<input type="text" class="form-input" placeholder="Enter ID"
-							id="username" name="username" />
-						<label class="checkId-label" for="btn-checkId">중복체크</label>
+							id="username" name="username" /> <label class="checkId-label"
+							for="btn-checkId">중복체크</label>
 						<button id="btn-checkId"></button>
-						 <input type="password"
-							class="form-input" placeholder="Enter password" id="password"
-							name="password" /> <br /> <input type="text" class="form-input"
-							placeholder="Enter name" id="userNickName" name="userNickName" />
-						<input type="email" class="form-input" placeholder="Enter email"
-							id="email" name="email" />
+						<input type="password" class="form-input"
+							placeholder="Enter password" id="password" name="password" /> <br />
+						<input type="text" class="form-input" placeholder="Enter name"
+							id="userNickName" name="userNickName" /> <input type="email"
+							class="form-input" placeholder="Enter email" id="email"
+							name="email" />
 						<div class="userProfileWrap">
-							<label class="lblUserProfileFile" for="userProfileFile">사용자 프로필 등록: </label> 
-							<input type="file"
-								name="file" placeholder="upload user-Profile"
-								class="form-input" id="userProfileFile" >
+							<label class="lblUserProfileFile" for="userProfileFile">사용자
+								프로필 등록: </label> <input type="file" name="file"
+								placeholder="upload user-Profile" class="form-input"
+								id="userProfileFile">
 						</div>
 
 
@@ -157,6 +171,8 @@ footer {
 					<!--formRow1-->
 					<div class="formRow2">
 						<button type="submit" id="btn_join" class="btn btn_join">회원가입</button>
+						<button type="submit" id="btn_join_admin"
+							class="btn btn_join_admin">관리자 회원가입</button>
 					</div>
 				</form>
 			</div>

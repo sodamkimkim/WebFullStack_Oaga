@@ -17,7 +17,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.oaga.oaga_v1.dto.RequestRestaurantDto;
 import com.oaga.oaga_v1.dto.RequestTravelDto;
@@ -106,7 +105,6 @@ public class AdminController {
 	public String guinfoSave(RequestTravelDto dto) {
 		dto.setCategoryType(CategoryType.GUINFO);
 		adminService.saveGuInfo(dto);
-
 		return "redirect:/";
 
 	}
