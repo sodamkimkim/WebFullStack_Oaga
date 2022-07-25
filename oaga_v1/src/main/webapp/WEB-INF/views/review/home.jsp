@@ -140,7 +140,7 @@
 		<div class="review_option">
 			<div class="sort on" data-id="po">인기</div>
 			<div class="sort_line"></div>
-			<div class="sort" data-id="regdate">신규</div>
+			<button style="background: none; border: none;" id="recent-btn"><div class="sort" data-id="regdate">신규</div></button>
 		</div>
 
 
@@ -276,6 +276,6 @@
 	</div>
 </section>
 
-
+<script src="/oaga/js/review.js"></script>
 
 <%@ include file="../layout/footer.jsp"%>

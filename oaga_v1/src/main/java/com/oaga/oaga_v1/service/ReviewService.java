@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.UUID;
 
 import javax.transaction.Transactional;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 import com.oaga.oaga_v1.dto.RequestReviewFileDto;
 import com.oaga.oaga_v1.repository.ReplyRepository;
 import com.oaga.oaga_v1.repository.ReviewRepository;
+import com.oaga.oaga_v1.reviewModel.IsWritingType;
 import com.oaga.oaga_v1.reviewModel.Reply;
 import com.oaga.oaga_v1.reviewModel.Review;
 import com.oaga.oaga_v1.userModel.User;
@@ -58,6 +60,29 @@ public class ReviewService {
 //		reviewRepository.save(review);
 	}
 	
+	// 리뷰 수정
+	@Transactional
+	public void updateReview(int reviewId, RequestReviewFileDto dto) {
+		Review reviewEntity = reviewRepository.findById(reviewId).orElseThrow(() -> {
+			return new IllegalArgumentException("게시글을 찾을 수 없습니다.");
+		});
+		UUID uuid = UUID.randomUUID();
+		String imageFileName = uuid.toString() + "." + extracktExt(dto.getFile().getOriginalFilename());
+		String newFileName = (imageFileName.trim()).replaceAll("\\s", "");
+		Path imageFilePath = Paths.get(uploadFolder +  newFileName);
+		try {
+			Files.write(imageFilePath, dto.getFile().getBytes());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		reviewEntity.setTitle(dto.getTitle());
+		reviewEntity.setAreaName(dto.getAreaName());
+		reviewEntity.setContent(dto.getContent());
+		reviewEntity.setTheme(dto.getTheme());
+		reviewEntity.setReviewImageUrl(newFileName);
+		reviewEntity.setIsWriting(IsWritingType.DONE);
+	}
+	
 	@Transactional
 	public int reviewCount(int userId) {
 		return reviewRepository.reviewCount(userId).orElse(0);
@@ -66,7 +91,8 @@ public class ReviewService {
 	// 조회순으로 출력
 	@Transactional
 	public Page<Review> getBestReviewList(Pageable pageable) {
-		return reviewRepository.findAll(pageable);
+		System.out.println(IsWritingType.DONE.toString()  + " <<<<<< ");
+		return reviewRepository.findByIsWriting(pageable, IsWritingType.DONE);
 	}
 	
 	// 베스트 리뷰어 출력	
@@ -82,7 +108,10 @@ public class ReviewService {
 	}
 	
 	// 최신순으로 출력
-	
+	@Transactional
+	public List<Review> findReviewByData() {
+		return reviewRepository.findByRecentCreateDate();
+	}
 	
 	// 리뷰 삭제
 	@Transactional
@@ -123,6 +152,11 @@ public class ReviewService {
 	//리뷰 검색 
 	public Page<Review> searchReviewByTitle(Pageable pageable, String title) {
 		return reviewRepository.findByTitleContaining(pageable, title);
+	}
+	
+	// 임시저장 데이터
+	public Review findIsWriting(int userId) {
+		return reviewRepository.findisWriting(userId).orElse(null);
 	}
 	
 }
