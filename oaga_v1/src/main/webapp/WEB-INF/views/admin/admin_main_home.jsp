@@ -13,15 +13,15 @@
 				<div class="title">OAGA ADMIN PAGE</div>
 			</div>
 			<div class="b_box">
-				<button class="btn-addForm" id="btn-addForm">
+				<button onclick="savePage();" class="btn-addForm" id="btn-addForm">
 					<p>데이터 추가하기</p>
 					<img class="rightIcon" src="/oaga/images/mainPage/right.png">
 				</button>
-				<button class="btn-updateForm" id="btn-updateForm">
+				<button onclick="updatePage();" class="btn-updateForm" id="btn-updateForm">
 					<p>데이터 수정하기</p>
 					<img class="rightIcon" src="/oaga/images/mainPage/right.png">
 				</button>
-				<button class="btn-deleteForm" id="btn-deleteForm">
+				<button onclick="deletePage();" class="btn-deleteForm" id="btn-deleteForm">
 					<p>데이터 삭제하기</p>
 					<img class="rightIcon" src="/oaga/images/mainPage/right.png">
 				</button>
@@ -31,6 +31,17 @@
 
 </body>
 
+<script>
+function savePage() {
+	location.href = "/oaga/admin/guinfo_save_page";
+}
+function updatePage() {
+	location.href = "/oaga/admin/updatepage"
+}
+function deletePage() {
+	location.href = "/oaga/admin/deletepage"
+}
+</script>
 
 <%@ include file="../layout/footer.jsp"%>
 

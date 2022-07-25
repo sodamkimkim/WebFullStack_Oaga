@@ -60,7 +60,6 @@ public class AdminController {
 	
 	@GetMapping("/admin/restaurant_save_page")
 	public String adminrestaurantPage(Model model) {
-
 		List<Area> area = adminService.areaAll();
 		model.addAttribute("areaList", area);
 		return "admin/admin_restaurant_index";
