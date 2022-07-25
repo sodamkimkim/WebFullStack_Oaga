@@ -7,12 +7,16 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.oaga.oaga_v1.auth.PrincipalDetail;
+import com.oaga.oaga_v1.dto.RequestUserProfileDto;
 import com.oaga.oaga_v1.dto.ResponseDto;
 import com.oaga.oaga_v1.service.UserService;
 import com.oaga.oaga_v1.userModel.User;
@@ -37,7 +41,7 @@ public class UserApiController {
 	@PutMapping("/api/userprofileupdate")
 	public ResponseDto<Integer> updateMyProfile(@AuthenticationPrincipal PrincipalDetail detail,
 			@RequestBody MultipartFile file) {
-		
+
 		System.out.println("MultipartFile 찍어봄:" + file.getOriginalFilename());
 		System.out.println("file tostring: " + file.toString());
 		userService.updateUserProfile(detail.getUser().getId(), file);
@@ -48,6 +52,11 @@ public class UserApiController {
 		System.out.println("여기찍히나요?");
 		return new ResponseDto<Integer>(HttpStatus.OK, 1);
 
+	}
+
+	@PostMapping("/api/checkId")
+	public User checkUsername(@RequestBody User user) {
+		return userService.checkUserName(user.getUsername());
 	}
 
 }

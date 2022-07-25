@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="../layout/admin_header.jsp"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title>login_form</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <!--  <link rel="stylesheet" href="css/user/joinstyle.css" /> -->
 <style type="text/css">
 * {
@@ -132,13 +136,18 @@ footer {
 				<a href="/oaga">OaGa</a>
 			</h1>
 			<div class="con">
-				<form action="/oaga/auth/joinproc" method="post" enctype="multipart/form-data">
+				<form action="/oaga/auth/joinproc" method="post" onsubmit="joinCheck()" enctype="multipart/form-data">
 					<!-- csrf???? xss -->
 					<div class="formRow1">
+					
 						<input type="text" class="form-input" placeholder="Enter ID"
-							id="username" name="username" />
+							id="username" name="username"/>
+						<!-- 	
 						<label class="checkId-label" for="btn-checkId">중복체크</label>
-						<button id="btn-checkId"></button>
+						 -->
+						
+						<button id="btn-checkId" type="button" onclick="checkId()" >중복체크</button>
+						
 						 <input type="password"
 							class="form-input" placeholder="Enter password" id="password"
 							name="password" /> <br /> <input type="text" class="form-input"
@@ -172,5 +181,8 @@ footer {
 		</footer>
 	</div>
 	<!--main-->
+<script src="../js/user.js"></script>
 </body>
 </html>
+
+

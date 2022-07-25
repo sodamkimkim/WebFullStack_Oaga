@@ -16,7 +16,8 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	@Query(value = "SELECT * FROM user ORDER BY likes DESC LIMIT 5;", nativeQuery = true)
 	List<User> bestUser();
 	
-	
+	@Query(value = "select * from user where username = ?;", nativeQuery = true)
+	List<User> mFindUsername(String username);
 	
 	
 }
