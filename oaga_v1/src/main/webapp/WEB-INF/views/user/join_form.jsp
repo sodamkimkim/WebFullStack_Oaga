@@ -118,6 +118,11 @@ footer {
 	font-size: 16px;
 	color: #333;
 }
+.checkId-label {
+	font-size: 12px;
+	border-radius: 5px;
+	background-color: rgba(245, 161, 25, 0.9);
+}
 </style>
 </head>
 <body>
@@ -131,7 +136,10 @@ footer {
 					<!-- csrf???? xss -->
 					<div class="formRow1">
 						<input type="text" class="form-input" placeholder="Enter ID"
-							id="username" name="username" /> <input type="password"
+							id="username" name="username" />
+						<label class="checkId-label" for="btn-checkId">중복체크</label>
+						<button id="btn-checkId"></button>
+						 <input type="password"
 							class="form-input" placeholder="Enter password" id="password"
 							name="password" /> <br /> <input type="text" class="form-input"
 							placeholder="Enter name" id="userNickName" name="userNickName" />

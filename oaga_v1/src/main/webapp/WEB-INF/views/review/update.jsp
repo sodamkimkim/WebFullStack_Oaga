@@ -78,7 +78,7 @@
 				<div style="display: flex; margin-bottom: 20px">
 					<div class="r_image_button">대표 이미지 :</div>
 					<input class="upload_name" id="r_imageUrl" readonly="readonly"
-						placeholder="첨부파일"> <label class="r_image_label"
+						placeholder="${review.reviewImageUrl}" value="${review.reviewImageUrl}"> <label class="r_image_label"
 						for="r_image">파일 선택</label> <input type="file"
 						class="r_image_input" id="r_image" name="file" accept="image/*"
 						required="required"
