@@ -1,0 +1,17 @@
+.areagu_img {
+	width: 200px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	height: 150px;
+}
+
+.areaInfo_container {
+	display: flex;
+	justify-content: center;
+}
+
+.areaInfo_ImgBox {
+	width: 70%;
+	text-align: center;
+	margin-top: 57px;
+}

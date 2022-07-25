@@ -1,53 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
-<style>
-.review_search_input {
-	text-indent: 10px;
-}
-
-.review_search_area {
-	margin-top: 20px;
-	height: 70px;
-}
-
-/* .reviews_left { */
-/* 	display: flex; */
-/* 	flex-direction: column; */
-/* 	justify-content: center; */
-/* 	width: 200px; */
-/* } */
-.wrap_logged {
-	display: flex;
-	justify-content: space-around;
-	width: 800px;
-	margin-left: auto;
-	margin-right: auto;
-	align-items: center;
-	height: 200px;
-}
-
-.reviews_left {
-	display: flex;
-	align-items: center;
-}
-
-.like-Box {
-	margin-left: 7px;
-	display: flex;
-	align-items: flex-end;
-	margin-bottom: 7px;
-}
-
-.best_reviewer_a {
-	display: flex;
-}
-
-.like-Box>span {
-	margin-left: 3px;
-}
-</style>
+<link rel="stylesheet" type="text/css"
+	href="/oaga/css/review/homeStyle.css" />
 <!-- background: url("/images/reviewPage/review_bg.jpg")  -->
+
+
+
 <div class="review_search">
 	<div class="review_wrap">
 		<h5 class="review_search_title">
@@ -91,7 +50,7 @@
 						<div class="logged_left">
 
 							<a href="/oaga/mypage_form" class="logged_cnt_box logged_clip">
-								<b>작성한 리뷰</b> <span>${reviewCount}</span>
+								<b>내가 작성한 리뷰</b> <span>${reviewCount}</span>
 							</a>
 							<div class="logged_line">&nbsp;</div>
 							<a id="likes_btn" class="logged_cnt_box logged_plan"> <b>좋아요</b>
@@ -111,7 +70,7 @@
 								src="images/reviewPage/ico_review.png" />
 							</a>
 						</div>
-						리뷰 작성
+						나의 여행 리뷰 작성
 					</div>
 					<!-- logged_btn -->
 				</div>
