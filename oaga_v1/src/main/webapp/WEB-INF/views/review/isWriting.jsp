@@ -28,7 +28,7 @@
 					<h3 class="title">MY여행리뷰 작성</h3>
 				</div>
 				<div class="t_btn">
-					<button type="submit" class="write_btn" id="btn-save">수정 완료</button>
+					<button type="submit" class="write_btn" id="btn-save">등록 완료</button>
 				</div>
 				<div style="display: flex">
 					<div class="place">여행지 :</div>

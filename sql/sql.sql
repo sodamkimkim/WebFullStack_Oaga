@@ -74,6 +74,11 @@ SELECT * FROM review ORDER BY createDate DESC LIMIT 6;
 -- 좋아요가 많은 순서대로 user 정보 가져오는 쿼리문
 SELECT * FROM user ORDER BY likes DESC LIMIT 4;
 
+-- 임시저장 데이터가 있는지 확인
+SELECT * FROM review WHERE userId = 1 AND isWriting = 'ING';
+
+-- 임시저장 리뷰 제외하고 가져오기
+SELECT * FROM review WHERE isWriting = "DONE";
 
 
 

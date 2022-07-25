@@ -11,15 +11,16 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.oaga.oaga_v1.auth.PrincipalDetail;
 import com.oaga.oaga_v1.dto.RequestReviewFileDto;
-import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.reviewModel.IsWritingType;
 import com.oaga.oaga_v1.reviewModel.Review;
 import com.oaga.oaga_v1.service.FollowService;
@@ -76,8 +77,14 @@ public class ReviewController {
 	
 	// 리뷰 작성 페이지
 	@GetMapping("/write")
-	public String reviewWrite() {
-		return "/review/write";
+	public String reviewWrite(@AuthenticationPrincipal PrincipalDetail detail, Model model) {
+		Review isWritingReview = reviewService.findIsWriting(detail.getUser().getId());
+		if(isWritingReview == null) {
+			return "/review/write";
+		} else {
+			model.addAttribute("review", isWritingReview);
+			return "/review/isWriting";
+		}
 	}
 	
 	//리뷰 수정 페이지
@@ -106,16 +113,13 @@ public class ReviewController {
 	private String saveReview(RequestReviewFileDto dto, @AuthenticationPrincipal PrincipalDetail detail) {
 		dto.setIsWriting(IsWritingType.DONE);
 		reviewService.saveReview(dto, detail.getUser());
-		return "redirect:/review";
+		return "/review/home";
 	}
 	
 	// 리뷰 수정
-	@PostMapping("/api/review/{reviewId}/update")
-	private String updateReview(@PathVariable int reviewId, RequestReviewFileDto dto, @AuthenticationPrincipal PrincipalDetail detail) {
-		// 서비스에 review 데이터 삭제 요청
-		reviewService.deleteReviewById(reviewId);
-		dto.setIsWriting(IsWritingType.DONE);
-		reviewService.saveReview(dto, detail.getUser());
+	@PutMapping("/api/review/{reviewId}/update")
+	private String updateReview(@PathVariable int reviewId, RequestReviewFileDto dto) {
+		reviewService.updateReview(reviewId, dto);
 		return "redirect:/review";
 	} 
 	// 리뷰 임시 저장

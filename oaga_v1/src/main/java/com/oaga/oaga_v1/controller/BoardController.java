@@ -16,10 +16,6 @@ import com.oaga.oaga_v1.service.ReviewService;
 import com.oaga.oaga_v1.service.UserService;
 import com.oaga.oaga_v1.userModel.User;
 
-import lombok.extern.slf4j.Slf4j;
-
-
-@Slf4j
 @Controller // 페이지 리턴
 public class BoardController {
 	
@@ -29,13 +25,13 @@ public class BoardController {
 	@Autowired
 	private UserService userService;
 
-	@GetMapping({"/oaga/index"})
+	@GetMapping({"/" , ""})
 	public String index(@PageableDefault(size = 6, sort = "count", direction = Direction.DESC) Pageable pageable,
 			Model model) {
+		System.out.println("홈페이지 들어옴!!!!!!!!!!!!!!!!!!!!!!!!!");
 		Page<Review> reviews = reviewService.getBestReviewList(pageable);
 		List<User> bestUser = userService.bestUser();
-		System.out.println(bestUser);
-		
+		System.out.println("index 페이지 : " + bestUser);
 		model.addAttribute("reviews", reviews);
 		model.addAttribute("bestUser", bestUser);
 		return "index";

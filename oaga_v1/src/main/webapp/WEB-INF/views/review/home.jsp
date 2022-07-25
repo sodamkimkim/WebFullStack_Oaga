@@ -51,7 +51,7 @@
 					<div class="logged_name">${principal.user.userNickName}</div>
 					<div class="clear"></div>
 					<a href="/oaga/mypage_form" class="logged_cnt_box logged_clip">
-						<b>작성한 리뷰</b> <span>${reviewCount}</span>
+						<b>작성한 리뷰</b> <span id="reviewCount-s">${reviewCount}</span>
 					</a>
 					<div class="logged_line">&nbsp;</div>
 					<a id="likes_btn" class="logged_cnt_box logged_plan"> <b>좋아요</b>

@@ -36,7 +36,6 @@ public class UserService {
 	}
 
 	
-	@Transactional
 	public int saveUser(User user) {
 		try {
 			String rawPassword = user.getPassword();
