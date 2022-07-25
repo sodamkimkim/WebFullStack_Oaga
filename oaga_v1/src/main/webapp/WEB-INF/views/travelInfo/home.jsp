@@ -15,109 +15,70 @@
 	integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
 	crossorigin="anonymous">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+<link rel="stylesheet" href="css/travelinfo/homeStyle.css" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 
-
-<style>
-.areagu_img {
-	width: 200px;
-	border-radius: 10px;
-	margin-bottom: 10px;
-	height: 150px;
-}
-
-.areaList_li li a {
-	background-color: white;
-	padding: 7px;
-	border-radius: 40%;
-}
-
-.travelInfo-main-container {
-	margin-left: auto;
-	margin-right: auto;
-}
-</style>
 
 <input type="hidden" id="home">
 <div class="travelInfo-main-container"
-	style="width: 1290px; margin-top: 70px;">
-	<div
-		style="width: 1190px; height: 200px; background-color: rgba(245, 161, 25, 0.9); border-radius: 20px;">
-		<div
-			style="font-size: 30px; display: flex; justify-content: center; font-weight: bold;">
-			<span style="margin-top: 20px; color: white;">어디 여행 가고싶나요?</span>
-		</div>
-		<br />
-		<div class="areaList"
-			style="font-size: 15px; green; width: 600px; height: 50px; margin-left: 300px;">
-			<ul class="areaList_li"
-				style="display: flex; flex-direction: row; justify-content: space-around; padding-top: 12px;">
-				<li class="area_list"><a href="travel/areainfo/1">서울</a></li>
-				<li class="area_list"><a href="travel/areainfo/5">인천</a></li>
-				<li class="area_list"><a href="travel/areainfo/6">대전</a></li>
-				<li class="area_list"><a href="travel/areainfo/3">대구</a></li>
-				<li class="area_list"><a href="travel/areainfo/7">광주</a></li>
-				<li class="area_list"><a href="travel/areainfo/2">부산</a></li>
-				<li class="area_list"><a href="travel/areainfo/8">울산</a></li>
-				<li class="area_list"><a href="travel/areainfo/9">세종</a></li>
-				<li class="area_list"><a href="travel/areainfo/10">경기</a></li>
-				<li class="area_list"><a href="travel/areainfo/11">강원</a></li>
-			</ul>
-		</div>
-		<div class="areaList"
-			style="font-size: 15px; green; width: 600px; height: 50px; margin-left: 300px;">
-			<ul class="areaList_li"
-				style="display: flex; flex-direction: row; justify-content: space-around; padding-top: 12px;">
-				<li class="area_list"><a href="travel/areainfo/12">충북</a></li>
-				<li class="area_list"><a href="travel/areainfo/13">충남</a></li>
-				<li class="area_list"><a href="travel/areainfo/14">경북</a></li>
-				<li class="area_list"><a href="travel/areainfo/15">경남</a></li>
-				<li class="area_list"><a href="travel/areainfo/16">전북</a></li>
-				<li class="area_list"><a href="travel/areainfo/17">전남</a></li>
-				<li class="area_list"><a href="travel/areainfo/4">제주도</a></li>
+	style="width: 100%; margin-top: 57px;">
+	<div class="travelInfo_header">
+		<div class="travelInfo_header_filter">
+			<div class=travelInfo_hWrap>
+				<p>
+					<span>어디로</span> 여행 가고싶나요?
+				</p>
+				<div class=areaListWrap>
+					<div class="areaList">
+						<ul class="areaList_ul">
+							<li class="area_list_li"><a href="travel/areainfo/1">서울</a></li>
+							<li class="area_list_li"><a href="travel/areainfo/5">인천</a></li>
+							<li class="area_list_li"><a href="travel/areainfo/6">대전</a></li>
+							<li class="area_list_li"><a href="travel/areainfo/3">대구</a></li>
+							<li class="area_list_li"><a href="travel/areainfo/7">광주</a></li>
+							<li class="area_list_li"><a href="travel/areainfo/2">부산</a></li>
+							<li class="area_list_li"><a href="travel/areainfo/8">울산</a></li>
+							<li class="area_list_li"><a href="travel/areainfo/9">세종</a></li>
+							<li class="area_list_li"><a href="travel/areainfo/10">경기</a></li>
+							<li class="area_list_li"><a href="travel/areainfo/11">강원</a></li>
+						</ul>
+					</div>
+					<div class="areaList">
+						<ul class="areaList_ul">
+							<li class="area_list_li"><a href="travel/areainfo/12">충북</a></li>
+							<li class="area_list_li"><a href="travel/areainfo/13">충남</a></li>
+							<li class="area_list_li"><a href="travel/areainfo/14">경북</a></li>
+							<li class="area_list_li"><a href="travel/areainfo/15">경남</a></li>
+							<li class="area_list_li"><a href="travel/areainfo/16">전북</a></li>
+							<li class="area_list_li"><a href="travel/areainfo/17">전남</a></li>
+							<li class="area_list_li"><a href="travel/areainfo/4">제주도</a></li>
 
-			</ul>
-		</div>
-	</div>
-	<br />
-	<div class="mdu_img1type">
-		<div
-			style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">서울</div>
-		<div style="display: flex; width: 1190px;"  class="swiper-container">
-
-			<c:forEach var="area" items="${lists[0]}">
-				<div class="swiper-wrapper"
-					style="width: 200px; height: 200px; margin-right: 35px;">
-
-					<div class="swiper-slide" style="display: flex;">
-						<div >
-							<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
-								<h3 style="font-size: 16px;">${area.guname}</h3>
-							</a>
-						</div>
+						</ul>
 					</div>
 				</div>
-			</c:forEach>
-
+				<!-- areaListWrap -->
+			</div>
+			<!-- hWrap -->
 		</div>
-		</div>
-		<br /> <br />
+		<!-- travelInfo_header_filter -->
+	</div>
+	<!-- travelInfo header -->
 
-		<div class="mdu_img1type">
-			<div 
-				style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">부산</div>
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_row">
+			<h3 class="travelInfo_cityName">서울</h3>
 			<div style="display: flex; width: 1190px;" class="swiper-container">
-													
 
-				<c:forEach var="area" items="${lists[1]}" >
-				
+				<c:forEach var="area" items="${lists[0]}">
 					<div class="swiper-wrapper"
 						style="width: 200px; height: 200px; margin-right: 35px;">
+
 						<div class="swiper-slide" style="display: flex;">
-							<div >
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
-									<h3 style="font-size: 16px;">${area.guname}</h3>
+							<div class="travleInfo_element">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>
@@ -125,21 +86,47 @@
 				</c:forEach>
 
 			</div>
+		</div>
+		<!-- travelInfo_row -->
+	</div>
+	<!-- travelInfo_rowBackground -->
+
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_row">
+			<h3>부산</h3>
+			<div style="display: flex; width: 1190px;" class="swiper-container">
+
+
+				<c:forEach var="area" items="${lists[1]}">
+
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: flex;">
+							<div class="travleInfo_element">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+
 			</div>
-			<br /> <br />
-			<div class="mdu_img1type">
-				<div
-					style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">대구</div>
+		</div>
+	</div>
+
+
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_body">
+			<div class="travelInfo_row">
+				<h3>대구</h3>
 				<div style="display: flex; width: 1190px;" class="swiper-container">
 
 					<c:forEach var="area" items="${lists[2]}">
 						<div class="swiper-wrapper"
 							style="width: 200px; height: 200px; margin-right: 35px;">
 							<div class="swiper-slide" style="display: flex;">
-								<div >
-									<a href="/oaga/travel_guinfo/${area.id}">
-									${area.image}
-										<h3 style="font-size: 16px;">${area.guname}</h3>
+								<div class="travleInfo_element">
+									<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
 									</a>
 								</div>
 							</div>
@@ -147,318 +134,306 @@
 					</c:forEach>
 
 				</div>
-				</div>
-				<br /> <br />
-				<div class="mdu_img1type">
-					<div
-						style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">제주도</div>
-					<div style="display: flex; width: 1190px;" class="swiper-container">
+			</div>
+		</div>
+	</div>
+	<!-- 	<div class="travelInfo_rowBackground"> -->
 
-						<c:forEach var="area" items="${lists[3]}">
-							<div class="swiper-wrapper"
-								style="width: 200px; height: 200px; margin-right: 35px;">
-								<div class="swiper-slide" style="display: flex;">
-									<div >
-										<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
-											<h3 style="font-size: 16px;">${area.guname}</h3>
-										</a>
-									</div>
-								</div>
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_row">
+			<h3>제주도</h3>
+			<div style="display: flex; width: 1190px;" class="swiper-container">
+
+				<c:forEach var="area" items="${lists[3]}">
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: flex;">
+							<div class="travleInfo_element">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								</a>
 							</div>
-						</c:forEach>
-
-					</div>
-					</div>
-					<br /> <br />
-					<div class="mdu_img1type">
-						<div
-							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">인천</div>
-						<div style="display: flex; width: 1190px;" class="swiper-container">
-
-							<c:forEach var="area" items="${lists[4]}">
-								<div class="swiper-wrapper"
-									style="width: 200px; height: 200px; margin-right: 35px;">
-									<div class="swiper-slide" style="display: flex;">
-										<div >
-											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
-												<h3 style="font-size: 16px;">${area.guname}</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-							</c:forEach>
-
 						</div>
-						<br /> <br />
-						<br /> <br />
 					</div>
-					<div class="mdu_img1type">
-						<div
-							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">대전</div>
-						<div style="display: flex; width: 1190px;" class="swiper-container">
+				</c:forEach>
 
-							<c:forEach var="area" items="${lists[5]}">
-								<div class="swiper-wrapper"
-									style="width: 200px; height: 200px; margin-right: 35px;">
-									<div class="swiper-slide" style="display: flex;">
-										<div >
-											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
-												<h3 style="font-size: 16px;">${area.guname}</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-							</c:forEach>
+			</div>
+		</div>
+	</div>
+	<!-- 	<div class="travelInfo_rowBackground"> -->
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_row">
+			<h3>인천</h3>
+			<div style="display: flex; width: 1190px;" class="swiper-container">
 
+				<c:forEach var="area" items="${lists[4]}">
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: flex;">
+							<div class="travleInfo_element">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								</a>
+							</div>
 						</div>
-						<br /> <br />
-						<br /> <br />
 					</div>
-					<div class="mdu_img1type">
-						<div
-							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">광주</div>
-						<div style="display: flex; width: 1190px;" class="swiper-container">
+				</c:forEach>
 
-							<c:forEach var="area" items="${lists[6]}">
-								<div class="swiper-wrapper"
-									style="width: 200px; height: 200px; margin-right: 35px;">
-									<div class="swiper-slide" style="display: flex;">
-										<div >
-											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
-												<h3 style="font-size: 16px;">${area.guname}</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-							</c:forEach>
+			</div>
+		</div>
+	</div>
+	<!-- 	<div class="travelInfo_rowBackground"> -->
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_row">
+			<h3>대전</h3>
+			<div style="display: flex; width: 1190px;" class="swiper-container">
 
+				<c:forEach var="area" items="${lists[5]}">
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: flex;">
+							<div class="travleInfo_element">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								</a>
+							</div>
 						</div>
-						<br /> <br />
-						<br /> <br />
 					</div>
-					<div class="mdu_img1type">
-						<div
-							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">울산</div>
-						<div style="display: flex; width: 1190px;" class="swiper-container">
+				</c:forEach>
 
-							<c:forEach var="area" items="${lists[7]}">
-								<div class="swiper-wrapper"
-									style="width: 200px; height: 200px; margin-right: 35px;">
-									<div class="swiper-slide" style="display: flex;">
-										<div >
-											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
-												<h3 style="font-size: 16px;">${area.guname}</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-							</c:forEach>
+			</div>
+		</div>
+	</div>
+	<!-- 	<div class="travelInfo_rowBackground"> -->
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_row">
+			<h3>광주</h3>
+			<div style="display: flex; width: 1190px;" class="swiper-container">
 
+				<c:forEach var="area" items="${lists[6]}">
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: flex;">
+							<div class="travleInfo_element">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								</a>
+							</div>
 						</div>
-						<br /> <br />
-						<br /> <br />
 					</div>
-					<div class="mdu_img1type">
-						<div
-							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">세종</div>
-						<div style="display: flex; width: 1190px;" class="swiper-container">
+				</c:forEach>
 
-							<c:forEach var="area" items="${lists[8]}">
-								<div class="swiper-wrapper"
-									style="width: 200px; height: 200px; margin-right: 35px;">
-									<div class="swiper-slide" style="display: flex;">
-										<div >
-											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
-												<h3 style="font-size: 16px;">${area.guname}</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-							</c:forEach>
+			</div>
+		</div>
+	</div>
+	<!-- 	<div class="travelInfo_rowBackground"> -->
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_row">
+			<h3>울산</h3>
+			<div style="display: flex; width: 1190px;" class="swiper-container">
 
+				<c:forEach var="area" items="${lists[7]}">
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: flex;">
+							<div class="travleInfo_element">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								</a>
+							</div>
 						</div>
-						<br /> <br />
-						<br /> <br />
 					</div>
-					<div class="mdu_img1type">
-						<div
-							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">경기</div>
-						<div style="display: flex; width: 1190px;" class="swiper-container">
+				</c:forEach>
 
-							<c:forEach var="area" items="${lists[9]}">
-								<div class="swiper-wrapper"
-									style="width: 200px; height: 200px; margin-right: 35px;">
-									<div class="swiper-slide" style="display: flex;">
-										<div >
-											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
-												<h3 style="font-size: 16px;">${area.guname}</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-							</c:forEach>
+			</div>
+		</div>
+	</div>
+	<!-- 	<div class="travelInfo_rowBackground"> -->
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_row">
+			<h3>세종</h3>
+			<div style="display: flex; width: 1190px;" class="swiper-container">
 
+				<c:forEach var="area" items="${lists[8]}">
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: flex;">
+							<div class="travleInfo_element">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								</a>
+							</div>
 						</div>
-						<br /> <br />
-						<br /> <br />
 					</div>
-					<div class="mdu_img1type">
-						<div
-							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">강원</div>
-						<div style="display: flex; width: 1190px;" class="swiper-container">
+				</c:forEach>
 
-							<c:forEach var="area" items="${lists[10]}">
-								<div class="swiper-wrapper"
-									style="width: 200px; height: 200px; margin-right: 35px;">
-									<div class="swiper-slide"style="display: flex;">
-										<div >
-											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
-												<h3 style="font-size: 16px;">${area.guname}</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-							</c:forEach>
+			</div>
+		</div>
+	</div>
+	<!-- 	<div class="travelInfo_rowBackground"> -->
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_row">
+			<h3>경기</h3>
+			<div style="display: flex; width: 1190px;" class="swiper-container">
 
+				<c:forEach var="area" items="${lists[9]}">
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: flex;">
+							<div class="travleInfo_element">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								</a>
+							</div>
 						</div>
-						<br /> <br />
-						<br /> <br />
 					</div>
-					<div class="mdu_img1type">
-						<div
-							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">충북</div>
-						<div style="display: flex; width: 1190px;" class="swiper-container">
+				</c:forEach>
 
-							<c:forEach var="area" items="${lists[11]}">
-								<div class="swiper-wrapper"
-									style="width: 200px; height: 200px; margin-right: 35px;">
-									<div class="swiper-slide" style="display: flex;">
-										<div >
-											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
-												<h3 style="font-size: 16px;">${area.guname}</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-							</c:forEach>
+			</div>
+		</div>
+	</div>
+	<!-- 	<div class="travelInfo_rowBackground"> -->
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_row">
+			<h3>강원</h3>
+			<div style="display: flex; width: 1190px;" class="swiper-container">
 
+				<c:forEach var="area" items="${lists[10]}">
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: flex;">
+							<div class="travleInfo_element">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								</a>
+							</div>
 						</div>
-						<br /> <br />
-						<br /> <br />
 					</div>
-					<div class="mdu_img1type">
-						<div
-							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">충남</div>
-						<div style="display: flex; width: 1190px;" class="swiper-container">
+				</c:forEach>
 
-							<c:forEach var="area" items="${lists[12]}">
-								<div class="swiper-wrapper"
-									style="width: 200px; height: 200px; margin-right: 35px;">
-									<div class="swiper-slide" style="display: flex;">
-										<div >
-											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
-												<h3 style="font-size: 16px;">${area.guname}</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-							</c:forEach>
+			</div>
+		</div>
+	</div>
+	<!-- 	<div class="travelInfo_rowBackground"> -->
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_row">
+			<h3>충북</h3>
+			<div style="display: flex; width: 1190px;" class="swiper-container">
 
+				<c:forEach var="area" items="${lists[11]}">
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: flex;">
+							<div class="travleInfo_element">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								</a>
+							</div>
 						</div>
-						<br /> <br />
-						<br /> <br />
 					</div>
-					<div class="mdu_img1type">
-						<div
-							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">경북</div>
-						<div style="display: flex; width: 1190px;" class="swiper-container">
+				</c:forEach>
 
-							<c:forEach var="area" items="${lists[13]}">
-								<div class="swiper-wrapper"
-									style="width: 200px; height: 200px; margin-right: 35px;">
-									<div class="swiper-slide" style="display: flex;">
-										<div >
-											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
-												<h3 style="font-size: 16px;">${area.guname}</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-							</c:forEach>
+			</div>
+		</div>
+	</div>
+	<!-- 	<div class="travelInfo_rowBackground"> -->
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_row">
+			<h3>충남</h3>
+			<div style="display: flex; width: 1190px;" class="swiper-container">
 
+				<c:forEach var="area" items="${lists[12]}">
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: flex;">
+							<div class="travleInfo_element">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								</a>
+							</div>
 						</div>
-						<br /> <br />
-						<br /> <br />
 					</div>
-					<div class="mdu_img1type">
-						<div
-							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">경남</div>
-						<div style="display: flex; width: 1190px;"class="swiper-container">
+				</c:forEach>
 
-							<c:forEach var="area" items="${lists[14]}">
-								<div class="swiper-wrapper"
-									style="width: 200px; height: 200px; margin-right: 35px;">
-									<div class="swiper-slide" style="display: flex;">
-										<div >
-											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
-												<h3 style="font-size: 16px;">${area.guname}</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-							</c:forEach>
+			</div>
+		</div>
+	</div>
+	<!-- 	<div class="travelInfo_rowBackground"> -->
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_row">
+			<h3>경북</h3>
+			<div style="display: flex; width: 1190px;" class="swiper-container">
 
+				<c:forEach var="area" items="${lists[13]}">
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: flex;">
+							<div class="travleInfo_element">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								</a>
+							</div>
 						</div>
-						<br /> <br />
-						<br /> <br />
 					</div>
-					<div class="mdu_img1type">
-						<div
-							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">전북</div>
-						<div style="display: flex; width: 1190px;" class="swiper-container"> 
+				</c:forEach>
 
-							<c:forEach var="area" items="${lists[15]}">
-								<div class="swiper-wrapper"
-									style="width: 200px; height: 200px; margin-right: 35px;">
-									<div class="swiper-slide" style="display: flex;">
-										<div >
-											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
-												<h3 style="font-size: 16px;">${area.guname}</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-							</c:forEach>
+			</div>
+		</div>
+	</div>
+	<!-- 	<div class="travelInfo_rowBackground"> -->
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_row">
+			<h3>경남</h3>
+			<div style="display: flex; width: 1190px;" class="swiper-container">
 
+				<c:forEach var="area" items="${lists[14]}">
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: flex;">
+							<div class="travleInfo_element">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								</a>
+							</div>
 						</div>
-						<br /> <br />
-						<br /> <br />
 					</div>
-					<div class="mdu_img1type">
-						<div
-							style="font-size: 25px; font-style: oblique; font-weight: bold; margin-bottom: 10px;">전남</div>
-						<div style="display: flex; width: 1190px;" class="swiper-container">
+				</c:forEach>
 
-							<c:forEach var="area" items="${lists[16]}">
-								<div class="swiper-wrapper"
-									style="width: 200px; height: 200px; margin-right: 35px;">
-									<div class="swiper-slide" style="display: flex;">
-										<div >
-											<a href="/oaga/travel_guinfo/${area.id}"> ${area.image}
-												<h3 style="font-size: 16px;">${area.guname}</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-							</c:forEach>
+			</div>
+		</div>
+	</div>
+	<!-- 	<div class="travelInfo_rowBackground"> -->
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_row">
+			<h3>전북</h3>
+			<div style="display: flex; width: 1190px;" class="swiper-container">
 
+				<c:forEach var="area" items="${lists[15]}">
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: flex;">
+							<div class="travleInfo_element">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								</a>
+							</div>
 						</div>
-						<br /> <br />
-						<br /> <br />
 					</div>
+				</c:forEach>
+
+			</div>
+		</div>
+	</div>
+	<!-- 	<div class="travelInfo_rowBackground"> -->
+	<div class="travelInfo_rowBackground">
+		<div class="travelInfo_row">
+			<h3>전남</h3>
+			<div style="display: flex; width: 1190px;" class="swiper-container">
+
+				<c:forEach var="area" items="${lists[16]}">
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: flex;">
+							<div class="travleInfo_element">
+								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+
+			</div>
+		</div>
+	</div>
+	<!-- 	<div class="travelInfo_rowBackground"> -->
 </div>
+<script src="js/travelInfo.js"></script>
 
-	<script src="js/travelInfo.js"></script>
-
-	<%@ include file="../layout/footer.jsp"%>
-
+<%@ include file="../layout/footer.jsp"%>
