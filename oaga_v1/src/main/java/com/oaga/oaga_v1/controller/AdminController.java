@@ -73,7 +73,7 @@ public class AdminController {
 
 	// 레드토랑 수정 페이지
 	@GetMapping("/admin/restaurant_updatepage")
-	private String adminㄲestaurantUpdateForm(Model model) {
+	private String adminRestaurantUpdateForm(Model model) {
 		List<Area> area = adminService.areaAll();
 		model.addAttribute("areaList", area);
 		return "/admin/restaurant_update";
