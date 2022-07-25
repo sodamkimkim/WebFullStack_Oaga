@@ -29,32 +29,15 @@
 				<a href="/oaga">OaGa</a>
 			</h1>
 			<ul class="gnb">
-			
-				
+				<li><a href="/oaga/travel_info">여행지정보보기</a></li>
 				<c:choose>
-					<c:when test="${principal.user.role eq 'ADMIN' }">
-							<li class="admin_mainmenu"><a href="/oaga/admin/guinfo_save_page">홈페이지 관리하기</a>
-								<ul class="admin_submenu">
-									<li><a href="/oaga/admin/guinfo_save_page">추가하기</a></li>				
-									<li><a href="/oaga/admin/updatepage">수정하기</a></li>
-									<li><a href="/oaga/admin/deletepage">삭제하기</a></li>
-								</ul>
-							</li>
+					<c:when test="${empty principal}">
+						<li><a href="/oaga/review">리뷰보기</a></li>
 					</c:when>
 					<c:otherwise>
-							<li><a href="/oaga/travel_info">여행지정보보기</a></li>
-								<c:choose>
-									<c:when test="${empty principal}">
-										<li><a href="/oaga/review">리뷰보기</a></li>
-									</c:when>
-									<c:otherwise>
-										<li><a href="/oaga/mreview">리뷰보기</a></li>
-									</c:otherwise>
-								</c:choose>
+						<li><a href="/oaga/mreview">리뷰보기</a></li>
 					</c:otherwise>
 				</c:choose>
-				
-			
 
 			</ul>
 			<!--gnb-->
@@ -104,4 +87,3 @@
 		</div>
 		<!--hWrap-->
 	</header>
-	

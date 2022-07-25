@@ -125,7 +125,6 @@ public class AdminApiController {
 
 	@DeleteMapping("/admin/deleterestaurant/{id}")
 	public ResponseDto<Integer> deleteRestaurantById(@PathVariable int id) {
-		System.out.println("응 아라쪙");
 		adminService.deleteRestaurantById(id);
 		return new ResponseDto<Integer>(HttpStatus.OK, 1);
 	}

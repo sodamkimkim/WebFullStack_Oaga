@@ -28,10 +28,8 @@ public class BoardController {
 	@GetMapping({"/" , ""})
 	public String index(@PageableDefault(size = 6, sort = "count", direction = Direction.DESC) Pageable pageable,
 			Model model) {
-		System.out.println("홈페이지 들어옴!!!!!!!!!!!!!!!!!!!!!!!!!");
 		Page<Review> reviews = reviewService.getBestReviewList(pageable);
 		List<User> bestUser = userService.bestUser();
-		System.out.println("index 페이지 : " + bestUser);
 		model.addAttribute("reviews", reviews);
 		model.addAttribute("bestUser", bestUser);
 		return "index";

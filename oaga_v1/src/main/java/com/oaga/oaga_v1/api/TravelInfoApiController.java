@@ -31,17 +31,14 @@ public class TravelInfoApiController {
 	// 여행지 정보 검색
 	@GetMapping("/api/searchArea/{searchArea}")
 	public ResponseDto<List<Area>> searchArea(@PathVariable String searchArea) {
-		System.out.println("요청 들어옴");
 		List<Area> result = infoService.findAreaByTitle(searchArea);
 		return new ResponseDto<>(HttpStatus.OK, result);
 	}
 
 	@PostMapping("/ajax/autocomplete.do")
 	public Map<String, Object> autocomplete(@RequestParam Map<String, Object> paramMap) throws Exception {
-		System.out.println(paramMap.get("value"));
 		String area = paramMap.get("value").toString();
 		List<Area> resultList = infoService.findAreaByTitle(area);
-		System.out.println(resultList);
 		paramMap.put("resultList", resultList);
 		return paramMap;
 	}

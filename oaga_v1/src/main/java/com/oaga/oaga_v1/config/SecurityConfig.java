@@ -15,6 +15,7 @@ import org.springframework.security.web.firewall.DefaultHttpFirewall;
 import org.springframework.security.web.firewall.HttpFirewall;
 
 import com.oaga.oaga_v1.auth.PrincipalDetailService;
+import com.oaga.oaga_v1.handler.CustomSuccessfulHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -38,7 +39,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
 	
 	@Override
-
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
             .authorizeRequests()
@@ -46,12 +46,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
             .permitAll()
             .antMatchers("/admin/").hasRole("ADMIN")
             .anyRequest().authenticated()
-
-        .and()
+            .and()
             .formLogin()
             .loginPage("/auth/login_form")
             .loginProcessingUrl("/auth/loginproc")
-            .defaultSuccessUrl("/");
+            .successHandler(new CustomSuccessfulHandler());
 
 
 

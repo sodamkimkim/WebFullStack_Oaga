@@ -42,6 +42,7 @@ public class AdminController {
 	public String adminMaibForm() {
 		return "admin/admin_main_home";
 	}
+	
 	@GetMapping("/admin/admin_login_form")
 	public String loginForm() {
 		return "admin/admin_login_form";

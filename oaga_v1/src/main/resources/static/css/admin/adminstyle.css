@@ -1,0 +1,283 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+header {
+	width: 100%;
+	background-color: rgba(253, 253, 253, 0.7);
+	/*mix-blend-mode: screen;*/
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	padding-top: 20px;
+	z-index: 99;
+	box-shadow: 1px 2px 5px rgba(51,51,51,0.2);
+}
+
+.hWrap {
+	width: 1092px;
+	height: 57px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+h1 {
+	color: #66B2FF;
+	position: absolute;
+	padding-top: 0px;
+}
+
+.gnb {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	padding-top: 15px;
+	margin-left: 200px;
+}
+
+.gnb li {
+	font-weight: bold;
+	color: rgba(51, 51, 51, 0.8);
+}
+
+.admin_submenu li:hover {
+	color: #66B2FF;
+}
+
+.util {
+	display: flex;
+	position: absolute;
+	right: 0;
+	margin-top: 15px;
+}
+
+.util form {
+	position: relative;
+}
+
+.admin_mainmenu {
+	margin-left: 15px;
+	text-align: center;
+	display: block;
+	width: 150px;
+}
+
+.admin_submenu {
+	/* background-color: #BEBEBF; */
+	padding-top: 5px;
+	width: inherit;
+	text-align: center;
+	position: absolute;
+	display: none;
+	width: inherit;
+}
+
+.admin_submenu>li {
+	background-color: #ffffff;
+    background-color: rgba( 255, 255, 255, 0.5 );
+	width: inherit;
+	padding: 2px;
+	color: rgba(51, 51, 51, 0.8);
+	font-size: 17px;
+	cursor: pointer;
+	height: 30px;
+}
+
+.admin_mainmenu:hover .admin_submenu {
+	display: block;
+}
+
+.admin_submenu:hover .admin_submenu {
+	display: block;
+}
+
+
+.best_reviewer_icon {
+	width: 20px;
+	height: 20px;
+}
+
+.logged_plan {
+	cursor: pointer;
+}
+
+.util form button {
+	/*transform: scale(0.6);*/
+	border-radius: 5px;
+	border: 0;
+	background-color: transparent;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: 3px;
+	right: 13px;
+}
+
+.headerBtn {
+	width: 64px;
+	height: 26px;
+	border: transparent;
+	color: rgba(51, 51, 51, 0.75);
+	background-color: transparent;
+}
+
+.headerBtn:hover {
+	color: rgba(51, 51, 51, 1);
+}
+
+.util .loginBtn, .myPageBtn {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+/* footer */
+footer {
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.fWrap {
+	width: 1092px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.ftrow1 {
+	display: flex;
+	justify-content: space-between;
+}
+
+.ftrow1 .box {
+	width: 260px;
+	color: white;
+	padding-top: 17px;
+	padding-bottom: 17px;
+	box-sizing: border-box;
+}
+
+.fWrap h4 {
+	font-size: 16px;
+	color: #ccc;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	line-height: 2;
+	margin-bottom: 17px;
+}
+
+.fWrap li {
+	line-height: 1.5;
+}
+
+.icon {
+	display: flex;
+	margin-top: 50px;
+}
+
+.ico1 {
+	margin-right: 10px;
+}
+
+.ftrow2 {
+	display: flex;
+	justify-content: space-between;
+	color: white;
+	line-height: 2;
+}
+
+.footerbottom {
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	background-color: transparent;
+}
+
+.opt select {
+	width: 113px;
+	margin-top: 30px;
+	background-color: transparent;
+	border-radius: 0;
+	border: 1px solid #424753;
+	color: #ccc;
+	font-size: 16px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+}
+
+.opt .select1 {
+	margin-right: 10px;
+}
+
+.mainbox {
+	height: auto;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding-top: 100px;
+}
+.container {
+	width: 100%;
+	height: 100%;
+}
+.t_box {
+	padding-top: 30px;
+	height: 250px;
+	text-align: center;
+}
+
+.title {
+	font-size: 35px;
+	font-weight: bold;
+	color: #3399FF;
+}
+
+.b_box {
+	margin-top: 100px;
+	display: flex;
+	justify-content: space-between;
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	height: 250px;
+}
+
+.btn-addForm {
+	border-radius: 5px;
+	font-size: 15px;
+	border: none;
+	width: 200px;
+	height: 80px;
+	background-color: #99CCFF;
+}
+
+.rightIcon {
+	margin-top: 10px;
+	width: 20px;
+	height: 15px;
+}
+
+.btn-updateForm {
+	border-radius: 5px;
+	font-size: 15px;
+	border: none;
+	width: 200px;
+	height: 80px;
+	background-color: #3399FF;
+}
+
+.btn-deleteForm {
+	border-radius: 5px;
+	font-size: 15px;
+	border: none;
+	width: 200px;
+	height: 80px;
+	background-color: #99CCFF;
+}

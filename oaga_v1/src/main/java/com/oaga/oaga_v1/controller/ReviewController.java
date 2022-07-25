@@ -43,7 +43,6 @@ public class ReviewController {
 			Model model) {
 		Page<Review> reviews = reviewService.getBestReviewList(pageable);
 		List<User> bestUser = userService.bestUser();
-		System.out.println(bestUser);
 		
 		model.addAttribute("reviews", reviews);
 		model.addAttribute("bestUser", bestUser);
@@ -60,11 +59,7 @@ public class ReviewController {
 		Page<Review> reviews = reviewService.getBestReviewList(pageable);
 		
 		int reviewCount = reviewService.reviewCount(detail.getUser().getId());
-		System.out.println(reviewCount + "reviewCountreviewCount");
 		List<User> bestUser = userService.bestUser();
-		
-		
-		
 		model.addAttribute("reviews", reviews);
 		model.addAttribute("reviewCount", reviewCount);
 		model.addAttribute("bestUser", bestUser);
@@ -88,7 +83,6 @@ public class ReviewController {
 	@GetMapping("/review/update/{reviewId}")
 	private String updateReview(@PathVariable int reviewId, Model model) {
 		Review review = reviewService.findReviewById(reviewId);
-		//TODO
 		review.setCount(review.getCount() -1);
 		model.addAttribute("review", review);
 		return "/review/update";
@@ -122,7 +116,6 @@ public class ReviewController {
 	// 리뷰 임시 저장
 	@PostMapping("/api/review/upload/t")
 	private String saveReviewtem(RequestReviewFileDto dto, @AuthenticationPrincipal PrincipalDetail detail) {
-		System.out.println(dto);
 		dto.setIsWriting(IsWritingType.ING);
 		reviewService.saveReview(dto, detail.getUser());
 		return "redirect:/review";
@@ -140,15 +133,11 @@ public class ReviewController {
 		int nowPage = reviewList.getPageable().getPageNumber() + 1;
 		int startPage = Math.max(nowPage -2, 1);
 		int endPage = Math.min(nowPage +2, reviewList.getTotalPages());
-		System.out.println("nowPage: " + nowPage);
-		System.out.println("startPage: " + startPage);
-		System.out.println("endPage: " + endPage);
 		
 		ArrayList<Integer> pageNumbers = new ArrayList<>();
 		for(int i = startPage; i <= endPage; i ++) {
 			pageNumbers.add(i);
 		}
-		System.out.println(pageNumbers);
 		model.addAttribute("reviews", reviewList);
 		model.addAttribute("pageNumbers", pageNumbers);
 		

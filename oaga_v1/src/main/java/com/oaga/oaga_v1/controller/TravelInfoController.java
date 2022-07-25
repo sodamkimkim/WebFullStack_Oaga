@@ -34,7 +34,7 @@ public class TravelInfoController {
 		
 		return "/travelInfo/home";
 	}
-// ===================================================================================================
+
 
 	// gu에 대한 정보 페이지
 	@GetMapping({ "/travel_guinfo/{areaGu}" })
@@ -43,21 +43,13 @@ public class TravelInfoController {
 		List<AreaGu> guInfoImage = travelInfoService.findByid_image(areaGu);
 		List<GuInfo> guInfoList = travelInfoService.guInfo(areaGu);
 		List<Restaurant> restaurantList = travelInfoService.guInfoRestaurant(areaGu);
-			
-		System.out.println(guInfoList.isEmpty() + "dasldas");
-			
-			
-			model.addAttribute("guInfoList", guInfoList);
-		
-		
-		
+		model.addAttribute("guInfoList", guInfoList);
 		model.addAttribute("guInfoImage", guInfoImage);
 		model.addAttribute("restaurantList", restaurantList);
 		
 		return "/travelInfo/guinfo_form";
 	}
 
-// ===================================================================================================
 
 	// 식당 상세정보
 	@GetMapping("/travel_detail/{id}")
@@ -76,7 +68,6 @@ public class TravelInfoController {
 	public String getDetailGu(Model model, @PathVariable int id) {
 
 		int areaGu = travelInfoService.findByGuinfoId(id).get(0).getAreaGu().getId();
-		System.out.println(areaGu + " areaGu@@@@");
 		List<GuInfo> guInfoFindById = travelInfoService.findByGuinfoId(id);
 		List<Restaurant> guRestaurantListAll = travelInfoService.guInfoRestaurant(areaGu);
 		model.addAttribute("gu", guInfoFindById);
@@ -85,96 +76,19 @@ public class TravelInfoController {
 		return "/travelInfo/detail_gu_form";
 	}
 
-//===================================================================================================
-
 	// Area에 모든 정보
-
 	@GetMapping("/travel/areainfo/{id}")
 	public String areaInfo(Model model, @PathVariable int id) {
 		List<Area> areaImageList = travelInfoService.areaImage(id);
-
 		List<AreaGu> areaGuAllList = travelInfoService.areaGu(id);
-
 		int areaGuId = travelInfoService.areaImage(id).get(0).getId();
-		System.out.println(areaGuId + "areaGuId@@@@@@@@@@@@@@@@");
 		List<GuInfo> guinfoAllList = travelInfoService.findByAreaGuId(areaGuId);
 		List<Restaurant> restaurantAllList = travelInfoService.findByGuInfoId(areaGuId);
 
 		model.addAttribute("areaImage", areaImageList);
 		model.addAttribute("areaGu", areaGuAllList);
 		model.addAttribute("guinfo", guinfoAllList);
-
 		model.addAttribute("restaurant", restaurantAllList);
 		return "/travelInfo/area_info_form";
 	}
 }
-//===================================================================================================
-// stream
-// List 데이터를 변경할 때 map 함수 , 필터 - filter , sort()
-
-// List<AreaGu> arealist = travelInfoService.areaIdList(areaid, pageable);
-// model.addAttribute("arealist",arealist);
-//				arealist.stream().sorted(Comparator.comparing(AreaGu::getId).reversed());
-
-//				model.addAttribute(arealist);
-
-//				List<Integer> stream = arealist.stream().map(t -> t.getArea().getId()).collect(Collectors.toList());
-//				stream.forEach(t ->{
-//				});
-
-//				map<String, ArrayList> {				
-//					"서울" : [0, 1]
-// 				}		
-
-//				List<AreaGu> test = arealist.stream().filter(t -> t.getArea().getId() == 1).collect(Collectors.toList());
-//				for(AreaGu areaGu : arealist) {
-//					System.out.println(areaGu.getArea().getId() == 2);
-//				}
-
-//				    List<Human> tmpHumans = humans.stream()
-//				            .filter(h -> h.getMoney() > 2000)
-//				            .collect(Collectors.toList());
-//
-//				    for (Human human : tmpHumans) {
-//				        System.out.println(human.getIdx());
-//				}
-
-// stream . map
-// stream . filter
-
-//				if(id == 1) {
-//					AreaGu[] seoulList = {arealist.get(0), arealist.get(1)};
-//					model.addAttribute("seoulList", seoulList);
-//				}else if(id == 2) {				
-//					AreaGu[] busanList = {arealist.get(2), arealist.get(3)};
-//					model.addAttribute("busanList", busanList);
-//				}else if(id == 3) {			
-//					AreaGu[] inchunList = {arealist.get(4), arealist.get(5)};
-//					model.addAttribute("inchunList", inchunList);
-//				}else if(id == 4) {			
-//					AreaGu[] jejuList = {arealist.get(10), arealist.get(11)};
-//					model.addAttribute("inchunList", jejuList);
-//				}else {
-
-//				}
-
-//					List<AreaGu> seoulList = travelInfoService.seoul();
-//					model.addAttribute("seoulList");
-//					
-//					List<AreaGu> busanList = travelInfoService.busan();
-//					model.addAttribute("busanList", busanList);
-//					
-//					List<AreaGu> jejuList = travelInfoService.jeju();
-//					model.addAttribute("jejuList", jejuList);
-//					
-//					List<AreaGu> deaguList = travelInfoService.deagu();
-//					model.addAttribute("deaguList", deaguList);
-//					
-//					List<AreaGu> inchunList = travelInfoService.inchun();
-//					model.addAttribute("inchunList", inchunList);	
-//				
-
-//					private Stream<AreaGu> map(Area area) {
-//						// TODO Auto-generated method stub
-//						return null;
-//					}

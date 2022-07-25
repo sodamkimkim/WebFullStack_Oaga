@@ -22,7 +22,6 @@ public class PrincipalDetailService implements UserDetailsService {
 				.orElseThrow(() -> {
 					return new UsernameNotFoundException("해당 유저아이디를 찾을 수 없습니다.");
 				});
-		System.out.println("principal찍어봄: "+principal.toString());
 		return new PrincipalDetail(principal); // security session에 유저정보 저장.
 	}
 }

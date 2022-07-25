@@ -115,10 +115,8 @@ public class UserController {
 
 	@PostMapping("/auth/joinproc")
 	public String save(RequestUserProfileDto dto) {
-			dto.setRole(RoleType.USER);
-			System.out.println(dto.getRole() + "@@@@@SERVEICE@@@ROLE@@@@");
+		dto.setRole(RoleType.USER);
 		int result = userService.saveUser(dto);
-
 		return "redirect:/";
 	}
 

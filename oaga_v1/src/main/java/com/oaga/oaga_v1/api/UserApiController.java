@@ -37,15 +37,11 @@ public class UserApiController {
 	@PutMapping("/api/userprofileupdate")
 	public ResponseDto<Integer> updateMyProfile(@AuthenticationPrincipal PrincipalDetail detail,
 			@RequestBody MultipartFile file) {
-		
-		System.out.println("MultipartFile 찍어봄:" + file.getOriginalFilename());
-		System.out.println("file tostring: " + file.toString());
 		userService.updateUserProfile(detail.getUser().getId(), file);
 //		User userEntity = userService.searchUserById(detail.getUser().getId());
 //		Authentication authentication = authenticationManager
 //				.authenticate(new UsernamePasswordAuthenticationToken(userEntity.getUsername(), userEntity.getPassword()));
 //		SecurityContextHolder.getContext().setAuthentication(authentication);
-		System.out.println("여기찍히나요?");
 		return new ResponseDto<Integer>(HttpStatus.OK, 1);
 
 	}
