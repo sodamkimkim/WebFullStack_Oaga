@@ -31,6 +31,21 @@
 	display: flex;
 	align-items: center;
 }
+
+.like-Box {
+	margin-left: 7px;
+	display: flex;
+	align-items: flex-end;
+	margin-bottom:7px;
+}
+
+.best_reviewer_a {
+	display: flex;
+}
+
+.like-Box>span {
+	margin-left: 3px;
+}
 </style>
 <!-- background: url("/images/reviewPage/review_bg.jpg")  -->
 <div class="review_search">
@@ -40,7 +55,7 @@
 		</h5>
 		<div class="review_img_box">
 			<img class="review_search_img"
-				src="/oaga/images/reviewPage/review_home.png">
+				src="/oaga/images/reviewPage/review_home.jpg">
 		</div>
 		<!-- 사진이나 화면 추가 -->
 		<p class="review_search_coment">
@@ -227,23 +242,29 @@
 						<c:choose>
 							<c:when test="${empty principal}">
 								<a class="best_reviewer_a"
-									href="/oaga/userpage_form/${bestuser.id}"></a>
+									href="/oaga/userpage_form/${bestuser.id}"> <img
+									src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
+									class="best_reviewer_profile">
+									<div class="like-Box">
+										<img class="best_reviewer_icon"
+											src="/oaga/images/userPage/heart.png"> <span>&nbsp;${bestuser.likes}</span>
+									</div>
+								</a>
 							</c:when>
 							<c:otherwise>
 								<a class="best_reviewer_a"
-									href="/oaga/userpage_form_l/${bestuser.id}"></a>
+									href="/oaga/userpage_form_l/${bestuser.id}"> <img
+									src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
+									class="best_reviewer_profile">
+									<div class="like-Box">
+										<img class="best_reviewer_icon"
+											src="/oaga/images/userPage/heart.png"> <span>&nbsp;${bestuser.likes}</span>
+									</div>
+								</a>
 							</c:otherwise>
 						</c:choose>
-						<img
-							src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
-							class="best_reviewer_profile">
 
-						<p class="best_reviewer_count">
-							<img class="best_reviewer_icon"
-								src="/oaga/images/userPage/heart.png">
-							<h7>&nbsp;${bestuser.likes}</h7>
-						</p>
-						</a>
+
 					</div>
 				</c:forEach>
 

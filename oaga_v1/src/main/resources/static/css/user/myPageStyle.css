@@ -54,16 +54,16 @@ h4 {
 	overflow: hidden;
 	width: 200px;
 	height: 200px;
-	background-color: rgba(51, 51, 51, 0.4);
+	background-color: rgba(51, 51, 51, 0.2);
 	margin-bottom: 20px;
 	margin-top: 20px;
 	box-sizing: border-box;
-	border: 4px solid rgba(51, 51, 51, 0.4);
+	border: 2px solid rgba(51, 51, 51, 0.2);
 	cursor: pointer;
 }
 
 .myPageImgBox:hover {
-	border: 4px solid rgba(51, 51, 51, 0.7);
+	border: 2px solid rgba(51, 51, 51, 0.3);
 }
 
 .myPage_infoBox {

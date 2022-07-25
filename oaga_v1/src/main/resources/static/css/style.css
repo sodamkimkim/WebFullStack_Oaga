@@ -846,20 +846,20 @@ langPop li {
 	padding: 15px 20px 15px 20px;
 }
 
-
 .logged_user_img {
 	width: 110px;
 	height: 110px;
 	border-radius: 50%;
 }
-.review_user_imgBox{
-	
-		width: 110px;
+
+.review_user_imgBox {
+	width: 110px;
 	height: 110px;
 	border-radius: 50%;
 	margin-bottom: 20px;
 	text-align: center;
 }
+
 .logged_left {
 	margin-left: 30px;
 }
@@ -905,8 +905,9 @@ langPop li {
 	color: #808080;
 	font-size: 13px;
 	margin-right: 10px;
-/* 	margin-top: 20px; */
+	/* 	margin-top: 20px; */
 }
+
 .logged_btn_ico {
 	width: 60px;
 	height: 60px;
@@ -934,15 +935,13 @@ langPop li {
 	padding-bottom: 70px;
 }
 
-
 header.masthead {
 	padding-top: 12rem;
 	padding-bottom: 12rem;
 }
 
 .review_search {
-		margin-top: 57px;
-	
+	margin-top: 57px;
 	width: 100%;
 	height: 500px;
 	background: rgba(243, 243, 243, 1);
@@ -969,8 +968,12 @@ header.masthead {
 	width: 250px;
 	height: 250px;
 	overflow: hidden;
-	background-color: pink;
 	margin: 30px auto;
+	box-shadow: 2px 2px 2px rgba(51,51,51,0.4);
+}
+
+.review_img_box:hover {
+		box-shadow: 2px 2.5px 2px rgba(51,51,51,0.6);
 }
 
 .review_search_img {
@@ -1220,8 +1223,6 @@ header.masthead {
 	height: 20px;
 }
 
-
 .logged_plan {
 	cursor: pointer;
 }
-

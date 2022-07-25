@@ -16,22 +16,22 @@
 						alt="...">
 				</div>
 				<c:choose>
-					<c:when test="${empty principal}">					
+					<c:when test="${empty principal}">
 					</c:when>
 					<c:otherwise>
 						<c:choose>
-					<c:when test="${result == -1}">
-						<button class="likebutton" type="button" id="btn-Follow">
-							<img class="likebutton-img"
-								src="../images/userPage/heart-outline.png">
-						</button>
-					</c:when>
-					<c:otherwise>
-						<button class="likebutton" type="button" id="btn-UnFollow">
-							<img class="likebutton-img" src="../images/userPage/heart.png">
-						</button>
-					</c:otherwise>
-				</c:choose>
+							<c:when test="${result == -1}">
+								<button class="likebutton" type="button" id="btn-Follow">
+									<img class="likebutton-img"
+										src="../images/userPage/heart-outline.png">
+								</button>
+							</c:when>
+							<c:otherwise>
+								<button class="likebutton" type="button" id="btn-UnFollow">
+									<img class="likebutton-img" src="../images/userPage/heart.png">
+								</button>
+							</c:otherwise>
+						</c:choose>
 					</c:otherwise>
 				</c:choose>
 			</div>
@@ -56,11 +56,11 @@
 	</div>
 	<!-- 리뷰 리스트 -->
 	<section class="review_list_container">
-		<header class="li_header">
+		<div class="li_header">
 			<div>
 				<h3 class="li_title">${user.userNickName}&nbsp;님이작성한리뷰</h3>
 			</div>
-		</header>
+		</div>
 		<ul>
 			<c:forEach var="userReview" items="${userReviews.content}">
 				<li class="li_item"><a class="li_item_a"
@@ -79,10 +79,11 @@
 				</a></li>
 			</c:forEach>
 		</ul>
-		<ul class="pagination">
+			<ul class="pagination">
 				<li
 					class="page-item btnPrv ${userReviews.first ? passive : Page-item-active}"><a
-					class="page-link" href="/oaga/userpage_form/${user.id}?page=${pageable.number-1}">Prv</a></li>
+					class="page-link"
+					href="/oaga/userpage_form/${user.id}?page=${pageable.number-1}">Prv</a></li>
 				<!-- page-item -->
 
 
@@ -104,14 +105,13 @@
 					class="page-item btnNxt ${userReviews.last ? passive : Page-item-active}"><a
 					class="page-link"
 					href="/oaga/userpage_form/${user.id}?page=${pageable.number+1}">Nxt</a></li>
-					
-					
+
+
 				<!--
 				/oaga/userpage_form/1?page=1
 				 page-item -->
 			</ul>
 
-	
 	</section>
 
 </div>
