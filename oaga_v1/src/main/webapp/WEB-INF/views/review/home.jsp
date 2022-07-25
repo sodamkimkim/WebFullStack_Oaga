@@ -91,7 +91,7 @@
 						<div class="logged_left">
 
 							<a href="/oaga/mypage_form" class="logged_cnt_box logged_clip">
-								<b>작성한 리뷰</b> <span>${reviewCount}</span>
+								<b>내가 작성한 리뷰</b> <span>${reviewCount}</span>
 							</a>
 							<div class="logged_line">&nbsp;</div>
 							<a id="likes_btn" class="logged_cnt_box logged_plan"> <b>좋아요</b>
@@ -111,7 +111,7 @@
 								src="images/reviewPage/ico_review.png" />
 							</a>
 						</div>
-						리뷰 작성
+						나의 여행 리뷰 작성
 					</div>
 					<!-- logged_btn -->
 				</div>
