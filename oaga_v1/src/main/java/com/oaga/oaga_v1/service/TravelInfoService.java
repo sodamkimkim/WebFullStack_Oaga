@@ -1,12 +1,10 @@
 package com.oaga.oaga_v1.service;
 
-import java.awt.print.Pageable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,8 +20,8 @@ import com.oaga.oaga_v1.repository.TravelInfoRepository;
 @Service
 public class TravelInfoService {
 	// 서비스 딴에서 레파지토리의 사이즈를 측정 할수 없다!!!!
-	static final int guCount = 13;
-	static final int restaurantCount = 7;
+	static final int guCount = 17;
+	
 
 	@Autowired
 	private TravelInfoRepository travelInfoRepository;
@@ -41,10 +39,12 @@ public class TravelInfoService {
 			List<AreaGu> index = travelInfoRepository.mAreaIdList(i);
 			map.put(i, index);
 		}
+		
 		return map;
 	}
 
 // ===================================================================================================	
+	
 	@Transactional
 	public List<Area> areaImage(int id) {
 		return areaRepository.mAreaMainImage(id);
@@ -55,6 +55,10 @@ public class TravelInfoService {
 		return randmarkRepository.mFindByAreaGu(id);
 	}
 
+	@Transactional
+	public List<AreaGu> findByid_image(int id) {
+		return travelInfoRepository.mAreaGuId(id);
+	}
 	@Transactional
 	public List<AreaGu> areaGu(int id) {
 		return travelInfoRepository.mAreaIdList(id);

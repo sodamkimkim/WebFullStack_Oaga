@@ -928,7 +928,8 @@ langPop li {
 }
 
 .page {
-	width: 100%;
+	width: inherit;
+	height: auto;
 	padding-top: 70px;
 	padding-bottom: 70px;
 }
@@ -1219,65 +1220,8 @@ header.masthead {
 	height: 20px;
 }
 
-.modal {
-	display: none;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	left: 0;
-	top: 0;
-	flex-direction: column;
-	align-items: center;
-	background: rgba(255, 255, 255, 0.25);
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-	backdrop-filter: blur(1.5px);
-	-webkit-backdrop-filter: blur(1.5px);
-	border-radius: 10px;
-	border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.modal_group_box {
-	display: flex;
-	justify-content: center;
-	background: white;
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-	backdrop-filter: blur(13.5px);
-	-webkit-backdrop-filter: blur(13.5px);
-	border-radius: 10px;
-	border: 1px solid rgba(255, 255, 255, 0.18);
-	width: 200px;
-	height: auto;
-	position: relative;
-	top: -100px;
-	padding: 10px;
-}
-
-.list-group {
-	text-align: center;
-	background-color: white;
-	width: 98%;
-	height: 98%;
-	border-radius: 10px;
-}
-
-.list-group-item {
-	cursor: pointer;
-	height: 27px;
-	border-radius: 5px;
-	margin-bottom: 5px;
-	background-color: #D0CECE;
-	border: 1px solid #f6f6f6;
-}
-
-.list-group-item:hover {
-	background-color: #F2F2F2;
-	border-color: #D8D8D8;
-}
 
 .logged_plan {
 	cursor: pointer;
 }
 
-.logged_plan:hover .modal {
-	display: flex;
-}

@@ -25,10 +25,10 @@ public class RequestTravelDto {
 	private AreaGu areaGuId;
 
 
-	private AreaGu areaGu;
+	
 
 	private MultipartFile file;
-	private String image;
+	
 	
 	public GuInfo toEntity(String image) {
 		return GuInfo.builder()

@@ -17,12 +17,11 @@
 		<div
 			style="display: flex; justify-content: space-around; margin-top: 50px;">
 
-			<button type="button" class="btn btn-primary" id="select"
-				style="width: 120px; height: 35px; font-size: 20px; cursor: pointer;">추가하기</button>
-			<button type="button" class="btn btn-primary" id="update"
-				style="width: 120px; height: 35px; font-size: 20px; cursor: pointer;">수정하기</button>
-			<button type="button" class="btn btn-primary" id="delete"
-				style="width: 120px; height: 35px; font-size: 20px; cursor: pointer;">삭제하기</button>
+			<a type="button" class="btn btn-primary" id="select" href="/oaga/admin/restaurant_save_page"
+				style="width: 120px; height: 35px; font-size: 20px; text-align:center; cursor: pointer;">카페/식당</a>
+			<a type="button" class="btn btn-primary" id="select" href="/oaga/admin/guinfo_save_page"
+				style="width: 120px; height: 35px; font-size: 20px; text-align:center; cursor: pointer;">놀거리</a>
+			
 
 		</div>
 
@@ -52,31 +51,27 @@
 					<div id="areaGu"></div>
 
 				</div>
-
-				<div style="height: 100%; width: 34%; border: 1px solid;">
+			<form method="post" action="/oaga/api/admin/guinfo/infoSave" name="t_form" enctype="multipart/form-data">
+				<div style="height: 100%; width: 100%; border: 1px solid; " >
 
 					<input type="hidden" itemid="${areaGuName}"
 						value="${areaGuName.guname }" id="" />
 					<div
 						style="height: 30px; border-top: 1px solid; text-align: center; border-bottom: 1px solid;">추가할
 						항목</div>
+						
 					<div
-						style="width: 100%; height: 60px; display: flex; justify-content: space-around; margin-top: 20px;"
+						style="width: 100%; height: 60px; display: flex; justify-content: space-around; margin-top: 20px; align-items: center;"
 						id="test">
-					
-						<div>
-							<p>카페/식당</p>
-							<input type="checkbox" id="restaurant" value="RESTAURANT" onclick="test()">
-						</div>
-						<div id="hot_place">
-							<p>놀거리</p>
-							<input type="checkbox" id="hotPlace" value="GUINFO" onclick="test()">
-						</div>
+						
+						<input type="hidden" name="categoryType" value="GUINFO">
+						
+						
 
 					</div>
 
 					<div style="width: 100%; height: 568px;">
-					<form method="post" action="/oaga/api/damin/guinfo/infoSave" name="t_form" enctype="multipart/form-data">
+					
 						<div style="width: 100%; text-align: center;" id="areaGuName">
 
 						</div>
@@ -105,13 +100,15 @@
 								onchange="javascript:document.getElementById('r_imageUrl').value = this.value">
 						</div>
 
-						<button class="btn btn-primary" id="btn-save" type="submit"
-							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">추가하기</button>
+						
+							<button class="btn btn-primary" id="btn-save" type="submit"
+							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">놀거리 추가</button>
 							
-						</form>
+						
 					</div>
-
+					
 				</div>
+				</form>
 			</div>
 		</div>
 

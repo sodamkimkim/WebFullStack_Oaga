@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,11 +27,13 @@ public class Follow {
 	
 	// 팔로우를 한 유저
 	@JoinColumn(name = "followingUser")
+	@JsonIgnoreProperties({"password","email", "role", "oauth", "createDate"})
 	@ManyToOne
 	private User followingUser;
 	
 	// 팔로우를 받은 유저
 	@JoinColumn(name = "followedUser")
+	@JsonIgnoreProperties({"password","email", "role", "oauth", "createDate"})
 	@ManyToOne
 	private User followedUser;
 

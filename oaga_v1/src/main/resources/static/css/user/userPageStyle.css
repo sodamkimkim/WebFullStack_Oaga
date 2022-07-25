@@ -30,15 +30,14 @@ h4 {
 }
 
 .profile_b {
-	background-image:
-		url('/oaga/images/userPage/background.jpg');
+	/* background-image:
+		url('/oaga/images/userPage/background.jpg'); */
+	background-color: #f9bb57;
 	background-position: center;
 	background-size: cover;
 
 	padding-top: 3rem ;
 	padding-bottom: 3rem ;
-	background-color: rgba(0, 0, 0, 0.4);
-	
 }
 .profile_b::before{
 	content:"";

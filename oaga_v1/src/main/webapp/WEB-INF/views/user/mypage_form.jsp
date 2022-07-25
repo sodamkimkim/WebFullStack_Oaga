@@ -34,7 +34,7 @@
 				</p>
 				<div class="logged_line">&nbsp;</div>
 				<p class="logged_cnt_box logged_plan">
-					<b>좋아요</b> <span>${principal.user.likes}</span>
+					<b>좋아요</b> <span id="likes_btn">${principal.user.likes}</span>
 				</p>
 				<div class="logged_line">&nbsp;</div>
 				<p class="logged_cnt_box logged_qa">
@@ -106,5 +106,40 @@
 
 </div>
 
+<!-- 모달 창 생성 (자신을 좋아요한 사람을 볼 수 있음) -->
+<div id="modal" class="modal">
+	<div class="modal_group_box">
+		<div class="list-group">
+			<div>
+				<img src="" alt="">
+				<h5>좋아요</h5>
+				<img src="" alt="">
+			</div>
+			<c:forEach var="followedList" items="${followList}">
+				<div class="list-group-item">
+					<a class="list-group-a"
+						href="/oaga/userpage_form_l/${followedList.followingUser.id}">
+						<label>${followedList.followingUser.userNickName}</label>
+					</a>
+				</div>
+			</c:forEach>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$("#likes_btn").on("click", e => {
+		console.log("asdasd");
+		modal.style.display = "flex";
+	})
+	
+	$("#modal").on("click", e => {
+		const evTarget = e.target
+		if(evTarget.classList.contains("modal")) {
+			modal.style.display = "none"
+			console.log("aa");
+		}
+	})
+</script>
 
 <%@ include file="../layout/footer.jsp"%>

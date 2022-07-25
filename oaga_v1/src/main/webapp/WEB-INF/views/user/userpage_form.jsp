@@ -9,7 +9,7 @@
 	<div class="profile_b">
 		<input type="hidden" value="${user.id}" id="userId">
 		<div class="userProfile-wrap">
-			<div class="userPageProfileBox">
+			<div id="userPageProfileBox" class="userPageProfileBox">
 				<div class="userPageImgBox">
 					<img class="userPageImg"
 						src="http://localhost:9090/oaga/upload/${user.userProfileImgUrl}"

@@ -75,6 +75,7 @@ public class Review {
 	
 	// 댓글 정보
 	@OneToMany(mappedBy = "review", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"review", "user"})
 	private List<Reply> replies;
 	
 }

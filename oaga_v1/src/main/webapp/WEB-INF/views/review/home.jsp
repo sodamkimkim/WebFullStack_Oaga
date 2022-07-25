@@ -26,9 +26,10 @@
 	align-items: center;
 	height: 200px;
 }
-.reviews_left{
-display: flex;
-align-items: center;
+
+.reviews_left {
+	display: flex;
+	align-items: center;
 }
 </style>
 <!-- background: url("/images/reviewPage/review_bg.jpg")  -->
@@ -39,7 +40,7 @@ align-items: center;
 		</h5>
 		<div class="review_img_box">
 			<img class="review_search_img"
-				src="/oaga/images/reviewPage/review_home.jpg">
+				src="/oaga/images/reviewPage/review_home.png">
 		</div>
 		<!-- 사진이나 화면 추가 -->
 		<p class="review_search_coment">
@@ -61,6 +62,7 @@ align-items: center;
 	<c:when test="${empty principal}">
 	</c:when>
 	<c:otherwise>
+
 		<div class="review_row2wrap">
 			<div class="page logged_box">
 
@@ -87,6 +89,7 @@ align-items: center;
 						</div>
 					</div>
 					<!--reviews_left-->
+
 					<div class="logged_btn">
 						<div class="logged_btn_ico">
 							<a href="/oaga/write"> <img
@@ -98,6 +101,8 @@ align-items: center;
 					<!-- logged_btn -->
 				</div>
 			</div>
+		</div>
+
 		</div>
 	</c:otherwise>
 </c:choose>
@@ -250,32 +255,6 @@ align-items: center;
 	</div>
 </section>
 
-<!-- 모달 창 생성 (자신을 좋아요한 사람을 볼 수 있음) -->
-<div id="modal" class="modal">
-	<div class="modal_group_box">
-		<div class="list-group">
-			<div>
-				<img src="" alt="">
-				<h5>좋아요</h5>
-				<img src="" alt="">
-			</div>
-			<div class="list-group-item">
-				<label><a href="#"></a>가나다</label>
-			</div>
-			<div class="list-group-item">
-				<label><a href="#"></a>라마바</label>
-			</div>
-			<div class="list-group-item">
-				<label><a href="#"></a>사아자</label>
-			</div>
-		</div>
-	</div>
-</div>
 
-<script type="text/javascript">
-	$("#likes_btn").on("click", function() {
-		console.log("asdasd");
-	})
-</script>
 
 <%@ include file="../layout/footer.jsp"%>

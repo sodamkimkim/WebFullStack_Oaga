@@ -76,7 +76,7 @@ let index = {
 			type: "POST",
 			url: `/oaga/api/follow/${userId}`,
 		}).done(function() {
-			alert("팔로우 정보 저장 완료!");
+			location.href = `/oaga/userpage_form_l/${userId}`;
 		}).fail(function() {
 			alert("팔로우 정보 저장 실패!");
 		});
@@ -89,11 +89,12 @@ let index = {
 			type: "DELETE",
 			url: `/oaga/api/follow/${userId}`
 		}).done(function() {
-			alert("언팔 성공");
+			location.href = `/oaga/userpage_form_l/${userId}`;
 		}).fail(function() {
 			alert("언팔 실패");
 		});
 
 	}
 }
+
 index.init();
