@@ -20,7 +20,7 @@
 					</c:when>
 					<c:otherwise>
 						<c:choose>
-							<c:when test="${result == -1}">
+							<c:when test="${result == -1 || empty result}">
 								<button class="likebutton" type="button" id="btn-Follow">
 									<img class="likebutton-img"
 										src="../images/userPage/heart-outline.png">

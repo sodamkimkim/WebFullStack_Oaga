@@ -365,7 +365,7 @@
 </section>
 <!--sec4-->
 
-<script src="/oaga/js/travelInfo.js"></script>
+<script src="/oaga/js/index.js"></script>
 
 <%@ include file="layout/footer.jsp"%>
 
