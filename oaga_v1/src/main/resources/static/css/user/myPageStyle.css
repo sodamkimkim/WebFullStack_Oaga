@@ -5,10 +5,6 @@
 	padding: 0;
 }
 
-body {
-	background-color: rgba(240, 240, 240, 0.8);
-}
-
 h3 {
 	display: block;
 	font-size: 1.17em;
@@ -24,18 +20,18 @@ h4 {
 	margin-block-start: 1.33em;
 	margin-block-end: 1.33em;
 	margin-inline-start: 0px;
-	margin-inline-end: 0px;
+	/* 	margin-inline-end: 0px; */
 	font-weight: bold;
 }
 
 .profile_b {
-	/* background-image:
-		url('https://source.unsplash.com/wfh8dDlNFOk/1600x900'); */
-	background-position: center;
-	background-size: cover;
-	padding-top: 3rem !important;
-	padding-bottom: 3rem !important;
-	background-color: #f9bb57;
+
+		margin-top: 57px;
+	
+	background-color: rgba(240, 240, 240, 0.8);
+	padding-bottom: 40px;
+	padding-top: 20px;
+
 }
 
 .text-center {
@@ -45,6 +41,7 @@ h4 {
 .my-5 {
 	margin-top: 3rem !important;
 	margin-bottom: 1rem !important;
+
 }
 
 .myPageImg {
@@ -57,8 +54,16 @@ h4 {
 	overflow: hidden;
 	width: 200px;
 	height: 200px;
-	background-color: aqua;
+	background-color: rgba(51, 51, 51, 0.4);
 	margin-bottom: 20px;
+	margin-top: 20px;
+	box-sizing: border-box;
+	border: 4px solid rgba(51, 51, 51, 0.4);
+	cursor: pointer;
+}
+
+.myPageImgBox:hover {
+	border: 4px solid rgba(51, 51, 51, 0.7);
 }
 
 .myPage_infoBox {
@@ -85,7 +90,7 @@ h4 {
 	padding-bottom: 30px;
 }
 
-.li_header {
+.li_userReviews {
 	padding: 1.5rem 0 1.4rem;
 	height: 4.8rem;
 }
@@ -178,9 +183,10 @@ h4 {
 
 .logged_cnt_box b {
 	font-size: 13px;
-	color: #555555;
+	color: rgba(51, 51, 51, 0.8);
 	display: block;
 	padding-bottom: 10px;
+	font-weight: normal;
 }
 
 .logged_cnt_box span {
@@ -228,21 +234,12 @@ h4 {
 	fill-rule: evenodd;
 }
 
-.myPageEditWrap .myPageProfile {
-	margin-left: 150px;
-}
-
 .myPageEditWrap {
 	display: flex;
 	justify-content: center;
 }
 
-.myPageEditWrap {
-	
-}
-
 .myPageEditWrap .myPageEditBtns {
-	margin-top: 40px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -252,9 +249,12 @@ h4 {
 	width: 150px;
 	margin-left: 20px;
 	line-height: 2;
-	border-bottom: 2px solid #333;
 	background-color: transparent;
 	cursor: pointer;
+	color: rgba(51, 51, 51, 0.8);
+}
+.myPageEditBtns button:first-child{
+	margin-top: 40px;
 }
 
 .pagination {

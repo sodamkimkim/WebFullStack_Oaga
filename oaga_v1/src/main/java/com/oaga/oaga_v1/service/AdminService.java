@@ -9,12 +9,12 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.oaga.oaga_v1.dto.RequestRestaurantDto;
-import com.oaga.oaga_v1.dto.RequestReviewFileDto;
 import com.oaga.oaga_v1.dto.RequestTravelDto;
 import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.placeModel.AreaGu;
@@ -24,103 +24,111 @@ import com.oaga.oaga_v1.repository.AreaRepository;
 import com.oaga.oaga_v1.repository.GuInfoRepository;
 import com.oaga.oaga_v1.repository.RestaurantRepositoryt;
 import com.oaga.oaga_v1.repository.TravelInfoRepository;
-import com.oaga.oaga_v1.userModel.User;
 
 @Service
 public class AdminService {
-	
+
 	@Value("${file.path}")
 	private String uploadFolder;
-	
+
 	@Autowired
 	private AreaRepository areaRepository;
 	@Autowired
 	private TravelInfoRepository travelInfoRepository;
 	@Autowired
 	private GuInfoRepository guInfoRepository;
+
 	@Autowired
-	private RestaurantRepositoryt restaurantRepositoryt;
-	
-	
+	private RestaurantRepositoryt restaurantRepository;
+
 	@Transactional
-	public List<Area> areaAll(){
+	public List<Area> areaAll() {
 		return areaRepository.findAll();
 	}
+
 	@Transactional
-	public List<AreaGu> areaGuAll(int area){
+	public List<AreaGu> areaGuAll(int area) {
 		return travelInfoRepository.mAreaIdList(area);
 	}
-	
-	
-	public List<AreaGu> areaGuNmae(int id){
+
+	public List<AreaGu> areaGuNmae(int id) {
 		return travelInfoRepository.mAreaGuId(id);
 	}
-	
-	public List<GuInfo> findAreaGuId(int areaGuId){
+
+	public List<GuInfo> findAreaGuId(int areaGuId) {
 		return guInfoRepository.mFindByAreaGu(areaGuId);
 	}
-	
-	public List<GuInfo> findGuinfoId(int guinfoId){
+
+	public List<GuInfo> findGuinfoId(int guinfoId) {
 		return guInfoRepository.mFindByid(guinfoId);
 	}
-	
-	
-	public List<Restaurant> findAreaGuId2(int areaGuId){
-		return restaurantRepositoryt.mRestaurantGroupByGuInfoId(areaGuId);
+
+	public List<Restaurant> findAreaGuId2(int areaGuId) {
+		return restaurantRepository.mRestaurantGroupByGuInfoId(areaGuId);
 	}
-	public List<Restaurant> findRestaurant(int areaGuId){
-		return restaurantRepositoryt.mFindByRestaurant(areaGuId);
+
+	public List<Restaurant> findRestaurant(int areaGuId) {
+		return restaurantRepository.mFindByRestaurant(areaGuId);
 	}
-	
-	
-	
+
 	private String extracktExt(String originalFileName) {
 		int pos = originalFileName.lastIndexOf(".");
 		return originalFileName.substring(pos + 1);
 	}
-	
+
 	@Transactional
 	public void saveGuInfo(RequestTravelDto dto) {
 		UUID uuid = UUID.randomUUID();
 		String imageFileName = uuid.toString() + "." + extracktExt(dto.getFile().getOriginalFilename());
 		String newFileName = (imageFileName.trim()).replaceAll("\\s", "");
-		Path imageFilePath = Paths.get(uploadFolder +  newFileName);
-		
+
+		Path imageFilePath = Paths.get(uploadFolder + newFileName);
+		System.out.println("dmsapdmpasmdpasdmaps");
+
 		try {
 			Files.write(imageFilePath, dto.getFile().getBytes());
 			guInfoRepository.save(dto.toEntity(newFileName));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Transactional
+	public Page<Restaurant> searchRestaurantByTitle(String title, Pageable pageable) {
+		return restaurantRepository.findAllByNameContaining(title, pageable);
 
 	}
+
+	@Transactional
+	public void deleteRestaurantById(int restaurantId) {
+		restaurantRepository.deleteById(restaurantId);
+	}
+
 	@Transactional
 	public void saveRestaurant(RequestRestaurantDto dto) {
 		UUID uuid = UUID.randomUUID();
 		String imageFileName = uuid.toString() + "." + extracktExt(dto.getFile().getOriginalFilename());
 		String newFileName = (imageFileName.trim()).replaceAll("\\s", "");
-		Path imageFilePath = Paths.get(uploadFolder +  newFileName);
+		Path imageFilePath = Paths.get(uploadFolder + newFileName);
 		System.out.println("dmsapdmpasmdpasdmaps");
 		try {
 			Files.write(imageFilePath, dto.getFile().getBytes());
-			restaurantRepositoryt.save(dto.toEntity(newFileName));
+			restaurantRepository.save(dto.toEntity(newFileName));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 	}
-	
+
 	@Transactional
 	public void updateGuInfo(GuInfo guInfo, int id) {
 
 		GuInfo guinfoEntity = guInfoRepository.mFindByid2(id);
-		
-		
-		
+
 		System.out.println(guinfoEntity + "guinfoEntityguinfoEntity");
-	
+
 		try {
-			
+
 			guinfoEntity.getId();
 			guinfoEntity.setName(guInfo.getName());
 			guinfoEntity.setAddress(guInfo.getAddress());
@@ -130,24 +138,23 @@ public class AdminService {
 			guinfoEntity.getCreateDate();
 			guinfoEntity.setOriginImageUrl(guInfo.getOriginImageUrl());
 			guinfoEntity.setImage(guInfo.getImage());
-			
+
 			System.out.println("여기는????");
 		} catch (Exception e) {
 			e.printStackTrace();
-			
+
 		}
 	}
+
 	@Transactional
 	public void updateRestaurant(Restaurant restaurant, int id) {
 
-		Restaurant restaurantEntity = restaurantRepositoryt.mFindByRestaurantId2(id);
-		
-		
-		
+		Restaurant restaurantEntity = restaurantRepository.mFindByRestaurantId2(id);
+
 		System.out.println(restaurantEntity + "guinfoEntityguinfoEntity");
-	
+
 		try {
-			
+
 			restaurantEntity.getId();
 			restaurantEntity.setName(restaurant.getName());
 			restaurantEntity.setAddress(restaurant.getAddress());
@@ -157,14 +164,11 @@ public class AdminService {
 			restaurantEntity.getCreateDate();
 			restaurantEntity.setOriginImageUrl(restaurant.getOriginImageUrl());
 			restaurantEntity.setImage(restaurant.getImage());
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
-			
+
 		}
 	}
-	
-	
-	
-	
+
 }

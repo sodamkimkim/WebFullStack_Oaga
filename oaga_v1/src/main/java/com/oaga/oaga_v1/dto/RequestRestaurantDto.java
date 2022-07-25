@@ -1,10 +1,10 @@
 package com.oaga.oaga_v1.dto;
 
+
 import org.springframework.web.multipart.MultipartFile;
 
 import com.oaga.oaga_v1.placeModel.AreaGu;
 import com.oaga.oaga_v1.placeModel.CategoryType;
-import com.oaga.oaga_v1.placeModel.GuInfo;
 import com.oaga.oaga_v1.placeModel.Restaurant;
 
 import lombok.AllArgsConstructor;
@@ -37,4 +37,5 @@ public class RequestRestaurantDto {
 				.originImageUrl(file.getOriginalFilename())
 				.build();
 	}
+
 }

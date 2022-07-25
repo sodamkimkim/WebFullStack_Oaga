@@ -10,6 +10,27 @@
 	margin-top: 20px;
 	height: 70px;
 }
+
+/* .reviews_left { */
+/* 	display: flex; */
+/* 	flex-direction: column; */
+/* 	justify-content: center; */
+/* 	width: 200px; */
+/* } */
+.wrap_logged {
+	display: flex;
+	justify-content: space-around;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	align-items: center;
+	height: 200px;
+}
+
+.reviews_left {
+	display: flex;
+	align-items: center;
+}
 </style>
 <!-- background: url("/images/reviewPage/review_bg.jpg")  -->
 <div class="review_search">
@@ -41,40 +62,47 @@
 	<c:when test="${empty principal}">
 	</c:when>
 	<c:otherwise>
-		<div class="page silver logged_box">
-			<div style="display: flex; justify-content: center;">
-				<div class="wrap logged">
-				<img class="logged_user_img"
-					src="http://localhost:9090/oaga/upload/${principal.user.userProfileImgUrl}"
-					onerror="this.src='images/reviewPage/profile_basic.png';">
-				<div class="logged_left">
-					<div class="logged_name">${principal.user.userNickName}</div>
-					<div class="clear"></div>
-					<a href="/oaga/mypage_form" class="logged_cnt_box logged_clip">
-						<b>작성한 리뷰</b> <span>${reviewCount}</span>
-					</a>
-					<div class="logged_line">&nbsp;</div>
-					<a id="likes_btn" class="logged_cnt_box logged_plan"> <b>좋아요</b>
-						<span>${principal.user.likes}</span>
-					</a>
-					<!-- 모달 띄우기 -->
-					<div class="logged_line">&nbsp;</div>
-					<a class="logged_cnt_box logged_qa"> <b>Q&amp;A</b> <span>0</span>
-					</a>
-					<div class="clear"></div>
-				</div>
-				<a href="/oaga/write">
+
+		<div class="review_row2wrap">
+			<div class="page logged_box">
+
+				<div class="wrap_logged">
+					<div class="reviews_left">
+						<div class="review_user_imgBox">
+							<img class="logged_user_img"
+								src="http://localhost:9090/oaga/upload/${principal.user.userProfileImgUrl}"
+								onerror="this.src='images/reviewPage/profile_basic.png';">
+						</div>
+						<div class="logged_left">
+
+							<a href="/oaga/mypage_form" class="logged_cnt_box logged_clip">
+								<b>작성한 리뷰</b> <span>${reviewCount}</span>
+							</a>
+							<div class="logged_line">&nbsp;</div>
+							<a id="likes_btn" class="logged_cnt_box logged_plan"> <b>좋아요</b>
+								<span>${principal.user.likes}</span>
+							</a>
+							<!-- 모달 띄우기 -->
+							<div class="logged_line">&nbsp;</div>
+							<a class="logged_cnt_box logged_qa"> <b>Q&amp;A</b> <span>0</span>
+							</a>
+						</div>
+					</div>
+					<!--reviews_left-->
+
 					<div class="logged_btn">
 						<div class="logged_btn_ico">
-							<img src="images/reviewPage/ico_review.png" />
+							<a href="/oaga/write"> <img
+								src="images/reviewPage/ico_review.png" />
+							</a>
 						</div>
 						리뷰 작성
 					</div>
-				</a>
-				<div class="clear"></div>
+					<!-- logged_btn -->
+				</div>
 			</div>
-			</div>
-			
+		</div>
+
 		</div>
 	</c:otherwise>
 </c:choose>
@@ -176,7 +204,9 @@
 		</div>
 		<!--row2-->
 
-		<div class="review_more more"><a href="/oaga/list">여행리뷰 모두보기</a></div>
+		<div class="review_more more">
+			<a href="/oaga/list">여행리뷰 모두보기</a>
+		</div>
 	</div>
 	<!--secWrap-->
 </section>
@@ -197,17 +227,17 @@
 						<c:choose>
 							<c:when test="${empty principal}">
 								<a class="best_reviewer_a"
-									href="/oaga/userpage_form/${bestuser.id}">
+									href="/oaga/userpage_form/${bestuser.id}"></a>
 							</c:when>
 							<c:otherwise>
 								<a class="best_reviewer_a"
-									href="/oaga/userpage_form_l/${bestuser.id}">
+									href="/oaga/userpage_form_l/${bestuser.id}"></a>
 							</c:otherwise>
 						</c:choose>
 						<img
 							src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
 							class="best_reviewer_profile">
-						<p class="best_reviewer_name">${bestuser.userNickName}</p>
+
 						<p class="best_reviewer_count">
 							<img class="best_reviewer_icon"
 								src="/oaga/images/userPage/heart.png">

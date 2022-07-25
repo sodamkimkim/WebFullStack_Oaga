@@ -6,20 +6,21 @@
 	<div class="profile_b">
 		<div class="text-center my-5 myPageEditWrap">
 			<div class="myPageImgBox">
-				<img class="myPageImg"
+				<a href="/oaga/user/updatemyprofile_form"> <img
+					class="myPageImg"
 					src="http://localhost:9090/oaga/upload/${principal.user.userProfileImgUrl}"
 					alt="...">
-
+				</a>
 			</div>
 			<!-- myPageImgBox -->
 			<div class="myPageEditBtns">
 
 				<!-- "javascript: form.action='/oaga/api/review/upload';" -->
-				<button class="editUserInfoBtn btn">
+				<button class="editUserInfoBtn headerBtn">
 					<a href="/oaga/user/updateuserinfo_form">회원정보 수정하기 </a>
 				</button>
 
-				<button class="editUserProfile btn">
+				<button class="editUserProfile headerBtn">
 					<a href="/oaga/user/updatemyprofile_form">회원 프로필 수정하기</a>
 				</button>
 			</div>
@@ -44,11 +45,11 @@
 	</div>
 	<!-- 리뷰 리스트 -->
 	<section class="review_list_container">
-		<header class="li_header">
+		<div class="li_userReviews">
 			<div>
 				<h3 class="li_title">${principal.user.userNickName}님이작성한리뷰</h3>
 			</div>
-		</header>
+		</div>
 		<ul>
 			<c:forEach var="myReview" items="${myReviews.content}">
 				<li class="li_item"><a class="li_item_a"
