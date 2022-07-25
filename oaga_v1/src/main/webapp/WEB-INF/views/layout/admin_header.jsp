@@ -26,46 +26,23 @@
 	<header>
 		<div class="hWrap">
 			<h1>
-				<a href="/oaga">OaGa</a>
+				<a href="/oaga/admin/admin_mainpage">OaGa</a>
 			</h1>
 			<ul class="gnb">
-			
-				
-				<c:choose>
-					<c:when test="${principal.user.role eq 'ADMIN' }">
-							<li class="admin_mainmenu"><a href="/oaga/admin/guinfo_save_page">홈페이지 관리하기</a>
-								<ul class="admin_submenu">
-									<li><a href="/oaga/admin/guinfo_save_page">추가하기</a></li>				
-									<li><a href="/oaga/admin/updatepage">수정하기</a></li>
-									<li><a href="/oaga/admin/deletepage">삭제하기</a></li>
-								</ul>
-							</li>
-					</c:when>
-					<c:otherwise>
-							<li><a href="/oaga/travel_info">여행지정보보기</a></li>
-								<c:choose>
-									<c:when test="${empty principal}">
-										<li><a href="/oaga/review">리뷰보기</a></li>
-									</c:when>
-									<c:otherwise>
-										<li><a href="/oaga/mreview">리뷰보기</a></li>
-									</c:otherwise>
-								</c:choose>
-					</c:otherwise>
-				</c:choose>
-				
-			
+				<li class="admin_mainmenu"><a href="/oaga/admin/guinfo_save_page">홈페이지 관리하기</a>
+					<ul class="admin_submenu">
+						<li><a href="/oaga/admin/guinfo_save_page">추가하기</a></li>
+						
+						<li><a href="/oaga/admin/updatepage">수정하기</a></li>
+						<li><a href="/oaga/admin/deletepage">삭제하기</a></li>
+					</ul>
+				</li>
 
 			</ul>
 			<!--gnb-->
 
 			<div class="util">
-				<form class="srch">
-					<input type="text" placeholder="여행지 검색" />
-					<button class="Q1">
-						<img src="/oaga/images/mainpage/icon_search2.png" alt="" />
-					</button>
-				</form>
+				
 				<!--srch-->
 
 
@@ -74,22 +51,17 @@
 					<c:when test="${empty principal}">
 						<!-- 로그인 안된상태 -->
 						<button class="headerBtn loginBtn">
-							<a href="/oaga/auth/login_form">로그인</a>
+							<a href="/oaga/admin/admin_login_form ">로그인</a>
 						</button>
 						<!--login-->
 
 						<button class="headerBtn joinBtn">
-							<a href="/oaga/auth/join_form">회원가입</a>
+							<a href="/oaga/auth/admin_join_page">회원가입</a>
 						</button>
 						<!--join-->
 					</c:when>
 
 					<c:otherwise>
-						<!-- 로그인된 상태 -->
-						<button class="headerBtn myPageBtn">
-							<a href="/oaga/mypage_form">MyPage</a>
-						</button>
-						<!--login-->
 
 						<button class="headerBtn logoutBtn">
 							<a href="/oaga/auth/logout">로그아웃</a>

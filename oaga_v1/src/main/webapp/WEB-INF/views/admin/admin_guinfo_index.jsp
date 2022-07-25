@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/oaga/css/style.css" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="../layout/header.jsp"%>
+<%@ include file="../layout/admin_header.jsp"%>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <style>
@@ -13,7 +13,7 @@
 
 <div
 	style="width: 100%; height: 100%; display: flex; justify-content: center;">
-	<div style="width: 1200px;">
+	<div style="width: 1200px; margin-top:20px; ">
 		<div
 			style="display: flex; justify-content: space-around; margin-top: 50px;">
 

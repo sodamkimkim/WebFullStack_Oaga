@@ -15,10 +15,10 @@
 
 
 <div class="container" style="display: flex; justify-content: center;">
-<div style="text-align: center;">
+<div style="text-align: center; margin-top: 35px;">
 	<c:forEach var="areaImage" items="${areaImage}">
-		<p style="font-size: 15px; font-weight: bold;">${areaImage.area}</p>
 			${areaImage.mainImage}
+			<p style="font-size: 30px; font-weight: bold;">${areaImage.area}</p>
 	</c:forEach>
 </div>
 	
