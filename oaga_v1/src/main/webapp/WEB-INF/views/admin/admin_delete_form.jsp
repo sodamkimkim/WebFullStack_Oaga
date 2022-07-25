@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/oaga/css/admin/deleteStyle.css" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="../layout/header.jsp"%>
+<%@ include file="../layout/admin_header.jsp"%>
 
 <div class="adD_mWrap">
 	<div class="srchBox">

@@ -2,11 +2,17 @@ package com.oaga.oaga_v1.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,15 +38,25 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 
-
-
-	@GetMapping("/admin/guinfo_save_page")
-	public String adminPage(Model model) {
-		List<Area> area = adminService.areaAll();
-		model.addAttribute("areaList", area);
-		return "admin/admin_guinfo_index";
+	@GetMapping("/admin/admin_mainpage")
+	public String adminMaibForm() {
+		return "admin/admin_main_home";
+	}
+	@GetMapping("/admin/admin_login_form")
+	public String loginForm() {
+		return "admin/admin_login_form";
+	}
+	
+	@GetMapping("/auth/admin_logout")
+	public String logout(HttpServletRequest request, HttpServletResponse response) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (authentication != null) {
+			new SecurityContextLogoutHandler().logout(request, response, authentication);
+		}
+		return "redirect:/admin/admin_mainpage";
 	}
 
+	
 	@GetMapping("/admin/restaurant_save_page")
 	public String adminrestaurantPage(Model model) {
 
@@ -59,9 +75,16 @@ public class AdminController {
 	public String adminJoin(RequestUserProfileDto dto) {
 		dto.setRole(RoleType.ADMIN);
 		int result = userService.adminJoin(dto);
-		return "redirect:/";
+		return "redirect:/admin/admin_mainpage ";
 	}
-
+// ===================================================================
+	
+	@GetMapping("/admin/guinfo_save_page")
+	public String adminPage(Model model) {
+		List<Area> area = adminService.areaAll();
+		model.addAttribute("areaList", area);
+		return "admin/admin_guinfo_index";
+	}
 	// 수정 페이지
 
 	@GetMapping("/admin/updatepage")
@@ -78,7 +101,7 @@ public class AdminController {
 		model.addAttribute("areaList", area);
 		return "/admin/restaurant_update";
 	}
-
+	
 	@PostMapping("/api/admin/guinfo/infoSave")
 	public String guinfoSave(RequestTravelDto dto) {
 		dto.setCategoryType(CategoryType.GUINFO);

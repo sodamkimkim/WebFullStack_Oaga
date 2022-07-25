@@ -60,8 +60,10 @@ public class ReviewController {
 		Page<Review> reviews = reviewService.getBestReviewList(pageable);
 		
 		int reviewCount = reviewService.reviewCount(detail.getUser().getId());
+		System.out.println(reviewCount + "reviewCountreviewCount");
 		List<User> bestUser = userService.bestUser();
-		System.out.println(bestUser);
+		
+		
 		
 		model.addAttribute("reviews", reviews);
 		model.addAttribute("reviewCount", reviewCount);
@@ -108,7 +110,7 @@ public class ReviewController {
 	private String saveReview(RequestReviewFileDto dto, @AuthenticationPrincipal PrincipalDetail detail) {
 		dto.setIsWriting(IsWritingType.DONE);
 		reviewService.saveReview(dto, detail.getUser());
-		return "redirect:/review";
+		return "redirect:/mypage_form";
 	}
 	
 	// 리뷰 수정

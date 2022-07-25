@@ -1,0 +1,143 @@
+.areagu_img {
+	width: 200px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	height: 150px;
+}
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.areaList_li li a {
+	background-color: white;
+	padding: 7px;
+	border-radius: 40%;
+}
+
+.travelInfo-main-container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.travelInfo_header {
+	width: 100%;
+	height: 550px;
+	background-image: url("../../images/travelinfopage/travelinfo_bn.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.travelInfo_header_filter {
+	background-color: rgba(0, 0, 0, 0.3);
+	width: 100%;
+	height: 550px;
+}
+
+.travelInfo_hWrap {
+	user-select: none;
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 550px;
+	text-align: center;
+	width: 1200px;
+}
+
+.travelInfo_hWrap p {
+	font-size: 30px;
+	padding-top: 150px;
+	padding-bottom: 50px;
+	font-weight: bold;
+	color: white;
+	font-weight: bold;
+}
+
+.travelInfo_hWrap p>span {
+	color: rgba(245, 161, 25, 0.9);
+}
+
+.areaList {
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	height: 60px;
+	font-size: 15px;
+}
+
+.areaList_ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding-top: 12px;
+}
+
+.area_list_li {
+	text-align: center;
+	/* 	background-color: rgba(245, 161, 25, 0.7); */
+	background-color: rgba(45, 56, 71, 1);
+	display: block;
+	width: 70px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 20px;
+	color: white;
+	font-weight: bold;
+	letter-spacing: 5px;
+	text-indent: 5px;
+	mix-blend-mode: overlay;
+}
+
+.travelInfo_row {
+	padding: 30px;
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.travelInfo_row>h3 {
+	color: rgba(51, 51, 51, 1);
+	font-size: 25px;
+	margin-bottom: 10px;
+	text-indent: 10px;
+	letter-spacing: 5px;
+}
+
+.travleInfo_element a {
+	display: flex;
+	flex-direction: column;
+	align-items: ceter;
+	letter-spacing: 3px;
+}
+
+.travleInfo_element span {
+	color: rgba(51, 51, 51, 1);
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.travleInfo_element:hover img {
+/* 	transform: translate(-0.5px, -0.5px); */
+/* 	transition: all 0.1s; */
+	box-shadow: 1px 1px 3px rgba(51,51,51,0.3);
+}
+
+
+
+.travelInfo_rowBackground {
+	background-color: rgba(243, 243, 243, 0.9);
+}
+.travleInfo_element{
+	width: 220px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.travelInfo_rowBackground:nth-child(2n) {
+	background-color: white;
+}
