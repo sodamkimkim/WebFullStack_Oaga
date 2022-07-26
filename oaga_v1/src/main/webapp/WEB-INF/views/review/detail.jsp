@@ -45,7 +45,7 @@
 			<!--contnentMeta-->
 			<div class="reviewDetail_profile">
 				<a class="profile_a"> <img class="profile_img"
-					src="../images/reviewPage/profile_basic.png">
+					src="http://localhost:9090/oaga/upload/${principal.user.userProfileImgUrl}">
 				</a>
 				<div class="profile_namebox">
 					<h6 class="profile_name">${review.user.userNickName}</h6>
@@ -84,7 +84,7 @@
 			<c:forEach var="reply" items="${review.replies}">
 				<div class="replyBox">
 					<img class="reply_image" alt=""
-						src="../images/reviewPage/profile_basic.png">
+						src="http://localhost:9090/oaga/upload/${reply.user.userProfileImgUrl}">
 					<div class="reply_i">
 						<h4 class="reply_u">${reply.user.userNickName}</h4>
 						<h6 class="reply_t">${reply.timestamp}</h6>
