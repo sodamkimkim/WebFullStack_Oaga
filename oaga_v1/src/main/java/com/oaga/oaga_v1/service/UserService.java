@@ -187,10 +187,7 @@ public class UserService {
 
 
 	@Transactional
-	public User checkUserName(String username) {
-		return userRepository.findByUsername(username).orElseGet(() -> {
-			return new User();
-		});
-		
-	}
+    public User checkUserName(String username) {
+        return userRepository.findByUsername(username).orElse(null);
+    }
 }

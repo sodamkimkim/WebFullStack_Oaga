@@ -126,7 +126,7 @@ public class AdminController {
 		return "admin/admin_delete_form";
 	}
 
-	@PostMapping("/api/admin/restaurant/infoSave")
+	@PostMapping("/admin/restaurant/infoSave")
 	public String restaurantSave(RequestRestaurantDto dto) {
 		dto.setCategoryType(CategoryType.RESTAURANT);
 		adminService.saveRestaurant(dto);

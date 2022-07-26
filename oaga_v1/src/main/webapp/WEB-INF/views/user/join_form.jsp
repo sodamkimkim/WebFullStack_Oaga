@@ -142,6 +142,20 @@ footer {
 	margin-top: 20px;
 }
 
+#btn-checkId {
+	width: 60px;
+	height: 20px;
+	border-radius: 5px;
+	border: transparent;
+	color: #fff;
+	font-size: 12px;
+	background-color: rgba(245, 161, 25, 0.9);
+	align-self: flex-start;
+	margin-left: 100px;
+	margin-top: -30px;
+	margin-bottom: 30px;
+	border-radius: 5px;
+}
 </style>
 </head>
 <body>
@@ -151,29 +165,25 @@ footer {
 				<a href="/oaga">OaGa</a>
 			</h1>
 			<div class="con">
-
-
-				<form action="/oaga/auth/joinproc" method="post" onsubmit="return joinCheck()"  enctype="multipart/form-data">
-
+				<form action="/oaga/auth/joinproc" method="post"
+					onsubmit="return joinCheck()" enctype="multipart/form-data">
 					<!-- csrf???? xss -->
 					<div class="formRow1">
-					
+
 						<input type="text" class="form-input" placeholder="Enter ID"
-							id="username" name="username"/>
+							id="username" name="username" />
 						<!-- 	
 						<label class="checkId-label" for="btn-checkId">중복체크</label>
 						 -->
-						
-						<button style="background: none; border: 2px solid rgba(245, 161, 25, 0.9); border-radius: 5px; align-self: flex-start;
-									   margin-left: 100px; margin-top: -30px; margin-bottom: 30px;" 
-						id="btn-checkId" type="button">중복체크</button>
-						
-						 <input type="password"
-							class="form-input" placeholder="Enter password" id="password"
-							name="password" /> <br /> <input type="text" class="form-input"
-							placeholder="Enter name" id="userNickName" name="userNickName" />
-						<input type="email" class="form-input" placeholder="Enter email"
-							id="email" name="email" />
+
+						<button id="btn-checkId" type="button">중복체크</button>
+
+						<input type="password" class="form-input"
+							placeholder="Enter password" id="password" name="password" /> <br />
+						<input type="text" class="form-input" placeholder="Enter name"
+							id="userNickName" name="userNickName" /> <input type="email"
+							class="form-input" placeholder="Enter email" id="email"
+							name="email" />
 						<div class="userProfileWrap">
 							<label class="lblUserProfileFile" for="userProfileFile">사용자
 								프로필 등록: </label> <input type="file" name="file"
@@ -203,60 +213,56 @@ footer {
 		</footer>
 	</div>
 	<!--main-->
-<script>
-	let usernameCheck = false;
-	$("#btn-checkId").bind("click",function(){
-		let data = {
-				username: $("#username").val(),
-		};
-		console.log(data.username);
-		if(data.username == ''){
-			alert("사용하실 아이디를 입력해주세요");
-			return false;
-		}
-		$.ajax({
-			type: "POST",
-			url: "/oaga/api/checkId/",
-			data: JSON.stringify(data),
-			contentType: "application/json; charset=utf-8",
-		
-		}).done(function(response) {
-			if(response.username != null){
-				alert("이미 사용중인 아이디 입니다.");
-				usernameCheck = false;
+	<script>
+		let usernameCheck = false;
+		$("#btn-checkId").bind("click", function() {
+			let data = {
+				username : $("#username").val(),
+			};
+			console.log(data.username);
+			if (data.username == '') {
+				alert("사용하실 아이디를 입력해주세요");
 				return false;
-			}else{
-				alert("사용가능한 아이디 입니다.");
-				usernameCheck = true;
-				
+			}
+			$.ajax({
+				type : "POST",
+				url : "/oaga/api/checkId/",
+				data : JSON.stringify(data),
+				contentType : "application/json; charset=utf-8"
+			}).done(function(response) {
+				console.log(response.username);
+				if (response.username != null) {
+					alert("이미 사용중인 아이디 입니다.");
+					usernameCheck = false;
+					return false;
+				} else {
+					alert("사용가능한 아이디 입니다.");
+					usernameCheck = true;
+				}
+			}).fail(function(error) {
+				alert("통신 오류. 다시 시도해주세요.");
+				return false;
+			});
+		});
+
+		function joinCheck() {
+
+			if (usernameCheck == false) {
+				alert("아이디 중복확인을 해주세요.");
+				return false;
+
+			} else {
+				alert("회원가입 성공 했습니다.");
+				return true;
 			}
 
-		}).fail(function(error) {
-			alert("통신 오류. 다시 시도해주세요.");
-			return false;
-		});
-	});
-	
-	
-	function joinCheck(){
-		
-		if(usernameCheck == false) {
-			alert("아이디 중복확인을 해주세요.");
-			return false;
-
-		}else{
-			alert("회원가입 성공 했습니다.");
-			return true;
 		}
-		
-	}
-
-</script>
+	</script>
 </body>
 <script type="text/javascript">
-function adminJoinPage() {
-	location.href = "/oaga/auth/admin_join_page";
-}
+	function adminJoinPage() {
+		location.href = "/oaga/auth/admin_join_page";
+	}
 </script>
 </html>
 
