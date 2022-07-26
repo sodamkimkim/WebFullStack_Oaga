@@ -15,6 +15,7 @@ import org.springframework.security.web.firewall.DefaultHttpFirewall;
 import org.springframework.security.web.firewall.HttpFirewall;
 
 import com.oaga.oaga_v1.auth.PrincipalDetailService;
+import com.oaga.oaga_v1.handler.CustomFailureHandler;
 import com.oaga.oaga_v1.handler.CustomSuccessfulHandler;
 
 @Configuration
@@ -50,9 +51,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
             .formLogin()
             .loginPage("/auth/login_form")
             .loginProcessingUrl("/auth/loginproc")
-            .successHandler(new CustomSuccessfulHandler());
-
-
+            .successHandler(new CustomSuccessfulHandler())
+            .failureHandler(new CustomFailureHandler());
 
     }
 
