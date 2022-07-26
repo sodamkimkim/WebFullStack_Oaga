@@ -100,44 +100,6 @@ let index = {
 	},
 
 
-	checkId: function() {
-		
-		let data = {
-			username: $("#username").val(),
-		}
-
-		//var data = document.getElementById('username').value;
-
-		console.log(data);
-		$.ajax({
-			type: "POST",
-			url: `/oaga/api/checkId/`,
-			data: JSON.stringify(data),
-			contentType: "application/json; charset=utf-8",
-			dataType: "json",
-		}).done(function(response) {
-			if (response.username != null) {
-				alert("이미 사용중인 아이디입니다.");
-				
-			} else {
-				alert("사용가능한 아이디 입니다.");
-			}
-
-		}).fail(function(error) {
-			console.log(error);
-			alert("통신 오류. 다시 시도해주세요.");
-		});
-		
-	}, 
-	
- 	joinCheck: function(){
-		let usernameCheck = false;
-		
-		if (usernameCheck == false) {
-			alert("아이디 중복확인을 해주세요.");
-			return false;
-		}
-	}
 
 }
 
