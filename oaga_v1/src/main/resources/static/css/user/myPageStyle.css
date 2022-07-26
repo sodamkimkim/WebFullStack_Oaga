@@ -357,3 +357,8 @@ h4 {
 	background-color: #F2F2F2;
 	border-color: #D8D8D8;
 }
+
+.page-link {
+	display: inline-block;
+	cursor: pointer;
+}

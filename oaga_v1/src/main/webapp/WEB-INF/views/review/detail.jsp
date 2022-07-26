@@ -6,7 +6,7 @@
 
 <div class="reviewDetailForm">
 	<div class="reviewDetailWrap">
-	<input type="hidden" id="principal--id" value="${principal.user.id}">
+		<input type="hidden" id="principal--id" value="${principal.user.id}">
 		<div class="reviewDetailHeader">
 			<h3 style="color: #f9bb57; font-size: 23px;">여행후기</h3>
 			<p>여행을 다녀온 OaGa유저들의 솔직한 여행이야기</p>
@@ -16,15 +16,24 @@
 			<input type="hidden" id="reviewId" value="${review.id}">
 			<div class="d_title_box">
 				<h3 class="contentTitle">${review.title}</h3>
-				<div class="dropdown-box">
-					<button onclick="myFunction()" class="dropbtn">
-						<img class="dropImage" src="../images/reviewPage/icon-addview.png">
-					</button>
-					<div id="myDropdown" class="dropdown-content">
-						<a href="/oaga/review/update/${review.id}" >수정</a> 
-						<a href="javascript:void(0);" id="btn-delete" style="color: red;">삭제</a>
-					</div>
-				</div>
+				<c:choose>
+					<c:when test="${review.user.id eq principal.user.id}">
+						<div class="dropdown-box">
+							<button type="button" onclick="myFunction()" class="dropbtn">
+								<img class="dropImage"
+									src="../images/reviewPage/icon-addview.png">
+							</button>
+							<div id="myDropdown" class="dropdown-content">
+								<a href="/oaga/review/update/${review.id}">수정</a> <a
+									href="javascript:void(0);" id="btn-delete" style="color: red;">삭제</a>
+							</div>
+						</div>
+					</c:when>
+					<c:otherwise>
+
+					</c:otherwise>
+				</c:choose>
+
 			</div>
 			<div class="contentThemeBox">${review.theme}</div>
 			<!--contentTitle-->
@@ -71,7 +80,7 @@
 				</div>
 			</c:otherwise>
 		</c:choose>
-			<div class="replysec" id="replysec">
+		<div class="replysec" id="replysec">
 			<c:forEach var="reply" items="${review.replies}">
 				<div class="replyBox">
 					<img class="reply_image" alt=""
@@ -89,7 +98,7 @@
 				<div class="reply_c">${reply.content}</div>
 			</c:forEach>
 		</div>
-			<!-- replysec -->
+		<!-- replysec -->
 
 		<div class="reviewDetailFooter">
 			<button class="reviewDetailFooter_btn">
@@ -111,8 +120,7 @@ function myFunction() {
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
+  if (!event.target.matches('.dropbtn') && !event.target.matches('.dropImage')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {

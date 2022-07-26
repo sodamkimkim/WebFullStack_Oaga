@@ -43,16 +43,7 @@
 			<!--gnb-->
 
 			<div class="util">
-				<form class="srch">
-					<input type="text" placeholder="여행지 검색" />
-					<button class="Q1">
-						<img src="/oaga/images/mainpage/icon_search2.png" alt="" />
-					</button>
-				</form>
 				<!--srch-->
-
-
-
 				<c:choose>
 					<c:when test="${empty principal}">
 						<!-- 로그인 안된상태 -->

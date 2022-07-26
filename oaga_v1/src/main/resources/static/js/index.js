@@ -1,5 +1,8 @@
 let index = {
 	init: function() {
+		$(".searchArea-input").keypress(function(e) { 
+	      	if (e.keyCode == 13) e.preventDefault(); 
+	      });
 		$("#searchArea").autocomplete({
 			source: function(request, response) { //source: 입력시 보일 목록
 				$.ajax({
@@ -35,9 +38,7 @@ let index = {
 			}
 		}).autocomplete('instance')._renderItem = function(ul, item) {
 			console.log(item);
-
 			return $('<li style="display: block; width: 96.5%;">').append('<a class="area_search_item" style = "display-block; width: 99.5%;"><span class="search_name" style = "display-block; width: 97%;">' + item.label + '</span></a>')
-
 			.appendTo(ul);
 		};
 

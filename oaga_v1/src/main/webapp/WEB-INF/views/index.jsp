@@ -30,8 +30,8 @@
 		<div class="srchBox">
 			<div class="searchArea">
 				<form class="srch2">
-					<input type="text" id="searchArea" name="searchArea"
-						placeholder="도시명으로 검색" />
+					<input type="text" class="searchArea-input" id="searchArea" name="searchArea"
+						placeholder="도시명으로 검색"  />
 					<button class="Q2">
 						<img src="/oaga/images/mainpage/icon_search1.gif" alt="" />
 					</button>
