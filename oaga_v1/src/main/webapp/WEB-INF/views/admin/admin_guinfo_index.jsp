@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="/oaga/css/style.css" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="../layout/admin_header.jsp"%>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -29,7 +28,7 @@
 			style="width: 1200px; height: 800px; margin-top: 30px; display: flex; justify-content: center; align-items: center;">
 
 			<div
-				style="width: 1000px; height: 700px; background-color:rgba(245, 161, 25, 0.9); border-radius:5px; display: flex;">
+				style="width: 1000px; height: 700px; background-color:#99CCFF; border-radius:5px; display: flex;">
 				<div style="height: 100%; width: 33%; border-right:1px solid white;" id="test">
 					<div
 						style="width: 100%; height: 30px;border-bottom: 1px solid white; text-align: center; ">도시</div>

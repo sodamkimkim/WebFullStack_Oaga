@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title>login_form</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<!--      <link rel="stylesheet" href="css/user/loginstyle.css" /> -->
-
+<link rel="stylesheet" href="/oaga/css/user/loginstyle.css" />
 <style type="text/css">
 * {
 	margin: 0;
@@ -77,12 +77,12 @@ h1 {
 	border-radius: 5px;
 	border: transparent;
 	font-weight: bold;
+	margin-bottom: 24px;
 	color: #fff;
 	font-size: 14px;
 	/* background-color: #f5a119;
   opacity: 0.9; */
 	background-color: rgba(245, 161, 25, 0.9);
-	margin-bottom: 24px;
 }
 
 .formRow2 .btn_login:hover {
@@ -101,6 +101,21 @@ h1 {
 	font-weight: bold;
 	font-size: 11px;
 	color: rgba(3, 3, 3, 0.6);
+}
+
+.errorMessage {
+	border-radius: 5px;
+	border: 1px solid #FF6666;
+	background-color: #FFCCCC;
+	height: 30px;
+	width: 300px;
+	display: flex;
+	line-height: 30px;
+	justify-content: center;
+	vertical-align: center;
+	margin-bottom: 24px;
+	font-size: 13px;
+	color: white;
 }
 
 footer {
@@ -155,7 +170,13 @@ footer {
 							id="username" name="username" value="2" /> <input
 							type="password" class="form-control" placeholder="Enter password"
 							id="password" name="password" value="2" />
+					<c:if test="${errorMessage ne null}">
+					<div class="errorMessage">
+						${errorMessage}
 					</div>
+					</c:if>
+					</div>
+					
 					<!--formRow1-->
 
 					<div class="formRow2">
@@ -171,8 +192,6 @@ footer {
 				</p>
 			</div>
 			<!--con-->
-		</div>
-		<!--mWrap-->
 		<footer>
 			<div class="wrap fWrap">
 				<p>Copyright ⓒ 2022 OaGa.com, All Rights Reserved.</p>
@@ -180,6 +199,8 @@ footer {
 			</div>
 			<!--footerWrap-->
 		</footer>
+		</div>
+		<!--mWrap-->
 	</div>
 	<!--main-->
 </body>

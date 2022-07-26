@@ -79,7 +79,8 @@ public class UserController {
 	}
 	
 	@GetMapping("/auth/login_form")
-	public String loginForm() {
+	public String loginForm(@RequestParam(value = "exception", required = false) String exception, Model model) {
+		model.addAttribute("errorMessage",exception);
 		return "user/login_form";
 	}
 
