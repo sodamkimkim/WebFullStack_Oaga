@@ -51,7 +51,7 @@
 					<div id="areaGu"></div>
 
 				</div>
-			<form method="post" action="/oaga/api/admin/restaurant/infoSave" name="t_form" enctype="multipart/form-data">
+			<form method="post" action="/oaga/admin/restaurant/infoSave" name="t_form" enctype="multipart/form-data">
 				<div style="height: 100%; width: 100%; border: 1px solid; " >
 
 					<input type="hidden" itemid="${areaGuName}"

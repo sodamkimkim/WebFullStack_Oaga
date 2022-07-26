@@ -33,7 +33,7 @@
 					<input type="text" id="searchArea" name="searchArea"
 						placeholder="도시명으로 검색" />
 					<button class="Q2">
-						<img src="images/mainpage/icon_search1.gif" alt="" />
+						<img src="/oaga/images/mainpage/icon_search1.gif" alt="" />
 					</button>
 				</form>
 				<!-- 검색했을 때 나올 결과 -->

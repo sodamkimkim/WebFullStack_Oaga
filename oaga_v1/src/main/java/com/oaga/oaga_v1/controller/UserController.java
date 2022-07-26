@@ -30,6 +30,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
@@ -79,12 +80,14 @@ public class UserController {
 	}
 	
 	@GetMapping("/auth/login_form")
-	public String loginForm() {
+	public String loginForm(@RequestParam(value = "exception", required = false) String exception, Model model) {
+		model.addAttribute("errorMessage",exception);
 		return "user/login_form";
 	}
 
 	@GetMapping("/auth/join_form")
 	public String joinForm() {
+		
 		return "user/join_form";
 	}
 
@@ -118,11 +121,11 @@ public class UserController {
 
 
 	@PostMapping("/auth/joinproc")
-	public String save(RequestUserProfileDto dto) {
-		dto.setRole(RoleType.USER);
-		int result = userService.saveUser(dto);
-		return "redirect:/";
-	}
+    public String save(RequestUserProfileDto dto) {
+        dto.setRole(RoleType.USER);
+        int result = userService.saveUser(dto);
+        return "redirect:/";
+    }
 
 	//로그인한 자기 정보 가져오기
 	//프로필사진, 여행리뷰 작성한거
@@ -257,6 +260,23 @@ public class UserController {
 		return "redirect:/";
 
 	}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

@@ -31,10 +31,17 @@
 			<!-- 404 Error Text -->
 			<div class="text-center">
 				<div class="error mx-auto" data-text="404">404</div>
-				<p class="lead text-gray-800 mb-5">Page Not Found</p>
-				<p class="text-gray-500 mb-0">It looks like you found a glitch
-					in the matrix...</p>
-				<a href="index.html">← Back to Dashboard</a>
+				<p class="lead text-gray-800 mb-5" style="font-weight: bold;">죄송합니다.<br/>요청하신 페이지를 찾을 수 없습니다.</p>
+				<div style=" display:flex; justify-content: center;">
+					<div style="width: 500px; text-align: left; margin-left: 100px;">
+					방문하시려는 페이지의 주소가 잘못 입력되었거나,<br/>
+					페이지의 주소가 변경 혹은 삭제되어 요청하신 페이지를 찾을 수 없습니다.<br/>
+					
+					입력하신 주소가 정확한지 다시 한번 확인해 주시기 바랍니다.<br/>
+					</div>
+				</div>
+				<br/>
+				<a href="/oaga">← 홈페이지로 돌아가기</a>
 			</div>
 
 		</div>

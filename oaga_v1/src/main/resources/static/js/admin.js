@@ -36,6 +36,8 @@ function selectrestaurantList(selectedId) { // area 선택 시
 
 	let data = selectedId;
 	console.log(data.data);
+	
+	
 	$.ajax({
 		type: "GET",
 		url: `/oaga/api/admin/areaId/${data}`

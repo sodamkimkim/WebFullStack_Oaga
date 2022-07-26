@@ -36,12 +36,14 @@ a {
 	padding-top: 100px;
 	margin-left: auto;
 	margin-right: auto;
+	
 }
 
 h1 {
 	text-align: center;
 	margin-bottom: 30px;
-	color: rgba(245, 161, 25, 0.9);
+	color: #66B2FF;
+	
 }
 
 .formRow1 {
@@ -81,11 +83,13 @@ h1 {
 	font-size: 14px;
 	/* background-color: #f5a119;
   opacity: 0.9; */
-	background-color: rgba(245, 161, 25, 0.9);
+  	background-color:#66B2FF;
+	
 	margin-bottom: 24px;
 }
 
 .formRow2 .btn_login:hover {
+	
 	cursor: pointer;
 }
 
@@ -134,7 +138,7 @@ footer {
 }
 
 .con p a {
-	color: rgba(245, 161, 25, 0.9);
+	color: #66B2FF;
 }
 
 .con p a:hover {
@@ -146,7 +150,7 @@ footer {
 	<div class="main">
 		<div class="wrap mWrap">
 			<h1>
-				<a href="/oaga">OaGa</a>
+				<a href="/oaga/admin/admin_mainpage">OaGa</a>
 			</h1>
 			<div class="con">
 				<form action="/oaga/auth/loginproc" method="post">

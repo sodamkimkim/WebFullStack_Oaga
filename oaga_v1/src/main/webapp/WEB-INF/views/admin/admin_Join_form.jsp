@@ -110,6 +110,7 @@
         flex-direction: column;
       }
 
+
       .userProfileWrap label {
         margin-top: 10px;
         margin-bottom: 15px;
@@ -154,4 +155,5 @@
     </div>
     <!--main-->
   </body>
+
 </html>

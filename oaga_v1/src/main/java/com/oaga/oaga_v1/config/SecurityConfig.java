@@ -15,6 +15,7 @@ import org.springframework.security.web.firewall.DefaultHttpFirewall;
 import org.springframework.security.web.firewall.HttpFirewall;
 
 import com.oaga.oaga_v1.auth.PrincipalDetailService;
+import com.oaga.oaga_v1.handler.CustomFailureHandler;
 import com.oaga.oaga_v1.handler.CustomSuccessfulHandler;
 
 @Configuration
@@ -40,9 +41,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
+		
+
+
+		
+		
         http.csrf().disable()
             .authorizeRequests()
-            .antMatchers("/auth/**", "/**", "/", "/travel/**", "/travel_info/**", "/travel_detail/**", "/travel_guinfo/**", "/review", "/js/**", "/css/**", "/css/review/**", "/images/**")
+            .antMatchers("/auth/**", "/api/**","/ajax/**" ,"/upload/**", "/", "/travel/**", "/travel_info/**", "/travel_detail/**", "/travel_guinfo/**", "/review", "/js/**", "/css/**", "/css/review/**", "/images/**")
             .permitAll()
             .antMatchers("/admin/").hasRole("ADMIN")
             .anyRequest().authenticated()
@@ -50,9 +56,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
             .formLogin()
             .loginPage("/auth/login_form")
             .loginProcessingUrl("/auth/loginproc")
-            .successHandler(new CustomSuccessfulHandler());
-
-
+            .successHandler(new CustomSuccessfulHandler())
+            .failureHandler(new CustomFailureHandler());
 
     }
 

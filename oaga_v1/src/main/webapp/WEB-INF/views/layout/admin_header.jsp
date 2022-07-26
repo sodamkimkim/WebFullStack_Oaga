@@ -33,8 +33,11 @@
 
 						<li><a href="/oaga/admin/updatepage">수정하기</a></li>
 						<li><a href="/oaga/admin/deletepage">삭제하기</a></li>
-					</ul></li>
-
+					</ul>
+				</li>
+				<li style="margin-left: 100px;">
+					<a href="/oaga">사용자 홈페이지 가기</a>
+				</li>
 			</ul>
 			<!--gnb-->
 
