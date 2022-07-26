@@ -154,7 +154,7 @@ footer {
 
 
 				<form action="/oaga/auth/joinproc" method="post" onsubmit="return joinCheck()"  enctype="multipart/form-data">
->
+
 					<!-- csrf???? xss -->
 					<div class="formRow1">
 					
@@ -219,14 +219,16 @@ footer {
 			url: "/oaga/api/checkId/",
 			data: JSON.stringify(data),
 			contentType: "application/json; charset=utf-8",
-			dataType: "json",
+		
 		}).done(function(response) {
 			if(response.username != null){
 				alert("이미 사용중인 아이디 입니다.");
+				usernameCheck = false;
 				return false;
 			}else{
 				alert("사용가능한 아이디 입니다.");
 				usernameCheck = true;
+				
 			}
 
 		}).fail(function(error) {
