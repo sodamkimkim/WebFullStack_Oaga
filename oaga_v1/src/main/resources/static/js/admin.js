@@ -62,11 +62,11 @@ function addSelectedGuList3(response) {//구칸에 구이름 뿌리기
 
 	for (let i = 0; i <= a - 1; i++) {
 		select[i] = `
-					 <div  style="height: 100%; width: 100%; border: 1px solid; margin-bottom:5px; ">
+					 <div  style=" width: 100%; ">
 						<c:forEach var="areaGuList" items="${test}" id ="areaGuList">
 
 
-								<div class ="areaGuList" style="width: 100%; height: 30px; cursor: pointer;" id ="getAreaGuList"
+								<div class ="areaGuList" style="width: 100%; height: 35px; cursor: pointer;" id ="getAreaGuList"
 								onclick ="areaGuClick3(${test[i].id})">${test[i].guname}</div>
 
 						</c:forEach>				
@@ -257,11 +257,11 @@ function addSelectedGuList2(response) {//구칸에 구이름 뿌리기
 
 	for (let i = 0; i <= a - 1; i++) {
 		select[i] = `
-					 <div  style="height: 100%; width: 100%; border: 1px solid; margin-bottom:5px; ">
+					 <div>
 						<c:forEach var="areaGuList" items="${test}" id ="areaGuList">
 
 
-								<div class ="areaGuList" style="width: 100%; height: 30px; cursor: pointer;" id ="getAreaGuList"
+								<div class ="areaGuList"id ="getAreaGuList"
 								onclick ="areaGuClick2(${test[i].id})">${test[i].guname}</div>
 
 						</c:forEach>				
@@ -295,7 +295,7 @@ function addSelectedGuInfo(response) { //guinfo 리스트 뿌리기
 		var guinfoNameList = new Array();
 		for (let i = 0; i < a; i++) {
 			guinfoNameList[i] = `<c:forEach var="guinfoList" items="${guinfoName}">
-								<div style="width: 100%; height: 30px;border: 1px solid; margin-bottom:5px; cursor: pointer;"
+								<div style="width: 100%; height: 33px;  border-bottom: 2px solid #333;cursor: pointer;"
 								onclick ="guinfoclick(${guinfoName[i].id})">
 									${guinfoName[i].name}
 								</div>
@@ -445,10 +445,11 @@ function addSelectedGuName(response) {
 	$('#areaGuName').empty();
 	var setName = response.data;
 	console.log(setName[0].guname + "@@#!#!#!#!");
-	var guName = `<h3 style="margin-bottom: 10px; font-size: 40px;">${setName.guname}</h3>`;
+	var guName = `<h3 style="font-size: 40px;">${setName.guname}</h3>`;
 	$('#areaGuName').append(guName);
 
 }
+
 function addSelectedGuList(response) {//구칸에 구이름 뿌리기
 	$('#areaGu').empty();
 
@@ -464,11 +465,11 @@ function addSelectedGuList(response) {//구칸에 구이름 뿌리기
 
 	for (let i = 0; i <= a - 1; i++) {
 		select[i] = `
-					 <div  style="height: 100%; width: 100%;  margin-bottom:5px;>
+					 <div  class="li_item">
 						<c:forEach var="areaGuList" items="${test}" id ="areaGuList">
 
 
-								<div class ="areaGuList" style="width: 100%; height: 30px; cursor: pointer;" id ="getAreaGuList"
+								<div class ="areaGuList" style="width: 100%; height: 35px; cursor: pointer;" id ="getAreaGuList"
 								onclick ="areaGuClick(${test[i].id})">${test[i].guname}</div>
 
 						</c:forEach>				

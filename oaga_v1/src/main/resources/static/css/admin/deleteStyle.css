@@ -56,7 +56,9 @@ a {
 }
 
 .adD_mWrap .words {
-	margin-top: 5px;
+	margin-top: 10px;
+	color: white;
+	opacity: 0.8;
 }
 
 /* ///////////////////////////*/

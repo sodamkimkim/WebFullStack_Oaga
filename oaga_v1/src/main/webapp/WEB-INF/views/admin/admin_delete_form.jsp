@@ -21,8 +21,7 @@
 			<!--  -->
 			<div class="keyword">
 				<div class="words">
-					키워드&nbsp: <a href="#">장소이름,&nbsp&nbsp</a> <a href="#">장소이름,&nbsp&nbsp</a><a
-						href="#">장소이름</a>
+					키워드&nbsp: <a href="#">장소이름</a>
 				</div>
 				<!--city-->
 			</div>

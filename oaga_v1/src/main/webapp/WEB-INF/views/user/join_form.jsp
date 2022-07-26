@@ -122,7 +122,6 @@ footer {
 .checkId-label {
 	font-size: 12px;
 	border-radius: 5px;
-	background-color: rgba(245, 161, 25, 0.9);
 }
 
 .btn_join_admin {
@@ -134,7 +133,7 @@ footer {
 	font-weight: bold;
 	color: #fff;
 	font-size: 14px;
-	background-color: #66B2FF;
+  background-color: rgba(6, 47, 74, 0.95);
 	margin-top: 20px;
 }
 </style>

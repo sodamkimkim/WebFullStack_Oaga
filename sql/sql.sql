@@ -162,11 +162,11 @@ INSERT INTO guinfo VALUES(13,'판교',"GUINFO","가나다라마바사아자차�
 
 
 INSERT INTO restaurant VALUES(1,'강남대로2',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스1", 'https://picsum.photos/200/300/?blur' ,1);
-INSERT INTO restaurant VALUES(2,'강남대로2',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스2",1);
-INSERT INTO restaurant VALUES(3,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스2",7);
-INSERT INTO restaurant VALUES(7,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스7",7);
-INSERT INTO restaurant VALUES(8,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스8",7);
-INSERT INTO restaurant VALUES(9,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스9",7);
+INSERT INTO restaurant VALUES(2,'강남대로2',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스2",'https://picsum.photos/200/300/?blur',1);
+INSERT INTO restaurant VALUES(3,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스2",'https://picsum.photos/200/300/?blur',7);
+INSERT INTO restaurant VALUES(7,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스7",'https://picsum.photos/200/300/?blur',7);
+INSERT INTO restaurant VALUES(8,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스8",'https://picsum.photos/200/300/?blur',7);
+INSERT INTO restaurant VALUES(9,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스9",'https://picsum.photos/200/300/?blur',7);
 SELECT * FROM restaurant;
 
 SELECT * FROM restaurant WHERE name LIKE '%강%';
