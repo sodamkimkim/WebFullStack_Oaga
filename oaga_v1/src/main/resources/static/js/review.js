@@ -177,9 +177,7 @@ function addRecentReview(reviewList) {
 				</div>`
 		}
 	}
-	
-
-	
+	console.log(recentList1);
 	$("#row1").prepend(recentList1);
 	$("#row2").prepend(recentList2);
 }
