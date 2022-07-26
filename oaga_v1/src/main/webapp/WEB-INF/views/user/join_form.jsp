@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="../layout/admin_header.jsp"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title>login_form</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <!--  <link rel="stylesheet" href="css/user/joinstyle.css" /> -->
 <style type="text/css">
 * {
@@ -146,20 +150,27 @@ footer {
 				<a href="/oaga">OaGa</a>
 			</h1>
 			<div class="con">
-				<form action="/oaga/auth/joinproc" method="post"
-					enctype="multipart/form-data">
+
+
+				<form action="/oaga/auth/joinproc" method="post" onsubmit="return joinCheck()"  enctype="multipart/form-data">
+>
 					<!-- csrf???? xss -->
 					<div class="formRow1">
+					
 						<input type="text" class="form-input" placeholder="Enter ID"
-							id="username" name="username" /> <label class="checkId-label"
-							for="btn-checkId">중복체크</label>
-						<button id="btn-checkId"></button>
-						<input type="password" class="form-input"
-							placeholder="Enter password" id="password" name="password" /> <br />
-						<input type="text" class="form-input" placeholder="Enter name"
-							id="userNickName" name="userNickName" /> <input type="email"
-							class="form-input" placeholder="Enter email" id="email"
-							name="email" />
+							id="username" name="username"/>
+						<!-- 	
+						<label class="checkId-label" for="btn-checkId">중복체크</label>
+						 -->
+						
+						<button style="background: none;" id="btn-checkId" type="button">중복체크</button>
+						
+						 <input type="password"
+							class="form-input" placeholder="Enter password" id="password"
+							name="password" /> <br /> <input type="text" class="form-input"
+							placeholder="Enter name" id="userNickName" name="userNickName" />
+						<input type="email" class="form-input" placeholder="Enter email"
+							id="email" name="email" />
 						<div class="userProfileWrap">
 							<label class="lblUserProfileFile" for="userProfileFile">사용자
 								프로필 등록: </label> <input type="file" name="file"
@@ -189,6 +200,50 @@ footer {
 		</footer>
 	</div>
 	<!--main-->
+<script>
+	let usernameCheck = false;
+	$("#btn-checkId").bind("click",function(){
+		let data = {
+				username: $("#username").val(),
+		};
+		$.ajax({
+			type: "POST",
+			url: "/oaga/api/checkId/",
+			data: JSON.stringify(data),
+			contentType: "application/json; charset=utf-8",
+			dataType: "json",
+		}).done(function(response) {
+			console.log(response);
+			if(response.username != null){
+				alert("이미 사용중인 아이디 입니다.");
+				return false;
+			}else{
+				alert("사용가능한 아이디 입니다.");
+				usernameCheck = true;
+			}
+
+		}).fail(function(error) {
+			console.log(error);
+			alert("통신 오류. 다시 시도해주세요.");
+			return false;
+		});
+	});
+	
+	
+	function joinCheck(){
+		
+		if(usernameCheck == false) {
+			alert("아이디 중복확인을 해주세요.");
+			return false;
+
+		}else{
+			alert("회원가입 성공 했습니다.");
+			return true;
+		}
+		
+	}
+
+</script>
 </body>
 <script type="text/javascript">
 function adminJoinPage() {
