@@ -36,6 +36,7 @@ public class AdminApiController {
 
 	@Autowired
 	private AdminService adminService;
+	
 	@Autowired
 	private GuInfoRepository guInfoRepository;
 
