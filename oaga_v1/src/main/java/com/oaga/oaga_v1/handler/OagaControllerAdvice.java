@@ -20,4 +20,10 @@ public class OagaControllerAdvice {
 		return "error";
 	}
 	
+	@ExceptionHandler(Exception.class)
+	public String exception(DataIntegrityViolationException e) {
+		System.out.println(e.getStackTrace());
+		return "error";
+	}
+	
 }

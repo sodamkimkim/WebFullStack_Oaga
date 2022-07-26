@@ -23,9 +23,6 @@ public class Area {
 
     @Column(nullable = false, length = 50)
     private String area;
-
-    @Column(nullable = false, length = 200)
-    private String content;
    
     @Column(nullable = false)
     private String mainImage;

@@ -174,7 +174,7 @@
 		</div>
 		<!--row2-->
 
-		<a href="/oaga/list"><div class="more">56,065개의 여행리뷰 모두보기</div></a>
+		<a href="/oaga/list"><div class="more">여행리뷰 모두보기</div></a>
 	</div>
 	<!--secWrap-->
 </section>

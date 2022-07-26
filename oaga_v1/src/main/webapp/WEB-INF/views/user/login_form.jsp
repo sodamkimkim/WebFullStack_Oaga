@@ -167,9 +167,9 @@ footer {
 				<form action="/oaga/auth/loginproc" method="post">
 					<div class="formRow1">
 						<input type="text" class="form-control" placeholder="Enter ID"
-							id="username" name="username" value="2" /> <input
+							id="username" name="username"/> <input
 							type="password" class="form-control" placeholder="Enter password"
-							id="password" name="password" value="2" />
+							id="password" name="password" />
 					<c:if test="${errorMessage ne null}">
 					<div class="errorMessage">
 						${errorMessage}
@@ -182,7 +182,7 @@ footer {
 					<div class="formRow2">
 						<button type="submit" id="btn_login" class="btn btn_login">로그인</button>
 						<a class="btn btn_kakao"
-							href="https://kauth.kakao.com/oauth/authorize?client_id=31c71a748886ababf2df137e8f33a1a4&redirect_uri=http://localhost:9090/oaga/auth/kakao/callback&response_type=code">카카오아이디로
+							href="https://kauth.kakao.com/oauth/authorize?client_id=41f12d87aaeb5a7da3f35f70e190c310&redirect_uri=http://localhost:9090/oaga/auth/kakao/callback&response_type=code">카카오아이디로
 							로그인</a>
 					</div>
 					<!--formRow2-->

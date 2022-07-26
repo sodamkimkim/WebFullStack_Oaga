@@ -24,21 +24,16 @@ public class AreaGu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
     @Column(nullable = false, length = 20)
     private String guname;
-    @Column(nullable = false, length = 100)
-    private String content;
-
+    
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "area")
     private Area area;
-    
-    
+        
     @Column(nullable = false)
     private String image;
-    
-    private String originFileName;
-
 	
 
 }

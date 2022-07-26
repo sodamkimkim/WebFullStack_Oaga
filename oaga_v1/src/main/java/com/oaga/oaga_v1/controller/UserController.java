@@ -192,81 +192,76 @@ public class UserController {
 	}
 	
 	// 소셜로그인
-	@GetMapping("/auth/kakao/callback")
-	public String kakaoCallback(@RequestParam String code) {
-		/**
-		 * Oaga Rest Api 키 : 31c71a748886ababf2df137e8f33a1a4 사이트 도메인 :
-		 * http://localhost:9090 redirect uri:
-		 * http://localhost:9090/oaga/auth/kakao/callback
-		 * 
-		 */
+		@GetMapping("/auth/kakao/callback")
+		public String kakaoCallback(@RequestParam String code) {
+			/**
+			 * Oaga Rest Api 키 : 41f12d87aaeb5a7da3f35f70e190c310 사이트 도메인 :
+			 * http://localhost:9090 redirect uri:
+			 * http://localhost:9090/oaga/auth/kakao/callback
+			 * 41f12d87aaeb5a7da3f35f70e190c310
+			 * 
+			 * https://kauth.kakao.com/oauth/authorize?client_id=41f12d87aaeb5a7da3f35f70e190c310&redirect_uri=http://localhost:9090/oaga/auth/kakao/callback&response_type=code
+			 */
 
-		RestTemplate rt = new RestTemplate();
-		HttpHeaders headers = new HttpHeaders();
+			RestTemplate rt = new RestTemplate();
+			HttpHeaders headers = new HttpHeaders();
 
-		// header
-		headers.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
+			// header
+			headers.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
 
-		// body
-		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
-		params.add("grant_type", "authorization_code");
-		params.add("client_id", "31c71a748886ababf2df137e8f33a1a4");
-		params.add("redirect_uri", "http://localhost:9090/oaga/auth/kakao/callback");
-		params.add("code", code);
+			// body
+			MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+			params.add("grant_type", "authorization_code");
+			params.add("client_id", "41f12d87aaeb5a7da3f35f70e190c310");
+			params.add("redirect_uri", "http://localhost:9090/oaga/auth/kakao/callback");
+			params.add("code", code);
 
-		// header와 body하나의 object로 담기
-		HttpEntity<MultiValueMap<String, String>> kakaoTokenRequest = new HttpEntity<>(params, headers);
+			// header와 body하나의 object로 담기
+			HttpEntity<MultiValueMap<String, String>> kakaoTokenRequest = new HttpEntity<>(params, headers);
 
-		// Http요청(post)
-		ResponseEntity<String> response = rt.exchange("https://kauth.kakao.com/oauth/token", HttpMethod.POST,
-				kakaoTokenRequest, String.class);
+			// Http요청(post)
+			ResponseEntity<String> response = rt.exchange("https://kauth.kakao.com/oauth/token", HttpMethod.POST,
+					kakaoTokenRequest, String.class);
 
-		OAuthToken authToken = null;
-		ObjectMapper objectMapper = new ObjectMapper();
-		try { 
-			authToken = objectMapper.readValue(response.getBody(), OAuthToken.class);
-		} catch (JsonMappingException e) {
-			e.printStackTrace();
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
+			OAuthToken authToken = null;
+			ObjectMapper objectMapper = new ObjectMapper();
+			try { 
+				authToken = objectMapper.readValue(response.getBody(), OAuthToken.class);
+			} catch (JsonMappingException e) {
+				e.printStackTrace();
+			} catch (JsonProcessingException e) {
+				e.printStackTrace();
+			}
+
+			RestTemplate rt2 = new RestTemplate();
+			HttpHeaders headers2 = new HttpHeaders();
+			headers2.add("Authorization", "Bearer " + authToken.getAccessToken());
+			headers2.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
+
+			HttpEntity<MultiValueMap<String, String>> kakaoProfileRequest = new HttpEntity<>(headers2);
+			ResponseEntity<KakaoProfile> kakaoProfileResponse = rt2.exchange("https://kapi.kakao.com/v2/user/me",
+					HttpMethod.POST, kakaoProfileRequest, KakaoProfile.class);
+
+			KakaoAccount account = kakaoProfileResponse.getBody().getKakaoAccount();
+			System.out.println("카카오 아이디: " + kakaoProfileResponse.getBody().getId());
+			System.out.println("카카오 이메일: " + account.getEmail());
+			System.out.println("블로그에서 사용될 유저네임 : " + account.getEmail() + "_" + kakaoProfileResponse.getBody().getId());
+
+					
+			User kakaoUser = User.builder().username(account.getEmail() + "_" + kakaoProfileResponse.getBody().getId())
+					.password(oagaKey).email(account.getEmail()).oauth("kakao").userNickName(account.getEmail()).profileOriginImgUrl(account.getProfile().toString()).build();
+			System.out.println("카카오유저 :" + kakaoUser);
+			User originUser = userService.searchUser(kakaoUser.getUsername());
+			if (originUser.getUsername() == null) {
+				System.out.println("카카오유전데 신규라서 회원가입할거임");
+				userService.saveUser(kakaoUser);
+			} 
+			Authentication authentication = authenticationManager
+					.authenticate(new UsernamePasswordAuthenticationToken(kakaoUser.getUsername(), oagaKey));
+			SecurityContextHolder.getContext().setAuthentication(authentication);
+			return "redirect:/";
+
 		}
-
-		RestTemplate rt2 = new RestTemplate();
-		HttpHeaders headers2 = new HttpHeaders();
-		headers2.add("Authorization", "Bearer " + authToken.getAccessToken());
-		headers2.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
-
-		HttpEntity<MultiValueMap<String, String>> kakaoProfileRequest = new HttpEntity<>(headers2);
-		ResponseEntity<KakaoProfile> kakaoProfileResponse = rt2.exchange("https://kapi.kakao.com/v2/user/me",
-				HttpMethod.POST, kakaoProfileRequest, KakaoProfile.class);
-
-		KakaoAccount account = kakaoProfileResponse.getBody().getKakaoAccount();
-		System.out.println("카카오 아이디: " + kakaoProfileResponse.getBody().getId());
-		System.out.println("카카오 이메일: " + account.getEmail());
-		System.out.println("블로그에서 사용될 유저네임 : " + account.getEmail() + "_" + kakaoProfileResponse.getBody().getId());
-
-				
-		User kakaoUser = User.builder().username(account.getEmail() + "_" + kakaoProfileResponse.getBody().getId())
-				.password(oagaKey).email(account.getEmail()).oauth("kakao").build();
-		System.out.println("카카오유저 :" + kakaoUser);
-		User originUser = userService.searchUser(kakaoUser.getUsername());
-		if (originUser.getUsername() == null) {
-			System.out.println("카카오유전데 신규라서 회원가입할거임");
-			userService.saveUser(kakaoUser);
-		} 
-		Authentication authentication = authenticationManager
-				.authenticate(new UsernamePasswordAuthenticationToken(kakaoUser.getUsername(), oagaKey));
-		SecurityContextHolder.getContext().setAuthentication(authentication);
-		return "redirect:/";
-
-	}	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

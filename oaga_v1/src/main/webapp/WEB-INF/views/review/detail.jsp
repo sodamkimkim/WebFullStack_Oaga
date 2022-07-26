@@ -45,7 +45,7 @@
 			<!--contnentMeta-->
 			<div class="reviewDetail_profile">
 				<a class="profile_a"> <img class="profile_img"
-					src="http://localhost:9090/oaga/upload/${principal.user.userProfileImgUrl}"
+					src="http://localhost:9090/oaga/upload/${review.user.userProfileImgUrl}"
 					onerror="this.src='/oaga/images/reviewPage/profile_basic.png';">
 				</a>
 				<div class="profile_namebox">

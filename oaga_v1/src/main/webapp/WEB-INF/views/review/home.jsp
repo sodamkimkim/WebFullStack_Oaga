@@ -5,8 +5,6 @@
 	href="/oaga/css/review/homeStyle.css" />
 <!-- background: url("/images/reviewPage/review_bg.jpg")  -->
 
-
-
 <div class="review_search">
 	<div class="review_wrap">
 		<h5 class="review_search_title">

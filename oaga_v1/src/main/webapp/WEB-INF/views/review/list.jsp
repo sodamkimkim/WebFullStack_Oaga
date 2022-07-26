@@ -7,7 +7,7 @@
 	
 <link rel="stylesheet" href="/oaga/css/review/liststyle.css" />
 
-<header class="list-header">
+<div class="list-header">
 	<div class="list-header-content">
 		<div class="container-box">
 			<div class="row-center">
@@ -34,7 +34,7 @@
 				d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
 	</div>
 	<!----><!----><!----></sbpro-border>
-</header>
+</div>
 <section class="list-body-sec">
 	<div class="list-body-box">
 		<c:forEach var="review" items="${reviews.content}">

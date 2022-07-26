@@ -95,7 +95,7 @@ public class AdminService {
 
 	@Transactional
 	public Page<Restaurant> searchRestaurantByTitle(String title, Pageable pageable) {
-		return restaurantRepository.findAllByNameContaining(title, pageable);
+		return restaurantRepository.findByNameContaining(title, pageable);
 
 	}
 
@@ -128,7 +128,6 @@ public class AdminService {
 		System.out.println(guinfoEntity + "guinfoEntityguinfoEntity");
 
 		try {
-
 			guinfoEntity.getId();
 			guinfoEntity.setName(guInfo.getName());
 			guinfoEntity.setAddress(guInfo.getAddress());
@@ -138,7 +137,6 @@ public class AdminService {
 			guinfoEntity.getCreateDate();
 			guinfoEntity.setOriginImageUrl(guInfo.getOriginImageUrl());
 			guinfoEntity.setImage(guInfo.getImage());
-
 			System.out.println("여기는????");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -152,9 +150,8 @@ public class AdminService {
 		Restaurant restaurantEntity = restaurantRepository.mFindByRestaurantId2(id);
 
 		System.out.println(restaurantEntity + "guinfoEntityguinfoEntity");
-
+		
 		try {
-
 			restaurantEntity.getId();
 			restaurantEntity.setName(restaurant.getName());
 			restaurantEntity.setAddress(restaurant.getAddress());
