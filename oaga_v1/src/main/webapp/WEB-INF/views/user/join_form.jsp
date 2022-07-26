@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="../layout/admin_header.jsp"%>
+<%@ include file="../layout/header.jsp"%>
 
 <!DOCTYPE html>
 <html>
@@ -141,6 +141,7 @@ footer {
 	background-color: #66B2FF;
 	margin-top: 20px;
 }
+
 </style>
 </head>
 <body>
@@ -163,7 +164,9 @@ footer {
 						<label class="checkId-label" for="btn-checkId">중복체크</label>
 						 -->
 						
-						<button style="background: none;" id="btn-checkId" type="button">중복체크</button>
+						<button style="background: none; border: 2px solid rgba(245, 161, 25, 0.9); border-radius: 5px; align-self: flex-start;
+									   margin-left: 100px; margin-top: -30px; margin-bottom: 30px;" 
+						id="btn-checkId" type="button">중복체크</button>
 						
 						 <input type="password"
 							class="form-input" placeholder="Enter password" id="password"
@@ -206,6 +209,11 @@ footer {
 		let data = {
 				username: $("#username").val(),
 		};
+		console.log(data.username);
+		if(data.username == ''){
+			alert("사용하실 아이디를 입력해주세요");
+			return false;
+		}
 		$.ajax({
 			type: "POST",
 			url: "/oaga/api/checkId/",
@@ -213,7 +221,6 @@ footer {
 			contentType: "application/json; charset=utf-8",
 			dataType: "json",
 		}).done(function(response) {
-			console.log(response);
 			if(response.username != null){
 				alert("이미 사용중인 아이디 입니다.");
 				return false;
@@ -223,7 +230,6 @@ footer {
 			}
 
 		}).fail(function(error) {
-			console.log(error);
 			alert("통신 오류. 다시 시도해주세요.");
 			return false;
 		});

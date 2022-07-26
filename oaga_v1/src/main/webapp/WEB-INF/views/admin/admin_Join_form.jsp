@@ -124,7 +124,7 @@ footer {
 	<div class="main">
 		<div class="wrap mWrap">
 			<h1>
-				<a href="/oaga">OaGa</a>
+				<a href="/oaga/admin/admin_mainpage">OaGa</a>
 			</h1>
 			<div class="con">
 				<form action="/oaga/auth/admin_join" method="post"
