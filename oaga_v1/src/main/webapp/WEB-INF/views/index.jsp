@@ -8,17 +8,17 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <style>
-	#ui-id-1 {
-		width: 560px;
-	}
-	.ui-menu-item-wrapper {
-		width: 560px;
-	}
-	
-	.ui-helper-hidden-accessible > div {
-		
-		width: 560px;
-	}
+#ui-id-1 {
+	width: 560px;
+}
+
+.ui-menu-item-wrapper {
+	width: 560px;
+}
+
+.ui-helper-hidden-accessible>div {
+	width: 560px;
+}
 </style>
 <!-------------------------mainBn------------------------------------------------------------------------------------------>
 <div class="mainBn">
@@ -30,15 +30,15 @@
 		<div class="srchBox">
 			<div class="searchArea">
 				<form class="srch2">
-					<input type="text" class="searchArea-input" id="searchArea" name="searchArea"
-						placeholder="도시명으로 검색"  />
+					<input type="text" class="searchArea-input" id="searchArea"
+						name="searchArea" placeholder="도시명으로 검색" />
 					<button class="Q2">
 						<img src="/oaga/images/mainpage/icon_search1.gif" alt="" />
 					</button>
 				</form>
 				<!-- 검색했을 때 나올 결과 -->
-				<div id="area_search_div" class="area_autocomplete" style="display: block;">
-				</div>
+				<div id="area_search_div" class="area_autocomplete"
+					style="display: block;"></div>
 				<!--  -->
 				<div class="keyword">
 					<div class="city">
@@ -64,8 +64,8 @@
 
 		<div class="con">
 			<div class="box">
-				<a href="/oaga/travel_info"> <img src="images/mainpage/intro01.jpg"
-					alt="" />
+				<a href="/oaga/travel_info"> <img
+					src="images/mainpage/intro01.jpg" alt="" />
 				</a>
 				<h4>여행지정보</h4>
 				<p>
@@ -107,33 +107,34 @@
 		<div class="row1">
 			<c:forEach var="reviews" items="${reviews.content}" begin="0" end="2">
 				<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="http://localhost:9090/oaga/upload/${reviews.reviewImageUrl}" />
-						<div class="txt">
-							<p>${reviews.title}</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
+					<a href="/oaga/detail/${reviews.id}">
+						<div class="ImgBox">
+							<img
+								src="http://localhost:9090/oaga/upload/${reviews.reviewImageUrl}" />
+							<div class="txt">
+								<p>${reviews.title}</p>
+							</div>
+							<!--txt-->
+						</div> <!--ImgBox-->
 
-					<div class="data">
-						<ul class="info">
-							<li class="placeName">${reviews.areaName}</li>
-							<li class="withFriend">${reviews.theme}</li>
-							<li class="userName">${reviews.user.userNickName}</li>
-						</ul>
-						<!--info-->
+						<div class="data">
+							<ul class="info">
+								<li class="placeName">${reviews.areaName}</li>
+								<li class="withFriend">${reviews.theme}</li>
+								<li class="userName">${reviews.user.userNickName}</li>
+							</ul>
+							<!--info-->
 
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">${reviews.count}</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
-			<!--box-->
+							<ul class="count">
+								<li class="location">25</li>
+								<li class="view">${reviews.count}</li>
+								<li class="copy">27</li>
+							</ul>
+							<!--view-->
+						</div> <!--data-->
+					</a>
+				</div>
+				<!--box-->
 			</c:forEach>
 		</div>
 		<!--row1-->
@@ -141,33 +142,34 @@
 		<div class="row2">
 			<c:forEach var="reviews" items="${reviews.content}" begin="3" end="6">
 				<div class="box">
-				<a href="#">
-					<div class="ImgBox">
-						<img src="http://localhost:9090/oaga/upload/${reviews.reviewImageUrl}" />
-						<div class="txt">
-							<p>${reviews.title}</p>
-						</div>
-						<!--txt-->
-					</div> <!--ImgBox-->
+					<a href="/oaga/detail/${reviews.id}">
+						<div class="ImgBox">
+							<img
+								src="http://localhost:9090/oaga/upload/${reviews.reviewImageUrl}" />
+							<div class="txt">
+								<p>${reviews.title}</p>
+							</div>
+							<!--txt-->
+						</div> <!--ImgBox-->
 
-					<div class="data">
-						<ul class="info">
-							<li class="placeName">${reviews.areaName}</li>
-							<li class="withFriend">${reviews.theme}</li>
-							<li class="userName">${reviews.user.userNickName}</li>
-						</ul>
-						<!--info-->
+						<div class="data">
+							<ul class="info">
+								<li class="placeName">${reviews.areaName}</li>
+								<li class="withFriend">${reviews.theme}</li>
+								<li class="userName">${reviews.user.userNickName}</li>
+							</ul>
+							<!--info-->
 
-						<ul class="count">
-							<li class="location">25</li>
-							<li class="view">${reviews.count}</li>
-							<li class="copy">27</li>
-						</ul>
-						<!--view-->
-					</div> <!--data-->
-				</a>
-			</div>
-			<!--box-->
+							<ul class="count">
+								<li class="location">25</li>
+								<li class="view">${reviews.count}</li>
+								<li class="copy">27</li>
+							</ul>
+							<!--view-->
+						</div> <!--data-->
+					</a>
+				</div>
+				<!--box-->
 			</c:forEach>
 		</div>
 		<!--row2-->
@@ -228,7 +230,7 @@
 		<div class="row2">
 			<div class="box">
 				<div class="tipImg">
-					<img src="images/mainpage/tip04.jpg" alt="" />
+					<img src="/oaga/images/mainpage/tip04.jpg" alt="" />
 					<div class="spot_cnt">5</div>
 				</div>
 				<!--tipImg-->
@@ -242,7 +244,7 @@
 
 			<div class="box">
 				<div class="tipImg">
-					<img src="images/mainpage/tip05.jpg" alt="" />
+					<img src="/oaga/images/mainpage/tip05.jpg" alt="" />
 					<div class="spot_cnt">5</div>
 				</div>
 				<!--tipImg-->
@@ -256,7 +258,7 @@
 
 			<div class="box big">
 				<div class="tipImg">
-					<img src="images/mainpage/tip06.jpg" alt="" />
+					<img src="/oaga/images/mainpage/tip06.jpg" alt="" />
 					<div class="spot_cnt">5</div>
 				</div>
 				<!--tipImg-->

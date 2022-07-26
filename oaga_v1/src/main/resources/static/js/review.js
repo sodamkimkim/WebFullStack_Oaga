@@ -43,8 +43,8 @@ let index = {
 			url: `/oaga/api/review/reply/${replyId}`,
 			dataType: "json"
 		}).done(function(response) {
-			console.log(response);
-			alert("댓글 삭제 성공");
+			console.log(response.data);
+			location.href = "";
 		}).fail(function(error) {
 			console.log(error);
 			alert("댓글 삭제 실패");
@@ -92,7 +92,7 @@ function addReply(reply) {
 	let principalId = $("#principal--id");
 	let childElement = `<div class="replyBox">
 					<img class="reply_image" alt=""
-						src="../images/reviewPage/profile_basic.png">
+						src="http://localhost:9090/oaga/upload/${reply.user.userProfileImgUrl}">
 					<div class="reply_i">
 						<h4 class="reply_u">${reply.user.userNickName}</h4>
 						<h6 class="reply_t">${reply.timestamp}</h6>

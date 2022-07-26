@@ -45,7 +45,7 @@
 						<div class="review_user_imgBox">
 							<img class="logged_user_img"
 								src="http://localhost:9090/oaga/upload/${principal.user.userProfileImgUrl}"
-								onerror="this.src='images/reviewPage/profile_basic.png';">
+								onerror="this.src='/oaga/images/reviewPage/profile_basic.png';">
 						</div>
 						<div class="logged_left">
 
@@ -205,6 +205,7 @@
 								<a class="best_reviewer_a"
 									href="/oaga/userpage_form/${bestuser.id}"> <img
 									src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
+									onerror="this.src='images/reviewPage/profile_basic.png';"
 									class="best_reviewer_profile">
 									<div class="like-Box">
 										<img class="best_reviewer_icon"
@@ -213,14 +214,17 @@
 								</a>
 							</c:when>
 							<c:otherwise>
-								<a class="best_reviewer_a" onclick="checkMyPage(${bestuser.id});">
-								<input type="hidden" value="${principal.user.id}" id="myId"> 
-								<img src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
+								<a class="best_reviewer_a"
+									onclick="checkMyPage(${bestuser.id});"> <input
+									type="hidden" value="${principal.user.id}" id="myId"> <img
+									src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
+									onerror="this.src='images/reviewPage/profile_basic.png';"
 									class="best_reviewer_profile">
 									<div class="like-Box">
 										<img class="best_reviewer_icon"
 											src="/oaga/images/userPage/heart.png"> <span>&nbsp;${bestuser.likes}</span>
-									</div> </a>
+									</div>
+								</a>
 							</c:otherwise>
 						</c:choose>
 

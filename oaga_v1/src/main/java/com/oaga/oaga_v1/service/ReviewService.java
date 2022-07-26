@@ -25,41 +25,40 @@ import com.oaga.oaga_v1.userModel.User;
 
 @Service
 public class ReviewService {
-	
+
 	@Value("${file.path}")
 	private String uploadFolder;
-	
+
 	@Autowired
 	private ReviewRepository reviewRepository;
-	
+
 	@Autowired
 	private ReplyRepository replyRepository;
-	
-	
+
 	// 확장자 추출
 	private String extracktExt(String originalFileName) {
 		int pos = originalFileName.lastIndexOf(".");
 		return originalFileName.substring(pos + 1);
 	}
-	
+
 	// 리뷰 등록
 	@Transactional
 	public void saveReview(RequestReviewFileDto dto, User user) {
 		UUID uuid = UUID.randomUUID();
 		String imageFileName = uuid.toString() + "." + extracktExt(dto.getFile().getOriginalFilename());
 		String newFileName = (imageFileName.trim()).replaceAll("\\s", "");
-		Path imageFilePath = Paths.get(uploadFolder +  newFileName);
-		
+		Path imageFilePath = Paths.get(uploadFolder + newFileName);
+
 		try {
 			Files.write(imageFilePath, dto.getFile().getBytes());
 			reviewRepository.save(dto.toEntity(newFileName, user));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 //		reviewRepository.save(review);
 	}
-	
+
 	// 리뷰 수정
 	@Transactional
 	public void updateReview(int reviewId, RequestReviewFileDto dto) {
@@ -69,7 +68,7 @@ public class ReviewService {
 		UUID uuid = UUID.randomUUID();
 		String imageFileName = uuid.toString() + "." + extracktExt(dto.getFile().getOriginalFilename());
 		String newFileName = (imageFileName.trim()).replaceAll("\\s", "");
-		Path imageFilePath = Paths.get(uploadFolder +  newFileName);
+		Path imageFilePath = Paths.get(uploadFolder + newFileName);
 		try {
 			Files.write(imageFilePath, dto.getFile().getBytes());
 		} catch (IOException e) {
@@ -82,21 +81,21 @@ public class ReviewService {
 		reviewEntity.setReviewImageUrl(newFileName);
 		reviewEntity.setIsWriting(IsWritingType.DONE);
 	}
-	
+
 	@Transactional
 	public int reviewCount(int userId) {
 		return reviewRepository.reviewCount(userId).orElse(0);
 	}
-	
+
 	// 조회순으로 출력
 	@Transactional
 	public Page<Review> getBestReviewList(Pageable pageable) {
-		System.out.println(IsWritingType.DONE.toString()  + " <<<<<< ");
+		System.out.println(IsWritingType.DONE.toString() + " <<<<<< ");
 		return reviewRepository.findByIsWriting(pageable, IsWritingType.DONE);
 	}
-	
-	// 베스트 리뷰어 출력	
-		
+
+	// 베스트 리뷰어 출력
+
 	// 리뷰 출력
 	@Transactional
 	public Review findReviewById(int id) {
@@ -106,19 +105,18 @@ public class ReviewService {
 		review.setCount(review.getCount() + 1);
 		return review;
 	}
-	
+
 	// 최신순으로 출력
 	@Transactional
 	public List<Review> findReviewByData() {
 		return reviewRepository.findByRecentCreateDate();
 	}
-	
+
 	// 리뷰 삭제
 	@Transactional
 	public void deleteReviewById(int id) {
 		reviewRepository.deleteById(id);
 	}
-	
 
 	// 댓글 저장
 	@Transactional
@@ -131,32 +129,39 @@ public class ReviewService {
 		Reply replyEntity = replyRepository.save(reply);
 		return replyEntity;
 	}
-	
+
 	// 댓글 삭제
 	@Transactional
 	public void deleteReply(int replyId) {
 		replyRepository.deleteById(replyId);
 	}
 
+	@Transactional
+	public Reply findByReplyId(int replyId) {
+		return replyRepository.findById(replyId).orElseThrow(() -> {
+			return new IllegalArgumentException("댓글을 찾을 수 없습니다.");
+		});
+	}
+
 	// myPage에서 내 리뷰목록 조회
-	public Page<Review> getMyReviews(Pageable pageable, int userId){
+	public Page<Review> getMyReviews(Pageable pageable, int userId) {
 		return reviewRepository.findByUserId(pageable, userId);
-	} 
-	
-	//리뷰 전체 조회
+	}
+
+	// 리뷰 전체 조회
 	@Transactional
 	public Page<Review> getAllReviews(Pageable pageable) {
 		return reviewRepository.findAll(pageable);
 	}
-	
-	//리뷰 검색 
+
+	// 리뷰 검색
 	public Page<Review> searchReviewByTitle(Pageable pageable, String title) {
 		return reviewRepository.findByTitleContaining(pageable, title);
 	}
-	
+
 	// 임시저장 데이터
 	public Review findIsWriting(int userId) {
 		return reviewRepository.findisWriting(userId).orElse(null);
 	}
-	
+
 }

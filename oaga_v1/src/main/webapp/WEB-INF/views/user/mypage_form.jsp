@@ -9,6 +9,7 @@
 				<a href="/oaga/user/updatemyprofile_form"> <img
 					class="myPageImg"
 					src="http://localhost:9090/oaga/upload/${principal.user.userProfileImgUrl}"
+					onerror="this.src='/oaga/images/reviewPage/profile_basic.png';"
 					alt="...">
 				</a>
 			</div>

@@ -13,6 +13,7 @@
 				<div class="userPageImgBox">
 					<img class="userPageImg"
 						src="http://localhost:9090/oaga/upload/${user.userProfileImgUrl}"
+						onerror="this.src='/oaga/images/reviewPage/profile_basic.png';"
 						alt="...">
 				</div>
 				<c:choose>
@@ -105,11 +106,6 @@
 					class="page-item btnNxt ${userReviews.last ? passive : Page-item-active}"><a
 					class="page-link"
 					href="/oaga/userpage_form/${user.id}?page=${pageable.number+1}">Nxt</a></li>
-
-
-				<!--
-				/oaga/userpage_form/1?page=1
-				 page-item -->
 			</ul>
 
 	</section>
