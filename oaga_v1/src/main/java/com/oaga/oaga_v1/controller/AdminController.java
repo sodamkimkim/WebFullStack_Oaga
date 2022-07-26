@@ -105,7 +105,7 @@ public class AdminController {
 	public String guinfoSave(RequestTravelDto dto) {
 		dto.setCategoryType(CategoryType.GUINFO);
 		adminService.saveGuInfo(dto);
-		return "redirect:/";
+		return "redirect:/admin/admin_mainpage";
 
 	}
 
@@ -130,7 +130,7 @@ public class AdminController {
 	public String restaurantSave(RequestRestaurantDto dto) {
 		dto.setCategoryType(CategoryType.RESTAURANT);
 		adminService.saveRestaurant(dto);
-		return "redirect:/";
+		return "redirect:/admin/admin_mainpage";
 	}
 
 }

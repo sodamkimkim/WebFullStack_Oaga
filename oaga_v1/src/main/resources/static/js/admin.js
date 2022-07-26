@@ -211,7 +211,7 @@ function restaurantupdate(id) {
 	}).done(function(data) {
 		if (data.status) {
 			alert("카페/식당 수정이 완료되었습니다.")
-			location.href = "/oaga/";
+			location.href = "/oaga/admin/admin_mainpage";
 
 		}
 
@@ -404,7 +404,7 @@ function update(id) {
 	}).done(function(data) {
 		if (data.status) {
 			alert("놀거리 수정이 완료되었습니다.")
-			location.href = "/oaga/";
+			location.href = "/oaga/admin/admin_mainpage";
 		}
 
 	}).fail(function(error) {
