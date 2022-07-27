@@ -6,7 +6,8 @@
 ## 2. 기능 소개
   ### (1) 사용자페이지
   #### ㄱ. 회원가입
-![Screenshot_1](https://user-images.githubusercontent.com/100888879/181199137-8ab6e276-24ae-4b4f-9e85-224f2a9d6cd2.png) ![Screenshot_2](https://user-images.githubusercontent.com/100888879/181199152-a3734cef-41b0-40c1-aa3f-d1bf91e632f2.png)
+![1](https://user-images.githubusercontent.com/100888879/181200135-d13f7922-2971-48d6-8739-463bf963e86a.png)
+![2](https://user-images.githubusercontent.com/100888879/181200145-a0cdde07-d7a8-46f0-bae2-b776006d4b6d.png)
 
 
   
