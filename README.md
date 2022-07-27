@@ -25,5 +25,4 @@
   #### ㄱ. 데이터 추가
   #### ㄴ. 데이터 수정
   #### ㄷ. 데이터 삭제
-           ![Screenshot_17](https://user-images.githubusercontent.com/100888879/181204549-d25f5e3d-9805-4cfb-a1c5-fb2b6400ec46.png)
-
+![Screenshot_17](https://user-images.githubusercontent.com/100888879/181204618-f7558954-4325-4e02-81af-36ee3999935c.png)
