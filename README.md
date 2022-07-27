@@ -2,7 +2,8 @@
   ### (1) 시스템 소개
   #### ㄱ. 사이트 이름
           > 여행을 좋아하는 사람들을 위한 국내 여행지 정보 조회 및 커뮤니티 사이트
-          ![Screenshot_4](https://user-images.githubusercontent.com/100888879/181200418-2ee55971-3259-4a6b-9b15-f5cb88df217f.png)
+
+![Screenshot_4](https://user-images.githubusercontent.com/100888879/181200672-49299dee-823a-4a89-b001-f1cd38a33d76.png)
 ![Screenshot_5](https://user-images.githubusercontent.com/100888879/181200464-15acd83a-4fe6-4dca-bc49-363ef261af4b.png)
 ![Screenshot_6](https://user-images.githubusercontent.com/100888879/181200474-a5db6712-ed2e-4ad6-8b6b-fecc58e3343a.png)
 ![Screenshot_2](https://user-images.githubusercontent.com/100888879/181200535-93ef6d50-fca6-4bc7-b8d4-f1b517a186fe.jpg)
