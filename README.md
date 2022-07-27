@@ -18,9 +18,10 @@
 
   #### ㄴ. 로그인(+ 소셜로그인)
   ![login](https://user-images.githubusercontent.com/100888879/181204048-89f3d0ef-d6e0-43e8-8fd0-38fa392db76b.jpg)
+  ![image](https://user-images.githubusercontent.com/100888879/181204779-08b38dab-eb52-4d32-9385-5f9cec3cdfc6.png)
+
   #### ㄹ. Mypage / Userpage
   ![Screenshot_2](https://user-images.githubusercontent.com/100888879/181204145-0367e548-70cc-45f7-8b4b-2cd85a47d25f.jpg)
-  ![image](https://user-images.githubusercontent.com/100888879/181204779-08b38dab-eb52-4d32-9385-5f9cec3cdfc6.png)
 
 
   ### (2) 관리자페이지
