@@ -1,1 +1,4 @@
-# Project_SpringBoot_web
+# Project Oaga - 오늘 어디가지? 
+  >여행을 좋아하는 사람들을 위한 여행지 정보 조회, 커뮤니티 사이트
+## 
+
