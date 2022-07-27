@@ -6,8 +6,8 @@
 ## 2. 기능 소개
   ### (1) 사용자페이지
   #### ㄱ. 회원가입
-![Screenshot_1](https://user-images.githubusercontent.com/100888879/181199137-8ab6e276-24ae-4b4f-9e85-224f2a9d6cd2.png)
-![Screenshot_2](https://user-images.githubusercontent.com/100888879/181199152-a3734cef-41b0-40c1-aa3f-d1bf91e632f2.png)
+![Screenshot_1](https://user-images.githubusercontent.com/100888879/181199137-8ab6e276-24ae-4b4f-9e85-224f2a9d6cd2.png) ![Screenshot_2](https://user-images.githubusercontent.com/100888879/181199152-a3734cef-41b0-40c1-aa3f-d1bf91e632f2.png)
+
 
   
   #### ㄴ. 로그인(+ 소셜로그인)
