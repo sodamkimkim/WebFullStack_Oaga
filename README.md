@@ -46,8 +46,13 @@
   ##### ㄹ-4 리뷰 작성 페이지
   ![5](https://user-images.githubusercontent.com/102580742/181399018-e18f5301-7dbd-4b6b-a8cc-32254dc85193.png)
   ##### ㄹ-5 리뷰 상세 페이지
+  ![6](https://user-images.githubusercontent.com/102580742/181399130-a7912a5a-bf6f-4950-bc05-579a5d5def6d.png)
   ##### ㄹ-6 리뷰 검색 기능
+  ![7](https://user-images.githubusercontent.com/102580742/181399138-b732cc00-4aea-4ec1-b9a2-a423baaadddb.png)
+  ![8](https://user-images.githubusercontent.com/102580742/181399143-afac873f-3aa2-458c-9c99-0c49b871151f.png)
   ##### ㄹ-7 리뷰 전체보기
+  ![11](https://user-images.githubusercontent.com/102580742/181399147-f2aee404-b3eb-4569-b659-72e99168febe.png)
+  ![12](https://user-images.githubusercontent.com/102580742/181399149-b4d0ee27-472c-46cc-a73a-0256301fb92f.png)
   
   #### ㅁ. 여행지정보
   ##### ㅁ-1 여행지 검색 기능
