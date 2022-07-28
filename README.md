@@ -26,86 +26,50 @@
   ##### 도시에 어떤 구들이 있는지 보여주는 페이지
   ##### 한 구의 (카페/식당 + 놀거리) 정보
   ##### 카페/식당 or 놀거리에 대한 자세한 정보
-   ![1](https://user-images.githubusercontent.com/102580742/181435690-6580ceef-5956-4818-ac41-b942eb4429dc.gif)
+   ![1](https://user-images.githubusercontent.com/102580742/181444178-a6d09d1d-8602-4055-9223-2da41f2ce370.gif)
+ ##### 해당 도시/구에 내용이 없다면 업데이트 중 이라고 알려 주기
+  ![Screenshot_2](https://user-images.githubusercontent.com/102271558/181396938-2e472f5e-781d-4e94-975b-64b73d8090b9.png)
+
   ---
    - #### 여행자 리뷰 작성 및 조회, 수정, 임시저장, 등록
-   
+   ![2](https://user-images.githubusercontent.com/102580742/181444653-75730564-dc40-4b28-afc4-4109b2a74f91.gif)
+ ##### 로그인이 되어있는 사용자의 경우, 자신의 정보를 화면에서 볼 수 있다.
+  ![4](https://user-images.githubusercontent.com/102580742/181399015-d0f53f79-a029-47a0-81f2-abca7a52042b.png)
 ---
    - #### 베스트 리뷰 조회
    ##### 조회수가 많은 순으로 베스트 리뷰 조회
+   ![1](https://user-images.githubusercontent.com/102580742/181399001-9c9cb19b-fa2f-45a7-a55a-ce7839708997.png)
 ---
    - #### 베스트 리뷰어 조회
    ##### 좋아요 수가 많은 순으로 베스트 리뷰어 조회
-   
-
+   ![2](https://user-images.githubusercontent.com/102580742/181399004-b2415077-e9d0-4514-a640-7dc45bb14ec7.png)
+---
+   - #### 리뷰 검색
+![s](https://user-images.githubusercontent.com/102580742/181446716-270292e0-e1f9-4704-93d1-1498db663d8a.gif)
+---
+   - #### 댓글 기능
+   ##### 리뷰에 댓글을 달고 삭제할 수 있다.
+   ![d](https://user-images.githubusercontent.com/102580742/181446757-c3a6e7ba-825c-4c7b-a9f7-6dea48ec1fee.gif)
+---
+   - #### 여행지 정보 검색
+   ##### 지역을 검색하여 여행지 정보를 볼 수 있다. 
+   ##### 검색어 자동완성 기능
+   ![s1](https://user-images.githubusercontent.com/102580742/181447768-2127dc4e-dd2d-4231-8b0e-4680c6e3dca2.gif)
 ---   
 #### 🙍‍♀️ 관리자 페이지 
+![ddd](https://user-images.githubusercontent.com/100888879/181393741-34b605c1-091d-43d9-b533-88b52dc366f5.jpg)
  - 여행지 정보 CRUD
-
-
-
-  
-
-  
-## 2. 기능 소개
-  ### (1) 사용자페이지
-
-
-  #### ㄷ. Mypage / Userpage
-  * 좋아요
-  ![Screenshot_16](https://user-images.githubusercontent.com/102580742/181395010-681dc870-0623-4a8b-b0ca-5ec7c057cf85.png)
-  ![Screenshot_17](https://user-images.githubusercontent.com/102580742/181395039-e820d6c7-2b23-4f3a-bd57-974d5524efab.png)
-  #### 마이페이지에서 좋아요부분을 클릭하면 나를 좋아요한 사용자들의 닉네임을 조회할 수 있다.
-  ![3](https://user-images.githubusercontent.com/102580742/181398602-dacf8d5d-5e1c-41e4-9259-67ec3b13d862.png)
-  * 내가 작성한 리뷰 리스트
-  ![Screenshot_2](https://user-images.githubusercontent.com/100888879/181204145-0367e548-70cc-45f7-8b4b-2cd85a47d25f.jpg)
-  #### ㄹ. Mypage / Userpage
-  ##### ㄹ-1 조회수가 높은 리뷰순으로 베스트리뷰 조회
-  ![1](https://user-images.githubusercontent.com/102580742/181399001-9c9cb19b-fa2f-45a7-a55a-ce7839708997.png)
-  ##### ㄹ-2 좋아요 수가 많은순으로 베스트 리뷰어 조회
-  ![2](https://user-images.githubusercontent.com/102580742/181399004-b2415077-e9d0-4514-a640-7dc45bb14ec7.png)
-  ##### ㄹ-3 로그인이 되어있는 사용자의 경우, 자신의 정보를 화면에서 볼 수 있다.
-  ![4](https://user-images.githubusercontent.com/102580742/181399015-d0f53f79-a029-47a0-81f2-abca7a52042b.png)
-  ##### ㄹ-4 리뷰 작성 페이지
-  ![5](https://user-images.githubusercontent.com/102580742/181399018-e18f5301-7dbd-4b6b-a8cc-32254dc85193.png)
-  ##### ㄹ-5 리뷰 상세 페이지
-  ![6](https://user-images.githubusercontent.com/102580742/181399130-a7912a5a-bf6f-4950-bc05-579a5d5def6d.png)
-  ##### ㄹ-6 리뷰 검색 기능
-  ![search2](https://user-images.githubusercontent.com/102580742/181427612-dee68fb6-41ef-488e-b424-196e7ec40202.gif)
-  ##### ㄹ-7 리뷰 전체보기
-![totalList](https://user-images.githubusercontent.com/102580742/181428918-5fcf1efd-9e8a-46fd-8c27-9aef01bfab54.gif)
-  
-  #### ㅁ. 여행지정보
-  ##### ㅁ-1 여행지 검색 기능
-  ###### 자신이 가고싶은 지역을 검색할 수 있다.(검색어 자동완성 기능)
-  ![search](https://user-images.githubusercontent.com/102580742/181427342-d46f3ff4-283d-41b9-9405-8fb0eb2bd6c9.gif)
-  ##### ㅁ-2 도시에 어떤 구들이 있는지 보여주는 페이지
-  ![Screenshot_1](https://user-images.githubusercontent.com/102271558/181395767-906efcd3-4e5d-4a06-990a-2a5090f08a00.png)
-  ![Screenshot_2](https://user-images.githubusercontent.com/102271558/181395780-c357e375-5395-42e6-bdbd-571dc40e62e6.png)
-  ##### ㅁ-3 
-  ![Screenshot_1](https://user-images.githubusercontent.com/102271558/181396858-96da63aa-0f52-47c8-9533-ee13fd4836ab.png)
-  ![Screenshot_3](https://user-images.githubusercontent.com/102271558/181395789-68df0c33-4807-4224-9551-24412b8a9e1f.png)
-  ##### ㅁ-4 
-  ![Screenshot_4](https://user-images.githubusercontent.com/102271558/181395795-2807da3a-9d84-4779-93ae-6d4d11ff80f0.png)
-  ##### ㅁ-5 한 도시의 모든 정보
-  ![Screenshot_5](https://user-images.githubusercontent.com/102271558/181395797-9a3be65e-4a90-4d17-abbe-5e1f4e5de1c1.png)
-  ![Screenshot_6](https://user-images.githubusercontent.com/102271558/181395802-f5a07693-9e1f-46b7-9e60-442eeef8c6c9.png)
-  ##### ㅁ-6 해당 도시/구에 내용이 없다면 업데이트 중 이라고 알려 주기
-  ![Screenshot_2](https://user-images.githubusercontent.com/102271558/181396938-2e472f5e-781d-4e94-975b-64b73d8090b9.png)
-
-  ### (2) 관리자페이지
-  ![ddd](https://user-images.githubusercontent.com/100888879/181393741-34b605c1-091d-43d9-b533-88b52dc366f5.jpg)
-  #### ㄱ. 데이터 추가
+##### 데이터 추가
   ##### 위에 카페/식당 or 놀거리 클릭 후 추가할 도시선택 > 구 선택 > 추가할 내용 및 이미지 작성
   ![Screenshot_9](https://user-images.githubusercontent.com/102271558/181395375-811b92cb-8502-40b5-a690-f14aedbe122c.png)
   ![Screenshot_10](https://user-images.githubusercontent.com/102271558/181395387-0fbe7063-63e2-46ea-b8db-1ea7d94f25dc.png)
   ![Screenshot_11](https://user-images.githubusercontent.com/102271558/181395411-47e28436-61c1-4841-b779-2b8b72d98514.png)
   ![Screenshot_12](https://user-images.githubusercontent.com/102271558/181395425-cb5b911d-36d2-4c7f-8f67-e62b2bcfadb2.png)
-  #### ㄴ. 데이터 수정
+  ##### 데이터 수정
   ##### 위에 카페/식당 or 놀거리 클릭 후 추가할 도시선택 > 구 선택 > 수정 할 곳 선택 > 수정할 내용 작성
   ![Screenshot_13](https://user-images.githubusercontent.com/102271558/181396548-391e855e-649e-4eb1-8cd2-0a49ce2d1d8a.png)
   ![Screenshot_14](https://user-images.githubusercontent.com/102271558/181395541-47355efd-b2e7-45c3-ae01-9715f6e931b5.png)
   ![Screenshot_15](https://user-images.githubusercontent.com/102271558/181395463-479a3141-5cc5-4a70-98a2-c79c50010ff7.png)
 
-  #### ㄷ. 데이터 삭제
+  ##### 데이터 삭제
   ![Screenshot_17](https://user-images.githubusercontent.com/100888879/181204618-f7558954-4325-4e02-81af-36ee3999935c.png)
