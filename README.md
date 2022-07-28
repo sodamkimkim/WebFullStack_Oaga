@@ -22,6 +22,7 @@
   ![image](https://user-images.githubusercontent.com/100888879/181204779-08b38dab-eb52-4d32-9385-5f9cec3cdfc6.png)
 
   #### ㄹ. Mypage / Userpage
+  ![Screenshot_18](https://user-images.githubusercontent.com/102580742/181394729-5ecf6ee7-0013-4720-841f-1f01aec54661.png)
   ![Screenshot_2](https://user-images.githubusercontent.com/100888879/181204145-0367e548-70cc-45f7-8b4b-2cd85a47d25f.jpg)
 
 
