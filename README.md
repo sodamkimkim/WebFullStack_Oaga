@@ -57,6 +57,7 @@
   #### ㅁ. 여행지정보
   ##### ㅁ-1 여행지 검색 기능
   ###### 자신이 가고싶은 지역을 검색할 수 있다.(검색어 자동완성 기능)
+  ![10](https://user-images.githubusercontent.com/102580742/181399256-6e1027c4-10d2-4b4c-9c58-ec7a9d496edc.png)
   ##### ㅁ-2 도시에 어떤 구들이 있는지 보여주는 페이지
   ![Screenshot_1](https://user-images.githubusercontent.com/102271558/181395767-906efcd3-4e5d-4a06-990a-2a5090f08a00.png)
   ![Screenshot_2](https://user-images.githubusercontent.com/102271558/181395780-c357e375-5395-42e6-bdbd-571dc40e62e6.png)
