@@ -33,6 +33,14 @@
   ### (2) 관리자페이지
   ![ddd](https://user-images.githubusercontent.com/100888879/181393741-34b605c1-091d-43d9-b533-88b52dc366f5.jpg)
   #### ㄱ. 데이터 추가
+  ![Screenshot_9](https://user-images.githubusercontent.com/102271558/181395375-811b92cb-8502-40b5-a690-f14aedbe122c.png)
+![Screenshot_10](https://user-images.githubusercontent.com/102271558/181395387-0fbe7063-63e2-46ea-b8db-1ea7d94f25dc.png)
+![Screenshot_11](https://user-images.githubusercontent.com/102271558/181395411-47e28436-61c1-4841-b779-2b8b72d98514.png)
+![Screenshot_12](https://user-images.githubusercontent.com/102271558/181395425-cb5b911d-36d2-4c7f-8f67-e62b2bcfadb2.png)
   #### ㄴ. 데이터 수정
+  ![Screensh![Screenshot_14](https://user-images.githubusercontent.com/102271558/181395453-fa5e5a8c-7ff4-47ed-9ca4-4091c328d73f.png)
+ot_13](https://user-images.githubusercontent.com/102271558/181395440-e0a1b3d1-2288-43a0-af5f-e2285af30ec8.png)
+![Screenshot_15](https://user-images.githubusercontent.com/102271558/181395463-479a3141-5cc5-4a70-98a2-c79c50010ff7.png)
+
   #### ㄷ. 데이터 삭제
 ![Screenshot_17](https://user-images.githubusercontent.com/100888879/181204618-f7558954-4325-4e02-81af-36ee3999935c.png)
