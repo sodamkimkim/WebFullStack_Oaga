@@ -3,6 +3,14 @@
   #### ㄱ. 사이트 이름
           > 오늘 어디가지? (Oaga)
           > 여행을 좋아하는 사람들을 위한 국내 여행지 정보 조회 및 커뮤니티 사이트
+          > <핵심기능>
+            > 1. 국내 도시별 핫플레이스 정보 조회
+            > 2. 여행자 리뷰 작성 및 조회, 수정, 임시저장, 등록
+            > 3. 여행리뷰 댓글, 좋아요 기능
+            > 4. 베스트리뷰어 조회
+            > 5. 회원가입, 로그인( + Oauth 2.0 카카오 로그인)
+            > 6. Mypage, Userpage CRUD
+            > 7. 관리자 페이지 CRUD
 
 ![Screenshot_4](https://user-images.githubusercontent.com/100888879/181200672-49299dee-823a-4a89-b001-f1cd38a33d76.png)
 ![Screenshot_5](https://user-images.githubusercontent.com/100888879/181200464-15acd83a-4fe6-4dca-bc49-363ef261af4b.png)
