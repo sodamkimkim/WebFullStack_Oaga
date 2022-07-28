@@ -22,7 +22,11 @@
   ![image](https://user-images.githubusercontent.com/100888879/181204779-08b38dab-eb52-4d32-9385-5f9cec3cdfc6.png)
 
   #### ㄹ. Mypage / Userpage
+  * 좋아요
+  ![Screenshot_16](https://user-images.githubusercontent.com/102580742/181395010-681dc870-0623-4a8b-b0ca-5ec7c057cf85.png)
+  ![Screenshot_17](https://user-images.githubusercontent.com/102580742/181395039-e820d6c7-2b23-4f3a-bd57-974d5524efab.png)
   ![Screenshot_18](https://user-images.githubusercontent.com/102580742/181394729-5ecf6ee7-0013-4720-841f-1f01aec54661.png)
+  * 내가 작성한 리뷰 리스트
   ![Screenshot_2](https://user-images.githubusercontent.com/100888879/181204145-0367e548-70cc-45f7-8b4b-2cd85a47d25f.jpg)
 
 
