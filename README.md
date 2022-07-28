@@ -50,9 +50,8 @@
   ![Screenshot_12](https://user-images.githubusercontent.com/102271558/181395425-cb5b911d-36d2-4c7f-8f67-e62b2bcfadb2.png)
   #### ㄴ. 데이터 수정
   ##### 위에 카페/식당 or 놀거리 클릭 후 추가할 도시선택 > 구 선택 > 수정 할 곳 선택 > 수정할 내용 작성
-  ![Screensh![Screenshot_14](https://user-images.githubusercontent.com/102271558/181395453-fa5e5a8c-7ff4-47ed-9ca4-     4091c328d73f.png)
+  ![Screenshot_13](https://user-images.githubusercontent.com/102271558/181396548-391e855e-649e-4eb1-8cd2-0a49ce2d1d8a.png)
   ![Screenshot_14](https://user-images.githubusercontent.com/102271558/181395541-47355efd-b2e7-45c3-ae01-9715f6e931b5.png)
-
   ![Screenshot_15](https://user-images.githubusercontent.com/102271558/181395463-479a3141-5cc5-4a70-98a2-c79c50010ff7.png)
 
   #### ㄷ. 데이터 삭제
