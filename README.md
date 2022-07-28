@@ -32,7 +32,7 @@
   * 좋아요
   ![Screenshot_16](https://user-images.githubusercontent.com/102580742/181395010-681dc870-0623-4a8b-b0ca-5ec7c057cf85.png)
   ![Screenshot_17](https://user-images.githubusercontent.com/102580742/181395039-e820d6c7-2b23-4f3a-bd57-974d5524efab.png)
-  #### 마이페이지에거 좋아요부분을 클릭하면 나를 좋아요한 사용자들의 닉네임을 조회할 수 있다.
+  #### 마이페이지에서 좋아요부분을 클릭하면 나를 좋아요한 사용자들의 닉네임을 조회할 수 있다.
   ![3](https://user-images.githubusercontent.com/102580742/181398602-dacf8d5d-5e1c-41e4-9259-67ec3b13d862.png)
   * 내가 작성한 리뷰 리스트
   ![Screenshot_2](https://user-images.githubusercontent.com/100888879/181204145-0367e548-70cc-45f7-8b4b-2cd85a47d25f.jpg)
