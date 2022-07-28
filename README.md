@@ -33,12 +33,15 @@
   ![Screenshot_1](https://user-images.githubusercontent.com/102271558/181395767-906efcd3-4e5d-4a06-990a-2a5090f08a00.png)
   ![Screenshot_2](https://user-images.githubusercontent.com/102271558/181395780-c357e375-5395-42e6-bdbd-571dc40e62e6.png)
   ##### ㅁ-2 한 구의 (카페/식당 + 놀거리) 정보
+  ![Screenshot_1](https://user-images.githubusercontent.com/102271558/181396858-96da63aa-0f52-47c8-9533-ee13fd4836ab.png)
   ![Screenshot_3](https://user-images.githubusercontent.com/102271558/181395789-68df0c33-4807-4224-9551-24412b8a9e1f.png)
   ##### ㅁ-3 카페/식당 or 놀거리에 대한 자세한 정보
   ![Screenshot_4](https://user-images.githubusercontent.com/102271558/181395795-2807da3a-9d84-4779-93ae-6d4d11ff80f0.png)
   ##### ㅁ-4 한 도시의 모든 정보
   ![Screenshot_5](https://user-images.githubusercontent.com/102271558/181395797-9a3be65e-4a90-4d17-abbe-5e1f4e5de1c1.png)
   ![Screenshot_6](https://user-images.githubusercontent.com/102271558/181395802-f5a07693-9e1f-46b7-9e60-442eeef8c6c9.png)
+  ##### ㅁ-5 해당 도시/구에 내용이 없다면 업데이트 중 이라고 알려 주기
+  ![Screenshot_2](https://user-images.githubusercontent.com/102271558/181396938-2e472f5e-781d-4e94-975b-64b73d8090b9.png)
 
   ### (2) 관리자페이지
   ![ddd](https://user-images.githubusercontent.com/100888879/181393741-34b605c1-091d-43d9-b533-88b52dc366f5.jpg)
