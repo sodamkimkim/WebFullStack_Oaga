@@ -28,26 +28,38 @@
   ![login](https://user-images.githubusercontent.com/100888879/181204048-89f3d0ef-d6e0-43e8-8fd0-38fa392db76b.jpg)
   ![image](https://user-images.githubusercontent.com/100888879/181204779-08b38dab-eb52-4d32-9385-5f9cec3cdfc6.png)
 
-  #### ㄹ. Mypage / Userpage
+  #### ㄷ. Mypage / Userpage
   * 좋아요
   ![Screenshot_16](https://user-images.githubusercontent.com/102580742/181395010-681dc870-0623-4a8b-b0ca-5ec7c057cf85.png)
   ![Screenshot_17](https://user-images.githubusercontent.com/102580742/181395039-e820d6c7-2b23-4f3a-bd57-974d5524efab.png)
-  ![Screenshot_18](https://user-images.githubusercontent.com/102580742/181394729-5ecf6ee7-0013-4720-841f-1f01aec54661.png)
+  #### 마이페이지에거 좋아요부분을 클릭하면 나를 좋아요한 사용자들의 닉네임을 조회할 수 있다.
+  ![3](https://user-images.githubusercontent.com/102580742/181398602-dacf8d5d-5e1c-41e4-9259-67ec3b13d862.png)
   * 내가 작성한 리뷰 리스트
   ![Screenshot_2](https://user-images.githubusercontent.com/100888879/181204145-0367e548-70cc-45f7-8b4b-2cd85a47d25f.jpg)
+  #### ㄹ. Mypage / Userpage
+  ##### ㄹ-1 조회수가 높은 리뷰순으로 베스트리뷰 조회
+  ##### ㄹ-2 좋아요 수가 많은순으로 베스트 리뷰어 조회
+  ##### ㄹ-3 로그인이 되어있는 사용자의 경우, 자신의 정보를 화면에서 볼 수 있다.
+  ##### ㄹ-4 리뷰 작성 페이지
+  ##### ㄹ-5 리뷰 상세 페이지
+  ##### ㄹ-6 리뷰 검색 기능
+  ##### ㄹ-7 리뷰 전체보기
+  
   #### ㅁ. 여행지정보
-  ##### ㅁ-1 도시에 어떤 구들이 있는지 보여주는 페이지
+  ##### ㅁ-1 여행지 검색 기능
+  ###### 자신이 가고싶은 지역을 검색할 수 있다.(검색어 자동완성 기능)
+  ##### ㅁ-2 도시에 어떤 구들이 있는지 보여주는 페이지
   ![Screenshot_1](https://user-images.githubusercontent.com/102271558/181395767-906efcd3-4e5d-4a06-990a-2a5090f08a00.png)
   ![Screenshot_2](https://user-images.githubusercontent.com/102271558/181395780-c357e375-5395-42e6-bdbd-571dc40e62e6.png)
-  ##### ㅁ-2 한 구의 (카페/식당 + 놀거리) 정보
+  ##### ㅁ-3 한 구의 (카페/식당 + 놀거리) 정보
   ![Screenshot_1](https://user-images.githubusercontent.com/102271558/181396858-96da63aa-0f52-47c8-9533-ee13fd4836ab.png)
   ![Screenshot_3](https://user-images.githubusercontent.com/102271558/181395789-68df0c33-4807-4224-9551-24412b8a9e1f.png)
-  ##### ㅁ-3 카페/식당 or 놀거리에 대한 자세한 정보
+  ##### ㅁ-4 카페/식당 or 놀거리에 대한 자세한 정보
   ![Screenshot_4](https://user-images.githubusercontent.com/102271558/181395795-2807da3a-9d84-4779-93ae-6d4d11ff80f0.png)
-  ##### ㅁ-4 한 도시의 모든 정보
+  ##### ㅁ-5 한 도시의 모든 정보
   ![Screenshot_5](https://user-images.githubusercontent.com/102271558/181395797-9a3be65e-4a90-4d17-abbe-5e1f4e5de1c1.png)
   ![Screenshot_6](https://user-images.githubusercontent.com/102271558/181395802-f5a07693-9e1f-46b7-9e60-442eeef8c6c9.png)
-  ##### ㅁ-5 해당 도시/구에 내용이 없다면 업데이트 중 이라고 알려 주기
+  ##### ㅁ-6 해당 도시/구에 내용이 없다면 업데이트 중 이라고 알려 주기
   ![Screenshot_2](https://user-images.githubusercontent.com/102271558/181396938-2e472f5e-781d-4e94-975b-64b73d8090b9.png)
 
   ### (2) 관리자페이지
