@@ -11,11 +11,9 @@
              6. Mypage, Userpage CRUD
              7. 관리자 페이지 CRUD
 
-![Screenshot_4](https://user-images.githubusercontent.com/100888879/181200672-49299dee-823a-4a89-b001-f1cd38a33d76.png)
-![Screenshot_5](https://user-images.githubusercontent.com/100888879/181200464-15acd83a-4fe6-4dca-bc49-363ef261af4b.png)
-![Screenshot_6](https://user-images.githubusercontent.com/100888879/181200474-a5db6712-ed2e-4ad6-8b6b-fecc58e3343a.png)
-![Screenshot_2](https://user-images.githubusercontent.com/100888879/181200535-93ef6d50-fca6-4bc7-b8d4-f1b517a186fe.jpg)
-![3](https://user-images.githubusercontent.com/100888879/181201177-38b7cf8c-0340-48a3-9cd7-ce75ce2fe302.png)
++ 홈화면
++ 여행지 정보 화면
+
 
   ### (2) 프로젝트 설계 배경
   ##### 코로나19로 인해 해외여행을 자유롭게 갈 수 없기 때문에 요즘 국내여행에 대한 수요가 늘고있습니다. 
@@ -26,11 +24,10 @@
 ## 2. 기능 소개
   ### (1) 사용자페이지
   #### ㄱ. 회원가입
-![1](https://user-images.githubusercontent.com/100888879/181200135-d13f7922-2971-48d6-8739-463bf963e86a.png)
-![2](https://user-images.githubusercontent.com/100888879/181200145-a0cdde07-d7a8-46f0-bae2-b776006d4b6d.png)
+![join](https://user-images.githubusercontent.com/102580742/181425657-ceddd2e9-2e22-4a7f-82a2-3efe518a80dd.gif)
 
   #### ㄴ. 로그인(+ 소셜로그인)
-  ![login](https://user-images.githubusercontent.com/100888879/181204048-89f3d0ef-d6e0-43e8-8fd0-38fa392db76b.jpg)
+  ![login](https://user-images.githubusercontent.com/102580742/181426268-a25daa61-71b9-4303-93a7-f4c15ce7110d.gif)
   ![image](https://user-images.githubusercontent.com/100888879/181204779-08b38dab-eb52-4d32-9385-5f9cec3cdfc6.png)
 
   #### ㄷ. Mypage / Userpage
@@ -53,16 +50,14 @@
   ##### ㄹ-5 리뷰 상세 페이지
   ![6](https://user-images.githubusercontent.com/102580742/181399130-a7912a5a-bf6f-4950-bc05-579a5d5def6d.png)
   ##### ㄹ-6 리뷰 검색 기능
-  ![7](https://user-images.githubusercontent.com/102580742/181399138-b732cc00-4aea-4ec1-b9a2-a423baaadddb.png)
-  ![8](https://user-images.githubusercontent.com/102580742/181399143-afac873f-3aa2-458c-9c99-0c49b871151f.png)
+  ![search2](https://user-images.githubusercontent.com/102580742/181427612-dee68fb6-41ef-488e-b424-196e7ec40202.gif)
   ##### ㄹ-7 리뷰 전체보기
-  ![11](https://user-images.githubusercontent.com/102580742/181399147-f2aee404-b3eb-4569-b659-72e99168febe.png)
-  ![12](https://user-images.githubusercontent.com/102580742/181399149-b4d0ee27-472c-46cc-a73a-0256301fb92f.png)
+![totalList](https://user-images.githubusercontent.com/102580742/181428918-5fcf1efd-9e8a-46fd-8c27-9aef01bfab54.gif)
   
   #### ㅁ. 여행지정보
   ##### ㅁ-1 여행지 검색 기능
   ###### 자신이 가고싶은 지역을 검색할 수 있다.(검색어 자동완성 기능)
-  ![10](https://user-images.githubusercontent.com/102580742/181399256-6e1027c4-10d2-4b4c-9c58-ec7a9d496edc.png)
+  ![search](https://user-images.githubusercontent.com/102580742/181427342-d46f3ff4-283d-41b9-9405-8fb0eb2bd6c9.gif)
   ##### ㅁ-2 도시에 어떤 구들이 있는지 보여주는 페이지
   ![Screenshot_1](https://user-images.githubusercontent.com/102271558/181395767-906efcd3-4e5d-4a06-990a-2a5090f08a00.png)
   ![Screenshot_2](https://user-images.githubusercontent.com/102271558/181395780-c357e375-5395-42e6-bdbd-571dc40e62e6.png)
