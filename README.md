@@ -12,8 +12,8 @@
   <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
   <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white">
   </div>
----
-#### ERD 다이어그램
+
+### ERD 다이어그램
    ![image](https://user-images.githubusercontent.com/102271558/182063625-2b1a8053-16a2-4f78-bffe-a9181dc50f46.png)
    
   ### 여행을 좋아하는 사람들을 위한 국내 여행지 정보 조회 및 커뮤니티 사이트
