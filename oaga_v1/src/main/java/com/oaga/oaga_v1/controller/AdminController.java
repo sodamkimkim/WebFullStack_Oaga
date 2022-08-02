@@ -122,7 +122,6 @@ public class AdminController {
 		model.addAttribute("searchTitle", searchTitle);
 		Page<Restaurant> srchResult = adminService.searchRestaurantByTitle(searchTitle, pageable);
 		model.addAttribute("restaurants", srchResult);
-	
 		return "admin/admin_delete_form";
 	}
 

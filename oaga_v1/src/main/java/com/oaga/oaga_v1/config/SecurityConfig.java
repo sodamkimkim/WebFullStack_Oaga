@@ -51,7 +51,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
             .loginProcessingUrl("/auth/loginproc")
             .successHandler(new CustomSuccessfulHandler())
             .failureHandler(new CustomFailureHandler());
-
     }
 
 	
