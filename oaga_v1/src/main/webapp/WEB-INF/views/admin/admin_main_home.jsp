@@ -15,7 +15,7 @@
 			<div class="b_box">
 				<button onclick="savePage();" class="btn-addForm btnForm"
 					id="btn-addForm">
-					<p>데이터 추가하기</p>
+					<p>홈페이지 관리</p>
 					<div class="arrowBtn">
 						<a href="#"> <i class="fas fa-angle-double-right btn2"></i> <i
 							class="fas fa-angle-double-right btn3"></i>
@@ -24,7 +24,7 @@
 				</button>
 				<button onclick="updatePage();" class="btn-updateForm btnForm"
 					id="btn-updateForm">
-					<p>데이터 수정하기</p>
+					<p>회원정보 관리</p>
 					<!-- 					<img class="rightIcon" src="/oaga/images/mainPage/right.png"> -->
 					<div class="arrowBtn">
 						<a href="#"> <i class="fas fa-angle-double-right btn2"></i> <i
@@ -34,7 +34,7 @@
 				</button>
 				<button onclick="deletePage();" class="btn-deleteForm btnForm"
 					id="btn-deleteForm">
-					<p>데이터 삭제하기</p>
+					<p>리뷰 · 댓글 관리</p>
 					<!-- 					<img class="rightIcon" src="/oaga/images/mainPage/right.png"> -->
 					<div class="arrowBtn">
 						<a href="#"> <i class="fas fa-angle-double-right btn2"></i> <i
@@ -53,7 +53,7 @@
 		location.href = "/oaga/admin/guinfo_save_page";
 	}
 	function updatePage() {
-		location.href = "/oaga/admin/updatepage"
+		location.href = "/oaga/admin/user"
 	}
 	function deletePage() {
 		location.href = "/oaga/admin/deletepage"

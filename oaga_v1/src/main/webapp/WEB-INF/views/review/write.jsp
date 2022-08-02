@@ -20,6 +20,10 @@
 <style>
 .reviewBody{
 margin-top:80px;}
+a:hover {
+	color: inherit;
+	text-decoration: none;
+}
 </style>
 <!-- 리뷰 작성 타이틀 -->
 <div class="reviewBody" style="background-color: rgba(240, 240, 240, 0.8);">

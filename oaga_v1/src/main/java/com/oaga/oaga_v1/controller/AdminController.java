@@ -131,5 +131,11 @@ public class AdminController {
 		adminService.saveRestaurant(dto);
 		return "redirect:/admin/admin_mainpage";
 	}
+	
+	// 회원 관리 페이지
+	@GetMapping("/admin/user")
+	private String adminUserForm() {
+		return "admin/admin_delete_user";
+	}
 
 }
