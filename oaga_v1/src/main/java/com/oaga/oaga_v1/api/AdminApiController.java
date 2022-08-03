@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.oaga.oaga_v1.dto.RequestTravelDto;
 import com.oaga.oaga_v1.dto.ResponseDto;
 import com.oaga.oaga_v1.placeModel.AreaGu;
 
@@ -73,7 +74,6 @@ public class AdminApiController {
 	
 	@GetMapping("/api/admin/restaurantUpdate/{areaguid}")
 	public ResponseDto<List<Restaurant>> restaurantUpdateList(@PathVariable int areaguid, Model model){
-		System.out.println(areaguid + "@#@@@");
 		List<Restaurant> restaurantList = adminService.findAreaGuId2(areaguid);
 
 		model.addAttribute("restaurantList",restaurantList);
@@ -102,24 +102,9 @@ public class AdminApiController {
 	
 	
 	 
-	@PutMapping("/api/admin/guinfo/update/{id}")// 수정하기
-	public ResponseDto<Integer> updateGuInfo(@RequestBody GuInfo guInfo, @PathVariable int id) {
-		
-		
-		adminService.updateGuInfo(guInfo, id);
-		
-		return new ResponseDto<Integer>(HttpStatus.OK, 1);
-	}
 	
-	@PutMapping("/api/admin/restaurant/update/{id}")// 수정하기
-	public ResponseDto<Integer> updateRestaurant(@RequestBody Restaurant restaurant, @PathVariable int id) {
-		
-		
-		adminService.updateRestaurant(restaurant, id);
-		
-		return new ResponseDto<Integer>(HttpStatus.OK, 1);
-	}
 	
+
 	
 // ==========================================================
 

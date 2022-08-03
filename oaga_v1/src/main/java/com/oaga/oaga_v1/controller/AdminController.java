@@ -10,17 +10,24 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.oaga.oaga_v1.dto.RequestRestaurantDto;
 import com.oaga.oaga_v1.dto.RequestTravelDto;
+import com.oaga.oaga_v1.dto.RequestUpdateHotplaceDto;
+import com.oaga.oaga_v1.dto.RequestUpdateRestaurantDto;
 import com.oaga.oaga_v1.dto.RequestUserProfileDto;
+import com.oaga.oaga_v1.dto.ResponseDto;
 import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.placeModel.CategoryType;
 import com.oaga.oaga_v1.placeModel.Restaurant;
@@ -132,4 +139,19 @@ public class AdminController {
 		return "redirect:/admin/admin_mainpage";
 	}
 
+// ===================================================================== 수정
+	@PostMapping("/api/admin/guinfo/update/{id}")// 수정하기
+	public String updateGuInfo(RequestUpdateHotplaceDto dto, @PathVariable int id) {
+		adminService.updateGuInfo(dto, id);
+		return "redirect:/admin/admin_mainpage";
+	}
+	@PostMapping("/api/admin/restaurant/update/{id}")// 수정하기
+	public String updateRestaurant(RequestUpdateRestaurantDto dto, @PathVariable int id) {
+		System.out.println(dto + "api");
+		System.out.println(id + "api");
+		adminService.updateRestaurant(dto, id);
+		
+		return "redirect:/admin/admin_mainpage";
+	}
+// ===================================================================== 수정	 끝
 }

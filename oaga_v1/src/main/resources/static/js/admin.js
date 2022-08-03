@@ -23,7 +23,7 @@ let index = {
 					location.href = "/oaga/admin/deletepage/";
 				}
 			}).fail(function(error) {
-				alert("회원정보 수정에 실패하였습니다.")
+				alert(" 수정에 실패하였습니다.")
 
 			});
 		});
@@ -146,24 +146,23 @@ function setRestaurantData(estaurantData) {
 
 	let setData = estaurantData.data;
 	console.log(setData[0].id);
-	var estaurantDataApend = `<br/>
+	var restaurantDataApend = `<br/>
 						<br/>
-						<input type="hidden" id = "getid" value="${setData[0].id}">
-						<input type="hidden" id = "image" value="${setData[0].image}">
-						<input type="hidden" id = "originImageUrl" value="${setData[0].originImageUrl}">
-						<input type="hidden" id = "createDate" value="${setData[0].createDate}">
 						
-
+						
+						<form action="/oaga/api/admin/restaurant/update/${setData[0].id}" method="post" enctype="multipart/form-data">
+						<input type="hidden" id = "categoryType" name = "areaGuId" value="${setData[0].areaGuId}"> 
+						<input type="hidden" id = "categoryType" name = "categoryType" value="${setData[0].categoryType}"> 
 						<label >이름 :</label>
-						<input style="margin-bottom: 20px; height: 35px;" name = "setname"id = "setname" value = ${setData[0].name}>
+						<input style="margin-bottom: 20px; height: 35px;" name = "name"id = "setname" value = ${setData[0].name}>
 						<br/>
 						<br/>
 						<label>주소 :</label>
-						<input style="margin-bottom: 20px; height: 35px;"name = "setaddress" id = "setaddress" value = ${setData[0].address}>
+						<input style="margin-bottom: 20px; height: 35px;"name = "address" id = "setaddress" value = ${setData[0].address}>
 						<br/>
 						<br/>
 						<label>내용 :</label>
-						<input style="margin-bottom: 20px; height: 35px;"name = "setcontent" id = "setcontent" value = ${setData[0].content}>
+						<input style="margin-bottom: 20px; height: 35px;"name = "content" id = "setcontent" value = ${setData[0].content}>
 						<br/>
 						<br/>
 						<label class="r_image_label" for="r_image" >파일 선택</label> 						
@@ -171,55 +170,25 @@ function setRestaurantData(estaurantData) {
 						required="required"
 						onchange="javascript:document.getElementById('r_imageUrl').value = ${setData[0].image}">
 								
-						<input class="upload_name" id="setimage" name = "setimage" readonly="readonly"placeholder="${setData[0].image}"">
+						<input class="upload_name" id="setimage" name = "image" readonly="readonly"placeholder="${setData[0].image}"">
 						
 						<div>
-							<button class="btn btn-primary" id="btn-update" type="submit" onclick="restaurantupdate(${setData[0].id})"
+							<button class="btn btn-primary" id="btn-update" type="submit""
 							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">수정</button>
 							
 							<a type="button" class="btn btn-primary" onclick="addSelectedRestaurant(${setData[0].areaGu.id})";
 							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">뒤로가기</a>
 						</div>
-						
+						</form>
 						`
 
-	$('#restaurantList').append(estaurantDataApend);
+	$('#restaurantList').append(restaurantDataApend);
 }
 
 
 
-function restaurantupdate(id) {
-	console.log(id + " @@#@#!#!");
-
-	let data = {
-		id: id,
-		name: $("#setname").val(),
-		address: $("#setaddress").val(),
-		content: $("#setcontent").val(),
-		image: $("#image").val(),
-		originImageUrl: $("#originImageUrl").val(),
-		createDate: $("#createDate").val(),
-
-	}
-	console.log(data);
-	$.ajax({
-		type: "PUT",
-		url: `/oaga/api/admin/restaurant/update/${id}`,
-		data: JSON.stringify(data),
-		contentType: "application/json; charset=utf-8",
-		dataType: "json"
-	}).done(function(data) {
-		if (data.status) {
-			alert("카페/식당 수정이 완료되었습니다.")
-			location.href = "/oaga/admin/admin_mainpage";
-
-		}
-
-	}).fail(function(error) {
 
 
-	});
-}
 
 
 // end of update
@@ -341,80 +310,43 @@ function setGuinfoData(guinfoData) {
 	console.log(setData[0].id);
 	var guinfoDataApend = `<br/>
 						<br/>
-						<input type="hidden" id = "getid" value="${setData[0].id}">
-						<input type="hidden" id = "image" value="${setData[0].image}">
-						<input type="hidden" id = "originImageUrl" value="${setData[0].originImageUrl}">
-						<input type="hidden" id = "createDate" value="${setData[0].createDate}">
 						
-
+						
+						<form action="/oaga/api/admin/guinfo/update/${setData[0].id}" method="post" enctype="multipart/form-data">
+						<input type="hidden" id = "categoryType" name = "areaGuId" value="${setData[0].areaGuId}"> 
+						<input type="hidden" id = "categoryType" name = "categoryType" value="${setData[0].categoryType}"> 
 						<label >이름 :</label>
-						<input style="margin-bottom: 20px; height: 35px;" name = "setname"id = "setname" value = ${setData[0].name}>
+						<input style="margin-bottom: 20px; height: 35px;" name = "name" id = "name" value = ${setData[0].name}>
 						<br/>
 						<br/>
 						<label>주소 :</label>
-						<input style="margin-bottom: 20px; height: 35px;"name = "setaddress" id = "setaddress" value = ${setData[0].address}>
+						<input style="margin-bottom: 20px; height: 35px;"name = "address" id = "address" value = ${setData[0].address}>
 						<br/>
 						<br/>
 						<label>내용 :</label>
-						<input style="margin-bottom: 20px; height: 35px;"name = "setcontent" id = "setcontent" value = ${setData[0].content}>
+						<input style="margin-bottom: 20px; height: 35px;"name = "content" id = "content" value = ${setData[0].content}>
 						<br/>
 						<br/>
-						<label class="r_image_label" for="r_image" >파일 선택</label> 						
+						
+						<input class="upload_name" id="r_imageUrl" readonly="readonly" name = "originImageUrl"
+						type = "hidden" value="${setData[0].originImageUrl}">
+						
 						<input type="file"class="r_image_input" id="image" name="file" accept="image/*"
 						required="required"
-						onchange="javascript:document.getElementById('r_imageUrl').value = ${setData[0].image}">
-								
-						<input class="upload_name" id="setimage" name = "setimage" readonly="readonly"placeholder="${setData[0].image}"">
-						
+						onchange="javascript:document.getElementById('r_imageUrl').value = this.value">
+
 						<div>
-							<button class="btn btn-primary" id="btn-update" type="submit" onclick="update(${setData[0].id})"
+							<button class="btn btn-primary" id="btn-update" type="submit"
 							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">수정</button>
 							
 							<a type="button" class="btn btn-primary" onclick="addSelectedGuInfo(${setData[0].areaGu.id})";
 							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">뒤로가기</a>
 						</div>
-						
+						</form>
 						`
 
 	$('#guinfoList').append(guinfoDataApend);
 }
-
-
-
-function update(id) {
-	console.log(id + " @@#@#!#!");
-
-	let data = {
-		id: id,
-		name: $("#setname").val(),
-		address: $("#setaddress").val(),
-		content: $("#setcontent").val(),
-		image: $("#image").val(),
-		originImageUrl: $("#originImageUrl").val(),
-		createDate: $("#createDate").val(),
-
-	}
-	console.log(data);
-	$.ajax({
-		type: "PUT",
-		url: `/oaga/api/admin/guinfo/update/${id}`,
-		data: JSON.stringify(data),
-		contentType: "application/json; charset=utf-8",
-		dataType: "json"
-	}).done(function(data) {
-		if (data.status) {
-			alert("놀거리 수정이 완료되었습니다.")
-			location.href = "/oaga/admin/admin_mainpage";
-		}
-
-	}).fail(function(error) {
-
-
-	});
-}
-
-
-// end of update
 
 
 

@@ -20,7 +20,7 @@ public class RequestTravelDto {
 	private String name;
 	private String address;
 	private String content;
-
+	private String originImageUrl;
 	private CategoryType categoryType;
 	private AreaGu areaGuId;
 

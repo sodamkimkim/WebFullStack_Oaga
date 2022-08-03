@@ -16,6 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.oaga.oaga_v1.dto.RequestRestaurantDto;
 import com.oaga.oaga_v1.dto.RequestTravelDto;
+import com.oaga.oaga_v1.dto.RequestUpdateHotplaceDto;
+import com.oaga.oaga_v1.dto.RequestUpdateRestaurantDto;
 import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.placeModel.AreaGu;
 import com.oaga.oaga_v1.placeModel.GuInfo;
@@ -121,51 +123,59 @@ public class AdminService {
 	}
 
 	@Transactional
-	public void updateGuInfo(GuInfo guInfo, int id) {
-
+	public void updateGuInfo(RequestUpdateHotplaceDto dto, int id) {
+		
 		GuInfo guinfoEntity = guInfoRepository.mFindByid2(id);
 
-		System.out.println(guinfoEntity + "guinfoEntityguinfoEntity");
-
+		UUID uuid = UUID.randomUUID();
+		String imageFileName = uuid.toString() + "." + extracktExt(dto.getFile().getOriginalFilename());
+		String newFileName = (imageFileName.trim()).replaceAll("\\s", "");
+		Path imageFilePath = Paths.get(uploadFolder + newFileName);
 		try {
+			Files.write(imageFilePath, dto.getFile().getBytes());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	
 			guinfoEntity.getId();
-			guinfoEntity.setName(guInfo.getName());
-			guinfoEntity.setAddress(guInfo.getAddress());
-			guinfoEntity.setContent(guInfo.getContent());
+			guinfoEntity.setName(dto.getName());
+			guinfoEntity.setAddress(dto.getAddress());
+			guinfoEntity.setContent(dto.getContent());
 			guinfoEntity.getAreaGu();
 			guinfoEntity.getCategoryType();
 			guinfoEntity.getCreateDate();
-			guinfoEntity.setOriginImageUrl(guInfo.getOriginImageUrl());
-			guinfoEntity.setImage(guInfo.getImage());
-			System.out.println("여기는????");
-		} catch (Exception e) {
-			e.printStackTrace();
-
-		}
+			guinfoEntity.setImage(newFileName);
+			guinfoEntity.setOriginImageUrl(dto.getOriginImageUrl());
+			
+		
 	}
 
 	@Transactional
-	public void updateRestaurant(Restaurant restaurant, int id) {
+	public void updateRestaurant(RequestUpdateRestaurantDto dto, int id) {
 
 		Restaurant restaurantEntity = restaurantRepository.mFindByRestaurantId2(id);
 
-		System.out.println(restaurantEntity + "guinfoEntityguinfoEntity");
 		
+		UUID uuid = UUID.randomUUID();
+		String imageFileName = uuid.toString() + "." + extracktExt(dto.getFile().getOriginalFilename());
+		String newFileName = (imageFileName.trim()).replaceAll("\\s", "");
+		Path imageFilePath = Paths.get(uploadFolder + newFileName);
 		try {
+			Files.write(imageFilePath, dto.getFile().getBytes());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+			
 			restaurantEntity.getId();
-			restaurantEntity.setName(restaurant.getName());
-			restaurantEntity.setAddress(restaurant.getAddress());
-			restaurantEntity.setContent(restaurant.getContent());
+			restaurantEntity.setName(dto.getName());
+			restaurantEntity.setAddress(dto.getAddress());
+			restaurantEntity.setContent(dto.getContent());
 			restaurantEntity.getAreaGu();
 			restaurantEntity.getCategoryType();
 			restaurantEntity.getCreateDate();
-			restaurantEntity.setOriginImageUrl(restaurant.getOriginImageUrl());
-			restaurantEntity.setImage(restaurant.getImage());
+			restaurantEntity.setOriginImageUrl(dto.getOriginImageUrl());
+			restaurantEntity.setImage(newFileName);
 
-		} catch (Exception e) {
-			e.printStackTrace();
-
-		}
 	}
 
 }
