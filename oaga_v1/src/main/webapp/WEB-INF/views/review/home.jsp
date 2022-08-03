@@ -217,7 +217,7 @@
 									type="hidden" value="${principal.user.id}" id="myId"> <img
 									src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
 									onerror="this.src='images/reviewPage/profile_basic.png';"
-									class="best_reviewer_profile">
+									class="best_reviewer_profile" style="cursor: pointer;">
 									<div class="like-Box">
 										<img class="best_reviewer_icon"
 											src="/oaga/images/userPage/heart.png"> <span>&nbsp;${bestuser.likes}</span>
