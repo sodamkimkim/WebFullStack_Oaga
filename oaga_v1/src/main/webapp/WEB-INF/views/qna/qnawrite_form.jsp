@@ -26,7 +26,7 @@
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <!-- include summernote css/js -->
-<link rel="stylesheet" href="/oaga/css/qna/qnawrite.css" />
+<link rel="stylesheet" href="/oaga/css/qna/qnawriteStyle.css" />
 </head>
 <body>
 

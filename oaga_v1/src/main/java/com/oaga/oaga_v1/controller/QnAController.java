@@ -11,10 +11,13 @@ public class QnAController {
 		return "qna/qnahome";
 	}
 	@GetMapping("/qna/qnawriteform")
-	public String qnaDetailForm() {
+	public String qnawriteForm() {
 		System.out.println("??");
 		return "qna/qnawrite_form";
 	}
-	
+	@GetMapping("/qna/qnadetailform")
+	public String qnaDetailForm() {
+		return "qna/qnadetail_form";
+	}
 
 }
