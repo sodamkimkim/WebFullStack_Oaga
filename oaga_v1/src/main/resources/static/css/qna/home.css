@@ -78,14 +78,15 @@ td {
 
 .qna_btn {
 	margin-top: 30px;
+	float: right;
 	width: 150px;
 	height: 40px;
-	letter-spacing: 1.3px;
 	border: 0px solid transparent;
-	float: right;
+	letter-spacing: 1.3px;
 	font-weight: bold;
 	border-radius: 5px;
 	color: #fff;
 	font-size: 14px;
+	cursor: pointer;
 	background-color: rgba(245, 161, 25, 0.9);
 }

@@ -10,10 +10,10 @@ public class QnAController {
 	public String qnaForm() {
 		return "qna/qnahome";
 	}
-	@GetMapping("/qna/detailform")
+	@GetMapping("/qna/qnawriteform")
 	public String qnaDetailForm() {
 		System.out.println("??");
-		return "qna/qnadetail_form";
+		return "qna/qnawrite_form";
 	}
 	
 
