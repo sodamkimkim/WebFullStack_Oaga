@@ -43,7 +43,7 @@ width: 80px;
 					<br/>
 					<span style="font-size: 15px;">${gu.content}</span>
 					<div class = "kakaomapImgBox" >
-					<a href="https://map.kakao.com/link/search/${gu.address}">
+					<a href="https://map.kakao.com/link/search/${gu.address}" target="_blank">
 					<img alt="" src="/oaga/images/kakaomap/kakaomap.png">
 					</a>
 					</div><!-- kakaomapImgBox -->

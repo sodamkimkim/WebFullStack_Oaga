@@ -43,7 +43,7 @@ width: 80px;
 						<br/>
 					<span style="font-size: 15px;">${restaurant.content}</span>
 										<div class = "kakaomapImgBox" >
-					<a href="https://map.kakao.com/link/search/${restaurant.address}">
+					<a href="https://map.kakao.com/link/search/${restaurant.address}" target="_blank">
 					<img alt="" src="/oaga/images/kakaomap/kakaomap.png">
 					</a>
 					</div><!-- kakaomapImgBox -->
