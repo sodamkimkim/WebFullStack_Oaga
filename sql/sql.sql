@@ -47,6 +47,8 @@ SELECT * FROM follow;
 
 SELECT * FROM area WHERE area LIKE "%부%";
 
+select * from user where userNickName like '%%' and role = 'USER';
+
 DROP DATABASE oaga;
 
 SELECT COUNT(*) FROM review GROUP BY userId HAVING userId = 2;

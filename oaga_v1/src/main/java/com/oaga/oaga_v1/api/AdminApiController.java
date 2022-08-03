@@ -28,6 +28,7 @@ import com.oaga.oaga_v1.placeModel.GuInfo;
 import com.oaga.oaga_v1.placeModel.Restaurant;
 import com.oaga.oaga_v1.repository.GuInfoRepository;
 import com.oaga.oaga_v1.service.AdminService;
+import com.oaga.oaga_v1.service.UserService;
 import com.oaga.oaga_v1.userModel.RoleType;
 import com.oaga.oaga_v1.userModel.User;
 
@@ -119,9 +120,6 @@ public class AdminApiController {
 		
 		return new ResponseDto<Integer>(HttpStatus.OK, 1);
 	}
-	
-	
-// ==========================================================
 
 
 	@DeleteMapping("/admin/deleterestaurant/{id}")
@@ -129,7 +127,14 @@ public class AdminApiController {
 		adminService.deleteRestaurantById(id);
 		return new ResponseDto<Integer>(HttpStatus.OK, 1);
 	}
+	
+	// 회원 삭제
+	@DeleteMapping("/admin/deleteUser/{userId}")
+	public ResponseDto<Integer> deleteUserById(@PathVariable int userId){
+		// 서비스 요청
+		adminService.deleteUser(userId);
+		return new ResponseDto<>(HttpStatus.OK, 1);
+	}
 
-// ==========================================================
 
 }

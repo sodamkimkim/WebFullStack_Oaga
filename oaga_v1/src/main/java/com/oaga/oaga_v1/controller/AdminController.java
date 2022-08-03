@@ -1,5 +1,6 @@
 package com.oaga.oaga_v1.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,6 +28,7 @@ import com.oaga.oaga_v1.placeModel.Restaurant;
 import com.oaga.oaga_v1.service.AdminService;
 import com.oaga.oaga_v1.service.UserService;
 import com.oaga.oaga_v1.userModel.RoleType;
+import com.oaga.oaga_v1.userModel.User;
 
 @Controller
 public class AdminController {
@@ -134,7 +136,29 @@ public class AdminController {
 	
 	// 회원 관리 페이지
 	@GetMapping("/admin/user")
-	private String adminUserForm() {
+	private String adminUserForm(String searchName, @PageableDefault(size = 12, sort = "id", direction = Direction.ASC)Pageable pageable, Model model) {
+		// 회원 정보 전체 / 검색
+		String name = searchName == null ? "" : searchName;
+		// 서비스 요청
+		Page<User> userList = adminService.searchUser(name, pageable);
+		int nowPage = userList.getPageable().getPageNumber() +1; // 
+		int startPage = Math.max(nowPage -2, 1);
+		int endPage = Math.min(nowPage + 2, userList.getTotalPages()); //1
+		
+		System.out.println("nowPage : " + nowPage);
+		System.out.println("startPage : " + startPage);
+		System.out.println("endPage : " + endPage);
+		
+		ArrayList<Integer> pageNumbers = new ArrayList<>();
+		for(int i = startPage; i <= endPage; i++) {
+			pageNumbers.add(i);
+		}
+		System.out.println("pageNumbers : " + pageNumbers);
+		model.addAttribute("userList", userList);
+		model.addAttribute("pageNumbers", pageNumbers);
+		
+		System.out.println("userList : " + userList);
+		
 		return "admin/admin_delete_user";
 	}
 

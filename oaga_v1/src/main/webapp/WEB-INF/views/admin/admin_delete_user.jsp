@@ -37,6 +37,7 @@ h1 {
 	color: white;
 	font-size: 12px;
 	border-radius: 5px;
+	position: absolute;
 }
 
 .search-box>form {
@@ -71,46 +72,56 @@ h1 {
 .search-img {
 	position: absolute;
 }
+
 .pasination-box {
 	display: flex;
 	justify-content: center;
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
+
 .page-link {
 	color: #fff;
 	background-color: rgba(6, 47, 74, 0.9);
-    border-color: rgba(6, 47, 74, 0.9);
+	border-color: rgba(6, 47, 74, 0.9);
 }
+
 .page-item.active .page-link {
-    z-index: 3;
-    color: #fff;
-    background-color: rgba(6, 47, 74, 0.7);
-    border-color: rgba(6, 47, 74, 0.7);
+	z-index: 3;
+	color: #fff;
+	background-color: rgba(6, 47, 74, 0.7);
+	border-color: rgba(6, 47, 74, 0.7);
 }
+
 .border-gray-200 {
-	width: 25%;
+	width: 14.2%;
 }
+
 .page-item>a:hover {
 	z-index: 3;
-    color: #fff;
-    background-color: rgba(6, 47, 74, 0.7);
-    border-color: rgba(6, 47, 74, 0.7);
+	color: #fff;
+	background-color: rgba(6, 47, 74, 0.7);
+	border-color: rgba(6, 47, 74, 0.7);
 }
+
+.page-item:active {
+	
+}
+
 .page-link:focus {
 	outline: none;
-	-webkit-tap-highlight-color : transparent;
+	-webkit-tap-highlight-color: transparent;
 }
 </style>
 
 <div class="amin-user-sec">
 	<div class="admin-user-box">
 		<div class="search-box">
-			<form class="search-user-form" action="#" method="get">
-				<input class="search-user" type="text" placeholder="닉네임으로 검색">
+			<form class="search-user-form" action="/oaga/admin/user" method="get">
+				<input class="search-user" name="searchName" type="text" placeholder="닉네임으로 검색">
 				<button class="img-btn">
 					<img class="search-img"
-						src="/oaga/images/mainpage/icon_search2.png" alt="">
+						src="/oaga/images/mainpage/icon_search2.png" >
 				</button>
 			</form>
 		</div>
@@ -124,36 +135,27 @@ h1 {
 						<thead>
 							<tr>
 								<th class="border-gray-200" scope="col">ID</th>
+								<th class="border-gray-200" scope="col">Name</th>
 								<th class="border-gray-200" scope="col">NickName</th>
-								<th class="border-gray-200" scope="col">CreateDate</th>
+								<th class="border-gray-200" scope="col">Email</th>
+								<th class="border-gray-200" scope="col">oauth</th>
+								<th class="border-gray-200" scope="col">Date</th>
 								<th class="border-gray-200" scope="col">Status</th>
 							</tr>
 						</thead>
+						<input id="input_hidden" type="hidden" value="">
 						<tbody>
-							<tr>
-								<td>00</td>
-								<td>00</td>
-								<td>00</td>
-								<td><button class="user-delete-btn">회원 삭제</button></td>
-							</tr>
-							<tr>
-								<td>00</td>
-								<td>00</td>
-								<td>00</td>
-								<td><button class="user-delete-btn">회원 삭제</button></td>
-							</tr>
-							<tr>
-								<td>00</td>
-								<td>00</td>
-								<td>00</td>
-								<td><button class="user-delete-btn">회원 삭제</button></td>
-							</tr>
-							<tr>
-								<td>00</td>
-								<td>00</td>
-								<td>00</td>
-								<td><button class="user-delete-btn">회원 삭제</button></td>
-							</tr>
+							<c:forEach var="user" items="${userList.content}">
+								<tr class="tr-user-delete">
+									<td>${user.id}</td>
+									<td>${user.username}</td>
+									<td>${user.userNickName}</td>
+									<td>${user.email}</td>
+									<td>${user.oauth}</td>
+									<td>${user.createDate}</td>
+									<td class="td-user-delete" id="td-${user.id}"><button class="user-delete-btn" onclick="index.deleteUser(${user.id});" id="btn-delete-${user.id}">회원 삭제</button></td>
+								</tr>
+							</c:forEach>
 						</tbody>
 					</table>
 				</div>
@@ -165,16 +167,24 @@ h1 {
 				<c:set var="isNotdisabled" value=""></c:set>
 				<c:set var="isNowPage" value="active"></c:set>
 
-				<li class="page-item"><a class="page-link" href="#">Pre</a></li>
-				<li class="page-item active"><a class="page-link" href="#">1</a></li>
-				<li class="page-item"><a class="page-link" href="#">2</a></li>
-				<li class="page-item "><a class="page-link" href="#">Next</a></li>
+				<li class="page-item ${userList.first ? isDisabled : isNotDisabled}"><a class="page-link" href="#">Pre</a></li>
+				<c:forEach var="pageNumber" items="${pageNumbers}">
+					<c:choose>
+						<c:when test="${userList.number + 1 eq pageNumber}">
+							<li class="page-item active "><a class="page-link " >${pageNumber}</a></li>			
+						</c:when>
+						<c:otherwise>
+							<li class="page-item"><a class="page-link" href="/oaga/admin/user?page=${pageNumber-1}">${pageNumber}</a></li>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+				<li class="page-item ${userList.last ? isDisabled : isNotDisabled}"><a class="page-link" href="#">Next</a></li>
 			</ul>
 
 		</div>
 	</div>
 </div>
 
-
+<script src="/oaga/js/admin_user.js"></script>
 
 <%@ include file="../layout/footer.jsp"%>

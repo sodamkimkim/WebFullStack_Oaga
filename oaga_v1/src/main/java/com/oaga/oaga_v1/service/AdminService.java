@@ -24,6 +24,8 @@ import com.oaga.oaga_v1.repository.AreaRepository;
 import com.oaga.oaga_v1.repository.GuInfoRepository;
 import com.oaga.oaga_v1.repository.RestaurantRepositoryt;
 import com.oaga.oaga_v1.repository.TravelInfoRepository;
+import com.oaga.oaga_v1.repository.UserRepository;
+import com.oaga.oaga_v1.userModel.User;
 
 @Service
 public class AdminService {
@@ -40,6 +42,9 @@ public class AdminService {
 
 	@Autowired
 	private RestaurantRepositoryt restaurantRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
 
 	@Transactional
 	public List<Area> areaAll() {
@@ -166,6 +171,18 @@ public class AdminService {
 			e.printStackTrace();
 
 		}
+	}
+	
+	// 회원정보 검색
+	@Transactional(readOnly = true)
+	public Page<User> searchUser(String searchName, Pageable pageable) {
+		return userRepository.findByUserNickName(pageable, searchName);
+	}
+	
+	// 회원 삭제
+	@Transactional
+	public void deleteUser(int userId) {
+		userRepository.deleteById(userId);
 	}
 
 }
