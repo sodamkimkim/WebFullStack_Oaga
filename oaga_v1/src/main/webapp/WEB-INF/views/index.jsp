@@ -286,7 +286,7 @@
 		<div class="row1">
 			<div class="box box1">
 				<a href="#">
-					<div class="cityName">부산코스여행</div>
+					<div class="cityName">부산</div>
 				</a>
 			</div>
 			<!--box-->
@@ -298,7 +298,7 @@
 			<!--box-->
 			<div class="box box3">
 				<a href="#">
-					<div class="cityName">포항 - 경주여행</div>
+					<div class="cityName">포항</div>
 				</a>
 			</div>
 			<!--box-->
@@ -309,13 +309,13 @@
 			<div class="col col1">
 				<div class="box box1_1">
 					<a href="#">
-						<div class="cityName">서울당일치기</div>
+						<div class="cityName">서울</div>
 					</a>
 				</div>
 				<!--box-->
 				<div class="box box1_2">
 					<a href="#">
-						<div class="cityName">제주도코스여행</div>
+						<div class="cityName">제주도</div>
 					</a>
 				</div>
 				<!--box-->
