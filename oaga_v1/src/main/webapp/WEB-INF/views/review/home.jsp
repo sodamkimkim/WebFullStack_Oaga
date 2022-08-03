@@ -178,9 +178,9 @@
 		</div>
 		<!--row2-->
 
-		<div class="review_more more">
-			<a href="/oaga/list">여행리뷰 모두보기</a>
-		</div>
+		<a href="/oaga/list">
+			<div class="review_more more" style="cursor: pointer;">여행리뷰 모두보기</div>
+		</a>
 	</div>
 	<!--secWrap-->
 </section>
