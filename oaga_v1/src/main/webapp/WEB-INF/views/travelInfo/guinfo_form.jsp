@@ -74,7 +74,8 @@
 				<c:otherwise>
 					<c:forEach var="restaurantList" items="${restaurantList}">
 						<a href="/oaga/travel_detail/${restaurantList.id}"
-							style="width: auto; height: auto; margin-right: 15px;"> <img
+							style="width: auto; height: auto; margin-right: 15px;"> 
+							<img
 		
 							alt="" src="http://localhost:9090/oaga/upload/${restaurantList.image}"
 							style="width: 200px; height: 150px; border-radius: 1ex; margin-top: 30px;">
