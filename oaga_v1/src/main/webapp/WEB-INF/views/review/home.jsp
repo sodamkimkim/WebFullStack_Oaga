@@ -179,9 +179,9 @@
 		</div>
 		<!--row2-->
 
-		<div class="review_more more">
-			<a href="/oaga/list">여행리뷰 모두보기</a>
-		</div>
+		<a href="/oaga/list">
+			<div class="review_more more" style="cursor: pointer;">여행리뷰 모두보기</div>
+		</a>
 	</div>
 	<!--secWrap-->
 </section>
@@ -218,7 +218,7 @@
 									type="hidden" value="${principal.user.id}" id="myId"> <img
 									src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
 									onerror="this.src='images/reviewPage/profile_basic.png';"
-									class="best_reviewer_profile">
+									class="best_reviewer_profile" style="cursor: pointer;">
 									<div class="like-Box">
 										<img class="best_reviewer_icon"
 											src="/oaga/images/userPage/heart.png"> <span>&nbsp;${bestuser.likes}</span>

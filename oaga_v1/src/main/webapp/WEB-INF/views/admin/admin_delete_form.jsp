@@ -44,7 +44,6 @@
 			</tr>
 		</thead>
 		<tbody>
-
 			<c:forEach var="restaurant" items="${restaurants.content}">
 				<tr class="adD_srcList_item">
 					<td id="cl1" class="adD_listColumn adD_listColumn1"><input
@@ -59,17 +58,8 @@
 						</button></td>
 				</tr>
 			</c:forEach>
-
-
 		</tbody>
-
 	</table>
-
-
-
-
-
-
 	<div class=adD_bottomWrap>
 		<button class="adD_btnSubmit">삭제완료</button>
 	</div>

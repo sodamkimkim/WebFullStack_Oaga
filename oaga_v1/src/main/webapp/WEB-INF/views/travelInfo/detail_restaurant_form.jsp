@@ -3,7 +3,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href="/oaga/css/style.css" />
 <%@ include file="../layout/header.jsp"%>
+<style>
+.kakaomapImgBox{
+width: 100px;
 
+margin-right: auto;
+margin-left: auto;
+margin-top: 50px;
+text-align: center;
+}
+.kakaomapImgBox>a>img{
+width: 80px;
+
+}
+</style>
 <br />
 <br />
 <div class="container">
@@ -31,6 +44,11 @@
 						${restaurant.address}</p>
 						<br/>
 					<span style="font-size: 15px;">${restaurant.content}</span>
+										<div class = "kakaomapImgBox" >
+					<a href="https://map.kakao.com/link/search/${restaurant.address}" target="_blank">
+					<img alt="" src="/oaga/images/kakaomap/kakaomap.png">
+					</a>
+					</div><!-- kakaomapImgBox -->
 				</div>
 			</c:forEach>
 		</div>

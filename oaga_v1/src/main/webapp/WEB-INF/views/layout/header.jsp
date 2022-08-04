@@ -29,11 +29,11 @@
 </head>
 <body>
 	<header>
-		<div class="hWrap">
-			<h1>
+		<div class="oagahWrap">
+			<h1 class = "oagah1">
 				<a href="/oaga">OaGa</a>
 			</h1>
-			<ul class="gnb">
+			<ul class="oagagnb">
 				<li><a href="/oaga/travel_info">여행지정보보기</a></li>
 				<c:choose>
 					<c:when test="${empty principal}">
@@ -43,11 +43,12 @@
 						<li><a href="/oaga/mreview">리뷰보기</a></li>
 					</c:otherwise>
 				</c:choose>
+				<li><a href="/oaga/qna/qna_home">Q&A</a></li>
 
 			</ul>
 			<!--gnb-->
 
-			<div class="util">
+			<div class="oagautil">
 				<!--srch-->
 				<c:choose>
 					<c:when test="${empty principal}">
