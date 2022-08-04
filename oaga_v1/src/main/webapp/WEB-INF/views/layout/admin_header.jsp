@@ -28,17 +28,19 @@
 				<a href="/oaga/admin/admin_mainpage">OaGa Admin</a>
 			</h1>
 			<ul class="gnb">
-				<li class="admin_mainmenu"><a
-					href="/oaga/admin/guinfo_save_page">홈페이지 관리하기</a>
+				<li class="admin_mainmenu">
+				<a href="/oaga/admin/guinfo_save_page">홈페이지 관리</a>
 					<ul class="admin_submenu">
 						<li><a href="/oaga/admin/guinfo_save_page">추가하기</a></li>
-
 						<li><a href="/oaga/admin/updatepage">수정하기</a></li>
 						<li><a href="/oaga/admin/deletepage">삭제하기</a></li>
 					</ul>
 				</li>
-				<li style="margin-left: 100px;">
-					<a href="/oaga">사용자 홈페이지 가기</a>
+				<li style="margin-left: 50px;">
+					<a href="/oaga/admin/user">회원정보 관리</a>
+				</li>
+				<li style="margin-left: 50px;">
+					<a href="/oaga">리뷰 · 댓글 관리</a>
 				</li>
 			</ul>
 			<!--gnb-->

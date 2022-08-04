@@ -123,6 +123,7 @@ public class UserController {
 	@PostMapping("/auth/joinproc")
     public String save(RequestUserProfileDto dto) {
         dto.setRole(RoleType.USER);
+        dto.setOauth("nomal");
         int result = userService.saveUser(dto);
         return "redirect:/";
     }
