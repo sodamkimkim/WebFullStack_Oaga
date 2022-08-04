@@ -4,7 +4,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.oaga.oaga_v1.placeModel.CategoryType;
 import com.oaga.oaga_v1.placeModel.GuInfo;
-import com.oaga.oaga_v1.placeModel.Restaurant;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

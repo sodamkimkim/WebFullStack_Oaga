@@ -142,6 +142,7 @@ public class AdminController {
 // ===================================================================== 수정
 	@PostMapping("/api/admin/guinfo/update/{id}")// 수정하기
 	public String updateGuInfo(RequestUpdateHotplaceDto dto, @PathVariable int id) {
+		System.out.println("111111111111111111111");
 		adminService.updateGuInfo(dto, id);
 		return "redirect:/admin/admin_mainpage";
 	}

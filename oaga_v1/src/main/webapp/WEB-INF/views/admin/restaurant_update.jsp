@@ -11,8 +11,9 @@
 }
 </style>
 
-<div
+	<div
 	style="width: 100%; height: 100%; display: flex; justify-content: center;">
+	
 	<div style="width: 1200px; margin-top:20px;">
 		<div
 			style="display: flex; justify-content: space-around; margin-top: 50px;">
@@ -39,7 +40,7 @@
 						<div class="areaList"
 							style="width: 100%; height: 30px; margin-bottom: 10px; background-color: gray; cursor: pointer;"
 							onclick="selectrestaurantList('${areaList.id}')">
-						<!-- <input type="hidden" value="${areaList}" id="areaId"> -->
+						
 							${areaList.area}</div>
 					</c:forEach>
 				</div>
@@ -58,11 +59,8 @@
 					<h4 style="height: 29px; border: 1px solid;"><a href="/">수정</a></h4>
 					<div style="height: 668px; border: 1px solid;"  >
 					<input type="hidden" value="${restaurantList}">
-						<div style="width: 100%; height: 668px; "id="restaurantList">
-						
+						<div style="width: 100%; height: 668px;" id="restaurantList">
 						</div>
-					
-						
 					</div>
 				</div>
 					

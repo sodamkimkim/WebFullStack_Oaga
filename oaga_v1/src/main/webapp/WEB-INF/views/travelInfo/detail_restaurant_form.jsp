@@ -6,6 +6,8 @@
 
 <br />
 <br />
+<div class="container">
+<input type="hidden" name ="${_csrf.parameterName}" value = "${_csrf.token}">
 <div class="imgcontainer"
 	style="width: 100%; display: flex; justify-content: center; margin-top: 35px;">
 	<div class="imgcontainer"
@@ -56,5 +58,5 @@
 </div>
 <br />
 <br />
-
+</div>
 <%@ include file="../layout/footer.jsp"%>

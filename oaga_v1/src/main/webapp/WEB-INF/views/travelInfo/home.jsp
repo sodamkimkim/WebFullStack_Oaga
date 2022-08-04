@@ -25,6 +25,7 @@
 <input type="hidden" id="home">
 <div class="travelInfo-main-container"
 	style="width: 100%; margin-top: 57px;">
+	<input type="hidden" name ="${_csrf.parameterName}" value = "${_csrf.token}">
 	<div class="travelInfo_header">
 		<div class="travelInfo_header_filter">
 			<div class=travelInfo_hWrap>

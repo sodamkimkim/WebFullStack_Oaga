@@ -1,3 +1,6 @@
+let token=$("meta[name='_csrf']").attr("content");
+let header = $("meta[name='_csrf_header']").attr("content");
+
 let index = {
 	init: function() {
 		$("#btn-reply-save").bind("click", () => {
@@ -20,9 +23,12 @@ let index = {
 			reviewId: $("#reviewId").val(),
 			content: $("#reply-content").val()
 		}
-
+			
 
 		$.ajax({
+			beforeSend: function(xhr) {
+                xhr.setRequestHeader(header, token)  
+            },
 			type: "POST",
 			url: `/oaga/api/review/${data.reviewId}/reply`,
 			data: JSON.stringify(data),
@@ -39,14 +45,15 @@ let index = {
 	replyDelete: function(replyId) {
 
 		$.ajax({
+			
 			type: "DELETE",
 			url: `/oaga/api/review/reply/${replyId}`,
 			dataType: "json"
 		}).done(function(response) {
-			console.log(response.data);
+
 			location.href = "";
 		}).fail(function(error) {
-			console.log(error);
+
 			alert("댓글 삭제 실패");
 		});
 
@@ -57,6 +64,10 @@ let index = {
 		let reviewId = $("#reviewId").val();
 
 		$.ajax({
+			
+			beforeSend: function(xhr) {
+                xhr.setRequestHeader(header, token)
+            },
 			type: "DELETE",
 			url: `/oaga/api/review/${reviewId}/delete`,
 			dataType: "json"
@@ -73,10 +84,13 @@ let index = {
 	recentReview: function() {
 		
 		$.ajax({
+			beforeSend: function(xhr) {
+                xhr.setRequestHeader(header, token)
+            },
 			type: "GET",
 			url: "/oaga/api/recentReview"
 		}).done(function(response) {
-			console.log(response.data)
+
 			addRecentReview(response.data);
 		}).fail(function(error) {
 			console.log(error)
@@ -88,7 +102,7 @@ let index = {
 }
 
 function addReply(reply) {
-	console.log(reply);
+
 	let principalId = $("#principal--id");
 	let childElement = `<div class="replyBox">
 					<img class="reply_image" alt=""
@@ -108,7 +122,7 @@ function addReply(reply) {
 }
 
 function addRecentReview(reviewList) {
-	console.log(reviewList);
+
 	$(".box").remove();
 	var listLength = reviewList.length;
 	if(listLength != 0) {
@@ -177,7 +191,7 @@ function addRecentReview(reviewList) {
 				</div>`
 		}
 	}
-	console.log(recentList1);
+
 	$("#row1").prepend(recentList1);
 	$("#row2").prepend(recentList2);
 }

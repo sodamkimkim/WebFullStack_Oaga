@@ -41,6 +41,7 @@
 				</div>
 				<form method="post" action="/oaga/api/admin/guinfo/infoSave"
 					name="t_form" enctype="multipart/form-data">
+					<input type="hidden" name ="${_csrf.parameterName}" value = "${_csrf.token}">
 					<div
 						style="width: 100%; border-left: 1px solid white">
 

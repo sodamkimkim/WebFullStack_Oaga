@@ -5,11 +5,13 @@
 <%@ include file="../layout/admin_header.jsp"%>
 
 <div class="adD_mWrap">
+
 	<div class="srchBox">
 		<div class="searchInfo">
 
 			<form class="adD_srch" action="/oaga/admin/srch_deleterestaurant"
 				method="get">
+				<input type="hidden" name ="${_csrf.parameterName}" value = "${_csrf.token}">
 				<input type="text" id="srchtitle" name="srchtitle"
 					value="${srchtitle}" placeholder="삭제할 정보 검색" />
 				<button class="adD_srch_btn" type="submit">

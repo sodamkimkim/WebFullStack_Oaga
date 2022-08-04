@@ -112,6 +112,8 @@ uri="http://www.springframework.org/security/tags"%>
         </h1>
         <div class="con">
           <form action="" >
+          
+          <input type="hidden" name = "${_csrf.parameterName}" value="${_csrf.token}">
 			<input type="hidden" id="id" value="${principal.user.id}">
             <div class="formRow1">
               <div class="update_lbl_Input">

@@ -1,4 +1,5 @@
-
+let token=$("meta[name='_csrf']").attr("content");
+let header = $("meta[name='_csrf_header']").attr("content");
 
 
 
@@ -23,6 +24,7 @@ let index = {
 	},
 
 	myInfoUpdate: function() {
+		
 		let data = {
 			id: $("#id").val(),
 			username: $("#username").val(),
@@ -31,6 +33,9 @@ let index = {
 			email: $("#email").val()
 		}
 		$.ajax({
+			beforeSend: function(xhr) {
+                xhr.setRequestHeader(header, token)
+            },
 			type: "put",
 			url: "/oaga/api/myinfoupdate",
 			data: JSON.stringify(data),
@@ -53,6 +58,9 @@ let index = {
 		var form = $("#updateMyProfileForm")[0];
 		var data = new FormData(form);
 		$.ajax({
+			beforeSend: function(xhr) {
+                xhr.setRequestHeader(header, token)
+            },
 			type: "put",
 			enctype: 'multipart/form-data',
 			url: "/oaga/api/userprofileupdate",
@@ -77,6 +85,9 @@ let index = {
 		let userId = $("#userId").val();
 
 		$.ajax({
+			beforeSend: function(xhr) {
+                xhr.setRequestHeader(header, token)
+            },
 			type: "POST",
 			url: `/oaga/api/follow/${userId}`,
 		}).done(function() {

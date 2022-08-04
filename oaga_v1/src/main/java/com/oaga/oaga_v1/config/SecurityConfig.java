@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 import com.oaga.oaga_v1.auth.PrincipalDetailService;
 import com.oaga.oaga_v1.handler.CustomFailureHandler;
@@ -39,7 +40,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.csrf().disable()
+		http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+        	.and()
             .authorizeRequests()
             .antMatchers("/auth/**", "/api/**","/ajax/**" ,"/upload/**", "/", "/travel/**", "/travel_info/**", "/travel_detail/**", "/travel_guinfo/**", "/review", "/js/**", "/css/**", "/css/review/**", "/images/**")
             .permitAll()

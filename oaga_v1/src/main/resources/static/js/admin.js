@@ -1,3 +1,6 @@
+let token=$("meta[name='_csrf']").attr("content");
+let tokenName=$("meta[name='_csrf']").attr("name");
+let header= $("meta[name='_csrf_header']").attr("content");
 
 let index = {
 	init: function() {
@@ -15,6 +18,10 @@ let index = {
 			let id = td.eq(1).children().val();
 			console.log(id);
 			$.ajax({
+				beforeSend: function(xhr) {
+                xhr.setRequestHeader(header, token)  
+            },
+				
 				type: "delete",
 				url: "/oaga/admin/deleterestaurant/" + id,
 			}).done(function(data) {
@@ -23,7 +30,7 @@ let index = {
 					location.href = "/oaga/admin/deletepage/";
 				}
 			}).fail(function(error) {
-				alert(" 수정에 실패하였습니다.")
+				alert(" 삭제에 실패하였습니다.")
 
 			});
 		});
@@ -39,6 +46,7 @@ function selectrestaurantList(selectedId) { // area 선택 시
 	
 	
 	$.ajax({
+		
 		type: "GET",
 		url: `/oaga/api/admin/areaId/${data}`
 	}).done(function(response) {
@@ -142,16 +150,18 @@ function restaurantclick(updateId) { // guinfo 리스트 클릭했을때 어펜�
 
 
 function setRestaurantData(estaurantData) {
-	$('#restaurantList').empty();
 
+	
+	$('#restaurantList').empty();
+	
 	let setData = estaurantData.data;
-	console.log(setData[0].id);
+
 	var restaurantDataApend = `<br/>
 						<br/>
-						
-						
-						<form action="/oaga/api/admin/restaurant/update/${setData[0].id}" method="post" enctype="multipart/form-data">
-						<input type="hidden" id = "categoryType" name = "areaGuId" value="${setData[0].areaGuId}"> 
+						<form action="/oaga/api/admin/restaurant/update/${setData[0].id}"  method="post" enctype="multipart/form-data" >						
+						<input type="hidden" name ="${tokenName}" value = "${token}">	
+							
+						<input type="hidden" id = "areaGuId" name = "areaGuId" value="${setData[0].areaGuId}"> 
 						<input type="hidden" id = "categoryType" name = "categoryType" value="${setData[0].categoryType}"> 
 						<label >이름 :</label>
 						<input style="margin-bottom: 20px; height: 35px;" name = "name"id = "setname" value = ${setData[0].name}>
@@ -200,7 +210,7 @@ function setRestaurantData(estaurantData) {
 
 // =====================================guinfo update
 function selectList2(selectedId) { // area 선택 시
-
+		
 	let data = selectedId;
 
 	$.ajax({
@@ -291,7 +301,9 @@ function guinfoclick(updateId) { // guinfo 리스트 클릭했을때 어펜듬
 
 	let data = updateId;
 	console.log(data);
+	
 	$.ajax({
+		
 		type: "GET",
 		url: `/oaga/api/admin/guinfo_info/${data}`
 	}).done(function(response) {
@@ -307,13 +319,17 @@ function setGuinfoData(guinfoData) {
 	$('#guinfoList').empty();
 
 	let setData = guinfoData.data;
-	console.log(setData[0].id);
+	
+	
+
+	
 	var guinfoDataApend = `<br/>
 						<br/>
+
+						<form action="/oaga/api/admin/guinfo/update/${setData[0].id}"  method="post" enctype="multipart/form-data" >						
+						<input type="hidden" name ="${tokenName}" value = "${token}">
 						
-						
-						<form action="/oaga/api/admin/guinfo/update/${setData[0].id}" method="post" enctype="multipart/form-data">
-						<input type="hidden" id = "categoryType" name = "areaGuId" value="${setData[0].areaGuId}"> 
+						<input type="hidden" id = "areaGuId" name = "areaGuId" value="${setData[0].areaGuId}"> 
 						<input type="hidden" id = "categoryType" name = "categoryType" value="${setData[0].categoryType}"> 
 						<label >이름 :</label>
 						<input style="margin-bottom: 20px; height: 35px;" name = "name" id = "name" value = ${setData[0].name}>
@@ -344,8 +360,9 @@ function setGuinfoData(guinfoData) {
 						</div>
 						</form>
 						`
-
-	$('#guinfoList').append(guinfoDataApend);
+console.log(guinfoDataApend);
+$('#guinfoList').append(guinfoDataApend);
+	
 }
 
 
@@ -439,5 +456,16 @@ function addSelectedGuName(response) {
 	var guName1 = `<input type ="hidden" value ="${setName[0].id}"  id = "areaGuId" name ="areaGuId">
 					<h3 style="margin-bottom: 10px; font-size: 40px;">${setName[0].guname}</h3>`;
 	$('#areaGuName').append(guName1);
+}
+
+
+function xSSCheck(str, level) {
+    if (level == undefined || level == 0) {
+        str = str.replace(/\<|\>|\"|\'|\%|\;|\(|\)|\&|\+|\-/g,"");
+    } else if (level != undefined && level == 1) {
+        str = str.replace(/\</g, "&lt;");
+        str = str.replace(/\>/g, "&gt;");
+    }
+    return str;
 }
 

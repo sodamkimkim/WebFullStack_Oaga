@@ -5,8 +5,9 @@
 <!--header----------------------------->
 
 <div class="reviewDetailForm">
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 	<div class="reviewDetailWrap">
-		<input type="hidden" id="principal--id" value="${principal.user.id}">
+		
 		<div class="reviewDetailHeader">
 			<h3 style="color: #f9bb57; font-size: 23px;">여행후기</h3>
 			<p>여행을 다녀온 OaGa유저들의 솔직한 여행이야기</p>

@@ -15,6 +15,11 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+<meta name = "${_csrf.parameterName}" content="${_csrf.token}">
+<meta name="_csrf_header" content="${_csrf.headerName}">
+
 <title>OaGa</title>
 <link rel="stylesheet" href="/oaga/css/style.css" />
 <!-- jQuery library -->

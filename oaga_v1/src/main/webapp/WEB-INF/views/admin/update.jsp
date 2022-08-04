@@ -7,6 +7,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <div class="admin_update_mainWrap">
+
 	<div class="subtitle">
 		<a type="button" class="btn btn-primary" id="select"
 			href="/oaga/admin/restaurant_updatepage"
@@ -45,8 +46,10 @@
 				style="width: 337px; text-align: center;">
 				<div class="colName col3Name">수정</div>
 				<div style="">
-					<input type="hidden" style="height: 700px;" value="${guinfoList}">
-					<div style="background-color: white; border-top:2px solid #333; line-height: 35px; box-sizing: border-box;" id="guinfoList"></div>
+					<input type="hidden" style="height: 700px;" value="${guinfoList.content}" itemid="${guinfoList}">
+					<div style="background-color: white; border-top:2px solid #333; line-height: 35px;box-sizing: border-box;"id ="guinfoList" >
+						
+					</div>
 
 
 				</div>

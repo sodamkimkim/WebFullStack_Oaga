@@ -26,6 +26,7 @@ margin-top:80px;}
 	<div class="r_sec">
 		<!-- form 태그 시작 -->
 		<form method="post" name="r_form" enctype="multipart/form-data">
+		<input type="hidden" name ="${_csrf.parameterName}" value = "${_csrf.token}">
 			<div class="r_box">
 				<div>
 					<h3 class="title">MY여행리뷰 작성</h3>

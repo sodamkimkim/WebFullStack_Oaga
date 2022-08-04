@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="../layout/header.jsp"%>
 <link rel="stylesheet" href="/oaga/css/style.css" />
+
 <br />
 <style>
 .areagu_img {
@@ -11,6 +12,8 @@
 	height: inherit;
 }
 </style>
+<div class = "container">
+<input type="hidden" name ="${_csrf.parameterName}" value = "${_csrf.token}">
 <div style="width: 100%; display: flex; justify-content: center;">
 	<div style="width: 1200px; height: 500px;">
 		<c:forEach var="guInfoImage" items="${guInfoImage}">
@@ -90,7 +93,7 @@
 <br />
 <br />
 
-
+</div>
 <%@ include file="../layout/footer.jsp"%>
 
 

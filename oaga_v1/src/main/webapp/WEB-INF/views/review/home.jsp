@@ -20,6 +20,7 @@
 		</p>
 		<div class="review_search_area">
 			<form action="/oaga/list/search" method="get">
+			
 				<input type="text" class="review_search_input" name="searchTitle"
 					id="search-review" placeholder="제목으로 검색">
 				<button class="review_btn_search">

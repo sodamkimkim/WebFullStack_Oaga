@@ -22,6 +22,7 @@
 	<div class="r_sec">
 		<!-- form 태그 시작 -->
 		<form action="/oaga/api/review/${review.id}/update" method="post" enctype="multipart/form-data">
+			<input type="hidden" name ="${_csrf.parameterName}" value = "${_csrf.token}">
 			<input type="hidden" name="_method" value="PUT"/>
 			<div class="r_box">
 				<div>

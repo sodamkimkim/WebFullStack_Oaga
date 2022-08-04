@@ -127,6 +127,7 @@
         </h1>
         <div class="con">
           <form action="/oaga/auth/admin_join" method="post" enctype="multipart/form-data">
+          <input type="hidden" name ="${_csrf.parameterName}" value = "${_csrf.token}">
             <!-- csrf???? xss -->
             <div class="formRow1">
               <input type="text" class="form-input" placeholder="Enter ID" id="username" name="username" /> <input type="password" class="form-input" placeholder="Enter password" id="password" name="password" /> <br />

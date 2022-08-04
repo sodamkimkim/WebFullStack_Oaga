@@ -12,6 +12,7 @@
 
 <div
 	style="width: 100%; height: 100%; display: flex; justify-content: center;">
+	
 	<div style="width: 1200px; margin-top:20px;">
 		<div
 			style="display: flex; justify-content: space-around; margin-top: 50px;">
@@ -34,7 +35,7 @@
 						style="width: 100%; height: 30px; text-align: center; border-bottom: 1px solid;">도시</div>
 
 					<c:forEach var="areaList" items="${areaList}">
-					
+						
 						<div class="areaList"
 							style="width: 100%; height: 30px; margin-bottom: 10px; background-color: gray; cursor: pointer;"
 							onclick="selectList('${areaList.id}')">
@@ -52,6 +53,7 @@
 
 				</div>
 			<form method="post" action="/oaga/admin/restaurant/infoSave" name="t_form" enctype="multipart/form-data">
+			<input type="hidden" name ="${_csrf.parameterName}" value = "${_csrf.token}">
 				<div style="height: 100%; width: 100%; border: 1px solid; " >
 
 					<input type="hidden" itemid="${areaGuName}"
@@ -99,14 +101,9 @@
 								required="required"
 								onchange="javascript:document.getElementById('r_imageUrl').value = this.value">
 						</div>
-
-						
 							<button class="btn btn-primary" id="btn-save" type="submit"
 							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">카페/식당 추가</button>
-							
-						
 					</div>
-					
 				</div>
 				</form>
 			</div>

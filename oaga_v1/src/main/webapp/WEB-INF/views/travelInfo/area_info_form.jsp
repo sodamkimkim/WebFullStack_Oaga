@@ -5,7 +5,8 @@
 <link rel="stylesheet" href="/oaga/css/style.css" />
 <link rel="stylesheet" href="/oaga/css/travelinfo/areaInfoStyle.css" />
 
-
+<div class="container">
+<input type="hidden" name ="${_csrf.parameterName}" value = "${_csrf.token}">
 <div class="areaInfo_container">
 	<div class="areaInfo_ImgBox" >
 		<c:forEach var="areaImage" items="${areaImage}">
@@ -90,6 +91,7 @@
 	<br /> <br />
 
 
+</div>
 </div>
 <!-- area_info_mainWrap -->
 <%@ include file="../layout/footer.jsp"%>

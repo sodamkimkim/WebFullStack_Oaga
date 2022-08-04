@@ -147,6 +147,7 @@ h1 {
 
 		<div class="userProfileWrap">
 			<form id="updateMyProfileForm" action="">
+			<input type="hidden" name = "${_csrf.parameterName}" value="${_csrf.token}">
 				<input type="hidden" id="userId" value="${principal.user.id}">
 				<div class="inputWrap">
 					<label class="lblUserProfileFile" for="input-file">사용자 프로필

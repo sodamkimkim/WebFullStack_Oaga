@@ -165,6 +165,7 @@ footer {
 				<form action="/oaga/auth/joinproc" method="post"
 					onsubmit="return joinCheck()" enctype="multipart/form-data">
 					<!-- csrf???? xss -->
+					<input type="hidden" name = "${_csrf.parameterName}" value="${_csrf.token}">
 					<div class="formRow1">
 
 						<input type="text" class="form-input" placeholder="Enter ID"
