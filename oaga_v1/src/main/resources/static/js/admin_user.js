@@ -1,8 +1,14 @@
+let token = $("meta[name='_csrf']").attr("content");
+let header = $("meta[name='_csrf_header']").attr("content");
+
 index = {
 	deleteUser: function(userId) {
 		var deleteConfirm = confirm("정말로 삭제하시겠습니까?");
 		if (deleteConfirm) {
 			$.ajax({
+				beforeSend: function(xhr) {
+					xhr.setRequestHeader(header, token)
+				},
 				type: "DELETE",
 				url: `/oaga/admin/deleteUser/${userId}`,
 				dataType: "json"
@@ -21,6 +27,9 @@ index = {
 			location.href = "/oaga/admin/user";
 		} else {
 			$.ajax({
+				beforeSend: function(xhr) {
+					xhr.setRequestHeader(header, token)
+				},
 				type: "GET",
 				url: `/oaga/admin/getUser/${value}`,
 				dataType: "json"
@@ -40,13 +49,13 @@ function updateDeleteUser(userId) {
 }
 
 function changeUserList(userList) {
-	
+
 	$('#admin-user-tbody').empty();
 	let a = userList.length;
 	console.log(a);
-	if(a != 0) {
+	if (a != 0) {
 		var userListElement = new Array();
-		for(let i = 0; i < a; i++) {
+		for (let i = 0; i < a; i++) {
 			userListElement[i] = `
 								<tr class="tr-user-delete">
 									<td>${userList[i].id}</td>
@@ -61,10 +70,10 @@ function changeUserList(userList) {
 											id="btn-delete-${userList[i].id}">회원 삭제</button></td>
 								</tr>`
 		}
-		
+
 		$('#admin-user-tbody').append(userListElement);
 	}
 
-	
-							
+
+
 }
