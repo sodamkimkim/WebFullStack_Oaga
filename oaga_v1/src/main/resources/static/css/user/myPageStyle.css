@@ -45,7 +45,6 @@ h4 {
 	height: 100%;
 }
 
-
 .myPageImgBox {
 	border-radius: 50%;
 	overflow: hidden;
@@ -164,9 +163,9 @@ h4 {
 .logged_cnt_box {
 	display: block;
 	float: left;
-	text-align: center;
-	min-width: 150px;
+	text-align: center; min-width : 150px;
 	padding-top: 20px;
+	min-width: 150px;
 }
 
 .logged_line {
@@ -188,8 +187,12 @@ h4 {
 }
 
 .logged_cnt_box span {
-	color: #49b2e9;
-	font-size: 13px;
+	color: rgba(245, 161, 25, 0.9);
+	font-size: 16px;
+}
+
+#likes_btn {
+	cursor: pointer;
 }
 
 .logged_btn {
@@ -294,6 +297,7 @@ h4 {
 	margin-left: 20px;
 }
 
+/* 모달 css 시작 */
 .modal {
 	width: 100%;
 	height: 100%;
@@ -317,12 +321,12 @@ h4 {
 	display: flex;
 	justify-content: center;
 	background: white;
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	box-shadow: 0 8px 32px 0 #D0CECE;
 	backdrop-filter: blur(13.5px);
 	-webkit-backdrop-filter: blur(13.5px);
 	border-radius: 10px;
 	border: 1px solid rgba(255, 255, 255, 0.18);
-	width: 200px;
+	width: 300px;
 	height: auto;
 	position: relative;
 	top: -100px;
@@ -337,20 +341,35 @@ h4 {
 	border-radius: 10px;
 }
 
-.list-group-item {
-	padding: 5px;
-	margin-top: 10px;
-	cursor: pointer;
-	height: 27px;
-	border-radius: 5px;
-	margin-bottom: 5px;
-	background-color: #D0CECE;
-	border: 1px solid #f6f6f6;
-	margin-top: 10px;
+.userimg {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
 }
 
+.list-group-item {
+	vertical-align: center;
+	display: inline-flex;
+	text-align: left; 
+	padding : 5px;
+	margin-top: 10px;
+	cursor: pointer;
+	height: auto;
+	width: 280px;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	background-color: #F2F2F2;
+	border: 1px solid #D8D8D8;
+	margin-top: 10px;
+	padding: 5px;
+}
+
+.item-label {
+	text-align: center;
+}
 .list-group-a {
-	width: inherit;
+	width: auto;
+	height: inherit;
 }
 
 .list-group-item:hover {
@@ -362,3 +381,11 @@ h4 {
 	display: inline-block;
 	cursor: pointer;
 }
+
+.modal-title {
+	font-weight: normal;
+	font-family: inherit;
+	font-size: 15px;
+}
+
+/* 모달 css 끝 */

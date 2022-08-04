@@ -167,7 +167,6 @@ h1 {
 								<th class="border-gray-200" scope="col">Status</th>
 							</tr>
 						</thead>
-						<input id="input_hidden" type="hidden" value="">
 						<tbody id="admin-user-tbody">
 							<c:forEach var="user" items="${userList.content}">
 								<tr class="tr-user-delete">

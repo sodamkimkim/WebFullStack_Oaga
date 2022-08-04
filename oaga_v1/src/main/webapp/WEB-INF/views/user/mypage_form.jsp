@@ -112,17 +112,19 @@
 	<div class="modal_group_box">
 		<div class="list-group">
 			<div>
-				<img src="" alt="">
-				<h5>좋아요</h5>
-				<img src="" alt="">
+				<h5 class="modal-title">나를 좋아요 누른 사람들</h5>
 			</div>
 			<c:forEach var="followedList" items="${followList}">
-				<div class="list-group-item">
-					<a class="list-group-a"
-						href="/oaga/userpage_form_l/${followedList.followingUser.id}">
-						<label>${followedList.followingUser.userNickName}</label>
-					</a>
-				</div>
+				<a class="list-group-a"
+					href="/oaga/userpage_form_l/${followedList.followingUser.id}">
+					<div class="list-group-item">
+						<img class="userimg"
+							src="http://localhost:9090/oaga/upload/${followedList.followingUser.userProfileImgUrl}">
+						<div>
+							<label class="item-label">${followedList.followingUser.userNickName}</label>
+						</div>
+					</div>
+				</a>
 			</c:forEach>
 		</div>
 	</div>

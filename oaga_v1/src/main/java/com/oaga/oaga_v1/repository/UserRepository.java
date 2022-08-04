@@ -8,7 +8,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.oaga.oaga_v1.dto.RequestUserProfileDto;
 import com.oaga.oaga_v1.userModel.User;
 
 public interface UserRepository extends JpaRepository<User, Integer>{
