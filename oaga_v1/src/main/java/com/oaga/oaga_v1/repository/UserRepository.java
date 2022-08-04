@@ -26,4 +26,6 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	@Query(value = "SELECT * FROM user WHERE userNickName LIKE %?% AND role = 'USER' ", nativeQuery = true)
 	Page<User> findByUserNickName(Pageable pageable, String userNickName);
 	
+	Page<User> findByOauth(Pageable pageable, String oauth);
+	
 }

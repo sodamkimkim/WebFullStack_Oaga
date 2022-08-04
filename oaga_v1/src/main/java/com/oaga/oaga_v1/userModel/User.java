@@ -9,6 +9,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.UniqueConstraint;
 
 import org.hibernate.annotations.ColumnDefault;
@@ -59,8 +60,10 @@ public class User {
 	private int qna;
 
 	@Column(nullable = true)
+	@Lob
 	private String userProfileImgUrl;
 
+	@Lob
 	private String profileOriginImgUrl;
 
 }

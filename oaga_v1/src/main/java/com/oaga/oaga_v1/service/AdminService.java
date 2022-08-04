@@ -184,5 +184,9 @@ public class AdminService {
 	public void deleteUser(int userId) {
 		userRepository.deleteById(userId);
 	}
-
+	
+	// oauth별로 조회
+	public Page<User> findByUserOauth(Pageable pageable ,String oauth) {
+		return userRepository.findByOauth(pageable, oauth);
+	}
 }

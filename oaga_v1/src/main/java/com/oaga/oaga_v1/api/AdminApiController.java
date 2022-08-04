@@ -3,6 +3,10 @@ package com.oaga.oaga_v1.api;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -134,6 +138,14 @@ public class AdminApiController {
 		// 서비스 요청
 		adminService.deleteUser(userId);
 		return new ResponseDto<>(HttpStatus.OK, 1);
+	}
+	
+	// oauth별로 조회
+	@GetMapping("/admin/getUser/{oauth}")
+	private ResponseDto<Page<User>> getNomalUserList(@PageableDefault(size = 12, sort = "id", direction = Direction.ASC)Pageable pageable, @PathVariable String oauth) {
+		// 서비스 요청
+		System.out.println(adminService.findByUserOauth(pageable, oauth));
+		return new ResponseDto<>(HttpStatus.OK, adminService.findByUserOauth(pageable, oauth));
 	}
 
 
