@@ -30,9 +30,40 @@ public class QnAService {
 		qnARepository.save(qna);
 	}
 	
+	// QnA 페이지에 리스트 뿌리기
 	public List<QnA> qnaList(){
 		return qnARepository.findAll();
 	}
 	
+	
+	// QnA detail 페이지
+	public List<QnA> qnaGetId(int id){
+		return qnARepository.mFindById(id);
+	}
+	
+	// QnA detail 삭제
+		public void qnaDelete(int id){
+		qnARepository.deleteById(id);
+		}
+		
+		
+		
+	// QnA 수정
+		public void qnaupdate(RequestQnADto dto, int id) {
+			QnA qnaEntity = qnARepository.findById(id).orElseThrow(() ->{
+				return new IllegalArgumentException("게시글을 찾을 수 없습니다.");
+			});
+			qnaEntity.getId();
+			qnaEntity.setContent(dto.getContent());
+			qnaEntity.setTitle(dto.getTitle());
+			qnaEntity.getCreateDate();
+			qnaEntity.getQnaType();
+			qnaEntity.getUser();
+			qnaEntity.getPassword();
+			
+		}
+		
+		
+		
 	
 }
