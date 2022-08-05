@@ -41,7 +41,7 @@ public class QnA {
 	private String content;
 	
 	@Column(length = 5)
-	private int password;
+	private String password;
 	
 	@ManyToOne
 	@JoinColumn(name = "userId")

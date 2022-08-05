@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.oaga.oaga_v1.auth.PrincipalDetail;
+import com.oaga.oaga_v1.dto.RequestQnADto;
 import com.oaga.oaga_v1.qnaModel.QnA;
 import com.oaga.oaga_v1.service.QnAService;
 
@@ -39,12 +40,6 @@ public class QnAController {
 		return "qna/qnadetail_form";
 	}
 	
-	@PostMapping("/api/qnasave")
-	public String qnaSave(@AuthenticationPrincipal PrincipalDetail detail,@RequestBody QnA qnA) {
-		System.out.println(detail.getUser());
-		qnAService.saveQnA(qnA,detail.getUser());
-
-		return "qna/qnahome";
-	}
+	
 
 }

@@ -36,12 +36,12 @@
 
 				<div class="q_box">
 					<h3 class="title">Q&A 작성</h3>
-					<form action="">
+					
 					
 					<button type="submit" class="qwrite_btn" id="btn-save" value="DONE">등록</button>
 					<div class="titlebox" style="display: flex">
 						<div class="place">제목 : </div>
-						<input class="i_place" id="r_title" name="title"
+						<input class="i_place" id="title" name="title"
 							placeholder="제목을 입력하세요">
 						<input class ="i_password" type="password"  id = "password" name = "password" placeholder="비밀번호 5글자 이내로 작성해주세요">
 						
@@ -49,7 +49,7 @@
 					<div class="c_box" >
 						<textarea class="summernote" id="content" name="content"></textarea>
 					</div>
-					</form>
+					
 				</div>
 			</div>
 
@@ -84,4 +84,4 @@
 </html>
 
 
-<%-- <%@ include file="../layout/footer.jsp"%> --%>
+<%@ include file="../layout/footer.jsp"%>
