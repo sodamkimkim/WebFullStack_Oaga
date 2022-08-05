@@ -34,6 +34,19 @@
 	margin-top: 5px;
 	margin-bottom: 2px;
 }
+.sos {
+	display: inline;
+	text-align: right;
+}
+.sos-content {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+.sos-img {
+	width: 15px;
+	height: 15px;
+}
 
 .contentMeta_left {
 	padding-left: 10px;
@@ -224,6 +237,7 @@
 }
 
 .r_nickname {
+	margin-right: 20px;
 	font-size: 18px;
 }
 
@@ -322,7 +336,44 @@
     text-decoration: none;
     display: block;
 }
+/* 모달창 생성 */
+.modal {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: flex;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(1.5px);
+	-webkit-backdrop-filter: blur(1.5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
 
+.modal_group_box {
+	display: flex;
+	justify-content: center;
+	background: white;
+	box-shadow: 0 8px 32px 0 #D0CECE;
+	backdrop-filter: blur(13.5px);
+	-webkit-backdrop-filter: blur(13.5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	width: 300px;
+	height: auto;
+	position: relative;
+	top: -100px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #f1f1f1}
 

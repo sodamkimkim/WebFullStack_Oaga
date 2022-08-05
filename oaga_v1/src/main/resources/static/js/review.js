@@ -45,7 +45,6 @@ let index = {
 	replyDelete: function(replyId) {
 
 		$.ajax({
-			
 			type: "DELETE",
 			url: `/oaga/api/review/reply/${replyId}`,
 			dataType: "json"

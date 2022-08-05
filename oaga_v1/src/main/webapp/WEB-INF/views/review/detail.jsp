@@ -5,9 +5,10 @@
 <!--header----------------------------->
 
 <div class="reviewDetailForm">
-<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+	<input type="hidden" name="${_csrf.parameterName}"
+		value="${_csrf.token}">
 	<div class="reviewDetailWrap">
-		
+
 		<div class="reviewDetailHeader">
 			<h3 style="color: #f9bb57; font-size: 23px;">여행후기</h3>
 			<p>여행을 다녀온 OaGa유저들의 솔직한 여행이야기</p>
@@ -42,6 +43,12 @@
 				<p class="contentMeta_left">구분/지역 : ${review.areaName}</p>
 				<p class="contentMeta_right">작성일 : ${review.createDate}</p>
 				<p class="contentMeta_right">조회수 : ${review.count}</p>
+				<p class="contentMeta_right sos">
+					<button class="sos-content">
+						<img class="sos-img" src="/oaga/images/reviewPage/sos.png">
+						신고하기
+					</button>
+				</p>
 			</div>
 			<!--contnentMeta-->
 			<div class="reviewDetail_profile">
@@ -73,9 +80,9 @@
 			<c:otherwise>
 				<div class="reply_wBox">
 					<h4 class="r_nickname">${principal.user.userNickName}</h4>
-					<a class="r_picture" href="#"> <img class="r_picture_img"
+					<!-- <a class="r_picture" href="#"> <img class="r_picture_img"
 						alt="" src="../images/reviewPage/ico_camera.png">
-					</a>
+					</a> -->
 					<textarea id="reply-content" class="r_textArea" rows="1"
 						placeholder="댓글을 입력하세요"></textarea>
 					<button type="button" class="r_savebtn" id="btn-reply-save">등록</button>
@@ -112,6 +119,18 @@
 	<!--reviewDetailWrap-->
 </div>
 <!--reviewDetailForm-->
+<div id="modal" class="modal">
+	<div class="modal_group_box">
+		<select class="sos-select">
+			<option value="" selected="selected">욕설, 비방, 처별, 혐오</option>
+			<option value="">홍보, 영리목적</option>
+			<option value="">불법 정보</option>
+			<option value="">음란, 청소년 유해</option>
+			<option value="">개인정보 노출, 유포, 거래</option>
+			<option value="">기타</option>
+		</select>
+	</div>
+</div>
 <%@ include file="../layout/footer.jsp"%>
 
 <script src="../js/review.js"></script>
@@ -119,7 +138,6 @@
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn') && !event.target.matches('.dropImage')) {
@@ -133,6 +151,17 @@ window.onclick = function(event) {
     }
   }
 }
+
+$(".sos-content").on("click", e => {
+	modal.style.display = "flex";
+})
+
+$("#modal").on("click", e => {
+	const evTarget = e.target
+	if(evTarget.classList.contains("modal")) {
+		modal.style.display = "none"
+	}
+})
 </script>
 
 </html>

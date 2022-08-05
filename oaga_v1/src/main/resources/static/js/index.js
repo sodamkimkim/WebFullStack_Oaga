@@ -1,22 +1,28 @@
+let token = $("meta[name='_csrf']").attr("content");
+let header = $("meta[name='_csrf_header']").attr("content");
+
 let index = {
 	init: function() {
-		$(".searchArea-input").keypress(function(e) { 
-	      	if (e.keyCode == 13) e.preventDefault(); 
-	      });
+		$(".searchArea-input").keypress(function(e) {
+			if (e.keyCode == 13) e.preventDefault();
+		});
 		$("#searchArea").autocomplete({
-			source: function(request, response) { //source: 입력시 보일 목록
+			source: function(request, response) { 
 				$.ajax({
+					beforeSend: function(xhr) {
+						xhr.setRequestHeader(header, token)
+					},
 					url: "/oaga/ajax/autocomplete.do"
 					, type: "POST"
 					, dataType: "JSON"
-					, data: { value: request.term }	// 검색 키워드
-					, success: function(data) { 	// 성공
+					, data: { value: request.term }	
+					, success: function(data) { 	
 						response(
 							$.map(data.resultList, function(item) {
 								return {
-									label: item.area    	// 목록에 표시되는 값
-									, value: item.area 		// 선택 시 input창에 표시되는 값
-									, idx: item.id // index
+									label: item.area    	
+									, value: item.area 		
+									, idx: item.id 
 								};
 							})
 						);    //response
@@ -39,24 +45,11 @@ let index = {
 		}).autocomplete('instance')._renderItem = function(ul, item) {
 			console.log(item);
 			return $('<li style="display: block; width: 96.5%;">').append('<a class="area_search_item" style = "display-block; width: 99.5%;"><span class="search_name" style = "display-block; width: 97%;">' + item.label + '</span></a>')
-			.appendTo(ul);
+				.appendTo(ul);
 		};
 
 	}
 }
 
-/*function addSearchElement(results) {
-	var childElement = new Array();
-	var a = results.length;
-	console.log(a);
-	if (a == 0) {
-		$("#area_search_div").remove();
-	} else {
-		for (let i = 0; i <= a - 1; i++) {
-			childElement[i] = `<a class="area_search_item"><span class="search_name">${results[i].area}</span></a>`;
-		}
-		$("#area_search_div").prepend(childElement);
-	}
 
-}*/
 index.init();
