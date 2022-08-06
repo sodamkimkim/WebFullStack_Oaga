@@ -41,6 +41,7 @@ public class QnAController {
 	@GetMapping("/qna/qnaupdateform/{id}")
 	public String qnaupdateForm(Model model,@PathVariable int id) {
 		List<QnA> qnainfo = qnAService.qnaGetId(id);
+		System.out.println(qnainfo + " QnA ID");
 		model.addAttribute("qnainfo",qnainfo);
 		return "qna/qnaupdate_form";
 	}
@@ -53,12 +54,7 @@ public class QnAController {
 	}
 	
 	
-	@PostMapping("api/QnA/update/{id}")
-	public String qnaUpdate(@PathVariable int id, RequestQnADto dto) {
-		System.out.println(dto + "아이디아이디");
-		qnAService.qnaupdate(dto, id);
-		return "redirect:/qna/qna_home";
-	}
+	
 	
 
 }

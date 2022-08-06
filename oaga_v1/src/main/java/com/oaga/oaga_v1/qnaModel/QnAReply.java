@@ -2,11 +2,8 @@ package com.oaga.oaga_v1.qnaModel;
 
 import java.sql.Timestamp;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -25,38 +21,32 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Entity
-public class QnA {
+public class QnAReply {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	@Column(nullable = false, length = 30)
-	private String title;
 	
 	@Lob
 	@Column(nullable = false)
 	private String content;
 	
-	@Column(length = 5)
-	private String password;
-	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "userId")
+	@JsonIgnoreProperties({"password", "role", "email", "oauth"})
 	private User user;
 	
-	@Column(nullable = false)
-	@Enumerated(EnumType.STRING)
-	private QnAType qnaType;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "qnaId")
+	@JsonIgnoreProperties({"user","userId"})
+	private QnA qnaId;
 	
-
-	
-	@CreationTimestamp
+	@CreationTimestamp 
 	private Timestamp createDate;
+	
 }

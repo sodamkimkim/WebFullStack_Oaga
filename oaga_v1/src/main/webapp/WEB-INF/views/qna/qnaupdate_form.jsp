@@ -37,20 +37,17 @@
 				<div class="q_box">
 					<h3 class="title">Q&A 수정</h3>
 					<c:forEach var="qnainfo" items="${qnainfo}" >
-					
-               		<input type="hidden" value="${qnainfo.id}" id = "id">
+               		<input type="hidden" value="${qnainfo.id}" id = "id" name="id">
 					<button type="submit" class="qwrite_btn" id="btn-qna-update" value="DONE">수정</button>
 					<div class="titlebox" style="display: flex">
-						<div"place">제목 : </div>
+						<div class="place">제목 : </div>
 						<input class="i_place" id="title" name="title"
 							value="${qnainfo.title }">						
 					</div>
 					<div class="c_box" >
 						<textarea class="summernote" id="content" name="content">${qnainfo.content}</textarea>
 					</div>
-					
 					</c:forEach>
-					
 				</div>
 			</div>
 
@@ -72,7 +69,7 @@
 				placeholder : '내용을 작성해 주세요'
 			});
 
-		
+		});
 	</script>
 
 	<script

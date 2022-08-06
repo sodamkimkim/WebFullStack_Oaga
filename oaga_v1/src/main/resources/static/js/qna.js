@@ -17,6 +17,10 @@ let header = $("meta[name='_csrf_header']").attr("content");
 			alert("update 버튼");
 			this.qnaupdate();
 		});
+		$("#btn-qna-reply-save").bind("click", () =>{
+			this.replysave();
+			alert("리플라이");
+		});
 		
 	},
 	
@@ -69,7 +73,7 @@ let header = $("meta[name='_csrf_header']").attr("content");
 	
 	qnaupdate : function(){
 		let data = {
-			id : $("id").val(),
+			id : $("#id").val(),
 			title : $("#title").val(),
 			content : $("#content").val(),
 		}
@@ -79,17 +83,46 @@ let header = $("meta[name='_csrf_header']").attr("content");
                 xhr.setRequestHeader(header, token)  
             },
 			type: "POST",
-			url: `/oaga/api/QnA/update/${id}`,
+			url: `/oaga/api/QnA/update/${data.id}`,
 			data: JSON.stringify(data),
 			contentType: "application/json; charset=utf-8",
 			dataType: "json",
+			
 		}).done(function(){
+			alert("수정 성공!");
+			location.href = "/oaga/qna/qna_home";
 			
 		}).fail(function(error){
+			alert("수정 실패!");
 			console.log(error);
 		});
 	},
-	
+	replysave : function(){
+		let data = {
+			qnaId : $("#qnaId").val(),
+			content :$("#replycontent").val(),
+		}
+		console.log(data.content);
+		
+		$.ajax({
+			beforeSend: function(xhr) {
+                xhr.setRequestHeader(header, token)  
+            },
+			type: "POST",
+			url: `/oaga/api/QnAreply/save/${data.qnaId}`,
+			data: JSON.stringify(data),
+			contentType: "application/json; charset=utf-8",
+			dataType: "json",
+			
+		}).done(function(){
+			alert("리플라이 작성 성공!");
+			location.href = "/oaga/qna/qna_home";
+			
+		}).fail(function(error){
+			alert("리플라이 실패!");
+			console.log(error);
+		});
+	},
 	
 	
 }

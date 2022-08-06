@@ -14,13 +14,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class RequestQnADto {
-	
+	private int id;
 	private String title;
 	private String content;
-
+	
 	
 	public QnA toEntity(User user) {
 		return QnA.builder()
+				.id(id)
 				.title(title)
 				.content(content)
 				.user(user)
