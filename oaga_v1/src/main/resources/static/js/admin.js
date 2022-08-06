@@ -141,7 +141,7 @@ function restaurantclick(updateId) { // guinfo 리스트 클릭했을때 어펜�
 		url: `/oaga/api/admin/restaurant_info/${data}`
 	}).done(function(response) {
 		console.log(response + "dsa,[pdasm,p]");
-
+		
 		setRestaurantData(response);
 	}).fail(function() {
 

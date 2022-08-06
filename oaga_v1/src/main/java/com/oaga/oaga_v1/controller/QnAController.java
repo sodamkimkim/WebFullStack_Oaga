@@ -16,6 +16,7 @@ import com.oaga.oaga_v1.auth.PrincipalDetail;
 import com.oaga.oaga_v1.dto.RequestQnADto;
 import com.oaga.oaga_v1.dto.ResponseDto;
 import com.oaga.oaga_v1.qnaModel.QnA;
+import com.oaga.oaga_v1.qnaModel.QnAReply;
 import com.oaga.oaga_v1.service.QnAService;
 
 @Controller
@@ -45,16 +46,13 @@ public class QnAController {
 		model.addAttribute("qnainfo",qnainfo);
 		return "qna/qnaupdate_form";
 	}
-	
+	// 디테일 페이지
 	@GetMapping("/qna/qnadetailform/{id}")
 	public String qnaDetailForm(Model model,@PathVariable int id) {
 		List<QnA> qnadetailList = qnAService.qnaGetId(id);
 		model.addAttribute("qnadetailList",qnadetailList);
 		return "qna/qnadetail_form";
 	}
-	
-	
-	
-	
+
 
 }

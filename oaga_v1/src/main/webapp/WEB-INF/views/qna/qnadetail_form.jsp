@@ -42,6 +42,43 @@
 	background-color: #f9bb57;
 	float: right;
 }
+
+.appendreply {
+	width: 1000px;
+	height: 300px;
+	border: 1px solid rgba(51, 51, 51, 0.2);
+}
+
+.replyuserNickNamediv {
+	display: flex;
+	justify-content:flex-start;
+
+	width: 100%;
+	border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+	height: 60px;
+	
+}
+.replyuserNickNamediv div{
+	display: flex;
+	justify-content:flex-start;
+	align-items: center;
+}
+.replyuserNickNamediv div p{
+	margin-left: 15px;
+}
+.replyuserNickName{
+	width: 149.69px;
+	height:60px;
+	border-right: 1px solid rgba(51, 51, 51, 0.2);
+	background-color: rgba(51, 51, 51, 0.1);
+}
+.adminNickName{
+	width : 350.31px;
+	height: 60px;
+}
+.replyuserNickName span{
+	
+}
 </style>
 
 
@@ -91,11 +128,15 @@
 		<h5 style="font-weight: bold; font-size: 20px;">답글</h5>
 	</div>
 	<br>
-	
-	<textarea rows="10" style="width: 100%;" id = "replycontent" ></textarea>
+	<div id="appendReply">
+		<c:forEach var="qnAReply" items="${qnAReply}">
+			<div>작성자 : ${qnAReply.user.userNickName}</div>
+		</c:forEach>
+	</div>
+	<textarea rows="10" style="width: 100%;" id="replycontent"></textarea>
 	<br> <br>
-	
-	<button class="replyBtn" id = "btn-qna-reply-save">작성하기</button>
+
+	<button class="replyBtn" id="btn-qna-reply-save">작성하기</button>
 
 	<br> <br> <br>
 

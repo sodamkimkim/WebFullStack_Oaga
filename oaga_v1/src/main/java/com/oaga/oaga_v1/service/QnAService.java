@@ -79,8 +79,9 @@ public class QnAService {
 	// ===========================================================================
 		// QnA 답글 시작
 	
-	public void qnaReplySave(QnAReply qnAReply,User user, int id){
-		
+	// QnA reply 추가 하기
+	@Transactional
+	public  QnAReply qnaReplySave(QnAReply qnAReply,User user, int id){
 		QnA qna = qnARepository.findById(id).orElseThrow(() ->{
 			return new IllegalArgumentException("해당 글을 찾을 수 없습니다.");
 		});
@@ -91,8 +92,19 @@ public class QnAService {
 		qnAReply.setQna(qna);
 		qnAReply.setUser(user);
 		
-		qnAReplyRepository.save(qnAReply);
+		return qnAReplyRepository.save(qnAReply);
 	}
-		
+	@Transactional
+	public List<QnAReply> qnaReplyId(int id) {
+		return qnAReplyRepository.mFindById(id);
+	}
 	
+	// QnA reply 수정 하기
+	
+	
+	
+	
+	
+	
+	// QnA reply 삭제 하기 (보류)
 }

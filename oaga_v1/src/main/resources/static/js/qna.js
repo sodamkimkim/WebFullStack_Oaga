@@ -77,7 +77,6 @@ let header = $("meta[name='_csrf_header']").attr("content");
 			title : $("#title").val(),
 			content : $("#content").val(),
 		}
-		console.log(data);
 		$.ajax({
 			beforeSend: function(xhr) {
                 xhr.setRequestHeader(header, token)  
@@ -102,8 +101,6 @@ let header = $("meta[name='_csrf_header']").attr("content");
 			qnaId : $("#qnaId").val(),
 			content :$("#replycontent").val(),
 		}
-		console.log(data.qnaId);
-		console.log(data.content);
 		
 		$.ajax({
 			beforeSend: function(xhr) {
@@ -116,17 +113,71 @@ let header = $("meta[name='_csrf_header']").attr("content");
 			dataType: "json",
 			
 		}).done(function(response){
-			
 			alert("리플라이 작성 성공!");
-			location.href = "/oaga/qna/qna_home";
 			
+			appendreplyfindId(response.data);
 		}).fail(function(error){
 			alert("리플라이 실패!");
 			console.log(error);
 		});
 	},
+
+}
+
+
+function appendreplyfindId(response){
+	let data = response.id;
+	console.log(data + "데이타");
+	$.ajax({
+		beforeSend: function(xhr) {
+                xhr.setRequestHeader(header, token)  
+            },
+		type: "GET",
+		url: `/oaga/api/replyId/${data}`
+	}).done(function(response) {
+		viewappendreply(response);
+	}).fail(function() {
+
+	})
+}
+
+function viewappendreply(response){
 	
+	let data = response.data;
+	var appendreply = `<c:forEach var="qnAReply"  items="${data[0]}">
+							<div class = "appendreply">
+								<div class = replyuserNickNamediv>
+									<div class = replyuserNickName><p>작성자 :</p></div>
+									<div class = "adminNickName" ><p>${data[0].user.userNickName}</p></div>
+									<div class = replyuserNickName><p>글작성 일 :</p></div>
+									<div class = "adminNickName" ><p>${data[0].createDate}</p></div>
+								</div>
+								<div style = "padding :10px;">${data[0].content}</div>
+							</div>
+					   </c:forEach>`
+					   
+					   
+	$('#appendReply').prepend(appendreply);
 	
 }
 
+
+
+
+
+
 index.init();
+
+
+
+
+
+
+
+
+
+
+
+
+
+

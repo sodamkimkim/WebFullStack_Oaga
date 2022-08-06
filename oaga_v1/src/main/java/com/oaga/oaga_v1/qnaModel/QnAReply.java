@@ -38,7 +38,7 @@ public class QnAReply {
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "userId")
-	@JsonIgnoreProperties({"password", "role", "email", "oauth"})
+	@JsonIgnoreProperties({"password", "email", "oauth"})
 	private User user;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
