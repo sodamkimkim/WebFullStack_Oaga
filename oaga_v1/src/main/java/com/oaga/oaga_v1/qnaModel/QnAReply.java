@@ -44,7 +44,7 @@ public class QnAReply {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "qnaId")
 	@JsonIgnoreProperties({"user","userId"})
-	private QnA qnaId;
+	private QnA qna;
 	
 	@CreationTimestamp 
 	private Timestamp createDate;

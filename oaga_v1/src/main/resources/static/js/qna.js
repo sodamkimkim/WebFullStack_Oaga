@@ -102,6 +102,7 @@ let header = $("meta[name='_csrf_header']").attr("content");
 			qnaId : $("#qnaId").val(),
 			content :$("#replycontent").val(),
 		}
+		console.log(data.qnaId);
 		console.log(data.content);
 		
 		$.ajax({
@@ -114,7 +115,8 @@ let header = $("meta[name='_csrf_header']").attr("content");
 			contentType: "application/json; charset=utf-8",
 			dataType: "json",
 			
-		}).done(function(){
+		}).done(function(response){
+			
 			alert("리플라이 작성 성공!");
 			location.href = "/oaga/qna/qna_home";
 			

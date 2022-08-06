@@ -87,7 +87,8 @@ public class QnAService {
 		
 		System.out.println(qna);
 		System.out.println(qna.getQnaType() +  "서비스");
-		qnAReply.setQnaId(qna);
+		qna.setQnaType(QnAType.OK);
+		qnAReply.setQna(qna);
 		qnAReply.setUser(user);
 		
 		qnAReplyRepository.save(qnAReply);

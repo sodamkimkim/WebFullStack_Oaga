@@ -60,7 +60,7 @@ public class AdminApiController {
 		return new ResponseDto<>(HttpStatus.OK, areaGuList);
 	}
 	
-	
+	// ==========================================================
 	@GetMapping("/api/admin/guinfoupdate/{areaguid}")
 	public ResponseDto<List<GuInfo>> guinfoUpdateList(@PathVariable int areaguid, Model model){
 		
@@ -70,7 +70,7 @@ public class AdminApiController {
 		
 		return new ResponseDto<>(HttpStatus.OK, guinfoList);
 	}
-	
+	// ==========================================================	
 	
 	@GetMapping("/api/admin/restaurantUpdate/{areaguid}")
 	public ResponseDto<List<Restaurant>> restaurantUpdateList(@PathVariable int areaguid, Model model){

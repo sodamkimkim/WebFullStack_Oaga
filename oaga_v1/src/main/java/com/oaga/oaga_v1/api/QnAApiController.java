@@ -43,10 +43,6 @@ public class QnAApiController {
 	
 	@PostMapping("/api/QnAreply/save/{id}")
 	public ResponseDto<Integer> relplysave(@AuthenticationPrincipal PrincipalDetail detail, @RequestBody QnAReply qnAReply,@PathVariable int id){
-		
-		System.out.println(qnAReply.getQnaId() + "제바알");
-		System.out.println(qnAReply + "들어오나여?");
-		System.out.println(detail.getUser() + "유저유저유저");
 		qnAService.qnaReplySave(qnAReply, detail.getUser(),id);
 		return new ResponseDto<>(HttpStatus.OK,1);
 	}
