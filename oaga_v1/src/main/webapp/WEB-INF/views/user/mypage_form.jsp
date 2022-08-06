@@ -112,25 +112,31 @@
 	<div class="modal_group_box">
 		<div class="list-group">
 			<div>
-				<img src="" alt="">
-				<h5>좋아요</h5>
-				<img src="" alt="">
+				<h5 class="modal-title">나를 좋아요한 사람들</h5>
 			</div>
-			<c:forEach var="followedList" items="${followList}">
-				<div class="list-group-item">
+			<div class="list-group-div">
+				<c:forEach var="followedList" items="${followList}">
 					<a class="list-group-a"
 						href="/oaga/userpage_form_l/${followedList.followingUser.id}">
-						<label>${followedList.followingUser.userNickName}</label>
+						<div class="list-group-item">
+							<img class="userimg"
+								src="http://localhost:9090/oaga/upload/${followedList.followingUser.userProfileImgUrl}">
+							<div class="item-label">
+								<h4 class="item-username">${followedList.followingUser.userNickName}</h4>
+							</div>
+							<img class="item-arrow-img"
+								src="/oaga/images/userPage/arrow-right.png">
+						</div>
 					</a>
-				</div>
-			</c:forEach>
+				</c:forEach>
+			</div>
+
 		</div>
 	</div>
 </div>
 
 <script type="text/javascript">
 	$("#likes_btn").on("click", e => {
-		console.log("asdasd");
 		modal.style.display = "flex";
 	})
 	
@@ -138,7 +144,6 @@
 		const evTarget = e.target
 		if(evTarget.classList.contains("modal")) {
 			modal.style.display = "none"
-			console.log("aa");
 		}
 	})
 </script>
