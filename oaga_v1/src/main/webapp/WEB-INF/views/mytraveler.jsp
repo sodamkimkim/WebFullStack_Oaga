@@ -7,6 +7,7 @@
 	<section class="myt-sec1">
 		<div class="sec1Wrap">
 			<div class="best-title">
+				<img class="best-title-img" src="/oaga/images/reviewPage/crown.png">
 				<h2>이번 달 베스트 리뷰어</h2>
 			</div>
 			<div class="best-subtitle">
@@ -80,7 +81,7 @@
 	<section class="myt-sec2">
 		<div class="sec1Wrap">
 			<div class="my-title">
-				<h2 style="padding-top: 0px;">내가 좋아요 누른 리뷰어</h2>
+				<div style=" font-size:35px; font-weight:bold; padding-top: 0px; color: rgba(51, 51, 51, 0.8);">내가 좋아요 누른 리뷰어</div>
 				<div class="arrow-btn-div">
 						<button type="button" class="arrow-btn my-m-btn">
 							<span>
@@ -145,8 +146,184 @@
 	<section class="myt-sec3">
 		<div class="sec3Wrap">
 			<div class="review-div">
-				<h2>내 리뷰어들의 최근 리뷰</h2>
-				
+				<div style="font-size:35px; font-weight:bold; color: rgba(51, 51, 51, 0.8); margin-bottom: 20px;">내 리뷰어들의 최근 리뷰</div>
+				<div class="subtitle">나와 여행 취향이 비슷한 회원들의 리뷰를 참고하여 더욱 즐겁고 완벽한 여행을 계획하세요!</div>
+				<div class="list-row">
+				<div class="box">
+					<a href="#">
+						<div class="ImgBox">
+							<img
+								src="/oaga/images/reviewPage/profile_basic.png" />
+							<div class="txt">
+								<p>리뷰 제목</p>
+							</div>
+							<!--txt-->
+						</div> <!--ImgBox-->
+
+						<div class="data">
+							<ul class="info">
+								<li class="placeName">지역</li>
+								<li class="withFriend">여행 테마</li>
+								<li class="userName">작성자 닉네임</li>
+							</ul>
+							<!--info-->
+
+							<ul class="count">
+								<li class="location">25</li>
+								<li class="view">조회수</li>
+								<li class="copy">27</li>
+							</ul>
+							<!--view-->
+						</div> <!--data-->
+					</a>
+				</div>
+				<!--box-->
+				<div class="box">
+					<a href="#">
+						<div class="ImgBox">
+							<img
+								src="/oaga/images/reviewPage/profile_basic.png" />
+							<div class="txt">
+								<p>리뷰 제목</p>
+							</div>
+							<!--txt-->
+						</div> <!--ImgBox-->
+
+						<div class="data">
+							<ul class="info">
+								<li class="placeName">지역</li>
+								<li class="withFriend">여행 테마</li>
+								<li class="userName">작성자 닉네임</li>
+							</ul>
+							<!--info-->
+
+							<ul class="count">
+								<li class="location">25</li>
+								<li class="view">조회수</li>
+								<li class="copy">27</li>
+							</ul>
+							<!--view-->
+						</div> <!--data-->
+					</a>
+				</div>
+				<!--box-->
+				<div class="box">
+					<a href="#">
+						<div class="ImgBox">
+							<img
+								src="/oaga/images/reviewPage/profile_basic.png" />
+							<div class="txt">
+								<p>리뷰 제목</p>
+							</div>
+							<!--txt-->
+						</div> <!--ImgBox-->
+
+						<div class="data">
+							<ul class="info">
+								<li class="placeName">지역</li>
+								<li class="withFriend">여행 테마</li>
+								<li class="userName">작성자 닉네임</li>
+							</ul>
+							<!--info-->
+
+							<ul class="count">
+								<li class="location">25</li>
+								<li class="view">조회수</li>
+								<li class="copy">27</li>
+							</ul>
+							<!--view-->
+						</div> <!--data-->
+					</a>
+				</div>
+				<!--box-->
+				<div class="box">
+					<a href="#">
+						<div class="ImgBox">
+							<img
+								src="/oaga/images/reviewPage/profile_basic.png" />
+							<div class="txt">
+								<p>리뷰 제목</p>
+							</div>
+							<!--txt-->
+						</div> <!--ImgBox-->
+
+						<div class="data">
+							<ul class="info">
+								<li class="placeName">지역</li>
+								<li class="withFriend">여행 테마</li>
+								<li class="userName">작성자 닉네임</li>
+							</ul>
+							<!--info-->
+
+							<ul class="count">
+								<li class="location">25</li>
+								<li class="view">조회수</li>
+								<li class="copy">27</li>
+							</ul>
+							<!--view-->
+						</div> <!--data-->
+					</a>
+				</div>
+				<!--box-->
+				<div class="box">
+					<a href="#">
+						<div class="ImgBox">
+							<img
+								src="/oaga/images/reviewPage/profile_basic.png" />
+							<div class="txt">
+								<p>리뷰 제목</p>
+							</div>
+							<!--txt-->
+						</div> <!--ImgBox-->
+
+						<div class="data">
+							<ul class="info">
+								<li class="placeName">지역</li>
+								<li class="withFriend">여행 테마</li>
+								<li class="userName">작성자 닉네임</li>
+							</ul>
+							<!--info-->
+
+							<ul class="count">
+								<li class="location">25</li>
+								<li class="view">조회수</li>
+								<li class="copy">27</li>
+							</ul>
+							<!--view-->
+						</div> <!--data-->
+					</a>
+				</div>
+				<!--box-->
+				<div class="box">
+					<a href="#">
+						<div class="ImgBox">
+							<img
+								src="/oaga/images/reviewPage/profile_basic.png" />
+							<div class="txt">
+								<p>리뷰 제목</p>
+							</div>
+							<!--txt-->
+						</div> <!--ImgBox-->
+
+						<div class="data">
+							<ul class="info">
+								<li class="placeName">지역</li>
+								<li class="withFriend">여행 테마</li>
+								<li class="userName">작성자 닉네임</li>
+							</ul>
+							<!--info-->
+
+							<ul class="count">
+								<li class="location">25</li>
+								<li class="view">조회수</li>
+								<li class="copy">27</li>
+							</ul>
+							<!--view-->
+						</div> <!--data-->
+					</a>
+				</div>
+				<!--box-->
+				</div>
 			</div>
 		</div>
 	</section>
