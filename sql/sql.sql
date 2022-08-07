@@ -45,6 +45,8 @@ SELECT * FROM reply;
 DESC follow;
 SELECT * FROM follow;
 
+select * from review where userId in(1, 2);
+
 SELECT * FROM area WHERE area LIKE "%부%";
 
 SELECT * FROM user WHERE userNickName LIKE '%%' AND role = 'USER';
