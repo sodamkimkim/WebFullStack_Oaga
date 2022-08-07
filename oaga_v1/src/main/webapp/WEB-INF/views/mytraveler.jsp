@@ -71,10 +71,13 @@
 			</div>
 			<div class="my-list">
 				<!-- 1 -->
-				<div class="list-item">
-					<img class="mylist-img" src="/oaga/images/reviewPage/profile_basic.png">
-					<h3>닉네임</h3>
+				<c:forEach var="following" items="${followingList}">
+					<div class="list-item">
+					<img class="mylist-img" src="http://localhost:9090/oaga/upload/${following.followedUser.userProfileImgUrl}">
+					<h3>${following.followedUser.userNickName}</h3>
 				</div>
+				</c:forEach>
+				
 				<!-- 1 -->
 			</div>
 		</div>
@@ -87,22 +90,23 @@
 				<div class="title-2">내 리뷰어들의 최근 리뷰</div>
 				<div class="subtitle">나와 여행 취향이 비슷한 회원들의 리뷰를 참고하여 더욱 즐겁고 완벽한 여행을 계획하세요!</div>
 				<div class="list-row">
-				<div class="box">
+				<c:forEach var="review" items="${reviewList.content}">
+					<div class="box">
 					<a href="#">
 						<div class="ImgBox">
 							<img
-								src="/oaga/images/reviewPage/profile_basic.png" />
+								src="http://localhost:9090/oaga/upload/${review.reviewImageUrl}" />
 							<div class="txt">
-								<p>리뷰 제목</p>
+								<p>${review.title}</p>
 							</div>
 							<!--txt-->
 						</div> <!--ImgBox-->
 
 						<div class="data">
 							<ul class="info">
-								<li class="placeName">지역</li>
-								<li class="withFriend">여행 테마</li>
-								<li class="userName">작성자 닉네임</li>
+								<li class="placeName">${review.areaName}</li>
+								<li class="withFriend">${review.theme}</li>
+								<li class="userName">${review.user.userNickName}</li>
 							</ul>
 							<!--info-->
 
@@ -116,7 +120,9 @@
 					</a>
 				</div>
 				<!--box-->
-				
+					
+				</c:forEach>
+								
 				</div>
 			</div>
 		</div>
