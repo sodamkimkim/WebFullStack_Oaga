@@ -8,7 +8,7 @@
 		<div class="sec1Wrap">
 			<div class="best-title">
 				<img class="best-title-img" src="/oaga/images/reviewPage/crown.png">
-				<h2>이번 달 베스트 리뷰어</h2>
+				<div class="title">이번 달 베스트 리뷰어</div>
 			</div>
 			<div class="best-subtitle">
 				<div class="subtitle">이번달에 좋아요를 가장 많이 받은 인기 리뷰어</div>
@@ -33,46 +33,14 @@
 			</div>
 			
 				<div class="best-list">
-				<div class="item-div">
-					<span class="css-1juk5to-RankNumber">1</span>
-					<img class="item-img" src="/oaga/images/reviewPage/profile_basic.png">
+				<!-- 1 -->
+				<c:forEach var="userList" items="${bestUserList}" varStatus="status">
+					<div class="item-div" onclick="">
+					<span class="css-1juk5to-RankNumber">${status.index + 1}</span>
+					<img class="item-img" src="http://localhost:9090/oaga/upload/${userList.userProfileImgUrl}" onerror="this.src='images/reviewPage/profile_basic.png';">
 				</div>
-				<div class="item-div">
-					<span class="css-1juk5to-RankNumber">2</span>
-					<img class="item-img" src="/oaga/images/reviewPage/profile_basic.png">
-				</div>
-				<div class="item-div">
-					<span class="css-1juk5to-RankNumber">3</span>
-					<img class="item-img" src="/oaga/images/reviewPage/profile_basic.png">
-				</div>
-				<div class="item-div">
-					<span class="css-1juk5to-RankNumber">4</span>
-					<img class="item-img" src="/oaga/images/reviewPage/profile_basic.png">
-				</div>
-				<div class="item-div">
-					<span class="css-1juk5to-RankNumber">5</span>
-					<img class="item-img" src="/oaga/images/reviewPage/profile_basic.png">
-				</div>
-				<div class="item-div">
-					<span class="css-1juk5to-RankNumber">6</span>
-					<img class="item-img" src="/oaga/images/reviewPage/profile_basic.png">
-				</div>
-				<div class="item-div">
-					<span class="css-1juk5to-RankNumber">7</span>
-					<img class="item-img" src="/oaga/images/reviewPage/profile_basic.png">
-				</div>
-				<div class="item-div">
-					<span class="css-1juk5to-RankNumber">8</span>
-					<img class="item-img" src="/oaga/images/reviewPage/profile_basic.png">
-				</div>
-				<div class="item-div">
-					<span class="css-1juk5to-RankNumber">9</span>
-					<img class="item-img" src="/oaga/images/reviewPage/profile_basic.png">
-				</div>
-				<div class="item-div">
-					<span class="css-1juk5to-RankNumber">10</span>
-					<img class="item-img" src="/oaga/images/reviewPage/profile_basic.png">
-				</div>
+				</c:forEach>
+				<!-- 1 -->
 			</div>
 			
 		</div>
@@ -81,7 +49,7 @@
 	<section class="myt-sec2">
 		<div class="sec1Wrap">
 			<div class="my-title">
-				<div style=" font-size:35px; font-weight:bold; padding-top: 0px; color: rgba(51, 51, 51, 0.8);">내가 좋아요 누른 리뷰어</div>
+				<div class="title-2">내가 좋아요 누른 리뷰어</div>
 				<div class="arrow-btn-div">
 						<button type="button" class="arrow-btn my-m-btn">
 							<span>
@@ -102,42 +70,12 @@
 					</div>
 			</div>
 			<div class="my-list">
+				<!-- 1 -->
 				<div class="list-item">
 					<img class="mylist-img" src="/oaga/images/reviewPage/profile_basic.png">
 					<h3>닉네임</h3>
 				</div>
-				<div class="list-item">
-					<img class="mylist-img" src="/oaga/images/reviewPage/profile_basic.png">
-					<h3>닉네임</h3>
-				</div>
-				<div class="list-item">
-					<img class="mylist-img" src="/oaga/images/reviewPage/profile_basic.png">
-					<h3>닉네임</h3>
-				</div>
-				<div class="list-item">
-					<img class="mylist-img" src="/oaga/images/reviewPage/profile_basic.png">
-					<h3>닉네임</h3>
-				</div>
-				<div class="list-item">
-					<img class="mylist-img" src="/oaga/images/reviewPage/profile_basic.png">
-					<h3>닉네임</h3>
-				</div>
-				<div class="list-item">
-					<img class="mylist-img" src="/oaga/images/reviewPage/profile_basic.png">
-					<h3>닉네임</h3>
-				</div>
-				<div class="list-item">
-					<img class="mylist-img" src="/oaga/images/reviewPage/profile_basic.png">
-					<h3>닉네임</h3>
-				</div>
-				<div class="list-item">
-					<img class="mylist-img" src="/oaga/images/reviewPage/profile_basic.png">
-					<h3>닉네임</h3>
-				</div>
-				<div class="list-item">
-					<img class="mylist-img" src="/oaga/images/reviewPage/profile_basic.png">
-					<h3>닉네임</h3>
-				</div>
+				<!-- 1 -->
 			</div>
 		</div>
 		
@@ -146,7 +84,7 @@
 	<section class="myt-sec3">
 		<div class="sec3Wrap">
 			<div class="review-div">
-				<div style="font-size:35px; font-weight:bold; color: rgba(51, 51, 51, 0.8); margin-bottom: 20px;">내 리뷰어들의 최근 리뷰</div>
+				<div class="title-2">내 리뷰어들의 최근 리뷰</div>
 				<div class="subtitle">나와 여행 취향이 비슷한 회원들의 리뷰를 참고하여 더욱 즐겁고 완벽한 여행을 계획하세요!</div>
 				<div class="list-row">
 				<div class="box">
@@ -178,151 +116,7 @@
 					</a>
 				</div>
 				<!--box-->
-				<div class="box">
-					<a href="#">
-						<div class="ImgBox">
-							<img
-								src="/oaga/images/reviewPage/profile_basic.png" />
-							<div class="txt">
-								<p>리뷰 제목</p>
-							</div>
-							<!--txt-->
-						</div> <!--ImgBox-->
-
-						<div class="data">
-							<ul class="info">
-								<li class="placeName">지역</li>
-								<li class="withFriend">여행 테마</li>
-								<li class="userName">작성자 닉네임</li>
-							</ul>
-							<!--info-->
-
-							<ul class="count">
-								<li class="location">25</li>
-								<li class="view">조회수</li>
-								<li class="copy">27</li>
-							</ul>
-							<!--view-->
-						</div> <!--data-->
-					</a>
-				</div>
-				<!--box-->
-				<div class="box">
-					<a href="#">
-						<div class="ImgBox">
-							<img
-								src="/oaga/images/reviewPage/profile_basic.png" />
-							<div class="txt">
-								<p>리뷰 제목</p>
-							</div>
-							<!--txt-->
-						</div> <!--ImgBox-->
-
-						<div class="data">
-							<ul class="info">
-								<li class="placeName">지역</li>
-								<li class="withFriend">여행 테마</li>
-								<li class="userName">작성자 닉네임</li>
-							</ul>
-							<!--info-->
-
-							<ul class="count">
-								<li class="location">25</li>
-								<li class="view">조회수</li>
-								<li class="copy">27</li>
-							</ul>
-							<!--view-->
-						</div> <!--data-->
-					</a>
-				</div>
-				<!--box-->
-				<div class="box">
-					<a href="#">
-						<div class="ImgBox">
-							<img
-								src="/oaga/images/reviewPage/profile_basic.png" />
-							<div class="txt">
-								<p>리뷰 제목</p>
-							</div>
-							<!--txt-->
-						</div> <!--ImgBox-->
-
-						<div class="data">
-							<ul class="info">
-								<li class="placeName">지역</li>
-								<li class="withFriend">여행 테마</li>
-								<li class="userName">작성자 닉네임</li>
-							</ul>
-							<!--info-->
-
-							<ul class="count">
-								<li class="location">25</li>
-								<li class="view">조회수</li>
-								<li class="copy">27</li>
-							</ul>
-							<!--view-->
-						</div> <!--data-->
-					</a>
-				</div>
-				<!--box-->
-				<div class="box">
-					<a href="#">
-						<div class="ImgBox">
-							<img
-								src="/oaga/images/reviewPage/profile_basic.png" />
-							<div class="txt">
-								<p>리뷰 제목</p>
-							</div>
-							<!--txt-->
-						</div> <!--ImgBox-->
-
-						<div class="data">
-							<ul class="info">
-								<li class="placeName">지역</li>
-								<li class="withFriend">여행 테마</li>
-								<li class="userName">작성자 닉네임</li>
-							</ul>
-							<!--info-->
-
-							<ul class="count">
-								<li class="location">25</li>
-								<li class="view">조회수</li>
-								<li class="copy">27</li>
-							</ul>
-							<!--view-->
-						</div> <!--data-->
-					</a>
-				</div>
-				<!--box-->
-				<div class="box">
-					<a href="#">
-						<div class="ImgBox">
-							<img
-								src="/oaga/images/reviewPage/profile_basic.png" />
-							<div class="txt">
-								<p>리뷰 제목</p>
-							</div>
-							<!--txt-->
-						</div> <!--ImgBox-->
-
-						<div class="data">
-							<ul class="info">
-								<li class="placeName">지역</li>
-								<li class="withFriend">여행 테마</li>
-								<li class="userName">작성자 닉네임</li>
-							</ul>
-							<!--info-->
-
-							<ul class="count">
-								<li class="location">25</li>
-								<li class="view">조회수</li>
-								<li class="copy">27</li>
-							</ul>
-							<!--view-->
-						</div> <!--data-->
-					</a>
-				</div>
-				<!--box-->
+				
 				</div>
 			</div>
 		</div>

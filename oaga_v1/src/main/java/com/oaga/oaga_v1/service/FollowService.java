@@ -72,5 +72,10 @@ public class FollowService {
 		return followRepository.findByFollowedUser(followedUser).orElse(null);
 	}
 	
+	// 내가 팔로우한 유저 정보 가져오기
+	public List<Follow> findByFollowingUser(User followingUser) {
+		return followRepository.findByFollowingUser(followingUser).orElse(null);
+	}
+	
 	
 }
