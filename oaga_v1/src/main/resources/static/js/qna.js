@@ -133,9 +133,8 @@ let header = $("meta[name='_csrf_header']").attr("content");
 			id : $("#replyid").val(),
 			
 		}
-		
-		
-		console.log(data.qnaId + "id");
+
+		console.log(data.qnaId + "id@");
 		$.ajax({
 			beforeSend: function(xhr) {
                 xhr.setRequestHeader(header, token)  
@@ -199,6 +198,7 @@ function viewappendreply(response){
 	
 	let data = response.data;
 	var appendreply = `<c:forEach var="qnAReply"  items="${data[0]}">
+							<input type="hidden" value="${data[0].id}" id="replyid">
 							<div class = "appendreply">
 								<div class = replyuserNickNamediv>
 									<div class = replyuserNickName><p>작성자 :</p></div>
@@ -213,7 +213,7 @@ function viewappendreply(response){
 									
 									<button id="QnA_reply_delete" class="deletebtn" onclick="index.qnareplydelte()">삭제하기</button>
 									<button class="updatebtn" >
-									<a href="/oaga/qnareplyupdateform/${data[0].id}">수정하기</a>
+									<a href="/oaga/qna/qnareplyupdateform/${data[0].id}">수정하기</a>
 									</butotn>
 									
 								</div>
