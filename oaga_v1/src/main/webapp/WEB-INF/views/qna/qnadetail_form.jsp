@@ -172,10 +172,15 @@
 	</div>
 	<br>
 	<div id="appendReply"></div>
+	<c:forEach var="qnadetailList" items="${qnadetailList}" >
+	<c:if test="${principal.user.role eq 'ADMIN' || principal.user.id eq qnadetailList.user.id}">
 	<textarea rows="10" style="width: 100%;" id="replycontent"></textarea>
+	<button class="replyBtn" id="btn-qna-reply-save">작성하기</button>
+	</c:if>
+	</c:forEach>
 	<br> <br>
 
-	<button class="replyBtn" id="btn-qna-reply-save">작성하기</button>
+	
 
 	<br> <br> <br>
 
