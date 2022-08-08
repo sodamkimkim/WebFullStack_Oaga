@@ -204,4 +204,10 @@ public class AdminService {
 	public Page<User> findByUserOauth(Pageable pageable ,String oauth) {
 		return userRepository.findByOauth(pageable, oauth);
 	}
+	
+	// 놀거리 삭제
+	@Transactional
+	public void deletePlay(int id) {
+		guInfoRepository.deleteById(id);
+	}
 }

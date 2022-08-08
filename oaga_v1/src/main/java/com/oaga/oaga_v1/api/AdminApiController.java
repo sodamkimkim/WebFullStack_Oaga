@@ -112,6 +112,13 @@ public class AdminApiController {
 		System.out.println(adminService.findByUserOauth(pageable, oauth));
 		return new ResponseDto<>(HttpStatus.OK, adminService.findByUserOauth(pageable, oauth));
 	}
+	
+	// 놀거리 정보 삭제
+	@DeleteMapping("/api/admin/deletePlay/{id}")
+	private ResponseDto<Integer> deletePlayById(@PathVariable int id) {
+		adminService.deletePlay(id);
+		return new ResponseDto<>(HttpStatus.OK, 1);
+	}
 
 
 }

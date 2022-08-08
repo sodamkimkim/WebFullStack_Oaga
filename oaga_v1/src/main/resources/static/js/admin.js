@@ -1,6 +1,6 @@
-let token=$("meta[name='_csrf']").attr("content");
-let tokenName=$("meta[name='_csrf']").attr("name");
-let header= $("meta[name='_csrf_header']").attr("content");
+let token = $("meta[name='_csrf']").attr("content");
+let tokenName = $("meta[name='_csrf']").attr("name");
+let header = $("meta[name='_csrf_header']").attr("content");
 
 let index = {
 	init: function() {
@@ -18,9 +18,9 @@ let index = {
 			console.log(id);
 			$.ajax({
 				beforeSend: function(xhr) {
-                xhr.setRequestHeader(header, token)  
-            },
-				
+					xhr.setRequestHeader(header, token)
+				},
+
 				type: "delete",
 				url: "/oaga/admin/deleterestaurant/" + id,
 			}).done(function(data) {
@@ -33,24 +33,41 @@ let index = {
 
 			});
 		});
-		
+
 	},
-	
-	deletePlay: function(guinfoId) {
-		colsole.log(guinfoId);
-	}
 }
 index.init();
 
+function deletePlay(guinfoId) {
+
+	$.ajax({
+		beforeSend: function(xhr) {
+			xhr.setRequestHeader(header, token)
+		},
+		type: "DELETE",
+		url: `/oaga/api/admin/deletePlay/${guinfoId}`,
+	}).done(function() {
+		updateDeletePlay(guinfoId);
+	}).fail(function() {
+		alert("삭제 실패");
+	});
+}
+
+function updateDeletePlay(id) {
+	$("#play-delete-btn-" + id).text("삭제완료");
+	$("#play-delete-btn-" + id).css("color", "red");
+	$("#play-delete-btn-" + id).css("pointer-events", "none");
+	
+}
 // =====================================restaurant update
 function selectrestaurantList(selectedId) { // area 선택 시
 
 	let data = selectedId;
 	console.log(data.data);
-	
-	
+
+
 	$.ajax({
-		
+
 		type: "GET",
 		url: `/oaga/api/admin/areaId/${data}`
 	}).done(function(response) {
@@ -155,9 +172,9 @@ function restaurantclick(updateId) { // guinfo 리스트 클릭했을때 어펜�
 
 function setRestaurantData(estaurantData) {
 
-	
+
 	$('#restaurantList').empty();
-	
+
 	let setData = estaurantData.data;
 
 	var restaurantDataApend = `<br/>
@@ -214,7 +231,7 @@ function setRestaurantData(estaurantData) {
 
 // =====================================guinfo update
 function selectList2(selectedId) { // area 선택 시
-		
+
 	let data = selectedId;
 
 	$.ajax({
@@ -305,9 +322,9 @@ function guinfoclick(updateId) { // guinfo 리스트 클릭했을때 어펜듬
 
 	let data = updateId;
 	console.log(data);
-	
+
 	$.ajax({
-		
+
 		type: "GET",
 		url: `/oaga/api/admin/guinfo_info/${data}`
 	}).done(function(response) {
@@ -323,10 +340,10 @@ function setGuinfoData(guinfoData) {
 	$('#guinfoList').empty();
 
 	let setData = guinfoData.data;
-	
-	
 
-	
+
+
+
 	var guinfoDataApend = `<br/>
 						<br/>
 
@@ -364,9 +381,9 @@ function setGuinfoData(guinfoData) {
 						</div>
 						</form>
 						`
-console.log(guinfoDataApend);
-$('#guinfoList').append(guinfoDataApend);
-	
+	console.log(guinfoDataApend);
+	$('#guinfoList').append(guinfoDataApend);
+
 }
 
 
@@ -464,12 +481,12 @@ function addSelectedGuName(response) {
 
 
 function xSSCheck(str, level) {
-    if (level == undefined || level == 0) {
-        str = str.replace(/\<|\>|\"|\'|\%|\;|\(|\)|\&|\+|\-/g,"");
-    } else if (level != undefined && level == 1) {
-        str = str.replace(/\</g, "&lt;");
-        str = str.replace(/\>/g, "&gt;");
-    }
-    return str;
+	if (level == undefined || level == 0) {
+		str = str.replace(/\<|\>|\"|\'|\%|\;|\(|\)|\&|\+|\-/g, "");
+	} else if (level != undefined && level == 1) {
+		str = str.replace(/\</g, "&lt;");
+		str = str.replace(/\>/g, "&gt;");
+	}
+	return str;
 }
 
