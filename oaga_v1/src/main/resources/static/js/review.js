@@ -49,7 +49,6 @@ let index = {
 			url: `/oaga/api/review/reply/${replyId}`,
 			dataType: "json"
 		}).done(function(response) {
-
 			location.href = "";
 		}).fail(function(error) {
 
@@ -101,14 +100,17 @@ let index = {
 }
 
 function addReply(reply) {
-
+	
+	let createDate = reply.timestamp;
+	let date = createDate.substr(0, 10);
+	
 	let principalId = $("#principal--id");
 	let childElement = `<div class="replyBox">
 					<img class="reply_image" alt=""
 						src="http://localhost:9090/oaga/upload/${reply.user.userProfileImgUrl}">
 					<div class="reply_i">
 						<h4 class="reply_u">${reply.user.userNickName}</h4>
-						<h6 class="reply_t">${reply.timestamp}</h6>
+						<h6 class="reply_t">${date}</h6>
 					</div>
 					<c:if test="${reply.user.id} == principalId">
 						<button type="button" onclick="index.replyDelete(${reply.id});"

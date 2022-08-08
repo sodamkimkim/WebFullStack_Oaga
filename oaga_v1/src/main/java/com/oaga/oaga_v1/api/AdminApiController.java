@@ -90,8 +90,6 @@ public class AdminApiController {
 		return new ResponseDto<>(HttpStatus.OK, restaurant_info);
 	}
 	
-	
-
 
 	@DeleteMapping("/admin/deleterestaurant/{id}")
 	public ResponseDto<Integer> deleteRestaurantById(@PathVariable int id) {

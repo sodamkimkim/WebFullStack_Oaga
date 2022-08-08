@@ -41,7 +41,7 @@
 			<!--contentTitle-->
 			<div class="contentMeta">
 				<p class="contentMeta_left">구분/지역 : ${review.areaName}</p>
-				<p class="contentMeta_right">작성일 : ${review.createDate}</p>
+				<p class="contentMeta_right">작성일 : ${createDate}</p>
 				<p class="contentMeta_right">조회수 : ${review.count}</p>
 				<p class="contentMeta_right sos">
 					<button class="sos-content">
@@ -91,12 +91,13 @@
 		</c:choose>
 		<div class="replysec" id="replysec">
 			<c:forEach var="reply" items="${review.replies}">
+				<input type="hidden" value="${reply.timestamp}" id="date">
 				<div class="replyBox">
 					<img class="reply_image" alt=""
 						src="http://localhost:9090/oaga/upload/${reply.user.userProfileImgUrl}">
 					<div class="reply_i">
 						<h4 class="reply_u">${reply.user.userNickName}</h4>
-						<h6 class="reply_t">${reply.timestamp}</h6>
+						<h6 class="reply_t"></h6>
 					</div>
 					<c:if test="${principal.user.id eq reply.user.id}">
 						<button type="button" onclick="index.replyDelete(${reply.id});"
@@ -135,6 +136,13 @@
 
 <script src="../js/review.js"></script>
 <script type="text/javascript">
+
+function replyDate() {
+	let timestamp = $("#date").val();
+	let createDate = timestamp.substr(0,10);
+	$(".reply_t").prepend(createDate);
+}
+replyDate();
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }

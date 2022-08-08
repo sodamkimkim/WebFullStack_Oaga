@@ -15,8 +15,6 @@
 					<img src="/oaga/images/mainpage/icon_search1.gif" alt="" />
 				</button>
 			</form>
-
-
 			<!--  -->
 			<div class="keyword">
 				<div class="words">
@@ -50,7 +48,7 @@
 						class="form-control">${result.address}<nobr></td>
 
 					<td class="adD_listColumn adD_listColumn3"><button
-							class="adD_listItem_btn" id="adD_listItem_btn">삭제
+							class="adD_listItem_btn" id="play-delete-btn" onclick="index.deletePlay()">삭제
 						</button></td>
 				</tr>
 			</c:forEach>

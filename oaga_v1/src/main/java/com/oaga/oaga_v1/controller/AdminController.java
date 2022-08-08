@@ -31,6 +31,7 @@ import com.oaga.oaga_v1.dto.RequestUserProfileDto;
 import com.oaga.oaga_v1.dto.ResponseDto;
 import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.placeModel.CategoryType;
+import com.oaga.oaga_v1.placeModel.GuInfo;
 import com.oaga.oaga_v1.placeModel.Restaurant;
 import com.oaga.oaga_v1.service.AdminService;
 import com.oaga.oaga_v1.service.UserService;
@@ -124,14 +125,23 @@ public class AdminController {
 //	}
 
 	// 삭제할 레스토랑 검색
-	@GetMapping({ "/admin/deletepage", "/admin/srch_deleterestaurant" })
+	@GetMapping({ "/admin/restaurantDeletepage", "/admin/srch/restaurant" })
 	public String srchRestaurant(String srchtitle, Model model,
 			@PageableDefault(size = 10, sort = "name", direction = Direction.ASC) Pageable pageable) {
 		String searchTitle = srchtitle == null ? "" : srchtitle;
 		model.addAttribute("searchTitle", searchTitle);
 		Page<Restaurant> srchResult = adminService.searchRestaurantByTitle(searchTitle, pageable);
-		model.addAttribute("restaurants", srchResult);
+		model.addAttribute("resultList", srchResult);
 		return "admin/admin_delete_form";
+	}
+	
+	// 삭제할 놀거리 검색
+	@GetMapping("/admin/playDeletepage")
+	public String srchGuInfo(String srchtitle,@PageableDefault(size = 10, sort = "name", direction = Direction.DESC)Pageable pageable, Model model) {
+		String searchTitle = srchtitle == null ? "" : srchtitle;
+		Page<GuInfo> playList = adminService.findBySearchTitle(pageable, searchTitle);
+		model.addAttribute("resultList", playList);
+		return "admin/admin_playDelete_form";
 	}
 
 	@PostMapping("/admin/restaurant/infoSave")
@@ -163,9 +173,7 @@ public class AdminController {
 		System.out.println("pageNumbers : " + pageNumbers);
 		model.addAttribute("userList", userList);
 		model.addAttribute("pageNumbers", pageNumbers);
-		
 		System.out.println("userList : " + userList);
-		
 		return "admin/admin_delete_user";
 	}
 

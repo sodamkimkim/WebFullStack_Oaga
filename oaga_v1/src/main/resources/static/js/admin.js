@@ -4,11 +4,10 @@ let header= $("meta[name='_csrf_header']").attr("content");
 
 let index = {
 	init: function() {
-		$(".adD_listItem_btn").click(function() {
+		$("#adD_listItem_btn").click(function() {
 			var str = "";
 			var tdArr = new Array();
 			var adD_listItem_btn = $(this);
-			console.log(adD_listItem_btn.text());
 
 			var tr = adD_listItem_btn.parent().parent();
 			var td = tr.children();
@@ -34,7 +33,12 @@ let index = {
 
 			});
 		});
+		
 	},
+	
+	deletePlay: function(guinfoId) {
+		colsole.log(guinfoId);
+	}
 }
 index.init();
 
