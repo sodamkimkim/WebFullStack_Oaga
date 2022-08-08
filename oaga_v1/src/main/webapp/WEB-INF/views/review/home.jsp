@@ -52,7 +52,7 @@
 								<b>내가 작성한 리뷰</b> <span>${reviewCount}</span>
 							</a>
 							<div class="logged_line">&nbsp;</div>
-							<a id="likes_btn" class="logged_cnt_box logged_plan"> <b>좋아요</b>
+							<a href="/oaga/mypage_form" id="likes_btn" class="logged_cnt_box logged_plan"> <b>좋아요</b>
 								<span>${principal.user.likes}</span>
 							</a>
 							<!-- 모달 띄우기 -->
@@ -190,14 +190,14 @@
 <!-- 베스트 리뷰어 section 시작 -->
 <section class="sec_reviewer">
 	<div class="div_reviewer">
-		<h3 class="best_reviewer_title">이번 달 베스트 리뷰어</h3>
+		<h3 class="best_reviewer_title">베스트 리뷰어</h3>
 		<p
 			style="font-size: 16px; text-align: center; color: #666; margin-bottom: 30px; line-height: 1;">좋아요를
 			가장 많이 받은 베스트 리뷰어들</p>
 		<div class="best_reviewer_box">
 			<div style="display: flex; margin: 0 auto;">
 
-				<c:forEach var="bestuser" items="${bestUser}">
+				<c:forEach var="bestuser" items="${bestUser}" varStatus="status">
 					<div class="box" style="display: flex;">
 						<c:choose>
 							<c:when test="${empty principal}">
@@ -206,6 +206,7 @@
 									src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
 									onerror="this.src='images/reviewPage/profile_basic.png';"
 									class="best_reviewer_profile">
+									<img class="medal-img" src="/oaga/images/reviewPage/medal-1.png">
 									<div class="like-Box">
 										<img class="best_reviewer_icon"
 											src="/oaga/images/userPage/heart.png"> <span>&nbsp;${bestuser.likes}</span>
@@ -219,6 +220,7 @@
 									src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
 									onerror="this.src='images/reviewPage/profile_basic.png';"
 									class="best_reviewer_profile" style="cursor: pointer;">
+									<img class="medal-img" src="/oaga/images/reviewPage/medal-${status.index + 1}.png" onerror="this.style.display='none';">
 									<div class="like-Box">
 										<img class="best_reviewer_icon"
 											src="/oaga/images/userPage/heart.png"> <span>&nbsp;${bestuser.likes}</span>

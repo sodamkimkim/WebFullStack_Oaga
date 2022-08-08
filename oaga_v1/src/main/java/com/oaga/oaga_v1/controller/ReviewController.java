@@ -48,7 +48,6 @@ public class ReviewController {
 		model.addAttribute("bestUser", bestUser);
 		System.out.println("in ReviewController, pageable: "+ pageable.toString());
 		return "/review/home";
-
 	} 
 	
 	

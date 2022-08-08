@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -7,7 +6,6 @@
 <sec:authorize access="isAuthenticated()">
 	<sec:authentication property="principal" var="principal" />
 </sec:authorize>
-
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -44,6 +42,7 @@
 					</c:otherwise>
 				</c:choose>
 				<li><a href="/oaga/qna/qna_home">Q&A</a></li>
+				<li><a href="/oaga/mytraveler">MyTraveler</a></li>
 
 			</ul>
 			<!--gnb-->
