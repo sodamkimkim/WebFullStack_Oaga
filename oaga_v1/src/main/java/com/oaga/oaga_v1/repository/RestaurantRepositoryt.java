@@ -38,4 +38,5 @@ public interface RestaurantRepositoryt extends JpaRepository<Restaurant, Integer
 	
 	Page<Restaurant> findByNameContaining(String partOfRName, Pageable pageable);
 
+	
 }

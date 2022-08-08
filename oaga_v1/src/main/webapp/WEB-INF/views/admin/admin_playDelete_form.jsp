@@ -3,7 +3,12 @@
 <link rel="stylesheet" href="/oaga/css/admin/deleteStyle.css" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="../layout/admin_header.jsp"%>
-
+<style>
+.deleteDone {
+	color: red;
+	pointer-events: none;
+}
+</style>
 <div class="adD_mWrap">
 	<div class="srchBox">
 		<div class="searchInfo">
@@ -15,8 +20,6 @@
 					<img src="/oaga/images/mainpage/icon_search1.gif" alt="" />
 				</button>
 			</form>
-
-
 			<!--  -->
 			<div class="keyword">
 				<div class="words">
@@ -48,9 +51,8 @@
 					<td id="cl2" class="adD_listColumn adD_listColumn2"><input
 						id="cl2_input" type="hidden" value="${result.id}"
 						class="form-control">${result.address}<nobr></td>
-
 					<td class="adD_listColumn adD_listColumn3"><button
-							class="adD_listItem_btn" id="adD_listItem_btn">삭제
+							id="play-delete-btn-${result.id}" onclick="deletePlay(${result.id});">삭제
 						</button></td>
 				</tr>
 			</c:forEach>

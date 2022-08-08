@@ -90,8 +90,6 @@ public class AdminApiController {
 		return new ResponseDto<>(HttpStatus.OK, restaurant_info);
 	}
 	
-	
-
 
 	@DeleteMapping("/admin/deleterestaurant/{id}")
 	public ResponseDto<Integer> deleteRestaurantById(@PathVariable int id) {
@@ -113,6 +111,13 @@ public class AdminApiController {
 		// 서비스 요청
 		System.out.println(adminService.findByUserOauth(pageable, oauth));
 		return new ResponseDto<>(HttpStatus.OK, adminService.findByUserOauth(pageable, oauth));
+	}
+	
+	// 놀거리 정보 삭제
+	@DeleteMapping("/api/admin/deletePlay/{id}")
+	private ResponseDto<Integer> deletePlayById(@PathVariable int id) {
+		adminService.deletePlay(id);
+		return new ResponseDto<>(HttpStatus.OK, 1);
 	}
 
 

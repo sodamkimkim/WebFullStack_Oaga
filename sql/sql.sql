@@ -78,8 +78,6 @@ SELECT * FROM review WHERE userId = 1 AND isWriting = 'ING';
 -- 임시저장 리뷰 제외하고 가져오기
 SELECT * FROM review WHERE isWriting = "DONE";
 
-
-
 -- 베스트 리뷰 출력createDate
 SELECT * FROM review ORDER BY count DESC LIMIT 6;
 -- 베스트 리뷰어 출력
@@ -165,7 +163,8 @@ INSERT INTO guinfo VALUES(11,'광안리',"GUINFO","가나다라마바사아자�
 INSERT INTO guinfo VALUES(12,'광안리',"GUINFO","가나다라마바사아자차카타파하",NOW(),'https://picsum.photos/200/300/?blur',"우13","dsa","11");
 INSERT INTO guinfo VALUES(13,'판교',"GUINFO","가나다라마바사아자차카타파하",NOW(),'https://picsum.photos/200/300/?blur',"강남대로","dsa","1");
 
-
+select * from restaurant where name like "%%";
+select * from guinfo where name like "%%";
 
 INSERT INTO restaurant VALUES(1,'강남대로2',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스1", 'https://picsum.photos/200/300/?blur' ,1);
 INSERT INTO restaurant VALUES(2,'강남대로2',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스2",'https://picsum.photos/200/300/?blur',1);
@@ -173,7 +172,9 @@ INSERT INTO restaurant VALUES(3,'해운대 좌1',"RESTAURANT","전통뭐시뭐�
 INSERT INTO restaurant VALUES(7,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스7",'https://picsum.photos/200/300/?blur',7);
 INSERT INTO restaurant VALUES(8,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스8",'https://picsum.photos/200/300/?blur',7);
 INSERT INTO restaurant VALUES(9,'해운대 좌1',"RESTAURANT","전통뭐시뭐시기",NOW(),'https://picsum.photos/200/300/?blur',"딜리셔스9",'https://picsum.photos/200/300/?blur',7);
+
 SELECT * FROM restaurant;
 SELECT * FROM guinfo;
+
 DELETE  FROM guinfo WHERE name = "dasdas@@@";
 SELECT * FROM restaurant WHERE name LIKE '%강%';

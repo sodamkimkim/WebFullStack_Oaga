@@ -183,6 +183,11 @@ public class AdminService {
 
 	}
 	
+	// 놀거리 검색
+	public Page<GuInfo> findBySearchTitle(Pageable pageable, String searchTitle) {
+		return guInfoRepository.findByNameContaining(searchTitle, pageable);
+	}
+	
 	// 회원정보 검색
 	@Transactional(readOnly = true)
 	public Page<User> searchUser(String searchName, Pageable pageable) {
@@ -198,5 +203,11 @@ public class AdminService {
 	// oauth별로 조회
 	public Page<User> findByUserOauth(Pageable pageable ,String oauth) {
 		return userRepository.findByOauth(pageable, oauth);
+	}
+	
+	// 놀거리 삭제
+	@Transactional
+	public void deletePlay(int id) {
+		guInfoRepository.deleteById(id);
 	}
 }
