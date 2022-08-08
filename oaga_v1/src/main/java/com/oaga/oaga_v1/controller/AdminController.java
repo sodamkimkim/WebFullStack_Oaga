@@ -184,5 +184,10 @@ public class AdminController {
 		
 		return "redirect:/admin/admin_mainpage";
 	}
+	@GetMapping("/admin/report_management_form")
+	public String reportManagementForm() {
+			return "/admin/admin_reportmanagement_form";
+	}
+	
 // ===================================================================== 수정	 끝
 }

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/oaga/css/admin/deleteStyle.css" />
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="../layout/admin_header.jsp"%>
 
 <div class="adD_mWrap">
@@ -40,7 +39,6 @@
 				<th class="adD_tbl_coloumnName cN1">이름</th>
 				<th class="adD_tbl_coloumnName cN2">주소</th>
 				<th class="adD_tbl_coloumnName cN3"></th>
-
 			</tr>
 		</thead>
 		<tbody>

@@ -78,4 +78,7 @@ public class Review {
 	@JsonIgnoreProperties({"review", "user"})
 	private List<Reply> replies;
 	
+	@Column(nullable = true)
+	@ColumnDefault("0")
+	private int reportedCount;
 }
