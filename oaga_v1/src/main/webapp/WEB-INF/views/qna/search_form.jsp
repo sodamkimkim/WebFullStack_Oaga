@@ -17,7 +17,6 @@
 	<div class="wrap">
 		<p class="tbl_totalcount">
 			
-			
 			<input type="text" class="qnasearch" id="qna-search-title"  name="searchTitle">
 			<button class="qnasearchbtn" id="qna-search" >검색</button>
 			
@@ -34,36 +33,36 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="qnaList" items="${qnaList}" >
+				<c:forEach var="searchQnaList" items="${searchQnaList}" >
 				<tr>
-					<td>${qnaList.id}</td>
+					<td>${searchQnaList.id}</td>
 					<td class="tbl_contenttitle"><svg class="lock"
 							xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 							<!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
 							<c:choose>
-								<c:when test="${qnaList.secretreply eq 0 }">
+								<c:when test="${searchQnaList.secretreply eq 0 }">
 									<path/></svg>
-								<a href="/oaga/qna/qnadetailform/${qnaList.id}">${qnaList.title}</a></td>
+								<a href="/oaga/qna/qnadetailform/${searchQnaList.id}">${searchQnaList.title}</a></td>
 								</c:when>
 								<c:otherwise>
 								<path
 								d="M80 192V144C80 64.47 144.5 0 224 0C303.5 0 368 64.47 368 144V192H384C419.3 192 448 220.7 448 256V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V256C0 220.7 28.65 192 64 192H80zM144 192H304V144C304 99.82 268.2 64 224 64C179.8 64 144 99.82 144 144V192z" /></svg>
 
 								<c:choose>
-									<c:when test="${principal.user.role eq 'ADMIN' || qnaList.user.id eq principal.user.id}">
-										<a href="/oaga/qna/qnadetailform/${qnaList.id}">${qnaList.title}</a></td>
+									<c:when test="${principal.user.role eq 'ADMIN' || searchQnaList.user.id eq principal.user.id}">
+										<a href="/oaga/qna/qnadetailform/${searchQnaList.id}">${searchQnaList.title}</a></td>
 									</c:when>
 									<c:otherwise>
-										<a>${qnaList.title}   (비밀글 입니다.)</a></td>
+										<a>${searchQnaList.title}   (비밀글 입니다.)</a></td>
 									</c:otherwise>
 								</c:choose>
 								</c:otherwise>
 							</c:choose>
 							
 							
-					<td>${qnaList.qnaType}</td>
-					<td>${qnaList.user.userNickName}</td>
-					<td>${qnaList.createDate}</td>
+					<td>${searchQnaList.qnaType}</td>
+					<td>${searchQnaList.user.userNickName}</td>
+					<td>${searchQnaList.createDate}</td>
 				</tr>
 				</c:forEach>
 					
@@ -76,5 +75,5 @@
 </div>
 <!-- qna_row2 -->
 
-<script src="../js/qna.js"></script>
+<script src="../../js/qna.js"></script>
 <%@ include file="../layout/footer.jsp"%>

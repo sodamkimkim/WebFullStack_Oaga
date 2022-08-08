@@ -26,8 +26,36 @@ let header = $("meta[name='_csrf_header']").attr("content");
 			alert("수정 클릭");
 			this.qnareplyupdate();	
 		});
-		
+		$("#qna-search").bind("click", () =>{
+			this.searchQnA();
+		});
 	},
+	
+	searchQnA : function(){
+		let data = {
+			title : $("#qna-search-title").val(),	
+		}
+
+		$.ajax({
+			
+			beforeSend: function(xhr) {
+                xhr.setRequestHeader(header, token)  
+            },
+			type: "GET",
+			url: `/oaga/qna/search/${data.title}`,
+			
+			contentType: "application/json; charset=utf-8",
+			})
+			.done(function(){
+			alert("성공");
+			location.href = `/oaga/qna/search/${data.title}`;
+			})
+			.fail(function(error){
+				console.log(error);
+			});
+	},
+	
+	
 	
 	qnasave : function(){
 		
@@ -174,7 +202,8 @@ let header = $("meta[name='_csrf_header']").attr("content");
 			alert("수정 실패!");
 			console.log(error);
 		});
-	}
+	},
+	
 }
 
 

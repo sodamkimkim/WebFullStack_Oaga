@@ -72,8 +72,10 @@ public class QnAApiController {
 	public ResponseDto<Integer> replyUpdate(@PathVariable int id,@RequestBody RequestQnAReplyDto dto){
 		qnAService.qnareplyupdate(dto, id);
 		return new ResponseDto<>(HttpStatus.OK,1);
-		
 	}
+	
+	
+	
 	
 	
 }

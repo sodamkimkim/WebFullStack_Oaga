@@ -212,6 +212,9 @@ footer {
 	</div>
 	<!--main-->
 	<script>
+	let token = $("meta[name='_csrf']").attr("content");
+	let header = $("meta[name='_csrf_header']").attr("content");
+	
 		let usernameCheck = false;
 		$("#btn-checkId").bind("click", function() {
 			let data = {
@@ -223,12 +226,16 @@ footer {
 				return false;
 			}
 			$.ajax({
+				beforeSend: function(xhr) {
+	                xhr.setRequestHeader(header, token)
+	            },
 				type : "POST",
-				url : "/oaga/api/checkId/",
+				url : "/auth/username-check",
 				data : JSON.stringify(data),
-				contentType : "application/json; charset=utf-8"
+				contentType : "application/json; charset=utf-8",
+				dataType : "json",
 			}).done(function(response) {
-				console.log(response.username);
+				
 				if (response.username != null) {
 					alert("이미 사용중인 아이디 입니다.");
 					usernameCheck = false;
