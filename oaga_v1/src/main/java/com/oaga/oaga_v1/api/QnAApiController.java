@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.oaga.oaga_v1.auth.PrincipalDetail;
 import com.oaga.oaga_v1.dto.RequestQnADto;
+import com.oaga.oaga_v1.dto.RequestQnAReplyDto;
 import com.oaga.oaga_v1.dto.ResponseDto;
 import com.oaga.oaga_v1.qnaModel.QnA;
 import com.oaga.oaga_v1.qnaModel.QnAReply;
@@ -58,4 +59,21 @@ public class QnAApiController {
 		model.addAttribute("qnAReply",qnAReply);
 		return new ResponseDto<>(HttpStatus.OK,qnAReply);
 	}
+	
+	
+	@DeleteMapping("api/qna/reply/delete/{id}")
+	public ResponseDto<Integer> replyDelete(@PathVariable int id){
+		qnAService.replydelete(id);
+		
+		return new ResponseDto<>(HttpStatus.OK,1);
+	}
+	
+	@PostMapping("api/QnA/reply/update/{id}")
+	public ResponseDto<Integer> replyUpdate(@PathVariable int id,@RequestBody RequestQnAReplyDto dto){
+		qnAService.qnareplyupdate(dto, id);
+		return new ResponseDto<>(HttpStatus.OK,1);
+		
+	}
+	
+	
 }

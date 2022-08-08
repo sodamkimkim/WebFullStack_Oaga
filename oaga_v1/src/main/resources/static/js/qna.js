@@ -21,7 +21,11 @@ let header = $("meta[name='_csrf_header']").attr("content");
 			this.replysave();
 			alert("리플라이");
 		});
-		
+
+		$("#btn-qna-reply-update").bind("click", () =>{
+			alert("수정 클릭");
+			this.qnareplyupdate();	
+		});
 	},
 	
 	qnasave : function(){
@@ -121,7 +125,56 @@ let header = $("meta[name='_csrf_header']").attr("content");
 			console.log(error);
 		});
 	},
-
+	
+	qnareplydelte : function(){
+		
+		let data = {
+			id : $("#replyid").val(),
+			
+		}
+		
+		
+		console.log(data.qnaId + "id");
+		$.ajax({
+			beforeSend: function(xhr) {
+                xhr.setRequestHeader(header, token)  
+            },
+			type: "DELETE",
+			url: `/oaga/api/qna/reply/delete/${data.id}`,
+			
+		}).done(function(response){
+			location.href = "/oaga/qna/qna_home";
+			alert("reply 삭제 성공!");
+		}).fail(function(error){
+			alert("reply 삭제 실패!");
+		});
+	},
+	qnareplyupdate :function(){
+		let data = {
+			id : $("#replyid").val(),
+			content : $("#content").val(),
+		}
+		console.log(data.id);
+		console.log(data.content);
+		$.ajax({
+			beforeSend: function(xhr) {
+                xhr.setRequestHeader(header, token)  
+            },
+			type: "POST",
+			url: `/oaga/api/QnA/reply/update/${data.id}`,
+			data: JSON.stringify(data),
+			contentType: "application/json; charset=utf-8",
+			dataType: "json",
+			
+		}).done(function(){
+			alert("수정 성공!");
+			location.href = "/oaga/qna/qna_home";
+			
+		}).fail(function(error){
+			alert("수정 실패!");
+			console.log(error);
+		});
+	}
 }
 
 
@@ -152,9 +205,23 @@ function viewappendreply(response){
 									<div class = replyuserNickName><p>글작성 일 :</p></div>
 									<div class = "adminNickName" ><p>${data[0].createDate}</p></div>
 								</div>
-								<div style = "padding :10px;">${data[0].content}</div>
+								<div style="padding: 10px;">
+									<div>${data[0].content}</div>
+									<div style="margin-top: 170px;">
+									
+									
+									<button id="QnA_reply_delete" class="deletebtn" onclick="index.qnareplydelte()">삭제하기</button>
+									<button class="updatebtn" >
+									<a href="/oaga/qnareplyupdateform/${data[0].id}">수정하기</a>
+									</butotn>
+									
+								</div>
+				</div>
 							</div>
-					   </c:forEach>`
+					   </c:forEach>
+					   <br>
+					   
+					   `
 					   
 					   
 	$('#appendReply').prepend(appendreply);

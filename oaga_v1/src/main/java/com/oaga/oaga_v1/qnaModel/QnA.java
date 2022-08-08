@@ -1,6 +1,7 @@
 package com.oaga.oaga_v1.qnaModel;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,6 +18,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.JoinColumnOrFormula;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.oaga.oaga_v1.userModel.User;
@@ -47,15 +49,19 @@ public class QnA {
 	@Column(length = 5)
 	private String password;
 	
-	@ManyToOne
+	@ManyToOne(optional = false)
 	@JoinColumn(name = "userId")
 	private User user;
 	
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	private QnAType qnaType;
-	
 
+	@Column(nullable = true)
+	@OneToMany(mappedBy = "qna", fetch =  FetchType.EAGER, cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"user","qna"})
+	private List<QnAReply> qnareplies;
+	
 	
 	@CreationTimestamp
 	private Timestamp createDate;

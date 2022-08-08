@@ -48,5 +48,13 @@ public class QnAReply {
 	
 	@CreationTimestamp 
 	private Timestamp createDate;
+
+	@Override
+	public String toString() {
+		return "QnAReply [id=" + id + ", content=" + content + ", user=" + user + ", createDate=" + createDate + "]";
+	}
+	
+	
+	
 	
 }

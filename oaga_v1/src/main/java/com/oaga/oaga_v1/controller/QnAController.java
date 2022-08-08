@@ -4,16 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
-import com.oaga.oaga_v1.auth.PrincipalDetail;
-import com.oaga.oaga_v1.dto.RequestQnADto;
 import com.oaga.oaga_v1.dto.ResponseDto;
 import com.oaga.oaga_v1.qnaModel.QnA;
 import com.oaga.oaga_v1.qnaModel.QnAReply;
@@ -27,7 +23,6 @@ public class QnAController {
 
 	@GetMapping("/qna/qna_home")
 	public String qnaForm(Model model) {
-		
 		List<QnA> qnaList = qnAService.qnaList();
 		model.addAttribute("qnaList",qnaList);
 		return "qna/qnahome";
@@ -50,9 +45,20 @@ public class QnAController {
 	@GetMapping("/qna/qnadetailform/{id}")
 	public String qnaDetailForm(Model model,@PathVariable int id) {
 		List<QnA> qnadetailList = qnAService.qnaGetId(id);
+		List<QnAReply> replyList = qnAService.findreply(id);
+		model.addAttribute("replyList",replyList);
 		model.addAttribute("qnadetailList",qnadetailList);
 		return "qna/qnadetail_form";
 	}
-
+	
+	// replyUpdate 페이지
+		@GetMapping("/qna/qnareplyupdateform/{id}")
+		public String qnareplyUpdateForm(Model model, @PathVariable int id) {
+			
+			List<QnAReply> replyList = qnAService.qnaReplyId(id);
+			model.addAttribute("replyupdate",replyList);
+			System.out.println(replyList.get(0).getUser().getUserNickName() + "@@");
+			return "qna/qnareplyupdate_form";
+		}
 
 }

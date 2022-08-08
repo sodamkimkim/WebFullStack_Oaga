@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.oaga.oaga_v1.dto.RequestQnADto;
+import com.oaga.oaga_v1.dto.RequestQnAReplyDto;
 import com.oaga.oaga_v1.qnaModel.QnA;
 import com.oaga.oaga_v1.qnaModel.QnAReply;
 import com.oaga.oaga_v1.qnaModel.QnAType;
@@ -98,13 +99,35 @@ public class QnAService {
 	public List<QnAReply> qnaReplyId(int id) {
 		return qnAReplyRepository.mFindById(id);
 	}
+	@Transactional
+	public List<QnAReply> findreply(int id){
+		return qnAReplyRepository.mfinByqnaId(id).orElse(null);
+	}
+	
+	
+	
 	
 	// QnA reply 수정 하기
+	@Transactional
+	public void qnareplyupdate(RequestQnAReplyDto dto, int id) {
+		
+		QnAReply qnareplyEntity = qnAReplyRepository.findById(id).orElseThrow(() ->{
+			return new IllegalArgumentException("게시글을 찾을 수 없습니다.");
+		});
+		qnareplyEntity.setId(dto.getId());
+		qnareplyEntity.setContent(dto.getContent());
+		qnareplyEntity.getUser();
+	}
+	
+	
+	
+	// QnA reply 삭제 하기
+	@Transactional
+	public void replydelete(int id) {
+		qnAReplyRepository.deleteById(id);
+	}
 	
 	
 	
 	
-	
-	
-	// QnA reply 삭제 하기 (보류)
 }
