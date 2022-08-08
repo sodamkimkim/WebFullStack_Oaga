@@ -74,7 +74,7 @@ public class QnAService {
 			qnaEntity.getCreateDate();
 			qnaEntity.getQnaType();
 			qnaEntity.getUser();
-			qnaEntity.getPassword();
+			qnaEntity.getSecretreply();
 			
 		}
 	// ===========================================================================

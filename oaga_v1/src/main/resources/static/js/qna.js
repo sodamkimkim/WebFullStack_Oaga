@@ -26,6 +26,7 @@ let header = $("meta[name='_csrf_header']").attr("content");
 			alert("수정 클릭");
 			this.qnareplyupdate();	
 		});
+		
 	},
 	
 	qnasave : function(){
@@ -33,7 +34,7 @@ let header = $("meta[name='_csrf_header']").attr("content");
 		let data = {
 			title : $("#title").val(),
 			content : $("#content").val(),
-			password : $("#password").val(),
+			secretreply : $("#checkBox").prop("checked") ? 1:0,
 		}
 		$.ajax({
 			
