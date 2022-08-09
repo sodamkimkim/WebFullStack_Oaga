@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.oaga.oaga_v1.dto.ResponseDto;
 import com.oaga.oaga_v1.placeModel.AreaGu;
-import com.oaga.oaga_v1.placeModel.GuInfo;
+import com.oaga.oaga_v1.placeModel.HotPlace;
 import com.oaga.oaga_v1.placeModel.Restaurant;
-import com.oaga.oaga_v1.repository.GuInfoRepository;
+import com.oaga.oaga_v1.repository.HotPlaceRepository;
 import com.oaga.oaga_v1.service.AdminService;
 import com.oaga.oaga_v1.userModel.User;
 
@@ -28,8 +28,7 @@ public class AdminApiController {
 	@Autowired
 	private AdminService adminService;
 	
-	@Autowired
-	private GuInfoRepository guInfoRepository;
+	
 
 	@GetMapping("/api/admin/areaId/{id}")
 	public ResponseDto<List<AreaGu>> areaListAll(Model model, @PathVariable int id) {
@@ -51,14 +50,14 @@ public class AdminApiController {
 	}
 	
 	// ==========================================================
-	@GetMapping("/api/admin/guinfoupdate/{areaguid}")
-	public ResponseDto<List<GuInfo>> guinfoUpdateList(@PathVariable int areaguid, Model model){
+	@GetMapping("/api/admin/hotplace_update/{areaguid}")
+	public ResponseDto<List<HotPlace>> guinfoUpdateList(@PathVariable int areaguid, Model model){
 		
-		List<GuInfo> guinfoList = adminService.findAreaGuId(areaguid);
+		List<HotPlace> hotplceList = adminService.findAreaGuId(areaguid);
 
-		model.addAttribute("guinfoList",guinfoList);
+		model.addAttribute("hotplceList",hotplceList);
 		
-		return new ResponseDto<>(HttpStatus.OK, guinfoList);
+		return new ResponseDto<>(HttpStatus.OK, hotplceList);
 	}
 	// ==========================================================	
 	
@@ -72,10 +71,10 @@ public class AdminApiController {
 	}
 	
 	
-	@GetMapping("/api/admin/guinfo_info/{guinfo}") // 구인포리스트 클릭했을때 어펜드 하기 위해
-	public ResponseDto<List<GuInfo>> guinfoupdatefindid(@PathVariable int guinfo, Model model){
+	@GetMapping("/api/admin/hotplace_info/{hotplace}") // 구인포리스트 클릭했을때 어펜드 하기 위해
+	public ResponseDto<List<HotPlace>> guinfoupdatefindid(@PathVariable int hotplace, Model model){
 		
-		List<GuInfo> guinfo_info = adminService.findGuinfoId(guinfo);
+		List<HotPlace> guinfo_info = adminService.findHotplaceId(hotplace);
 		model.addAttribute("guinfo_info",guinfo_info);
 		
 		return new ResponseDto<>(HttpStatus.OK, guinfo_info);

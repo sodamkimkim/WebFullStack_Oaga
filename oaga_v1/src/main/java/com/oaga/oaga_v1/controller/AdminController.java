@@ -27,7 +27,7 @@ import com.oaga.oaga_v1.dto.RequestUpdateRestaurantDto;
 import com.oaga.oaga_v1.dto.RequestUserProfileDto;
 import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.placeModel.CategoryType;
-import com.oaga.oaga_v1.placeModel.GuInfo;
+import com.oaga.oaga_v1.placeModel.HotPlace;
 import com.oaga.oaga_v1.placeModel.Restaurant;
 import com.oaga.oaga_v1.service.AdminService;
 import com.oaga.oaga_v1.service.UserService;
@@ -96,7 +96,7 @@ public class AdminController {
 	private String adminUpdateForm(Model model) {
 		List<Area> area = adminService.areaAll();
 		model.addAttribute("areaList", area);
-		return "/admin/update";
+		return "/admin/hotplace_update_form";
 	}
 
 	// 레드토랑 수정 페이지
@@ -115,10 +115,6 @@ public class AdminController {
 
 	}
 
-//	@GetMapping({"/admin/deletepage","/oaga/admin/srch_deleterestaurant"})
-//	public String adminDeletepage() {
-//		return "admin/admin_delete_form";
-//	}
 
 	// 삭제할 레스토랑 검색
 	@GetMapping({ "/admin/restaurantDeletepage", "/admin/srch/restaurant" })
@@ -135,7 +131,7 @@ public class AdminController {
 	@GetMapping("/admin/playDeletepage")
 	public String srchGuInfo(String srchtitle,@PageableDefault(size = 10, sort = "name", direction = Direction.DESC)Pageable pageable, Model model) {
 		String searchTitle = srchtitle == null ? "" : srchtitle;
-		Page<GuInfo> playList = adminService.findBySearchTitle(pageable, searchTitle);
+		Page<HotPlace> playList = adminService.findBySearchTitle(pageable, searchTitle);
 		model.addAttribute("resultList", playList);
 		return "admin/admin_playDelete_form";
 	}
@@ -174,7 +170,7 @@ public class AdminController {
 	}
 
 // ===================================================================== 수정
-	@PostMapping("/api/admin/guinfo/update/{id}")// 수정하기
+	@PostMapping("/api/admin/hotplace/update/{id}")// 수정하기
 	public String updateGuInfo(RequestUpdateHotplaceDto dto, @PathVariable int id) {
 		adminService.updateGuInfo(dto, id);
 		return "redirect:/admin/admin_mainpage";

@@ -10,7 +10,7 @@ import com.oaga.oaga_v1.placeModel.AreaGu;
 
 // JPA 영속성 컨텍스트 : AreaGu <----------- 반환 , 기본 데이터 타입 
 
-public interface TravelInfoRepository extends JpaRepository<AreaGu, Integer>{
+public interface AreaGuRepository extends JpaRepository<AreaGu, Integer>{
 
 	// 네이티브 쿼리로 통일
 	
