@@ -74,7 +74,7 @@ public class QnAService {
 			qnaEntity.getCreateDate();
 			qnaEntity.getQnaType();
 			qnaEntity.getUser();
-			qnaEntity.getPassword();
+			qnaEntity.getSecretreply();
 			
 		}
 	// ===========================================================================
@@ -86,9 +86,7 @@ public class QnAService {
 		QnA qna = qnARepository.findById(id).orElseThrow(() ->{
 			return new IllegalArgumentException("해당 글을 찾을 수 없습니다.");
 		});
-		
-		System.out.println(qna);
-		System.out.println(qna.getQnaType() +  "서비스");
+
 		qna.setQnaType(QnAType.OK);
 		qnAReply.setQna(qna);
 		qnAReply.setUser(user);
@@ -128,6 +126,11 @@ public class QnAService {
 	}
 	
 	
+	// QnA Search
+	@Transactional
+	public List<QnA> qnasearch(String searchtitle){
+		return qnARepository.serachtitle(searchtitle);
+	}
 	
 	
 }

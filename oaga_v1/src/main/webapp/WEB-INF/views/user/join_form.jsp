@@ -214,10 +214,9 @@ footer {
 	</div>
 	<!--main-->
 	<script>
-		let token = $("#token").val();
-		let header = $("#header").val();
-
-		let usernameCheck = false;
+	let token = $("#token").val();
+	let header = $("#header").val();
+	let usernameCheck = false;
 		$("#btn-checkId").bind("click", function() {
 			let data = {
 				username : $("#username").val(),
@@ -231,12 +230,14 @@ footer {
 				beforeSend : function(xhr) {
 					xhr.setRequestHeader(header, token)
 				},
+
 				type : "POST",
-				url : "/oaga/api/checkId/",
+				url : "/auth/username-check",
 				data : JSON.stringify(data),
-				contentType : "application/json; charset=utf-8"
+				contentType : "application/json; charset=utf-8",
+				dataType : "json",
 			}).done(function(response) {
-				console.log(response.username);
+				
 				if (response.username != null) {
 					alert("이미 사용중인 아이디 입니다.");
 					usernameCheck = false;

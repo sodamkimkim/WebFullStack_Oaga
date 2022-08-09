@@ -60,5 +60,13 @@ public class QnAController {
 			System.out.println(replyList.get(0).getUser().getUserNickName() + "@@");
 			return "qna/qnareplyupdate_form";
 		}
-
+	// 검색 후 페이지
+	@GetMapping("/qna/search/{title}")
+	public String searchQnA(Model model, @PathVariable String title) {
+		List<QnA> searchQnaList = qnAService.qnasearch(title);
+		System.out.println(searchQnaList + "??????");
+		model.addAttribute("searchQnaList",searchQnaList);
+		return "qna/search_form";
+	}
+	
 }

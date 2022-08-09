@@ -17,6 +17,7 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.JoinColumnOrFormula;
 
@@ -46,8 +47,9 @@ public class QnA {
 	@Column(nullable = false)
 	private String content;
 	
-	@Column(length = 5)
-	private String password;
+	@Column(length = 1)
+    @ColumnDefault("0")
+	private int secretreply;
 	
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "userId")

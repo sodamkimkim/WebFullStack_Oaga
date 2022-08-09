@@ -48,7 +48,6 @@ public class UserApiController {
 
 	@PostMapping("/api/checkId")
 	public User checkUsername(@RequestBody User user) {
-		System.out.println("user: "+ user);
 		return userService.checkUserName(user.getUsername());
 	}
 

@@ -12,7 +12,8 @@ public interface QnARepository extends JpaRepository<QnA, Integer>{
 	@Query(value = "SELECT * FROM qna WHERE id = ?", nativeQuery = true)
 	List<QnA> mFindById(int id);
 	
-	@Query(value = "SELET * FROM qna AS q INNER JOIN qnareply AS r ON q.id = r.qnaid WHERE q.id = ?", nativeQuery = true)
-	List<QnA> mFindReply(int id);
+
 	
+	@Query(value = "SELECT * FROM qna WHERE title LIKE %?%" , nativeQuery = true)
+	List<QnA> serachtitle(String searchtitle);
 }

@@ -26,14 +26,43 @@ let header = $("meta[name='_csrf_header']").attr("content");
 			alert("수정 클릭");
 			this.qnareplyupdate();	
 		});
+		$("#qna-search").bind("click", () =>{
+			this.searchQnA();
+		});
 	},
+	
+	searchQnA : function(){
+		let data = {
+			title : $("#qna-search-title").val(),	
+		}
+
+		$.ajax({
+			
+			beforeSend: function(xhr) {
+                xhr.setRequestHeader(header, token)  
+            },
+			type: "GET",
+			url: `/oaga/qna/search/${data.title}`,
+			
+			contentType: "application/json; charset=utf-8",
+			})
+			.done(function(){
+			alert("성공");
+			location.href = `/oaga/qna/search/${data.title}`;
+			})
+			.fail(function(error){
+				console.log(error);
+			});
+	},
+	
+	
 	
 	qnasave : function(){
 		
 		let data = {
 			title : $("#title").val(),
 			content : $("#content").val(),
-			password : $("#password").val(),
+			secretreply : $("#checkBox").prop("checked") ? 1:0,
 		}
 		$.ajax({
 			
@@ -132,9 +161,8 @@ let header = $("meta[name='_csrf_header']").attr("content");
 			id : $("#replyid").val(),
 			
 		}
-		
-		
-		console.log(data.qnaId + "id");
+
+		console.log(data.qnaId + "id@");
 		$.ajax({
 			beforeSend: function(xhr) {
                 xhr.setRequestHeader(header, token)  
@@ -174,7 +202,8 @@ let header = $("meta[name='_csrf_header']").attr("content");
 			alert("수정 실패!");
 			console.log(error);
 		});
-	}
+	},
+	
 }
 
 
@@ -198,6 +227,7 @@ function viewappendreply(response){
 	
 	let data = response.data;
 	var appendreply = `<c:forEach var="qnAReply"  items="${data[0]}">
+							<input type="hidden" value="${data[0].id}" id="replyid">
 							<div class = "appendreply">
 								<div class = replyuserNickNamediv>
 									<div class = replyuserNickName><p>작성자 :</p></div>
@@ -212,7 +242,7 @@ function viewappendreply(response){
 									
 									<button id="QnA_reply_delete" class="deletebtn" onclick="index.qnareplydelte()">삭제하기</button>
 									<button class="updatebtn" >
-									<a href="/oaga/qnareplyupdateform/${data[0].id}">수정하기</a>
+									<a href="/oaga/qna/qnareplyupdateform/${data[0].id}">수정하기</a>
 									</butotn>
 									
 								</div>
