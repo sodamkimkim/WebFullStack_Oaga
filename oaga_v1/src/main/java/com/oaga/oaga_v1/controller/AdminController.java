@@ -125,9 +125,19 @@ public class AdminController {
 	public String srchRestaurant(String srchtitle, Model model,
 			@PageableDefault(size = 10, sort = "name", direction = Direction.ASC) Pageable pageable) {
 		String searchTitle = srchtitle == null ? "" : srchtitle;
-		model.addAttribute("searchTitle", searchTitle);
 		Page<Restaurant> srchResult = adminService.searchRestaurantByTitle(searchTitle, pageable);
+		int nowPage = srchResult.getPageable().getPageNumber() +1;
+		int startPage = Math.max(nowPage-2, 1);
+		int endPage = Math.min(nowPage+2, srchResult.getTotalPages());
+		ArrayList<Integer> pageNumbers = new ArrayList<>();
+		for(int i = startPage; i<=endPage; i++) {
+			pageNumbers.add(i);
+		}
+		model.addAttribute("searchTitle", searchTitle);
 		model.addAttribute("resultList", srchResult);
+		model.addAttribute("pageNumbers", pageNumbers);
+		
+		
 		return "admin/admin_delete_form";
 	}
 	
@@ -136,6 +146,14 @@ public class AdminController {
 	public String srchGuInfo(String srchtitle,@PageableDefault(size = 10, sort = "name", direction = Direction.DESC)Pageable pageable, Model model) {
 		String searchTitle = srchtitle == null ? "" : srchtitle;
 		Page<GuInfo> playList = adminService.findBySearchTitle(pageable, searchTitle);
+		int nowPage = playList.getPageable().getPageNumber() +1;
+		int startPage = Math.max(nowPage-2, 1);
+		int endPage = Math.min(nowPage+2, playList.getTotalPages());
+		ArrayList<Integer> pageNumbers = new ArrayList<>();
+		for(int i = startPage; i<=endPage; i++) {
+			pageNumbers.add(i);
+		}
+		model.addAttribute("pageNumbers", pageNumbers);
 		model.addAttribute("resultList", playList);
 		return "admin/admin_playDelete_form";
 	}
@@ -187,5 +205,10 @@ public class AdminController {
 		
 		return "redirect:/admin/admin_mainpage";
 	}
+	@GetMapping("/admin/report_management_form")
+	public String reportManagementForm() {
+			return "/admin/admin_reportmanagement_form";
+	}
+	
 // ===================================================================== 수정	 끝
 }

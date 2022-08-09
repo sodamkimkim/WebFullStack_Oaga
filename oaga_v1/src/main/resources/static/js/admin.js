@@ -26,7 +26,7 @@ let index = {
 			}).done(function(data) {
 				if (data.status) {
 					alert("삭제가 완료되었습니다.");
-					location.href = "/oaga/admin/deletepage/";
+					location.href = "/oaga/admin/restaurantDeletepage/";
 				}
 			}).fail(function(error) {
 				alert(" 삭제에 실패하였습니다.")

@@ -152,3 +152,53 @@ a {
 	border: 0px;
 	color: rgba(253, 253, 253, 0.9);
 }
+.pagination{
+	margin-top:30px;
+	text-align: center;
+}
+.pagination .Page-item-active {
+	background-color: rgba(51, 51, 51, 1);
+	color: #fff;
+}
+.pagination li {
+	margin: 0px 10px;
+	line-height: 30px;
+	display: inline-block;
+	height: 30px;
+	width: 50px;
+	text-align: center;
+	border-radius: 5px;
+	color: rgba(51, 51, 51, 1);
+	background-color: rgba(51, 51, 51, 0.3);
+	border: 2px solid transparent;
+}
+
+.disabled {
+	pointer-events: none;
+}
+
+.pagination .Page-item-active {
+	background-color: rgba(51, 51, 51, 1);
+	color: #fff;
+}
+
+.pagination .btnPrv {
+	margin-right: 20px;
+}
+
+.pagination .btnNxt {
+	margin-left: 20px;
+}
+
+.pagination li:hover {
+	background-color: rgba(51, 51, 51, 1);
+	color: #fff;
+}
+.passive{
+		color: rgba(51, 51, 51, 1);
+	background-color: rgba(51, 51, 51, 0.3);
+}
+.pagination>li>a{
+	display: block;
+	width: 100%;
+}
