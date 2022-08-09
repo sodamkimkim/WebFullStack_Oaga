@@ -39,7 +39,9 @@
 				</p>
 				<div class="logged_line">&nbsp;</div>
 				<p class="logged_cnt_box logged_qa">
-					<b>Q&amp;A</b> <span>${principal.user.qna}</span>
+					
+					<b>Q&amp;A</b><span><a href="/oaga/qna/qna_home">${countQnA}</a></span>
+					
 				</p>
 			</div>
 		</div>
