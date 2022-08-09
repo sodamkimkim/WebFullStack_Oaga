@@ -69,4 +69,6 @@ public class QnAController {
 		return "qna/search_form";
 	}
 	
+
+	
 }
