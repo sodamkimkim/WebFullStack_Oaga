@@ -47,7 +47,7 @@
 				<div class="colName col3Name">수정</div>
 				<div style="">
 					<input type="hidden" style="height: 700px;" value="${guinfoList.content}" itemid="${guinfoList}">
-					<div style="background-color: white; border-top:2px solid #333; line-height: 35px;box-sizing: border-box;"id ="guinfoList" >
+					<div style="background-color: white; border-top:2px solid #333; line-height: 35px;box-sizing: border-box;"id ="hotplaceList" >
 						
 					</div>
 

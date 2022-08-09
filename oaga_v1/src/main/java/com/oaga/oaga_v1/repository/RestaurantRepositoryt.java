@@ -32,10 +32,6 @@ public interface RestaurantRepositoryt extends JpaRepository<Restaurant, Integer
 	@Query(value = "SELECT * FROM restaurant WHERE id =?", nativeQuery = true)
 	Restaurant mFindByRestaurantId2(int id);
 	
-	//restaurant name 검색하기
-//	@Query(value = "select * from restaurant where name like '%?%' ", nativeQuery = true)
-//	Page<Restaurant> findAllByNameContaining(String partOfRName, Pageable pageable);
-	
 	Page<Restaurant> findByNameContaining(String partOfRName, Pageable pageable);
 
 	
