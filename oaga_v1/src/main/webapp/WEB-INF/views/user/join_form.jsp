@@ -162,7 +162,8 @@ footer {
 				<a href="/oaga">OaGa</a>
 			</h1>
 			<div class="con">
-				<input type="hidden" id="header" name="_csrf_header" value="${_csrf.headerName}">
+				<input type="hidden" id="header" name="_csrf_header"
+					value="${_csrf.headerName}">
 				<form action="/oaga/auth/joinproc" method="post"
 					onsubmit="return joinCheck()" enctype="multipart/form-data">
 					<!-- csrf???? xss -->
@@ -179,7 +180,11 @@ footer {
 						<button id="btn-checkId" type="button">중복체크</button>
 
 						<input type="password" class="form-input"
-							placeholder="Enter password" id="password" name="password" /> <br />
+							placeholder="Enter password" id="password" name="password" />
+						<input type="password" class="form-input"
+							placeholder="Enter password" id="checkpassword" name="checkpassword" />
+							<br>
+							
 						<input type="text" class="form-input" placeholder="Enter name"
 							id="userNickName" name="userNickName" /> <input type="email"
 							class="form-input" placeholder="Enter email" id="email"
@@ -214,10 +219,10 @@ footer {
 	</div>
 	<!--main-->
 	<script>
-	let token = $("#token").val();
-	let header = $("#header").val();
-	
-	let usernameCheck = false;
+		let token = $("#token").val();
+		let header = $("#header").val();
+
+		let usernameCheck = false;
 		$("#btn-checkId").bind("click", function() {
 			let data = {
 				username : $("#username").val(),

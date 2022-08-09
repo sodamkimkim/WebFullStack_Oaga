@@ -42,8 +42,10 @@ import com.oaga.oaga_v1.dto.KakaoProfile;
 import com.oaga.oaga_v1.dto.KakaoProfile.KakaoAccount;
 import com.oaga.oaga_v1.dto.OAuthToken;
 import com.oaga.oaga_v1.dto.RequestUserProfileDto;
+import com.oaga.oaga_v1.qnaModel.QnA;
 import com.oaga.oaga_v1.reviewModel.Review;
 import com.oaga.oaga_v1.service.FollowService;
+import com.oaga.oaga_v1.service.QnAService;
 import com.oaga.oaga_v1.service.ReviewService;
 import com.oaga.oaga_v1.service.UserService;
 import com.oaga.oaga_v1.userModel.Follow;
@@ -67,7 +69,10 @@ public class UserController {
 
 	@Autowired
 	private RequestUserProfileDto userProfileDto;
-
+	
+	@Autowired
+	private QnAService qnAService;
+	
 	@Autowired
 	ReviewService reviewService;
 	
@@ -132,6 +137,7 @@ public class UserController {
 	//프로필사진, 여행리뷰 작성한거
 	@GetMapping("/mypage_form")
 	public String userInfo(@PageableDefault(size = 6, sort = "createDate", direction=Direction.DESC) Pageable pageable ,Model model, @AuthenticationPrincipal PrincipalDetail detail) {
+		
 		Page<Review> myReviews = reviewService.getMyReviews(pageable, detail.getUser().getId());
 		System.out.println("in UserController, myReviews: " + myReviews.toString());
 		int nowPage = myReviews.getPageable().getPageNumber() +1;
@@ -142,7 +148,11 @@ public class UserController {
 			pageNumbers.add(i);
 		}
 		List<Follow> followList = followService.findByFollowedUser(detail.getUser());
-		System.out.println("followList = " + followList);
+		
+		int countQnA = qnAService.countQna(detail.getUser().getId());
+		System.out.println(countQnA + "dasmdasdsa");
+		model.addAttribute("countQnA",countQnA);
+		
 		model.addAttribute("followList", followList);
 		model.addAttribute("myReviews", myReviews);
 		model.addAttribute("startPage", startPage);

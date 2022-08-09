@@ -1,6 +1,7 @@
 package com.oaga.oaga_v1.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -132,5 +133,11 @@ public class QnAService {
 		return qnARepository.serachtitle(searchtitle);
 	}
 	
+	
+	@Transactional
+	public int countQna(int userId){
+		int result = qnARepository.qnaCount(userId).orElse(null);
+		return result;
+	}
 	
 }
