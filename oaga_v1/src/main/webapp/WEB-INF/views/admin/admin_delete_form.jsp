@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/oaga/css/admin/deleteStyle.css" />
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="../layout/admin_header.jsp"%>
 
 <div class="adD_mWrap">
@@ -56,6 +55,34 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	
+				<ul class="pagination">
+			<li
+				class="page-item btnPrv ${resultList.first ? passive : Page-item-active}"><a
+				class="page-link" href="/oaga/admin/restaurantDeletepage?page=${number-1}">Prv</a></li>
+			<!-- page-item -->
+
+
+			<c:forEach var="num" items="${pageNumbers}">
+				<c:choose>
+					<c:when test="${resultList.number+1 eq num}">
+						<li class="page-item Page-item-active"><a class="page-link"
+							href="/oaga/admin/restaurantDeletepage?page=${num-1}">${num}</a></li>
+						<!-- page-item -->
+					</c:when>
+					<c:otherwise>
+						<li class="page-item passive"><a class="page-link"
+							href="/oaga/admin/restaurantDeletepage?page=${num-1}">${num}</a></li>
+					</c:otherwise>
+				</c:choose>
+			</c:forEach>
+
+			<li
+				class="page-item btnNxt ${resultList.last ? passive : Page-item-active}">
+				<a
+				class="page-link" href="/oaga/admin/restaurantDeletepage?page=${pageable.number+1}">Nxt</a></li>
+			<!-- page-item -->
+		</ul>
 </div>
 <!--adminDelete_mWrap  -->
 

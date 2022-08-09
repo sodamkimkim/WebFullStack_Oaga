@@ -1,0 +1,63 @@
+.reportWrap {
+	width: 1200px;
+	height: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+}
+
+.checkContainer {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.selectBox {
+	border: 1px solid rgba(51, 51, 51, 0.5); display : flex;
+	height: 50px;
+	align-items: center;
+	padding: 0px 10px;
+	display: flex;
+}
+
+.selectBox select, button {
+	height: 30px;
+	background-color: transparent;
+	border: 0px solid transparent;
+}
+
+.replyTrashBox {
+	margin-left: auto;
+	margin-right: 10px;
+}
+
+.checkboxForm {
+	background-color: aqua;
+	
+}
+
+.checkboxForm .checkBtn {
+	width: 20px;
+	height: 20px;
+	margin-right: 20px;
+}
+
+.checkboxForm label {
+	display: flex;
+	align-items: center;
+	padding: 5px 10px;
+}
+
+.replyBox .reportedAt {
+	font-size: 14px;
+	color: rgba(51, 51, 51, 0.5);
+}
+
+.replyBox .replyContent {
+	font-size: 14px;
+	color: rgba(51, 51, 51, 0.9);
+}
+.replyBox .boardTitle {
+	font-size: 14px;
+	color: rgba(51, 51, 51, 0.5);
+}
