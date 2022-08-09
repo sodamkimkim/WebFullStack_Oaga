@@ -50,7 +50,7 @@
 
 <script>
 	function savePage() {
-		location.href = "/oaga/admin/guinfo_save_page";
+		location.href = "/oaga/admin/hotplace_save_page";
 	}
 	function updatePage() {
 		location.href = "/oaga/admin/user"

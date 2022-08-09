@@ -12,7 +12,7 @@
 				href="/oaga/admin/restaurant_save_page"
 				style="width: 120px; height: 35px; font-size: 20px; text-align: center; cursor: pointer;">카페/식당</a>
 			<a type="button" class="btn btn-primary" id="select"
-				href="/oaga/admin/guinfo_save_page"
+				href="/oaga/admin/hotplace_save_page"
 				style="width: 120px; height: 35px; font-size: 20px; text-align: center; cursor: pointer;">놀거리</a>
 		</div>
 		<!-- admin_add_subTitle -->
@@ -39,7 +39,7 @@
 					<div id="areaGu" class = "li_item"></div>
 
 				</div>
-				<form method="post" action="/oaga/api/admin/guinfo/infoSave"
+				<form method="post" action="/oaga/api/admin/hotplace/infoSave"
 					name="t_form" enctype="multipart/form-data">
 					<input type="hidden" name ="${_csrf.parameterName}" value = "${_csrf.token}">
 					<div

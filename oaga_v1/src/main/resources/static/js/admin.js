@@ -126,7 +126,7 @@ function areaGuClick3(id) {
 	});
 
 }
-function addSelectedRestaurant(response) { //guinfo 리스트 뿌리기 
+function addSelectedRestaurant(response) { //hotplace_info 리스트 뿌리기 
 
 	$('#restaurantList').empty();
 
@@ -157,7 +157,7 @@ function addSelectedRestaurant(response) { //guinfo 리스트 뿌리기
 
 }
 
-function restaurantclick(updateId) { // guinfo 리스트 클릭했을때 어펜듬
+function restaurantclick(updateId) { // hotplace 리스트 클릭했을때 어펜듬
 
 	let data = updateId;
 	console.log(data);
@@ -233,7 +233,7 @@ function setRestaurantData(estaurantData) {
 
 // =====================================end restaurant update
 
-// =====================================guinfo update
+// =====================================hotplace update
 function selectList2(selectedId) { // area 선택 시
 
 	let data = selectedId;
@@ -291,7 +291,7 @@ function areaGuClick2(id) {
 	});
 
 }
-function addSelectedHotplace(response) { //guinfo 리스트 뿌리기 
+function addSelectedHotplace(response) { //hotplace 리스트 뿌리기 
 
 	$('#hotplaceList').empty();
 
@@ -300,7 +300,7 @@ function addSelectedHotplace(response) { //guinfo 리스트 뿌리기
 	if (a != 0) {
 		var hotplaceNameList = new Array();
 		for (let i = 0; i < a; i++) {
-			hotplaceNameList[i] = `<c:forEach var="guinfoList" items="${hotplaceName}">
+			hotplaceNameList[i] = `<c:forEach var="hotplaceList" items="${hotplaceName}">
 								<div style="width: 100%; height: 33px;  border-bottom: 2px solid #333;cursor: pointer;"
 								onclick ="hotplaceclick(${hotplaceName[i].id})">
 									${hotplaceName[i].name}
@@ -322,7 +322,7 @@ function addSelectedHotplace(response) { //guinfo 리스트 뿌리기
 
 }
 
-function hotplaceclick(updateId) { // guinfo 리스트 클릭했을때 어펜듬
+function hotplaceclick(updateId) { // hotplace 리스트 클릭했을때 어펜듬
 
 	let data = updateId;
 	console.log(data);
@@ -340,10 +340,10 @@ function hotplaceclick(updateId) { // guinfo 리스트 클릭했을때 어펜듬
 }
 
 
-function setGuinfoData(guinfoData) {
+function setGuinfoData(hotplaceData) {
 	$('#hotplaceList').empty();
 
-	let setData = guinfoData.data;
+	let setData = hotplaceData.data;
 
 
 

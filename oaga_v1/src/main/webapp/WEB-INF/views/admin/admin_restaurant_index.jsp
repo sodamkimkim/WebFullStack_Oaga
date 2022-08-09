@@ -17,9 +17,9 @@
 		<div
 			style="display: flex; justify-content: space-around; margin-top: 50px;">
 
-			<a type="button" class="btn btn-primary" id="select" href="/oaga//admin/restaurant_updatepage"
+			<a type="button" class="btn btn-primary" id="select" href="/oaga/admin/restaurant_save_page"
 				style="width: 120px; height: 35px; font-size: 20px; text-align:center; cursor: pointer;">카페/식당</a>
-			<a type="button" class="btn btn-primary" id="select" href="/oaga/admin/guinfo_save_page"
+			<a type="button" class="btn btn-primary" id="select" href="/oaga/admin/hotplace_save_page"
 				style="width: 120px; height: 35px; font-size: 20px; text-align:center; cursor: pointer;">놀거리</a>
 			
 

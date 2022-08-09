@@ -51,7 +51,7 @@ public class AdminApiController {
 	
 	// ==========================================================
 	@GetMapping("/api/admin/hotplace_update/{areaguid}")
-	public ResponseDto<List<HotPlace>> guinfoUpdateList(@PathVariable int areaguid, Model model){
+	public ResponseDto<List<HotPlace>> hotplaceUpdateList(@PathVariable int areaguid, Model model){
 		
 		List<HotPlace> hotplceList = adminService.findAreaGuId(areaguid);
 
@@ -72,12 +72,12 @@ public class AdminApiController {
 	
 	
 	@GetMapping("/api/admin/hotplace_info/{hotplace}") // 구인포리스트 클릭했을때 어펜드 하기 위해
-	public ResponseDto<List<HotPlace>> guinfoupdatefindid(@PathVariable int hotplace, Model model){
+	public ResponseDto<List<HotPlace>> hotplaceupdatefindid(@PathVariable int hotplace, Model model){
 		
-		List<HotPlace> guinfo_info = adminService.findHotplaceId(hotplace);
-		model.addAttribute("guinfo_info",guinfo_info);
+		List<HotPlace> hotplace_info = adminService.findHotplaceId(hotplace);
+		model.addAttribute("hotplace_info",hotplace_info);
 		
-		return new ResponseDto<>(HttpStatus.OK, guinfo_info);
+		return new ResponseDto<>(HttpStatus.OK, hotplace_info);
 	}
 	
 	@GetMapping("/api/admin/restaurant_info/{restaurant}") // 레스토랑 클릭했을때 어펜드 하기 위해

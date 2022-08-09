@@ -26,7 +26,7 @@
 			style="width: 1100px; height: 190px; display: flex;">
 			<c:forEach var="areaGu" items="${areaGu}">
 				<div style="margin-right: 20px;">
-					<a href="/oaga/travel_guinfo/${areaGu.id}"> ${areaGu.image} </a>
+					<a href="/oaga/travel_hotplace/${areaGu.id}"> ${areaGu.image} </a>
 					<h4>${areaGu.guname}</h4>
 				</div>
 			</c:forEach>
@@ -39,20 +39,20 @@
 		<div class="swiper-wrapper"
 			style="width: 1100px; height: 190px; display: flex;">
 			<c:choose>
-				<c:when test="${empty guinfo}">
+				<c:when test="${empty hotplace}">
 					<p
 						style="font-size: 25px; display: flex; align-items: center; margin-left: 50px;">업데이트중
 						입니다!</p>
 				</c:when>
 				<c:otherwise>
-					<c:forEach var="guinfo" items="${guinfo}">
+					<c:forEach var="hotplace" items="${hotplace}">
 
 						<div style="margin-right: 20px;">
-							<a href="/oaga/travel_detail/gu/${guinfo.id}"> <img alt=""
-								src="http://localhost:9090/oaga/upload/${guinfo.image}"
+							<a href="/oaga/travel_detail/gu/${hotplace.id}"> <img alt=""
+								src="http://localhost:9090/oaga/upload/${hotplace.image}"
 								style="width: 200px; height: 150px; border-radius: 15px;">
 							</a>
-							<p>${guinfo.name}</p>
+							<p>${hotplace.name}</p>
 						</div>
 					</c:forEach>
 				</c:otherwise>

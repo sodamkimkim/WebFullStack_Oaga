@@ -84,11 +84,11 @@ public class AdminController {
 	}
 // ===================================================================
 	
-	@GetMapping("/admin/guinfo_save_page")
+	@GetMapping("/admin/hotplace_save_page")
 	public String adminPage(Model model) {
 		List<Area> area = adminService.areaAll();
 		model.addAttribute("areaList", area);
-		return "admin/admin_guinfo_index";
+		return "admin/admin_hotplace_index";
 	}
 	// 수정 페이지
 
@@ -107,8 +107,8 @@ public class AdminController {
 		return "/admin/restaurant_update";
 	}
 	
-	@PostMapping("/api/admin/guinfo/infoSave")
-	public String guinfoSave(RequestTravelDto dto) {
+	@PostMapping("/api/admin/hotplace/infoSave")
+	public String hotplaceSave(RequestTravelDto dto) {
 		dto.setCategoryType(CategoryType.GUINFO);
 		adminService.saveGuInfo(dto);
 		return "redirect:/admin/admin_mainpage";

@@ -66,8 +66,8 @@ public class AdminService {
 		return guInfoRepository.mFindByAreaGu(areaGuId);
 	}
 
-	public List<HotPlace> findHotplaceId(int guinfoId) {
-		return guInfoRepository.mFindByid(guinfoId);
+	public List<HotPlace> findHotplaceId(int hotplaceId) {
+		return guInfoRepository.mFindByid(hotplaceId);
 	}
 
 	public List<Restaurant> findAreaGuId2(int areaGuId) {
@@ -130,7 +130,7 @@ public class AdminService {
 	@Transactional
 	public void updateGuInfo(RequestUpdateHotplaceDto dto, int id) {
 		
-		HotPlace guinfoEntity = guInfoRepository.mFindByid2(id);
+		HotPlace hotplaceEntity = guInfoRepository.mFindByid2(id);
 
 		UUID uuid = UUID.randomUUID();
 		String imageFileName = uuid.toString() + "." + extracktExt(dto.getFile().getOriginalFilename());
@@ -142,15 +142,15 @@ public class AdminService {
 			e.printStackTrace();
 		}
 	
-			guinfoEntity.getId();
-			guinfoEntity.setName(dto.getName());
-			guinfoEntity.setAddress(dto.getAddress());
-			guinfoEntity.setContent(dto.getContent());
-			guinfoEntity.getAreaGu();
-			guinfoEntity.getCategoryType();
-			guinfoEntity.getCreateDate();
-			guinfoEntity.setImage(newFileName);
-			guinfoEntity.setOriginImageUrl(dto.getOriginImageUrl());
+		hotplaceEntity.getId();
+		hotplaceEntity.setName(dto.getName());
+		hotplaceEntity.setAddress(dto.getAddress());
+		hotplaceEntity.setContent(dto.getContent());
+		hotplaceEntity.getAreaGu();
+		hotplaceEntity.getCategoryType();
+		hotplaceEntity.getCreateDate();
+		hotplaceEntity.setImage(newFileName);
+		hotplaceEntity.setOriginImageUrl(dto.getOriginImageUrl());
 			
 		
 	}

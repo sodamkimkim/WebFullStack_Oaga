@@ -37,7 +37,7 @@ public class TravelInfoController {
 
 
 	// gu에 대한 정보 페이지
-	@GetMapping({ "/travel_guinfo/{areaGu}" })
+	@GetMapping({ "/travel_hotplace/{areaGu}" })
 	public String guInfoList(Model model, @PathVariable int areaGu) {
 		
 		List<AreaGu> guInfoImage = travelInfoService.findByid_image(areaGu);
@@ -82,12 +82,12 @@ public class TravelInfoController {
 		List<Area> areaImageList = travelInfoService.areaImage(id);
 		List<AreaGu> areaGuAllList = travelInfoService.areaGu(id);
 		int areaGuId = travelInfoService.areaImage(id).get(0).getId();
-		List<HotPlace> guinfoAllList = travelInfoService.findByAreaGuId(areaGuId);
+		List<HotPlace> hotplaceAllList = travelInfoService.findByAreaGuId(areaGuId);
 		List<Restaurant> restaurantAllList = travelInfoService.findByGuInfoId(areaGuId);
 
 		model.addAttribute("areaImage", areaImageList);
 		model.addAttribute("areaGu", areaGuAllList);
-		model.addAttribute("guinfo", guinfoAllList);
+		model.addAttribute("hotplace", hotplaceAllList);
 		model.addAttribute("restaurant", restaurantAllList);
 		return "/travelInfo/area_info_form";
 	}
