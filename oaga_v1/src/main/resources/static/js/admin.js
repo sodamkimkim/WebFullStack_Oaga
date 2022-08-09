@@ -38,7 +38,7 @@ let index = {
 }
 index.init();
 
-function deletePlay(guinfoId) {
+function deletePlay(hotplaceId) {
 	var deleteConfirm = confirm("정말로 삭제하시겠습니까?");
 	if (deleteConfirm) {
 		$.ajax({
@@ -46,9 +46,9 @@ function deletePlay(guinfoId) {
 				xhr.setRequestHeader(header, token)
 			},
 			type: "DELETE",
-			url: `/oaga/api/admin/deletePlay/${guinfoId}`,
+			url: `/oaga/api/admin/deletePlay/${hotplaceId}`,
 		}).done(function() {
-			updateDeletePlay(guinfoId);
+			updateDeletePlay(hotplaceId);
 		}).fail(function() {
 			alert("삭제 실패");
 		});
@@ -280,37 +280,37 @@ function areaGuClick2(id) {
 
 	$.ajax({
 		type: "GET",
-		url: `/oaga/api/admin/guinfoupdate/${id}`
+		url: `/oaga/api/admin/hotplace_update/${id}`
 	}).done(function(response) {
-		addSelectedGuInfo(response);
+		addSelectedHotplace(response);
 
 	}).fail(function(error) {
 
 	});
 
 }
-function addSelectedGuInfo(response) { //guinfo 리스트 뿌리기 
+function addSelectedHotplace(response) { //guinfo 리스트 뿌리기 
 
-	$('#guinfoList').empty();
+	$('#hotplaceList').empty();
 
-	var guinfoName = response.data;
-	var a = guinfoName.length;
+	var hotplaceName = response.data;
+	var a = hotplaceName.length;
 	if (a != 0) {
-		var guinfoNameList = new Array();
+		var hotplaceNameList = new Array();
 		for (let i = 0; i < a; i++) {
-			guinfoNameList[i] = `<c:forEach var="guinfoList" items="${guinfoName}">
+			hotplaceNameList[i] = `<c:forEach var="guinfoList" items="${hotplaceName}">
 								<div style="width: 100%; height: 33px;  border-bottom: 2px solid #333;cursor: pointer;"
-								onclick ="guinfoclick(${guinfoName[i].id})">
-									${guinfoName[i].name}
+								onclick ="hotplaceclick(${hotplaceName[i].id})">
+									${hotplaceName[i].name}
 								</div>
 							</c:forEach>`
 		}
 
 
-		$('#guinfoList').append(guinfoNameList);
+		$('#hotplaceList').append(hotplaceNameList);
 	} else if (a == 0) {
 		var error = `<div>데이터가 없습니다.</div>`
-		$('#guinfoList').append(error);
+		$('#hotplaceList').append(error);
 	}
 
 
@@ -320,7 +320,7 @@ function addSelectedGuInfo(response) { //guinfo 리스트 뿌리기
 
 }
 
-function guinfoclick(updateId) { // guinfo 리스트 클릭했을때 어펜듬
+function hotplaceclick(updateId) { // guinfo 리스트 클릭했을때 어펜듬
 
 	let data = updateId;
 	console.log(data);
@@ -328,7 +328,7 @@ function guinfoclick(updateId) { // guinfo 리스트 클릭했을때 어펜듬
 	$.ajax({
 
 		type: "GET",
-		url: `/oaga/api/admin/guinfo_info/${data}`
+		url: `/oaga/api/admin/hotplace_info/${data}`
 	}).done(function(response) {
 		console.log(response);
 		setGuinfoData(response);
@@ -339,17 +339,17 @@ function guinfoclick(updateId) { // guinfo 리스트 클릭했을때 어펜듬
 
 
 function setGuinfoData(guinfoData) {
-	$('#guinfoList').empty();
+	$('#hotplaceList').empty();
 
 	let setData = guinfoData.data;
 
 
 
 
-	var guinfoDataApend = `<br/>
+	var hotplaceDataApend = `<br/>
 						<br/>
 
-						<form action="/oaga/api/admin/guinfo/update/${setData[0].id}"  method="post" enctype="multipart/form-data" >						
+						<form action="/oaga/api/admin/hotplace/update/${setData[0].id}"  method="post" enctype="multipart/form-data" >						
 						<input type="hidden" name ="${tokenName}" value = "${token}">
 						
 						<input type="hidden" id = "areaGuId" name = "areaGuId" value="${setData[0].areaGuId}"> 
@@ -383,8 +383,8 @@ function setGuinfoData(guinfoData) {
 						</div>
 						</form>
 						`
-	console.log(guinfoDataApend);
-	$('#guinfoList').append(guinfoDataApend);
+	
+	$('#hotplaceList').append(hotplaceDataApend);
 
 }
 
@@ -473,7 +473,7 @@ function areaGuClick(id) { // 추가칸에 추가 할 항목에 어느 areaGu인
 
 function addSelectedGuName(response) {
 
-	$('#areaGuName').empty();
+	$('#areaGuName').empty();	
 	var setName = response.data;
 
 	var guName1 = `<input type ="hidden" value ="${setName[0].id}"  id = "areaGuId" name ="areaGuId">

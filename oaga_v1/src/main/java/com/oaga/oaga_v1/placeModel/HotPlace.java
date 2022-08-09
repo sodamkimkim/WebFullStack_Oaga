@@ -30,7 +30,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @Entity
-public class GuInfo {
+public class HotPlace {
 
 	    @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)

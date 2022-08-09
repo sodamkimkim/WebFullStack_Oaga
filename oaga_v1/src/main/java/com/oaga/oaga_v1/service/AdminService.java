@@ -20,12 +20,12 @@ import com.oaga.oaga_v1.dto.RequestUpdateHotplaceDto;
 import com.oaga.oaga_v1.dto.RequestUpdateRestaurantDto;
 import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.placeModel.AreaGu;
-import com.oaga.oaga_v1.placeModel.GuInfo;
+import com.oaga.oaga_v1.placeModel.HotPlace;
 import com.oaga.oaga_v1.placeModel.Restaurant;
 import com.oaga.oaga_v1.repository.AreaRepository;
-import com.oaga.oaga_v1.repository.GuInfoRepository;
+import com.oaga.oaga_v1.repository.HotPlaceRepository;
 import com.oaga.oaga_v1.repository.RestaurantRepositoryt;
-import com.oaga.oaga_v1.repository.TravelInfoRepository;
+import com.oaga.oaga_v1.repository.AreaGuRepository;
 import com.oaga.oaga_v1.repository.UserRepository;
 import com.oaga.oaga_v1.userModel.User;
 
@@ -38,9 +38,9 @@ public class AdminService {
 	@Autowired
 	private AreaRepository areaRepository;
 	@Autowired
-	private TravelInfoRepository travelInfoRepository;
+	private AreaGuRepository travelInfoRepository;
 	@Autowired
-	private GuInfoRepository guInfoRepository;
+	private HotPlaceRepository guInfoRepository;
 
 	@Autowired
 	private RestaurantRepositoryt restaurantRepository;
@@ -62,11 +62,11 @@ public class AdminService {
 		return travelInfoRepository.mAreaGuId(id);
 	}
 
-	public List<GuInfo> findAreaGuId(int areaGuId) {
+	public List<HotPlace> findAreaGuId(int areaGuId) {
 		return guInfoRepository.mFindByAreaGu(areaGuId);
 	}
 
-	public List<GuInfo> findGuinfoId(int guinfoId) {
+	public List<HotPlace> findHotplaceId(int guinfoId) {
 		return guInfoRepository.mFindByid(guinfoId);
 	}
 
@@ -130,7 +130,7 @@ public class AdminService {
 	@Transactional
 	public void updateGuInfo(RequestUpdateHotplaceDto dto, int id) {
 		
-		GuInfo guinfoEntity = guInfoRepository.mFindByid2(id);
+		HotPlace guinfoEntity = guInfoRepository.mFindByid2(id);
 
 		UUID uuid = UUID.randomUUID();
 		String imageFileName = uuid.toString() + "." + extracktExt(dto.getFile().getOriginalFilename());
@@ -184,7 +184,7 @@ public class AdminService {
 	}
 	
 	// 놀거리 검색
-	public Page<GuInfo> findBySearchTitle(Pageable pageable, String searchTitle) {
+	public Page<HotPlace> findBySearchTitle(Pageable pageable, String searchTitle) {
 		return guInfoRepository.findByNameContaining(searchTitle, pageable);
 	}
 	
