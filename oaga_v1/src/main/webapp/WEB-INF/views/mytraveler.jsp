@@ -142,9 +142,7 @@
 								<!--info-->
 
 								<ul class="count">
-									<li class="location">25</li>
-									<li class="view">조회수</li>
-									<li class="copy">27</li>
+									<li class="view">${review.count}</li>
 								</ul>
 								<!--view-->
 							</div> <!--data-->

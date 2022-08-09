@@ -84,11 +84,13 @@
 			</div>
 			<!--box-->
 			<div class="box">
-				<img src="images/mainpage/intro03.jpg" alt="" />
-				<h4>커뮤니티</h4>
-				<p>
-					100만 OaGa유저들과<br /> 자유롭게 소통하세요
-				</p>
+				<a href="/oaga/mytraveler"> <img src="images/mainpage/intro03.jpg" alt="" />
+					<h4>MyTraveler</h4>
+					<p>
+						나와 취향이 비슷한 회원들을 선택하여<br />작성리뷰를 한 눈에 확인하세요.
+					</p>
+				</a>
+
 			</div>
 			<!--box-->
 		</div>
@@ -126,9 +128,7 @@
 							<!--info-->
 
 							<ul class="count">
-								<li class="location">25</li>
 								<li class="view">${reviews.count}</li>
-								<li class="copy">27</li>
 							</ul>
 							<!--view-->
 						</div> <!--data-->
@@ -161,9 +161,7 @@
 							<!--info-->
 
 							<ul class="count">
-								<li class="location">25</li>
 								<li class="view">${reviews.count}</li>
-								<li class="copy">27</li>
 							</ul>
 							<!--view-->
 						</div> <!--data-->

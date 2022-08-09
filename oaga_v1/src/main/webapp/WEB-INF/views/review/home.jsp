@@ -129,9 +129,7 @@
 							<!--info-->
 
 							<ul class="count">
-								<li class="location">25</li>
 								<li class="view">${reviews.count}</li>
-								<li class="copy">27</li>
 							</ul>
 							<!--view-->
 						</div> <!--data-->
@@ -166,9 +164,7 @@
 							<!--info-->
 
 							<ul class="count">
-								<li class="location">25</li>
 								<li class="view">${reviews.count}</li>
-								<li class="copy">27</li>
 							</ul>
 							<!--view-->
 						</div> <!--data-->
