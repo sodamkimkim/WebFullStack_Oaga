@@ -16,11 +16,9 @@
 <div class="qna_row2">
 	<div class="wrap">
 		<p class="tbl_totalcount">
-			
-			
 			<input type="text" class="qnasearch" id="qna-search-title"  name="searchTitle">
 			<button class="qnasearchbtn" id="qna-search" >검색</button>
-			
+			<button class="myQnAbtn" onclick="index.getMyQnAList(${principal.user.id})">내가 쓴 글</button>
 		</p>
 		<br>
 		<table cellspacing="0" cellpadding="20px" id="qna_tbl" class="qna_tbl">
@@ -33,9 +31,10 @@
 					<th class="cN5">등록일</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody class="list-body">
 				<c:forEach var="qnaList" items="${qnaList}" >
-				<tr>
+				<input type="hidden" value="${qnaList.createDate}" id="qnaList-${qnaList.id}">
+				<tr class="list-tr">
 					<td>${qnaList.id}</td>
 					<td class="tbl_contenttitle"><svg class="lock"
 							xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -59,11 +58,9 @@
 								</c:choose>
 								</c:otherwise>
 							</c:choose>
-							
-							
 					<td>${qnaList.qnaType}</td>
 					<td>${qnaList.user.userNickName}</td>
-					<td>${qnaList.createDate}</td>
+					<td>${fn:substring(qnaList.createDate, 0, 10)}</td>
 				</tr>
 				</c:forEach>
 					
@@ -72,9 +69,11 @@
 		<button class="qna_btn"> <a href="/oaga/qna/qnawriteform">질문작성하기</a> </button>
 	</div>
 	<!-- wrap -->
-
 </div>
 <!-- qna_row2 -->
 
 <script src="../js/qna.js"></script>
+<script type="text/javascript">
+
+</script>
 <%@ include file="../layout/footer.jsp"%>

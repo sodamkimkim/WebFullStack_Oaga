@@ -1,5 +1,6 @@
 package com.oaga.oaga_v1.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,12 @@ public class QnAController {
 	@GetMapping("/qna/qna_home")
 	public String qnaForm(Model model) {
 		List<QnA> qnaList = qnAService.qnaList();
+		ArrayList<String> dateList = new ArrayList<>();
+		for(int i = 0; i < qnaList.size(); i++) {
+			dateList.add(i, qnaList.get(i).getCreateDate().toString().substring(0, 10));
+		}
 		model.addAttribute("qnaList",qnaList);
+		model.addAttribute("dateList", dateList);
 		return "qna/qnahome";
 	}
 	@GetMapping("/qna/qnawriteform")

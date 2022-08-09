@@ -135,12 +135,10 @@ function addSelectedRestaurant(response) { //hotplace_info 리스트 뿌리기
 	if (a != 0) {
 		var restaurantNameList = new Array();
 		for (let i = 0; i < a; i++) {
-			restaurantNameList[i] = `<c:forEach var="restaurant" items="${restaurantName}">
-								<div style="width: 100%; height: 30px;border: 1px solid; margin-bottom:5px; cursor: pointer;"
+			restaurantNameList[i] = `<div style="width: 100%; height: 30px;border: 1px solid; margin-bottom:5px; cursor: pointer;"
 								onclick ="restaurantclick(${restaurantName[i].id})">
 									${restaurantName[i].name}
-								</div>
-							</c:forEach>`
+								</div>`
 		}
 
 

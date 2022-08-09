@@ -150,7 +150,7 @@
 						<p>글작성 일 :</p>
 					</div>
 					<div class="adminNickName">
-						<p>${replyList.createDate}</p>
+						<p>${fn:substring(replyList.createDate, 0, 10)}</p>
 					</div>
 				</div>
 				<div style="padding: 10px;">
