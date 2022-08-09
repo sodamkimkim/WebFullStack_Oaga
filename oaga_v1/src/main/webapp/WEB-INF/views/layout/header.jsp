@@ -41,8 +41,8 @@
 						<li><a href="/oaga/mreview">리뷰보기</a></li>
 					</c:otherwise>
 				</c:choose>
-				<li><a href="/oaga/qna/qna_home">Q&A</a></li>
 				<li><a href="/oaga/mytraveler">MyTraveler</a></li>
+				<li><a href="/oaga/qna/qna_home">Q&A</a></li>
 
 			</ul>
 			<!--gnb-->

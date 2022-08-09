@@ -34,7 +34,7 @@
 				</button>
 				<button onclick="deletePage();" class="btn-deleteForm btnForm"
 					id="btn-deleteForm">
-					<p>리뷰 · 댓글 관리</p>
+					<p>Q&A</p>
 					<!-- 					<img class="rightIcon" src="/oaga/images/mainPage/right.png"> -->
 					<div class="arrowBtn">
 						<a href="#"> <i class="fas fa-angle-double-right btn2"></i> <i
@@ -56,7 +56,7 @@
 		location.href = "/oaga/admin/user"
 	}
 	function deletePage() {
-		location.href = "/oaga/admin/deletepage"
+		location.href = "/oaga/qna/qna_home"
 	}
 </script>
 <script src="https://kit.fontawesome.com/01dbce6922.js"
