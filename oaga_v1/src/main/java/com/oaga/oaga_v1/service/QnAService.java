@@ -140,4 +140,10 @@ public class QnAService {
 		return result;
 	}
 	
+	// 나의 QnA 리스트
+	@Transactional
+	public List<QnA> getMyQnAList(int userId) {
+		return qnARepository.findByUserId(userId).orElse(null);
+	}
+	
 }

@@ -74,7 +74,11 @@ public class QnAApiController {
 		return new ResponseDto<>(HttpStatus.OK,1);
 	}
 	
-	
+	// 자신의 qna 리스트 가져오기
+	@GetMapping("/api/qna/mylist/{id}")
+	private ResponseDto<List<QnA>> getMyQnAList(@PathVariable int id) {
+		return new ResponseDto<>(HttpStatus.OK, qnAService.getMyQnAList(id));
+	}
 	
 	
 	

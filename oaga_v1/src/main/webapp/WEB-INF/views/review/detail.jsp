@@ -97,7 +97,7 @@
 						src="http://localhost:9090/oaga/upload/${reply.user.userProfileImgUrl}">
 					<div class="reply_i">
 						<h4 class="reply_u">${reply.user.userNickName}</h4>
-						<h6 class="reply_t"></h6>
+						<h6 class="reply_t">${fn:substring(reply.timestamp, 0, 10)}</h6>
 					</div>
 					<c:if test="${principal.user.id eq reply.user.id}">
 						<button type="button" onclick="index.replyDelete(${reply.id});"
@@ -136,13 +136,6 @@
 
 <script src="../js/review.js"></script>
 <script type="text/javascript">
-
-function replyDate() {
-	let timestamp = $("#date").val();
-	let createDate = timestamp.substr(0,10);
-	$(".reply_t").prepend(createDate);
-}
-replyDate();
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }

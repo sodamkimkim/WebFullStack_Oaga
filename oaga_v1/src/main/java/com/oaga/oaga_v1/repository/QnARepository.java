@@ -20,4 +20,7 @@ public interface QnARepository extends JpaRepository<QnA, Integer>{
 	
 	@Query(value = "SELECT COUNT(*) AS qna FROM qna WHERE userId = ?", nativeQuery = true)
 	Optional<Integer> qnaCount(int userId);
+	
+	Optional<List<QnA>> findByUserId(int userId);
+	
 }
