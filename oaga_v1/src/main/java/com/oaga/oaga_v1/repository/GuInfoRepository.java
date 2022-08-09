@@ -2,6 +2,8 @@ package com.oaga.oaga_v1.repository;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -22,6 +24,8 @@ public interface GuInfoRepository extends JpaRepository<GuInfo, Integer>{
 	
 	@Query(value = "SELECT * FROM guinfo AS g inner join areaGu AS a ON g.areaGuId = a.id WHERE a.area =?", nativeQuery = true)
 	List<GuInfo> mFindByAreaGuId(int areaGu_areaId);
+	
+	Page<GuInfo> findByNameContaining(String searchTitle, Pageable pageable);
 	
 	
 	

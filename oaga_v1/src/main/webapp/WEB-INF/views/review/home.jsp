@@ -205,8 +205,8 @@
 									href="/oaga/userpage_form/${bestuser.id}"> <img
 									src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
 									onerror="this.src='images/reviewPage/profile_basic.png';"
-									class="best_reviewer_profile">
-									<img class="medal-img" src="/oaga/images/reviewPage/medal-1.png">
+									class="best_reviewer_profile" style="cursor: pointer;">
+									<img class="medal-img" src="/oaga/images/reviewPage/medal-${status.index + 1}.png" onerror="this.style.display='none';">
 									<div class="like-Box">
 										<img class="best_reviewer_icon"
 											src="/oaga/images/userPage/heart.png"> <span>&nbsp;${bestuser.likes}</span>

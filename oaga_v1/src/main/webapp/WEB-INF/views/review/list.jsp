@@ -4,7 +4,7 @@
 
 <link rel="canonical"
 	href="https://startbootstrap.com/previews/sb-ui-kit-pro-angular">
-	
+
 <link rel="stylesheet" href="/oaga/css/review/liststyle.css" />
 
 <div class="list-header">
@@ -15,7 +15,17 @@
 					<h1 class="list-header-title">Oaga 사용자들의 자세한 국내 여행지 리뷰</h1>
 					<p class="list-header-text">생생한 경험자들의 여행리뷰를 참고하여 성공적인 여행을 만들 수
 						있어요</p>
-					<a href="/oaga/write"><button class="list-write-btn">나도 리뷰 작성하러 가기</button></a>
+					<a href="/oaga/write"><button class="list-write-btn">나도
+							리뷰 작성하러 가기</button></a>
+					<div class="review_search_area">
+						<form action="/oaga/list/search" method="get">
+							<input type="text" class="review_search_input" name="searchTitle"
+								id="search-review" placeholder="제목으로 검색">
+							<button class="review_btn_search">
+								<img src="/oaga/images/mainpage/icon_search2.png" alt="">
+							</button>
+						</form>
+					</div>
 				</div>
 				<div class="list-header-img-box">
 					<img class="list-header-img" src="/oaga/images/reviewPage/list.png">
@@ -42,7 +52,8 @@
 			<div class="list-body-container">
 				<div>
 					<h6 class="list-body-title">${review.title}</h6>
-					<a href="/oaga/detail/${review.id}" class="list-body-a"><img class="list-body-img"
+					<a href="/oaga/detail/${review.id}" class="list-body-a"><img
+						class="list-body-img"
 						src="http://localhost:9090/oaga/upload/${review.reviewImageUrl}"></a>
 				</div>
 			</div>
@@ -65,10 +76,12 @@
 		<c:forEach var="pageNumber" items="${pageNumbers}">
 			<c:choose>
 				<c:when test="${reviews.number + 1 eq pageNumber}">
-					<li class="page-item active"><a class="page-link" href="/oaga/list?page=${pageNumber -1}">${pageNumber}</a></li>
+					<li class="page-item active"><a class="page-link"
+						href="/oaga/list?page=${pageNumber -1}">${pageNumber}</a></li>
 				</c:when>
 				<c:otherwise>
-					<li class="page-item"><a class="page-link" href="/oaga/list?page=${pageNumber -1}">${pageNumber}</a></li>
+					<li class="page-item"><a class="page-link"
+						href="/oaga/list?page=${pageNumber -1}">${pageNumber}</a></li>
 				</c:otherwise>
 			</c:choose>
 

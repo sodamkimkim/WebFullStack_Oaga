@@ -11,7 +11,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -20,17 +19,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.oaga.oaga_v1.dto.RequestRestaurantDto;
 import com.oaga.oaga_v1.dto.RequestTravelDto;
 import com.oaga.oaga_v1.dto.RequestUpdateHotplaceDto;
 import com.oaga.oaga_v1.dto.RequestUpdateRestaurantDto;
 import com.oaga.oaga_v1.dto.RequestUserProfileDto;
-import com.oaga.oaga_v1.dto.ResponseDto;
 import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.placeModel.CategoryType;
+import com.oaga.oaga_v1.placeModel.GuInfo;
 import com.oaga.oaga_v1.placeModel.Restaurant;
 import com.oaga.oaga_v1.service.AdminService;
 import com.oaga.oaga_v1.service.UserService;
@@ -124,14 +121,41 @@ public class AdminController {
 //	}
 
 	// 삭제할 레스토랑 검색
-	@GetMapping({ "/admin/deletepage", "/admin/srch_deleterestaurant" })
+	@GetMapping({ "/admin/restaurantDeletepage", "/admin/srch/restaurant" })
 	public String srchRestaurant(String srchtitle, Model model,
 			@PageableDefault(size = 10, sort = "name", direction = Direction.ASC) Pageable pageable) {
 		String searchTitle = srchtitle == null ? "" : srchtitle;
-		model.addAttribute("searchTitle", searchTitle);
 		Page<Restaurant> srchResult = adminService.searchRestaurantByTitle(searchTitle, pageable);
-		model.addAttribute("restaurants", srchResult);
+		int nowPage = srchResult.getPageable().getPageNumber() +1;
+		int startPage = Math.max(nowPage-2, 1);
+		int endPage = Math.min(nowPage+2, srchResult.getTotalPages());
+		ArrayList<Integer> pageNumbers = new ArrayList<>();
+		for(int i = startPage; i<=endPage; i++) {
+			pageNumbers.add(i);
+		}
+		model.addAttribute("searchTitle", searchTitle);
+		model.addAttribute("resultList", srchResult);
+		model.addAttribute("pageNumbers", pageNumbers);
+		
+		
 		return "admin/admin_delete_form";
+	}
+	
+	// 삭제할 놀거리 검색
+	@GetMapping("/admin/playDeletepage")
+	public String srchGuInfo(String srchtitle,@PageableDefault(size = 10, sort = "name", direction = Direction.DESC)Pageable pageable, Model model) {
+		String searchTitle = srchtitle == null ? "" : srchtitle;
+		Page<GuInfo> playList = adminService.findBySearchTitle(pageable, searchTitle);
+		int nowPage = playList.getPageable().getPageNumber() +1;
+		int startPage = Math.max(nowPage-2, 1);
+		int endPage = Math.min(nowPage+2, playList.getTotalPages());
+		ArrayList<Integer> pageNumbers = new ArrayList<>();
+		for(int i = startPage; i<=endPage; i++) {
+			pageNumbers.add(i);
+		}
+		model.addAttribute("pageNumbers", pageNumbers);
+		model.addAttribute("resultList", playList);
+		return "admin/admin_playDelete_form";
 	}
 
 	@PostMapping("/admin/restaurant/infoSave")
@@ -163,16 +187,13 @@ public class AdminController {
 		System.out.println("pageNumbers : " + pageNumbers);
 		model.addAttribute("userList", userList);
 		model.addAttribute("pageNumbers", pageNumbers);
-		
 		System.out.println("userList : " + userList);
-		
 		return "admin/admin_delete_user";
 	}
 
 // ===================================================================== 수정
 	@PostMapping("/api/admin/guinfo/update/{id}")// 수정하기
 	public String updateGuInfo(RequestUpdateHotplaceDto dto, @PathVariable int id) {
-		System.out.println("111111111111111111111");
 		adminService.updateGuInfo(dto, id);
 		return "redirect:/admin/admin_mainpage";
 	}

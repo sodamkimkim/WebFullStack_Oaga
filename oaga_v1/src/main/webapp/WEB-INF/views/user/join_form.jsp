@@ -135,7 +135,7 @@ footer {
 	font-weight: bold;
 	color: #fff;
 	font-size: 14px;
-  background-color: rgba(6, 47, 74, 0.95);
+	background-color: rgba(6, 47, 74, 0.95);
 	margin-top: 20px;
 }
 
@@ -162,10 +162,12 @@ footer {
 				<a href="/oaga">OaGa</a>
 			</h1>
 			<div class="con">
+				<input type="hidden" id="header" name="_csrf_header" value="${_csrf.headerName}">
 				<form action="/oaga/auth/joinproc" method="post"
 					onsubmit="return joinCheck()" enctype="multipart/form-data">
 					<!-- csrf???? xss -->
-					<input type="hidden" name = "${_csrf.parameterName}" value="${_csrf.token}">
+					<input id="token" type="hidden" name="${_csrf.parameterName}"
+						value="${_csrf.token}">
 					<div class="formRow1">
 
 						<input type="text" class="form-input" placeholder="Enter ID"
@@ -212,7 +214,9 @@ footer {
 	</div>
 	<!--main-->
 	<script>
-		let usernameCheck = false;
+	let token = $("#token").val();
+	let header = $("#header").val();
+	let usernameCheck = false;
 		$("#btn-checkId").bind("click", function() {
 			let data = {
 				username : $("#username").val(),
@@ -223,12 +227,17 @@ footer {
 				return false;
 			}
 			$.ajax({
+				beforeSend : function(xhr) {
+					xhr.setRequestHeader(header, token)
+				},
+
 				type : "POST",
-				url : "/oaga/api/checkId/",
+				url : "/auth/username-check",
 				data : JSON.stringify(data),
-				contentType : "application/json; charset=utf-8"
+				contentType : "application/json; charset=utf-8",
+				dataType : "json",
 			}).done(function(response) {
-				console.log(response.username);
+				
 				if (response.username != null) {
 					alert("이미 사용중인 아이디 입니다.");
 					usernameCheck = false;
