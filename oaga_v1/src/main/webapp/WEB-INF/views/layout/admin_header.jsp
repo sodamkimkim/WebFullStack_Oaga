@@ -41,7 +41,7 @@
 					<a href="/oaga/admin/user">회원정보 관리</a>
 				</li>
 				<li style="margin-left: 50px;">
-					<a href="/oaga">리뷰 · 댓글 관리</a>
+					<a href="/oaga/qna/qna_home">Q&A</a>
 				</li>
 			</ul>
 			<!--gnb-->

@@ -216,6 +216,7 @@ footer {
 	<script>
 	let token = $("#token").val();
 	let header = $("#header").val();
+	
 	let usernameCheck = false;
 		$("#btn-checkId").bind("click", function() {
 			let data = {
@@ -230,23 +231,23 @@ footer {
 				beforeSend : function(xhr) {
 					xhr.setRequestHeader(header, token)
 				},
-
 				type : "POST",
-				url : "/auth/username-check",
+				url : "/oaga/api/checkId",
 				data : JSON.stringify(data),
-				contentType : "application/json; charset=utf-8",
-				dataType : "json",
+				contentType : "application/json; charset=utf-8"
 			}).done(function(response) {
-				
+				console.log(typeof response);
 				if (response.username != null) {
 					alert("이미 사용중인 아이디 입니다.");
 					usernameCheck = false;
 					return false;
 				} else {
+					console.log(response);
 					alert("사용가능한 아이디 입니다.");
 					usernameCheck = true;
 				}
 			}).fail(function(error) {
+				console.log(error);
 				alert("통신 오류. 다시 시도해주세요.");
 				return false;
 			});

@@ -39,27 +39,31 @@ let index = {
 index.init();
 
 function deletePlay(guinfoId) {
+	var deleteConfirm = confirm("정말로 삭제하시겠습니까?");
+	if (deleteConfirm) {
+		$.ajax({
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader(header, token)
+			},
+			type: "DELETE",
+			url: `/oaga/api/admin/deletePlay/${guinfoId}`,
+		}).done(function() {
+			updateDeletePlay(guinfoId);
+		}).fail(function() {
+			alert("삭제 실패");
+		});
+	}
 
-	$.ajax({
-		beforeSend: function(xhr) {
-			xhr.setRequestHeader(header, token)
-		},
-		type: "DELETE",
-		url: `/oaga/api/admin/deletePlay/${guinfoId}`,
-	}).done(function() {
-		updateDeletePlay(guinfoId);
-	}).fail(function() {
-		alert("삭제 실패");
-	});
 }
 
 function updateDeletePlay(id) {
-	$("#play-delete-btn-" + id).text("삭제완료");
-	$("#play-delete-btn-" + id).css("color", "red");
-	$("#play-delete-btn-" + id).css("pointer-events", "none");
-	
+	/*	$("#play-delete-btn-" + id).text("삭제완료");
+		$("#play-delete-btn-" + id).css("color", "red");
+		$("#play-delete-btn-" + id).css("pointer-events", "none");*/
+	$(".tr-" + id).remove();
+
 }
-// =====================================restaurant update
+
 function selectrestaurantList(selectedId) { // area 선택 시
 
 	let data = selectedId;
@@ -162,7 +166,7 @@ function restaurantclick(updateId) { // guinfo 리스트 클릭했을때 어펜�
 		url: `/oaga/api/admin/restaurant_info/${data}`
 	}).done(function(response) {
 		console.log(response + "dsa,[pdasm,p]");
-		
+
 		setRestaurantData(response);
 	}).fail(function() {
 

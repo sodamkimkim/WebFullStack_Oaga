@@ -44,7 +44,7 @@
 		</thead>
 		<tbody>
 			<c:forEach var="result" items="${resultList.content}">
-				<tr class="adD_srcList_item">
+				<tr class="adD_srcList_item tr-${result.id}">
 					<td id="cl1" class="adD_listColumn adD_listColumn1"><input
 						id="cl1_input" type="hidden" value="${result.name}"
 						class="form-control">${result.name}<nobr></td>
