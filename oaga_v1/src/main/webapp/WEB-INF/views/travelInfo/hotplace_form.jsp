@@ -15,7 +15,7 @@
 <div class = "container">
 <input type="hidden" name ="${_csrf.parameterName}" value = "${_csrf.token}">
 <div style="width: 100%; display: flex; justify-content: center;">
-	<div style="width: 1200px; height: 500px;">
+	<div style="width: 1200px; height: 500px; margin-top: 57px;">
 		<c:forEach var="guInfoImage" items="${guInfoImage}">
 		${guInfoImage.image}
 		</c:forEach>
@@ -46,7 +46,7 @@
 						style="width: auto; height: auto; margin-right: 15px;"> 
 						<img alt="" src="http://localhost:9090/oaga/upload/${guInfoList.image}"		
 						style="width: 200px; height: 150px; border-radius: 1ex; margin-top: 30px;">
-						<h5 style="margin-top: -2px;">${guInfoList.name}</h5>
+						<h5 style="margin-top: 10px;text-align: center;">${guInfoList.name}</h5>
 					</a>
 				</c:forEach>
 				</c:otherwise>
@@ -79,7 +79,7 @@
 		
 							alt="" src="http://localhost:9090/oaga/upload/${restaurantList.image}"
 							style="width: 200px; height: 150px; border-radius: 1ex; margin-top: 30px;">
-							<h5 style="margin-top: -2px;">${restaurantList.name}</h5>
+							<h5 style="margin-top: 10px;text-align: center;">${restaurantList.name}</h5>
 						</a>
 					</c:forEach>
 				</c:otherwise>
