@@ -110,12 +110,14 @@ INSERT INTO area VALUES(17,'전남','<img class="area_img" src="https://cdn.pixa
 
 INSERT INTO areagu VALUES(1,"강남구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2018/10/22/04/05/gangnam-3764454_960_720.jpg">',1);
 INSERT INTO areagu VALUES(2,"마포구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2018/10/07/10/06/sky-3729560_960_720.jpg">',1);
+INSERT INTO areagu VALUES(38,"강북구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2021/09/18/12/47/countryside-6635053_960_720.jpg">',1);
 INSERT INTO areagu VALUES(3,"서구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2021/09/10/16/00/gamcheon-cultural-village-6613543_960_720.jpg">',2);
 INSERT INTO areagu VALUES(4,"해운대구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2018/11/26/08/20/haeundae-beach-3838960_960_720.jpg">',2);
 INSERT INTO areagu VALUES(5,"광안리",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2014/09/14/17/49/bokeh-445213_960_720.jpg">',2);
 INSERT INTO areagu VALUES(6,"기장",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2020/04/15/10/54/busan-5046149_960_720.jpg">',2);
 INSERT INTO areagu VALUES(7,"동구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2020/04/15/10/58/busan-5046161_960_720.jpg">',2);
 INSERT INTO areagu VALUES(8,"서귀포",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2020/02/02/03/41/jeju-island-4811937_960_720.jpg">',4);
+INSERT INTO areagu VALUES(39,"제주시",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2019/05/07/13/28/stone-day-bag-4185981_960_720.jpg">',4);
 INSERT INTO areagu VALUES(9,"애월",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2017/09/14/06/33/jeju-2748095_960_720.jpg">',4);
 INSERT INTO areagu VALUES(10,"동구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2019/12/17/01/37/korea-4700537_960_720.jpg">',3);
 INSERT INTO areagu VALUES(35,"달서구",'<img class="areagu_img" src="https://cdn.pixabay.com/photo/2018/08/23/03/26/south-korea-3625168_960_720.jpg">',3);
