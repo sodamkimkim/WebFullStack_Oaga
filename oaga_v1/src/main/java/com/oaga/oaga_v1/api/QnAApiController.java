@@ -42,7 +42,6 @@ public class QnAApiController {
 	@PostMapping("api/QnA/update/{id}")
 	public ResponseDto<Integer> qnaUpdate(@PathVariable int id,@RequestBody RequestQnADto dto) {
 		qnAService.qnaupdate(dto, id);
-		System.out.println(dto + "디티오@@@");
 		return new ResponseDto<>(HttpStatus.OK,1);
 	}
 	

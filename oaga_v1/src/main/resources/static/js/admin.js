@@ -181,6 +181,7 @@ function setRestaurantData(estaurantData) {
 
 	var restaurantDataApend = `<br/>
 						<br/>
+						<div>
 						<form action="/oaga/api/admin/restaurant/update/${setData[0].id}"  method="post" enctype="multipart/form-data" >						
 						<input type="hidden" name ="${tokenName}" value = "${token}">	
 							
@@ -195,24 +196,27 @@ function setRestaurantData(estaurantData) {
 						<br/>
 						<br/>
 						<label>내용 :</label>
-						<input style="margin-bottom: 20px; height: 35px;"name = "content" id = "setcontent" value = ${setData[0].content}>
+						<textarea style="width: 300px; height: 250px;"name = "content" id = "content" resize: none;>${setData[0].content}</textarea>
+						
 						<br/>
 						<br/>
-						<label class="r_image_label" for="r_image" >파일 선택</label> 						
+						
+						<input class="upload_name" id="r_imageUrl" readonly="readonly" name = "originImageUrl"
+						type = "hidden" value="${setData[0].originImageUrl}">
+						
 						<input type="file"class="r_image_input" id="image" name="file" accept="image/*"
 						required="required"
-						onchange="javascript:document.getElementById('r_imageUrl').value = ${setData[0].image}">
-								
-						<input class="upload_name" id="setimage" name = "image" readonly="readonly"placeholder="${setData[0].image}"">
-						
+						onchange="javascript:document.getElementById('r_imageUrl').value = this.value">
+
 						<div>
-							<button class="btn btn-primary" id="btn-update" type="submit""
-							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">수정</button>
+							<button class="btn btn-primary" id="btn-update" type="submit"
+							style="width: 100px; height: 30px; float: right; margin-top: 30px; margin-right: 15px;">수정</button>
 							
-							<a type="button" class="btn btn-primary" onclick="addSelectedRestaurant(${setData[0].areaGu.id})";
-							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">뒤로가기</a>
+							<a type="button" class="btn btn-primary" onclick="addSelectedGuInfo(${setData[0].areaGu.id})";
+							style="width: 100px; height: 30px; float: right; margin-top: 30px; margin-right: 15px;">뒤로가기</a>
 						</div>
 						</form>
+						</div>
 						`
 
 	$('#restaurantList').append(restaurantDataApend);
@@ -348,23 +352,23 @@ function setGuinfoData(hotplaceData) {
 
 	var hotplaceDataApend = `<br/>
 						<br/>
-
+						<div style = "width : 100%; height: 100%; background-color:white; border-bottom:2px solid #333;">
 						<form action="/oaga/api/admin/hotplace/update/${setData[0].id}"  method="post" enctype="multipart/form-data" >						
 						<input type="hidden" name ="${tokenName}" value = "${token}">
 						
 						<input type="hidden" id = "areaGuId" name = "areaGuId" value="${setData[0].areaGuId}"> 
 						<input type="hidden" id = "categoryType" name = "categoryType" value="${setData[0].categoryType}"> 
 						<label >이름 :</label>
-						<input style="margin-bottom: 20px; height: 35px;" name = "name" id = "name" value = ${setData[0].name}>
+						<input style=" height: 35px;" name = "name" id = "name" value = ${setData[0].name}>
 						<br/>
 						<br/>
 						<label>주소 :</label>
-						<input style="margin-bottom: 20px; height: 35px;"name = "address" id = "address" value = ${setData[0].address}>
+						<input style=" height: 35px;"name = "address" id = "address" value = ${setData[0].address}>
 						<br/>
 						<br/>
 						<label>내용 :</label>
-						<input style="margin-bottom: 20px; height: 35px;"name = "content" id = "content">
-						<div>기존 내용 : ${setData[0].content} </div>
+						<textarea style="width: 300px; height: 250px;"name = "content" id = "content" resize: none;>${setData[0].content}</textarea>
+						
 						<br/>
 						<br/>
 						
@@ -377,12 +381,13 @@ function setGuinfoData(hotplaceData) {
 
 						<div>
 							<button class="btn btn-primary" id="btn-update" type="submit"
-							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">수정</button>
+							style="width: 100px; height: 30px; float: right; margin-top: 30px; margin-right: 15px;">수정</button>
 							
 							<a type="button" class="btn btn-primary" onclick="addSelectedGuInfo(${setData[0].areaGu.id})";
-							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">뒤로가기</a>
+							style="width: 100px; height: 30px; float: right; margin-top: 30px; margin-right: 15px;">뒤로가기</a>
 						</div>
 						</form>
+						</div>
 						`
 	
 	$('#hotplaceList').append(hotplaceDataApend);

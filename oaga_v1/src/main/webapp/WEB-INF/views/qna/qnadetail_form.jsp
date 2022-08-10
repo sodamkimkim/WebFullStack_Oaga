@@ -175,7 +175,7 @@ margin-top: 20px;
 	<div id="appendReply"></div>
 	<c:forEach var="qnadetailList" items="${qnadetailList}" >
 	<c:if test="${principal.user.role eq 'ADMIN' || principal.user.id eq qnadetailList.user.id}">
-	<textarea rows="10" style="width: 100%; resize: none" id="replycontent"></textarea>
+	<textarea rows="10" style="width: 100%; resize: none;" id="replycontent"></textarea>
 	<br>
 	<br>
 	<button class="replyBtn" id="btn-qna-reply-save">작성하기</button>
