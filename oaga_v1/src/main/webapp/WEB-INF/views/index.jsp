@@ -84,7 +84,8 @@
 			</div>
 			<!--box-->
 			<div class="box">
-				<a href="/oaga/mytraveler"> <img src="images/mainpage/intro03.jpg" alt="" />
+				<a href="/oaga/mytraveler"> <img
+					src="images/mainpage/intro03.jpg" alt="" />
 					<h4>MyTraveler</h4>
 					<p>
 						나와 취향이 비슷한 회원들을 선택하여<br />작성리뷰를 한 눈에 확인하세요.
@@ -180,96 +181,111 @@
 <!------------------------------sec3시작--------------------------------------------------------------------------------------------->
 <section class="sec3">
 	<div class="secWrap">
-		<h4>어디로 갈까?</h4>
+		<h4>여름 휴양지 어디로 갈까?</h4>
 		<br />
 		<div class="row1">
 			<div class="box big">
-				<div class="tipImg">
-					<img src="images/mainpage/tip01.jpg" alt="" />
-					<div class="spot_cnt">5</div>
-				</div>
-				<!--tipImg-->
-				<div class="txt">
-					<h5>제주도의 필수 여행지</h5>
-					<p>어디를 가서 무엇을 봐야할지 도저히 감이 잡히지 않는다면, 필수 스팟을 중심으로 둘러보자.</p>
-				</div>
+				<a href="/oaga/travel_hotplace/9">
+					<div class="tipImg">
+						<img src="images/mainpage/tip01.jpg" alt="" />
+						<div class="spot_cnt">5</div>
+					</div> <!--tipImg-->
+
+					<div class="txt">
+						<h5>제주도 애월</h5>
+						<p>어디를 가서 무엇을 봐야할지 도저히 감이 잡히지 않는다면, 필수 스팟을 중심으로 둘러보자.</p>
+					</div>
+				</a>
 				<!--txt-->
 			</div>
 			<!--box-->
 
 			<div class="box">
+				<a href="/oaga/travel_hotplace/4">
 				<div class="tipImg">
 					<img src="images/mainpage/tip02.jpg" alt="" />
 					<div class="spot_cnt">7</div>
 				</div>
 				<!--tipImg-->
 				<div class="txt">
-					<h5>서울 당일치기 여행</h5>
-					<p>짧은 주말, 당일치기로 서울근교 숨겨진 핫플레이스를 여행하자!</p>
+					<h5>부산 해운대</h5>
+					<p>짧은 주말, 당일치기로 부산 숨겨진 핫플레이스를 여행하자!</p>
 				</div>
+				</a>
 				<!--txt-->
 			</div>
 			<!--box-->
 			<div class="box">
+			<a href="/oaga/travel_hotplace/27">
 				<div class="tipImg">
 					<img src="images/mainpage/tip03.jpg" alt="" />
 				</div>
 				<!--tipImg-->
 				<div class="txt">
-					<h5>절대 놓치지 말아야 할 포항의 그곳</h5>
+					<h5>경북 포항</h5>
 					<p>포항하면 가장 먼저 생각날 곳들. 포항에서 이곳을 가지 않고 ...</p>
 				</div>
 				<!--txt-->
+				</a>
 			</div>
+			
 			<!--box-->
 		</div>
 		<!--row1-->
 
 		<div class="row2">
 			<div class="box">
+			
+				<a href="/oaga/travel_hotplace/8">
 				<div class="tipImg">
-					<img src="/oaga/images/mainpage/tip04.jpg" alt="" />
+					<img src="/oaga/images/mainpage/서귀포.jpg" alt="" />
 					<div class="spot_cnt">5</div>
 				</div>
 				<!--tipImg-->
 				<div class="txt">
-					<h5>경주에서의 화려한 밤</h5>
-					<p>경주의 핫플레이스에서 화려한 밤을 보내보세요 제대로 즐길 수...</p>
+					<h5>제주도 서귀포</h5>
+					<p>서귀포의 핫플레이스에서 화려한 밤을 보내보세요 제대로 즐길 수...</p>
 				</div>
 				<!--txt-->
+				</a>
 			</div>
 			<!--box-->
 
 			<div class="box">
+			<a href="/oaga/travel_hotplace/5">
 				<div class="tipImg">
-					<img src="/oaga/images/mainpage/tip05.jpg" alt="" />
+					<img src="/oaga/images/mainpage/광안리.jpg" alt="" />
 					<div class="spot_cnt">5</div>
 				</div>
 				<!--tipImg-->
 				<div class="txt">
-					<h5>야누스처럼 두 개의 얼굴을 가진 부산.</h5>
+					<h5>부산 광안리</h5>
 					<p>가도가도 아직도 못가본 곳이 많은 부산. 한 두개가 아닌 여러 개의 얼굴을...</p>
 				</div>
+				</a>
 				<!--txt-->
 			</div>
 			<!--box-->
 
 			<div class="box big">
+			<a href="/oaga/travel_hotplace/28">
 				<div class="tipImg">
-					<img src="/oaga/images/mainpage/tip06.jpg" alt="" />
+					<img src="/oaga/images/mainpage/경주.jpg" alt="" />
 					<div class="spot_cnt">5</div>
 				</div>
 				<!--tipImg-->
 				<div class="txt">
-					<h5>미식의 도시, 전주</h5>
-					<p>먹거리로 가득한 전주, 어디부터 갈까?</p>
+					<h5>경북 경주</h5>
+					<p>볼거리로 가득한 경주, 어디부터 갈까?</p>
 				</div>
+				</a>
 				<!--txt-->
 			</div>
 			<!--box-->
 		</div>
 		<!--row2-->
-		<div class="more">346개의 여행TIP 모두보기</div>
+		
+		<div class="more"><a href="/oaga/travel_info">여행지 모두보기</a></div>
 	</div>
 	<!--secWrap-->
 </section>
@@ -283,20 +299,20 @@
 		<!---------------------------------row1------------------------------------------->
 		<div class="row1">
 			<div class="box box1">
-				<a href="#">
+				<a href="/oaga/travel/areainfo/2">
 					<div class="cityName">부산</div>
 				</a>
 			</div>
 			<!--box-->
 			<div class="box box2">
-				<a href="#">
+				<a href="/oaga/travel/areainfo/5">
 					<div class="cityName">인천</div>
 				</a>
 			</div>
 			<!--box-->
 			<div class="box box3">
-				<a href="#">
-					<div class="cityName">포항</div>
+				<a href="/oaga/travel/areainfo/14">
+					<div class="cityName">경북</div>
 				</a>
 			</div>
 			<!--box-->
@@ -306,13 +322,13 @@
 		<div class="row2">
 			<div class="col col1">
 				<div class="box box1_1">
-					<a href="#">
+					<a href="/oaga/travel/areainfo/1">
 						<div class="cityName">서울</div>
 					</a>
 				</div>
 				<!--box-->
 				<div class="box box1_2">
-					<a href="#">
+					<a href="/oaga/travel/areainfo/4">
 						<div class="cityName">제주도</div>
 					</a>
 				</div>
@@ -321,14 +337,14 @@
 			<!--col-->
 			<div class="col col2">
 				<div class="box box2_1">
-					<a href="#">
-						<div class="cityName">거제도</div>
+					<a href="/oaga/travel_hotplace/9">
+						<div class="cityName">제주도 애월</div>
 					</a>
 				</div>
 				<!--box-->
 				<div class="box box2_2">
-					<a href="#">
-						<div class="cityName">강원도속초</div>
+					<a href="/oaga/travel_hotplace/2">
+						<div class="cityName">서울 마포구</div>
 					</a>
 				</div>
 				<!--box-->
@@ -336,14 +352,14 @@
 			<!--col-->
 			<div class="col col3">
 				<div class="box box3_1">
-					<a href="#">
-						<div class="cityName">울릉도</div>
+					<a href="/oaga/travel_hotplace/1">
+						<div class="cityName">서울 강남구</div>
 					</a>
 				</div>
 				<!--box-->
 				<div class="box box3_2">
-					<a href="#">
-						<div class="cityName">감천문화마을</div>
+					<a href="/oaga/travel_hotplace/34">
+						<div class="cityName">여수</div>
 					</a>
 				</div>
 				<!--box-->
@@ -351,8 +367,8 @@
 			<!--col-->
 			<div class="col col4">
 				<div class="box high">
-					<a href="#">
-						<div class="cityName">전주</div>
+					<a href="/oaga/travel_hotplace/28">
+						<div class="cityName">경주</div>
 					</a>
 				</div>
 				<!--box-->
