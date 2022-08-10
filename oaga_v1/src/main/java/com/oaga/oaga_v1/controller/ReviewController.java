@@ -141,6 +141,7 @@ public class ReviewController {
 		for(int i = startPage; i <= endPage; i ++) {
 			pageNumbers.add(i);
 		}
+		model.addAttribute("content", title);
 		model.addAttribute("reviews", reviewList);
 		model.addAttribute("pageNumbers", pageNumbers);
 		
