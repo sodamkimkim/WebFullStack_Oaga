@@ -181,8 +181,6 @@ footer {
 
 						<input type="password" class="form-input"
 							placeholder="Enter password" id="password" name="password" />
-						<input type="password" class="form-input"
-							placeholder="Enter password" id="checkpassword" name="checkpassword" />
 							<br>
 							
 						<input type="text" class="form-input" placeholder="Enter name"

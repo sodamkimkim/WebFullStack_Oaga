@@ -76,21 +76,6 @@
 <br />
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h3 style="margin-left: 407px; margin-bottom: -30px;">근처 식당/카페</h3>
 <div class="container"
 	style="width: 100%; height: 200px; display: flex; justify-content: center; margin-top: 45px;">
