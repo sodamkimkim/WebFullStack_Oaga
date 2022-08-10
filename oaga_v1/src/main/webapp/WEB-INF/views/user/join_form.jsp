@@ -181,14 +181,16 @@ footer {
 
 						<input type="password" class="form-input"
 							placeholder="Enter password" id="password" name="password" />
-						<input type="password" class="form-input"
-							placeholder="Enter password" id="checkpassword" name="checkpassword" />
-							<br>
+						
 							
-						<input type="text" class="form-input" placeholder="Enter name"
-							id="userNickName" name="userNickName" /> <input type="email"
-							class="form-input" placeholder="Enter email" id="email"
-							name="email" />
+						
+						
+						
+						
+						<br> <input type="text" class="form-input"
+							placeholder="Enter name" id="userNickName" name="userNickName" />
+						<input type="email" class="form-input" placeholder="Enter email"
+							id="email" name="email" />
 						<div class="userProfileWrap">
 							<label class="lblUserProfileFile" for="userProfileFile">사용자
 								프로필 등록: </label> <input type="file" name="file"

@@ -74,7 +74,7 @@
 							</div>
 
 							<div style="width: 100%; height: 100px; text-align: center;">
-								<input class="upload_name" id="r_imageUrl" readonly="readonly"
+								<input class="upload_name"  id="r_imageUrl" readonly="readonly"
 									placeholder="첨부파일"> <label class="r_image_label"
 									for="r_image">파일 선택</label> <input type="file"
 									class="r_image_input" id="image" name="file" accept="image/*"
