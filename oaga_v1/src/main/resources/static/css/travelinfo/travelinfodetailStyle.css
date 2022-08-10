@@ -1,0 +1,144 @@
+.tvdWrap {
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 57px;
+	padding: 40px;
+}
+
+.tvdtailmainBn {
+	width: 500px;
+	overflow: hidden;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	position: relative;
+}
+
+.tvmainBnImgBox {
+	width: 500px;
+	height: 350px;
+	overflow: hidden;
+	position: relative;
+	top: 0;
+	left: 0;
+	text-align: center;
+	top: 0;
+	left: 0;
+}
+
+.tvmainBnImgBox img {
+	width: 500px;
+	height: 350px;
+}
+
+.hoverFilter {
+	width: 500px;
+	height: 350px;
+	background-color: rgba(0, 0, 0, 0.5);
+	text-align: center;
+	color: rgba(255, 255, 255, 0.6);
+	font-size: 35px;
+	line-height: 350px;
+	position: absolute;
+	z-index: 50;
+	top: 0;
+	left: 0;
+	display: none;
+	transition: all 1s;
+	letter-spacing: 5px;
+}
+
+.tvdWrap:hover .hoverFilter {
+	display: block;
+	transition: all 1s;
+}
+
+.tvdRow1 {
+	margin-top: 40px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.tvdRow1 .left {
+	width: 60%;
+	padding: 30px;
+	box-sizing: border-box;
+}
+
+.tvdRow1 .right {
+	margin-top: 40px; width : 40%;
+	height: 400px;
+	background-color: grey;
+	width: 40%;
+}
+
+
+.tvdRow1 .leftRow1 {
+	width: 100%;
+	border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+	margin-bottom: 20px;
+}
+
+.tvdRow1 .leftRow1 p {
+	text-indent: 10px;
+	font-size: 30px;
+	font-weight: bold;
+	color: rgba(51, 51, 51, 1);
+	letter-spacing: 5px;
+	display: inline-block;
+	line-height: 1.8;
+}
+
+.tvdRow1 .leftRow2 {
+	
+}
+
+table {
+	width: 100%;
+	padding-right: 20px;
+	overflow: hidden;
+	letter-spacing: 1.5px;
+}
+
+table tr {
+	line-height: 2.3;
+}
+
+table .title {
+	color: rgba(51, 51, 51, 0.7);
+	padding-left: 10px;
+	padding-right: 40px;
+	width: 15%;
+	vertical-align: top;
+}
+
+table td {
+	color: rgba(51, 51, 51, 0.95);
+}
+.tvdRow2{
+	width: 100%;
+	margin-top: 100px;
+	padding: 0px 30px;
+
+	
+}
+.tvdRow2 .title {
+	color: rgba(51, 51, 51, 0.9);
+	letter-spacing: 2px;
+	line-height: 2.5;
+	font-size: 20px;
+	text-indent: 10px;
+	border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+	font-weight: bold;
+}
+.tvdSlide img:first-child{
+	margin-left: 20px;
+}
+.tvdSlide p{
+	text-align: center;
+	line-height: 2;
+	color: rgba(51, 51, 51, 0.9);
+	font-weight: bold;
+}
