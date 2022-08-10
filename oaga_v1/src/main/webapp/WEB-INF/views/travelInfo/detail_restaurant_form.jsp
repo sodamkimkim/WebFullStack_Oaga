@@ -5,7 +5,10 @@
 <%@ include file="../layout/header.jsp"%>
 <link rel="stylesheet"
 	href="/oaga/css/travelinfo/travelinfodetailStyle.css" />
-
+	<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 
 
 <div class="tvdWrap">
@@ -76,20 +79,26 @@
 		<p class = "title">근처 식당/카페</p>
 		<div class="container"
 			style="width: 100%; height: 200px; margin-top: 30px;">
-			<div class="container"
+			<div class="swiper-container"
 				style="display: flex; justify-content: flex-start;">
 				<c:forEach var="guRestaurantListAll" items="${guRestaurantListAll}">
-					<div class = "tvdSlide">
+					<div class="swiper-wrapper" style="width: 200px; height: 150px; margin-right: 35px;">
+						<div class="swiper-slide">
 						<a href="/oaga/travel_detail/${guRestaurantListAll.id}"> 
 						<img alt="" src="http://localhost:9090/oaga/upload/${guRestaurantListAll.image}"
 							style="width: 200px; height: 150px; border-radius: 10px; margin-right: 0px;">
 						</a>
-						<p>${guRestaurantListAll.name}</p>
+						<p style="">${guRestaurantListAll.name}</p>
+						</div>
+							
 					</div>
+				
 				</c:forEach>
 			</div>
 		</div>
 	</div>
+	<br/>
+	
 	<!-- tvdRow2 -->
 
 </div>
@@ -97,5 +106,5 @@
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4792461abb659d56ffd7323aa03f73a3"></script>
 <script src="/oaga/js/map.js"></script>
-
+<script src="../js/travelInfo.js"></script>
 <%@ include file="../layout/footer.jsp"%>
