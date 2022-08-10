@@ -11,10 +11,11 @@
 	width: 64px;
 	height: 28px;
 	border: transparent;
-	color: #fff;
+	color: red;
 	margin-bottom: 20px;
 	border-radius: 5px;
-	background-color: red;
+	background-color: #f9bb57;
+	
 	float: right;
 }
 
@@ -24,10 +25,10 @@
 	width: 64px;
 	height: 28px;
 	border: transparent;
-	color: #fff;
+	color: black;
 	margin-bottom: 20px;
 	border-radius: 5px;
-	background-color: green;
+	background-color: #f9bb57;
 	float: right;
 }
 
@@ -38,7 +39,7 @@ margin-top: 20px;
 	width: 64px;
 	height: 28px;
 	border: transparent;
-	color: #fff;
+	color: black;
 	border-radius: 5px;
 	background-color: #f9bb57;
 	float: right;
@@ -158,13 +159,12 @@ margin-top: 20px;
 					<div id="content">${replyList.content}</div>
 					<div style="margin-top: 170px;">
 					
-					<c:if test="${replyList.user.id eq principal.user.id}">
+					<c:if test="${replyList.user.id eq principal.user.id || principal.user.role eq 'ADMIN'}">
 					<button id="QnA_reply_delete" class="deletebtn" onclick="index.qnareplydelte()" >삭제하기</button>
 					<button class="updatebtn" >
 					<a href="/oaga/qna/qnareplyupdateform/${replyList.id}">수정하기</a>
 					</butotn>
 					</c:if>
-					
 					</div>
 				</div>
 			</div>

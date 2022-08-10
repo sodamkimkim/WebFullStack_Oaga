@@ -134,7 +134,6 @@ let index = {
 			data: JSON.stringify(data),
 			contentType: "application/json; charset=utf-8",
 			dataType: "json",
-
 		}).done(function() {
 			alert("수정 성공!");
 			location.href = "/oaga/qna/qna_home";
