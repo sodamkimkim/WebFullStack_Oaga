@@ -82,15 +82,15 @@
 			<div class="swiper-container"
 				style="display: flex; justify-content: flex-start;">
 				<c:forEach var="guRestaurantListAll" items="${guRestaurantListAll}">
-					<div class="swiper-wrapper" style="width: 200px; height: 150px; margin-right: 35px;">
-						<div class="swiper-slide">
+					<div class="swiper-wrapper" style="width: 200px; height: 200px; margin-right: 35px;">
+						<div class="swiper-slide" style="display: block;">
 						<a href="/oaga/travel_detail/${guRestaurantListAll.id}"> 
 						<img alt="" src="http://localhost:9090/oaga/upload/${guRestaurantListAll.image}"
 							style="width: 200px; height: 150px; border-radius: 10px; margin-right: 0px;">
 						</a>
-						<p style="">${guRestaurantListAll.name}</p>
+						<div style="">${guRestaurantListAll.name}</div>
 						</div>
-							
+						
 					</div>
 				
 				</c:forEach>

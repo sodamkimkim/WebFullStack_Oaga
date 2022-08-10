@@ -82,7 +82,7 @@
 				<c:forEach var="restaurantList" items="${restaurantList}">
 						<div style="width: 205px; height: 200px;  margin-right: 35px;" class="swiper-wrapper">
 							<div class="swiper-slide" >
-							<a href="/oaga/travel_detail/gu/${restaurantList.id}"> 
+							<a href="/oaga/travel_detail/${restaurantList.id}"> 
 							<img alt=""	src="http://localhost:9090/oaga/upload/${restaurantList.image}" style="width: 200px; height: 150px; border-radius: 15px;">
 							</a>
 							<p>${restaurantList.name}</p>
