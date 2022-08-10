@@ -41,7 +41,7 @@
 						<div class="place">제목 : </div>
 						<input class="i_place" id="title" name="title"
 							placeholder="제목을 입력하세요">
-						<div style="margin-left: 20px; margin-top: 10px;">비밀글 체크<input style="margin-left: 10px;" type="checkbox" id="checkBox"></div>	
+						<div style="margin-left: 20px; margin-top: 5px;">비밀글 체크<input style="margin-left: 10px;" type="checkbox" id="checkBox"></div>	
 						
 
 					</div>
@@ -73,9 +73,9 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<!-- include summernote css/js -->
 <script src="../js/qna.js"></script>
+<%-- <%@ include file="../layout/footer.jsp"%> --%>
+<%@ include file="../layout/footer.jsp"%>
 </body>
 </html>
 
 
-<%-- <%@ include file="../layout/footer.jsp"%> --%>
-<%@ include file="../layout/footer.jsp"%>
