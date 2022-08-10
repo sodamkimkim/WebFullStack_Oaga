@@ -12,7 +12,7 @@
 	height: 28px;
 	border: transparent;
 	color: #fff;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	border-radius: 5px;
 	background-color: red;
 	float: right;
@@ -25,13 +25,14 @@
 	height: 28px;
 	border: transparent;
 	color: #fff;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	border-radius: 5px;
 	background-color: green;
 	float: right;
 }
 
 .replyBtn {
+margin-top: 20px;
 	cursor: pointer;
 	margin-left: 20px;
 	width: 64px;
