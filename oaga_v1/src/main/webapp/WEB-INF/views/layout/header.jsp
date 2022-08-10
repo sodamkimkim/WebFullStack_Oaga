@@ -43,7 +43,6 @@
 						<li><a href="/oaga/mreview">리뷰보기</a></li>
 					</c:otherwise>
 				</c:choose>
-				<li><a href="/oaga/mytraveler">MyTraveler</a></li>
 				<li><a href="/oaga/qna/qna_home">Q&A</a></li>
 
 			</ul>
@@ -67,6 +66,7 @@
 
 					<c:otherwise>
 						<!-- 로그인된 상태 -->
+				<button class = "headerBtn" style="margin-right: 20px;"><a href="/oaga/mytraveler">MyTraveler</a></button>
 						<button class="headerBtn myPageBtn">
 							<a href="/oaga/mypage_form">MyPage</a>
 						</button>

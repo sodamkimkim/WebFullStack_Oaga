@@ -25,6 +25,7 @@
 		margin-left: auto;
 		margin-right: auto;
 		border: 4px solid rgba(51,51,51,0.3);
+		text-align: center;
 }
 .subtitle span{
 		color: rgba(245, 161, 25, 0.6);

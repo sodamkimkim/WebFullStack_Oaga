@@ -275,9 +275,9 @@ h4 {
 
 .pagination li {
 	margin: 0px 10px;
-	line-height: 40px;
+	line-height: 30px;
 	display: inline-block;
-	height: 40px;
+	height: 30px;
 	width: 50px;
 	text-align: center;
 	border-radius: 5px;
