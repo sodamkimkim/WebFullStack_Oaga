@@ -363,7 +363,8 @@ function setGuinfoData(hotplaceData) {
 						<br/>
 						<br/>
 						<label>내용 :</label>
-						<input style="margin-bottom: 20px; height: 35px;"name = "content" id = "content" value = ${setData[0].content}>
+						<input style="margin-bottom: 20px; height: 35px;"name = "content" id = "content">
+						<div>기존 내용 : ${setData[0].content} </div>
 						<br/>
 						<br/>
 						

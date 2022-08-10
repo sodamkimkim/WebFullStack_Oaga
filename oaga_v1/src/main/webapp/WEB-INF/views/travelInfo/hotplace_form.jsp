@@ -12,12 +12,16 @@
 	height: inherit;
 }
 </style>
+<br>
+<br>
+<br>
 <div class = "container">
 <input type="hidden" name ="${_csrf.parameterName}" value = "${_csrf.token}">
 <div style="width: 100%; display: flex; justify-content: center;">
 	<div style="width: 1200px; height: 500px;">
 		<c:forEach var="guInfoImage" items="${guInfoImage}">
 		${guInfoImage.image}
+		<div style="font-size: 25px; font-weight: bold; margin-left: 565px;">${guInfoImage.guname}</div>
 		</c:forEach>
 	</div>
 </div>

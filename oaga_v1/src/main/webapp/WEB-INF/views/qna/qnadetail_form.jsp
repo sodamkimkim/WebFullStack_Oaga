@@ -88,7 +88,7 @@
 <div class=qnadetail_wrap>
 	<h3>나의 QnA</h3>
 	<div>
-		<p class="subtitle">
+		<p class="subtitle" style="padding: 10px;">
 			<span>OaGa</span> 서비스 이용에 대하여<br /> 궁금한 점이나 문의사항을 등록해주시면 빠른 시간 내에
 			답변해 드리겠습니다.
 		</p>
@@ -174,7 +174,9 @@
 	<div id="appendReply"></div>
 	<c:forEach var="qnadetailList" items="${qnadetailList}" >
 	<c:if test="${principal.user.role eq 'ADMIN' || principal.user.id eq qnadetailList.user.id}">
-	<textarea rows="10" style="width: 100%;" id="replycontent"></textarea>
+	<textarea rows="10" style="width: 100%; resize: none" id="replycontent"></textarea>
+	<br>
+	<br>
 	<button class="replyBtn" id="btn-qna-reply-save">작성하기</button>
 	</c:if>
 	</c:forEach>
