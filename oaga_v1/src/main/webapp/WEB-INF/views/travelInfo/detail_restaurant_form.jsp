@@ -5,7 +5,7 @@
 <%@ include file="../layout/header.jsp"%>
 <link rel="stylesheet"
 	href="/oaga/css/travelinfo/travelinfodetailStyle.css" />
-	<link rel="stylesheet"
+<link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
@@ -76,29 +76,31 @@
 		<!-- tvdRow1 -->
 	</c:forEach>
 	<div class="tvdRow2">
-		<p class = "title">근처 식당/카페</p>
+		<p class="title">근처 식당/카페</p>
 		<div class="container"
 			style="width: 100%; height: 200px; margin-top: 30px;">
 			<div class="swiper-container"
 				style="display: flex; justify-content: flex-start;">
 				<c:forEach var="guRestaurantListAll" items="${guRestaurantListAll}">
-					<div class="swiper-wrapper" style="width: 200px; height: 200px; margin-right: 35px;">
+					<div class="swiper-wrapper"
+						style="width: 200px; height: 200px; margin-right: 35px;">
 						<div class="swiper-slide" style="display: block;">
-						<a href="/oaga/travel_detail/${guRestaurantListAll.id}"> 
-						<img alt="" src="http://localhost:9090/oaga/upload/${guRestaurantListAll.image}"
-							style="width: 200px; height: 150px; border-radius: 10px; margin-right: 0px;">
-						</a>
-						<div style="">${guRestaurantListAll.name}</div>
+							<a href="/oaga/travel_detail/${guRestaurantListAll.id}"> <img
+								alt=""
+								src="http://localhost:9090/oaga/upload/${guRestaurantListAll.image}"
+								style="width: 200px; height: 150px; border-radius: 10px; margin-right: 0px;">
+							</a>
+							<div style="">${guRestaurantListAll.name}</div>
 						</div>
-						
+
 					</div>
-				
+
 				</c:forEach>
 			</div>
 		</div>
 	</div>
-	<br/>
-	
+	<br />
+
 	<!-- tvdRow2 -->
 
 </div>

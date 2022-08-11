@@ -3,8 +3,7 @@ let tokenName = $("meta[name='_csrf']").attr("name");
 let header = $("meta[name='_csrf_header']").attr("content");
 
 let index = {
-	init: function() {
-		$("#adD_listItem_btn").click(function() {
+	deleteRestaurant : function() {
 			var str = "";
 			var tdArr = new Array();
 			var adD_listItem_btn = $(this);
@@ -32,11 +31,8 @@ let index = {
 				alert(" 삭제에 실패하였습니다.")
 
 			});
-		});
-
-	},
+		},
 }
-index.init();
 
 function deletePlay(hotplaceId) {
 	var deleteConfirm = confirm("정말로 삭제하시겠습니까?");
@@ -497,4 +493,3 @@ function xSSCheck(str, level) {
 	}
 	return str;
 }
-
