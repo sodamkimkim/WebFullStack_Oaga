@@ -62,6 +62,7 @@ public class User {
 	@Lob
 	private String userProfileImgUrl;
 
+	@Column(nullable = true)
 	@Lob
 	private String profileOriginImgUrl;
 
