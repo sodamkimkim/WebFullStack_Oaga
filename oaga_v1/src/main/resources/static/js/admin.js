@@ -13,7 +13,6 @@ let index = {
 			var td = tr.children();
 			console.log(td.eq(0).text()); // 레스토랑 이름
 			console.log(td.eq(1).text()); // 레스토랑 주소
-
 			let id = td.eq(1).children().val();
 			console.log(id);
 			$.ajax({
