@@ -52,6 +52,7 @@ function changeUserList(userList) {
 
 	$('#admin-user-tbody').empty();
 	let a = userList.length;
+	
 	console.log(a);
 	if (a != 0) {
 		var userListElement = new Array();
@@ -63,7 +64,7 @@ function changeUserList(userList) {
 									<td>${userList[i].userNickName}</td>
 									<td>${userList[i].email}</td>
 									<td>${userList[i].oauth}</td>
-									<td>${userList[i].createDate}</td>
+									<td>${userList[i].createDate.substr(0, 10)}</td>
 									<td class="td-user-delete" id="td-${userList[i].id}"><button
 											class="user-delete-btn"
 											onclick="index.deleteUser(${userList[i].id});"

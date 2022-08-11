@@ -175,7 +175,7 @@ h1 {
 									<td>${user.userNickName}</td>
 									<td>${user.email}</td>
 									<td>${user.oauth}</td>
-									<td>${user.createDate}</td>
+									<td>${fn:substring(user.createDate, 0, 10)}</td>
 									<td class="td-user-delete" id="td-${user.id}"><button
 											class="user-delete-btn"
 											onclick="index.deleteUser(${user.id});"
