@@ -65,7 +65,6 @@ LEFT JOIN user AS u ON r.userId = u.id
 WHERE u.username = 1;
 
 select * from user where oauth = "kakao";
-
 -- 신규 리뷰 순
 SELECT * FROM review ORDER BY createDate DESC LIMIT 6;
 

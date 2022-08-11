@@ -24,6 +24,8 @@
 				<!--city-->
 			</div>
 		</div>
+		<!--srch2-->
+		<!--words-->
 		
 	</div>
 	<!--srchBox-->
@@ -48,7 +50,7 @@
 						class="form-control">${result.address}<nobr></td>
 
 					<td class="adD_listColumn adD_listColumn3"><button
-							type="button" class="adD_listItem_btn" id="adD_listItem_btn" onclick="index.deleteRestaurant();">삭제
+							class="adD_listItem_btn" id="adD_listItem_btn">삭제
 						</button></td>
 				</tr>
 			</c:forEach>
@@ -60,6 +62,7 @@
 				class="page-item btnPrv ${resultList.first ? passive : Page-item-active}"><a
 				class="page-link" href="/oaga/admin/restaurantDeletepage?page=${number-1}">Prv</a></li>
 			<!-- page-item -->
+
 
 			<c:forEach var="num" items="${pageNumbers}">
 				<c:choose>
