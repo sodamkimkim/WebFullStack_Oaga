@@ -24,8 +24,7 @@
 				<!--city-->
 			</div>
 		</div>
-		<!--srch2-->
-		<!--words-->
+		
 	</div>
 	<!--srchBox-->
 
