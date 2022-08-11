@@ -1,14 +1,19 @@
 package com.oaga.oaga_v1.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.oaga.oaga_v1.repository.FollowRepository;
+import com.oaga.oaga_v1.repository.ReviewRepository;
 import com.oaga.oaga_v1.repository.UserRepository;
+import com.oaga.oaga_v1.reviewModel.Review;
 import com.oaga.oaga_v1.userModel.Follow;
 import com.oaga.oaga_v1.userModel.User;
 
@@ -20,6 +25,9 @@ public class FollowService {
 
 	@Autowired
 	private FollowRepository followRepository;
+	
+	@Autowired
+	private ReviewRepository reviewRepository;
 	
 	// 팔로우 정보를 저장
 	@Transactional
@@ -59,6 +67,7 @@ public class FollowService {
 	}
 	
 	// 팔로우 정보 삭제
+	@Transactional
 	public void deleteByFollowId(int followId, int followedUserId) {
 		User followedUser = userRepository.findById(followedUserId).orElseThrow(() -> {
 			return new IllegalArgumentException("해당 사용자는 찾을 수 없습니다.");
@@ -68,9 +77,23 @@ public class FollowService {
 	}
 	
 	// 자신을 팔로우한 유저 정보를 가져오기
+	@Transactional
 	public List<Follow> findByFollowedUser(User followedUser) {
 		return followRepository.findByFollowedUser(followedUser).orElse(null);
 	}
+	
+	// 내가 팔로우한 유저 정보 가져오기
+	@Transactional
+	public List<Follow> findByFollowingUser(User followingUser) {
+		return followRepository.findByFollowingUser(followingUser).orElse(null);
+	}
+	
+	// 팔로우한 유저의 작성 리뷰 목록 가져오기
+	@Transactional
+	public Page<Review> findByUserIdIn(Pageable pageable, ArrayList<Integer> userIds) {
+		return reviewRepository.findByUserIdIn(pageable, userIds).orElse(null);
+	}
+	
 	
 	
 }

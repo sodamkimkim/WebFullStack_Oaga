@@ -4,7 +4,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.oaga.oaga_v1.placeModel.AreaGu;
 import com.oaga.oaga_v1.placeModel.CategoryType;
-import com.oaga.oaga_v1.placeModel.GuInfo;
+import com.oaga.oaga_v1.placeModel.HotPlace;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,7 +20,7 @@ public class RequestTravelDto {
 	private String name;
 	private String address;
 	private String content;
-
+	private String originImageUrl;
 	private CategoryType categoryType;
 	private AreaGu areaGuId;
 
@@ -30,8 +30,8 @@ public class RequestTravelDto {
 	private MultipartFile file;
 	
 	
-	public GuInfo toEntity(String image) {
-		return GuInfo.builder()
+	public HotPlace toEntity(String image) {
+		return HotPlace.builder()
 				.name(name)
 				.address(address)
 				.content(content)

@@ -1,13 +1,13 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 ﻿<%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 <sec:authorize access="isAuthenticated()">
 	<sec:authentication property="principal" var="principal" />
 </sec:authorize>
-
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -15,6 +15,11 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+<meta name = "${_csrf.parameterName}" content="${_csrf.token}">
+<meta name="_csrf_header" content="${_csrf.headerName}">
+
 <title>OaGa</title>
 <link rel="stylesheet" href="/oaga/css/style.css" />
 <!-- jQuery library -->
@@ -24,11 +29,11 @@
 </head>
 <body>
 	<header>
-		<div class="hWrap">
-			<h1>
+		<div class="oagahWrap">
+			<h1 class = "oagah1">
 				<a href="/oaga">OaGa</a>
 			</h1>
-			<ul class="gnb">
+			<ul class="oagagnb">
 				<li><a href="/oaga/travel_info">여행지정보보기</a></li>
 				<c:choose>
 					<c:when test="${empty principal}">
@@ -38,11 +43,12 @@
 						<li><a href="/oaga/mreview">리뷰보기</a></li>
 					</c:otherwise>
 				</c:choose>
+				<li><a href="/oaga/qna/qna_home">Q&A</a></li>
 
 			</ul>
 			<!--gnb-->
 
-			<div class="util">
+			<div class="oagautil">
 				<!--srch-->
 				<c:choose>
 					<c:when test="${empty principal}">
@@ -60,6 +66,7 @@
 
 					<c:otherwise>
 						<!-- 로그인된 상태 -->
+				<button class = "headerBtn" style="margin-right: 20px;"><a href="/oaga/mytraveler">MyTraveler</a></button>
 						<button class="headerBtn myPageBtn">
 							<a href="/oaga/mypage_form">MyPage</a>
 						</button>

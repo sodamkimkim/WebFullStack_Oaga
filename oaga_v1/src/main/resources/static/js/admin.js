@@ -1,3 +1,6 @@
+let token = $("meta[name='_csrf']").attr("content");
+let tokenName = $("meta[name='_csrf']").attr("name");
+let header = $("meta[name='_csrf_header']").attr("content");
 
 let index = {
 	init: function() {
@@ -5,40 +8,69 @@ let index = {
 			var str = "";
 			var tdArr = new Array();
 			var adD_listItem_btn = $(this);
-			console.log(adD_listItem_btn.text());
 
 			var tr = adD_listItem_btn.parent().parent();
 			var td = tr.children();
 			console.log(td.eq(0).text()); // 레스토랑 이름
 			console.log(td.eq(1).text()); // 레스토랑 주소
-
 			let id = td.eq(1).children().val();
 			console.log(id);
 			$.ajax({
+				beforeSend: function(xhr) {
+					xhr.setRequestHeader(header, token)
+				},
+
 				type: "delete",
 				url: "/oaga/admin/deleterestaurant/" + id,
 			}).done(function(data) {
 				if (data.status) {
 					alert("삭제가 완료되었습니다.");
-					location.href = "/oaga/admin/deletepage/";
+					location.href = "/oaga/admin/restaurantDeletepage/";
 				}
 			}).fail(function(error) {
-				alert("회원정보 수정에 실패하였습니다.")
+				alert(" 삭제에 실패하였습니다.")
 
 			});
 		});
+
 	},
 }
 index.init();
 
-// =====================================restaurant update
+function deletePlay(hotplaceId) {
+	var deleteConfirm = confirm("정말로 삭제하시겠습니까?");
+	if (deleteConfirm) {
+		$.ajax({
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader(header, token)
+			},
+			type: "DELETE",
+			url: `/oaga/api/admin/deletePlay/${hotplaceId}`,
+		}).done(function() {
+			updateDeletePlay(hotplaceId);
+		}).fail(function() {
+			alert("삭제 실패");
+		});
+	}
+
+}
+
+function updateDeletePlay(id) {
+	/*	$("#play-delete-btn-" + id).text("삭제완료");
+		$("#play-delete-btn-" + id).css("color", "red");
+		$("#play-delete-btn-" + id).css("pointer-events", "none");*/
+	$(".tr-" + id).remove();
+
+}
+
 function selectrestaurantList(selectedId) { // area 선택 시
 
 	let data = selectedId;
 	console.log(data.data);
-	
-	
+
+
 	$.ajax({
+
 		type: "GET",
 		url: `/oaga/api/admin/areaId/${data}`
 	}).done(function(response) {
@@ -93,7 +125,7 @@ function areaGuClick3(id) {
 	});
 
 }
-function addSelectedRestaurant(response) { //guinfo 리스트 뿌리기 
+function addSelectedRestaurant(response) { //hotplace_info 리스트 뿌리기 
 
 	$('#restaurantList').empty();
 
@@ -102,12 +134,10 @@ function addSelectedRestaurant(response) { //guinfo 리스트 뿌리기
 	if (a != 0) {
 		var restaurantNameList = new Array();
 		for (let i = 0; i < a; i++) {
-			restaurantNameList[i] = `<c:forEach var="restaurant" items="${restaurantName}">
-								<div style="width: 100%; height: 30px;border: 1px solid; margin-bottom:5px; cursor: pointer;"
+			restaurantNameList[i] = `<div style="width: 100%; height: 30px;border: 1px solid; margin-bottom:5px; cursor: pointer;"
 								onclick ="restaurantclick(${restaurantName[i].id})">
 									${restaurantName[i].name}
-								</div>
-							</c:forEach>`
+								</div>`
 		}
 
 
@@ -124,7 +154,7 @@ function addSelectedRestaurant(response) { //guinfo 리스트 뿌리기
 
 }
 
-function restaurantclick(updateId) { // guinfo 리스트 클릭했을때 어펜듬
+function restaurantclick(updateId) { // hotplace 리스트 클릭했을때 어펜듬
 
 	let data = updateId;
 	console.log(data);
@@ -142,84 +172,59 @@ function restaurantclick(updateId) { // guinfo 리스트 클릭했을때 어펜�
 
 
 function setRestaurantData(estaurantData) {
+
+
 	$('#restaurantList').empty();
 
 	let setData = estaurantData.data;
-	console.log(setData[0].id);
-	var estaurantDataApend = `<br/>
-						<br/>
-						<input type="hidden" id = "getid" value="${setData[0].id}">
-						<input type="hidden" id = "image" value="${setData[0].image}">
-						<input type="hidden" id = "originImageUrl" value="${setData[0].originImageUrl}">
-						<input type="hidden" id = "createDate" value="${setData[0].createDate}">
-						
 
+	var restaurantDataApend = `<br/>
+						<br/>
+						<div>
+						<form action="/oaga/api/admin/restaurant/update/${setData[0].id}"  method="post" enctype="multipart/form-data" >						
+						<input type="hidden" name ="${tokenName}" value = "${token}">	
+							
+						<input type="hidden" id = "areaGuId" name = "areaGuId" value="${setData[0].areaGuId}"> 
+						<input type="hidden" id = "categoryType" name = "categoryType" value="${setData[0].categoryType}"> 
 						<label >이름 :</label>
-						<input style="margin-bottom: 20px; height: 35px;" name = "setname"id = "setname" value = ${setData[0].name}>
+						<input style="margin-bottom: 20px; height: 35px;" name = "name"id = "setname" value = ${setData[0].name}>
 						<br/>
 						<br/>
 						<label>주소 :</label>
-						<input style="margin-bottom: 20px; height: 35px;"name = "setaddress" id = "setaddress" value = ${setData[0].address}>
+						<input style="margin-bottom: 20px; height: 35px;"name = "address" id = "setaddress" value = ${setData[0].address}>
 						<br/>
 						<br/>
 						<label>내용 :</label>
-						<input style="margin-bottom: 20px; height: 35px;"name = "setcontent" id = "setcontent" value = ${setData[0].content}>
+						<textarea style="width: 300px; height: 250px;"name = "content" id = "content" resize: none;>${setData[0].content}</textarea>
+						
 						<br/>
 						<br/>
-						<label class="r_image_label" for="r_image" >파일 선택</label> 						
+						
+						<input class="upload_name" id="r_imageUrl" readonly="readonly" name = "originImageUrl"
+						type = "hidden" value="${setData[0].originImageUrl}">
+						
 						<input type="file"class="r_image_input" id="image" name="file" accept="image/*"
 						required="required"
-						onchange="javascript:document.getElementById('r_imageUrl').value = ${setData[0].image}">
-								
-						<input class="upload_name" id="setimage" name = "setimage" readonly="readonly"placeholder="${setData[0].image}"">
-						
+						onchange="javascript:document.getElementById('r_imageUrl').value = this.value">
+
 						<div>
-							<button class="btn btn-primary" id="btn-update" type="submit" onclick="restaurantupdate(${setData[0].id})"
-							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">수정</button>
+							<button class="btn btn-primary" id="btn-update" type="submit"
+							style="width: 100px; height: 30px; float: right; margin-top: 30px; margin-right: 15px;">수정</button>
 							
-							<a type="button" class="btn btn-primary" onclick="addSelectedRestaurant(${setData[0].areaGu.id})";
-							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">뒤로가기</a>
+							<a type="button" class="btn btn-primary" onclick="addSelectedGuInfo(${setData[0].areaGu.id})";
+							style="width: 100px; height: 30px; float: right; margin-top: 30px; margin-right: 15px;">뒤로가기</a>
 						</div>
-						
+						</form>
+						</div>
 						`
 
-	$('#restaurantList').append(estaurantDataApend);
+	$('#restaurantList').append(restaurantDataApend);
 }
 
 
 
-function restaurantupdate(id) {
-	console.log(id + " @@#@#!#!");
-
-	let data = {
-		id: id,
-		name: $("#setname").val(),
-		address: $("#setaddress").val(),
-		content: $("#setcontent").val(),
-		image: $("#image").val(),
-		originImageUrl: $("#originImageUrl").val(),
-		createDate: $("#createDate").val(),
-
-	}
-	console.log(data);
-	$.ajax({
-		type: "PUT",
-		url: `/oaga/api/admin/restaurant/update/${id}`,
-		data: JSON.stringify(data),
-		contentType: "application/json; charset=utf-8",
-		dataType: "json"
-	}).done(function(data) {
-		if (data.status) {
-			alert("카페/식당 수정이 완료되었습니다.")
-			location.href = "/oaga/admin/admin_mainpage";
-
-		}
-
-	}).fail(function(error) {
 
 
-	});
-}
 
 
 // end of update
@@ -229,7 +234,7 @@ function restaurantupdate(id) {
 
 // =====================================end restaurant update
 
-// =====================================guinfo update
+// =====================================hotplace update
 function selectList2(selectedId) { // area 선택 시
 
 	let data = selectedId;
@@ -278,37 +283,37 @@ function areaGuClick2(id) {
 
 	$.ajax({
 		type: "GET",
-		url: `/oaga/api/admin/guinfoupdate/${id}`
+		url: `/oaga/api/admin/hotplace_update/${id}`
 	}).done(function(response) {
-		addSelectedGuInfo(response);
+		addSelectedHotplace(response);
 
 	}).fail(function(error) {
 
 	});
 
 }
-function addSelectedGuInfo(response) { //guinfo 리스트 뿌리기 
+function addSelectedHotplace(response) { //hotplace 리스트 뿌리기 
 
-	$('#guinfoList').empty();
+	$('#hotplaceList').empty();
 
-	var guinfoName = response.data;
-	var a = guinfoName.length;
+	var hotplaceName = response.data;
+	var a = hotplaceName.length;
 	if (a != 0) {
-		var guinfoNameList = new Array();
+		var hotplaceNameList = new Array();
 		for (let i = 0; i < a; i++) {
-			guinfoNameList[i] = `<c:forEach var="guinfoList" items="${guinfoName}">
+			hotplaceNameList[i] = `<c:forEach var="hotplaceList" items="${hotplaceName}">
 								<div style="width: 100%; height: 33px;  border-bottom: 2px solid #333;cursor: pointer;"
-								onclick ="guinfoclick(${guinfoName[i].id})">
-									${guinfoName[i].name}
+								onclick ="hotplaceclick(${hotplaceName[i].id})">
+									${hotplaceName[i].name}
 								</div>
 							</c:forEach>`
 		}
 
 
-		$('#guinfoList').append(guinfoNameList);
+		$('#hotplaceList').append(hotplaceNameList);
 	} else if (a == 0) {
 		var error = `<div>데이터가 없습니다.</div>`
-		$('#guinfoList').append(error);
+		$('#hotplaceList').append(error);
 	}
 
 
@@ -318,13 +323,15 @@ function addSelectedGuInfo(response) { //guinfo 리스트 뿌리기
 
 }
 
-function guinfoclick(updateId) { // guinfo 리스트 클릭했을때 어펜듬
+function hotplaceclick(updateId) { // hotplace 리스트 클릭했을때 어펜듬
 
 	let data = updateId;
 	console.log(data);
+
 	$.ajax({
+
 		type: "GET",
-		url: `/oaga/api/admin/guinfo_info/${data}`
+		url: `/oaga/api/admin/hotplace_info/${data}`
 	}).done(function(response) {
 		console.log(response);
 		setGuinfoData(response);
@@ -334,87 +341,57 @@ function guinfoclick(updateId) { // guinfo 리스트 클릭했을때 어펜듬
 }
 
 
-function setGuinfoData(guinfoData) {
-	$('#guinfoList').empty();
+function setGuinfoData(hotplaceData) {
+	$('#hotplaceList').empty();
 
-	let setData = guinfoData.data;
-	console.log(setData[0].id);
-	var guinfoDataApend = `<br/>
+	let setData = hotplaceData.data;
+
+
+
+
+	var hotplaceDataApend = `<br/>
 						<br/>
-						<input type="hidden" id = "getid" value="${setData[0].id}">
-						<input type="hidden" id = "image" value="${setData[0].image}">
-						<input type="hidden" id = "originImageUrl" value="${setData[0].originImageUrl}">
-						<input type="hidden" id = "createDate" value="${setData[0].createDate}">
+						<div style = "width : 100%; height: 100%; background-color:white; border-bottom:2px solid #333;">
+						<form action="/oaga/api/admin/hotplace/update/${setData[0].id}"  method="post" enctype="multipart/form-data" >						
+						<input type="hidden" name ="${tokenName}" value = "${token}">
 						
-
+						<input type="hidden" id = "areaGuId" name = "areaGuId" value="${setData[0].areaGuId}"> 
+						<input type="hidden" id = "categoryType" name = "categoryType" value="${setData[0].categoryType}"> 
 						<label >이름 :</label>
-						<input style="margin-bottom: 20px; height: 35px;" name = "setname"id = "setname" value = ${setData[0].name}>
+						<input style=" height: 35px;" name = "name" id = "name" value = ${setData[0].name}>
 						<br/>
 						<br/>
 						<label>주소 :</label>
-						<input style="margin-bottom: 20px; height: 35px;"name = "setaddress" id = "setaddress" value = ${setData[0].address}>
+						<input style=" height: 35px;"name = "address" id = "address" value = ${setData[0].address}>
 						<br/>
 						<br/>
 						<label>내용 :</label>
-						<input style="margin-bottom: 20px; height: 35px;"name = "setcontent" id = "setcontent" value = ${setData[0].content}>
+						<textarea style="width: 300px; height: 250px;"name = "content" id = "content" resize: none;>${setData[0].content}</textarea>
+						
 						<br/>
 						<br/>
-						<label class="r_image_label" for="r_image" >파일 선택</label> 						
+						
+						<input class="upload_name" id="r_imageUrl" readonly="readonly" name = "originImageUrl"
+						type = "hidden" value="${setData[0].originImageUrl}">
+						
 						<input type="file"class="r_image_input" id="image" name="file" accept="image/*"
 						required="required"
-						onchange="javascript:document.getElementById('r_imageUrl').value = ${setData[0].image}">
-								
-						<input class="upload_name" id="setimage" name = "setimage" readonly="readonly"placeholder="${setData[0].image}"">
-						
+						onchange="javascript:document.getElementById('r_imageUrl').value = this.value">
+
 						<div>
-							<button class="btn btn-primary" id="btn-update" type="submit" onclick="update(${setData[0].id})"
-							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">수정</button>
+							<button class="btn btn-primary" id="btn-update" type="submit"
+							style="width: 100px; height: 30px; float: right; margin-top: 30px; margin-right: 15px;">수정</button>
 							
 							<a type="button" class="btn btn-primary" onclick="addSelectedGuInfo(${setData[0].areaGu.id})";
-							style="width: 100px; height: 30px; float: right; margin-top: 80px; margin-right: 15px;">뒤로가기</a>
+							style="width: 100px; height: 30px; float: right; margin-top: 30px; margin-right: 15px;">뒤로가기</a>
 						</div>
-						
+						</form>
+						</div>
 						`
+	
+	$('#hotplaceList').append(hotplaceDataApend);
 
-	$('#guinfoList').append(guinfoDataApend);
 }
-
-
-
-function update(id) {
-	console.log(id + " @@#@#!#!");
-
-	let data = {
-		id: id,
-		name: $("#setname").val(),
-		address: $("#setaddress").val(),
-		content: $("#setcontent").val(),
-		image: $("#image").val(),
-		originImageUrl: $("#originImageUrl").val(),
-		createDate: $("#createDate").val(),
-
-	}
-	console.log(data);
-	$.ajax({
-		type: "PUT",
-		url: `/oaga/api/admin/guinfo/update/${id}`,
-		data: JSON.stringify(data),
-		contentType: "application/json; charset=utf-8",
-		dataType: "json"
-	}).done(function(data) {
-		if (data.status) {
-			alert("놀거리 수정이 완료되었습니다.")
-			location.href = "/oaga/admin/admin_mainpage";
-		}
-
-	}).fail(function(error) {
-
-
-	});
-}
-
-
-// end of update
 
 
 
@@ -501,7 +478,7 @@ function areaGuClick(id) { // 추가칸에 추가 할 항목에 어느 areaGu인
 
 function addSelectedGuName(response) {
 
-	$('#areaGuName').empty();
+	$('#areaGuName').empty();	
 	var setName = response.data;
 
 	var guName1 = `<input type ="hidden" value ="${setName[0].id}"  id = "areaGuId" name ="areaGuId">
@@ -509,3 +486,13 @@ function addSelectedGuName(response) {
 	$('#areaGuName').append(guName1);
 }
 
+
+function xSSCheck(str, level) {
+	if (level == undefined || level == 0) {
+		str = str.replace(/\<|\>|\"|\'|\%|\;|\(|\)|\&|\+|\-/g, "");
+	} else if (level != undefined && level == 1) {
+		str = str.replace(/\</g, "&lt;");
+		str = str.replace(/\>/g, "&gt;");
+	}
+	return str;
+}

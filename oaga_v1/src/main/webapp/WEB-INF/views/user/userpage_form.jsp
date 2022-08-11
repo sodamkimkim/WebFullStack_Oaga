@@ -80,34 +80,35 @@
 				</a></li>
 			</c:forEach>
 		</ul>
-			<ul class="pagination">
-				<li
-					class="page-item btnPrv ${userReviews.first ? passive : Page-item-active}"><a
-					class="page-link"
-					href="/oaga/userpage_form/${user.id}?page=${pageable.number-1}">Prv</a></li>
-				<!-- page-item -->
+		<ul class="pagination">
+			<c:set var="isDisabled" value="disabled"></c:set>
+			<c:set var="isNotdisabled" value=""></c:set>
+			<c:set var="isNowPage" value="active"></c:set>
+			<li
+				class="page-item btnPrv ${userReviews.first ? isDisabled : isNotdisabled}"><a
+				class="page-link"
+				href="/oaga/userpage_form/${user.id}?page=${pageable.number-1}">Prv</a></li>
+			<!-- page-item -->
 
 
-				<c:forEach var="num" items="${pageNumbers}">
-					<c:choose>
-						<c:when test="${userReviews.number+1 eq num}">
-							<li class="page-item Page-item-active"><a class="page-link"
-								href="/oaga/userpage_form/1?page=${num-1}">${num}</a></li>
-							<!-- page-item -->
-						</c:when>
-						<c:otherwise>
-							<li class="page-item"><a class="page-link"
-								href="/oaga/userpage_form/1?page=${num-1}">${num}</a></li>
-						</c:otherwise>
-					</c:choose>
-				</c:forEach>
-
-				<li
-					class="page-item btnNxt ${userReviews.last ? passive : Page-item-active}"><a
-					class="page-link"
-					href="/oaga/userpage_form/${user.id}?page=${pageable.number+1}">Nxt</a></li>
-			</ul>
-
+			<c:forEach var="num" items="${pageNumbers}">
+				<c:choose>
+					<c:when test="${userReviews.number+1 eq num}">
+						<li class="page-item Page-item-active"><a class="page-link"
+							href="/oaga/userpage_form/${user.id}?page=${num-1}">${num}</a></li>
+						<!-- page-item -->
+					</c:when>
+					<c:otherwise>
+						<li class="page-item"><a class="page-link"
+							href="/oaga/userpage_form/${user.id}?page=${num-1}">${num}</a></li>
+					</c:otherwise>
+				</c:choose>
+			</c:forEach>
+			<li
+				class="page-item btnNxt ${userReviews.last ? isDisabled : isNotdisabled}"><a
+				class="page-link"
+				href="/oaga/userpage_form/${user.id}?page=${pageable.number+1}">Nxt</a></li>
+		</ul>
 	</section>
 
 </div>

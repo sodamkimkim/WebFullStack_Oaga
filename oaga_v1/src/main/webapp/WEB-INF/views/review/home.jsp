@@ -20,6 +20,7 @@
 		</p>
 		<div class="review_search_area">
 			<form action="/oaga/list/search" method="get">
+			
 				<input type="text" class="review_search_input" name="searchTitle"
 					id="search-review" placeholder="제목으로 검색">
 				<button class="review_btn_search">
@@ -51,7 +52,7 @@
 								<b>내가 작성한 리뷰</b> <span>${reviewCount}</span>
 							</a>
 							<div class="logged_line">&nbsp;</div>
-							<a id="likes_btn" class="logged_cnt_box logged_plan"> <b>좋아요</b>
+							<a href="/oaga/mypage_form" id="likes_btn" class="logged_cnt_box logged_plan"> <b>좋아요</b>
 								<span>${principal.user.likes}</span>
 							</a>
 							<!-- 모달 띄우기 -->
@@ -128,9 +129,7 @@
 							<!--info-->
 
 							<ul class="count">
-								<li class="location">25</li>
 								<li class="view">${reviews.count}</li>
-								<li class="copy">27</li>
 							</ul>
 							<!--view-->
 						</div> <!--data-->
@@ -165,9 +164,7 @@
 							<!--info-->
 
 							<ul class="count">
-								<li class="location">25</li>
 								<li class="view">${reviews.count}</li>
-								<li class="copy">27</li>
 							</ul>
 							<!--view-->
 						</div> <!--data-->
@@ -178,9 +175,9 @@
 		</div>
 		<!--row2-->
 
-		<div class="review_more more">
-			<a href="/oaga/list">여행리뷰 모두보기</a>
-		</div>
+		<a href="/oaga/list">
+			<div class="review_more more" style="cursor: pointer;">여행리뷰 모두보기</div>
+		</a>
 	</div>
 	<!--secWrap-->
 </section>
@@ -189,14 +186,14 @@
 <!-- 베스트 리뷰어 section 시작 -->
 <section class="sec_reviewer">
 	<div class="div_reviewer">
-		<h3 class="best_reviewer_title">이번 달 베스트 리뷰어</h3>
+		<h3 class="best_reviewer_title">베스트 리뷰어</h3>
 		<p
 			style="font-size: 16px; text-align: center; color: #666; margin-bottom: 30px; line-height: 1;">좋아요를
 			가장 많이 받은 베스트 리뷰어들</p>
 		<div class="best_reviewer_box">
 			<div style="display: flex; margin: 0 auto;">
 
-				<c:forEach var="bestuser" items="${bestUser}">
+				<c:forEach var="bestuser" items="${bestUser}" varStatus="status">
 					<div class="box" style="display: flex;">
 						<c:choose>
 							<c:when test="${empty principal}">
@@ -204,7 +201,8 @@
 									href="/oaga/userpage_form/${bestuser.id}"> <img
 									src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
 									onerror="this.src='images/reviewPage/profile_basic.png';"
-									class="best_reviewer_profile">
+									class="best_reviewer_profile" style="cursor: pointer;">
+									<img class="medal-img" src="/oaga/images/reviewPage/medal-${status.index + 1}.png" onerror="this.style.display='none';">
 									<div class="like-Box">
 										<img class="best_reviewer_icon"
 											src="/oaga/images/userPage/heart.png"> <span>&nbsp;${bestuser.likes}</span>
@@ -217,7 +215,8 @@
 									type="hidden" value="${principal.user.id}" id="myId"> <img
 									src="http://localhost:9090/oaga/upload/${bestuser.userProfileImgUrl}"
 									onerror="this.src='images/reviewPage/profile_basic.png';"
-									class="best_reviewer_profile">
+									class="best_reviewer_profile" style="cursor: pointer;">
+									<img class="medal-img" src="/oaga/images/reviewPage/medal-${status.index + 1}.png" onerror="this.style.display='none';">
 									<div class="like-Box">
 										<img class="best_reviewer_icon"
 											src="/oaga/images/userPage/heart.png"> <span>&nbsp;${bestuser.likes}</span>

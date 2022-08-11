@@ -135,7 +135,7 @@ footer {
 	font-weight: bold;
 	color: #fff;
 	font-size: 14px;
-  background-color: rgba(6, 47, 74, 0.95);
+	background-color: rgba(6, 47, 74, 0.95);
 	margin-top: 20px;
 }
 
@@ -162,9 +162,13 @@ footer {
 				<a href="/oaga">OaGa</a>
 			</h1>
 			<div class="con">
+				<input type="hidden" id="header" name="_csrf_header"
+					value="${_csrf.headerName}">
 				<form action="/oaga/auth/joinproc" method="post"
 					onsubmit="return joinCheck()" enctype="multipart/form-data">
 					<!-- csrf???? xss -->
+					<input id="token" type="hidden" name="${_csrf.parameterName}"
+						value="${_csrf.token}">
 					<div class="formRow1">
 
 						<input type="text" class="form-input" placeholder="Enter ID"
@@ -176,11 +180,17 @@ footer {
 						<button id="btn-checkId" type="button">중복체크</button>
 
 						<input type="password" class="form-input"
-							placeholder="Enter password" id="password" name="password" /> <br />
-						<input type="text" class="form-input" placeholder="Enter name"
-							id="userNickName" name="userNickName" /> <input type="email"
-							class="form-input" placeholder="Enter email" id="email"
-							name="email" />
+							placeholder="Enter password" id="password" name="password" />
+
+							
+						
+						
+						
+						
+						<br> <input type="text" class="form-input"
+							placeholder="Enter name" id="userNickName" name="userNickName" />
+						<input type="email" class="form-input" placeholder="Enter email"
+							id="email" name="email" />
 						<div class="userProfileWrap">
 							<label class="lblUserProfileFile" for="userProfileFile">사용자
 								프로필 등록: </label> <input type="file" name="file"
@@ -211,6 +221,9 @@ footer {
 	</div>
 	<!--main-->
 	<script>
+		let token = $("#token").val();
+		let header = $("#header").val();
+
 		let usernameCheck = false;
 		$("#btn-checkId").bind("click", function() {
 			let data = {
@@ -222,21 +235,26 @@ footer {
 				return false;
 			}
 			$.ajax({
+				beforeSend : function(xhr) {
+					xhr.setRequestHeader(header, token)
+				},
 				type : "POST",
-				url : "/oaga/api/checkId/",
+				url : "/oaga/api/checkId",
 				data : JSON.stringify(data),
 				contentType : "application/json; charset=utf-8"
 			}).done(function(response) {
-				console.log(response.username);
+				console.log(typeof response);
 				if (response.username != null) {
 					alert("이미 사용중인 아이디 입니다.");
 					usernameCheck = false;
 					return false;
 				} else {
+					console.log(response);
 					alert("사용가능한 아이디 입니다.");
 					usernameCheck = true;
 				}
 			}).fail(function(error) {
+				console.log(error);
 				alert("통신 오류. 다시 시도해주세요.");
 				return false;
 			});

@@ -16,14 +16,18 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.oaga.oaga_v1.dto.RequestRestaurantDto;
 import com.oaga.oaga_v1.dto.RequestTravelDto;
+import com.oaga.oaga_v1.dto.RequestUpdateHotplaceDto;
+import com.oaga.oaga_v1.dto.RequestUpdateRestaurantDto;
 import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.placeModel.AreaGu;
-import com.oaga.oaga_v1.placeModel.GuInfo;
+import com.oaga.oaga_v1.placeModel.HotPlace;
 import com.oaga.oaga_v1.placeModel.Restaurant;
 import com.oaga.oaga_v1.repository.AreaRepository;
-import com.oaga.oaga_v1.repository.GuInfoRepository;
+import com.oaga.oaga_v1.repository.HotPlaceRepository;
 import com.oaga.oaga_v1.repository.RestaurantRepositoryt;
-import com.oaga.oaga_v1.repository.TravelInfoRepository;
+import com.oaga.oaga_v1.repository.AreaGuRepository;
+import com.oaga.oaga_v1.repository.UserRepository;
+import com.oaga.oaga_v1.userModel.User;
 
 @Service
 public class AdminService {
@@ -34,12 +38,15 @@ public class AdminService {
 	@Autowired
 	private AreaRepository areaRepository;
 	@Autowired
-	private TravelInfoRepository travelInfoRepository;
+	private AreaGuRepository travelInfoRepository;
 	@Autowired
-	private GuInfoRepository guInfoRepository;
+	private HotPlaceRepository guInfoRepository;
 
 	@Autowired
 	private RestaurantRepositoryt restaurantRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
 
 	@Transactional
 	public List<Area> areaAll() {
@@ -55,12 +62,12 @@ public class AdminService {
 		return travelInfoRepository.mAreaGuId(id);
 	}
 
-	public List<GuInfo> findAreaGuId(int areaGuId) {
+	public List<HotPlace> findAreaGuId(int areaGuId) {
 		return guInfoRepository.mFindByAreaGu(areaGuId);
 	}
 
-	public List<GuInfo> findGuinfoId(int guinfoId) {
-		return guInfoRepository.mFindByid(guinfoId);
+	public List<HotPlace> findHotplaceId(int hotplaceId) {
+		return guInfoRepository.mFindByid(hotplaceId);
 	}
 
 	public List<Restaurant> findAreaGuId2(int areaGuId) {
@@ -121,51 +128,86 @@ public class AdminService {
 	}
 
 	@Transactional
-	public void updateGuInfo(GuInfo guInfo, int id) {
+	public void updateGuInfo(RequestUpdateHotplaceDto dto, int id) {
+		
+		HotPlace hotplaceEntity = guInfoRepository.mFindByid2(id);
 
-		GuInfo guinfoEntity = guInfoRepository.mFindByid2(id);
-
-		System.out.println(guinfoEntity + "guinfoEntityguinfoEntity");
-
+		UUID uuid = UUID.randomUUID();
+		String imageFileName = uuid.toString() + "." + extracktExt(dto.getFile().getOriginalFilename());
+		String newFileName = (imageFileName.trim()).replaceAll("\\s", "");
+		Path imageFilePath = Paths.get(uploadFolder + newFileName);
 		try {
-			guinfoEntity.getId();
-			guinfoEntity.setName(guInfo.getName());
-			guinfoEntity.setAddress(guInfo.getAddress());
-			guinfoEntity.setContent(guInfo.getContent());
-			guinfoEntity.getAreaGu();
-			guinfoEntity.getCategoryType();
-			guinfoEntity.getCreateDate();
-			guinfoEntity.setOriginImageUrl(guInfo.getOriginImageUrl());
-			guinfoEntity.setImage(guInfo.getImage());
-			System.out.println("여기는????");
-		} catch (Exception e) {
+			Files.write(imageFilePath, dto.getFile().getBytes());
+		} catch (IOException e) {
 			e.printStackTrace();
-
 		}
+	
+		hotplaceEntity.getId();
+		hotplaceEntity.setName(dto.getName());
+		hotplaceEntity.setAddress(dto.getAddress());
+		hotplaceEntity.setContent(dto.getContent());
+		hotplaceEntity.getAreaGu();
+		hotplaceEntity.getCategoryType();
+		hotplaceEntity.getCreateDate();
+		hotplaceEntity.setImage(newFileName);
+		hotplaceEntity.setOriginImageUrl(dto.getOriginImageUrl());
+			
+		
 	}
 
 	@Transactional
-	public void updateRestaurant(Restaurant restaurant, int id) {
+	public void updateRestaurant(RequestUpdateRestaurantDto dto, int id) {
 
 		Restaurant restaurantEntity = restaurantRepository.mFindByRestaurantId2(id);
 
-		System.out.println(restaurantEntity + "guinfoEntityguinfoEntity");
 		
+		UUID uuid = UUID.randomUUID();
+		String imageFileName = uuid.toString() + "." + extracktExt(dto.getFile().getOriginalFilename());
+		String newFileName = (imageFileName.trim()).replaceAll("\\s", "");
+		Path imageFilePath = Paths.get(uploadFolder + newFileName);
 		try {
+			Files.write(imageFilePath, dto.getFile().getBytes());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+			
 			restaurantEntity.getId();
-			restaurantEntity.setName(restaurant.getName());
-			restaurantEntity.setAddress(restaurant.getAddress());
-			restaurantEntity.setContent(restaurant.getContent());
+			restaurantEntity.setName(dto.getName());
+			restaurantEntity.setAddress(dto.getAddress());
+			restaurantEntity.setContent(dto.getContent());
 			restaurantEntity.getAreaGu();
 			restaurantEntity.getCategoryType();
 			restaurantEntity.getCreateDate();
-			restaurantEntity.setOriginImageUrl(restaurant.getOriginImageUrl());
-			restaurantEntity.setImage(restaurant.getImage());
+			restaurantEntity.setOriginImageUrl(dto.getOriginImageUrl());
+			restaurantEntity.setImage(newFileName);
 
-		} catch (Exception e) {
-			e.printStackTrace();
-
-		}
 	}
-
+	
+	// 놀거리 검색
+	public Page<HotPlace> findBySearchTitle(Pageable pageable, String searchTitle) {
+		return guInfoRepository.findByNameContaining(searchTitle, pageable);
+	}
+	
+	// 회원정보 검색
+	@Transactional(readOnly = true)
+	public Page<User> searchUser(String searchName, Pageable pageable) {
+		return userRepository.findByUserNickName(pageable, searchName);
+	}
+	
+	// 회원 삭제
+	@Transactional
+	public void deleteUser(int userId) {
+		userRepository.deleteById(userId);
+	}
+	
+	// oauth별로 조회
+	public Page<User> findByUserOauth(Pageable pageable ,String oauth) {
+		return userRepository.findByOauth(pageable, oauth);
+	}
+	
+	// 놀거리 삭제
+	@Transactional
+	public void deletePlay(int id) {
+		guInfoRepository.deleteById(id);
+	}
 }

@@ -24,7 +24,8 @@
 
 <input type="hidden" id="home">
 <div class="travelInfo-main-container"
-	style="width: 100%; margin-top: 57px;">
+	style="width: 100%; margin-top: 57px;overflow: hidden;">
+	<input type="hidden" name ="${_csrf.parameterName}" value = "${_csrf.token}">
 	<div class="travelInfo_header">
 		<div class="travelInfo_header_filter">
 			<div class=travelInfo_hWrap>
@@ -78,7 +79,7 @@
 
 						<div class="swiper-slide" style="display: flex;">
 							<div class="travleInfo_element">
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>
@@ -103,7 +104,7 @@
 						style="width: 200px; height: 200px; margin-right: 35px;">
 						<div class="swiper-slide" style="display: flex;">
 							<div class="travleInfo_element">
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>
@@ -126,7 +127,7 @@
 							style="width: 200px; height: 200px; margin-right: 35px;">
 							<div class="swiper-slide" style="display: flex;">
 								<div class="travleInfo_element">
-									<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+									<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 									</a>
 								</div>
 							</div>
@@ -149,7 +150,7 @@
 						style="width: 200px; height: 200px; margin-right: 35px;">
 						<div class="swiper-slide" style="display: flex;">
 							<div class="travleInfo_element">
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>
@@ -170,7 +171,7 @@
 						style="width: 200px; height: 200px; margin-right: 35px;">
 						<div class="swiper-slide" style="display: flex;">
 							<div class="travleInfo_element">
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>
@@ -191,7 +192,7 @@
 						style="width: 200px; height: 200px; margin-right: 35px;">
 						<div class="swiper-slide" style="display: flex;">
 							<div class="travleInfo_element">
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>
@@ -212,7 +213,7 @@
 						style="width: 200px; height: 200px; margin-right: 35px;">
 						<div class="swiper-slide" style="display: flex;">
 							<div class="travleInfo_element">
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>
@@ -233,7 +234,7 @@
 						style="width: 200px; height: 200px; margin-right: 35px;">
 						<div class="swiper-slide" style="display: flex;">
 							<div class="travleInfo_element">
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>
@@ -254,7 +255,7 @@
 						style="width: 200px; height: 200px; margin-right: 35px;">
 						<div class="swiper-slide" style="display: flex;">
 							<div class="travleInfo_element">
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>
@@ -275,7 +276,7 @@
 						style="width: 200px; height: 200px; margin-right: 35px;">
 						<div class="swiper-slide" style="display: flex;">
 							<div class="travleInfo_element">
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>
@@ -296,7 +297,7 @@
 						style="width: 200px; height: 200px; margin-right: 35px;">
 						<div class="swiper-slide" style="display: flex;">
 							<div class="travleInfo_element">
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>
@@ -317,7 +318,7 @@
 						style="width: 200px; height: 200px; margin-right: 35px;">
 						<div class="swiper-slide" style="display: flex;">
 							<div class="travleInfo_element">
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>
@@ -338,7 +339,7 @@
 						style="width: 200px; height: 200px; margin-right: 35px;">
 						<div class="swiper-slide" style="display: flex;">
 							<div class="travleInfo_element">
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>
@@ -359,7 +360,7 @@
 						style="width: 200px; height: 200px; margin-right: 35px;">
 						<div class="swiper-slide" style="display: flex;">
 							<div class="travleInfo_element">
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>
@@ -380,7 +381,7 @@
 						style="width: 200px; height: 200px; margin-right: 35px;">
 						<div class="swiper-slide" style="display: flex;">
 							<div class="travleInfo_element">
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>
@@ -401,7 +402,7 @@
 						style="width: 200px; height: 200px; margin-right: 35px;">
 						<div class="swiper-slide" style="display: flex;">
 							<div class="travleInfo_element">
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>
@@ -422,7 +423,7 @@
 						style="width: 200px; height: 200px; margin-right: 35px;">
 						<div class="swiper-slide" style="display: flex;">
 							<div class="travleInfo_element">
-								<a href="/oaga/travel_guinfo/${area.id}"> ${area.image} <span>${area.guname}</span>
+								<a href="/oaga/travel_hotplace/${area.id}"> ${area.image} <span>${area.guname}</span>
 								</a>
 							</div>
 						</div>

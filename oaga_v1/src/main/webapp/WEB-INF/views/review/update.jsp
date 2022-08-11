@@ -17,11 +17,18 @@
 	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 <link rel="stylesheet" href="/oaga/css/review/writestyle.css" />
+<style>
+a:hover {
+	color: inherit;
+	text-decoration: none;
+}
+</style>
 <!-- 리뷰 작성 타이틀 -->
 <div style="background-color: rgba(240, 240, 240, 0.8);">
 	<div class="r_sec">
 		<!-- form 태그 시작 -->
 		<form action="/oaga/api/review/${review.id}/update" method="post" enctype="multipart/form-data">
+			<input type="hidden" name ="${_csrf.parameterName}" value = "${_csrf.token}">
 			<input type="hidden" name="_method" value="PUT"/>
 			<div class="r_box">
 				<div>

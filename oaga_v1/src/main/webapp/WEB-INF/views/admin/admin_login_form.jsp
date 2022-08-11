@@ -154,6 +154,7 @@ footer {
 			</h1>
 			<div class="con">
 				<form action="/oaga/auth/loginproc" method="post">
+				<input type="hidden" name ="${_csrf.parameterName}" value = "${_csrf.token}">
 					<div class="formRow1">
 						<input type="text" class="form-control" placeholder="Enter ID"
 							id="username" name="username" value="2" /> <input

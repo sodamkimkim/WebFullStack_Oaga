@@ -18,14 +18,47 @@
 
 <link rel="stylesheet" href="css/review/writestyle.css" />
 <style>
-.reviewBody{
-margin-top:80px;}
+.reviewBody {
+	margin-top: 80px;
+}
+
+.oagagnb>li>a:hover {
+	color: inherit;
+	text-decoration: none;
+	font-family: inherit;
+	font-size: 16px;
+	line-height: 1;
+}
+
+.oagagnb>li>a {
+	font-family: inherit;
+	font-size: 16px;
+	line-height: 1;
+}
+
+h1 {
+	display: block;
+	font-size: 32px;
+	margin-block-start: 8px;
+	margin-block-end: 0;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
+}
+
+.oagah1>a:hover {
+	color: inherit;
+	text-decoration: none;
+}
 </style>
 <!-- 리뷰 작성 타이틀 -->
-<div class="reviewBody" style="background-color: rgba(240, 240, 240, 0.8);">
+<div class="reviewBody"
+	style="background-color: rgba(240, 240, 240, 0.8);">
 	<div class="r_sec">
 		<!-- form 태그 시작 -->
 		<form method="post" name="r_form" enctype="multipart/form-data">
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}">
 			<div class="r_box">
 				<div>
 					<h3 class="title">MY여행리뷰 작성</h3>

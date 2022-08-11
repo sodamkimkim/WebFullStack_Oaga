@@ -1,5 +1,6 @@
 package com.oaga.oaga_v1.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +49,6 @@ public class ReviewController {
 		model.addAttribute("bestUser", bestUser);
 		System.out.println("in ReviewController, pageable: "+ pageable.toString());
 		return "/review/home";
-
 	} 
 	
 	
@@ -94,6 +94,9 @@ public class ReviewController {
 	@GetMapping("/detail/{id}")
 	public String reviewDetail(@PathVariable int id, Model model) {
 		Review review = reviewService.findReviewById(id);
+		String timestamp = review.getCreateDate().toString();
+		String[] date = timestamp.split(" ");
+		model.addAttribute("createDate", date[0]);
 		model.addAttribute("review", review);
 		return "/review/detail";
 	}
@@ -138,6 +141,7 @@ public class ReviewController {
 		for(int i = startPage; i <= endPage; i ++) {
 			pageNumbers.add(i);
 		}
+		model.addAttribute("content", title);
 		model.addAttribute("reviews", reviewList);
 		model.addAttribute("pageNumbers", pageNumbers);
 		

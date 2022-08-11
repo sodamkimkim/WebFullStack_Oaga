@@ -22,8 +22,8 @@ public class RequestRestaurantDto {
 	private String content;
 
 	private CategoryType categoryType;
+	private String originImageUrl;
 	private AreaGu areaGuId;
-
 	private MultipartFile file;
 	
 	public Restaurant toEntity(String image) {
@@ -31,8 +31,8 @@ public class RequestRestaurantDto {
 				.name(name)
 				.address(address)
 				.content(content)
-				.areaGu(areaGuId)
 				.categoryType(categoryType)
+				.areaGu(areaGuId)
 				.image(image)
 				.originImageUrl(file.getOriginalFilename())
 				.build();

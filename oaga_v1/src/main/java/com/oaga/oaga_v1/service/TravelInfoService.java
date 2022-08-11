@@ -10,12 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.oaga.oaga_v1.placeModel.Area;
 import com.oaga.oaga_v1.placeModel.AreaGu;
-import com.oaga.oaga_v1.placeModel.GuInfo;
+import com.oaga.oaga_v1.placeModel.HotPlace;
 import com.oaga.oaga_v1.placeModel.Restaurant;
 import com.oaga.oaga_v1.repository.AreaRepository;
-import com.oaga.oaga_v1.repository.GuInfoRepository;
+import com.oaga.oaga_v1.repository.HotPlaceRepository;
 import com.oaga.oaga_v1.repository.RestaurantRepositoryt;
-import com.oaga.oaga_v1.repository.TravelInfoRepository;
+import com.oaga.oaga_v1.repository.AreaGuRepository;
 
 @Service
 public class TravelInfoService {
@@ -24,9 +24,9 @@ public class TravelInfoService {
 	
 
 	@Autowired
-	private TravelInfoRepository travelInfoRepository;
+	private AreaGuRepository travelInfoRepository;
 	@Autowired
-	private GuInfoRepository randmarkRepository;
+	private HotPlaceRepository randmarkRepository;
 	@Autowired
 	private RestaurantRepositoryt restaurantRepositoryt;
 	@Autowired
@@ -51,7 +51,7 @@ public class TravelInfoService {
 	}
 
 	@Transactional
-	public List<GuInfo> guInfo(int id) {
+	public List<HotPlace> guInfo(int id) {
 		
 		return randmarkRepository.mFindByAreaGu(id);
 	}
@@ -95,7 +95,7 @@ public class TravelInfoService {
 // ===================================================================================================
 
 	@Transactional
-	public List<GuInfo> findByGuinfoId(int id) {
+	public List<HotPlace> findByGuinfoId(int id) {
 		return randmarkRepository.mFindByid(id);
 	}
 
@@ -104,7 +104,7 @@ public class TravelInfoService {
 		return areaRepository.findByAreaContaining(area);
 	}
 
-	public List<GuInfo> findByAreaGuId(int areaGu_areaId) {
+	public List<HotPlace> findByAreaGuId(int areaGu_areaId) {
 		return randmarkRepository.mFindByAreaGuId(areaGu_areaId);
 	}
 

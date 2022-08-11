@@ -1,5 +1,7 @@
 package com.oaga.oaga_v1.repository;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,5 +43,8 @@ public interface ReviewRepository extends JpaRepository<Review, Integer>{
 
 	@Query(value = "SELECT * FROM review WHERE userId = ? AND isWriting = 'ING' ", nativeQuery = true)
 	Optional<Review> findisWriting(int userId);
+	
+	// 팔로우한 사용자들의 리뷰 목록
+	Optional<Page<Review>> findByUserIdIn(Pageable pageable, ArrayList<Integer> userIds);
 	
 }

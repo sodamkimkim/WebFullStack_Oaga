@@ -79,7 +79,7 @@
 }
 
 .logged_cnt_box span {
-	color: #49b2e9;
+	color: rgba(245, 161, 25, 0.9);
 	font-size: 13px;
 }
 
@@ -450,9 +450,17 @@ header.masthead {
 }
 
 .best_reviewer_a {
+	position: relative;
 	display: flex;
 }
 
 .like-Box>span {
 	margin-left: 3px;
+}
+
+.medal-img {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	
 }
