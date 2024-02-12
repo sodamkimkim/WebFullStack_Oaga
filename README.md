@@ -1,4 +1,4 @@
-## 1. 프로젝트 - Oaga 오늘 어디가지?
+## 1. Spring-boot Web FullStack 개발 프로젝트 - Oaga 오늘 어디가지?
 ### 개발 기간 : 2022.07.05 ~ 2022.07.25
 ### 사용한 기술
   <div align=center> 
